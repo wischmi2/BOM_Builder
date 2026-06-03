@@ -366,7 +366,13 @@ body {
 }
 
 .col-qty {
-    width: 3rem;
+    width: 5.5rem;
+    min-width: 5.5rem;
+    text-align: right;
+}
+
+.col-qty .cell-input {
+    min-width: 4.5rem;
     text-align: right;
 }
 

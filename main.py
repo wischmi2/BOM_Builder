@@ -217,7 +217,9 @@ def inventory_update(item_id: str):
         if "name" in payload:
             updates["name"] = str(payload.get("name", ""))
         if "qty_on_hand" in payload:
-            updates["qty_on_hand"] = int(payload.get("qty_on_hand", 0) or 0)
+            raw_qty = payload.get("qty_on_hand")
+            if str(raw_qty).strip() != "":
+                updates["qty_on_hand"] = int(raw_qty)
         if "location" in payload:
             updates["location"] = str(payload.get("location", ""))
         if "notes" in payload:

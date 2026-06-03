@@ -110,7 +110,8 @@ def delete_item(doc: InventoryDocument, item_id: str) -> bool:
 
 def inventory_stats(doc: InventoryDocument) -> dict[str, int]:
     total_qty = sum(item.qty_on_hand for item in doc.items)
-    return {"items": len(doc.items), "total_qty": total_qty}
+    # Use part_count — dict key "items" breaks Jinja (stats.items is dict.items method).
+    return {"part_count": len(doc.items), "total_qty": total_qty}
 
 
 def parse_inventory_csv(content: str | bytes) -> list[dict[str, Any]]:

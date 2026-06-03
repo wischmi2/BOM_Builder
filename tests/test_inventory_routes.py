@@ -37,6 +37,18 @@ class TestInventoryRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Add to inventory", response.data)
 
+    def test_inventory_page_shows_qty_and_part_count(self) -> None:
+        doc = storage.load_inventory()
+        from bom_builder.inventory_io import add_item
+
+        add_item(doc, lib_ref="TEST-MPN", name="test", qty_on_hand=42)
+        storage.save_inventory(doc)
+        response = self.client.get("/inventory")
+        self.assertIn(b"TEST-MPN", response.data)
+        self.assertIn(b'value="42"', response.data)
+        self.assertIn(b"<strong>1</strong> parts", response.data)
+        self.assertNotIn(b"built-in method", response.data)
+
     def test_add_update_delete(self) -> None:
         response = self.client.post(
             "/inventory/add",
@@ -53,6 +65,15 @@ class TestInventoryRoutes(unittest.TestCase):
         doc = storage.load_inventory()
         self.assertEqual(len(doc.items), 1)
         item_id = doc.items[0].id
+
+        response = self.client.post(
+            f"/inventory/{item_id}",
+            json={"lib_ref": "GRM155R71H104KE14J", "name": "0.1uF"},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        doc = storage.load_inventory()
+        self.assertEqual(doc.items[0].qty_on_hand, 25)
 
         response = self.client.post(
             f"/inventory/{item_id}",

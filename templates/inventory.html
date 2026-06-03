@@ -19,7 +19,7 @@
 {% endwith %}
 
 <div class="inventory-stats card">
-    <span><strong>{{ stats.items }}</strong> parts</span>
+    <span><strong>{{ stats.part_count }}</strong> parts</span>
     <span class="muted">·</span>
     <span><strong>{{ stats.total_qty }}</strong> total qty on hand</span>
 </div>
@@ -102,8 +102,10 @@
                                aria-label="Name">
                     </td>
                     <td class="col-qty">
-                        <input type="number" class="cell-input qty-input" value="{{ item.qty_on_hand }}"
-                               min="0" aria-label="Quantity">
+                        <input type="number" class="cell-input qty-input"
+                               value="{{ item.qty_on_hand }}"
+                               min="0" step="1" aria-label="Quantity"
+                               data-initial-qty="{{ item.qty_on_hand }}">
                     </td>
                     <td>
                         <input type="text" class="cell-input location-input" value="{{ item.location }}"

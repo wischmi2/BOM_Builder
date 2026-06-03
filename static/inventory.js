@@ -10,8 +10,9 @@
 
     function updateStats(stats) {
         if (!stats || !statsEl) return;
+        const count = stats.part_count ?? stats.items ?? 0;
         statsEl.innerHTML =
-            `<span><strong>${stats.items}</strong> parts</span>` +
+            `<span><strong>${count}</strong> parts</span>` +
             `<span class="muted">·</span>` +
             `<span><strong>${stats.total_qty}</strong> total qty on hand</span>`;
     }
@@ -43,14 +44,22 @@
             clearTimeout(timer);
             timer = setTimeout(async () => {
                 try {
-                    const result = await patchItem(itemId, {
+                    const body = {
                         lib_ref: libRef.value,
                         name: name.value,
-                        qty_on_hand: parseInt(qty.value, 10) || 0,
                         location: location.value,
                         notes: notes.value,
-                    });
+                    };
+                    const qtyRaw = qty.value.trim();
+                    if (qtyRaw !== "") {
+                        body.qty_on_hand = parseInt(qtyRaw, 10) || 0;
+                    }
+                    const result = await patchItem(itemId, body);
                     updateStats(result.stats);
+                    if (result.item) {
+                        qty.value = result.item.qty_on_hand;
+                        qty.dataset.initialQty = String(result.item.qty_on_hand);
+                    }
                 } catch (err) {
                     alert(err.message || "Could not save. Is the server still running?");
                 }
