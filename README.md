@@ -33,6 +33,18 @@ Opens http://127.0.0.1:5000/ in your browser.
 .venv\Scripts\python main.py --port 8080 --no-browser
 ```
 
+## Multiple computers (work area / LAN)
+
+To share one inventory and BOM data across several PCs on the same network, run the app on **one host PC** and open it from other machines in the browser:
+
+```bash
+.venv\Scripts\python main.py --host 0.0.0.0 --port 5000 --no-browser
+```
+
+Then browse to `http://<server-ip>:5000/` from other PCs (allow TCP port 5000 in Windows Firewall on the host).
+
+Full setup, Git-sync, and NAS options: **[docs/MULTI_COMPUTER.md](docs/MULTI_COMPUTER.md)**.
+
 ## Workflow
 
 ```text
@@ -112,6 +124,8 @@ BOM_Builder/
   templates/              # HTML pages
   static/                 # CSS + JS
   tests/
+  docs/
+    MULTI_COMPUTER.md     # LAN / multi-PC deployment guide
   data/                   # BOM + inventory JSON (tracked in git)
     needs/                # One JSON file per BOM
     inventory.json        # Stock list
