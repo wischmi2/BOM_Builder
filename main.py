@@ -1,6 +1,7 @@
 ﻿from __future__ import annotations
 
 import argparse
+import os
 import webbrowser
 from threading import Timer
 from urllib.parse import urlencode
@@ -9,6 +10,7 @@ from flask import (
     Flask,
     abort,
     flash,
+    jsonify,
     make_response,
     redirect,
     render_template,
@@ -33,7 +35,7 @@ from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
-app.secret_key = "bom-builder-local-dev"
+app.secret_key = os.environ.get("BOM_BUILDER_SECRET", "bom-builder-local-dev")
 
 
 @app.context_processor
@@ -105,8 +107,6 @@ def need_update_line(bom_id: str, line_id: str):
     stats = bom_stats(bom)
 
     if request.accept_mimetypes.best == "application/json" or request.is_json:
-        from flask import jsonify
-
         return jsonify(
             {
                 "ok": True,
@@ -199,8 +199,6 @@ def inventory_update(item_id: str):
         delete_item(doc, item_id)
         storage.save_inventory(doc)
         if request.accept_mimetypes.best == "application/json" or request.is_json:
-            from flask import jsonify
-
             return jsonify({"ok": True, "deleted": True, "stats": inventory_stats(doc)})
         flash("Part removed from inventory.", "success")
         return redirect(url_for("inventory_page"))
@@ -220,8 +218,6 @@ def inventory_update(item_id: str):
         update_item(item, **updates)
     except ValueError as exc:
         if request.accept_mimetypes.best == "application/json" or request.is_json:
-            from flask import jsonify
-
             return jsonify({"ok": False, "error": str(exc)}), 400
         flash(str(exc), "error")
         return redirect(url_for("inventory_page"))
@@ -230,8 +226,6 @@ def inventory_update(item_id: str):
     stats = inventory_stats(doc)
 
     if request.accept_mimetypes.best == "application/json" or request.is_json:
-        from flask import jsonify
-
         return jsonify(
             {
                 "ok": True,
