@@ -37,6 +37,7 @@ from bom_builder.matcher import (
     compare_summary_aggregated,
     compare_to_csv,
 )
+from bom_builder.label_scan import LabelScanError, scan_label_image
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
@@ -167,6 +168,27 @@ def inventory_page():
         stats=stats,
         search=search,
     )
+
+
+@app.route("/inventory/scan-label", methods=["POST"])
+def inventory_scan_label():
+    uploaded = request.files.get("label_image")
+    if not uploaded or not uploaded.filename:
+        return jsonify({"ok": False, "error": "Choose a photo of the part label."}), 400
+
+    allowed = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".tif", ".tiff"}
+    ext = os.path.splitext(uploaded.filename)[1].lower()
+    if ext not in allowed:
+        return jsonify({"ok": False, "error": "Unsupported image type. Use JPG or PNG."}), 400
+
+    try:
+        result = scan_label_image(uploaded.read())
+    except LabelScanError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 400
+
+    payload = result.to_dict()
+    payload["ok"] = True
+    return jsonify(payload)
 
 
 @app.route("/inventory/add", methods=["POST"])

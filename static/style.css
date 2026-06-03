@@ -589,6 +589,45 @@ body {
     max-width: 180px;
 }
 
+/* Label scan */
+.scan-label {
+    margin-top: 1.25rem;
+}
+
+.scan-label h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+}
+
+.scan-label-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+    margin-top: 0.75rem;
+}
+
+.scan-status {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.scan-raw {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+}
+
+.scan-raw pre {
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow: auto;
+    background: var(--bg);
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
 .summary-cards {
     display: flex;
     flex-wrap: wrap;

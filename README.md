@@ -68,8 +68,11 @@ Re-uploading the same file keeps your checkmarks and notes.
 Use this page for parts you already have, independent of any single BOM.
 
 1. Open **Inventory** and add parts (LibRef required), or **Import CSV**.
-2. Edit quantities and locations inline — changes save automatically.
-3. **Export CSV** for backup or editing in Excel.
+2. **Scan part label** — upload a photo of a DigiKey-style reel bag; OCR fills MFR PN, description, and qty into the add form.
+3. Edit quantities and locations inline — changes save automatically.
+4. **Export CSV** for backup or editing in Excel.
+
+**Label scan (OCR)** requires [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki) installed on Windows and on your PATH. After `pip install -r requirements.txt`, install Tesseract, then restart the app. Uses **MFR PN** for LibRef (best for BOM matching); DigiKey PN goes in Notes.
 
 **Import columns:** `LibRef`, `Name`, `QtyOnHand`, `Location`, `Notes`
 

@@ -2,6 +2,72 @@
     const config = window.BOM_INVENTORY;
     if (!config) return;
 
+    const scanBtn = document.getElementById("scan-label-btn");
+    const scanInput = document.getElementById("label-image");
+    const scanStatus = document.getElementById("scan-status");
+    const scanRawDetails = document.getElementById("scan-raw-details");
+    const scanRawText = document.getElementById("scan-raw-text");
+
+    function showScanStatus(message, isError) {
+        if (!scanStatus) return;
+        scanStatus.hidden = false;
+        scanStatus.textContent = message;
+        scanStatus.classList.toggle("flash-error", !!isError);
+        scanStatus.classList.toggle("flash-success", !isError);
+    }
+
+    scanBtn?.addEventListener("click", async () => {
+        const file = scanInput?.files?.[0];
+        if (!file) {
+            showScanStatus("Choose or take a photo first.", true);
+            return;
+        }
+        scanBtn.disabled = true;
+        showScanStatus("Reading label…", false);
+        try {
+            const body = new FormData();
+            body.append("label_image", file);
+            const response = await fetch(config.scanLabelUrl, {
+                method: "POST",
+                body,
+            });
+            const data = await response.json();
+            if (!response.ok || !data.ok) {
+                throw new Error(data.error || "Scan failed");
+            }
+
+            const libRef = document.getElementById("add-lib-ref");
+            const name = document.getElementById("add-name");
+            const qty = document.getElementById("add-qty");
+            const location = document.getElementById("add-location");
+            const notes = document.getElementById("add-notes");
+
+            if (libRef && data.lib_ref) libRef.value = data.lib_ref;
+            if (name && data.name) name.value = data.name;
+            if (qty && data.qty_on_hand) qty.value = data.qty_on_hand;
+            if (notes && data.notes) {
+                notes.value = data.notes;
+            }
+
+            let msg = "Fields filled — review and click Add to inventory.";
+            if (data.warnings?.length) {
+                msg += " " + data.warnings.join(" ");
+            }
+            showScanStatus(msg, false);
+
+            if (scanRawText && scanRawDetails && data.raw_text) {
+                scanRawText.textContent = data.raw_text;
+                scanRawDetails.hidden = false;
+            }
+
+            document.getElementById("inventory-add-form")?.scrollIntoView({ behavior: "smooth" });
+        } catch (err) {
+            showScanStatus(err.message || "Could not read label.", true);
+        } finally {
+            scanBtn.disabled = false;
+        }
+    });
+
     const statsEl = document.querySelector(".inventory-stats");
 
     function itemUrl(itemId) {
@@ -29,6 +95,9 @@
         }
         return response.json();
     }
+
+    const table = document.querySelector("#inventory-table");
+    if (!table) return;
 
     document.querySelectorAll("#inventory-table tbody tr.inventory-row").forEach((row) => {
         const itemId = row.dataset.itemId;

@@ -24,29 +24,46 @@
     <span><strong>{{ stats.total_qty }}</strong> total qty on hand</span>
 </div>
 
+<div class="scan-label card">
+    <h2>Scan part label</h2>
+    <p class="muted">Photograph a DigiKey-style reel label — extracts MFR PN, description, and quantity into the form below.</p>
+    <div class="scan-label-actions">
+        <label class="upload-label">
+            <span>Label photo</span>
+            <input type="file" id="label-image" name="label_image" accept="image/*" capture="environment">
+        </label>
+        <button type="button" class="btn btn-secondary" id="scan-label-btn">Extract from photo</button>
+    </div>
+    <div id="scan-status" class="scan-status muted" hidden></div>
+    <details id="scan-raw-details" class="scan-raw" hidden>
+        <summary>OCR text (debug)</summary>
+        <pre id="scan-raw-text"></pre>
+    </details>
+</div>
+
 <div class="inventory-toolbar card">
-    <form class="add-form" action="{{ url_for('inventory_add') }}" method="post">
+    <form class="add-form" id="inventory-add-form" action="{{ url_for('inventory_add') }}" method="post">
         <h2>Add part</h2>
         <div class="form-grid">
             <label>
                 <span>LibRef / MPN <em>*</em></span>
-                <input type="text" name="lib_ref" required placeholder="GRM155R71H104KE14J">
+                <input type="text" name="lib_ref" id="add-lib-ref" required placeholder="GRM155R71H104KE14J">
             </label>
             <label>
                 <span>Name</span>
-                <input type="text" name="name" placeholder="0.1uF 0402">
+                <input type="text" name="name" id="add-name" placeholder="0.1uF 0402">
             </label>
             <label>
                 <span>Qty on hand</span>
-                <input type="number" name="qty_on_hand" min="0" value="0">
+                <input type="number" name="qty_on_hand" id="add-qty" min="0" value="0">
             </label>
             <label>
                 <span>Location</span>
-                <input type="text" name="location" placeholder="Bin A3">
+                <input type="text" name="location" id="add-location" placeholder="Bin A3">
             </label>
             <label class="span-2">
                 <span>Notes</span>
-                <input type="text" name="notes" placeholder="Optional notes">
+                <input type="text" name="notes" id="add-notes" placeholder="Optional notes">
             </label>
         </div>
         <button type="submit" class="btn btn-primary">Add to inventory</button>
@@ -132,12 +149,11 @@
 {% endblock %}
 
 {% block scripts %}
-{% if items %}
 <script>
     window.BOM_INVENTORY = {
-        updateUrlTemplate: {{ url_for('inventory_update', item_id='__ITEM_ID__')|tojson }}
+        updateUrlTemplate: {{ url_for('inventory_update', item_id='__ITEM_ID__')|tojson }},
+        scanLabelUrl: {{ url_for('inventory_scan_label')|tojson }}
     };
 </script>
 <script src="{{ url_for('static', filename='inventory.js') }}"></script>
-{% endif %}
 {% endblock %}

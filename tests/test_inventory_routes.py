@@ -109,6 +109,12 @@ class TestInventoryRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"ABC123", response.data)
 
+    def test_scan_label_requires_image(self) -> None:
+        response = self.client.post("/inventory/scan-label")
+        self.assertEqual(response.status_code, 400)
+        data = response.get_json()
+        self.assertFalse(data["ok"])
+
     def test_search_filter(self) -> None:
         self.client.post(
             "/inventory/add",
