@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Need — BOM Builder{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h1>Need (BOM)</h1>
+    <p class="lede">Import CSV bill-of-materials and track parts you still need to acquire.</p>
+</section>
+
+<div class="placeholder-card">
+    <p>Upload and checklist UI coming in Phase 2.</p>
+    {% if bom_ids %}
+    <ul class="bom-list">
+        {% for bom_id in bom_ids %}
+        <li><code>{{ bom_id }}</code></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="muted">No BOMs imported yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
