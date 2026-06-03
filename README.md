@@ -20,7 +20,7 @@ Opens http://127.0.0.1:5000/ (use `--no-browser` to skip auto-open).
 ## Pages
 
 - **Need** — Upload BOM CSV, check off acquired parts, search/filter, export CSV
-- **Inventory** — Parts on hand (Phase 3+)
+- **Inventory** — Add/edit/delete stock, CSV import/export (merge by LibRef+Location)
 - **Compare** — Need vs inventory gap report (Phase 4+)
 
 ## Tests

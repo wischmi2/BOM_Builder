@@ -16,6 +16,16 @@ from flask import (
 )
 
 from bom_builder import storage
+from bom_builder.inventory_io import (
+    add_item,
+    delete_item,
+    find_item,
+    inventory_stats,
+    inventory_to_csv,
+    merge_import,
+    parse_inventory_csv,
+    update_item,
+)
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
@@ -129,7 +139,139 @@ def need_delete(bom_id: str):
 
 @app.route("/inventory")
 def inventory_page():
-    return render_template("inventory.html")
+    doc = storage.load_inventory()
+    stats = inventory_stats(doc)
+    search = (request.args.get("q") or "").strip().lower()
+    items = doc.items
+    if search:
+        items = [
+            item
+            for item in items
+            if search in " ".join(
+                [item.lib_ref, item.name, item.location, item.notes]
+            ).lower()
+        ]
+    items = sorted(items, key=lambda i: (i.lib_ref.upper(), i.location.upper()))
+    return render_template(
+        "inventory.html",
+        items=items,
+        stats=stats,
+        search=search,
+    )
+
+
+@app.route("/inventory/add", methods=["POST"])
+def inventory_add():
+    doc = storage.load_inventory()
+    try:
+        qty = int(request.form.get("qty_on_hand", 0) or 0)
+    except ValueError:
+        qty = 0
+    try:
+        add_item(
+            doc,
+            lib_ref=request.form.get("lib_ref", ""),
+            name=request.form.get("name", ""),
+            qty_on_hand=qty,
+            location=request.form.get("location", ""),
+            notes=request.form.get("notes", ""),
+        )
+    except ValueError as exc:
+        flash(str(exc), "error")
+        return redirect(url_for("inventory_page"))
+
+    storage.save_inventory(doc)
+    flash("Part added to inventory.", "success")
+    return redirect(url_for("inventory_page"))
+
+
+@app.route("/inventory/<item_id>", methods=["POST"])
+def inventory_update(item_id: str):
+    doc = storage.load_inventory()
+    item = find_item(doc, item_id)
+    if item is None:
+        abort(404)
+
+    payload = request.get_json(silent=True) or request.form
+    if payload.get("action") == "delete":
+        delete_item(doc, item_id)
+        storage.save_inventory(doc)
+        if request.accept_mimetypes.best == "application/json" or request.is_json:
+            from flask import jsonify
+
+            return jsonify({"ok": True, "deleted": True, "stats": inventory_stats(doc)})
+        flash("Part removed from inventory.", "success")
+        return redirect(url_for("inventory_page"))
+
+    try:
+        updates: dict = {}
+        if "lib_ref" in payload:
+            updates["lib_ref"] = str(payload.get("lib_ref", ""))
+        if "name" in payload:
+            updates["name"] = str(payload.get("name", ""))
+        if "qty_on_hand" in payload:
+            updates["qty_on_hand"] = int(payload.get("qty_on_hand", 0) or 0)
+        if "location" in payload:
+            updates["location"] = str(payload.get("location", ""))
+        if "notes" in payload:
+            updates["notes"] = str(payload.get("notes", ""))
+        update_item(item, **updates)
+    except ValueError as exc:
+        if request.accept_mimetypes.best == "application/json" or request.is_json:
+            from flask import jsonify
+
+            return jsonify({"ok": False, "error": str(exc)}), 400
+        flash(str(exc), "error")
+        return redirect(url_for("inventory_page"))
+
+    storage.save_inventory(doc)
+    stats = inventory_stats(doc)
+
+    if request.accept_mimetypes.best == "application/json" or request.is_json:
+        from flask import jsonify
+
+        return jsonify(
+            {
+                "ok": True,
+                "item": item.to_dict(),
+                "stats": stats,
+            }
+        )
+
+    flash("Inventory updated.", "success")
+    return redirect(url_for("inventory_page"))
+
+
+@app.route("/inventory/import", methods=["POST"])
+def inventory_import():
+    uploaded = request.files.get("inventory_file")
+    if not uploaded or not uploaded.filename:
+        flash("Choose a CSV file to import.", "error")
+        return redirect(url_for("inventory_page"))
+
+    try:
+        rows = parse_inventory_csv(uploaded.read())
+        if not rows:
+            flash("No valid rows found in CSV.", "error")
+            return redirect(url_for("inventory_page"))
+    except ValueError as exc:
+        flash(str(exc), "error")
+        return redirect(url_for("inventory_page"))
+
+    doc = storage.load_inventory()
+    added, updated = merge_import(doc, rows)
+    storage.save_inventory(doc)
+    flash(f"Imported inventory: {added} added, {updated} updated.", "success")
+    return redirect(url_for("inventory_page"))
+
+
+@app.route("/inventory/export.csv")
+def inventory_export():
+    doc = storage.load_inventory()
+    response = make_response(inventory_to_csv(doc))
+    response.headers["Content-Type"] = "text/csv; charset=utf-8"
+    response.headers["Content-Disposition"] = 'attachment; filename="inventory.csv"'
+    return response
 
 
 @app.route("/compare")

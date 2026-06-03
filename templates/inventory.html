@@ -8,7 +8,142 @@
     <p class="lede">Enter and manage parts you have in stock.</p>
 </section>
 
-<div class="placeholder-card">
-    <p>Inventory entry UI coming in Phase 3.</p>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
 </div>
+{% endif %}
+{% endwith %}
+
+<div class="inventory-stats card">
+    <span><strong>{{ stats.items }}</strong> parts</span>
+    <span class="muted">·</span>
+    <span><strong>{{ stats.total_qty }}</strong> total qty on hand</span>
+</div>
+
+<div class="inventory-toolbar card">
+    <form class="add-form" action="{{ url_for('inventory_add') }}" method="post">
+        <h2>Add part</h2>
+        <div class="form-grid">
+            <label>
+                <span>LibRef / MPN <em>*</em></span>
+                <input type="text" name="lib_ref" required placeholder="GRM155R71H104KE14J">
+            </label>
+            <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="0.1uF 0402">
+            </label>
+            <label>
+                <span>Qty on hand</span>
+                <input type="number" name="qty_on_hand" min="0" value="0">
+            </label>
+            <label>
+                <span>Location</span>
+                <input type="text" name="location" placeholder="Bin A3">
+            </label>
+            <label class="span-2">
+                <span>Notes</span>
+                <input type="text" name="notes" placeholder="Optional notes">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Add to inventory</button>
+    </form>
+
+    <div class="toolbar-actions">
+        <form class="import-form" action="{{ url_for('inventory_import') }}" method="post" enctype="multipart/form-data">
+            <label class="upload-label">
+                <span>Import CSV</span>
+                <input type="file" name="inventory_file" accept=".csv,text/csv">
+            </label>
+            <button type="submit" class="btn btn-secondary">Import</button>
+        </form>
+        <a class="btn btn-secondary" href="{{ url_for('inventory_export') }}">Export CSV</a>
+    </div>
+    <p class="muted form-hint">Import columns: LibRef, Name, QtyOnHand, Location, Notes. Matching LibRef+Location updates existing rows.</p>
+</div>
+
+<div class="inventory-list card">
+    <div class="list-header">
+        <h2>Stock</h2>
+        <form class="search-form" method="get" action="{{ url_for('inventory_page') }}">
+            <input type="search" name="q" class="search-input" placeholder="Search LibRef, name, location…"
+                   value="{{ search }}" autocomplete="off">
+            {% if search %}
+            <a class="btn btn-small" href="{{ url_for('inventory_page') }}">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+
+    {% if items %}
+    <div class="table-wrap">
+        <table class="data-table" id="inventory-table">
+            <thead>
+                <tr>
+                    <th>LibRef</th>
+                    <th>Name</th>
+                    <th class="col-qty">Qty</th>
+                    <th>Location</th>
+                    <th>Notes</th>
+                    <th class="col-actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr class="inventory-row" data-item-id="{{ item.id }}">
+                    <td>
+                        <input type="text" class="cell-input lib-ref-input" value="{{ item.lib_ref }}"
+                               aria-label="LibRef">
+                    </td>
+                    <td>
+                        <input type="text" class="cell-input name-input" value="{{ item.name }}"
+                               aria-label="Name">
+                    </td>
+                    <td class="col-qty">
+                        <input type="number" class="cell-input qty-input" value="{{ item.qty_on_hand }}"
+                               min="0" aria-label="Quantity">
+                    </td>
+                    <td>
+                        <input type="text" class="cell-input location-input" value="{{ item.location }}"
+                               aria-label="Location">
+                    </td>
+                    <td>
+                        <input type="text" class="cell-input notes-input" value="{{ item.notes }}"
+                               aria-label="Notes">
+                    </td>
+                    <td class="col-actions">
+                        <button type="button" class="btn btn-danger btn-small delete-btn">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="empty-state muted">
+        {% if search %}No parts match your search.{% else %}No inventory yet. Add a part above or import a CSV.{% endif %}
+    </p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if items %}
+<script>
+    window.BOM_INVENTORY = {
+        updateUrlTemplate: {{ url_for('inventory_update', item_id='__ITEM_ID__')|tojson }}
+    };
+</script>
+<script src="{{ url_for('static', filename='inventory.js') }}"></script>
+{% endif %}
+<script>
+    document.querySelectorAll("form[data-confirm]").forEach((form) => {
+        form.addEventListener("submit", (event) => {
+            const message = form.getAttribute("data-confirm");
+            if (message && !window.confirm(message)) event.preventDefault();
+        });
+    });
+</script>
 {% endblock %}
