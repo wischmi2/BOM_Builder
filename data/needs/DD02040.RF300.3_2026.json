@@ -1,0 +1,994 @@
+{
+  "bom_id": "DD02040.RF300.3_2026",
+  "source_filename": "DD02040.RF300.3_2026.csv",
+  "lines": [
+    {
+      "id": "row-1-6752300d72f4e562",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "4.7uF 35V",
+      "description": "0805 4.7 uF 35 V \u00b110 % Tolerance X5R SMT Multilayer Ceramic Capacitor",
+      "designators": [
+        "C2",
+        "C4",
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "footprint": "C0805",
+      "lib_ref": "GRM219R6YA475KA73D",
+      "quantity": 5,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-2-02c8212919ee2d7c",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "CAP CER 10PF 50V NP0 0201, 0201 0.2 pF 25 V \u00b10.1 pF Tolerance C0G SMT Multilayer Ceramic Capacitor",
+      "designators": [
+        "C7",
+        "C17",
+        "C21",
+        "C52",
+        "C56",
+        "C59",
+        "C80",
+        "C411",
+        "C413",
+        "C416",
+        "C419"
+      ],
+      "footprint": "C0201",
+      "lib_ref": "GRM0335C1H100JA01J, GJM0335C1ER20BB01D",
+      "quantity": 11,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-3-330dc3c1d93510cd",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "5pF",
+      "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0201 5.0pF 50volts C0G +/-0.1pF",
+      "designators": [
+        "C9",
+        "C16",
+        "C391",
+        "C392"
+      ],
+      "footprint": "C0201",
+      "lib_ref": "GRM0335C1H5R0BA01D",
+      "quantity": 4,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-4-0e9dd58aeaef83d7",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "10pF",
+      "description": "CAP CER 10PF 50V NP0 0201",
+      "designators": [
+        "C13",
+        "C15",
+        "C22",
+        "C25",
+        "C30",
+        "C41",
+        "C50",
+        "C51",
+        "C57",
+        "C79",
+        "C400",
+        "C417"
+      ],
+      "footprint": "C0201",
+      "lib_ref": "GRM0335C1H100JA01J",
+      "quantity": 12,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-5-2b94e889fefdd44c",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "10nF",
+      "description": "0402 10 nF 50V \u00b110% Tolerance X7R Surface Mount Multilayer Ceramic Capacitor",
+      "designators": [
+        "C14",
+        "C45",
+        "C120"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R71H103KA88J",
+      "quantity": 3,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-6-b6f586735f853d42",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "1nF",
+      "description": "Ceramic Capacitor, Multilayer, Ceramic, 50V, 10% +Tol, 10% -Tol, X7R, 15% TC, 0.001uF, Surface Mount, 0402",
+      "designators": [
+        "C18"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GCM155R71H102KA37D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-7-1d67ec1d80c1b4a0",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "0.1uF",
+      "description": "0402 0.1 uF 50 V \u00b110% Tolerance X7R SMT Multilayer Ceramic Capacitor",
+      "designators": [
+        "C19",
+        "C23",
+        "C35",
+        "C53",
+        "C84",
+        "C378",
+        "C390"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R71H104KE14J",
+      "quantity": 7,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-8-b761165333af99d0",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "100pF",
+      "description": "0402 50V C0G 100pF 1% multilayer ceramic capacitor",
+      "designators": [
+        "C20",
+        "C24",
+        "C44",
+        "C121",
+        "C377",
+        "C379"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GCM1555C1H101FA16D",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-9-2d659b96396fc7dc",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "",
+      "designators": [
+        "C31",
+        "C61"
+      ],
+      "footprint": "C0402_DNI",
+      "lib_ref": "C0402_DNI",
+      "quantity": 2,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-10-5a2d6bd24ccf9af9",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "10uF",
+      "description": "CAP CER 10UF 6.3V X5R 0402",
+      "designators": [
+        "C34",
+        "C54"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R60J106ME15D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-11-669c28d5ee1e3927",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "0.47uF",
+      "description": "0402 10 V 0.47 uF X7R \u00b110% Tolerance Multilayer Ceramic Capacitor",
+      "designators": [
+        "C75",
+        "C119"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R71A474KE01D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-12-1ad4908bd3754bf4",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 4700pF 25volts X7R 5%",
+      "designators": [
+        "C78"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R71E472JA01D",
+      "quantity": 1,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-13-be3202fca5d22fe9",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "4.7uF Tant",
+      "description": "CAP TANT 4.7UF 16V 20% 1206",
+      "designators": [
+        "C83",
+        "C122"
+      ],
+      "footprint": "TPSA475M016R2000",
+      "lib_ref": "TPSA475M016R2000",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-14-dc3c3b71eb7aa559",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "2.2uF",
+      "description": "MURATA - GRM155R61A225KE95D - SMD Multilayer Ceramic Capacitor, 2.2 \u00b5F, 10 V, 0402 [1005 Metric], \u00b1 10%, X5R, GRM Series",
+      "designators": [
+        "C160"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R61A225KE95D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-15-7aed5807ae5662fa",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "GCM155R71H102KA37D",
+      "description": "50V 1nF X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
+      "designators": [
+        "C375"
+      ],
+      "footprint": "CAPC1005X55X25LL05T10",
+      "lib_ref": "CMP-001-00103-1",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-16-58530209ea603ea4",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DCW-11-722+",
+      "description": "Mini-Circuits Directional Coupler; 11dB Coupling; 2400MHz to 7200MHz, LTCC",
+      "designators": [
+        "CP1",
+        "CP2"
+      ],
+      "footprint": "DCW-11-722+",
+      "lib_ref": "DCW-11-722+",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-17-5690da94a699ff0b",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "LFCG-3000+",
+      "description": "Mini-Circuits DC-3000MHz LPF",
+      "designators": [
+        "F1"
+      ],
+      "footprint": "LFCG-3000+",
+      "lib_ref": "LFCG-3000+",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-18-43ccfd933a760766",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "60312202114511 or Amphenol 132417",
+      "description": "SMA Connector Jack, Female Socket 50Ohm Board Edge, End Launch; Through Hole, Right Angle Solder",
+      "designators": [
+        "J1",
+        "J3",
+        "J4",
+        "J5",
+        "J7"
+      ],
+      "footprint": "SMA_60312202114511",
+      "lib_ref": "60312202114511",
+      "quantity": 5,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-19-7aed9cb50dea5fa3",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "1x3 TH",
+      "description": "Headers & Wire Housings BRKAWY HDR STR SR 1X03 100/213",
+      "designators": [
+        "JP7"
+      ],
+      "footprint": "1x3 HDR TH",
+      "lib_ref": "68797-403HLF",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-20-2e0e94606086ccf6",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "Ind General Purpose Chip Molded 2.7nH \u00b10.1nH 500MHz 20 Q-Factor Thick Film 600mA Paper T/R",
+      "designators": [
+        "L1"
+      ],
+      "footprint": "L0201",
+      "lib_ref": "LQP03HQ2N7B02D",
+      "quantity": 1,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-21-31f39dd479213d56",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "4.3nH Wirewound",
+      "description": "RF Inductor, ceramic core, 5% toll, SMT, RoHS, halogen-free",
+      "designators": [
+        "L2"
+      ],
+      "footprint": "L0402",
+      "lib_ref": "0402DC-4N3XJRW",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-22-d4b628f67d76792e",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "Mouse_Bites",
+      "description": "",
+      "designators": [
+        "MB1",
+        "MB2",
+        "MB3",
+        "MB4",
+        "MB5",
+        "MB6",
+        "MB7",
+        "MB8"
+      ],
+      "footprint": "Mouse_Bites",
+      "lib_ref": "Mouse_Bites",
+      "quantity": 8,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-23-2c9ff9d25c8641ea",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "M2 Bolt MH",
+      "description": "",
+      "designators": [
+        "MH14"
+      ],
+      "footprint": "MH_M2_Bolt",
+      "lib_ref": "MH_M2_Bolt",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-24-c5b7a3f652806616",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "N-CH MOSFET DMN2005K-7",
+      "description": "Trans MOSFET N-CH 20V 0.3A 3-Pin SOT-23 T/R",
+      "designators": [
+        "MO1"
+      ],
+      "footprint": "SOT-23",
+      "lib_ref": "DMN2005K-7",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-25-50b04fc3ebb0e7a8",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "P-channel MOSFET DMP3099L-7",
+      "description": "DIODES INC. - DMP3099L-7 - Power MOSFET, P Channel, 30 V, 3.8 A, 0.065 ohm, SOT-23, Surface Mount",
+      "designators": [
+        "MO3"
+      ],
+      "footprint": "SOT-23",
+      "lib_ref": "DMP3099L-7",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-26-51f982da79d6b3e9",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "SAMTEC-SFM-125-02-X-D-LC",
+      "description": "",
+      "designators": [
+        "P1"
+      ],
+      "footprint": "SAMTEC-SFM-125-02-X-D-LC",
+      "lib_ref": "SAMTEC-SFM-125-02-X-D-LC",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-27-681b5ab75669f48c",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "100kohm",
+      "description": "RES SMD 100K OHM 1% 1/16W 0402",
+      "designators": [
+        "R1"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "CRG0402F100K",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-28-1e317db90c5f918e",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "0R",
+      "description": "Res Thick Film 0402 0 Ohm Molded SMD Punched Paper T/R",
+      "designators": [
+        "R2",
+        "R6",
+        "R16",
+        "R24",
+        "R25",
+        "R29",
+        "R33",
+        "R35",
+        "R66",
+        "R80",
+        "R88",
+        "R114",
+        "R116",
+        "R245",
+        "R397",
+        "R415",
+        "R442"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73Z1ETTP",
+      "quantity": 17,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-29-a72ec528a46ba137",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "1kohm",
+      "description": "Thick Film Resistors 0.125W 1Kohm 5% 200ppm Anti-Surge",
+      "designators": [
+        "R3"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "SG73S1ETTP102J",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-30-838046de8a03f2a7",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "10k",
+      "description": "Resistor Thick Film 0402 10k Ohm 1% 1/16 Watt \u00b1100ppm \u00b0C Surface Mount Punched Paper Tape and Reel",
+      "designators": [
+        "R4",
+        "R7",
+        "R8",
+        "R9",
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73H1ETTP1002F",
+      "quantity": 7,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-31-9676350f55c84e8c",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "33kohm",
+      "description": "Thick Film Resistors - 33kohm SMD Anti Sulfur 0.5 Tol. 0402 -55oC to 155oC",
+      "designators": [
+        "R5"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73H1ERTTP3302F",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-32-f6ea38f216b4b028",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "60.4ohm",
+      "description": "60.4 Ohms \u00b10.5% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film",
+      "designators": [
+        "R13",
+        "R420"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RK73H1HTTC60R4D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-33-e50631ebe5f921d3",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "RES 0 OHM JUMPER 0201",
+      "designators": [
+        "R14",
+        "R417"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RK73Z1HRTTC",
+      "quantity": 2,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-34-97106269edefae5c",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "0R",
+      "description": "RES 0 OHM JUMPER 0201",
+      "designators": [
+        "R15",
+        "R17",
+        "R42",
+        "R97",
+        "R416",
+        "R418"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RK73Z1HRTTC",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-35-a4c417d3cea77bcb",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "1430ohms",
+      "description": "RES SMD 1.43KOHM 0.1% 1/16W 0402",
+      "designators": [
+        "R18",
+        "R394"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "ERA-2AEB1431X",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-36-763b22019ac5c9d6",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "3.74kohm",
+      "description": "RES SMD 3.74KOHM 0.1% 1/16W 0402",
+      "designators": [
+        "R19",
+        "R393"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "ERA-2AEB3741X",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-37-a583451928299493",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "953R",
+      "description": "RC0402FR-07953RL",
+      "designators": [
+        "R20",
+        "R396"
+      ],
+      "footprint": "RESC1005X40X25NL05T10",
+      "lib_ref": "CMP-2002-07842-1",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-38-695ab604705ff7a8",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "2kohm",
+      "description": "RES 2K OHM 0.1% 1/10W 0402",
+      "designators": [
+        "R21",
+        "R392"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RP73PF1E2K0BTD",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-39-177060d36ed2fcba",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "348R",
+      "description": "Thin Film Chip Resistors Automotive Grade 348? 0.5% 25ppm/\u00b0C 0402\nAT0402DRD07348RL",
+      "designators": [
+        "R22",
+        "R395"
+      ],
+      "footprint": "FP-AT0402-IPC_A",
+      "lib_ref": "CMP-03412-047693-1",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-40-4b7876cbb0f5d67a",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "2kohm",
+      "description": "Res Thick Film 0201 2K Ohm 1% 1/20W \u00b1200ppm/C Molded SMD Paper T/R",
+      "designators": [
+        "R23",
+        "R419"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "CRCW02012K00FNED",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-41-6221a9c6a36ec671",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "68R",
+      "description": "YAGEO (PHYCOMP)   RC0201FR-0768RL   RESISTOR, 0201, 0.05W, 68R, 1%",
+      "designators": [
+        "R26"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RC0201FR-0768RL",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-42-2d5f77117de0fe07",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "100R",
+      "description": "Res Thin Film 0201 100 Ohm 0.1% 0.05W(1/20W) \u00b125ppm/\u00b0C Pad SMD Automotive T/R",
+      "designators": [
+        "R27",
+        "R28"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "ERA-1AEB101C",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-43-96aaa42138c3ac1f",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "50ohm",
+      "description": "RES SMD 50 OHM 1% 1/8W 0402",
+      "designators": [
+        "R30"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "504L50R0FTNCFT",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-44-81e607f9962e76e2",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "49.9ohms",
+      "description": "General Purpose Chip Resistor Thick Film 0402 49.9Ohm 1% Paper T/R",
+      "designators": [
+        "R46"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RC0402FR-7W49R9L",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-45-26f273ba6bbc7697",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "100ohm",
+      "description": "Thick Film Resistors 0.125W 100ohm 5% 200ppm Anti-Surge",
+      "designators": [
+        "R60",
+        "R62",
+        "R82",
+        "R85",
+        "R86",
+        "R87"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "SG73S1ETTP101J",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-46-4f51665c60402913",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "18R",
+      "description": "Res Thick Film 0201 18 Ohm 1% 0.05W(1/20W) \u00b1200ppm/C Pad SMD Automotive T/R",
+      "designators": [
+        "R99",
+        "R100"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RK73H1HTTC18R0F",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-47-bb43f93032fdabf8",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "300R",
+      "description": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
+      "designators": [
+        "R101",
+        "R102",
+        "R437",
+        "R438"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "ERJ1GNF3000C",
+      "quantity": 4,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-48-04556cfc9e3f49bb",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DNI",
+      "description": "Res Thick Film 0402 0 Ohm Molded SMD Punched Paper T/R",
+      "designators": [
+        "R230"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73Z1ETTP",
+      "quantity": 1,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-49-9fbb2914c4dc7e0f",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "PE42553 SPDT",
+      "description": "RF Switch, SPDT, 9 kHz to 8 GHz, 0.6- 0.85 dB IL, 36-90 dB Isolation, 36 dBm Pwr Rating, QFN",
+      "designators": [
+        "SW4"
+      ],
+      "footprint": "PE42553",
+      "lib_ref": "PE42553B-Z",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-50-92a0e20e852c67d9",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "VTGT-S1",
+      "description": "",
+      "designators": [
+        "TP1"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-51-5dce2f01498ce904",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "TC2 PWDN-S1",
+      "description": "",
+      "designators": [
+        "TP2"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-52-eba0dbb4e99a8ba8",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "TEMP-S1",
+      "description": "",
+      "designators": [
+        "TP3"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-53-7cb1676ed14a3621",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "TEMP-S2",
+      "description": "",
+      "designators": [
+        "TP4"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-54-2d0cb5e7af3dbf8f",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "TC2 PWDN-S2",
+      "description": "",
+      "designators": [
+        "TP5"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-55-e024bc84b68bc945",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "VTGT-S2",
+      "description": "",
+      "designators": [
+        "TP6"
+      ],
+      "footprint": "Test Point_gr",
+      "lib_ref": "GP_Socket",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-56-d4c40ad4ee9dc720",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "ADL5902",
+      "description": "IC DETECTOR RF TRUPWR 16LFCSP",
+      "designators": [
+        "U1",
+        "U47"
+      ],
+      "footprint": "ADL5902",
+      "lib_ref": "ADL5902ACPZ-R7",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-57-787cd6f453c55335",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "HMC424ALP3E RF Attenuator",
+      "description": "HMC424ALP3E RF ATTENUATOR 31.5DB 16VFQFN",
+      "designators": [
+        "U4"
+      ],
+      "footprint": "HMC424ALP3E",
+      "lib_ref": "HMC424ALP3E",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-58-8cbd022e0b4645c4",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "DCMO190410-5 <4GHz VCO",
+      "description": "DCMO190410-5 Synergy Microwave Corp Voltage Controlled Oscillator 1900MHz - 4100MHz",
+      "designators": [
+        "U8"
+      ],
+      "footprint": "DCMO190410-5",
+      "lib_ref": "DCMO190410-5",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-59-4f2949a038dab88b",
+      "bom_id": "DD02040.RF300.3_2026",
+      "name": "HMC659LC5",
+      "description": "ANALOG DEVICES   HMC659LC5   RF AMP, 17DB, 15GHZ, 8V, HQFN-32",
+      "designators": [
+        "U9"
+      ],
+      "footprint": "HMC659LC5",
+      "lib_ref": "HMC659LC5",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    }
+  ]
+}

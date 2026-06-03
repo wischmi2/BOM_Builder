@@ -23,9 +23,6 @@ htmlcov/
 *.swo
 .cursor/
 
-# Local app data (BOMs + inventory)
-data/
-
 # OS
 Thumbs.db
 Desktop.ini

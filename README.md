@@ -108,16 +108,27 @@ BOM_Builder/
   templates/              # HTML pages
   static/                 # CSS + JS
   tests/
-  data/                   # Local data (gitignored, created on first run)
+  data/                   # BOM + inventory JSON (tracked in git)
     needs/                # One JSON file per BOM
     inventory.json        # Stock list
 ```
 
-## Data and backup
+## Data in Git
 
-All runtime data lives under `data/` (not in git). Back it up by copying the folder, or use **Export CSV** on Need and Inventory pages.
+Imported BOMs and inventory are stored as JSON under `data/` and **committed to the repo** so they sync via GitHub:
 
-After cloning the repo, upload BOMs and inventory again, or restore a backed-up `data/` folder.
+- `data/needs/{bom_id}.json` — parsed BOM + acquired checkmarks and notes
+- `data/inventory.json` — parts on hand
+
+After importing or editing in the app, commit and push to update GitHub:
+
+```bash
+git add data/
+git commit -m "Update BOM and inventory data"
+git push
+```
+
+You can still use **Export CSV** on each page for Excel. Original uploaded CSV files are not kept—only the JSON.
 
 ## Tests
 
