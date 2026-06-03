@@ -31,6 +31,21 @@
             </label>
             {% endfor %}
         </div>
+
+        {% if selected_ids|length > 1 %}
+        <div class="view-mode-picker">
+            <span class="view-mode-label">View:</span>
+            <label class="filter-check">
+                <input type="radio" name="view" value="combined" {% if view_mode == 'combined' %}checked{% endif %}>
+                Combined totals (all boards)
+            </label>
+            <label class="filter-check">
+                <input type="radio" name="view" value="per_board" {% if view_mode == 'per_board' %}checked{% endif %}>
+                Per board (each BOM line)
+            </label>
+        </div>
+        {% endif %}
+
         <button type="submit" class="btn btn-primary">Compare</button>
         {% if export_url %}
         <a class="btn btn-secondary" href="{{ export_url }}">Export gap CSV</a>
@@ -45,7 +60,7 @@
 <div class="summary-cards">
     <div class="summary-card">
         <span class="summary-value">{{ summary.total }}</span>
-        <span class="summary-label">Total lines</span>
+        <span class="summary-label">{% if view_mode == 'combined' %}Unique parts{% else %}Total lines{% endif %}</span>
     </div>
     <div class="summary-card status-ok">
         <span class="summary-value">{{ summary.ok }}</span>
@@ -65,6 +80,18 @@
     </div>
 </div>
 
+{% if pool_stats %}
+<div class="pool-stats card">
+    <p>
+        <strong>{{ pool_stats.boards }}</strong> boards selected —
+        <strong>{{ pool_stats.total_need_qty }}</strong> total parts needed (non-DNI),
+        <strong>{{ pool_stats.total_on_hand }}</strong> matched in inventory,
+        <strong>{{ pool_stats.total_leftover }}</strong> leftover after all boards.
+    </p>
+    <p class="muted">Combined view sums the same MPN across boards, then compares once against stock.</p>
+</div>
+{% endif %}
+
 <div class="compare-toolbar card">
     <input type="search" id="compare-search" class="search-input" placeholder="Search results…" autocomplete="off">
     <label class="filter-check"><input type="checkbox" id="filter-missing"> Missing only</label>
@@ -74,6 +101,47 @@
 </div>
 
 <div class="table-wrap card">
+    {% if view_mode == 'combined' and agg_rows %}
+    <table class="data-table" id="compare-table">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Name</th>
+                <th>LibRef</th>
+                <th class="col-qty">Total need</th>
+                <th class="col-qty">On hand</th>
+                <th class="col-qty">Leftover</th>
+                <th>Boards</th>
+                <th>Need by board</th>
+                <th>Match</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in agg_rows %}
+            <tr class="compare-row status-{{ row.status }}"
+                data-status="{{ row.status }}"
+                data-search="{{ (row.name ~ ' ' ~ row.lib_ref ~ ' ' ~ row.bom_ids_display)|lower }}">
+                <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
+                <td>{{ row.name }}</td>
+                <td><code>{{ row.lib_ref }}</code></td>
+                <td class="col-qty">{{ row.qty_needed_total }}</td>
+                <td class="col-qty">{{ row.qty_on_hand }}</td>
+                <td class="col-qty {% if row.leftover < 0 %}delta-negative{% elif row.leftover > 0 %}delta-positive{% endif %}">
+                    {{ row.leftover }}
+                </td>
+                <td>{{ row.bom_ids_display }}</td>
+                <td class="col-breakdown muted">{{ row.need_breakdown_display }}</td>
+                <td class="col-match">
+                    <span class="match-type">{{ row.match_type }}</span>
+                    {% if row.matched_ids_display %}
+                    <span class="muted match-detail">{{ row.matched_ids_display }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% elif rows %}
     <table class="data-table" id="compare-table">
         <thead>
             <tr>
@@ -113,6 +181,7 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
     <p class="empty-filter muted" id="compare-empty" hidden>No rows match filters.</p>
 </div>
 
@@ -151,7 +220,7 @@
 {% endblock %}
 
 {% block scripts %}
-{% if rows %}
+{% if rows or agg_rows %}
 <script src="{{ url_for('static', filename='compare.js') }}"></script>
 {% endif %}
 {% endblock %}

@@ -80,8 +80,9 @@ Rows with the same **LibRef + Location** are updated; new combinations are added
 Use this page to see what you still need to pull from inventory or buy.
 
 1. Open **Compare** and select one or more BOMs.
-2. Click **Compare** — review summary cards and the results table.
-3. Filter to missing/partial lines; export **gap CSV** for purchasing.
+2. With multiple boards, use **Combined totals** (default) to sum the same MPN across all BOMs and compare once against inventory.
+3. Use **Per board** for the original line-by-line view (each BOM row checked separately).
+4. Filter to missing/partial lines; export **gap CSV** for purchasing.
 
 **Matching rules:**
 

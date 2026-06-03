@@ -29,7 +29,14 @@ from bom_builder.inventory_io import (
     parse_inventory_csv,
     update_item,
 )
-from bom_builder.matcher import compare_boms, compare_summary, compare_to_csv
+from bom_builder.matcher import (
+    compare_aggregated_to_csv,
+    compare_boms,
+    compare_boms_aggregated,
+    compare_summary,
+    compare_summary_aggregated,
+    compare_to_csv,
+)
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
@@ -287,6 +294,13 @@ def _load_selected_boms(bom_ids: list[str]) -> list:
     return boms
 
 
+def _compare_view_mode(selected_ids: list[str]) -> str:
+    view = request.args.get("view", "").strip()
+    if view in ("combined", "per_board"):
+        return view
+    return "combined" if len(selected_ids) > 1 else "per_board"
+
+
 @app.route("/compare")
 def compare_page():
     bom_ids = storage.list_bom_ids()
@@ -294,27 +308,47 @@ def compare_page():
     if not selected_ids and bom_ids:
         selected_ids = [bom_ids[0]]
 
+    view_mode = _compare_view_mode(selected_ids)
     rows = []
+    agg_rows = []
     extra = []
     summary = None
+    pool_stats = None
+
     if selected_ids:
         boms = _load_selected_boms(selected_ids)
         inventory = storage.load_inventory()
-        rows, extra = compare_boms(boms, inventory)
-        summary = compare_summary(rows)
+
+        if view_mode == "combined":
+            agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            summary = compare_summary_aggregated(agg_rows)
+            if agg_rows:
+                pool_stats = {
+                    "total_need_qty": sum(r.qty_needed_total for r in agg_rows if not r.is_dni),
+                    "total_on_hand": sum(r.qty_on_hand for r in agg_rows),
+                    "total_leftover": sum(r.leftover for r in agg_rows if not r.is_dni),
+                    "boards": len(selected_ids),
+                }
+        else:
+            rows, extra = compare_boms(boms, inventory)
+            summary = compare_summary(rows)
 
     export_url = None
-    if selected_ids and rows:
-        query = urlencode([("bom_id", bom_id) for bom_id in selected_ids])
-        export_url = f"{url_for('compare_export')}?{query}"
+    if selected_ids and (rows or agg_rows):
+        params = [("bom_id", bom_id) for bom_id in selected_ids]
+        params.append(("view", view_mode))
+        export_url = f"{url_for('compare_export')}?{urlencode(params)}"
 
     return render_template(
         "compare.html",
         bom_ids=bom_ids,
         selected_ids=selected_ids,
+        view_mode=view_mode,
         rows=rows,
+        agg_rows=agg_rows,
         extra=extra,
         summary=summary,
+        pool_stats=pool_stats,
         export_url=export_url,
     )
 
@@ -326,13 +360,20 @@ def compare_export():
         flash("Select at least one BOM to export.", "error")
         return redirect(url_for("compare_page"))
 
+    view_mode = _compare_view_mode(selected_ids)
     boms = _load_selected_boms(selected_ids)
     inventory = storage.load_inventory()
-    rows, _ = compare_boms(boms, inventory)
 
-    response = make_response(compare_to_csv(rows))
+    if view_mode == "combined":
+        agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        response = make_response(compare_aggregated_to_csv(agg_rows))
+        filename = "compare_combined_gap_report.csv"
+    else:
+        rows, _ = compare_boms(boms, inventory)
+        response = make_response(compare_to_csv(rows))
+        filename = "compare_gap_report.csv"
     response.headers["Content-Type"] = "text/csv; charset=utf-8"
-    response.headers["Content-Disposition"] = 'attachment; filename="compare_gap_report.csv"'
+    response.headers["Content-Disposition"] = f'attachment; filename="{filename}"'
     return response
 
 

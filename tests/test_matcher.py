@@ -4,6 +4,7 @@ import unittest
 
 from bom_builder.matcher import (
     compare_boms,
+    compare_boms_aggregated,
     compare_summary,
     compare_to_csv,
     normalize_key,
@@ -94,6 +95,35 @@ class TestMatcher(unittest.TestCase):
         _, extra = compare_boms([bom], inv)
         self.assertEqual(len(extra), 1)
         self.assertEqual(extra[0].lib_ref, "OFF-BOM")
+
+    def test_aggregated_sums_across_boms(self) -> None:
+        def line_for(bom_id: str) -> NeedLine:
+            return NeedLine(
+                id=f"n-{bom_id}",
+                bom_id=bom_id,
+                name="10k",
+                description="",
+                designators=["R1"],
+                footprint="R0402",
+                lib_ref="RK73H1ETTP1002F",
+                quantity=7,
+            )
+
+        boms = [
+            BomDocument("bom_a", "a.csv", [line_for("bom_a")]),
+            BomDocument("bom_b", "b.csv", [line_for("bom_b")]),
+            BomDocument("bom_c", "c.csv", [line_for("bom_c")]),
+        ]
+        inv = InventoryDocument(
+            items=[InventoryItem(id="i1", lib_ref="RK73H1ETTP1002F", qty_on_hand=8980)]
+        )
+        rows, _ = compare_boms_aggregated(boms, inv)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].qty_needed_total, 21)
+        self.assertEqual(rows[0].qty_on_hand, 8980)
+        self.assertEqual(rows[0].leftover, 8959)
+        self.assertEqual(rows[0].status, "ok")
+        self.assertEqual(len(rows[0].bom_ids), 3)
 
     def test_summary_and_csv(self) -> None:
         bom = BomDocument("bom1", "t.csv", [_need("P1"), _need("P2")])
