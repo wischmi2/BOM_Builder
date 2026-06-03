@@ -54,12 +54,12 @@
         <div class="need-toolbar card">
             <div class="progress-block" id="progress-block">
                 <span class="progress-text" id="progress-text">
-                    {{ stats.acquired }} / {{ stats.active }} acquired
-                    {% if stats.dni %}<span class="muted">({{ stats.dni }} DNI hidden from count)</span>{% endif %}
+                    {{ stats.acquired }} / {{ stats.total }} acquired
+                    {% if stats.dni %}<span class="muted">({{ stats.dni }} DNI)</span>{% endif %}
                 </span>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"
-                         style="width: {{ (100 * stats.acquired / stats.active) if stats.active else 0 }}%"></div>
+                         style="width: {{ (100 * stats.acquired / stats.total) if stats.total else 0 }}%"></div>
                 </div>
             </div>
             <div class="toolbar-actions">

@@ -26,14 +26,13 @@ def merge_bom_state(existing: BomDocument | None, incoming: BomDocument) -> BomD
 def bom_stats(bom: BomDocument) -> dict[str, int]:
     total = len(bom.lines)
     dni = sum(1 for line in bom.lines if line.is_dni)
-    acquired = sum(1 for line in bom.lines if line.acquired and not line.is_dni)
-    active = total - dni
+    acquired = sum(1 for line in bom.lines if line.acquired)
     return {
         "total": total,
         "dni": dni,
-        "active": active,
+        "active": total,
         "acquired": acquired,
-        "remaining": active - acquired,
+        "remaining": total - acquired,
     }
 
 

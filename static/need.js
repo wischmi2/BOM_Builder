@@ -20,11 +20,11 @@
 
     function updateProgress(stats) {
         if (!stats || !progressText || !progressFill) return;
-        const pct = stats.active ? Math.round((100 * stats.acquired) / stats.active) : 0;
+        const pct = stats.total ? Math.round((100 * stats.acquired) / stats.total) : 0;
         let suffix = "";
-        if (stats.dni) suffix = ` (${stats.dni} DNI hidden from count)`;
+        if (stats.dni) suffix = ` (${stats.dni} DNI)`;
         progressText.innerHTML =
-            `${stats.acquired} / ${stats.active} acquired` +
+            `${stats.acquired} / ${stats.total} acquired` +
             (suffix ? `<span class="muted">${suffix}</span>` : "");
         progressFill.style.width = `${pct}%`;
     }

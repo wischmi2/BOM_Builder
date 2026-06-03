@@ -37,7 +37,7 @@ class TestNeedIo(unittest.TestCase):
         self.assertTrue(merged.lines[0].acquired)
         self.assertEqual(merged.lines[0].notes, "ordered")
 
-    def test_bom_stats_excludes_dni_from_active(self) -> None:
+    def test_bom_stats_includes_dni_in_counts(self) -> None:
         bom = BomDocument(
             bom_id="test",
             source_filename="t.csv",
@@ -53,14 +53,15 @@ class TestNeedIo(unittest.TestCase):
                     lib_ref="X",
                     quantity=1,
                     is_dni=True,
+                    acquired=True,
                 ),
             ],
         )
         stats = bom_stats(bom)
         self.assertEqual(stats["total"], 2)
         self.assertEqual(stats["dni"], 1)
-        self.assertEqual(stats["active"], 1)
-        self.assertEqual(stats["acquired"], 1)
+        self.assertEqual(stats["active"], 2)
+        self.assertEqual(stats["acquired"], 2)
 
     def test_bom_to_csv_includes_acquired_column(self) -> None:
         bom = BomDocument(
