@@ -1,0 +1,69 @@
+{
+  "entries": {
+    "mpn:0402DC-4N3XJRW": {
+      "mouser": {
+        "found": false,
+        "mpn": "0402DC-4N3XJRW",
+        "url": "https://www.mouser.com/c/?q=0402DC-4N3XJRW",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-03T19:49:40.700104+00:00"
+      }
+    },
+    "mpn:ERA-2AEB3741X": {
+      "mouser": {
+        "found": false,
+        "mpn": "ERA-2AEB3741X",
+        "url": "https://www.mouser.com/c/?q=ERA-2AEB3741X",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-03T19:50:01.038859+00:00"
+      }
+    },
+    "mpn:504L50R0FTNCFT": {
+      "mouser": {
+        "found": false,
+        "mpn": "504L50R0FTNCFT",
+        "url": "https://www.mouser.com/c/?q=504L50R0FTNCFT",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-03T19:50:31.304386+00:00"
+      }
+    },
+    "mpn:ADL5902ACPZ-R7": {
+      "mouser": {
+        "found": false,
+        "mpn": "ADL5902ACPZ-R7",
+        "url": "https://www.mouser.com/c/?q=ADL5902ACPZ-R7",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-03T19:57:07.189754+00:00"
+      }
+    },
+    "mpn:TPSA475M016R2000": {
+      "mouser": {
+        "found": false,
+        "mpn": "TPSA475M016R2000",
+        "url": "https://www.mouser.com/c/?q=TPSA475M016R2000",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-03T19:59:04.527148+00:00"
+      }
+    }
+  }
+}

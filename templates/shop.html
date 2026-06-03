@@ -57,6 +57,19 @@
 </div>
 
 {% if stats %}
+<div class="shop-api-card card">
+    <h2 class="shop-api-title">Distributor APIs</h2>
+    {% if any_api_configured %}
+    <p class="muted shop-api-lede">
+        <span class="api-pill {% if api_status.digikey %}api-on{% else %}api-off{% endif %}">DigiKey {% if api_status.digikey %}ready{% else %}not configured{% endif %}</span>
+        <span class="api-pill {% if api_status.mouser %}api-on{% else %}api-off{% endif %}">Mouser {% if api_status.mouser %}ready{% else %}not configured{% endif %}</span>
+    </p>
+    <p class="muted">Use <strong>Lookup</strong> to fetch stock and unit price when the API finds an exact MPN. Then use <strong>DigiKey</strong> / <strong>Mouser</strong> to order. If you see <em>no match</em>, open the search links — pricing is on the distributor site.</p>
+    {% else %}
+    <p class="muted">API lookup is optional. Search links still work. Copy <code>.env.example</code> to <code>.env</code> and set keys (see <code>docs/SHOPPING.md</code>).</p>
+    {% endif %}
+</div>
+
 <div class="summary-cards shop-summary">
     <div class="summary-card">
         <span class="summary-value">{{ stats.line_count }}</span>
@@ -83,7 +96,12 @@
 <div class="compare-toolbar card shop-toolbar">
     <input type="search" id="shop-search" class="search-input" placeholder="Search MPN, name…" autocomplete="off">
     <label class="filter-check"><input type="checkbox" id="shop-hide-ordered"> Hide ordered</label>
+    {% if any_api_configured %}
+    <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-visible">Lookup visible</button>
+    <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-force" title="Refresh from API even if cached">Force refresh visible</button>
+    {% endif %}
     <span class="muted compare-drag-hint">Drag │ on column headers to resize</span>
+    <span class="muted shop-lookup-status" id="shop-lookup-status" hidden></span>
 </div>
 
 <div class="table-wrap compare-table-wrap card">
@@ -104,8 +122,13 @@
         </thead>
         <tbody>
             {% for line in shop_lines %}
+            {% set cache_entry = distributor_cache.get(line.cache_key, {}) %}
+            {% set dk = cache_entry.get('digikey') %}
+            {% set mo = cache_entry.get('mouser') %}
             <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %}"
                 data-line-id="{{ line.line_id }}"
+                data-mpn="{{ line.primary_mpn }}"
+                data-cache-key="{{ line.cache_key }}"
                 data-ordered="{{ '1' if line.ordered else '0' }}"
                 data-search="{{ line.search_text }}">
                 <td class="col-check">
@@ -128,8 +151,36 @@
                 <td class="col-qty">{{ line.qty_on_hand }}</td>
                 <td class="col-bom">{{ line.bom_id or line.bom_ids_display }}</td>
                 <td class="col-distributors">
-                    <a class="btn btn-secondary btn-sm dist-link" href="{{ line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
-                    <a class="btn btn-secondary btn-sm dist-link" href="{{ line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
+                    <div class="dist-actions">
+                        <a class="btn btn-secondary btn-sm dist-link" href="{{ dk.url if dk and dk.url else line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
+                        <a class="btn btn-secondary btn-sm dist-link" href="{{ mo.url if mo and mo.url else line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
+                        {% if any_api_configured %}
+                        <button type="button" class="btn btn-secondary btn-sm shop-lookup-row">Lookup</button>
+                        {% endif %}
+                    </div>
+                    <div class="dist-cache" data-dist-cache>
+                        {% if dk %}
+                        <div class="dist-cache-line dist-dk">
+                            <span class="dist-cache-label">DK</span>
+                            {% if dk.get('found') %}
+                            {% if dk.stock is not none %}<span>{{ dk.stock }} in stock</span>{% endif %}
+                            {% if dk.price_1 is not none %}<span class="dist-price">${{ "%.4f"|format(dk.price_1) }}</span>{% endif %}
+                            {% elif dk.fetched_at %}<span class="dist-miss">no match</span>{% endif %}
+                            {% if dk.fetched_at %}<span class="muted dist-fetched" title="{{ dk.fetched_at }}">· cached</span>{% endif %}
+                        </div>
+                        {% endif %}
+                        {% if mo %}
+                        <div class="dist-cache-line dist-mo">
+                            <span class="dist-cache-label">MO</span>
+                            {% if mo.get('found') %}
+                            {% if mo.stock is not none %}<span>{{ mo.stock }} in stock</span>
+                            {% elif mo.stock_text %}<span>{{ mo.stock_text }}</span>{% endif %}
+                            {% if mo.price_1 is not none %}<span class="dist-price">${{ "%.4f"|format(mo.price_1) }}</span>{% endif %}
+                            {% elif mo.fetched_at %}<span class="dist-miss">no match</span>{% endif %}
+                            {% if mo.fetched_at %}<span class="muted dist-fetched" title="{{ mo.fetched_at }}">· cached</span>{% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
                 </td>
                 <td class="col-notes">
                     <input type="text" class="notes-input cell-input" value="{{ line.notes }}"
@@ -154,7 +205,9 @@
 {% if shop_lines %}
 <script>
     window.BOM_SHOP = {
-        updateUrlTemplate: {{ url_for('shop_update_line', line_id='__LINE_ID__')|tojson }}
+        updateUrlTemplate: {{ url_for('shop_update_line', line_id='__LINE_ID__')|tojson }},
+        lookupUrl: {{ url_for('shop_lookup')|tojson }},
+        apiConfigured: {{ any_api_configured|tojson }}
     };
 </script>
 <script src="{{ url_for('static', filename='shop.js') }}"></script>

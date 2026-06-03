@@ -116,7 +116,7 @@ Use this page to see what you still need to pull from inventory or buy.
 2. Review **Buy qty** (shortfall by default), open **DigiKey** / **Mouser** links, mark **Ordered** when purchased.
 3. **Export buy list CSV** for purchasing or sharing.
 
-See **[docs/SHOPPING.md](docs/SHOPPING.md)** for details.
+See **[docs/SHOPPING.md](docs/SHOPPING.md)** for details. Optional API keys (`.env.example`) add live stock and pricing lookup.
 
 ## Project layout
 

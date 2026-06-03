@@ -1004,6 +1004,85 @@ body.col-resize-active * {
     margin-right: 0.35rem;
 }
 
+.shop-api-card {
+    margin-bottom: 1rem;
+}
+
+.shop-api-title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.shop-api-lede {
+    margin: 0 0 0.5rem;
+}
+
+.api-pill {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.api-pill.api-on {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.api-pill.api-off {
+    background: #f4f5f7;
+    color: var(--muted);
+}
+
+.dist-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.dist-cache {
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
+.dist-cache-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: baseline;
+}
+
+.dist-cache-label {
+    font-weight: 700;
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+.dist-price {
+    font-weight: 600;
+    color: #1b5e20;
+}
+
+.dist-miss {
+    color: var(--muted);
+    font-style: italic;
+}
+
+.shop-lookup-status {
+    display: block;
+    width: 100%;
+    margin-top: 0.35rem;
+    font-size: 0.85rem;
+}
+
+.shop-lookup-status.shop-lookup-error {
+    color: #b42318;
+}
+
 .shop-row.row-ordered {
     opacity: 0.65;
 }

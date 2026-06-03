@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from typing import Any
 from urllib.parse import quote
 
+from bom_builder.distributor_cache import cache_key_for_mpn
 from bom_builder.matcher import (
     AggregatedCompareRow,
     CompareRow,
@@ -37,6 +38,7 @@ class ShopLine:
     digikey_url: str = ""
     mouser_url: str = ""
     search_text: str = ""
+    cache_key: str = ""
 
     @property
     def alternates_extra(self) -> bool:
@@ -90,6 +92,7 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
         digikey_url=digikey_search_url(mpn),
         mouser_url=mouser_search_url(mpn),
         search_text=" ".join(search_parts).lower(),
+        cache_key=cache_key_for_mpn(mpn),
     )
 
 
@@ -112,6 +115,7 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         digikey_url=digikey_search_url(mpn),
         mouser_url=mouser_search_url(mpn),
         search_text=" ".join(search_parts).lower(),
+        cache_key=cache_key_for_mpn(mpn),
     )
 
 

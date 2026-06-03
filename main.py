@@ -18,6 +18,15 @@ from flask import (
     url_for,
 )
 
+from pathlib import Path
+
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+except ImportError:
+    pass
+
 from bom_builder import storage
 from bom_builder.inventory_io import (
     add_item,
@@ -48,6 +57,8 @@ from bom_builder.category_overrides import (
 from bom_builder.part_categories import CATEGORY_ORDER
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, line_total_quantity, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
+from bom_builder.distributor_cache import load_distributor_cache
+from bom_builder.distributor_lookup import any_api_configured, api_status, lookup_batch
 from bom_builder.shopping import (
     apply_line_update,
     build_shop_lines,
@@ -492,6 +503,8 @@ def shop_page():
         if shop_lines:
             export_url = f"{url_for('shop_export')}?{urlencode(_shop_query_params(selected_ids, view_mode))}"
 
+    distributor_cache = load_distributor_cache() if shop_lines else {}
+
     return render_template(
         "shop.html",
         bom_ids=bom_ids,
@@ -500,7 +513,37 @@ def shop_page():
         shop_lines=shop_lines,
         stats=stats,
         export_url=export_url,
+        distributor_cache=distributor_cache,
+        api_status=api_status(),
+        any_api_configured=any_api_configured(),
     )
+
+
+@app.route("/shop/lookup", methods=["POST"])
+def shop_lookup():
+    payload = request.get_json(silent=True) or {}
+    mpns = payload.get("mpns") or []
+    if isinstance(mpns, str):
+        mpns = [mpns]
+    if not isinstance(mpns, list):
+        return jsonify({"ok": False, "error": "mpns must be a list."}), 400
+
+    distributors = payload.get("distributors")
+    if distributors is not None and not isinstance(distributors, list):
+        return jsonify({"ok": False, "error": "distributors must be a list."}), 400
+
+    force = payload.get("force") in (True, "true", "1", 1)
+    if not any_api_configured():
+        return jsonify(
+            {
+                "ok": False,
+                "error": "No distributor APIs configured. Set DIGIKEY_* and/or MOUSER_API_KEY.",
+                "api_status": api_status(),
+            }
+        ), 400
+
+    result = lookup_batch(mpns, distributors=distributors, force=force)
+    return jsonify(result)
 
 
 @app.route("/shop/line/<line_id>", methods=["POST"])
