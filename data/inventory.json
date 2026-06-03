@@ -109,7 +109,7 @@
       "lib_ref": "HDRA-EC68FDT+",
       "name": "HONDA CONNECTOR",
       "qty_on_hand": 104,
-      "location": "",
+      "location": "CONNECTOR BIN 1",
       "notes": ""
     },
     {
@@ -278,6 +278,374 @@
       "name": "CAP CER 10 PF 50V C0G/NP0 0201",
       "qty_on_hand": 1150,
       "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "efb55294-777d-4a12-9984-147f92d05311",
+      "lib_ref": "SAM10627-ND",
+      "name": "CONN PCI EXP FMALE 164POS 0.039",
+      "qty_on_hand": 25,
+      "location": "CONNECTOR BIN 1",
+      "notes": "PCIE-164-02-F-D-RA"
+    },
+    {
+      "id": "94c244fd-a952-4b53-b567-f070470f8efb",
+      "lib_ref": "SAM9456-ND",
+      "name": "CONN HEADER SMD 20POS 1.27MM",
+      "qty_on_hand": 100,
+      "location": "CONNECTOR BIN 1",
+      "notes": "FTSH-110-01-L-DV-007-K"
+    },
+    {
+      "id": "c92e8251-dc18-4615-b145-a07273135e95",
+      "lib_ref": "LTC3260EMSE#TRPBF",
+      "name": "IC REG CHARGE PUMP INV DL 16MSOP",
+      "qty_on_hand": 50,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "38161fb9-2572-4ed6-8328-cd2bdb93871a",
+      "lib_ref": "LTC3260EMSE#PBF",
+      "name": "IC REG CHARGE PUMP INV DL 16MSOP",
+      "qty_on_hand": 40,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "0544f1cd-7351-4ee1-b858-98e0330618d8",
+      "lib_ref": "74438313010",
+      "name": "FIXED IND 1 UH 1.4A 159 MOHM SMD",
+      "qty_on_hand": 80,
+      "location": "INDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "650bbf81-1c64-4fd2-bfea-a77a4b65a8b9",
+      "lib_ref": "SN74HCT04ANSR",
+      "name": "IC INVERTER 6CH 1-INP 14SO",
+      "qty_on_hand": 500,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "b29723ea-e205-4f6f-b37c-9d087e614629",
+      "lib_ref": "5796055-1",
+      "name": "CONN RCPT 68POS R/A SOLDER",
+      "qty_on_hand": 3,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "fabdb16f-7cea-48f6-bc6e-a2a63b9ea9aa",
+      "lib_ref": "5796055-1",
+      "name": "CONN RCPT 68POS R/A SOLDER",
+      "qty_on_hand": 47,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "db209dbc-e70e-44e1-9cf8-6dd244f5fb30",
+      "lib_ref": "MTSW-103-08-G-S-229-RA",
+      "name": "",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "SAMTEC"
+    },
+    {
+      "id": "d63fad7f-4ec0-4bbf-9a5c-5a4ccf956ac8",
+      "lib_ref": "T491A106K020AT",
+      "name": "CAP TANT 10 UF 10% 20V 1206",
+      "qty_on_hand": 90,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "8d8c292e-8659-456b-b4f2-60721ee2e869",
+      "lib_ref": "GRM32ER61A107ME20L",
+      "name": "CAP CER 100 UF 10V X5R 1210",
+      "qty_on_hand": 60,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1f8e8582-98b6-46b1-ba9b-43f7368b95c6",
+      "lib_ref": "GCM188R71E224KA55D",
+      "name": "CAP CER 0.22 UF 25V X7R 0603",
+      "qty_on_hand": 518,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "9107b610-ef0a-4f41-9ac1-382c921c0f46",
+      "lib_ref": "EEE-FN1E100R",
+      "name": "CAP ALUM 10 UF 20% 25V SMD",
+      "qty_on_hand": 168,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "67b9a0a1-9b65-47f9-a7cc-9d8e20603dc3",
+      "lib_ref": "CRCW06031R00FKEAHP",
+      "name": "RES SMD 1 OHM 1% 1/3W 0603",
+      "qty_on_hand": 480,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "5ced1640-9dd2-48db-ac77-cfe2bff58592",
+      "lib_ref": "GCM21BR71E105KA56L",
+      "name": "CAP CER 1 UF 25V X7R 0805",
+      "qty_on_hand": 915,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "2ee3151c-829a-4372-8f3b-9ae1de1b8516",
+      "lib_ref": "784383230068",
+      "name": "FIXED IND 680 NH 3.1A 60 MOHM SMD",
+      "qty_on_hand": 80,
+      "location": "INDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "ff5125da-5135-424b-b25e-6fc471d29a07",
+      "lib_ref": "ERJ-P06J105V",
+      "name": "RES SMD 1M OHM 5% 1/2W 0805",
+      "qty_on_hand": 970,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7aaf1ca9-3071-4821-bb1e-6fe5c16416ac",
+      "lib_ref": "LM1117SX-3.3/NOPB",
+      "name": "IC REG LIN 3.3V 800MA DDPAK",
+      "qty_on_hand": 50,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "5b9a86c4-8385-4443-b032-cfe585d0b0a3",
+      "lib_ref": "GCM21BR71E105KA56L",
+      "name": "CAP CER 1 UF 25V X7R 0805",
+      "qty_on_hand": 57,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "22983469-9f26-46a4-bed9-e8c66ea84e97",
+      "lib_ref": "GRM21BR61E106KA73K",
+      "name": "CAP CER 10 UF 25V X5R 0805",
+      "qty_on_hand": 412,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7d9801bd-84e6-435b-a875-2dfc563c42a5",
+      "lib_ref": "GRM21BR61E106KA73K",
+      "name": "CAP CER 10 UF 25V X5R 0805",
+      "qty_on_hand": 588,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b41627ee-7778-40ba-9aaf-f91644e4476f",
+      "lib_ref": "GCM188R71E224KA55D",
+      "name": "CAP CER 0.22 UF 25V X7R 0603",
+      "qty_on_hand": 482,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "5d7346c3-e12f-4c09-9003-457a97887af4",
+      "lib_ref": "TSX-3225 16.00000MF10U-B0",
+      "name": "CRYSTAL 16.0000MHZ 16PF SMD",
+      "qty_on_hand": 90,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "d1fed4c7-9218-4846-9bf8-5df89040fbd7",
+      "lib_ref": "USB4105-GF-A",
+      "name": "CONN RCP USB2.0 TYP C 24P SMD RA",
+      "qty_on_hand": 15,
+      "location": "CONNECTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "dbc9da64-ae1a-4b61-81c4-ff09e6402aed",
+      "lib_ref": "USB4105-GF-A",
+      "name": "CONN RCP USB2.0 TYP C 24P SMD RA",
+      "qty_on_hand": 35,
+      "location": "CONNECTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "1532170a-cb63-417b-be08-103aea7d7a4d",
+      "lib_ref": "CRCW0402120RFKED",
+      "name": "RES SMD 120 OHM 1% 1/16W 0402",
+      "qty_on_hand": 490,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b910314e-9b2e-43fc-9a38-c71725de1790",
+      "lib_ref": "ERJ-2GEJ512X",
+      "name": "RES SMD 5.1K OHM 5% 1/10W 0402",
+      "qty_on_hand": 480,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "a7bfd4a1-7ffd-4160-8911-877666c2128f",
+      "lib_ref": "RC0402JR-0715KL",
+      "name": "RES 15K OHM 5% 1/16W 0402",
+      "qty_on_hand": 4990,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6da04ac0-e4dd-42db-b2f4-452715c0d1f6",
+      "lib_ref": "CRCW040227R0FKED",
+      "name": "RES SMD 27 OHM 1% 1/16W 0402",
+      "qty_on_hand": 470,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "cb1d0eef-b75d-41ed-8f7c-17237b243789",
+      "lib_ref": "ERJ-2GEJ303X",
+      "name": "RES SMD 30K OHM 5% 1/10W 0402",
+      "qty_on_hand": 990,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "5b12f6d6-8fb0-4e3b-8387-f91ff62c7712",
+      "lib_ref": "ERJ-2RKF1500X",
+      "name": "RES SMD 150 OHM 1% 1/10W 0402",
+      "qty_on_hand": 450,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "792dd449-17e6-4bf6-9745-9af3b8fe7b97",
+      "lib_ref": "GRM1555C1H562JE01D",
+      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 330,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "afb4da1e-c3b5-4423-a4cc-6834cdc7654f",
+      "lib_ref": "GRM1555C1H562JE01D",
+      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 344,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6e8c1281-445d-48c7-a973-dcd3c65c6097",
+      "lib_ref": "GRM1555C1H562JE01D",
+      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 300,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "3dd1d62d-2fbd-4052-a9c1-8efab515f89b",
+      "lib_ref": "BLM18KG102BH1D",
+      "name": "FERRITE BEAD 1K OHM 0603 1LN",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "52b0f212-2aea-4d7e-9b2a-6f9d587b8fca",
+      "lib_ref": "GCM1555C1H270FA16D",
+      "name": "CAP CER 27PF 50V C0G/NP0 0402",
+      "qty_on_hand": 980,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7c531e7d-81c7-4a3a-8afa-b6061d0f71da",
+      "lib_ref": "DNP3099-L",
+      "name": "MOSFET P-CH 30V 3.8A SOT23",
+      "qty_on_hand": 6000,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "94f1b518-e448-4517-82fe-7db20e72723b",
+      "lib_ref": "DMP3099L-7",
+      "name": "MOSFET P-CH 30V 3.8A SOT23",
+      "qty_on_hand": 3000,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "18dfe2e1-8c54-445e-a638-6029a99bce6c",
+      "lib_ref": "SM4002",
+      "name": "DIODE GP 100V 1A MELF D0-213AB",
+      "qty_on_hand": 90,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "ce0b7153-d1a7-4fea-8ab8-8abf7d040b1d",
+      "lib_ref": "DRTR5VOU2SR-7",
+      "name": "TVS DIODE 5.5VWM SOT143",
+      "qty_on_hand": 90,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "9dccc8fe-243d-4231-9f91-5cac2730ef7b",
+      "lib_ref": "GRM21BZ71E106KE15L",
+      "name": "CAP CER 10 UF 25V 10% 0805",
+      "qty_on_hand": 2980,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "611ae632-6d79-4166-a8cf-cb48ddeb759d",
+      "lib_ref": "R7FA6M1AD3CFP#AA0",
+      "name": "IC MCU 32BIT 512KB FLSH 100LFQFP",
+      "qty_on_hand": 18,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "9f03df90-60b8-43ff-b5aa-d7187c6b031d",
+      "lib_ref": "734-264",
+      "name": "Orange Connector",
+      "qty_on_hand": 150,
+      "location": "",
+      "notes": "Master Electronics"
+    },
+    {
+      "id": "09f7d9f6-83a7-4c5f-9461-5ff124c938f9",
+      "lib_ref": "59S101-400L5",
+      "name": "CONN SMB PLUG STR 50OHM PCB",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "Rosenberger"
+    },
+    {
+      "id": "20b062d6-483c-4402-8e2b-e9f856bf3692",
+      "lib_ref": "SN74HC148DR",
+      "name": "Multiplexer / Demultiplexer 8-Line to 3-Line",
+      "qty_on_hand": 100,
+      "location": "SEMICONDUCTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "1d3fd356-9881-4457-8b63-cd1105e65668",
+      "lib_ref": "B3F-4000",
+      "name": "SWITCH TACTILE SPST-NO 0.05A 24V",
+      "qty_on_hand": 50,
+      "location": "CONNECTOR BIN 1",
       "notes": ""
     }
   ]

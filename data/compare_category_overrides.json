@@ -1,6 +1,7 @@
 {
   "overrides": {
     "lib:DMP3099L7": "semiconductor",
-    "lib:60312202114511": "connector"
+    "lib:60312202114511": "connector",
+    "lib:SN74HC148DR": "semiconductor"
   }
 }
