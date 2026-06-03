@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 
 from bom_builder.models import BomDocument, NeedLine
-from bom_builder.need_io import bom_stats, bom_to_csv, merge_bom_state
+from bom_builder.need_io import bom_stats, bom_to_csv, line_total_quantity, merge_bom_state
 
 
 def _line(line_id: str, *, acquired: bool = False, notes: str = "") -> NeedLine:
@@ -22,6 +22,60 @@ def _line(line_id: str, *, acquired: bool = False, notes: str = "") -> NeedLine:
 
 
 class TestNeedIo(unittest.TestCase):
+    def test_merge_preserves_board_count(self) -> None:
+        existing = BomDocument(
+            bom_id="test",
+            source_filename="old.csv",
+            lines=[_line("row-1")],
+            board_count=5,
+        )
+        incoming = BomDocument(
+            bom_id="test",
+            source_filename="new.csv",
+            lines=[_line("row-1")],
+            board_count=1,
+        )
+        merged = merge_bom_state(existing, incoming)
+        self.assertEqual(merged.board_count, 5)
+
+    def test_line_total_quantity(self) -> None:
+        line = _line("a", acquired=False)
+        line.quantity = 10
+        self.assertEqual(line_total_quantity(line, 3), 30)
+
+    def test_bom_stats_qty_totals(self) -> None:
+        bom = BomDocument(
+            bom_id="test",
+            source_filename="t.csv",
+            board_count=2,
+            lines=[
+                NeedLine(
+                    id="a",
+                    bom_id="test",
+                    name="R",
+                    description="",
+                    designators=["R1"],
+                    footprint="",
+                    lib_ref="P1",
+                    quantity=5,
+                ),
+                NeedLine(
+                    id="b",
+                    bom_id="test",
+                    name="C",
+                    description="",
+                    designators=["C1"],
+                    footprint="",
+                    lib_ref="P2",
+                    quantity=3,
+                    is_dni=True,
+                ),
+            ],
+        )
+        stats = bom_stats(bom)
+        self.assertEqual(stats["qty_per_board"], 5)
+        self.assertEqual(stats["qty_total"], 10)
+
     def test_merge_preserves_acquired_state(self) -> None:
         existing = BomDocument(
             bom_id="test",
@@ -70,6 +124,8 @@ class TestNeedIo(unittest.TestCase):
             lines=[_line("a", acquired=True, notes="ok")],
         )
         csv_text = bom_to_csv(bom)
+        self.assertIn("QtyPerBoard", csv_text)
+        self.assertIn("QtyTotal", csv_text)
         self.assertIn("Acquired", csv_text)
         self.assertIn(",Y,", csv_text)
         self.assertIn("ok", csv_text)

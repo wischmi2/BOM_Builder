@@ -1,6 +1,7 @@
 {
   "bom_id": "DD02080.IB300.2_2026",
   "source_filename": "DD02080.IB300.2_2026.csv",
+  "board_count": 24,
   "lines": [
     {
       "id": "row-1-846ef413b991967a",

@@ -6,7 +6,8 @@ from pathlib import Path
 from unittest import mock
 
 from bom_builder import category_overrides as co
-from bom_builder.category_overrides import group_compare_rows, set_override
+from bom_builder.category_overrides import group_compare_rows, group_inventory_items, set_override
+from bom_builder.models import InventoryItem
 from bom_builder.models import NeedLine
 from bom_builder.part_categories import classify_need_line
 
@@ -46,6 +47,16 @@ class TestCategoryOverrides(unittest.TestCase):
         by_id = {g.category_id: g for g in groups}
         self.assertEqual(len(by_id["capacitor"].rows), 1)
         self.assertEqual(len(by_id["resistor"].rows), 0)
+
+    def test_inventory_grouping_puts_resistors_first(self) -> None:
+        items = [
+            InventoryItem(id="1", lib_ref="GRM155", name="0.1UF"),
+            InventoryItem(id="2", lib_ref="RK73H1", name="10K OHM"),
+        ]
+        groups = group_inventory_items(items)
+        labels = [g.label for g in groups if g.rows]
+        self.assertEqual(labels[0], "Resistors")
+        self.assertIn("Capacitors", labels)
 
     def test_clear_override_when_matches_auto(self) -> None:
         line = _line(designators=["R1"], lib_ref="RK73")

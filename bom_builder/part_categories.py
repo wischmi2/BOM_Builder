@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from bom_builder.models import NeedLine
+from bom_builder.models import InventoryItem, NeedLine
 
 # Display order on Compare page
 CATEGORY_ORDER: list[tuple[str, str]] = [
@@ -72,6 +72,10 @@ def category_for_aggregated_row(row) -> str:
     if row.source_lines:
         return classify_need_line(row.source_lines[0])
     return classify_from_text(row.name, row.lib_ref, "")
+
+
+def category_for_inventory_item(item: InventoryItem) -> str:
+    return classify_from_text(item.name, item.lib_ref, "")
 
 
 def classify_from_text(name: str, lib_ref: str, footprint: str) -> str:
@@ -200,5 +204,9 @@ def sort_aggregated_rows(rows: list) -> list:
             r.name.upper(),
         ),
     )
+
+
+def sort_inventory_items(items: list) -> list:
+    return sorted(items, key=lambda i: (i.lib_ref.upper(), i.location.upper(), i.name.upper()))
 
 

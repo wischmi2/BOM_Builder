@@ -30,6 +30,15 @@ class TestMatcher(unittest.TestCase):
     def test_normalize_key_strips_punctuation(self) -> None:
         self.assertEqual(normalize_key("GRM-155R71H104"), normalize_key("grm155r71h104"))
 
+    def test_board_count_multiplies_need(self) -> None:
+        bom = BomDocument("bom1", "t.csv", [_need("PART123", qty=5)], board_count=3)
+        inv = InventoryDocument(
+            items=[InventoryItem(id="i1", lib_ref="PART123", qty_on_hand=14)]
+        )
+        rows, _ = compare_boms([bom], inv)
+        self.assertEqual(rows[0].qty_needed, 15)
+        self.assertEqual(rows[0].status, "partial")
+
     def test_ok_when_enough_stock(self) -> None:
         bom = BomDocument("bom1", "t.csv", [_need("PART123", qty=5)])
         inv = InventoryDocument(

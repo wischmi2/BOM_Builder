@@ -5,7 +5,7 @@
       "lib_ref": "RK73H1ETTP1002F",
       "name": "RES 10K OHM 1% 1/10W 0402",
       "qty_on_hand": 8980,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -13,7 +13,7 @@
       "lib_ref": "RK73Z1ETTP",
       "name": "RES 0 OHM JUMPER 0402",
       "qty_on_hand": 9900,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -21,7 +21,7 @@
       "lib_ref": "RC0201FR-07301RL",
       "name": "RES 301 OHM 1% 1/20W 0201",
       "qty_on_hand": 9287,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": "INV 104130519"
     },
     {
@@ -29,7 +29,7 @@
       "lib_ref": "ERA-2AEB1431X",
       "name": "RES SMD 1.43 KOHM 0.1% 1/16W 0402",
       "qty_on_hand": 100,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -37,7 +37,7 @@
       "lib_ref": "CRCW02012K00FNED",
       "name": "RES 301 OHM 1% 1/20W 0201 \u2018 \u2014",
       "qty_on_hand": 1000,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": "INV 104130519"
     },
     {
@@ -45,7 +45,7 @@
       "lib_ref": "CRCW02012K00FNED",
       "name": "RES SMD 2 KOHM 1% 1/20W 0201",
       "qty_on_hand": 470,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -53,7 +53,7 @@
       "lib_ref": "RK73H1HTTC60R4D",
       "name": "RES 60.4 OHM 0.5% 1/20W 0201",
       "qty_on_hand": 100,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -61,7 +61,7 @@
       "lib_ref": "CRCW020156R2FNED",
       "name": "RES SMD 56.2 OHM 1% 1/20W 0201",
       "qty_on_hand": 8382,
-      "location": "",
+      "location": "RESISTOR BIN 1",
       "notes": ""
     },
     {
@@ -69,7 +69,215 @@
       "lib_ref": "SG73S1ETTP472J",
       "name": "RES 4.7K OHM 5% 1/8W 0402",
       "qty_on_hand": 2073,
+      "location": "RESISTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "43fe3175-db2d-4f28-901c-813d2c794292",
+      "lib_ref": "RK73G1ETTP1003F",
+      "name": "RES 100K OHM 1% 1/10W 0402",
+      "qty_on_hand": 2434,
+      "location": "RESISTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "3fad0700-e660-45c5-b81f-0a5fcd090714",
+      "lib_ref": "RK73H1HTTC75R0F",
+      "name": "RES 75 OHM 1% 1/20W 0201",
+      "qty_on_hand": 1670,
+      "location": "RESISTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "0ab993ac-0c70-4d63-b8a1-10fe1d99114d",
+      "lib_ref": "RK73G1ETTP1002F",
+      "name": "RES 10K OHM 1% 1/10W 0402",
+      "qty_on_hand": 1168,
+      "location": "RESISTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "381b6abc-d6c6-4ec2-a3f9-68b67031aae7",
+      "lib_ref": "SG73S1ETTP101J",
+      "name": "RES 100 OHM 5% 1.8W 0402",
+      "qty_on_hand": 100,
+      "location": "RESISTOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "bc43fd9a-722d-4b15-94e0-753f8f0d85c9",
+      "lib_ref": "HDRA-EC68FDT+",
+      "name": "HONDA CONNECTOR",
+      "qty_on_hand": 104,
       "location": "",
+      "notes": ""
+    },
+    {
+      "id": "eec5b920-f5c4-4375-adf4-a3d675b57dff",
+      "lib_ref": "GCM1555C1H101FA16D",
+      "name": "CAP CER 100 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 1546,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "4b6064b9-df56-40bf-83fb-0462cb2eafa7",
+      "lib_ref": "GCM1555C1H221J16D",
+      "name": "CAP 220 PF 50V 5% 0402",
+      "qty_on_hand": 2387,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "f12f1f83-65e3-4dc7-89f9-b7511126c8b2",
+      "lib_ref": "GRM21BR71C475KE51L",
+      "name": "CAP CER 4.7 UF 16V X7R 0805",
+      "qty_on_hand": 920,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "4a4bfd3e-9203-4dc2-b936-525bc7feaabe",
+      "lib_ref": "GCM1555C1H4R7BA16D",
+      "name": "CAP CER 4.7 PF 50V C0G/NNP0 0402",
+      "qty_on_hand": 1000,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "8849b705-93f0-4ca2-ab48-0d1677f6c1b3",
+      "lib_ref": "GCM155C71A105KE8D",
+      "name": "1.0 UF 10V 10% 0402",
+      "qty_on_hand": 2500,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "b1e19dad-fddd-4404-8632-e445d4d267c3",
+      "lib_ref": "GCM21BR70J106KE22K",
+      "name": "CAP CER 10 UF 6.3V X7R 0805",
+      "qty_on_hand": 1714,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "52e5d354-8467-4411-861e-264619a46e52",
+      "lib_ref": "GRM155R61A225M01D",
+      "name": "CAP 2.2 UF 0402",
+      "qty_on_hand": 2056,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "02230c08-c246-4242-91ce-f7f2e026154a",
+      "lib_ref": "GCM1555C1H4R7BA16D",
+      "name": "CAP CER 4.7 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 2229,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "b1005ad6-b5c3-435c-b4d2-e5b88e9a9098",
+      "lib_ref": "GRM0335C1H5R0BA01D",
+      "name": "CAP CER 5PF 50V C0G/NP0 0201",
+      "qty_on_hand": 2096,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "d9d5a3e4-77df-440a-9001-e4bc5caae32c",
+      "lib_ref": "GRM155R71H104KE14J",
+      "name": "CAP CER 0.1 UF 50V X7R 0402",
+      "qty_on_hand": 2943,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "95027850-57b4-4308-87f5-a3bc64800599",
+      "lib_ref": "GCM1555C1H101FA16D",
+      "name": "CAP CER 100 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 543,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "20311133-ee3e-4fee-b8ec-f30c1846931e",
+      "lib_ref": "F980G476MMA",
+      "name": "CAP TANT 4.7 UF 20% 4V 0603",
+      "qty_on_hand": 1210,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "f3e305c9-9918-4b05-9e29-ef381a4f67f3",
+      "lib_ref": "GJM0335C1HR20WB01D",
+      "name": "CAP CER 0.2 PF 50V C0G/NP0 0201",
+      "qty_on_hand": 1150,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "a1070292-96cd-43c8-a289-1a57cb747f26",
+      "lib_ref": "GCM21BR71C475KA73K",
+      "name": "CAP CER 4.7 UF 16V X7R 0805",
+      "qty_on_hand": 100,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "d1f1d97b-ac7b-4e27-80d0-794a4c4c4135",
+      "lib_ref": "GRM155R71H103KA88J",
+      "name": "CAP CER 10000 PF 50V X7R 0402",
+      "qty_on_hand": 250,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "fcead192-5950-4642-a085-f8c65a379398",
+      "lib_ref": "GCM1555C1H4R7BA16D",
+      "name": "CAP CER 4.7 PF 50V C0G/NP0 0402",
+      "qty_on_hand": 163,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "34c3e15f-5369-4979-a86d-73008759efc4",
+      "lib_ref": "GRM21BR61E106KA73K",
+      "name": "CAP CER 10 UF 25V X5R 0805",
+      "qty_on_hand": 60,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "53ac7bfd-fee8-4686-9ac3-07103272cb8e",
+      "lib_ref": "GRM033R61A105ME15D",
+      "name": "CAP CER 1 UF 10V 20% 0201",
+      "qty_on_hand": 115,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "e68dfc69-9b6a-4ac2-b48f-8c933c8b18af",
+      "lib_ref": "GRM219R6YA475KA73D",
+      "name": "CAP CER 4.7 UF 35V X5R 0805",
+      "qty_on_hand": 100,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "3d4d4ee1-115a-4d50-a6e4-2a3e303ab073",
+      "lib_ref": "GJM0335C1HR20WB01D",
+      "name": "CAP CER 0.2 PF 50V C0G/NP0 0201",
+      "qty_on_hand": 1220,
+      "location": "CAPACITOR BIN 1",
+      "notes": ""
+    },
+    {
+      "id": "c73d55d1-d772-4bbd-894b-0e052aa6740f",
+      "lib_ref": "GRM0335C1H100JA01J",
+      "name": "CAP CER 10 PF 50V C0G/NP0 0201",
+      "qty_on_hand": 1150,
+      "location": "CAPACITOR BIN 1",
       "notes": ""
     }
   ]

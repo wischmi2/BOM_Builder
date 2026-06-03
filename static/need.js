@@ -9,6 +9,8 @@
     const emptyFilter = document.getElementById("empty-filter");
     const progressText = document.getElementById("progress-text");
     const progressFill = document.getElementById("progress-fill");
+    const boardCountInput = document.getElementById("board-count");
+    const qtySummary = document.getElementById("qty-summary");
 
     if (!table) return;
 
@@ -27,6 +29,21 @@
             `${stats.acquired} / ${stats.total} acquired` +
             (suffix ? `<span class="muted">${suffix}</span>` : "");
         progressFill.style.width = `${pct}%`;
+        if (qtySummary && stats.qty_per_board !== undefined) {
+            qtySummary.innerHTML =
+                `${stats.qty_per_board} parts per board × ${stats.board_count} boards = <strong>${stats.qty_total}</strong> total`;
+        }
+    }
+
+    function updateLineTotals(boardCount) {
+        const boards = Math.max(1, boardCount);
+        rows.forEach((row) => {
+            const totalCell = row.querySelector(".qty-total");
+            const perBoard = parseInt(totalCell?.dataset.perBoard || "0", 10) || 0;
+            if (totalCell) {
+                totalCell.textContent = String(perBoard * boards);
+            }
+        });
     }
 
     async function patchLine(lineId, body) {
@@ -92,6 +109,33 @@
                 }
             }, 400);
         });
+    });
+
+    let boardTimer;
+    boardCountInput?.addEventListener("input", () => {
+        clearTimeout(boardTimer);
+        boardTimer = setTimeout(async () => {
+            const raw = parseInt(boardCountInput.value, 10);
+            const boardCount = Number.isFinite(raw) && raw >= 1 ? raw : 1;
+            try {
+                const response = await fetch(config.boardsUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify({ board_count: boardCount }),
+                });
+                const result = await response.json();
+                if (!response.ok || !result.ok) {
+                    throw new Error(result.error || "Update failed");
+                }
+                boardCountInput.value = String(result.board_count);
+                config.boardCount = result.board_count;
+                updateLineTotals(result.board_count);
+                updateProgress(result.stats);
+            } catch (err) {
+                boardCountInput.value = String(config.boardCount || 1);
+                alert(err.message || "Could not save board count.");
+            }
+        }, 400);
     });
 
     searchInput?.addEventListener("input", applyFilters);

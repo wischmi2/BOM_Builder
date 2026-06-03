@@ -7,6 +7,7 @@ from pathlib import Path
 
 from main import app
 from bom_builder import storage
+from bom_builder.models import BomDocument, NeedLine
 from bom_builder.parser import parse_bom_csv_file
 
 SAMPLE_CSV = Path(
@@ -67,6 +68,44 @@ class TestNeedRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Acquired", response.data)
         self.assertTrue(response.mimetype.startswith("text/csv"))
+
+    def test_update_board_count(self) -> None:
+        bom = BomDocument(
+            bom_id="test-boards",
+            source_filename="t.csv",
+            lines=[
+                NeedLine(
+                    id="line-1",
+                    bom_id="test-boards",
+                    name="R1",
+                    description="",
+                    designators=["R1"],
+                    footprint="",
+                    lib_ref="PART1",
+                    quantity=10,
+                )
+            ],
+            board_count=1,
+        )
+        storage.save_bom(bom)
+
+        response = self.client.post(
+            "/need/test-boards/boards",
+            json={"board_count": 4},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["board_count"], 4)
+        self.assertEqual(data["line_totals"]["line-1"], 40)
+
+        reloaded = storage.load_bom("test-boards")
+        assert reloaded is not None
+        self.assertEqual(reloaded.board_count, 4)
+
+        page = self.client.get("/need?bom_id=test-boards")
+        self.assertIn(b"Total qty", page.data)
+        self.assertIn(b"40", page.data)
 
     def test_upload_invalid_file(self) -> None:
         data = {"bom_file": (io.BytesIO(b"not,a,valid\n"), "bad.csv")}

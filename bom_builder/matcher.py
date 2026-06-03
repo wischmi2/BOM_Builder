@@ -166,13 +166,14 @@ def compare_boms(
     matched_item_ids: set[str] = set()
 
     for bom in boms:
+        board_count = max(1, bom.board_count)
         for line in bom.lines:
             matched, match_type = _match_inventory(line, by_lib_ref, by_name)
             for item in matched:
                 matched_item_ids.add(item.id)
 
             qty_on_hand = sum(item.qty_on_hand for item in matched)
-            qty_needed = line.quantity
+            qty_needed = line.quantity * board_count
             status = _status_for(qty_needed, qty_on_hand, line.is_dni)
 
             rows.append(
@@ -216,6 +217,7 @@ def compare_boms_aggregated(
     buckets: dict[str, _Bucket] = {}
 
     for bom in boms:
+        board_count = max(1, bom.board_count)
         for line in bom.lines:
             key = _aggregate_key(line)
             if key not in buckets:
@@ -224,8 +226,9 @@ def compare_boms_aggregated(
             bucket.lines.append(line)
             if not line.is_dni:
                 bucket.all_dni = False
-                bucket.qty_needed_total += line.quantity
-                bucket.need_by_bom[bom.bom_id] = bucket.need_by_bom.get(bom.bom_id, 0) + line.quantity
+                line_qty = line.quantity * board_count
+                bucket.qty_needed_total += line_qty
+                bucket.need_by_bom[bom.bom_id] = bucket.need_by_bom.get(bom.bom_id, 0) + line_qty
                 bucket.lib_ref = line.lib_ref
                 bucket.name = line.name
 

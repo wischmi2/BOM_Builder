@@ -41,16 +41,31 @@ from bom_builder.label_scan import LabelScanError, scan_label_image
 from bom_builder.category_overrides import (
     group_aggregated_rows,
     group_compare_rows,
+    group_inventory_items,
     load_overrides,
     set_override,
 )
 from bom_builder.part_categories import CATEGORY_ORDER
-from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
+from bom_builder.need_io import bom_stats, bom_to_csv, find_line, line_total_quantity, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.secret_key = os.environ.get("BOM_BUILDER_SECRET", "bom-builder-local-dev")
+
+
+@app.template_filter("inventory_auto_category")
+def inventory_auto_category_filter(item) -> str:
+    from bom_builder.part_categories import category_for_inventory_item
+
+    return category_for_inventory_item(item)
+
+
+@app.template_filter("inventory_part_key")
+def inventory_part_key_filter(item) -> str:
+    from bom_builder.category_overrides import part_key_for_inventory_item
+
+    return part_key_for_inventory_item(item)
 
 
 @app.template_filter("compare_auto_category")
@@ -110,6 +125,37 @@ def need_upload():
     bom = merge_bom_state(existing, incoming)
     storage.save_bom(bom)
     flash(f"Imported {len(bom.lines)} lines from {filename}.", "success")
+    return redirect(url_for("need_page", bom_id=bom_id))
+
+
+@app.route("/need/<bom_id>/boards", methods=["POST"])
+def need_update_boards(bom_id: str):
+    bom = storage.load_bom(bom_id)
+    if bom is None:
+        abort(404)
+
+    payload = request.get_json(silent=True) or request.form
+    try:
+        board_count = max(1, int(payload.get("board_count", 1) or 1))
+    except (TypeError, ValueError):
+        return jsonify({"ok": False, "error": "Board count must be a positive number."}), 400
+
+    bom.board_count = board_count
+    storage.save_bom(bom)
+    stats = bom_stats(bom)
+
+    if request.accept_mimetypes.best == "application/json" or request.is_json:
+        return jsonify(
+            {
+                "ok": True,
+                "board_count": board_count,
+                "stats": stats,
+                "line_totals": {
+                    line.id: line_total_quantity(line, board_count) for line in bom.lines
+                },
+            }
+        )
+
     return redirect(url_for("need_page", bom_id=bom_id))
 
 
@@ -180,12 +226,15 @@ def inventory_page():
                 [item.lib_ref, item.name, item.location, item.notes]
             ).lower()
         ]
-    items = sorted(items, key=lambda i: (i.lib_ref.upper(), i.location.upper()))
+    category_overrides = load_overrides()
+    grouped_items = group_inventory_items(items, category_overrides)
     return render_template(
         "inventory.html",
         items=items,
+        grouped_items=grouped_items,
         stats=stats,
         search=search,
+        category_overrides=category_overrides,
     )
 
 
@@ -404,6 +453,7 @@ def compare_page():
     )
 
 
+@app.route("/inventory/category-override", methods=["POST"])
 @app.route("/compare/category-override", methods=["POST"])
 def compare_category_override():
     payload = request.get_json(silent=True) or {}

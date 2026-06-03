@@ -9,8 +9,10 @@ from bom_builder.part_categories import (
     CompareGroup,
     category_for_aggregated_row,
     category_for_compare_row,
+    category_for_inventory_item,
     sort_aggregated_rows,
     sort_compare_rows,
+    sort_inventory_items,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -108,4 +110,26 @@ def group_aggregated_rows(rows: list, overrides: dict[str, str] | None = None) -
         part_key_fn=lambda row: row.aggregate_key,
         overrides=overrides,
         sort_fn=sort_aggregated_rows,
+    )
+
+
+def part_key_for_inventory_item(item) -> str:
+    from bom_builder.matcher import normalize_key, split_lib_refs
+
+    segments = split_lib_refs(item.lib_ref or "")
+    if segments:
+        return "lib:" + normalize_key(segments[0])
+    if item.name:
+        return "name:" + normalize_key(item.name)
+    return f"id:{item.id}"
+
+
+def group_inventory_items(items: list, overrides: dict[str, str] | None = None) -> list[CompareGroup]:
+    overrides = overrides or {}
+    return _group_by_category(
+        items,
+        category_fn=category_for_inventory_item,
+        part_key_fn=part_key_for_inventory_item,
+        overrides=overrides,
+        sort_fn=sort_inventory_items,
     )

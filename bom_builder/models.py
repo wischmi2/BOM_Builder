@@ -35,19 +35,27 @@ class BomDocument:
     bom_id: str
     source_filename: str
     lines: list[NeedLine] = field(default_factory=list)
+    board_count: int = 1
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "bom_id": self.bom_id,
             "source_filename": self.source_filename,
+            "board_count": self.board_count,
             "lines": [line.to_dict() for line in self.lines],
         }
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> BomDocument:
+        raw_boards = data.get("board_count", 1)
+        try:
+            board_count = max(1, int(raw_boards))
+        except (TypeError, ValueError):
+            board_count = 1
         return cls(
             bom_id=data["bom_id"],
             source_filename=data["source_filename"],
+            board_count=board_count,
             lines=[NeedLine.from_dict(line) for line in data["lines"]],
         )
 

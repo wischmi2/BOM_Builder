@@ -305,6 +305,22 @@ body {
     white-space: nowrap;
 }
 
+.board-count-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.board-count-input {
+    width: 4rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
 .source-meta {
     margin: 0 0 0.75rem;
     font-size: 0.85rem;
@@ -526,6 +542,26 @@ body {
 
 .inventory-list {
     margin-top: 1rem;
+}
+
+.inventory-table-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0 0 0.75rem;
+}
+
+.inventory-table-toolbar .compare-drag-hint {
+    margin-left: auto;
+}
+
+.inventory-row.category-collapsed {
+    display: none;
+}
+
+.inventory-row.is-dragging {
+    opacity: 0.45;
 }
 
 .list-header {

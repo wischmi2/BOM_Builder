@@ -63,6 +63,11 @@
                 </div>
             </div>
             <div class="toolbar-actions">
+                <label class="board-count-label">
+                    <span>Boards</span>
+                    <input type="number" id="board-count" class="board-count-input" min="1" step="1"
+                           value="{{ bom.board_count }}" aria-label="Number of boards to build">
+                </label>
                 <input type="search" id="search-input" class="search-input" placeholder="Search name, MPN, ref…" autocomplete="off">
                 <label class="filter-check"><input type="checkbox" id="hide-dni"> Hide DNI</label>
                 <label class="filter-check"><input type="checkbox" id="only-missing"> Only not acquired</label>
@@ -70,7 +75,10 @@
             </div>
         </div>
 
-        <p class="source-meta muted">Source: {{ bom.source_filename }} · {{ bom.lines|length }} lines</p>
+        <p class="source-meta muted" id="source-meta">
+            Source: {{ bom.source_filename }} · {{ bom.lines|length }} lines
+            · <span id="qty-summary">{{ stats.qty_per_board }} parts per board × {{ bom.board_count }} boards = <strong>{{ stats.qty_total }}</strong> total</span>
+        </p>
 
         <div class="table-wrap card">
             <table class="data-table" id="need-table">
@@ -79,7 +87,8 @@
                         <th class="col-check">Have</th>
                         <th>Name</th>
                         <th>LibRef</th>
-                        <th class="col-qty">Qty</th>
+                        <th class="col-qty">Qty / board</th>
+                        <th class="col-qty">Total qty</th>
                         <th>Designators</th>
                         <th>Footprint</th>
                         <th>Notes</th>
@@ -108,7 +117,8 @@
                             {% endif %}
                         </td>
                         <td class="col-libref"><code>{{ line.lib_ref }}</code></td>
-                        <td class="col-qty">{{ line.quantity }}</td>
+                        <td class="col-qty qty-per-board">{{ line.quantity }}</td>
+                        <td class="col-qty qty-total" data-per-board="{{ line.quantity }}">{{ line.quantity * bom.board_count }}</td>
                         <td class="col-designators">{{ line.designator_display }}</td>
                         <td class="col-footprint">{{ line.footprint }}</td>
                         <td class="col-notes">
@@ -136,7 +146,9 @@
 <script>
     window.BOM_BUILDER = {
         bomId: {{ bom.bom_id|tojson }},
-        updateUrlTemplate: {{ url_for('need_update_line', bom_id=bom.bom_id, line_id='__LINE_ID__')|tojson }}
+        boardCount: {{ bom.board_count }},
+        updateUrlTemplate: {{ url_for('need_update_line', bom_id=bom.bom_id, line_id='__LINE_ID__')|tojson }},
+        boardsUrl: {{ url_for('need_update_boards', bom_id=bom.bom_id)|tojson }}
     };
 </script>
 <script src="{{ url_for('static', filename='need.js') }}"></script>

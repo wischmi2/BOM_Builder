@@ -99,6 +99,221 @@
     const table = document.querySelector("#inventory-table");
     if (!table) return;
 
+    const searchInput = document.getElementById("inventory-search");
+    const emptyMsg = document.getElementById("inventory-empty");
+    const expandAllBtn = document.getElementById("inventory-expand-all");
+    const collapseAllBtn = document.getElementById("inventory-collapse-all");
+    const overrideUrl = config.categoryOverrideUrl || "/compare/category-override";
+    const collapseKey = "bom-builder-inventory-collapsed";
+
+    let dataRows = Array.from(table.querySelectorAll("tbody tr.inventory-row"));
+    let categoryHeaders = Array.from(table.querySelectorAll("tbody tr.category-header"));
+
+    function rowsForCategory(categoryId) {
+        return dataRows.filter((row) => row.dataset.categoryGroup === categoryId);
+    }
+
+    function headerForCategory(categoryId) {
+        return categoryHeaders.find((h) => h.dataset.category === categoryId);
+    }
+
+    function updateCategoryCount(categoryId) {
+        const header = headerForCategory(categoryId);
+        if (!header) return;
+        const countEl = header.querySelector(".category-count");
+        if (!countEl) return;
+        const visible = rowsForCategory(categoryId).filter((r) => !r.hidden).length;
+        const total = rowsForCategory(categoryId).length;
+        countEl.textContent = `(${visible === total ? total : visible + "/" + total})`;
+    }
+
+    function isCategoryCollapsed(categoryId) {
+        try {
+            const collapsed = JSON.parse(sessionStorage.getItem(collapseKey) || "{}");
+            return Boolean(collapsed[categoryId]);
+        } catch {
+            return false;
+        }
+    }
+
+    function setCategoryCollapsed(categoryId, collapsed) {
+        let state = {};
+        try {
+            state = JSON.parse(sessionStorage.getItem(collapseKey) || "{}");
+        } catch {
+            state = {};
+        }
+        if (collapsed) {
+            state[categoryId] = true;
+        } else {
+            delete state[categoryId];
+        }
+        sessionStorage.setItem(collapseKey, JSON.stringify(state));
+    }
+
+    function applyCategoryCollapse(categoryId, collapsed) {
+        const header = headerForCategory(categoryId);
+        const toggle = header?.querySelector(".category-toggle");
+        if (header) {
+            header.classList.toggle("is-collapsed", collapsed);
+        }
+        if (toggle) {
+            toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        }
+        rowsForCategory(categoryId).forEach((row) => {
+            row.classList.toggle("category-collapsed", collapsed);
+        });
+    }
+
+    function initCollapseState() {
+        categoryHeaders.forEach((header) => {
+            applyCategoryCollapse(header.dataset.category, isCategoryCollapsed(header.dataset.category));
+        });
+    }
+
+    function setAllCategoriesCollapsed(collapsed) {
+        categoryHeaders.forEach((header) => {
+            const categoryId = header.dataset.category;
+            setCategoryCollapsed(categoryId, collapsed);
+            applyCategoryCollapse(categoryId, collapsed);
+        });
+    }
+
+    function applySearchFilter() {
+        const query = (searchInput?.value || "").trim().toLowerCase();
+        let visible = 0;
+
+        dataRows.forEach((row) => {
+            const searchHay = row.dataset.search || "";
+            const show = !query || searchHay.includes(query);
+            row.hidden = !show;
+            if (show) visible += 1;
+        });
+
+        categoryHeaders.forEach((header) => {
+            const categoryId = header.dataset.category;
+            const hasVisible = rowsForCategory(categoryId).some((row) => !row.hidden);
+            header.hidden = !hasVisible;
+            updateCategoryCount(categoryId);
+        });
+
+        if (emptyMsg) emptyMsg.hidden = visible > 0;
+    }
+
+    function insertRowIntoCategory(row, targetCategoryId) {
+        const header = headerForCategory(targetCategoryId);
+        if (!header) return;
+
+        const oldCategory = row.dataset.categoryGroup;
+        row.dataset.categoryGroup = targetCategoryId;
+
+        let insertAfter = header;
+        let next = header.nextElementSibling;
+        while (next && !next.classList.contains("category-header")) {
+            if (next !== row && next.classList.contains("inventory-row") && next.dataset.categoryGroup === targetCategoryId) {
+                insertAfter = next;
+            }
+            next = next.nextElementSibling;
+        }
+        insertAfter.parentNode.insertBefore(row, insertAfter.nextElementSibling);
+
+        if (oldCategory && oldCategory !== targetCategoryId) {
+            updateCategoryCount(oldCategory);
+        }
+        updateCategoryCount(targetCategoryId);
+    }
+
+    async function saveCategoryOverride(row, targetCategoryId) {
+        const response = await fetch(overrideUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                part_key: row.dataset.partKey,
+                category_id: targetCategoryId,
+                auto_category: row.dataset.autoCategory,
+            }),
+        });
+        const payload = await response.json();
+        if (!response.ok || !payload.ok) {
+            throw new Error(payload.error || "Could not save category.");
+        }
+    }
+
+    function setupDragAndDrop() {
+        let draggedRow = null;
+
+        dataRows.forEach((row) => {
+            row.addEventListener("dragstart", (event) => {
+                draggedRow = row;
+                row.classList.add("is-dragging");
+                event.dataTransfer.effectAllowed = "move";
+                event.dataTransfer.setData("text/plain", row.dataset.partKey || "");
+            });
+
+            row.addEventListener("dragend", () => {
+                row.classList.remove("is-dragging");
+                categoryHeaders.forEach((header) => header.classList.remove("drop-target-active"));
+                draggedRow = null;
+            });
+        });
+
+        categoryHeaders.forEach((header) => {
+            header.addEventListener("dragover", (event) => {
+                if (!draggedRow) return;
+                event.preventDefault();
+                event.dataTransfer.dropEffect = "move";
+                header.classList.add("drop-target-active");
+            });
+
+            header.addEventListener("dragleave", () => {
+                header.classList.remove("drop-target-active");
+            });
+
+            header.addEventListener("drop", async (event) => {
+                event.preventDefault();
+                header.classList.remove("drop-target-active");
+                if (!draggedRow) return;
+
+                const targetCategory = header.dataset.category;
+                if (!targetCategory || draggedRow.dataset.categoryGroup === targetCategory) {
+                    return;
+                }
+
+                const previousCategory = draggedRow.dataset.categoryGroup;
+                insertRowIntoCategory(draggedRow, targetCategory);
+
+                try {
+                    await saveCategoryOverride(draggedRow, targetCategory);
+                } catch (err) {
+                    insertRowIntoCategory(draggedRow, previousCategory);
+                    window.alert(err.message || "Could not save category.");
+                }
+            });
+        });
+    }
+
+    function setupCollapseToggles() {
+        categoryHeaders.forEach((header) => {
+            const toggle = header.querySelector(".category-toggle");
+            const categoryId = header.dataset.category;
+            toggle?.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const collapsed = !header.classList.contains("is-collapsed");
+                setCategoryCollapsed(categoryId, collapsed);
+                applyCategoryCollapse(categoryId, collapsed);
+            });
+        });
+
+        expandAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(false));
+        collapseAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(true));
+    }
+
+    searchInput?.addEventListener("input", applySearchFilter);
+    initCollapseState();
+    setupCollapseToggles();
+    setupDragAndDrop();
+    applySearchFilter();
+
     document.querySelectorAll("#inventory-table tbody tr.inventory-row").forEach((row) => {
         const itemId = row.dataset.itemId;
         const libRef = row.querySelector(".lib-ref-input");
@@ -144,9 +359,13 @@
             if (!window.confirm("Remove this part from inventory?")) return;
             try {
                 const result = await patchItem(itemId, { action: "delete" });
+                const categoryId = row.dataset.categoryGroup;
                 row.remove();
+                dataRows = Array.from(table.querySelectorAll("tbody tr.inventory-row"));
+                updateCategoryCount(categoryId);
+                applySearchFilter();
                 updateStats(result.stats);
-                if (!document.querySelector("#inventory-table tbody tr")) {
+                if (!document.querySelector("#inventory-table tbody tr.inventory-row")) {
                     window.location.reload();
                 }
             } catch {

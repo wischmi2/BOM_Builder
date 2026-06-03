@@ -20,19 +20,30 @@ def merge_bom_state(existing: BomDocument | None, incoming: BomDocument) -> BomD
             line.acquired = acquired
             line.notes = notes
     incoming.source_filename = incoming.source_filename or existing.source_filename
+    incoming.board_count = existing.board_count
     return incoming
+
+
+def line_total_quantity(line: NeedLine, board_count: int) -> int:
+    return line.quantity * max(1, board_count)
 
 
 def bom_stats(bom: BomDocument) -> dict[str, int]:
     total = len(bom.lines)
     dni = sum(1 for line in bom.lines if line.is_dni)
     acquired = sum(1 for line in bom.lines if line.acquired)
+    boards = max(1, bom.board_count)
+    qty_per_board = sum(line.quantity for line in bom.lines if not line.is_dni)
+    qty_total = sum(line_total_quantity(line, boards) for line in bom.lines if not line.is_dni)
     return {
         "total": total,
         "dni": dni,
         "active": total,
         "acquired": acquired,
         "remaining": total - acquired,
+        "board_count": boards,
+        "qty_per_board": qty_per_board,
+        "qty_total": qty_total,
     }
 
 
@@ -46,8 +57,20 @@ def find_line(bom: BomDocument, line_id: str) -> NeedLine | None:
 def bom_to_csv(bom: BomDocument) -> str:
     buffer = io.StringIO()
     writer = csv.writer(buffer, lineterminator="\n")
+    boards = max(1, bom.board_count)
     writer.writerow(
-        ["Name", "Description", "Designator", "Footprint", "LibRef", "Quantity", "Acquired", "Notes"]
+        [
+            "Name",
+            "Description",
+            "Designator",
+            "Footprint",
+            "LibRef",
+            "QtyPerBoard",
+            "BoardCount",
+            "QtyTotal",
+            "Acquired",
+            "Notes",
+        ]
     )
     for line in bom.lines:
         writer.writerow(
@@ -58,6 +81,8 @@ def bom_to_csv(bom: BomDocument) -> str:
                 line.footprint,
                 line.lib_ref,
                 line.quantity,
+                boards,
+                line_total_quantity(line, boards),
                 "Y" if line.acquired else "N",
                 line.notes,
             ]

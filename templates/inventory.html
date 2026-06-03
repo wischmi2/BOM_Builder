@@ -86,7 +86,7 @@
     <div class="list-header">
         <h2>Stock</h2>
         <form class="search-form" method="get" action="{{ url_for('inventory_page') }}">
-            <input type="search" name="q" class="search-input" placeholder="Search LibRef, name, location…"
+            <input type="search" name="q" id="inventory-search" class="search-input" placeholder="Search LibRef, name, location…"
                    value="{{ search }}" autocomplete="off">
             {% if search %}
             <a class="btn btn-small" href="{{ url_for('inventory_page') }}">Clear</a>
@@ -95,12 +95,18 @@
     </div>
 
     {% if items %}
-    <div class="table-wrap">
-        <table class="data-table" id="inventory-table">
+    <div class="inventory-table-toolbar">
+        <button type="button" class="btn btn-secondary btn-sm" id="inventory-expand-all">Expand all</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="inventory-collapse-all">Collapse all</button>
+        <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize a part</span>
+    </div>
+    <div class="table-wrap compare-table-wrap">
+        <table class="data-table inventory-table" id="inventory-table">
             <thead>
                 <tr>
-                    <th>LibRef</th>
-                    <th>Name</th>
+                    <th class="col-drag" aria-label="Drag"></th>
+                    <th class="col-libref">LibRef</th>
+                    <th class="col-name">Name</th>
                     <th class="col-qty">Qty</th>
                     <th>Location</th>
                     <th>Notes</th>
@@ -108,8 +114,23 @@
                 </tr>
             </thead>
             <tbody>
-                {% for item in items %}
-                <tr class="inventory-row" data-item-id="{{ item.id }}">
+                {% for group in grouped_items %}
+                <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
+                    <td colspan="7">
+                        <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
+                        <strong>{{ group.label }}</strong>
+                        <span class="category-count muted">({{ group.rows|length }})</span>
+                    </td>
+                </tr>
+                {% for item in group.rows %}
+                <tr class="inventory-row"
+                    draggable="true"
+                    data-item-id="{{ item.id }}"
+                    data-part-key="{{ item|inventory_part_key }}"
+                    data-auto-category="{{ item|inventory_auto_category }}"
+                    data-category-group="{{ group.category_id }}"
+                    data-search="{{ (item.lib_ref ~ ' ' ~ item.name ~ ' ' ~ item.location ~ ' ' ~ item.notes)|lower }}">
+                    <td class="col-drag"><span class="drag-handle" title="Drag to another category">⋮⋮</span></td>
                     <td>
                         <input type="text" class="cell-input lib-ref-input" value="{{ item.lib_ref }}"
                                aria-label="LibRef">
@@ -137,8 +158,10 @@
                     </td>
                 </tr>
                 {% endfor %}
+                {% endfor %}
             </tbody>
         </table>
+        <p class="empty-filter muted" id="inventory-empty" hidden>No parts match your search.</p>
     </div>
     {% else %}
     <p class="empty-state muted">
@@ -152,7 +175,8 @@
 <script>
     window.BOM_INVENTORY = {
         updateUrlTemplate: {{ url_for('inventory_update', item_id='__ITEM_ID__')|tojson }},
-        scanLabelUrl: {{ url_for('inventory_scan_label')|tojson }}
+        scanLabelUrl: {{ url_for('inventory_scan_label')|tojson }},
+        categoryOverrideUrl: {{ url_for('compare_category_override')|tojson }}
     };
 </script>
 <script src="{{ url_for('static', filename='inventory.js') }}"></script>
