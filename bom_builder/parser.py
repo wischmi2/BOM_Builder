@@ -68,6 +68,16 @@ def _stable_line_id(lib_ref: str, designators: list[str], footprint: str, name: 
     return f"row-{row_index}-{digest}"
 
 
+def _decode_bytes(raw: bytes) -> str:
+    """Decode CSV bytes from Altium exports (often UTF-8 or Windows-1252)."""
+    for encoding in ("utf-8-sig", "utf-8", "cp1252", "latin-1"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("latin-1", errors="replace")
+
+
 def parse_bom_csv(
     file_content: str | bytes,
     *,
@@ -76,7 +86,7 @@ def parse_bom_csv(
 ) -> BomDocument:
     """Parse an Altium-style BOM CSV into a BomDocument."""
     if isinstance(file_content, bytes):
-        text = file_content.decode("utf-8-sig")
+        text = _decode_bytes(file_content)
     else:
         text = file_content.lstrip("\ufeff")
 
@@ -129,18 +139,8 @@ def parse_bom_csv(
     return BomDocument(bom_id=bom_id, source_filename=source_filename, lines=lines)
 
 
-def _read_text_with_fallback(path: Path) -> str:
-    raw = path.read_bytes()
-    for encoding in ("utf-8-sig", "utf-8", "cp1252", "latin-1"):
-        try:
-            return raw.decode(encoding)
-        except UnicodeDecodeError:
-            continue
-    return raw.decode("latin-1", errors="replace")
-
-
 def parse_bom_csv_file(path: str | Path, *, bom_id: str | None = None) -> BomDocument:
     path = Path(path)
     resolved_id = bom_id or bom_id_from_filename(path.name)
-    content = _read_text_with_fallback(path)
+    content = _decode_bytes(path.read_bytes())
     return parse_bom_csv(content, bom_id=resolved_id, source_filename=path.name)

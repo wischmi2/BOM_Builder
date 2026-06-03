@@ -54,6 +54,31 @@ class TestParserInline(unittest.TestCase):
         self.assertEqual(line.designators, ["R4", "R7"])
         self.assertEqual(line.quantity, 7)
 
+    def test_parse_bytes_cp1252_altium_export(self) -> None:
+        from bom_builder.parser import parse_bom_csv
+
+        # ± is 0xB1 in cp1252 — common in Altium BOM descriptions
+        raw = (
+            "Name,Description,Designator,Footprint,LibRef,Quantity\n"
+            "10nF,0402 10 nF 50V \xb110% Tolerance,C1,C0402,GRM155R71H103KA88J,1\n"
+        ).encode("cp1252")
+        bom = parse_bom_csv(raw, bom_id="test", source_filename="test.csv")
+        self.assertEqual(len(bom.lines), 1)
+        self.assertIn("10", bom.lines[0].description)
+
+
+DD04080 = Path(
+    r"C:\Brian\ProductionTest\Loadboard_Purchase_2026\Parts_Purchase\DD04080.RF300.3_2026.csv"
+)
+
+
+@unittest.skipUnless(DD04080.exists(), "DD04080 sample CSV not available")
+class TestParserDD04080(unittest.TestCase):
+    def test_parses_dd04080(self) -> None:
+        bom = parse_bom_csv_file(DD04080)
+        self.assertEqual(bom.bom_id, "DD04080.RF300.3_2026")
+        self.assertGreater(len(bom.lines), 50)
+
 
 if __name__ == "__main__":
     unittest.main()
