@@ -30,6 +30,10 @@ class CompareRow:
             parts.append(f"{item.lib_ref}@{label}({item.qty_on_hand})")
         return "; ".join(parts)
 
+    @property
+    def part_key(self) -> str:
+        return part_key_for_need_line(self.need_line)
+
 
 @dataclass
 class AggregatedCompareRow:
@@ -135,6 +139,14 @@ def _aggregate_key(line: NeedLine) -> str:
     return f"id:{line.id}"
 
 
+def part_key_for_need_line(line: NeedLine) -> str:
+    return _aggregate_key(line)
+
+
+def part_key_for_compare_row(row: CompareRow) -> str:
+    return row.part_key
+
+
 def _status_for(qty_needed: int, qty_on_hand: int, is_dni: bool) -> str:
     if is_dni:
         return "dni"
@@ -175,7 +187,9 @@ def compare_boms(
                 )
             )
 
-    rows.sort(key=lambda r: (_STATUS_ORDER.get(r.status, 9), r.need_line.lib_ref.upper()))
+    from bom_builder.part_categories import sort_compare_rows
+
+    rows = sort_compare_rows(rows)
 
     extra = [item for item in inventory.items if item.id not in matched_item_ids]
     extra.sort(key=lambda i: i.lib_ref.upper())
@@ -248,7 +262,9 @@ def compare_boms_aggregated(
             )
         )
 
-    rows.sort(key=lambda r: (_STATUS_ORDER.get(r.status, 9), r.lib_ref.upper()))
+    from bom_builder.part_categories import sort_aggregated_rows
+
+    rows = sort_aggregated_rows(rows)
     extra = [item for item in inventory.items if item.id not in matched_item_ids]
     extra.sort(key=lambda i: i.lib_ref.upper())
     return rows, extra

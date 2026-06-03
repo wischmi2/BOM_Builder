@@ -98,39 +98,65 @@
     <label class="filter-check"><input type="checkbox" id="filter-partial"> Partial only</label>
     <label class="filter-check"><input type="checkbox" id="filter-hide-ok" checked> Hide OK</label>
     <label class="filter-check"><input type="checkbox" id="filter-hide-dni"> Hide DNI</label>
+    <span class="toolbar-divider" aria-hidden="true"></span>
+    <button type="button" class="btn btn-secondary btn-sm" id="compare-expand-all">Expand all</button>
+    <button type="button" class="btn btn-secondary btn-sm" id="compare-collapse-all">Collapse all</button>
+    <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize a part</span>
 </div>
 
-<div class="table-wrap card">
+<div class="table-wrap compare-table-wrap card">
+    <p class="table-scroll-hint muted">Scroll horizontally if columns are cut off →</p>
     {% if view_mode == 'combined' and agg_rows %}
-    <table class="data-table" id="compare-table">
+    <table class="data-table compare-table" id="compare-table" data-colspan="9">
         <thead>
             <tr>
+                <th class="col-drag" aria-label="Drag"></th>
                 <th>Status</th>
-                <th>Name</th>
-                <th>LibRef</th>
+                <th class="col-name">Name</th>
+                <th class="col-libref">LibRef</th>
                 <th class="col-qty">Total need</th>
                 <th class="col-qty">On hand</th>
                 <th class="col-qty">Leftover</th>
-                <th>Boards</th>
-                <th>Need by board</th>
-                <th>Match</th>
+                <th class="col-by-board">By board</th>
+                <th class="col-match">Match</th>
             </tr>
         </thead>
         <tbody>
-            {% for row in agg_rows %}
+            {% for group in grouped_rows %}
+            <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
+                <td colspan="9">
+                    <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
+                    <strong>{{ group.label }}</strong>
+                    <span class="category-count muted">({{ group.rows|length }})</span>
+                </td>
+            </tr>
+            {% for row in group.rows %}
             <tr class="compare-row status-{{ row.status }}"
+                draggable="true"
                 data-status="{{ row.status }}"
+                data-part-key="{{ row.aggregate_key }}"
+                data-auto-category="{{ row|compare_auto_category }}"
+                data-category-group="{{ group.category_id }}"
                 data-search="{{ (row.name ~ ' ' ~ row.lib_ref ~ ' ' ~ row.bom_ids_display)|lower }}">
+                <td class="col-drag"><span class="drag-handle" title="Drag to another category">⋮⋮</span></td>
                 <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
-                <td>{{ row.name }}</td>
-                <td><code>{{ row.lib_ref }}</code></td>
+                <td class="col-name">{{ row.name }}</td>
+                <td class="col-libref"><code>{{ row.lib_ref }}</code></td>
                 <td class="col-qty">{{ row.qty_needed_total }}</td>
                 <td class="col-qty">{{ row.qty_on_hand }}</td>
                 <td class="col-qty {% if row.leftover < 0 %}delta-negative{% elif row.leftover > 0 %}delta-positive{% endif %}">
                     {{ row.leftover }}
                 </td>
-                <td>{{ row.bom_ids_display }}</td>
-                <td class="col-breakdown muted">{{ row.need_breakdown_display }}</td>
+                <td class="col-by-board">
+                    <ul class="need-by-board">
+                        {% for bom_id, qty in row.need_by_bom.items()|sort %}
+                        <li>
+                            <span class="bom-tag" title="{{ bom_id }}">{{ bom_id.split('.')[0] }}</span>
+                            <span class="board-qty">×{{ qty }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td class="col-match">
                     <span class="match-type">{{ row.match_type }}</span>
                     {% if row.matched_ids_display %}
@@ -139,37 +165,52 @@
                 </td>
             </tr>
             {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
     {% elif rows %}
-    <table class="data-table" id="compare-table">
+    <table class="data-table compare-table" id="compare-table" data-colspan="10">
         <thead>
             <tr>
+                <th class="col-drag" aria-label="Drag"></th>
                 <th>Status</th>
-                <th>Name</th>
-                <th>LibRef</th>
+                <th class="col-name">Name</th>
+                <th class="col-libref">LibRef</th>
                 <th class="col-qty">Need</th>
                 <th class="col-qty">On hand</th>
                 <th class="col-qty">Delta</th>
-                <th>BOM</th>
-                <th>Designators</th>
-                <th>Match</th>
+                <th class="col-bom">BOM</th>
+                <th class="col-designators">Designators</th>
+                <th class="col-match">Match</th>
             </tr>
         </thead>
         <tbody>
-            {% for row in rows %}
+            {% for group in grouped_rows %}
+            <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
+                <td colspan="10">
+                    <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
+                    <strong>{{ group.label }}</strong>
+                    <span class="category-count muted">({{ group.rows|length }})</span>
+                </td>
+            </tr>
+            {% for row in group.rows %}
             <tr class="compare-row status-{{ row.status }}"
+                draggable="true"
                 data-status="{{ row.status }}"
+                data-part-key="{{ row.part_key }}"
+                data-auto-category="{{ row|compare_auto_category }}"
+                data-category-group="{{ group.category_id }}"
                 data-search="{{ (row.need_line.name ~ ' ' ~ row.need_line.lib_ref ~ ' ' ~ row.need_line.designator_display)|lower }}">
+                <td class="col-drag"><span class="drag-handle" title="Drag to another category">⋮⋮</span></td>
                 <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
-                <td>{{ row.need_line.name }}</td>
-                <td><code>{{ row.need_line.lib_ref }}</code></td>
+                <td class="col-name">{{ row.need_line.name }}</td>
+                <td class="col-libref"><code>{{ row.need_line.lib_ref }}</code></td>
                 <td class="col-qty">{{ row.qty_needed }}</td>
                 <td class="col-qty">{{ row.qty_on_hand }}</td>
                 <td class="col-qty {% if row.delta < 0 %}delta-negative{% elif row.delta > 0 %}delta-positive{% endif %}">
                     {{ row.delta }}
                 </td>
-                <td>{{ row.need_line.bom_id }}</td>
+                <td class="col-bom"><span class="bom-tag" title="{{ row.need_line.bom_id }}">{{ row.need_line.bom_id.split('.')[0] }}</span></td>
                 <td class="col-designators">{{ row.need_line.designator_display }}</td>
                 <td class="col-match">
                     <span class="match-type">{{ row.match_type }}</span>
@@ -178,6 +219,7 @@
                     {% endif %}
                 </td>
             </tr>
+            {% endfor %}
             {% endfor %}
         </tbody>
     </table>

@@ -1,3 +1,76 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "dcf3e4f1-ecff-4c24-bda1-2c1c291d918d",
+      "lib_ref": "RK73H1ETTP1002F",
+      "name": "RES 10K OHM 1% 1/10W 0402",
+      "qty_on_hand": 8980,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "e521ea0e-c0c4-4615-96bd-5e5e5cb6b392",
+      "lib_ref": "RK73Z1ETTP",
+      "name": "RES 0 OHM JUMPER 0402",
+      "qty_on_hand": 9900,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "30d3cbf0-f0b8-4bf6-9110-ec4af66686bc",
+      "lib_ref": "RC0201FR-07301RL",
+      "name": "RES 301 OHM 1% 1/20W 0201",
+      "qty_on_hand": 9287,
+      "location": "",
+      "notes": "INV 104130519"
+    },
+    {
+      "id": "1214e5ac-1bc8-463e-b1f9-7bd0344c3c6c",
+      "lib_ref": "ERA-2AEB1431X",
+      "name": "RES SMD 1.43 KOHM 0.1% 1/16W 0402",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "a226040f-2f28-4608-be32-554180e39ec5",
+      "lib_ref": "CRCW02012K00FNED",
+      "name": "RES 301 OHM 1% 1/20W 0201 \u2018 \u2014",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": "INV 104130519"
+    },
+    {
+      "id": "59645b49-93f5-4a14-b499-bca734ee46bd",
+      "lib_ref": "CRCW02012K00FNED",
+      "name": "RES SMD 2 KOHM 1% 1/20W 0201",
+      "qty_on_hand": 470,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "683c124f-dddf-4606-ba3e-2e31fb1ee705",
+      "lib_ref": "RK73H1HTTC60R4D",
+      "name": "RES 60.4 OHM 0.5% 1/20W 0201",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "573ecffb-9502-4447-91c3-06c093b0695d",
+      "lib_ref": "CRCW020156R2FNED",
+      "name": "RES SMD 56.2 OHM 1% 1/20W 0201",
+      "qty_on_hand": 8382,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "35efba10-c1cb-42ad-b229-6cc4696c2b42",
+      "lib_ref": "SG73S1ETTP472J",
+      "name": "RES 4.7K OHM 5% 1/8W 0402",
+      "qty_on_hand": 2073,
+      "location": "",
+      "notes": ""
+    }
+  ]
 }

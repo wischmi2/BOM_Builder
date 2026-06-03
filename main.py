@@ -38,12 +38,31 @@ from bom_builder.matcher import (
     compare_to_csv,
 )
 from bom_builder.label_scan import LabelScanError, scan_label_image
+from bom_builder.category_overrides import (
+    group_aggregated_rows,
+    group_compare_rows,
+    load_overrides,
+    set_override,
+)
+from bom_builder.part_categories import CATEGORY_ORDER
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.secret_key = os.environ.get("BOM_BUILDER_SECRET", "bom-builder-local-dev")
+
+
+@app.template_filter("compare_auto_category")
+def compare_auto_category_filter(row) -> str:
+    from bom_builder.part_categories import (
+        category_for_aggregated_row,
+        category_for_compare_row,
+    )
+
+    if hasattr(row, "aggregate_key"):
+        return category_for_aggregated_row(row)
+    return category_for_compare_row(row)
 
 
 @app.context_processor
@@ -335,9 +354,12 @@ def compare_page():
     view_mode = _compare_view_mode(selected_ids)
     rows = []
     agg_rows = []
+    grouped_rows = []
     extra = []
     summary = None
     pool_stats = None
+
+    category_overrides = load_overrides()
 
     if selected_ids:
         boms = _load_selected_boms(selected_ids)
@@ -345,6 +367,7 @@ def compare_page():
 
         if view_mode == "combined":
             agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            grouped_rows = group_aggregated_rows(agg_rows, category_overrides)
             summary = compare_summary_aggregated(agg_rows)
             if agg_rows:
                 pool_stats = {
@@ -355,6 +378,7 @@ def compare_page():
                 }
         else:
             rows, extra = compare_boms(boms, inventory)
+            grouped_rows = group_compare_rows(rows, category_overrides)
             summary = compare_summary(rows)
 
     export_url = None
@@ -370,11 +394,36 @@ def compare_page():
         view_mode=view_mode,
         rows=rows,
         agg_rows=agg_rows,
+        grouped_rows=grouped_rows,
         extra=extra,
         summary=summary,
         pool_stats=pool_stats,
         export_url=export_url,
+        category_overrides=category_overrides,
+        category_options=CATEGORY_ORDER,
     )
+
+
+@app.route("/compare/category-override", methods=["POST"])
+def compare_category_override():
+    payload = request.get_json(silent=True) or {}
+    part_key = str(payload.get("part_key", "")).strip()
+    category_id = payload.get("category_id")
+    auto_category = payload.get("auto_category")
+
+    if not part_key:
+        return jsonify({"ok": False, "error": "Missing part key."}), 400
+
+    try:
+        if category_id is not None:
+            category_id = str(category_id).strip()
+        if auto_category is not None:
+            auto_category = str(auto_category).strip()
+        overrides = set_override(part_key, category_id, auto_category=auto_category)
+    except ValueError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 400
+
+    return jsonify({"ok": True, "part_key": part_key, "overrides": overrides})
 
 
 @app.route("/compare/export.csv")

@@ -1,0 +1,834 @@
+{
+  "bom_id": "DD02080.IB300.2_2026",
+  "source_filename": "DD02080.IB300.2_2026.csv",
+  "lines": [
+    {
+      "id": "row-1-846ef413b991967a",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "0.1uF",
+      "description": "0402 0.1 uF 50 V \u00b110% Tolerance X7R SMT Multilayer Ceramic Capacitor",
+      "designators": [
+        "C1",
+        "C6",
+        "C14",
+        "C22",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C34",
+        "C35",
+        "C36",
+        "C39",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C55",
+        "C58",
+        "C59",
+        "C62",
+        "C64_RFIN_ADC1",
+        "C64_RFOUT_ADC1",
+        "C65_RFIN_ADC1",
+        "C65_RFOUT_ADC1",
+        "C67_RFIN_ADC1",
+        "C67_RFOUT_ADC1",
+        "C72",
+        "C75",
+        "C76",
+        "C80",
+        "C81",
+        "C83",
+        "C84",
+        "C85",
+        "C86",
+        "C87"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R71H104KE14J",
+      "quantity": 42,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-2-08ff9a31b0cc4100",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10uF 0603",
+      "description": "Cap Ceramic 10uF 25V X5R 10% SMD 0603 85\u00b0C Paper T/R",
+      "designators": [
+        "C2",
+        "C3",
+        "C17",
+        "C56",
+        "C60"
+      ],
+      "footprint": "C0603",
+      "lib_ref": "GRM188R61E106KA73D",
+      "quantity": 5,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-3-c078ba318c8a500d",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "",
+      "description": "CAP CER 4.7UF 16V X7R 0805",
+      "designators": [
+        "C4",
+        "C15",
+        "C16"
+      ],
+      "footprint": "C0805",
+      "lib_ref": "GRM21BR71C475KE51L",
+      "quantity": 3,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-4-966a3aea1e367f15",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "4.7uF",
+      "description": "0805 4.7 uF 35 V \u00b110 % Tolerance X5R SMT Multilayer Ceramic Capacitor",
+      "designators": [
+        "C5",
+        "C7",
+        "C8",
+        "C12",
+        "C13",
+        "C47",
+        "C48",
+        "C49",
+        "C50"
+      ],
+      "footprint": "C0805",
+      "lib_ref": "GRM219R6YA475KA73D",
+      "quantity": 9,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-5-df95beab03ac9380",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "DNI",
+      "description": "DNI Placeholder for 0805 Cap",
+      "designators": [
+        "C9"
+      ],
+      "footprint": "C0805_DNI",
+      "lib_ref": "C0805_DNI",
+      "quantity": 1,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-6-41ee5e831df24ecd",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "2.2uF Electrolytic EEE-FC1V2R2AR",
+      "description": "CAP ALUM 2.2UF 20% 35V SMD",
+      "designators": [
+        "C11"
+      ],
+      "footprint": "EEE-FC1V2R2AR",
+      "lib_ref": "EEE-FC1V2R2AR",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-7-913aed24f53ee967",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "1uF 25V",
+      "description": "MURATA - GRM155R61E105KA12D - SMD Multilayer Ceramic Capacitor, 1 \u00b5F, 25 V, 0402 [1005 Metric], \u00b1 10%, X5R, GRM Series",
+      "designators": [
+        "C18",
+        "C20",
+        "C71_RFIN_ADC1",
+        "C71_RFOUT_ADC1"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R61E105KA12D",
+      "quantity": 4,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-8-3775f53f7acb251f",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "DNI",
+      "description": "",
+      "designators": [
+        "C23",
+        "C51",
+        "C53",
+        "C61"
+      ],
+      "footprint": "C0402_DNI",
+      "lib_ref": "C0402_DNI",
+      "quantity": 4,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-9-16a53ae464fe9742",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10uF 20V Tant",
+      "description": "Cap Tant Solid 10uF 20V A CASE 10% (3.2 X 1.6 X 1.6mm) Inward L SMD 3216-18 5 Ohm 125\u00b0C T/R",
+      "designators": [
+        "C52"
+      ],
+      "footprint": "T491A106K020AT",
+      "lib_ref": "T491A106K020AT",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-10-ffce49fde24b4c81",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10pF",
+      "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 10pF 50Volts C0G 1%",
+      "designators": [
+        "C54"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GJM1555C1H100FB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-11-d38deca43aa33e91",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10uF",
+      "description": "CAP CER 10UF 6.3V X5R 0402",
+      "designators": [
+        "C57"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R60J106ME15D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-12-f8a77aa4c18788c4",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10uF",
+      "description": "10\u00b5F 10V Ceramic Capacitor X7R 0805 (2012 Metric) 0.079\" L x 0.049\" W (2.00mm x 1.25mm)",
+      "designators": [
+        "C63_RFIN_ADC1",
+        "C63_RFOUT_ADC1",
+        "C66_RFIN_ADC1",
+        "C66_RFOUT_ADC1"
+      ],
+      "footprint": "C0805",
+      "lib_ref": "GCM21BR71A106KE22K",
+      "quantity": 4,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-13-faa331dae9e21a22",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "47uF Tantalum; 6.3V; 10ohm ESR",
+      "description": "AVX - F980J476MMA - Surface Mount Tantalum Capacitor, 47 \u00b5F, 6.3 V, 0603 [1608 Metric], F98 Series, \u00b1 20%, -55 \u00b0C",
+      "designators": [
+        "C68_RFIN_ADC1",
+        "C68_RFOUT_ADC1"
+      ],
+      "footprint": "F980J476MMA",
+      "lib_ref": "F980J476MMA",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-14-39a059dd4beca3c9",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "2.2uF",
+      "description": "MURATA - GRM155R61A225KE95D - SMD Multilayer Ceramic Capacitor, 2.2 \u00b5F, 10 V, 0402 [1005 Metric], \u00b1 10%, X5R, GRM Series",
+      "designators": [
+        "C69_RFIN_ADC1",
+        "C69_RFOUT_ADC1"
+      ],
+      "footprint": "C0402",
+      "lib_ref": "GRM155R61A225KE95D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-15-7e171f7d60885833",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "DNI",
+      "description": "CAP CER 10PF 50V NP0 0201",
+      "designators": [
+        "C70_RFIN_ADC1",
+        "C70_RFOUT_ADC1"
+      ],
+      "footprint": "C0201",
+      "lib_ref": "GRM0335C1H100JA01J",
+      "quantity": 2,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-16-d141c57b1c090a2b",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "04025A300FAT2A",
+      "description": "",
+      "designators": [
+        "C73",
+        "C74",
+        "C77",
+        "C78",
+        "C79"
+      ],
+      "footprint": "CAPC1005X56X25LL10T15",
+      "lib_ref": "CMP-2008-02632-1",
+      "quantity": 5,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-17-e416bd28657d6695",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "MMSZ4689-HF",
+      "description": "Comchip, Zener Diode 5.1V 500mW \u00b15% Surface Mount SOD-123",
+      "designators": [
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "D8"
+      ],
+      "footprint": "MMSZ4689-HF",
+      "lib_ref": "MMSZ4689-HF",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-18-e5560ba0e3a1dc3c",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "PCIe_x16",
+      "description": "",
+      "designators": [
+        "J1"
+      ],
+      "footprint": "PCIe_x16_nonstandard",
+      "lib_ref": "PCIe_x16",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-19-205fa38810874fc6",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "Mouse_Bites",
+      "description": "",
+      "designators": [
+        "MB1",
+        "MB2",
+        "MB3",
+        "MB4",
+        "MB5",
+        "MB6",
+        "MB7"
+      ],
+      "footprint": "Mouse_Bites",
+      "lib_ref": "Mouse_Bites",
+      "quantity": 7,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-20-2714683c89ffc054",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "5796055-1",
+      "description": "CHAMP Series 1.6mm 68 Way Right Angle PCB Socket Through Hole Wire to Board",
+      "designators": [
+        "P1"
+      ],
+      "footprint": "TE_5796055-1",
+      "lib_ref": "5796055-1",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-21-e994e92993db6c3c",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "TFM-125-02-S-D-LC-P-TR",
+      "description": "",
+      "designators": [
+        "P2"
+      ],
+      "footprint": "SAMTEC_TFM-125-02-S-D-LC-P-TR",
+      "lib_ref": "TFM-125-02-S-D-LC-P-TR",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-22-69ff66d2774199c1",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "49.9k",
+      "description": "ERJ-2RKF4992X   Chip Resistor, 49.9 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0402 (1005 Metric), RoHS, Tape and Reel, ERJ-2RKF4992X    Chip Resistor, 49.9 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0402 (1005 Metric), RoHS, Tape and Reel",
+      "designators": [
+        "R1",
+        "R4"
+      ],
+      "footprint": "RESC1005X40X25LL05T05",
+      "lib_ref": "CMP-2002-00967-3",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-23-0fbbcdcbd6da4824",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "0R",
+      "description": "Res Thick Film 0402 0 Ohm Molded SMD Punched Paper T/R",
+      "designators": [
+        "R2",
+        "R3",
+        "R7",
+        "R9",
+        "R11",
+        "R14",
+        "R15",
+        "R16",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R28",
+        "R30",
+        "R31_RFIN_ADC1",
+        "R31_RFOUT_ADC1",
+        "R32_RFIN_ADC1",
+        "R32_RFOUT_ADC1",
+        "R33_RFIN_ADC1",
+        "R33_RFOUT_ADC1",
+        "R34_RFIN_ADC1",
+        "R34_RFOUT_ADC1",
+        "R58",
+        "R62",
+        "R66_RFIN_ADC1",
+        "R66_RFOUT_ADC1"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73Z1ETTP",
+      "quantity": 31,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-24-7c688aab617a9dad",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "10k",
+      "description": "Resistor Thick Film 0402 10k Ohm 1% 1/16 Watt \u00b1100ppm \u00b0C Surface Mount Punched Paper Tape and Reel",
+      "designators": [
+        "R8",
+        "R10",
+        "R12",
+        "R13",
+        "R40",
+        "R43",
+        "R70"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73H1ETTP1002F",
+      "quantity": 7,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-25-67ac9d29742db9e4",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "4.7K",
+      "description": "Thick Film Resistors - SMD 0.125W 4.7Kohm 5% 200ppm Anti-Surge",
+      "designators": [
+        "R17"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "SG73S1ETTP472J",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-26-487ccb27baf88c42",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "75k",
+      "description": "Thick Film Resistors - SMD 1/8watts 75Kohms 5%",
+      "designators": [
+        "R18"
+      ],
+      "footprint": "R0805",
+      "lib_ref": "RK73B2ATTD753J",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-27-9ef623ac9e0ccac7",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "50ohm",
+      "description": "RES SMD 50 OHM 1% 1/8W 0402",
+      "designators": [
+        "R29",
+        "R37",
+        "R46",
+        "R49",
+        "R51",
+        "R54"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "504L50R0FTNCFT",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-28-a457e0fecf83ac04",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "1.5kohm",
+      "description": "Resistor Thick Film 0402 1.5k Ohm 1% 1/16w \u00b1100ppm \u00b0C Surface Mount Punched Paper Tape and Reel",
+      "designators": [
+        "R35_RFIN_ADC1",
+        "R35_RFOUT_ADC1"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73H1ETTP1501F",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-29-7f6c3ae638a370e2",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "0R",
+      "description": "RES 0 OHM JUMPER 0201",
+      "designators": [
+        "R36_RFIN_ADC1",
+        "R36_RFOUT_ADC1"
+      ],
+      "footprint": "R0201",
+      "lib_ref": "RK73Z1HRTTC",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-30-d746aaea07c82635",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "1kohm",
+      "description": "Thick Film Resistors 0.125W 1Kohm 5% 200ppm Anti-Surge",
+      "designators": [
+        "R38",
+        "R39",
+        "R42",
+        "R45",
+        "R48",
+        "R50",
+        "R53",
+        "R57",
+        "R61"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "SG73S1ETTP102J",
+      "quantity": 9,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-31-f0c9eb3851044e0e",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "100kohm",
+      "description": "RES SMD 100K OHM 1% 1/16W 0402, Res Thick Film 0402 100K Ohm 1% 1/16W \u00b1100ppm/\u00b0C Molded SMD Punched Paper T/R",
+      "designators": [
+        "R41",
+        "R44",
+        "R47",
+        "R52",
+        "R56",
+        "R60",
+        "R71"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "CRG0402F100K, RK73H1ETTP1003F",
+      "quantity": 7,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-32-0f2cda5a1d243771",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "DNI",
+      "description": "Res Thick Film 0402 0 Ohm Molded SMD Punched Paper T/R",
+      "designators": [
+        "R55",
+        "R59",
+        "R63",
+        "R64",
+        "R65_RFIN_ADC1",
+        "R65_RFOUT_ADC1",
+        "R67_RFIN_ADC1",
+        "R67_RFOUT_ADC1",
+        "R68_RFIN_ADC1",
+        "R68_RFOUT_ADC1",
+        "R69_RFIN_ADC1",
+        "R69_RFOUT_ADC1"
+      ],
+      "footprint": "R0402",
+      "lib_ref": "RK73Z1ETTP",
+      "quantity": 12,
+      "is_dni": true,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-33-79956d28566e13f9",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "20k",
+      "description": "TRIMMER 20K OHM 0.125W SMD",
+      "designators": [
+        "T1"
+      ],
+      "footprint": "SM-3TW203",
+      "lib_ref": "SM-3TW203",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-34-c49e44b40d5dcc09",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "KF80BDT-TR +8V",
+      "description": "IC REG LINEAR 8V 500MA DPAK",
+      "designators": [
+        "U1"
+      ],
+      "footprint": "KF80BDT-TR",
+      "lib_ref": "KF80BDT-TR",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-35-ad664716a7f13d3c",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "LT3097",
+      "description": "Dual 500mA, Positive/Negative, Ultra-Low Noise, Ultra-High PSRR Low Dropout\n Linear Regulator",
+      "designators": [
+        "U2"
+      ],
+      "footprint": "3097",
+      "lib_ref": "LT3097",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-36-669872ec3477d5f9",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "OP184FSZ",
+      "description": "Single Channel Wide Bandwidth Operational Amplifier, 4.25 MHz BW, 4 V/us SR, Industrial, 8-pin SOIC (R-8), Tube",
+      "designators": [
+        "U3"
+      ],
+      "footprint": "ADI-R-8_L",
+      "lib_ref": "CMP-0384-01051-2",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-37-2279b0cf303e2472",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "W25Q16JVSSIQ",
+      "description": "IC FLASH 16M SPI 133MHZ 8SOIC",
+      "designators": [
+        "U4"
+      ],
+      "footprint": "W25Q16JV",
+      "lib_ref": "W25Q16JVSSIQ",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-38-3924a209b52f62f0",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "ADP7102ACPZ-3.3 +3.3V LDO",
+      "description": "ANALOG DEVICES         ADP7102ACPZ-3.3-R7             Fixed LDO Voltage Regulator, 3.3V to 20V, 200mV Dropout, 3.3Vout, 300mAout, LFCSP-8",
+      "designators": [
+        "U5"
+      ],
+      "footprint": "ADP7102ACPZ",
+      "lib_ref": "ADP7102ACPZ-3.3-R7",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-39-77277ab9f315c0bc",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "LT1236ACS8-10",
+      "description": "IC VREF SERIES/SHUNT 10V 8SOIC",
+      "designators": [
+        "U6"
+      ],
+      "footprint": "LT1236",
+      "lib_ref": "LT1236ACS8-10#TRPBF",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-40-8ce74dff8522ee4a",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "AD5760ACPZ",
+      "description": "DAC, 16BIT, 2LSB, 24LFCSP",
+      "designators": [
+        "U7"
+      ],
+      "footprint": "AD5760ACPZ",
+      "lib_ref": "AD5760ACPZ",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-41-f4b0a3bcf935a1f3",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "LT6657AHMS8-5",
+      "description": "IC VREF SERIES 5V 8MSOP",
+      "designators": [
+        "U9_RFIN_ADC1",
+        "U9_RFOUT_ADC1"
+      ],
+      "footprint": "LT6657",
+      "lib_ref": "LT6657AHMS8-5#PBF",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-42-a9bc39a27ef6b847",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "AD7091RBCPZ-RL7",
+      "description": "IC ADC 12BIT SRL 1MSPS 10LFCSP",
+      "designators": [
+        "U10_RFIN_ADC1",
+        "U10_RFOUT_ADC1"
+      ],
+      "footprint": "AD7091R",
+      "lib_ref": "AD7091RBCPZ-RL7",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-43-4204f046240f1210",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "SN74HCS594",
+      "description": "8-Bit Shift Register With Schmitt-Trigger Inputs and 3-State Output Registers",
+      "designators": [
+        "U12"
+      ],
+      "footprint": "TSOP65P640X120-16L",
+      "lib_ref": "SN74HCS594",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-44-e6622b7c3399b47e",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "SN74HCT04ANSR Inverter",
+      "description": "Inverter 6-Element CMOS 14-Pin SOP T/R",
+      "designators": [
+        "U13"
+      ],
+      "footprint": "SOP14_SN74HCT04ANSR",
+      "lib_ref": "SN74HCT04ANSR",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-45-3abc5bfd031505b2",
+      "bom_id": "DD02080.IB300.2_2026",
+      "name": "SN74AHC123A",
+      "description": "Dual retriggerable monostable multivibrator",
+      "designators": [
+        "U14"
+      ],
+      "footprint": "TSOP65P640X120-16L",
+      "lib_ref": "SN74AHC123A",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    }
+  ]
+}
