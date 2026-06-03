@@ -4,12 +4,24 @@ import argparse
 import webbrowser
 from threading import Timer
 
-from flask import Flask, redirect, render_template, url_for
+from flask import (
+    Flask,
+    abort,
+    flash,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
 
 from bom_builder import storage
+from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
+from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
+app.secret_key = "bom-builder-local-dev"
 
 
 @app.context_processor
@@ -24,7 +36,95 @@ def index():
 
 @app.route("/need")
 def need_page():
-    return render_template("need.html")
+    bom_ids = storage.list_bom_ids()
+    active_bom_id = request.args.get("bom_id") or (bom_ids[0] if bom_ids else None)
+    bom = storage.load_bom(active_bom_id) if active_bom_id else None
+    stats = bom_stats(bom) if bom else None
+    return render_template(
+        "need.html",
+        bom_ids=bom_ids,
+        active_bom_id=active_bom_id,
+        bom=bom,
+        stats=stats,
+    )
+
+
+@app.route("/need/upload", methods=["POST"])
+def need_upload():
+    uploaded = request.files.get("bom_file")
+    if not uploaded or not uploaded.filename:
+        flash("Choose a CSV file to upload.", "error")
+        return redirect(url_for("need_page"))
+
+    filename = uploaded.filename
+    bom_id = bom_id_from_filename(filename)
+    try:
+        content = uploaded.read()
+        incoming = parse_bom_csv(content, bom_id=bom_id, source_filename=filename)
+    except ValueError as exc:
+        flash(str(exc), "error")
+        return redirect(url_for("need_page"))
+
+    existing = storage.load_bom(bom_id)
+    bom = merge_bom_state(existing, incoming)
+    storage.save_bom(bom)
+    flash(f"Imported {len(bom.lines)} lines from {filename}.", "success")
+    return redirect(url_for("need_page", bom_id=bom_id))
+
+
+@app.route("/need/<bom_id>/line/<line_id>", methods=["POST"])
+def need_update_line(bom_id: str, line_id: str):
+    bom = storage.load_bom(bom_id)
+    if bom is None:
+        abort(404)
+
+    line = find_line(bom, line_id)
+    if line is None:
+        abort(404)
+
+    payload = request.get_json(silent=True) or request.form
+    if "acquired" in payload:
+        raw = payload.get("acquired")
+        line.acquired = raw in (True, "true", "on", "1", 1)
+    if "notes" in payload:
+        line.notes = str(payload.get("notes", ""))
+
+    storage.save_bom(bom)
+    stats = bom_stats(bom)
+
+    if request.accept_mimetypes.best == "application/json" or request.is_json:
+        from flask import jsonify
+
+        return jsonify(
+            {
+                "ok": True,
+                "line_id": line_id,
+                "acquired": line.acquired,
+                "notes": line.notes,
+                "stats": stats,
+            }
+        )
+
+    return redirect(url_for("need_page", bom_id=bom_id))
+
+
+@app.route("/need/<bom_id>/export.csv")
+def need_export(bom_id: str):
+    bom = storage.load_bom(bom_id)
+    if bom is None:
+        abort(404)
+
+    response = make_response(bom_to_csv(bom))
+    response.headers["Content-Type"] = "text/csv; charset=utf-8"
+    response.headers["Content-Disposition"] = f'attachment; filename="{bom_id}_need.csv"'
+    return response
+
+
+@app.route("/need/<bom_id>/delete", methods=["POST"])
+def need_delete(bom_id: str):
+    storage.delete_bom(bom_id)
+    flash(f"Removed BOM {bom_id}.", "success")
+    return redirect(url_for("need_page"))
 
 
 @app.route("/inventory")

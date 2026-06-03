@@ -19,7 +19,7 @@ Opens http://127.0.0.1:5000/ (use `--no-browser` to skip auto-open).
 
 ## Pages
 
-- **Need** — BOM import and acquisition checklist (Phase 2+)
+- **Need** — Upload BOM CSV, check off acquired parts, search/filter, export CSV
 - **Inventory** — Parts on hand (Phase 3+)
 - **Compare** — Need vs inventory gap report (Phase 4+)
 

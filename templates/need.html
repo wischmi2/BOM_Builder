@@ -8,16 +8,137 @@
     <p class="lede">Import CSV bill-of-materials and track parts you still need to acquire.</p>
 </section>
 
-<div class="placeholder-card">
-    <p>Upload and checklist UI coming in Phase 2.</p>
-    {% if bom_ids %}
-    <ul class="bom-list">
-        {% for bom_id in bom_ids %}
-        <li><code>{{ bom_id }}</code></li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p class="muted">No BOMs imported yet.</p>
-    {% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
 </div>
+{% endif %}
+{% endwith %}
+
+<div class="need-layout">
+    <aside class="need-sidebar card">
+        <h2>BOMs</h2>
+        <form class="upload-form" action="{{ url_for('need_upload') }}" method="post" enctype="multipart/form-data">
+            <label class="upload-label">
+                <span>Import CSV</span>
+                <input type="file" name="bom_file" accept=".csv,text/csv" required>
+            </label>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        {% if bom_ids %}
+        <ul class="bom-nav">
+            {% for bid in bom_ids %}
+            <li>
+                <a href="{{ url_for('need_page', bom_id=bid) }}"
+                   class="{% if bid == active_bom_id %}active{% endif %}">{{ bid }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% if active_bom_id %}
+        <form class="delete-form" action="{{ url_for('need_delete', bom_id=active_bom_id) }}" method="post"
+              data-confirm="Remove this BOM from the app?">
+            <button type="submit" class="btn btn-danger btn-small">Remove BOM</button>
+        </form>
+        {% endif %}
+        {% else %}
+        <p class="muted">No BOMs yet. Upload a CSV to start.</p>
+        {% endif %}
+    </aside>
+
+    <section class="need-main">
+        {% if bom %}
+        <div class="need-toolbar card">
+            <div class="progress-block" id="progress-block">
+                <span class="progress-text" id="progress-text">
+                    {{ stats.acquired }} / {{ stats.active }} acquired
+                    {% if stats.dni %}<span class="muted">({{ stats.dni }} DNI hidden from count)</span>{% endif %}
+                </span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"
+                         style="width: {{ (100 * stats.acquired / stats.active) if stats.active else 0 }}%"></div>
+                </div>
+            </div>
+            <div class="toolbar-actions">
+                <input type="search" id="search-input" class="search-input" placeholder="Search name, MPN, ref…" autocomplete="off">
+                <label class="filter-check"><input type="checkbox" id="hide-dni"> Hide DNI</label>
+                <label class="filter-check"><input type="checkbox" id="only-missing"> Only not acquired</label>
+                <a class="btn btn-secondary" href="{{ url_for('need_export', bom_id=bom.bom_id) }}">Export CSV</a>
+            </div>
+        </div>
+
+        <p class="source-meta muted">Source: {{ bom.source_filename }} · {{ bom.lines|length }} lines</p>
+
+        <div class="table-wrap card">
+            <table class="data-table" id="need-table">
+                <thead>
+                    <tr>
+                        <th class="col-check">Have</th>
+                        <th>Name</th>
+                        <th>LibRef</th>
+                        <th class="col-qty">Qty</th>
+                        <th>Designators</th>
+                        <th>Footprint</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for line in bom.lines %}
+                    <tr class="need-row {% if line.is_dni %}row-dni{% endif %} {% if line.acquired %}row-acquired{% endif %}"
+                        data-line-id="{{ line.id }}"
+                        data-is-dni="{{ '1' if line.is_dni else '0' }}"
+                        data-acquired="{{ '1' if line.acquired else '0' }}"
+                        data-search="{{ (line.name ~ ' ' ~ line.lib_ref ~ ' ' ~ line.designator_display ~ ' ' ~ line.footprint ~ ' ' ~ line.description)|lower }}">
+                        <td class="col-check">
+                            <input type="checkbox" class="acquired-check"
+                                   {% if line.acquired %}checked{% endif %}
+                                   aria-label="Acquired {{ line.name }}">
+                        </td>
+                        <td class="col-name">
+                            <span class="cell-primary">{{ line.name }}</span>
+                            {% if line.is_dni %}<span class="badge badge-dni">DNI</span>{% endif %}
+                            {% if line.description %}
+                            <details class="desc-details">
+                                <summary>Description</summary>
+                                <p class="desc-text">{{ line.description }}</p>
+                            </details>
+                            {% endif %}
+                        </td>
+                        <td class="col-libref"><code>{{ line.lib_ref }}</code></td>
+                        <td class="col-qty">{{ line.quantity }}</td>
+                        <td class="col-designators">{{ line.designator_display }}</td>
+                        <td class="col-footprint">{{ line.footprint }}</td>
+                        <td class="col-notes">
+                            <input type="text" class="notes-input" value="{{ line.notes }}"
+                                   placeholder="Notes…" data-line-id="{{ line.id }}">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p class="empty-filter muted" id="empty-filter" hidden>No rows match the current filters.</p>
+        </div>
+        {% else %}
+        <div class="card empty-state">
+            <p>Upload an Altium-style BOM CSV to see parts here.</p>
+            <p class="muted">Expected columns: Name, Description, Designator, Footprint, LibRef, Quantity</p>
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if bom %}
+<script>
+    window.BOM_BUILDER = {
+        bomId: {{ bom.bom_id|tojson }},
+        updateUrlTemplate: {{ url_for('need_update_line', bom_id=bom.bom_id, line_id='__LINE_ID__')|tojson }}
+    };
+</script>
+<script src="{{ url_for('static', filename='need.js') }}"></script>
+{% endif %}
 {% endblock %}
