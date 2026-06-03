@@ -72,7 +72,7 @@ Use this page for parts you already have, independent of any single BOM.
 3. Edit quantities and locations inline — changes save automatically.
 4. **Export CSV** for backup or editing in Excel.
 
-**Label scan (OCR)** requires [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki) installed on Windows and on your PATH. After `pip install -r requirements.txt`, install Tesseract, then restart the app. Uses **MFR PN** for LibRef (best for BOM matching); DigiKey PN goes in Notes.
+**Label scan (OCR)** requires [Tesseract](https://github.com/UB-Mannheim/tesseract/wiki) on Windows. Run the installer (default location `C:\Program Files\Tesseract-OCR\` is fine — you do not need to change PATH). Then `pip install -r requirements.txt` and restart the app. Uses **MFR PN** for LibRef (best for BOM matching); DigiKey PN goes in Notes.
 
 **Import columns:** `LibRef`, `Name`, `QtyOnHand`, `Location`, `Notes`
 

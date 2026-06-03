@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import io
+import os
 import re
+import shutil
 from dataclasses import dataclass, field
+from pathlib import Path
 
 # Typical MPN patterns on distributor labels (Murata, Yageo, etc.)
 _MPN_TOKEN = r"[A-Z0-9][A-Z0-9\-\+/\.]{4,}"
@@ -32,6 +35,32 @@ class LabelScanError(Exception):
     pass
 
 
+def _find_tesseract_executable() -> str | None:
+    """Locate tesseract.exe — PATH first, then common Windows install folders."""
+    on_path = shutil.which("tesseract")
+    if on_path:
+        return on_path
+
+    candidates = [
+        Path(r"C:\Program Files\Tesseract-OCR\tesseract.exe"),
+        Path(r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"),
+    ]
+    env_path = os.environ.get("TESSERACT_CMD", "").strip()
+    if env_path:
+        candidates.insert(0, Path(env_path))
+
+    for path in candidates:
+        if path.is_file():
+            return str(path)
+    return None
+
+
+def _configure_tesseract(pytesseract: object) -> None:
+    cmd = _find_tesseract_executable()
+    if cmd:
+        pytesseract.pytesseract.tesseract_cmd = cmd
+
+
 def _require_ocr() -> tuple[object, object]:
     try:
         from PIL import Image
@@ -45,6 +74,7 @@ def _require_ocr() -> tuple[object, object]:
         raise LabelScanError(
             "pytesseract is not installed. Run: pip install -r requirements.txt"
         ) from exc
+    _configure_tesseract(pytesseract)
     return Image, pytesseract
 
 
@@ -70,8 +100,9 @@ def ocr_image(image_bytes: bytes) -> str:
         text = pytesseract.image_to_string(gray, config="--psm 6")
     except pytesseract.TesseractNotFoundError as exc:
         raise LabelScanError(
-            "Tesseract OCR is not installed. On Windows, install from "
-            "https://github.com/UB-Mannheim/tesseract/wiki and add it to PATH."
+            "Tesseract OCR was not found. Install it from "
+            "https://github.com/UB-Mannheim/tesseract/wiki (default folder is fine). "
+            "Or set environment variable TESSERACT_CMD to the full path of tesseract.exe."
         ) from exc
     return text
 
