@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Shop — BOM Builder{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <h1>Shop</h1>
+    <p class="lede">Build a buy list from Compare gaps — open DigiKey or Mouser for each part you still need.</p>
+</section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<div class="compare-setup card">
+    <form class="compare-select-form" method="get" action="{{ url_for('shop_page') }}">
+        <h2>Select BOMs</h2>
+        {% if bom_ids %}
+        <div class="bom-checkboxes">
+            {% for bid in bom_ids %}
+            <label class="filter-check">
+                <input type="checkbox" name="bom_id" value="{{ bid }}"
+                       {% if bid in selected_ids %}checked{% endif %}>
+                {{ bid }}
+            </label>
+            {% endfor %}
+        </div>
+
+        {% if selected_ids|length > 1 %}
+        <div class="view-mode-picker">
+            <span class="view-mode-label">View:</span>
+            <label class="filter-check">
+                <input type="radio" name="view" value="combined" {% if view_mode == 'combined' %}checked{% endif %}>
+                Combined totals (all boards)
+            </label>
+            <label class="filter-check">
+                <input type="radio" name="view" value="per_board" {% if view_mode == 'per_board' %}checked{% endif %}>
+                Per board (each BOM line)
+            </label>
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Refresh list</button>
+        {% if export_url %}
+        <a class="btn btn-secondary" href="{{ export_url }}">Export buy list CSV</a>
+        {% endif %}
+        {% else %}
+        <p class="muted">Import a BOM on the <a href="{{ url_for('need_page') }}">Need</a> page first.</p>
+        {% endif %}
+    </form>
+</div>
+
+{% if stats %}
+<div class="summary-cards shop-summary">
+    <div class="summary-card">
+        <span class="summary-value">{{ stats.line_count }}</span>
+        <span class="summary-label">Lines to buy</span>
+    </div>
+    <div class="summary-card status-missing">
+        <span class="summary-value">{{ stats.missing_count }}</span>
+        <span class="summary-label">Missing</span>
+    </div>
+    <div class="summary-card status-partial">
+        <span class="summary-value">{{ stats.partial_count }}</span>
+        <span class="summary-label">Partial</span>
+    </div>
+    <div class="summary-card">
+        <span class="summary-value">{{ stats.total_buy_qty }}</span>
+        <span class="summary-label">Total buy qty</span>
+    </div>
+    <div class="summary-card">
+        <span class="summary-value">{{ stats.ordered_count }}</span>
+        <span class="summary-label">Marked ordered</span>
+    </div>
+</div>
+
+<div class="compare-toolbar card shop-toolbar">
+    <input type="search" id="shop-search" class="search-input" placeholder="Search MPN, name…" autocomplete="off">
+    <label class="filter-check"><input type="checkbox" id="shop-hide-ordered"> Hide ordered</label>
+    <span class="muted compare-drag-hint">Drag │ on column headers to resize</span>
+</div>
+
+<div class="table-wrap compare-table-wrap card">
+    <table class="data-table shop-table" id="shop-table">
+        <thead>
+            <tr>
+                <th class="col-check" data-col="check">Ordered</th>
+                <th class="col-qty" data-col="buy">Buy qty</th>
+                <th class="col-libref" data-col="libref">MPN</th>
+                <th class="col-name" data-col="name">Name</th>
+                <th data-col="status">Status</th>
+                <th class="col-qty" data-col="need">Need</th>
+                <th class="col-qty" data-col="onhand">On hand</th>
+                <th class="col-bom" data-col="bom">BOM</th>
+                <th class="col-distributors" data-col="distributors">Distributors</th>
+                <th class="col-notes" data-col="notes">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in shop_lines %}
+            <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %}"
+                data-line-id="{{ line.line_id }}"
+                data-ordered="{{ '1' if line.ordered else '0' }}"
+                data-search="{{ line.search_text }}">
+                <td class="col-check">
+                    <input type="checkbox" class="ordered-check" {% if line.ordered %}checked{% endif %}
+                           aria-label="Ordered {{ line.primary_mpn }}">
+                </td>
+                <td class="col-qty">
+                    <input type="number" class="buy-qty-input cell-input" min="0" step="1"
+                           value="{{ line.buy_qty }}" aria-label="Buy quantity">
+                </td>
+                <td class="col-libref">
+                    <code>{{ line.primary_mpn }}</code>
+                    {% if line.alternates_extra %}
+                    <span class="muted shop-alternates" title="Alternate MPNs">+ {{ line.alternates_display }}</span>
+                    {% endif %}
+                </td>
+                <td class="col-name">{{ line.name }}</td>
+                <td><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
+                <td class="col-qty">{{ line.qty_needed }}</td>
+                <td class="col-qty">{{ line.qty_on_hand }}</td>
+                <td class="col-bom">{{ line.bom_id or line.bom_ids_display }}</td>
+                <td class="col-distributors">
+                    <a class="btn btn-secondary btn-sm dist-link" href="{{ line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
+                    <a class="btn btn-secondary btn-sm dist-link" href="{{ line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
+                </td>
+                <td class="col-notes">
+                    <input type="text" class="notes-input cell-input" value="{{ line.notes }}"
+                           placeholder="PO, cart, alt part…">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p class="empty-filter muted" id="shop-empty" hidden>No lines match filters.</p>
+</div>
+
+{% elif selected_ids %}
+<div class="card empty-state">
+    <p>Nothing to buy — inventory covers all selected BOM lines (or only DNI remain).</p>
+    <p class="muted"><a href="{{ url_for('compare_page') }}">Open Compare</a> to review full status.</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if shop_lines %}
+<script>
+    window.BOM_SHOP = {
+        updateUrlTemplate: {{ url_for('shop_update_line', line_id='__LINE_ID__')|tojson }}
+    };
+</script>
+<script src="{{ url_for('static', filename='shop.js') }}"></script>
+{% endif %}
+{% endblock %}

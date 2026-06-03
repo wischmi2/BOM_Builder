@@ -51,6 +51,7 @@ Full setup, Git-sync, and NAS options: **[docs/MULTI_COMPUTER.md](docs/MULTI_COM
 1. Need      → Upload Altium-style BOM CSV
 2. Inventory → Add or import parts you have on hand
 3. Compare   → Select BOM(s), see OK / partial / missing, export gap CSV
+4. Shop      → Buy list with DigiKey/Mouser links for missing and partial lines
 ```
 
 ### 1. Need (BOM checklist)
@@ -109,6 +110,14 @@ Use this page to see what you still need to pull from inventory or buy.
 
 **Gap export columns:** LibRef, Name, NeedQty, OnHand, Delta, Status, BOM, Designators, MatchType, MatchedInventory
 
+### 4. Shop (buy list)
+
+1. Open **Shop** (or **Open shopping list** from Compare) with the same BOMs selected.
+2. Review **Buy qty** (shortfall by default), open **DigiKey** / **Mouser** links, mark **Ordered** when purchased.
+3. **Export buy list CSV** for purchasing or sharing.
+
+See **[docs/SHOPPING.md](docs/SHOPPING.md)** for details.
+
 ## Project layout
 
 ```text
@@ -129,6 +138,7 @@ BOM_Builder/
   data/                   # BOM + inventory JSON (tracked in git)
     needs/                # One JSON file per BOM
     inventory.json        # Stock list
+    shopping_list.json    # Buy list notes / ordered flags
 ```
 
 ## Data in Git

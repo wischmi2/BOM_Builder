@@ -98,19 +98,19 @@
     <div class="inventory-table-toolbar">
         <button type="button" class="btn btn-secondary btn-sm" id="inventory-expand-all">Expand all</button>
         <button type="button" class="btn btn-secondary btn-sm" id="inventory-collapse-all">Collapse all</button>
-        <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize a part</span>
+        <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize · drag column edges to resize</span>
     </div>
     <div class="table-wrap compare-table-wrap">
         <table class="data-table inventory-table" id="inventory-table">
             <thead>
                 <tr>
-                    <th class="col-drag" aria-label="Drag"></th>
-                    <th class="col-libref">LibRef</th>
-                    <th class="col-name">Name</th>
-                    <th class="col-qty">Qty</th>
-                    <th>Location</th>
-                    <th>Notes</th>
-                    <th class="col-actions">Actions</th>
+                    <th class="col-drag" data-col="drag" aria-label="Drag"></th>
+                    <th class="col-libref" data-col="libref">LibRef</th>
+                    <th class="col-name" data-col="name">Name</th>
+                    <th class="col-qty" data-col="qty">Qty</th>
+                    <th data-col="location">Location</th>
+                    <th class="col-notes" data-col="notes">Notes</th>
+                    <th class="col-actions" data-col="actions">Actions</th>
                 </tr>
             </thead>
             <tbody>

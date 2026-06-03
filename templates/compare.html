@@ -47,6 +47,9 @@
         {% endif %}
 
         <button type="submit" class="btn btn-primary">Compare</button>
+        {% if shop_url %}
+        <a class="btn btn-primary" href="{{ shop_url }}">Open shopping list</a>
+        {% endif %}
         {% if export_url %}
         <a class="btn btn-secondary" href="{{ export_url }}">Export gap CSV</a>
         {% endif %}
@@ -105,20 +108,20 @@
 </div>
 
 <div class="table-wrap compare-table-wrap card">
-    <p class="table-scroll-hint muted">Scroll horizontally if columns are cut off →</p>
+    <p class="table-scroll-hint muted">Drag │ on column headers to resize</p>
     {% if view_mode == 'combined' and agg_rows %}
     <table class="data-table compare-table" id="compare-table" data-colspan="9">
         <thead>
             <tr>
-                <th class="col-drag" aria-label="Drag"></th>
-                <th>Status</th>
-                <th class="col-name">Name</th>
-                <th class="col-libref">LibRef</th>
-                <th class="col-qty">Total need</th>
-                <th class="col-qty">On hand</th>
-                <th class="col-qty">Leftover</th>
-                <th class="col-by-board">By board</th>
-                <th class="col-match">Match</th>
+                <th class="col-drag" data-col="drag" aria-label="Drag"></th>
+                <th data-col="status">Status</th>
+                <th class="col-name" data-col="name">Name</th>
+                <th class="col-libref" data-col="libref">LibRef</th>
+                <th class="col-qty" data-col="need">Total need</th>
+                <th class="col-qty" data-col="onhand">On hand</th>
+                <th class="col-qty" data-col="leftover">Leftover</th>
+                <th class="col-by-board" data-col="board">By board</th>
+                <th class="col-match" data-col="match">Match</th>
             </tr>
         </thead>
         <tbody>
@@ -172,16 +175,16 @@
     <table class="data-table compare-table" id="compare-table" data-colspan="10">
         <thead>
             <tr>
-                <th class="col-drag" aria-label="Drag"></th>
-                <th>Status</th>
-                <th class="col-name">Name</th>
-                <th class="col-libref">LibRef</th>
-                <th class="col-qty">Need</th>
-                <th class="col-qty">On hand</th>
-                <th class="col-qty">Delta</th>
-                <th class="col-bom">BOM</th>
-                <th class="col-designators">Designators</th>
-                <th class="col-match">Match</th>
+                <th class="col-drag" data-col="drag" aria-label="Drag"></th>
+                <th data-col="status">Status</th>
+                <th class="col-name" data-col="name">Name</th>
+                <th class="col-libref" data-col="libref">LibRef</th>
+                <th class="col-qty" data-col="need">Need</th>
+                <th class="col-qty" data-col="onhand">On hand</th>
+                <th class="col-qty" data-col="delta">Delta</th>
+                <th class="col-bom" data-col="bom">BOM</th>
+                <th class="col-designators" data-col="designators">Designators</th>
+                <th class="col-match" data-col="match">Match</th>
             </tr>
         </thead>
         <tbody>

@@ -48,6 +48,14 @@ from bom_builder.category_overrides import (
 from bom_builder.part_categories import CATEGORY_ORDER
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, line_total_quantity, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
+from bom_builder.shopping import (
+    apply_line_update,
+    build_shop_lines,
+    lines_to_saved_dict,
+    merge_shop_state,
+    shop_stats,
+    shop_to_csv,
+)
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
@@ -431,10 +439,12 @@ def compare_page():
             summary = compare_summary(rows)
 
     export_url = None
+    shop_url = None
     if selected_ids and (rows or agg_rows):
         params = [("bom_id", bom_id) for bom_id in selected_ids]
         params.append(("view", view_mode))
         export_url = f"{url_for('compare_export')}?{urlencode(params)}"
+        shop_url = f"{url_for('shop_page')}?{urlencode(params)}"
 
     return render_template(
         "compare.html",
@@ -448,9 +458,107 @@ def compare_page():
         summary=summary,
         pool_stats=pool_stats,
         export_url=export_url,
+        shop_url=shop_url,
         category_overrides=category_overrides,
         category_options=CATEGORY_ORDER,
     )
+
+
+def _shop_query_params(selected_ids: list[str], view_mode: str) -> list[tuple[str, str]]:
+    params = [("bom_id", bom_id) for bom_id in selected_ids]
+    params.append(("view", view_mode))
+    return params
+
+
+@app.route("/shop")
+def shop_page():
+    bom_ids = storage.list_bom_ids()
+    selected_ids = _selected_bom_ids()
+    if not selected_ids and bom_ids:
+        selected_ids = [bom_ids[0]]
+
+    view_mode = _compare_view_mode(selected_ids)
+    shop_lines = []
+    stats = None
+    export_url = None
+
+    if selected_ids:
+        boms = _load_selected_boms(selected_ids)
+        inventory = storage.load_inventory()
+        shop_lines = build_shop_lines(boms, inventory, view_mode)
+        saved = storage.load_shopping_list()
+        merge_shop_state(shop_lines, saved)
+        stats = shop_stats(shop_lines)
+        if shop_lines:
+            export_url = f"{url_for('shop_export')}?{urlencode(_shop_query_params(selected_ids, view_mode))}"
+
+    return render_template(
+        "shop.html",
+        bom_ids=bom_ids,
+        selected_ids=selected_ids,
+        view_mode=view_mode,
+        shop_lines=shop_lines,
+        stats=stats,
+        export_url=export_url,
+    )
+
+
+@app.route("/shop/line/<line_id>", methods=["POST"])
+def shop_update_line(line_id: str):
+    payload = request.get_json(silent=True) or request.form
+    saved = storage.load_shopping_list()
+
+    updates: dict = {}
+    if "buy_qty" in payload:
+        try:
+            updates["buy_qty"] = max(0, int(payload.get("buy_qty", 0)))
+        except (TypeError, ValueError):
+            return jsonify({"ok": False, "error": "Buy qty must be a number."}), 400
+    if "notes" in payload:
+        updates["notes"] = str(payload.get("notes", ""))
+    if "ordered" in payload:
+        raw = payload.get("ordered")
+        updates["ordered"] = raw in (True, "true", "on", "1", 1)
+
+    saved = apply_line_update(saved, line_id, **updates)
+    storage.save_shopping_list(saved)
+
+    entry = saved.get(line_id, {})
+    if request.accept_mimetypes.best == "application/json" or request.is_json:
+        return jsonify(
+            {
+                "ok": True,
+                "line_id": line_id,
+                "buy_qty": entry.get("buy_qty", 0),
+                "notes": entry.get("notes", ""),
+                "ordered": entry.get("ordered", False),
+            }
+        )
+
+    selected_ids = _selected_bom_ids()
+    if selected_ids:
+        query = urlencode(_shop_query_params(selected_ids, _compare_view_mode(selected_ids)))
+        return redirect(f"{url_for('shop_page')}?{query}")
+    return redirect(url_for("shop_page"))
+
+
+@app.route("/shop/export.csv")
+def shop_export():
+    selected_ids = _selected_bom_ids()
+    if not selected_ids:
+        flash("Select at least one BOM to export.", "error")
+        return redirect(url_for("shop_page"))
+
+    view_mode = _compare_view_mode(selected_ids)
+    boms = _load_selected_boms(selected_ids)
+    inventory = storage.load_inventory()
+    shop_lines = build_shop_lines(boms, inventory, view_mode)
+    merge_shop_state(shop_lines, storage.load_shopping_list())
+
+    response = make_response(shop_to_csv(shop_lines))
+    response.headers["Content-Type"] = "text/csv; charset=utf-8"
+    response.headers["Content-Disposition"] = 'attachment; filename="shopping_list.csv"'
+    return response
 
 
 @app.route("/inventory/category-override", methods=["POST"])

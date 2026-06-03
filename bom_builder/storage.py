@@ -9,6 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 NEEDS_DIR = DATA_DIR / "needs"
 INVENTORY_PATH = DATA_DIR / "inventory.json"
+SHOPPING_LIST_PATH = DATA_DIR / "shopping_list.json"
 
 
 def ensure_data_dirs() -> None:
@@ -61,5 +62,24 @@ def save_inventory(inventory: InventoryDocument) -> None:
     ensure_data_dirs()
     INVENTORY_PATH.write_text(
         json.dumps(inventory.to_dict(), indent=2),
+        encoding="utf-8",
+    )
+
+
+def load_shopping_list() -> dict[str, dict]:
+    ensure_data_dirs()
+    if not SHOPPING_LIST_PATH.exists():
+        return {}
+    data = json.loads(SHOPPING_LIST_PATH.read_text(encoding="utf-8"))
+    raw = data.get("lines", {})
+    if not isinstance(raw, dict):
+        return {}
+    return {str(k): v for k, v in raw.items() if isinstance(v, dict)}
+
+
+def save_shopping_list(lines: dict[str, dict]) -> None:
+    ensure_data_dirs()
+    SHOPPING_LIST_PATH.write_text(
+        json.dumps({"lines": lines}, indent=2),
         encoding="utf-8",
     )

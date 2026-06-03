@@ -72,6 +72,7 @@
                 <label class="filter-check"><input type="checkbox" id="hide-dni"> Hide DNI</label>
                 <label class="filter-check"><input type="checkbox" id="only-missing"> Only not acquired</label>
                 <a class="btn btn-secondary" href="{{ url_for('need_export', bom_id=bom.bom_id) }}">Export CSV</a>
+                <span class="muted compare-drag-hint">Drag column edges to resize</span>
             </div>
         </div>
 
@@ -84,14 +85,14 @@
             <table class="data-table" id="need-table">
                 <thead>
                     <tr>
-                        <th class="col-check">Have</th>
-                        <th>Name</th>
-                        <th>LibRef</th>
-                        <th class="col-qty">Qty / board</th>
-                        <th class="col-qty">Total qty</th>
-                        <th>Designators</th>
-                        <th>Footprint</th>
-                        <th>Notes</th>
+                        <th class="col-check" data-col="check">Have</th>
+                        <th class="col-name" data-col="name">Name</th>
+                        <th class="col-libref" data-col="libref">LibRef</th>
+                        <th class="col-qty" data-col="qty">Qty / board</th>
+                        <th class="col-qty" data-col="total">Total qty</th>
+                        <th class="col-designators" data-col="designators">Designators</th>
+                        <th data-col="footprint">Footprint</th>
+                        <th class="col-notes" data-col="notes">Notes</th>
                     </tr>
                 </thead>
                 <tbody>

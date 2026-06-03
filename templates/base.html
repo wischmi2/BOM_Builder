@@ -14,6 +14,7 @@
                 <a href="{{ url_for('need_page') }}" class="{% if request.endpoint == 'need_page' %}active{% endif %}">Need</a>
                 <a href="{{ url_for('inventory_page') }}" class="{% if request.endpoint == 'inventory_page' %}active{% endif %}">Inventory</a>
                 <a href="{{ url_for('compare_page') }}" class="{% if request.endpoint == 'compare_page' %}active{% endif %}">Compare</a>
+                <a href="{{ url_for('shop_page') }}" class="{% if request.endpoint == 'shop_page' %}active{% endif %}">Shop</a>
             </nav>
         </div>
     </header>
@@ -29,6 +30,7 @@
     </footer>
 
     <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="{{ url_for('static', filename='table-columns.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
