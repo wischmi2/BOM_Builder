@@ -3,6 +3,7 @@
 import argparse
 import webbrowser
 from threading import Timer
+from urllib.parse import urlencode
 
 from flask import (
     Flask,
@@ -26,6 +27,7 @@ from bom_builder.inventory_io import (
     parse_inventory_csv,
     update_item,
 )
+from bom_builder.matcher import compare_boms, compare_summary, compare_to_csv
 from bom_builder.need_io import bom_stats, bom_to_csv, find_line, merge_bom_state
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 
@@ -274,9 +276,70 @@ def inventory_export():
     return response
 
 
+def _selected_bom_ids() -> list[str]:
+    ids = request.args.getlist("bom_id")
+    if not ids and request.args.get("bom_ids"):
+        ids = [part.strip() for part in request.args.get("bom_ids", "").split(",") if part.strip()]
+    available = set(storage.list_bom_ids())
+    return [bom_id for bom_id in ids if bom_id in available]
+
+
+def _load_selected_boms(bom_ids: list[str]) -> list:
+    boms = []
+    for bom_id in bom_ids:
+        bom = storage.load_bom(bom_id)
+        if bom is not None:
+            boms.append(bom)
+    return boms
+
+
 @app.route("/compare")
 def compare_page():
-    return render_template("compare.html")
+    bom_ids = storage.list_bom_ids()
+    selected_ids = _selected_bom_ids()
+    if not selected_ids and bom_ids:
+        selected_ids = [bom_ids[0]]
+
+    rows = []
+    extra = []
+    summary = None
+    if selected_ids:
+        boms = _load_selected_boms(selected_ids)
+        inventory = storage.load_inventory()
+        rows, extra = compare_boms(boms, inventory)
+        summary = compare_summary(rows)
+
+    export_url = None
+    if selected_ids and rows:
+        query = urlencode([("bom_id", bom_id) for bom_id in selected_ids])
+        export_url = f"{url_for('compare_export')}?{query}"
+
+    return render_template(
+        "compare.html",
+        bom_ids=bom_ids,
+        selected_ids=selected_ids,
+        rows=rows,
+        extra=extra,
+        summary=summary,
+        export_url=export_url,
+    )
+
+
+@app.route("/compare/export.csv")
+def compare_export():
+    selected_ids = _selected_bom_ids()
+    if not selected_ids:
+        flash("Select at least one BOM to export.", "error")
+        return redirect(url_for("compare_page"))
+
+    boms = _load_selected_boms(selected_ids)
+    inventory = storage.load_inventory()
+    rows, _ = compare_boms(boms, inventory)
+
+    response = make_response(compare_to_csv(rows))
+    response.headers["Content-Type"] = "text/csv; charset=utf-8"
+    response.headers["Content-Disposition"] = 'attachment; filename="compare_gap_report.csv"'
+    return response
 
 
 def main() -> None:

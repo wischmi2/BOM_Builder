@@ -8,12 +8,150 @@
     <p class="lede">Match inventory against BOM need lists and find gaps.</p>
 </section>
 
-<div class="placeholder-card">
-    <p>Comparison UI coming in Phase 4.</p>
-    {% if bom_ids %}
-    <p class="muted">BOMs available for comparison: {{ bom_ids|join(', ') }}</p>
-    {% else %}
-    <p class="muted">Import a BOM on the Need page first.</p>
-    {% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
 </div>
+{% endif %}
+{% endwith %}
+
+<div class="compare-setup card">
+    <form class="compare-select-form" method="get" action="{{ url_for('compare_page') }}">
+        <h2>Select BOMs</h2>
+        {% if bom_ids %}
+        <div class="bom-checkboxes">
+            {% for bid in bom_ids %}
+            <label class="filter-check">
+                <input type="checkbox" name="bom_id" value="{{ bid }}"
+                       {% if bid in selected_ids %}checked{% endif %}>
+                {{ bid }}
+            </label>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Compare</button>
+        {% if export_url %}
+        <a class="btn btn-secondary" href="{{ export_url }}">Export gap CSV</a>
+        {% endif %}
+        {% else %}
+        <p class="muted">Import a BOM on the <a href="{{ url_for('need_page') }}">Need</a> page first.</p>
+        {% endif %}
+    </form>
+</div>
+
+{% if summary %}
+<div class="summary-cards">
+    <div class="summary-card">
+        <span class="summary-value">{{ summary.total }}</span>
+        <span class="summary-label">Total lines</span>
+    </div>
+    <div class="summary-card status-ok">
+        <span class="summary-value">{{ summary.ok }}</span>
+        <span class="summary-label">OK</span>
+    </div>
+    <div class="summary-card status-partial">
+        <span class="summary-value">{{ summary.partial }}</span>
+        <span class="summary-label">Partial</span>
+    </div>
+    <div class="summary-card status-missing">
+        <span class="summary-value">{{ summary.missing }}</span>
+        <span class="summary-label">Missing</span>
+    </div>
+    <div class="summary-card status-dni">
+        <span class="summary-value">{{ summary.dni }}</span>
+        <span class="summary-label">DNI</span>
+    </div>
+</div>
+
+<div class="compare-toolbar card">
+    <input type="search" id="compare-search" class="search-input" placeholder="Search results…" autocomplete="off">
+    <label class="filter-check"><input type="checkbox" id="filter-missing"> Missing only</label>
+    <label class="filter-check"><input type="checkbox" id="filter-partial"> Partial only</label>
+    <label class="filter-check"><input type="checkbox" id="filter-hide-ok" checked> Hide OK</label>
+    <label class="filter-check"><input type="checkbox" id="filter-hide-dni" checked> Hide DNI</label>
+</div>
+
+<div class="table-wrap card">
+    <table class="data-table" id="compare-table">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Name</th>
+                <th>LibRef</th>
+                <th class="col-qty">Need</th>
+                <th class="col-qty">On hand</th>
+                <th class="col-qty">Delta</th>
+                <th>BOM</th>
+                <th>Designators</th>
+                <th>Match</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr class="compare-row status-{{ row.status }}"
+                data-status="{{ row.status }}"
+                data-search="{{ (row.need_line.name ~ ' ' ~ row.need_line.lib_ref ~ ' ' ~ row.need_line.designator_display)|lower }}">
+                <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
+                <td>{{ row.need_line.name }}</td>
+                <td><code>{{ row.need_line.lib_ref }}</code></td>
+                <td class="col-qty">{{ row.qty_needed }}</td>
+                <td class="col-qty">{{ row.qty_on_hand }}</td>
+                <td class="col-qty {% if row.delta < 0 %}delta-negative{% elif row.delta > 0 %}delta-positive{% endif %}">
+                    {{ row.delta }}
+                </td>
+                <td>{{ row.need_line.bom_id }}</td>
+                <td class="col-designators">{{ row.need_line.designator_display }}</td>
+                <td class="col-match">
+                    <span class="match-type">{{ row.match_type }}</span>
+                    {% if row.matched_ids_display %}
+                    <span class="muted match-detail">{{ row.matched_ids_display }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p class="empty-filter muted" id="compare-empty" hidden>No rows match filters.</p>
+</div>
+
+{% if extra %}
+<section class="extra-inventory card">
+    <h2>In stock, not on selected BOM(s)</h2>
+    <p class="muted">{{ extra|length }} inventory item(s) did not match any need line.</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>LibRef</th>
+                <th>Name</th>
+                <th class="col-qty">Qty</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in extra %}
+            <tr>
+                <td><code>{{ item.lib_ref }}</code></td>
+                <td>{{ item.name }}</td>
+                <td class="col-qty">{{ item.qty_on_hand }}</td>
+                <td>{{ item.location }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endif %}
+
+{% elif selected_ids %}
+<div class="card empty-state">
+    <p>No lines found in selected BOM(s).</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if rows %}
+<script src="{{ url_for('static', filename='compare.js') }}"></script>
+{% endif %}
 {% endblock %}

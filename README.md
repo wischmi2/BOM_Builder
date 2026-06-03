@@ -21,7 +21,7 @@ Opens http://127.0.0.1:5000/ (use `--no-browser` to skip auto-open).
 
 - **Need** — Upload BOM CSV, check off acquired parts, search/filter, export CSV
 - **Inventory** — Add/edit/delete stock, CSV import/export (merge by LibRef+Location)
-- **Compare** — Need vs inventory gap report (Phase 4+)
+- **Compare** — Select BOM(s), match vs inventory (OK / partial / missing), export gap CSV
 
 ## Tests
 

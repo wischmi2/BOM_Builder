@@ -1,0 +1,184 @@
+from __future__ import annotations
+
+import csv
+import io
+import re
+from dataclasses import dataclass, field
+
+from bom_builder.models import BomDocument, InventoryDocument, InventoryItem, NeedLine
+
+_STATUS_ORDER = {"missing": 0, "partial": 1, "ok": 2, "dni": 3}
+
+
+@dataclass
+class CompareRow:
+    need_line: NeedLine
+    matched_inventory: list[InventoryItem] = field(default_factory=list)
+    qty_needed: int = 0
+    qty_on_hand: int = 0
+    delta: int = 0
+    status: str = "missing"
+    match_type: str = "none"
+
+    @property
+    def matched_ids_display(self) -> str:
+        if not self.matched_inventory:
+            return ""
+        parts = []
+        for item in self.matched_inventory:
+            label = item.location or item.id[:8]
+            parts.append(f"{item.lib_ref}@{label}({item.qty_on_hand})")
+        return "; ".join(parts)
+
+
+def normalize_key(value: str) -> str:
+    if not value:
+        return ""
+    return re.sub(r"[^A-Z0-9]", "", value.upper())
+
+
+def split_lib_refs(lib_ref: str) -> list[str]:
+    return [part.strip() for part in lib_ref.split(",") if part.strip()]
+
+
+def _build_inventory_indexes(
+    items: list[InventoryItem],
+) -> tuple[dict[str, list[InventoryItem]], dict[str, list[InventoryItem]]]:
+    by_lib_ref: dict[str, list[InventoryItem]] = {}
+    by_name: dict[str, list[InventoryItem]] = {}
+    for item in items:
+        lib_key = normalize_key(item.lib_ref)
+        if lib_key:
+            by_lib_ref.setdefault(lib_key, []).append(item)
+        name_key = normalize_key(item.name)
+        if name_key:
+            by_name.setdefault(name_key, []).append(item)
+    return by_lib_ref, by_name
+
+
+def _match_inventory(
+    line: NeedLine,
+    by_lib_ref: dict[str, list[InventoryItem]],
+    by_name: dict[str, list[InventoryItem]],
+) -> tuple[list[InventoryItem], str]:
+    seen_ids: set[str] = set()
+    matched: list[InventoryItem] = []
+
+    for segment in split_lib_refs(line.lib_ref):
+        lib_key = normalize_key(segment)
+        if not lib_key:
+            continue
+        for item in by_lib_ref.get(lib_key, []):
+            if item.id not in seen_ids:
+                seen_ids.add(item.id)
+                matched.append(item)
+
+    if matched:
+        return matched, "lib_ref"
+
+    if line.name and not line.is_dni:
+        name_key = normalize_key(line.name)
+        if name_key:
+            for item in by_name.get(name_key, []):
+                if item.id not in seen_ids:
+                    seen_ids.add(item.id)
+                    matched.append(item)
+            if matched:
+                return matched, "name"
+
+    return [], "none"
+
+
+def _status_for(qty_needed: int, qty_on_hand: int, is_dni: bool) -> str:
+    if is_dni:
+        return "dni"
+    if qty_on_hand >= qty_needed:
+        return "ok"
+    if qty_on_hand > 0:
+        return "partial"
+    return "missing"
+
+
+def compare_boms(
+    boms: list[BomDocument],
+    inventory: InventoryDocument,
+) -> tuple[list[CompareRow], list[InventoryItem]]:
+    by_lib_ref, by_name = _build_inventory_indexes(inventory.items)
+    rows: list[CompareRow] = []
+    matched_item_ids: set[str] = set()
+
+    for bom in boms:
+        for line in bom.lines:
+            matched, match_type = _match_inventory(line, by_lib_ref, by_name)
+            for item in matched:
+                matched_item_ids.add(item.id)
+
+            qty_on_hand = sum(item.qty_on_hand for item in matched)
+            qty_needed = line.quantity
+            status = _status_for(qty_needed, qty_on_hand, line.is_dni)
+
+            rows.append(
+                CompareRow(
+                    need_line=line,
+                    matched_inventory=matched,
+                    qty_needed=qty_needed,
+                    qty_on_hand=qty_on_hand,
+                    delta=qty_on_hand - qty_needed,
+                    status=status,
+                    match_type=match_type,
+                )
+            )
+
+    rows.sort(key=lambda r: (_STATUS_ORDER.get(r.status, 9), r.need_line.lib_ref.upper()))
+
+    extra = [item for item in inventory.items if item.id not in matched_item_ids]
+    extra.sort(key=lambda i: i.lib_ref.upper())
+    return rows, extra
+
+
+@dataclass
+class CompareSummary:
+    total: int = 0
+    ok: int = 0
+    partial: int = 0
+    missing: int = 0
+    dni: int = 0
+
+
+def compare_summary(rows: list[CompareRow]) -> CompareSummary:
+    summary = CompareSummary(total=len(rows))
+    for row in rows:
+        if row.status == "ok":
+            summary.ok += 1
+        elif row.status == "partial":
+            summary.partial += 1
+        elif row.status == "dni":
+            summary.dni += 1
+        else:
+            summary.missing += 1
+    return summary
+
+
+def compare_to_csv(rows: list[CompareRow]) -> str:
+    buffer = io.StringIO()
+    writer = csv.writer(buffer, lineterminator="\n")
+    writer.writerow(
+        ["LibRef", "Name", "NeedQty", "OnHand", "Delta", "Status", "BOM", "Designators", "MatchType", "MatchedInventory"]
+    )
+    for row in rows:
+        line = row.need_line
+        writer.writerow(
+            [
+                line.lib_ref,
+                line.name,
+                row.qty_needed,
+                row.qty_on_hand,
+                row.delta,
+                row.status,
+                line.bom_id,
+                line.designator_display,
+                row.match_type,
+                row.matched_ids_display,
+            ]
+        )
+    return buffer.getvalue()
