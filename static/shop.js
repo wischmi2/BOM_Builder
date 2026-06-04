@@ -91,12 +91,12 @@
     expandAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(false));
     collapseAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(true));
 
-    function lineUrl(lineId) {
-        return config.updateUrlTemplate.replace("__LINE_ID__", encodeURIComponent(lineId));
+    function lineUrl(storageKey) {
+        return config.updateUrlTemplate.replace("__STORAGE_KEY__", encodeURIComponent(storageKey));
     }
 
-    async function patchLine(lineId, body) {
-        const response = await fetch(lineUrl(lineId), {
+    async function patchLine(storageKey, body) {
+        const response = await fetch(lineUrl(storageKey), {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
             body: JSON.stringify(body),
@@ -239,7 +239,7 @@
     }
 
     rows.forEach((row) => {
-        const lineId = row.dataset.lineId;
+        const storageKey = row.dataset.storageKey || row.dataset.lineId;
         const mpn = row.dataset.mpn;
         const orderedCheck = row.querySelector(".ordered-check");
         const buyQtyInput = row.querySelector(".buy-qty-input");
@@ -247,11 +247,11 @@
         const lookupBtn = row.querySelector(".shop-lookup-row");
 
         let timer;
-        function scheduleSave(body) {
+        function scheduleSave(body, immediate) {
             clearTimeout(timer);
-            timer = setTimeout(async () => {
+            const save = async () => {
                 try {
-                    const result = await patchLine(lineId, body);
+                    const result = await patchLine(storageKey, body);
                     if ("ordered" in body) {
                         row.dataset.ordered = result.ordered ? "1" : "0";
                         row.classList.toggle("row-ordered", result.ordered);
@@ -260,21 +260,34 @@
                 } catch (err) {
                     alert(err.message || "Could not save. Is the server still running?");
                 }
-            }, 400);
+            };
+            if (immediate) {
+                save();
+            } else {
+                timer = setTimeout(save, 400);
+            }
         }
 
         orderedCheck?.addEventListener("change", () => {
-            scheduleSave({ ordered: orderedCheck.checked });
+            scheduleSave({ ordered: orderedCheck.checked }, true);
         });
 
         buyQtyInput?.addEventListener("input", () => {
             const raw = parseInt(buyQtyInput.value, 10);
             const qty = Number.isFinite(raw) && raw >= 0 ? raw : 0;
-            scheduleSave({ buy_qty: qty });
+            scheduleSave({ buy_qty: qty }, false);
+        });
+        buyQtyInput?.addEventListener("blur", () => {
+            const raw = parseInt(buyQtyInput.value, 10);
+            const qty = Number.isFinite(raw) && raw >= 0 ? raw : 0;
+            scheduleSave({ buy_qty: qty }, true);
         });
 
         notesInput?.addEventListener("input", () => {
-            scheduleSave({ notes: notesInput.value });
+            scheduleSave({ notes: notesInput.value }, false);
+        });
+        notesInput?.addEventListener("blur", () => {
+            scheduleSave({ notes: notesInput.value }, true);
         });
 
         lookupBtn?.addEventListener("click", () => {
@@ -294,6 +307,12 @@
 
     searchInput?.addEventListener("input", applyFilters);
     hideOrdered?.addEventListener("change", applyFilters);
+
+    const viewForm = document.querySelector(".compare-select-form");
+    viewForm?.querySelectorAll('input[name="view"]').forEach((radio) => {
+        radio.addEventListener("change", () => viewForm.requestSubmit());
+    });
+
     initCollapseState();
     applyFilters();
 })();

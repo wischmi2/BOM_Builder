@@ -7,6 +7,7 @@ from bom_builder import storage
 from bom_builder.models import BomDocument, InventoryDocument, InventoryItem, NeedLine
 from bom_builder.shopping import (
     alternates_display,
+    attach_storage_key,
     build_shop_lines,
     digikey_search_url,
     merge_shop_state,
@@ -17,10 +18,10 @@ from bom_builder.shopping import (
 )
 
 
-def _need(lib_ref: str, qty: int = 5) -> NeedLine:
+def _need(lib_ref: str, qty: int = 5, *, bom_id: str = "test-shop") -> NeedLine:
     return NeedLine(
         id="line-1",
-        bom_id="bom1",
+        bom_id=bom_id,
         name="10K",
         description="",
         designators=["R1"],
@@ -46,7 +47,7 @@ class TestShopping(unittest.TestCase):
         self.assertIn("mouser.com", mouser_search_url("GRM155R71H104"))
 
     def test_build_shop_lines_missing_only(self) -> None:
-        bom = BomDocument("bom1", "t.csv", [_need("PART-A", 10)], board_count=2)
+        bom = BomDocument("bom1", "t.csv", [_need("PART-A", 10, bom_id="bom1")], board_count=2)
         inv = InventoryDocument(items=[InventoryItem(id="i1", lib_ref="PART-A", qty_on_hand=4)])
         lines = build_shop_lines([bom], inv, "per_board")
         self.assertEqual(len(lines), 1)
@@ -57,22 +58,71 @@ class TestShopping(unittest.TestCase):
     def test_merge_shop_state(self) -> None:
         from bom_builder.shopping import ShopLine
 
-        line = ShopLine(
-            line_id="x",
-            lib_ref="P",
-            primary_mpn="P",
-            alternates_display="",
-            name="n",
-            status="missing",
-            qty_needed=5,
-            qty_on_hand=0,
-            default_buy_qty=5,
-            buy_qty=5,
+        line = attach_storage_key(
+            ShopLine(
+                line_id="test-shop:line-1",
+                lib_ref="P",
+                primary_mpn="P",
+                alternates_display="",
+                name="n",
+                status="missing",
+                qty_needed=5,
+                qty_on_hand=0,
+                default_buy_qty=5,
+                buy_qty=5,
+            )
         )
-        merge_shop_state([line], {"x": {"buy_qty": 3, "notes": "PO-1", "ordered": True}})
+        merge_shop_state([line], {"lib:P": {"buy_qty": 3, "notes": "PO-1", "ordered": True}})
         self.assertEqual(line.buy_qty, 3)
         self.assertEqual(line.notes, "PO-1")
         self.assertTrue(line.ordered)
+
+    def test_saved_state_merges_per_board_notes_into_combined(self) -> None:
+        from bom_builder.shopping import ShopLine, saved_state_for_line
+
+        line = attach_storage_key(
+            ShopLine(
+                line_id="lib:P",
+                lib_ref="P",
+                primary_mpn="P",
+                alternates_display="",
+                name="n",
+                status="missing",
+                qty_needed=10,
+                qty_on_hand=0,
+                default_buy_qty=10,
+                buy_qty=10,
+                source_line_ids=["bomA:row-1", "bomB:row-2"],
+            )
+        )
+        saved = {
+            "lib:P": {"notes": "", "ordered": False},
+            "bomA:row-1": {"notes": "from board A", "updated_at": "2026-01-02T00:00:00+00:00"},
+            "bomB:row-2": {"notes": "newer on B", "updated_at": "2026-06-03T00:00:00+00:00"},
+        }
+        state = saved_state_for_line(saved, line)
+        assert state is not None
+        self.assertEqual(state["notes"], "newer on B")
+
+    def test_merge_shop_state_legacy_line_id(self) -> None:
+        from bom_builder.shopping import ShopLine
+
+        line = attach_storage_key(
+            ShopLine(
+                line_id="test-shop:line-1",
+                lib_ref="P",
+                primary_mpn="P",
+                alternates_display="",
+                name="n",
+                status="missing",
+                qty_needed=5,
+                qty_on_hand=0,
+                default_buy_qty=5,
+                buy_qty=5,
+            )
+        )
+        merge_shop_state([line], {"test-shop:line-1": {"notes": "legacy key"}})
+        self.assertEqual(line.notes, "legacy key")
 
     def test_shop_to_csv(self) -> None:
         from bom_builder.shopping import ShopLine
@@ -130,18 +180,40 @@ class TestShoppingRoutes(unittest.TestCase):
         self.assertIn(b"DigiKey", response.data)
 
     def test_shop_update_line(self) -> None:
-        bom = storage.load_bom("test-shop")
-        assert bom is not None
-        line_id = f"{bom.bom_id}:{bom.lines[0].id}"
         response = self.client.post(
-            f"/shop/line/{line_id}",
+            "/shop/line/lib:BUYME",
             json={"buy_qty": 7, "notes": "cart A", "ordered": True},
             headers={"Accept": "application/json"},
         )
         self.assertEqual(response.status_code, 200)
         saved = storage.load_shopping_list()
-        self.assertEqual(saved[line_id]["buy_qty"], 7)
-        self.assertEqual(saved[line_id]["notes"], "cart A")
+        self.assertEqual(saved["lib:BUYME"]["buy_qty"], 7)
+        self.assertEqual(saved["lib:BUYME"]["notes"], "cart A")
+
+    def test_combined_view_shows_notes_saved_per_board_only(self) -> None:
+        bom = storage.load_bom("test-shop")
+        inv = storage.load_inventory()
+        line_id = f"{bom.bom_id}:{bom.lines[0].id}"
+        storage.save_shopping_list({line_id: {"notes": "board only", "updated_at": "2026-06-03T00:00:00+00:00"}})
+        combined = build_shop_lines([bom], inv, "combined")
+        merge_shop_state(combined, storage.load_shopping_list())
+        self.assertEqual(combined[0].notes, "board only")
+
+    def test_shop_notes_persist_across_views(self) -> None:
+        self.client.post(
+            "/shop/line/lib:BUYME",
+            json={"notes": "same part"},
+            headers={"Accept": "application/json"},
+        )
+        bom = storage.load_bom("test-shop")
+        inv = storage.load_inventory()
+        saved = storage.load_shopping_list()
+        per_board = build_shop_lines([bom], inv, "per_board")
+        merge_shop_state(per_board, saved)
+        self.assertEqual(per_board[0].notes, "same part")
+        combined = build_shop_lines([bom], inv, "combined")
+        merge_shop_state(combined, saved)
+        self.assertEqual(combined[0].notes, "same part")
 
 
 if __name__ == "__main__":

@@ -583,8 +583,8 @@ def shop_lookup():
     return jsonify(result)
 
 
-@app.route("/shop/line/<line_id>", methods=["POST"])
-def shop_update_line(line_id: str):
+@app.route("/shop/line/<path:storage_key>", methods=["POST"])
+def shop_update_line(storage_key: str):
     payload = request.get_json(silent=True) or request.form
     saved = storage.load_shopping_list()
 
@@ -600,15 +600,15 @@ def shop_update_line(line_id: str):
         raw = payload.get("ordered")
         updates["ordered"] = raw in (True, "true", "on", "1", 1)
 
-    saved = apply_line_update(saved, line_id, **updates)
+    saved = apply_line_update(saved, storage_key, **updates)
     storage.save_shopping_list(saved)
 
-    entry = saved.get(line_id, {})
+    entry = saved.get(storage_key, {})
     if request.accept_mimetypes.best == "application/json" or request.is_json:
         return jsonify(
             {
                 "ok": True,
-                "line_id": line_id,
+                "storage_key": storage_key,
                 "buy_qty": entry.get("buy_qty", 0),
                 "notes": entry.get("notes", ""),
                 "ordered": entry.get("ordered", False),

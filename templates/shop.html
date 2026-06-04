@@ -140,6 +140,7 @@
             {% set mo = cache_entry.get('mouser') %}
             <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %}"
                 data-line-id="{{ line.line_id }}"
+                data-storage-key="{{ line.storage_key }}"
                 data-mpn="{{ line.primary_mpn }}"
                 data-cache-key="{{ line.cache_key }}"
                 data-category-group="{{ group.category_id }}"
@@ -222,7 +223,7 @@
 {% if shop_lines %}
 <script>
     window.BOM_SHOP = {
-        updateUrlTemplate: {{ url_for('shop_update_line', line_id='__LINE_ID__')|tojson }},
+        updateUrlTemplate: {{ url_for('shop_update_line', storage_key='__STORAGE_KEY__')|tojson }},
         lookupUrl: {{ url_for('shop_lookup')|tojson }},
         apiConfigured: {{ any_api_configured|tojson }}
     };

@@ -39,6 +39,8 @@ class ShopLine:
     mouser_url: str = ""
     search_text: str = ""
     cache_key: str = ""
+    storage_key: str = ""
+    source_line_ids: list[str] = field(default_factory=list)
 
     @property
     def alternates_extra(self) -> bool:
@@ -71,12 +73,76 @@ def mouser_search_url(mpn: str) -> str:
     return f"https://www.mouser.com/c/?q={keyword}"
 
 
+def attach_storage_key(line: ShopLine) -> ShopLine:
+    """Stable key for shopping_list.json (same part across combined/per-board views)."""
+    from bom_builder.category_overrides import part_key_for_shop_line
+
+    line.storage_key = part_key_for_shop_line(line)
+    return line
+
+
+def candidate_keys_for_line(line: ShopLine) -> list[str]:
+    keys: list[str] = []
+    for key in (line.storage_key, line.line_id, *line.source_line_ids, line.cache_key):
+        if key and key not in keys:
+            keys.append(key)
+    return keys
+
+
+def _pick_best_notes(states: list[dict[str, Any]]) -> str:
+    best = ""
+    best_ts = ""
+    for state in states:
+        notes = str(state.get("notes") or "").strip()
+        if not notes:
+            continue
+        ts = str(state.get("updated_at") or "")
+        if not best or ts > best_ts:
+            best = notes
+            best_ts = ts
+    return best
+
+
+def saved_state_for_line(saved: dict[str, dict[str, Any]], line: ShopLine) -> dict[str, Any] | None:
+    """Merge saved shopping state from storage_key, aggregate id, and per-board line ids."""
+    states: list[dict[str, Any]] = []
+    for key in candidate_keys_for_line(line):
+        state = saved.get(key)
+        if isinstance(state, dict):
+            states.append(state)
+    if not states:
+        return None
+
+    merged: dict[str, Any] = {}
+    for key in (line.storage_key, line.line_id):
+        if not key:
+            continue
+        state = saved.get(key)
+        if not isinstance(state, dict):
+            continue
+        for field in ("buy_qty", "ordered"):
+            if field in state and field not in merged:
+                merged[field] = state[field]
+
+    for state in states:
+        if "ordered" in state and state.get("ordered"):
+            merged["ordered"] = True
+
+    notes = _pick_best_notes(states)
+    if notes:
+        merged["notes"] = notes
+
+    if not merged:
+        return states[0]
+    return merged
+
+
 def _shop_line_from_compare(row: CompareRow) -> ShopLine:
     line = row.need_line
     mpn = primary_mpn(line.lib_ref)
     default_buy = shortfall_qty(row.qty_needed, row.qty_on_hand)
     search_parts = [line.name, line.lib_ref, line.designator_display, line.bom_id]
-    return ShopLine(
+    line = ShopLine(
         line_id=f"{line.bom_id}:{line.id}",
         lib_ref=line.lib_ref,
         primary_mpn=mpn,
@@ -94,13 +160,14 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
         search_text=" ".join(search_parts).lower(),
         cache_key=cache_key_for_mpn(mpn),
     )
+    return attach_storage_key(line)
 
 
 def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
     mpn = primary_mpn(row.lib_ref)
     default_buy = shortfall_qty(row.qty_needed_total, row.qty_on_hand)
     search_parts = [row.name, row.lib_ref, row.bom_ids_display]
-    return ShopLine(
+    line = ShopLine(
         line_id=row.aggregate_key,
         lib_ref=row.lib_ref,
         primary_mpn=mpn,
@@ -116,7 +183,9 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         mouser_url=mouser_search_url(mpn),
         search_text=" ".join(search_parts).lower(),
         cache_key=cache_key_for_mpn(mpn),
+        source_line_ids=[f"{src.bom_id}:{src.id}" for src in row.source_lines],
     )
+    return attach_storage_key(line)
 
 
 def build_shop_lines(
@@ -149,7 +218,7 @@ def build_shop_lines(
 
 def merge_shop_state(lines: list[ShopLine], saved: dict[str, dict[str, Any]]) -> None:
     for line in lines:
-        state = saved.get(line.line_id)
+        state = saved_state_for_line(saved, line)
         if not state:
             continue
         if "buy_qty" in state:
@@ -177,19 +246,20 @@ def shop_stats(lines: list[ShopLine]) -> dict[str, int]:
 
 def lines_to_saved_dict(lines: list[ShopLine]) -> dict[str, dict[str, Any]]:
     now = datetime.now(timezone.utc).isoformat()
-    return {
-        line.line_id: {
+    out: dict[str, dict[str, Any]] = {}
+    for line in lines:
+        key = line.storage_key or line.line_id
+        out[key] = {
             "buy_qty": line.buy_qty,
             "notes": line.notes,
             "ordered": line.ordered,
             "updated_at": now,
         }
-        for line in lines
-    }
+    return out
 
 
-def apply_line_update(saved: dict[str, dict[str, Any]], line_id: str, **updates) -> dict[str, dict[str, Any]]:
-    entry = dict(saved.get(line_id, {}))
+def apply_line_update(saved: dict[str, dict[str, Any]], storage_key: str, **updates) -> dict[str, dict[str, Any]]:
+    entry = dict(saved.get(storage_key, {}))
     if "buy_qty" in updates:
         entry["buy_qty"] = max(0, int(updates["buy_qty"]))
     if "notes" in updates:
@@ -197,7 +267,7 @@ def apply_line_update(saved: dict[str, dict[str, Any]], line_id: str, **updates)
     if "ordered" in updates:
         entry["ordered"] = bool(updates["ordered"])
     entry["updated_at"] = datetime.now(timezone.utc).isoformat()
-    saved[line_id] = entry
+    saved[storage_key] = entry
     return saved
 
 
