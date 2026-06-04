@@ -81,8 +81,13 @@
             · <span id="qty-summary">{{ stats.qty_per_board }} parts per board × {{ bom.board_count }} boards = <strong>{{ stats.qty_total }}</strong> total</span>
         </p>
 
+        <div class="shop-table-toolbar">
+            <button type="button" class="btn btn-secondary btn-sm" id="need-expand-all">Expand all</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="need-collapse-all">Collapse all</button>
+        </div>
+
         <div class="table-wrap card">
-            <table class="data-table" id="need-table">
+            <table class="data-table need-table" id="need-table">
                 <thead>
                     <tr>
                         <th class="col-check" data-col="check">Have</th>
@@ -96,9 +101,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for line in bom.lines %}
+                    {% for group in grouped_lines %}
+                    <tr class="category-header" data-category="{{ group.category_id }}">
+                        <td colspan="8">
+                            <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
+                            <strong>{{ group.label }}</strong>
+                            <span class="category-count muted">({{ group.rows|length }})</span>
+                        </td>
+                    </tr>
+                    {% for line in group.rows %}
                     <tr class="need-row {% if line.is_dni %}row-dni{% endif %} {% if line.acquired %}row-acquired{% endif %}"
                         data-line-id="{{ line.id }}"
+                        data-category-group="{{ group.category_id }}"
+                        data-part-key="{{ line|need_part_key }}"
+                        data-auto-category="{{ line|need_auto_category }}"
                         data-is-dni="{{ '1' if line.is_dni else '0' }}"
                         data-acquired="{{ '1' if line.acquired else '0' }}"
                         data-search="{{ (line.name ~ ' ' ~ line.lib_ref ~ ' ' ~ line.designator_display ~ ' ' ~ line.footprint ~ ' ' ~ line.description)|lower }}">
@@ -107,7 +123,7 @@
                                    {% if line.acquired %}checked{% endif %}
                                    aria-label="Acquired {{ line.name }}">
                         </td>
-                        <td class="col-name">
+                        <td class="col-name" title="{{ line.name }}">
                             <span class="cell-primary">{{ line.name }}</span>
                             {% if line.is_dni %}<span class="badge badge-dni">DNI</span>{% endif %}
                             {% if line.description %}
@@ -120,13 +136,14 @@
                         <td class="col-libref"><code>{{ line.lib_ref }}</code></td>
                         <td class="col-qty qty-per-board">{{ line.quantity }}</td>
                         <td class="col-qty qty-total" data-per-board="{{ line.quantity }}">{{ line.quantity * bom.board_count }}</td>
-                        <td class="col-designators">{{ line.designator_display }}</td>
-                        <td class="col-footprint">{{ line.footprint }}</td>
+                        <td class="col-designators" title="{{ line.designator_display }}">{{ line.designator_display }}</td>
+                        <td class="col-footprint" title="{{ line.footprint }}">{{ line.footprint }}</td>
                         <td class="col-notes">
                             <input type="text" class="notes-input" value="{{ line.notes }}"
                                    placeholder="Notes…" data-line-id="{{ line.id }}">
                         </td>
                     </tr>
+                    {% endfor %}
                     {% endfor %}
                 </tbody>
             </table>

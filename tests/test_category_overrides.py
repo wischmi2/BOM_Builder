@@ -6,7 +6,8 @@ from pathlib import Path
 from unittest import mock
 
 from bom_builder import category_overrides as co
-from bom_builder.category_overrides import group_compare_rows, group_inventory_items, set_override
+from bom_builder.category_overrides import group_compare_rows, group_inventory_items, group_need_lines, group_shop_lines, set_override
+from bom_builder.shopping import ShopLine
 from bom_builder.models import InventoryItem
 from bom_builder.models import NeedLine
 from bom_builder.part_categories import classify_need_line
@@ -54,6 +55,48 @@ class TestCategoryOverrides(unittest.TestCase):
             InventoryItem(id="2", lib_ref="RK73H1", name="10K OHM"),
         ]
         groups = group_inventory_items(items)
+        labels = [g.label for g in groups if g.rows]
+        self.assertEqual(labels[0], "Resistors")
+        self.assertIn("Capacitors", labels)
+
+    def test_need_grouping_uses_designator_rules(self) -> None:
+        r_line = _line(designators=["R1"], lib_ref="RK73")
+        c_line = _line(designators=["C1"], lib_ref="GRM155")
+        c_line.name = "0.1UF"
+        lines = [r_line, c_line]
+        groups = group_need_lines(lines)
+        labels = [g.label for g in groups if g.rows]
+        self.assertEqual(labels[0], "Resistors")
+        self.assertIn("Capacitors", labels)
+
+    def test_shop_grouping_uses_same_categories(self) -> None:
+        lines = [
+            ShopLine(
+                line_id="lib:RK73",
+                lib_ref="RK73",
+                primary_mpn="RK73",
+                alternates_display="",
+                name="10K OHM",
+                status="missing",
+                qty_needed=10,
+                qty_on_hand=0,
+                default_buy_qty=10,
+                buy_qty=10,
+            ),
+            ShopLine(
+                line_id="lib:GRM155",
+                lib_ref="GRM155",
+                primary_mpn="GRM155",
+                alternates_display="",
+                name="0.1UF",
+                status="missing",
+                qty_needed=5,
+                qty_on_hand=0,
+                default_buy_qty=5,
+                buy_qty=5,
+            ),
+        ]
+        groups = group_shop_lines(lines)
         labels = [g.label for g in groups if g.rows]
         self.assertEqual(labels[0], "Resistors")
         self.assertIn("Capacitors", labels)

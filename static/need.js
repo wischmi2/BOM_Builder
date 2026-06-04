@@ -11,10 +11,89 @@
     const progressFill = document.getElementById("progress-fill");
     const boardCountInput = document.getElementById("board-count");
     const qtySummary = document.getElementById("qty-summary");
+    const expandAllBtn = document.getElementById("need-expand-all");
+    const collapseAllBtn = document.getElementById("need-collapse-all");
+    const collapseKey = "bom-builder-need-collapsed";
 
     if (!table) return;
 
     const rows = Array.from(table.querySelectorAll("tbody tr.need-row"));
+    const categoryHeaders = Array.from(table.querySelectorAll("tbody tr.category-header"));
+
+    function rowsForCategory(categoryId) {
+        return rows.filter((row) => row.dataset.categoryGroup === categoryId);
+    }
+
+    function headerForCategory(categoryId) {
+        return categoryHeaders.find((h) => h.dataset.category === categoryId);
+    }
+
+    function updateCategoryCount(categoryId) {
+        const header = headerForCategory(categoryId);
+        if (!header) return;
+        const countEl = header.querySelector(".category-count");
+        if (!countEl) return;
+        const visible = rowsForCategory(categoryId).filter((r) => !r.hidden).length;
+        const total = rowsForCategory(categoryId).length;
+        countEl.textContent = `(${visible === total ? total : visible + "/" + total})`;
+    }
+
+    function isCategoryCollapsed(categoryId) {
+        try {
+            const collapsed = JSON.parse(sessionStorage.getItem(collapseKey) || "{}");
+            return Boolean(collapsed[categoryId]);
+        } catch {
+            return false;
+        }
+    }
+
+    function setCategoryCollapsed(categoryId, collapsed) {
+        let state = {};
+        try {
+            state = JSON.parse(sessionStorage.getItem(collapseKey) || "{}");
+        } catch {
+            state = {};
+        }
+        if (collapsed) state[categoryId] = true;
+        else delete state[categoryId];
+        sessionStorage.setItem(collapseKey, JSON.stringify(state));
+    }
+
+    function applyCategoryCollapse(categoryId, collapsed) {
+        const header = headerForCategory(categoryId);
+        const toggle = header?.querySelector(".category-toggle");
+        if (header) header.classList.toggle("is-collapsed", collapsed);
+        if (toggle) toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        rowsForCategory(categoryId).forEach((row) => {
+            row.classList.toggle("category-collapsed", collapsed);
+        });
+    }
+
+    function initCollapseState() {
+        categoryHeaders.forEach((header) => {
+            applyCategoryCollapse(header.dataset.category, isCategoryCollapsed(header.dataset.category));
+        });
+    }
+
+    function setAllCategoriesCollapsed(collapsed) {
+        categoryHeaders.forEach((header) => {
+            const categoryId = header.dataset.category;
+            setCategoryCollapsed(categoryId, collapsed);
+            applyCategoryCollapse(categoryId, collapsed);
+        });
+    }
+
+    categoryHeaders.forEach((header) => {
+        header.querySelector(".category-toggle")?.addEventListener("click", () => {
+            const categoryId = header.dataset.category;
+            const next = !header.classList.contains("is-collapsed");
+            setCategoryCollapsed(categoryId, next);
+            applyCategoryCollapse(categoryId, next);
+        });
+    });
+
+    expandAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(false));
+    collapseAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(true));
 
     function lineUrl(lineId) {
         return config.updateUrlTemplate.replace("__LINE_ID__", encodeURIComponent(lineId));
@@ -74,6 +153,13 @@
 
             row.hidden = !show;
             if (show) visible += 1;
+        });
+
+        categoryHeaders.forEach((header) => {
+            const categoryId = header.dataset.category;
+            const hasVisible = rowsForCategory(categoryId).some((row) => !row.hidden);
+            header.hidden = !hasVisible;
+            updateCategoryCount(categoryId);
         });
 
         if (emptyFilter) emptyFilter.hidden = visible > 0;
@@ -149,5 +235,6 @@
         });
     });
 
+    initCollapseState();
     applyFilters();
 })();

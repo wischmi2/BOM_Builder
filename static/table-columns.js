@@ -1,8 +1,8 @@
 (function () {
     const MIN_WIDTH = 48;
-    const STORAGE_PREFIX = "bom-table-cols-pct-v2-";
+    const STORAGE_PREFIX = "bom-table-cols-pct-v3-";
 
-    /** Relative weights — normalized to 100% of table width. */
+    /** Relative column weights — normalized to 100% of table width. */
     const WEIGHTS = {
         check: 0.55,
         qty: 0.65,
@@ -10,21 +10,46 @@
         libref: 1.1,
         name: 1.5,
         status: 0.75,
-        bom: 1.05,
-        designators: 1,
-        distributors: 1.35,
-        notes: 1.25,
+        bom: 1.0,
+        designators: 1.35,
+        footprint: 1.05,
+        distributors: 2.0,
+        notes: 1.35,
         actions: 0.7,
         drag: 0.35,
         match: 1,
         board: 0.95,
-        footprint: 0.85,
         location: 0.85,
         delta: 0.65,
         leftover: 0.65,
         onhand: 0.65,
         need: 0.6,
         total: 0.65,
+    };
+
+    /** Floor % so columns never collapse (fixes vertical letter stacking). */
+    const MIN_PCT = {
+        check: 3.5,
+        qty: 4,
+        buy: 4,
+        libref: 7,
+        name: 10,
+        status: 5.5,
+        bom: 8,
+        designators: 8,
+        footprint: 7,
+        distributors: 14,
+        notes: 10,
+        actions: 6,
+        drag: 3,
+        match: 7,
+        board: 7,
+        location: 6,
+        delta: 4,
+        leftover: 4,
+        onhand: 4,
+        need: 4,
+        total: 4,
     };
 
     function loadPercents(tableId) {
@@ -92,6 +117,37 @@
         return rows.map((row) => ({ id: row.id, pct: (row.pct / sum) * 100 }));
     }
 
+    function normalizeMinWidths(headers, rows) {
+        const floors = headers.map((th, index) => MIN_PCT[colId(th, index)] ?? 4);
+        let deficit = 0;
+
+        rows.forEach((row, index) => {
+            if (row.pct < floors[index]) {
+                deficit += floors[index] - row.pct;
+                row.pct = floors[index];
+            }
+        });
+
+        if (deficit > 0) {
+            const flexible = rows
+                .map((row, index) => ({ index, slack: row.pct - floors[index] }))
+                .filter((entry) => entry.slack > 0.15);
+            const totalSlack = flexible.reduce((sum, entry) => sum + entry.slack, 0);
+            if (totalSlack > 0) {
+                flexible.forEach((entry) => {
+                    rows[entry.index].pct -= (entry.slack / totalSlack) * deficit;
+                });
+            }
+        }
+
+        const sum = rows.reduce((acc, row) => acc + row.pct, 0);
+        if (sum > 0) {
+            rows.forEach((row) => {
+                row.pct = (row.pct / sum) * 100;
+            });
+        }
+    }
+
     function applyRows(colgroup, rows) {
         const cols = colgroup.querySelectorAll("col");
         rows.forEach((row, index) => {
@@ -149,6 +205,7 @@
             rows.forEach((row, i) => {
                 row.pct = next[i];
             });
+            normalizeMinWidths(headers, rows);
             applyRows(colgroup, rows);
         }
 
@@ -176,6 +233,7 @@
         const colgroup = ensureColgroup(table, headers.length);
         let rows = rowsFromStorage(loadPercents(tableId), headers);
         if (!rows) rows = defaultRows(headers);
+        normalizeMinWidths(headers, rows);
         applyRows(colgroup, rows);
 
         headers.forEach((th, index) => {
@@ -197,15 +255,35 @@
                 event.preventDefault();
                 event.stopPropagation();
                 rows = defaultRows(headers);
+                normalizeMinWidths(headers, rows);
                 applyRows(colgroup, rows);
                 savePercents(tableId, rows);
             };
         });
+
+        return { table, colgroup, headers, rows, tableId };
     }
 
+    const tableState = [];
+
     function initAll() {
-        document.querySelectorAll("table.data-table[id]").forEach(initTable);
+        tableState.length = 0;
+        document.querySelectorAll("table.data-table[id]").forEach((table) => {
+            const state = initTable(table);
+            if (state) tableState.push(state);
+        });
     }
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            tableState.forEach(({ table, colgroup, headers, rows }) => {
+                normalizeMinWidths(headers, rows);
+                applyRows(colgroup, rows);
+            });
+        }, 150);
+    });
 
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initAll);

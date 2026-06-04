@@ -6,7 +6,7 @@
     --border: #d8dce3;
     --accent: #2563eb;
     --accent-hover: #1d4ed8;
-    --layout-max: min(96vw, 1680px);
+    --layout-pad: clamp(1rem, 2vw, 2rem);
 }
 
 * {
@@ -30,9 +30,11 @@ body {
 }
 
 .header-inner {
-    max-width: var(--layout-max);
-    margin: 0 auto;
-    padding: 0.75rem 1.25rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0.75rem var(--layout-pad);
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -70,12 +72,13 @@ body {
 
 .page-content {
     flex: 1;
-    max-width: var(--layout-max);
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem 2rem;
     width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem var(--layout-pad) 2rem;
     min-width: 0;
     overflow-x: visible;
+    box-sizing: border-box;
 }
 
 .page-header h1 {
@@ -115,10 +118,15 @@ body {
 
 .need-layout {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: min(240px, 20vw) 1fr;
     gap: 1.25rem;
     margin-top: 1.25rem;
     align-items: start;
+    width: 100%;
+}
+
+.need-main {
+    min-width: 0;
 }
 
 @media (max-width: 800px) {
@@ -336,6 +344,7 @@ body {
 .table-wrap {
     padding: 0;
     overflow-x: auto;
+    width: 100%;
     max-width: 100%;
 }
 
@@ -437,9 +446,17 @@ body.col-resize-active * {
 .resizable-table .col-bom,
 .resizable-table .col-by-board,
 .resizable-table .col-match,
-.resizable-table .col-distributors {
+.resizable-table .col-footprint {
     max-width: none;
     word-break: break-word;
+}
+
+.resizable-table .col-distributors,
+.resizable-table .col-check,
+.resizable-table .col-qty,
+.resizable-table .col-actions,
+.resizable-table .col-drag {
+    word-break: normal;
 }
 
 .resizable-table .col-libref code {
@@ -486,11 +503,6 @@ body.col-resize-active * {
 .col-libref code {
     font-size: 0.8rem;
     word-break: break-all;
-}
-
-.col-designators {
-    max-width: 140px;
-    word-break: break-word;
 }
 
 .col-notes .notes-input {
@@ -756,12 +768,6 @@ body.col-resize-active * {
     white-space: nowrap;
 }
 
-.col-designators {
-    max-width: 10rem;
-    word-break: break-word;
-    font-size: 0.8rem;
-}
-
 /* Label scan */
 .scan-label {
     margin-top: 1.25rem;
@@ -931,6 +937,17 @@ body.col-resize-active * {
     outline-offset: -2px;
 }
 
+.shop-table-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.shop-row.category-collapsed,
+.need-row.category-collapsed {
+    display: none;
+}
+
 .compare-row.category-collapsed {
     display: none;
 }
@@ -997,11 +1014,89 @@ body.col-resize-active * {
 }
 
 .col-distributors {
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .dist-link {
     margin-right: 0.35rem;
+}
+
+/* Shop table: keep column boundaries — long BOM IDs must not overlap distributors/notes */
+.shop-table.data-table.resizable-table td {
+    overflow: hidden;
+}
+
+.shop-table.data-table.resizable-table th.th-resizable {
+    overflow: visible;
+}
+
+.shop-table .col-bom {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.shop-table .col-libref {
+    word-break: break-all;
+}
+
+.shop-table .col-distributors {
+    vertical-align: top;
+    word-break: normal;
+    white-space: normal;
+}
+
+.shop-table .dist-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+    max-width: 100%;
+}
+
+.shop-table .dist-actions .btn {
+    white-space: nowrap;
+}
+
+.shop-table .dist-cache {
+    max-width: 100%;
+}
+
+.shop-table .col-notes .cell-input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Need table: clip long designators / footprint so they do not overlap notes */
+.need-table.data-table.resizable-table td {
+    overflow: hidden;
+}
+
+.need-table.data-table.resizable-table th.th-resizable {
+    overflow: visible;
+}
+
+.need-table .col-name .cell-primary {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.need-table .col-libref {
+    word-break: break-all;
+}
+
+.need-table .col-designators,
+.need-table .col-footprint {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.need-table .col-notes .notes-input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .shop-api-card {
@@ -1103,10 +1198,11 @@ body.col-resize-active * {
 }
 
 .site-footer {
-    max-width: var(--layout-max);
-    margin: 0 auto;
-    padding: 1rem 1.25rem 1.5rem;
     width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 1rem var(--layout-pad) 1.5rem;
+    box-sizing: border-box;
     display: flex;
     gap: 1.5rem;
     color: var(--muted);

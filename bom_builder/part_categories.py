@@ -78,6 +78,14 @@ def category_for_inventory_item(item: InventoryItem) -> str:
     return classify_from_text(item.name, item.lib_ref, "")
 
 
+def category_for_shop_line(line) -> str:
+    return classify_from_text(line.name, line.lib_ref, "")
+
+
+def category_for_need_line(line: NeedLine) -> str:
+    return classify_need_line(line)
+
+
 def classify_from_text(name: str, lib_ref: str, footprint: str) -> str:
     fake = NeedLine(
         id="x",
@@ -208,5 +216,29 @@ def sort_aggregated_rows(rows: list) -> list:
 
 def sort_inventory_items(items: list) -> list:
     return sorted(items, key=lambda i: (i.lib_ref.upper(), i.location.upper(), i.name.upper()))
+
+
+def sort_shop_lines(lines: list) -> list:
+    return sorted(
+        lines,
+        key=lambda line: (
+            _status_rank(line.status),
+            line.primary_mpn.upper(),
+            line.name.upper(),
+        ),
+    )
+
+
+def sort_need_lines(lines: list) -> list:
+    return sorted(
+        lines,
+        key=lambda line: (
+            line.acquired,
+            line.is_dni,
+            (line.designators[0].upper() if line.designators else ""),
+            line.lib_ref.upper(),
+            line.name.upper(),
+        ),
+    )
 
 

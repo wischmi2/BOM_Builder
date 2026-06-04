@@ -93,6 +93,11 @@
     </div>
 </div>
 
+<div class="shop-table-toolbar">
+    <button type="button" class="btn btn-secondary btn-sm" id="shop-expand-all">Expand all</button>
+    <button type="button" class="btn btn-secondary btn-sm" id="shop-collapse-all">Collapse all</button>
+</div>
+
 <div class="compare-toolbar card shop-toolbar">
     <input type="search" id="shop-search" class="search-input" placeholder="Search MPN, name…" autocomplete="off">
     <label class="filter-check"><input type="checkbox" id="shop-hide-ordered"> Hide ordered</label>
@@ -100,7 +105,7 @@
     <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-visible">Lookup visible</button>
     <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-force" title="Refresh from API even if cached">Force refresh visible</button>
     {% endif %}
-    <span class="muted compare-drag-hint">Drag │ on column headers to resize</span>
+    <span class="muted compare-drag-hint">Table fills window · drag │ to resize columns · scroll on small screens</span>
     <span class="muted shop-lookup-status" id="shop-lookup-status" hidden></span>
 </div>
 
@@ -121,7 +126,15 @@
             </tr>
         </thead>
         <tbody>
-            {% for line in shop_lines %}
+            {% for group in grouped_lines %}
+            <tr class="category-header" data-category="{{ group.category_id }}">
+                <td colspan="10">
+                    <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
+                    <strong>{{ group.label }}</strong>
+                    <span class="category-count muted">({{ group.rows|length }})</span>
+                </td>
+            </tr>
+            {% for line in group.rows %}
             {% set cache_entry = distributor_cache.get(line.cache_key, {}) %}
             {% set dk = cache_entry.get('digikey') %}
             {% set mo = cache_entry.get('mouser') %}
@@ -129,6 +142,9 @@
                 data-line-id="{{ line.line_id }}"
                 data-mpn="{{ line.primary_mpn }}"
                 data-cache-key="{{ line.cache_key }}"
+                data-category-group="{{ group.category_id }}"
+                data-part-key="{{ line|shop_part_key }}"
+                data-auto-category="{{ line|shop_auto_category }}"
                 data-ordered="{{ '1' if line.ordered else '0' }}"
                 data-search="{{ line.search_text }}">
                 <td class="col-check">
@@ -149,7 +165,7 @@
                 <td><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
                 <td class="col-qty">{{ line.qty_needed }}</td>
                 <td class="col-qty">{{ line.qty_on_hand }}</td>
-                <td class="col-bom">{{ line.bom_id or line.bom_ids_display }}</td>
+                <td class="col-bom" title="{{ line.bom_id or line.bom_ids_display }}">{{ line.bom_id or line.bom_ids_display }}</td>
                 <td class="col-distributors">
                     <div class="dist-actions">
                         <a class="btn btn-secondary btn-sm dist-link" href="{{ dk.url if dk and dk.url else line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
@@ -187,6 +203,7 @@
                            placeholder="PO, cart, alt part…">
                 </td>
             </tr>
+            {% endfor %}
             {% endfor %}
         </tbody>
     </table>

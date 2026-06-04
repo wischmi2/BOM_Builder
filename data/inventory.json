@@ -647,6 +647,38 @@
       "qty_on_hand": 50,
       "location": "CONNECTOR BIN 1",
       "notes": ""
+    },
+    {
+      "id": "284dcda4-bf29-495c-b4a7-df73bc0c1125",
+      "lib_ref": "AD7091RBCPZ-RL7",
+      "name": "IC ADC 12BIT SAR 10LFCSP",
+      "qty_on_hand": 55,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "295d5cff-6b4d-422c-b300-fa0b78c8ef11",
+      "lib_ref": "RC0402JR-070RL",
+      "name": "RES 0 OHM JUMPER 1/16W 0402",
+      "qty_on_hand": 10000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "befc3a4b-fe86-4f50-8577-cd6ccfcc9b76",
+      "lib_ref": "ADL5902ACPZ-R7",
+      "name": "IC RF DETECT 50MHZ-9GHZ 16LCSP",
+      "qty_on_hand": 193,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "357315a6-54a4-475e-8585-2d4ef89d26b3",
+      "lib_ref": "PE42522C-X",
+      "name": "IC RF SWITCH SPDT 26.5GHZ 29LGA",
+      "qty_on_hand": 400,
+      "location": "",
+      "notes": ""
     }
   ]
 }

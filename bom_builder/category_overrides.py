@@ -10,9 +10,13 @@ from bom_builder.part_categories import (
     category_for_aggregated_row,
     category_for_compare_row,
     category_for_inventory_item,
+    category_for_need_line,
+    category_for_shop_line,
     sort_aggregated_rows,
     sort_compare_rows,
     sort_inventory_items,
+    sort_need_lines,
+    sort_shop_lines,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -132,4 +136,41 @@ def group_inventory_items(items: list, overrides: dict[str, str] | None = None) 
         part_key_fn=part_key_for_inventory_item,
         overrides=overrides,
         sort_fn=sort_inventory_items,
+    )
+
+
+def part_key_for_shop_line(line) -> str:
+    from bom_builder.matcher import normalize_key, split_lib_refs
+
+    segments = split_lib_refs(line.lib_ref or "")
+    if segments:
+        return "lib:" + normalize_key(segments[0])
+    if line.name:
+        return "name:" + normalize_key(line.name)
+    return f"id:{line.line_id}"
+
+
+def group_shop_lines(lines: list, overrides: dict[str, str] | None = None) -> list[CompareGroup]:
+    overrides = overrides or {}
+    return _group_by_category(
+        lines,
+        category_fn=category_for_shop_line,
+        part_key_fn=part_key_for_shop_line,
+        overrides=overrides,
+        sort_fn=sort_shop_lines,
+        include_empty=False,
+    )
+
+
+def group_need_lines(lines: list, overrides: dict[str, str] | None = None) -> list[CompareGroup]:
+    from bom_builder.matcher import part_key_for_need_line
+
+    overrides = overrides or {}
+    return _group_by_category(
+        lines,
+        category_fn=category_for_need_line,
+        part_key_fn=part_key_for_need_line,
+        overrides=overrides,
+        sort_fn=sort_need_lines,
+        include_empty=False,
     )

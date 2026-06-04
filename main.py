@@ -51,6 +51,8 @@ from bom_builder.category_overrides import (
     group_aggregated_rows,
     group_compare_rows,
     group_inventory_items,
+    group_need_lines,
+    group_shop_lines,
     load_overrides,
     set_override,
 )
@@ -87,6 +89,34 @@ def inventory_part_key_filter(item) -> str:
     return part_key_for_inventory_item(item)
 
 
+@app.template_filter("need_auto_category")
+def need_auto_category_filter(line) -> str:
+    from bom_builder.part_categories import category_for_need_line
+
+    return category_for_need_line(line)
+
+
+@app.template_filter("need_part_key")
+def need_part_key_filter(line) -> str:
+    from bom_builder.matcher import part_key_for_need_line
+
+    return part_key_for_need_line(line)
+
+
+@app.template_filter("shop_auto_category")
+def shop_auto_category_filter(line) -> str:
+    from bom_builder.part_categories import category_for_shop_line
+
+    return category_for_shop_line(line)
+
+
+@app.template_filter("shop_part_key")
+def shop_part_key_filter(line) -> str:
+    from bom_builder.category_overrides import part_key_for_shop_line
+
+    return part_key_for_shop_line(line)
+
+
 @app.template_filter("compare_auto_category")
 def compare_auto_category_filter(row) -> str:
     from bom_builder.part_categories import (
@@ -115,12 +145,16 @@ def need_page():
     active_bom_id = request.args.get("bom_id") or (bom_ids[0] if bom_ids else None)
     bom = storage.load_bom(active_bom_id) if active_bom_id else None
     stats = bom_stats(bom) if bom else None
+    grouped_lines = []
+    if bom:
+        grouped_lines = group_need_lines(bom.lines, load_overrides())
     return render_template(
         "need.html",
         bom_ids=bom_ids,
         active_bom_id=active_bom_id,
         bom=bom,
         stats=stats,
+        grouped_lines=grouped_lines,
     )
 
 
@@ -504,6 +538,8 @@ def shop_page():
             export_url = f"{url_for('shop_export')}?{urlencode(_shop_query_params(selected_ids, view_mode))}"
 
     distributor_cache = load_distributor_cache() if shop_lines else {}
+    category_overrides = load_overrides()
+    grouped_lines = group_shop_lines(shop_lines, category_overrides) if shop_lines else []
 
     return render_template(
         "shop.html",
@@ -511,6 +547,7 @@ def shop_page():
         selected_ids=selected_ids,
         view_mode=view_mode,
         shop_lines=shop_lines,
+        grouped_lines=grouped_lines,
         stats=stats,
         export_url=export_url,
         distributor_cache=distributor_cache,
