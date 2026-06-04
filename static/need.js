@@ -168,7 +168,9 @@
     rows.forEach((row) => {
         const lineId = row.dataset.lineId;
         const checkbox = row.querySelector(".acquired-check");
+        const librefInput = row.querySelector(".libref-input");
         const notesInput = row.querySelector(".notes-input");
+        const applyMpnBtn = row.querySelector(".apply-mpn-xref");
 
         checkbox?.addEventListener("change", async () => {
             const acquired = checkbox.checked;
@@ -181,6 +183,48 @@
             } catch {
                 checkbox.checked = !acquired;
                 alert("Could not save. Is the server still running?");
+            }
+        });
+
+        async function saveLibRef(value) {
+            const libRef = value.trim();
+            if (!libRef) {
+                alert("MPN (LibRef) cannot be empty.");
+                return;
+            }
+            try {
+                const result = await patchLine(lineId, { lib_ref: libRef });
+                if (librefInput) {
+                    librefInput.value = result.lib_ref || libRef;
+                    librefInput.defaultValue = librefInput.value;
+                }
+                applyMpnBtn?.closest(".mpn-xref")?.remove();
+                const searchParts = [
+                    row.querySelector(".cell-primary")?.textContent,
+                    librefInput?.value,
+                    row.querySelector(".col-designators")?.textContent,
+                    row.querySelector(".col-footprint")?.textContent,
+                ];
+                row.dataset.search = searchParts.filter(Boolean).join(" ").toLowerCase();
+                applyFilters();
+            } catch {
+                alert("Could not save MPN. Is the server still running?");
+            }
+        }
+
+        applyMpnBtn?.addEventListener("click", () => {
+            const suggested = applyMpnBtn.dataset.suggested || "";
+            if (!suggested || !librefInput) return;
+            librefInput.value = suggested;
+            saveLibRef(suggested);
+        });
+
+        librefInput?.addEventListener("blur", () => {
+            const current = librefInput.value.trim();
+            const original = librefInput.defaultValue.trim();
+            if (current && current !== original) {
+                saveLibRef(current);
+                librefInput.defaultValue = current;
             }
         });
 

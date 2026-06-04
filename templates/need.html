@@ -72,7 +72,7 @@
                 <label class="filter-check"><input type="checkbox" id="hide-dni"> Hide DNI</label>
                 <label class="filter-check"><input type="checkbox" id="only-missing"> Only not acquired</label>
                 <a class="btn btn-secondary" href="{{ url_for('need_export', bom_id=bom.bom_id) }}">Export CSV</a>
-                <span class="muted compare-drag-hint">Drag column edges to resize</span>
+                <span class="muted compare-drag-hint">Edit MPN below · use cross-ref when description has the real part number</span>
             </div>
         </div>
 
@@ -92,7 +92,7 @@
                     <tr>
                         <th class="col-check" data-col="check">Have</th>
                         <th class="col-name" data-col="name">Name</th>
-                        <th class="col-libref" data-col="libref">LibRef</th>
+                        <th class="col-libref" data-col="libref">MPN (LibRef)</th>
                         <th class="col-qty" data-col="qty">Qty / board</th>
                         <th class="col-qty" data-col="total">Total qty</th>
                         <th class="col-designators" data-col="designators">Designators</th>
@@ -133,7 +133,19 @@
                             </details>
                             {% endif %}
                         </td>
-                        <td class="col-libref"><code>{{ line.lib_ref }}</code></td>
+                        <td class="col-libref need-mpn-cell">
+                            <input type="text" class="libref-input cell-input" value="{{ line.lib_ref }}"
+                                   aria-label="MPN for {{ line.name }}" autocomplete="off">
+                            {% set suggested_mpn = line|need_suggested_mpn %}
+                            {% if suggested_mpn and suggested_mpn != line.lib_ref %}
+                            <div class="mpn-xref">
+                                <span class="muted">From description:</span>
+                                <code class="mpn-xref-value">{{ suggested_mpn }}</code>
+                                <button type="button" class="btn btn-secondary btn-sm apply-mpn-xref"
+                                        data-suggested="{{ suggested_mpn }}">Apply</button>
+                            </div>
+                            {% endif %}
+                        </td>
                         <td class="col-qty qty-per-board">{{ line.quantity }}</td>
                         <td class="col-qty qty-total" data-per-board="{{ line.quantity }}">{{ line.quantity * bom.board_count }}</td>
                         <td class="col-designators" title="{{ line.designator_display }}">{{ line.designator_display }}</td>

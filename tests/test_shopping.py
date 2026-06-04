@@ -15,6 +15,7 @@ from bom_builder.shopping import (
     primary_mpn,
     shop_to_csv,
     shortfall_qty,
+    sync_need_lines_mpn_name,
 )
 
 
@@ -103,6 +104,28 @@ class TestShopping(unittest.TestCase):
         state = saved_state_for_line(saved, line)
         assert state is not None
         self.assertEqual(state["notes"], "newer on B")
+
+    def test_merge_shop_state_mpn_name_override(self) -> None:
+        from bom_builder.shopping import ShopLine
+
+        line = attach_storage_key(
+            ShopLine(
+                line_id="lib:CMP",
+                lib_ref="CMP-009-00186-1",
+                primary_mpn="CMP-009-00186-1",
+                alternates_display="",
+                name="CRCW02011K10FKED",
+                status="missing",
+                qty_needed=1,
+                qty_on_hand=0,
+                default_buy_qty=1,
+                buy_qty=1,
+            )
+        )
+        merge_shop_state([line], {line.storage_key: {"mpn": "CRCW02011K10FKED", "name": "1K 0201"}})
+        self.assertEqual(line.primary_mpn, "CRCW02011K10FKED")
+        self.assertEqual(line.name, "1K 0201")
+        self.assertIn("CRCW02011K10FKED", line.digikey_url)
 
     def test_merge_shop_state_legacy_line_id(self) -> None:
         from bom_builder.shopping import ShopLine
@@ -198,6 +221,88 @@ class TestShoppingRoutes(unittest.TestCase):
         combined = build_shop_lines([bom], inv, "combined")
         merge_shop_state(combined, storage.load_shopping_list())
         self.assertEqual(combined[0].notes, "board only")
+
+    def test_shop_update_mpn_syncs_bom(self) -> None:
+        bom = storage.load_bom("test-shop")
+        line_id = f"{bom.bom_id}:{bom.lines[0].id}"
+        response = self.client.post(
+            "/shop/line/lib:BUYME",
+            json={
+                "mpn": "REAL-MPN-123",
+                "name": "Corrected name",
+                "source_line_ids": [line_id],
+            },
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["bom_synced"], 1)
+        reloaded = storage.load_bom("test-shop")
+        self.assertEqual(reloaded.lines[0].lib_ref, "REAL-MPN-123")
+        self.assertEqual(reloaded.lines[0].name, "Corrected name")
+        saved = storage.load_shopping_list()
+        self.assertEqual(saved["lib:BUYME"]["mpn"], "REAL-MPN-123")
+
+    def test_sync_need_lines_mpn_name(self) -> None:
+        bom = storage.load_bom("test-shop")
+        line_id = f"{bom.bom_id}:{bom.lines[0].id}"
+        count = sync_need_lines_mpn_name([line_id], mpn="NEWMPN", name="New Name")
+        self.assertEqual(count, 1)
+        bom = storage.load_bom("test-shop")
+        self.assertEqual(bom.lines[0].lib_ref, "NEWMPN")
+
+    def test_merge_alternate_state(self) -> None:
+        from bom_builder.shopping import ShopLine
+
+        line = attach_storage_key(
+            ShopLine(
+                line_id="lib:PART",
+                lib_ref="PART",
+                primary_mpn="PART",
+                alternates_display="",
+                name="Orig",
+                status="missing",
+                qty_needed=5,
+                qty_on_hand=0,
+                default_buy_qty=5,
+                buy_qty=5,
+            )
+        )
+        merge_shop_state(
+            [line],
+            {
+                line.storage_key: {
+                    "alternate": {
+                        "enabled": True,
+                        "mpn": "ALT-MPN",
+                        "name": "Substitute",
+                        "buy_qty": 3,
+                        "notes": "Arrow",
+                    }
+                }
+            },
+        )
+        self.assertTrue(line.alternate.enabled)
+        self.assertEqual(line.alternate.mpn, "ALT-MPN")
+        self.assertEqual(line.alternate.buy_qty, 3)
+
+    def test_shop_update_alternate(self) -> None:
+        response = self.client.post(
+            "/shop/line/lib:BUYME",
+            json={
+                "alternate": {
+                    "enabled": True,
+                    "mpn": "SUB-123",
+                    "name": "Sub part",
+                    "buy_qty": 2,
+                }
+            },
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertTrue(data["alternate"]["enabled"])
+        self.assertEqual(data["alternate"]["mpn"], "SUB-123")
 
     def test_shop_notes_persist_across_views(self) -> None:
         self.client.post(

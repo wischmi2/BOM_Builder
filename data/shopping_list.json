@@ -34,7 +34,11 @@
     },
     "lib:504L50R0FTNCFT": {
       "notes": "FC0402E50R0BTBST1",
-      "updated_at": "2026-06-04T13:47:55.163864+00:00"
+      "updated_at": "2026-06-04T19:06:51.438101+00:00",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0
+      }
     },
     "DD02040.RF300.3_2026:row-43-96aaa42138c3ac1f": {
       "notes": "FC0402E50R0BTBST1",
@@ -51,6 +55,332 @@
     "DD02040.RF300.3_2026:row-36-763b22019ac5c9d6": {
       "notes": "Digikey List.  100.",
       "updated_at": "2026-06-04T14:09:52.469274+00:00"
+    },
+    "lib:ERJ1GNF2101C": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:38:24.992131+00:00",
+      "name": "2.1 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film"
+    },
+    "lib:F980J476MMA": {
+      "notes": "Obsolete",
+      "updated_at": "2026-06-04T19:06:55.970979+00:00",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0
+      }
+    },
+    "lib:RK73B2ATTD753J": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:39:05.903878+00:00",
+      "name": "75 kOhms \u00b15% 0.25W, 1/4W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:RK73H1ERTTP3302F": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:39:15.267627+00:00",
+      "name": "33 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film"
+    },
+    "lib:RK73H1ETTP1501F": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:39:23.645786+00:00",
+      "name": "1.5 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:RK73H1HTTC18R0F": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:39:30.816103+00:00",
+      "name": "18 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:RK73Z1HRTTC": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:39:37.528940+00:00",
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film"
+    },
+    "lib:RP73PF1E2K0BTD": {
+      "notes": "Digikey List.  250.",
+      "updated_at": "2026-06-04T15:39:46.279873+00:00",
+      "name": "2 kOhms \u00b10.1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Thin Film"
+    },
+    "lib:SG73S1ETTP102J": {
+      "notes": "Digikey List. 1000.",
+      "updated_at": "2026-06-04T15:39:54.960995+00:00",
+      "name": "RES 1K OHM 5% 1/8W 0402"
+    },
+    "lib:SG73S1ETTP101J": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:40:20.401923+00:00",
+      "name": "100 Ohms \u00b15% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film"
+    },
+    "lib:EEEFC1V2R2AR": {
+      "notes": "Digikey List. 100.",
+      "updated_at": "2026-06-04T14:30:20.385890+00:00"
+    },
+    "lib:GCM155R71H102KA37D": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T14:30:38.974951+00:00"
+    },
+    "lib:GCM21BR71A106KE22K": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T14:31:32.431885+00:00"
+    },
+    "lib:GJM0335C1ER20BB01D": {
+      "notes": "Digikey List. 500.",
+      "updated_at": "2026-06-04T14:32:16.854919+00:00"
+    },
+    "lib:GJM1555C1H100FB01D": {
+      "notes": "Digikey List. 500.",
+      "updated_at": "2026-06-04T14:32:18.589156+00:00"
+    },
+    "lib:GRM155R60J106ME15D": {
+      "notes": "Digikey List. 500.",
+      "updated_at": "2026-06-04T14:33:52.350163+00:00"
+    },
+    "lib:GRM155R61A225KE95D": {
+      "notes": "Obsolete",
+      "updated_at": "2026-06-04T19:07:00.107626+00:00",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0
+      }
+    },
+    "lib:GRM155R61E105KA12D": {
+      "notes": "Digikey List. 1000.",
+      "updated_at": "2026-06-04T14:34:44.338416+00:00"
+    },
+    "lib:GRM155R71A474KE01D": {
+      "notes": "Digikey List.  200.",
+      "updated_at": "2026-06-04T14:34:17.019129+00:00"
+    },
+    "lib:GRM188R61E106KA73D": {
+      "notes": "Digikey List. 500.",
+      "updated_at": "2026-06-04T14:33:53.796908+00:00"
+    },
+    "lib:TPSA475M016R2000": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T14:35:08.222070+00:00"
+    },
+    "lib:GRM219R6YA475KA73D": {
+      "notes": "Digikey List. 1000.",
+      "updated_at": "2026-06-04T15:36:50.759905+00:00"
+    },
+    "lib:0402DC4N3XJRW": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T14:35:35.383859+00:00"
+    },
+    "lib:LQP03HQ2N7B02D": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T14:35:59.135184+00:00"
+    },
+    "lib:DMN2005K7": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T15:18:53.912608+00:00"
+    },
+    "lib:DCW11722": {
+      "notes": "Mouser Cart.  100.",
+      "updated_at": "2026-06-04T15:47:01.433657+00:00"
+    },
+    "lib:LFCN7200": {
+      "notes": "Digikey List.  50.",
+      "updated_at": "2026-06-04T14:39:56.874699+00:00"
+    },
+    "lib:PE42553BZ": {
+      "notes": "Digikey List.  50.",
+      "updated_at": "2026-06-04T15:21:40.510002+00:00"
+    },
+    "lib:ADP7102ACPZ33R7": {
+      "notes": "Digikey List.  50.",
+      "updated_at": "2026-06-04T15:26:08.913915+00:00",
+      "name": "IC REG LIN 3.3V 300MA 8-LFCSP-WD"
+    },
+    "lib:RC0402FR7W49R9L": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:38:51.155888+00:00",
+      "name": "49.9 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:CMP009001861": {
+      "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
+      "updated_at": "2026-06-04T14:55:42.413016+00:00",
+      "mpn": "CRCW020161R9FNED"
+    },
+    "lib:CMP009001881": {
+      "name": "105 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
+      "updated_at": "2026-06-04T14:55:56.095510+00:00",
+      "mpn": "CRCW0201105RFNED"
+    },
+    "lib:CMP009001871": {
+      "mpn": "CRCW0201274RFNED",
+      "updated_at": "2026-06-04T14:56:12.493075+00:00",
+      "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film"
+    },
+    "lib:CRCW0201105RFNED": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:11:56.194512+00:00"
+    },
+    "lib:CRCW0201274RFNED": {
+      "notes": "No Stock",
+      "updated_at": "2026-06-04T15:56:26.255519+00:00",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0,
+        "mpn": "RC0201FR-07274RL",
+        "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
+        "notes": "https://www.digikey.com/en/products/detail/yageo/RC0201FR-07274RL/5280410"
+      }
+    },
+    "lib:CRCW020161R9FNED": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:56:03.719015+00:00",
+      "name": "RES SMD 61.9 OHM 1% 1/20W 0201"
+    },
+    "lib:CRG0402F100K": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:37:22.309989+00:00",
+      "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film"
+    },
+    "lib:ERJ1GNF3000C": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:38:35.130593+00:00",
+      "name": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film"
+    },
+    "lib:RC0201FR0768RL": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:38:44.020394+00:00",
+      "name": "68 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:SM3TW203": {
+      "notes": "Digikey List. 50.",
+      "updated_at": "2026-06-04T15:40:06.141317+00:00",
+      "name": "20 kOhms 0.125W, 1/8W J Lead Surface Mount Trimmer Potentiometer Cermet 11 Turn Top Adjustment"
+    },
+    "lib:AD5760ACPZ": {
+      "notes": "Digikey List.  30.  Expensive, make sure we don't have any.",
+      "updated_at": "2026-06-04T15:25:52.279327+00:00",
+      "name": "16 Bit Digital to Analog Converter 1 24-LFCSP-VQ (4x5)"
+    },
+    "lib:DCMO1904105": {
+      "notes": "Synergy Microwave",
+      "updated_at": "2026-06-04T20:40:45.926071+00:00",
+      "ordered": true
+    },
+    "lib:DCO4008005": {
+      "notes": "Synergy Microwave",
+      "updated_at": "2026-06-04T20:40:46.745880+00:00",
+      "ordered": true
+    },
+    "lib:HMC424ALP3E": {
+      "notes": "Digikey List.  30. Expensive.",
+      "updated_at": "2026-06-04T15:25:26.383261+00:00",
+      "name": "RF ATTENUATOR 31.5DB 16VFQFN"
+    },
+    "lib:HMC659LC5": {
+      "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25",
+      "updated_at": "2026-06-04T15:25:01.191626+00:00",
+      "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)"
+    },
+    "lib:KF80BDTTR": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T15:24:50.969344+00:00",
+      "name": "IC REG LINEAR 8V 500MA DPAK"
+    },
+    "lib:LFCG3000": {
+      "notes": "Digikey List.  25.",
+      "updated_at": "2026-06-04T15:24:33.107066+00:00",
+      "name": "CER FILTER 3.46GHZ LOW PASS"
+    },
+    "lib:LT1236ACS810TRPBF": {
+      "notes": "Digikey List.  50.",
+      "updated_at": "2026-06-04T15:24:23.150587+00:00",
+      "name": "IC VREF PRECISION 0.05% 8SOIC"
+    },
+    "lib:LT3097": {
+      "notes": "Digikey List.  30.",
+      "updated_at": "2026-06-04T15:21:13.007656+00:00"
+    },
+    "lib:LT6657AHMS85PBF": {
+      "notes": "Digikey List.  60.",
+      "updated_at": "2026-06-04T15:24:13.622347+00:00",
+      "name": "Series Voltage Reference IC Fixed 5V V \u00b10.1% 10 mA 8-MSOP"
+    },
+    "lib:MMSZ4689HF": {
+      "notes": "Digikey List.  500.",
+      "updated_at": "2026-06-04T15:23:37.728892+00:00",
+      "name": "DIODE ZENER 5.1V 500MW SOD123"
+    },
+    "lib:SN74AHC123A": {
+      "notes": "Digikey List.  100.",
+      "updated_at": "2026-06-04T15:28:46.139397+00:00",
+      "name": "IC MMV 2-CIR 7.5-NS 16-TSSOP"
+    },
+    "lib:SN74HCS594": {
+      "name": "Shift Shift Register 1 Element 8 Bit 16-WQFN (2.5x3.5)",
+      "updated_at": "2026-06-04T15:29:34.504857+00:00",
+      "mpn": "SN74HCS594",
+      "notes": "Digikey List.  100."
+    },
+    "lib:W25Q16JVSSIQ": {
+      "name": "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC",
+      "updated_at": "2026-06-04T19:07:07.586575+00:00",
+      "notes": "End of Life - Digikey List, 100 but may not be able to be ordered.",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0
+      }
+    },
+    "lib:04025A300FAT2A": {
+      "mpn": "04025A300FAT2A",
+      "updated_at": "2026-06-04T15:37:07.450060+00:00",
+      "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
+      "notes": "Digikey List. 1000."
+    },
+    "lib:ERJ2RKF4992X": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:40:26.792054+00:00",
+      "name": "49.9 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:AT0402DRD07348RL": {
+      "notes": "Non-Stocked",
+      "updated_at": "2026-06-04T15:58:20.051296+00:00",
+      "name": "348R",
+      "mpn": "AT0402DRD07348RL",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0,
+        "mpn": "RR0510P-3480-D",
+        "name": "Thin Film Resistors - SMD 1/16W 348ohm 0.5% 25ppm",
+        "notes": "https://www.mouser.com/ProductDetail/Susumu/RR0510P-3480-D?qs=nCAm%252BcMdy9xflqPW%252BZqoqw%3D%3D"
+      }
+    },
+    "lib:RC0402FR07953RL": {
+      "notes": "Digikey List.  1000.",
+      "updated_at": "2026-06-04T15:40:32.831176+00:00",
+      "name": "953 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:OP184FSZ": {
+      "notes": "Digikey List.  50.",
+      "updated_at": "2026-06-04T15:34:11.929962+00:00",
+      "name": "IC OPAMP GP 1 CIRCUIT 8SOIC"
+    },
+    "lib:ERA1AEB101C": {
+      "name": "100 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thin Film",
+      "updated_at": "2026-06-04T15:38:02.449089+00:00"
+    },
+    "lib:ERA2AEB3741X": {
+      "name": "3.74 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
+      "updated_at": "2026-06-04T15:38:17.964291+00:00"
+    },
+    "lib:SAMTECSFM12502XDLC": {
+      "name": "SAMTEC-SFM-125-02-X-D-LC",
+      "updated_at": "2026-06-04T15:48:14.841275+00:00",
+      "notes": "Mouser Cart.  30."
+    },
+    "lib:60312202114511": {
+      "notes": "We should have some at DD",
+      "updated_at": "2026-06-04T15:48:20.915740+00:00",
+      "mpn": "60312202114511",
+      "name": "SMA Connector Jack, Female Socket 50 Ohms Board Edge, End Launch; Through Hole, Right Angle Solder"
+    },
+    "lib:GPSOCKET": {
+      "notes": "",
+      "updated_at": "2026-06-04T15:48:49.395574+00:00",
+      "name": "VTGT-S2"
     }
   }
 }

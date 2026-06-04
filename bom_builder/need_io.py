@@ -2,8 +2,57 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 
 from bom_builder.models import BomDocument, NeedLine
+
+_INTERNAL_LIB_PREFIXES = ("CMP-", "INT-", "INTERNAL-")
+
+
+def looks_like_internal_lib_ref(lib_ref: str) -> bool:
+    ref = (lib_ref or "").strip().upper()
+    return any(ref.startswith(prefix) for prefix in _INTERNAL_LIB_PREFIXES)
+
+
+def suggest_mpn_from_description(
+    description: str,
+    *,
+    name: str = "",
+    lib_ref: str = "",
+) -> str | None:
+    """Guess manufacturer PN embedded in BOM description (e.g. RC0402FR-07953RL)."""
+    desc = (description or "").strip()
+    if not desc:
+        return None
+
+    name_key = (name or "").strip().upper()
+    lib_key = (lib_ref or "").strip().upper()
+
+    compact = re.sub(r"\s+", "", desc)
+    if re.match(r"^[A-Za-z0-9][A-Za-z0-9\-/.]{5,}$", compact) and any(ch.isdigit() for ch in compact):
+        candidate = compact
+        if candidate.upper() not in (name_key, lib_key) and not looks_like_internal_lib_ref(candidate):
+            return candidate
+
+    candidates: list[str] = []
+    for match in re.finditer(r"\b([A-Za-z]{2,}\d{3,}[A-Za-z0-9\-]+)\b", desc):
+        candidates.append(match.group(1))
+    for match in re.finditer(r"\b([A-Z]{2,4}\d{4}[A-Z]{2,}-[\dA-Z]+)\b", desc.upper()):
+        candidates.append(match.group(1))
+
+    seen: set[str] = set()
+    for raw in candidates:
+        token = raw.strip()
+        key = token.upper()
+        if key in seen or len(token) < 8:
+            continue
+        seen.add(key)
+        if key in (name_key, lib_key):
+            continue
+        if looks_like_internal_lib_ref(token):
+            continue
+        return token
+    return None
 
 
 def merge_bom_state(existing: BomDocument | None, incoming: BomDocument) -> BomDocument:

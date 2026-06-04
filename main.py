@@ -57,13 +57,22 @@ from bom_builder.category_overrides import (
     set_override,
 )
 from bom_builder.part_categories import CATEGORY_ORDER
-from bom_builder.need_io import bom_stats, bom_to_csv, find_line, line_total_quantity, merge_bom_state
+from bom_builder.need_io import (
+    bom_stats,
+    bom_to_csv,
+    find_line,
+    line_total_quantity,
+    merge_bom_state,
+    suggest_mpn_from_description,
+)
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv
 from bom_builder.distributor_cache import load_distributor_cache
 from bom_builder.distributor_lookup import any_api_configured, api_status, lookup_batch
 from bom_builder.shopping import (
+    alternate_from_entry,
     apply_line_update,
     build_shop_lines,
+    sync_need_lines_mpn_name,
     lines_to_saved_dict,
     merge_shop_state,
     shop_stats,
@@ -101,6 +110,16 @@ def need_part_key_filter(line) -> str:
     from bom_builder.matcher import part_key_for_need_line
 
     return part_key_for_need_line(line)
+
+
+@app.template_filter("need_suggested_mpn")
+def need_suggested_mpn_filter(line) -> str:
+    suggested = suggest_mpn_from_description(
+        line.description,
+        name=line.name,
+        lib_ref=line.lib_ref,
+    )
+    return suggested or ""
 
 
 @app.template_filter("shop_auto_category")
@@ -228,6 +247,11 @@ def need_update_line(bom_id: str, line_id: str):
         line.acquired = raw in (True, "true", "on", "1", 1)
     if "notes" in payload:
         line.notes = str(payload.get("notes", ""))
+    if "lib_ref" in payload:
+        lib_ref = str(payload.get("lib_ref", "")).strip()
+        if not lib_ref:
+            return jsonify({"ok": False, "error": "MPN (LibRef) cannot be empty."}), 400
+        line.lib_ref = lib_ref
 
     storage.save_bom(bom)
     stats = bom_stats(bom)
@@ -239,6 +263,7 @@ def need_update_line(bom_id: str, line_id: str):
                 "line_id": line_id,
                 "acquired": line.acquired,
                 "notes": line.notes,
+                "lib_ref": line.lib_ref,
                 "stats": stats,
             }
         )
@@ -599,9 +624,30 @@ def shop_update_line(storage_key: str):
     if "ordered" in payload:
         raw = payload.get("ordered")
         updates["ordered"] = raw in (True, "true", "on", "1", 1)
+    if "mpn" in payload:
+        updates["mpn"] = str(payload.get("mpn", ""))
+    if "name" in payload:
+        updates["name"] = str(payload.get("name", ""))
+    if "alternate" in payload and isinstance(payload.get("alternate"), dict):
+        updates["alternate"] = payload["alternate"]
 
-    saved = apply_line_update(saved, storage_key, **updates)
+    try:
+        saved = apply_line_update(saved, storage_key, **updates)
+    except ValueError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 400
     storage.save_shopping_list(saved)
+
+    bom_synced = 0
+    source_line_ids = payload.get("source_line_ids")
+    if isinstance(source_line_ids, list) and ("mpn" in updates or "name" in updates):
+        mpn = updates.get("mpn", "")
+        name = updates.get("name") if "name" in updates else None
+        if mpn or name is not None:
+            bom_synced = sync_need_lines_mpn_name(
+                [str(sid) for sid in source_line_ids],
+                mpn=mpn,
+                name=name,
+            )
 
     entry = saved.get(storage_key, {})
     if request.accept_mimetypes.best == "application/json" or request.is_json:
@@ -612,6 +658,10 @@ def shop_update_line(storage_key: str):
                 "buy_qty": entry.get("buy_qty", 0),
                 "notes": entry.get("notes", ""),
                 "ordered": entry.get("ordered", False),
+                "mpn": entry.get("mpn", ""),
+                "name": entry.get("name", ""),
+                "alternate": alternate_from_entry(entry),
+                "bom_synced": bom_synced,
             }
         )
 
@@ -643,6 +693,7 @@ def shop_export():
 
 @app.route("/inventory/category-override", methods=["POST"])
 @app.route("/compare/category-override", methods=["POST"])
+@app.route("/shop/category-override", methods=["POST"])
 def compare_category_override():
     payload = request.get_json(silent=True) or {}
     part_key = str(payload.get("part_key", "")).strip()

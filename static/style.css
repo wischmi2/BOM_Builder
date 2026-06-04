@@ -944,6 +944,7 @@ body.col-resize-active * {
 }
 
 .shop-row.category-collapsed,
+.shop-alt-row.category-collapsed,
 .need-row.category-collapsed {
     display: none;
 }
@@ -1061,6 +1062,19 @@ body.col-resize-active * {
     max-width: 100%;
 }
 
+.shop-table .col-libref .cell-input,
+.shop-table .col-name .cell-input {
+    width: 100%;
+    min-width: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.shop-table .col-libref .cell-input {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+}
+
 .shop-table .col-notes .cell-input {
     width: 100%;
     min-width: 0;
@@ -1091,6 +1105,26 @@ body.col-resize-active * {
 .need-table .col-footprint {
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.need-table .col-libref .cell-input {
+    width: 100%;
+    min-width: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+}
+
+.need-mpn-cell .mpn-xref {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.5rem;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+}
+
+.need-mpn-cell .mpn-xref-value {
+    font-size: 0.85em;
 }
 
 .need-table .col-notes .notes-input {
@@ -1176,6 +1210,38 @@ body.col-resize-active * {
 
 .shop-lookup-status.shop-lookup-error {
     color: #b42318;
+}
+
+.shop-row.shop-alt-row {
+    background: #f8fafc;
+}
+
+.shop-row.shop-alt-row td {
+    border-top: none;
+    padding-top: 0.15rem;
+    padding-bottom: 0.45rem;
+}
+
+.shop-row.shop-alt-row .shop-alt-marker {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.shop-row.has-alternate td {
+    border-bottom-color: transparent;
+}
+
+.status-badge.status-alt {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.shop-row.is-dragging {
+    opacity: 0.45;
+}
+
+.shop-row.is-dragging .drag-handle {
+    cursor: grabbing;
 }
 
 .shop-row.row-ordered {

@@ -16,6 +16,30 @@ from bom_builder.matcher import (
     split_lib_refs,
 )
 from bom_builder.models import BomDocument, InventoryDocument
+from bom_builder.need_io import find_line
+from bom_builder import storage
+
+
+@dataclass
+class ShopAlternate:
+    enabled: bool = False
+    mpn: str = ""
+    name: str = ""
+    buy_qty: int = 0
+    notes: str = ""
+    ordered: bool = False
+
+    @property
+    def digikey_url(self) -> str:
+        return digikey_search_url(self.mpn) if self.mpn else ""
+
+    @property
+    def mouser_url(self) -> str:
+        return mouser_search_url(self.mpn) if self.mpn else ""
+
+    @property
+    def cache_key(self) -> str:
+        return cache_key_for_mpn(self.mpn)
 
 
 @dataclass
@@ -41,6 +65,7 @@ class ShopLine:
     cache_key: str = ""
     storage_key: str = ""
     source_line_ids: list[str] = field(default_factory=list)
+    alternate: ShopAlternate = field(default_factory=ShopAlternate)
 
     @property
     def alternates_extra(self) -> bool:
@@ -89,6 +114,20 @@ def candidate_keys_for_line(line: ShopLine) -> list[str]:
     return keys
 
 
+def _pick_best_field(states: list[dict[str, Any]], field: str) -> str:
+    best = ""
+    best_ts = ""
+    for state in states:
+        value = str(state.get(field) or "").strip()
+        if not value:
+            continue
+        ts = str(state.get("updated_at") or "")
+        if not best or ts > best_ts:
+            best = value
+            best_ts = ts
+    return best
+
+
 def _pick_best_notes(states: list[dict[str, Any]]) -> str:
     best = ""
     best_ts = ""
@@ -132,6 +171,13 @@ def saved_state_for_line(saved: dict[str, dict[str, Any]], line: ShopLine) -> di
     if notes:
         merged["notes"] = notes
 
+    mpn = _pick_best_field(states, "mpn")
+    if mpn:
+        merged["mpn"] = mpn
+    name = _pick_best_field(states, "name")
+    if name:
+        merged["name"] = name
+
     if not merged:
         return states[0]
     return merged
@@ -160,7 +206,9 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
         search_text=" ".join(search_parts).lower(),
         cache_key=cache_key_for_mpn(mpn),
     )
-    return attach_storage_key(line)
+    line = attach_storage_key(line)
+    line.source_line_ids = [line.line_id]
+    return line
 
 
 def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
@@ -216,6 +264,70 @@ def build_shop_lines(
     return lines
 
 
+def refresh_line_lookup_fields(line: ShopLine) -> None:
+    mpn = line.primary_mpn
+    line.cache_key = cache_key_for_mpn(mpn)
+    line.digikey_url = digikey_search_url(mpn)
+    line.mouser_url = mouser_search_url(mpn)
+
+
+def _apply_display_overrides(line: ShopLine, state: dict[str, Any]) -> None:
+    if "mpn" in state:
+        mpn = str(state.get("mpn", "")).strip()
+        if mpn:
+            line.primary_mpn = mpn
+            refresh_line_lookup_fields(line)
+    if "name" in state:
+        name = str(state.get("name", "")).strip()
+        if name:
+            line.name = name
+    parts = [line.name, line.primary_mpn, line.lib_ref, line.bom_id or line.bom_ids_display, line.designators]
+    line.search_text = " ".join(p for p in parts if p).lower()
+
+
+def sync_need_lines_mpn_name(source_line_ids: list[str], *, mpn: str, name: str | None) -> int:
+    """Update underlying BOM need lines when MPN/name are corrected from Shop."""
+    updated = 0
+    seen: set[str] = set()
+    for source_id in source_line_ids:
+        if not source_id or source_id in seen or ":" not in source_id:
+            continue
+        seen.add(source_id)
+        bom_id, line_id = source_id.split(":", 1)
+        bom = storage.load_bom(bom_id)
+        if bom is None:
+            continue
+        need_line = find_line(bom, line_id)
+        if need_line is None:
+            continue
+        if mpn:
+            need_line.lib_ref = mpn
+        if name is not None:
+            need_line.name = name
+        storage.save_bom(bom)
+        updated += 1
+    return updated
+
+
+def _apply_alternate_state(line: ShopLine, alt: dict[str, Any]) -> None:
+    line.alternate.enabled = bool(alt.get("enabled"))
+    if "mpn" in alt:
+        line.alternate.mpn = str(alt.get("mpn", "")).strip()
+    if "name" in alt:
+        line.alternate.name = str(alt.get("name", "")).strip()
+    if "notes" in alt:
+        line.alternate.notes = str(alt.get("notes", ""))
+    if "ordered" in alt:
+        line.alternate.ordered = bool(alt.get("ordered"))
+    if "buy_qty" in alt:
+        try:
+            line.alternate.buy_qty = max(0, int(alt["buy_qty"]))
+        except (TypeError, ValueError):
+            pass
+    if line.alternate.enabled and not line.alternate.buy_qty:
+        line.alternate.buy_qty = line.buy_qty or line.default_buy_qty
+
+
 def merge_shop_state(lines: list[ShopLine], saved: dict[str, dict[str, Any]]) -> None:
     for line in lines:
         state = saved_state_for_line(saved, line)
@@ -230,6 +342,10 @@ def merge_shop_state(lines: list[ShopLine], saved: dict[str, dict[str, Any]]) ->
             line.notes = str(state.get("notes", ""))
         if "ordered" in state:
             line.ordered = bool(state.get("ordered"))
+        _apply_display_overrides(line, state)
+        alt = state.get("alternate")
+        if isinstance(alt, dict):
+            _apply_alternate_state(line, alt)
         if not line.buy_qty and line.default_buy_qty:
             line.buy_qty = line.default_buy_qty
 
@@ -249,13 +365,47 @@ def lines_to_saved_dict(lines: list[ShopLine]) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
     for line in lines:
         key = line.storage_key or line.line_id
-        out[key] = {
+        entry: dict[str, Any] = {
             "buy_qty": line.buy_qty,
             "notes": line.notes,
             "ordered": line.ordered,
             "updated_at": now,
         }
+        if line.primary_mpn != primary_mpn(line.lib_ref):
+            entry["mpn"] = line.primary_mpn
+        if line.alternate.enabled or line.alternate.mpn or line.alternate.name:
+            entry["alternate"] = {
+                "enabled": line.alternate.enabled,
+                "mpn": line.alternate.mpn,
+                "name": line.alternate.name,
+                "buy_qty": line.alternate.buy_qty,
+                "notes": line.alternate.notes,
+                "ordered": line.alternate.ordered,
+            }
+        out[key] = entry
     return out
+
+
+def _merge_alternate_update(entry: dict[str, Any], alt_updates: dict[str, Any]) -> None:
+    alt = dict(entry.get("alternate") or {})
+    if "enabled" in alt_updates:
+        alt["enabled"] = alt_updates["enabled"] in (True, "true", "on", "1", 1)
+    if "mpn" in alt_updates:
+        alt["mpn"] = str(alt_updates["mpn"]).strip()
+    if "name" in alt_updates:
+        alt["name"] = str(alt_updates["name"]).strip()
+    if "notes" in alt_updates:
+        alt["notes"] = str(alt_updates["notes"])
+    if "ordered" in alt_updates:
+        alt["ordered"] = alt_updates["ordered"] in (True, "true", "on", "1", 1)
+    if "buy_qty" in alt_updates:
+        try:
+            alt["buy_qty"] = max(0, int(alt_updates["buy_qty"]))
+        except (TypeError, ValueError):
+            raise ValueError("Alternate buy qty must be a number.") from None
+    if alt.get("enabled") and not alt.get("buy_qty"):
+        alt["buy_qty"] = entry.get("buy_qty", 0)
+    entry["alternate"] = alt
 
 
 def apply_line_update(saved: dict[str, dict[str, Any]], storage_key: str, **updates) -> dict[str, dict[str, Any]]:
@@ -266,9 +416,29 @@ def apply_line_update(saved: dict[str, dict[str, Any]], storage_key: str, **upda
         entry["notes"] = str(updates["notes"])
     if "ordered" in updates:
         entry["ordered"] = bool(updates["ordered"])
+    if "mpn" in updates:
+        entry["mpn"] = str(updates["mpn"]).strip()
+    if "name" in updates:
+        entry["name"] = str(updates["name"]).strip()
+    if "alternate" in updates and isinstance(updates["alternate"], dict):
+        _merge_alternate_update(entry, updates["alternate"])
     entry["updated_at"] = datetime.now(timezone.utc).isoformat()
     saved[storage_key] = entry
     return saved
+
+
+def alternate_from_entry(entry: dict[str, Any]) -> dict[str, Any]:
+    alt = entry.get("alternate")
+    if not isinstance(alt, dict):
+        return {}
+    return {
+        "enabled": bool(alt.get("enabled")),
+        "mpn": str(alt.get("mpn", "")),
+        "name": str(alt.get("name", "")),
+        "buy_qty": alt.get("buy_qty", 0),
+        "notes": str(alt.get("notes", "")),
+        "ordered": bool(alt.get("ordered")),
+    }
 
 
 def shop_to_csv(lines: list[ShopLine]) -> str:
@@ -309,4 +479,22 @@ def shop_to_csv(lines: list[ShopLine]) -> str:
                 line.mouser_url,
             ]
         )
+        if line.alternate.enabled:
+            writer.writerow(
+                [
+                    line.alternate.mpn,
+                    "",
+                    line.alternate.name or f"Alternate for {line.primary_mpn}",
+                    line.alternate.buy_qty,
+                    line.qty_needed,
+                    "",
+                    "alternate",
+                    line.bom_id or line.bom_ids_display,
+                    line.designators,
+                    "Y" if line.alternate.ordered else "N",
+                    line.alternate.notes,
+                    line.alternate.digikey_url,
+                    line.alternate.mouser_url,
+                ]
+            )
     return buffer.getvalue()

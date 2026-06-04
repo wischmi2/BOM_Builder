@@ -105,7 +105,7 @@
     <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-visible">Lookup visible</button>
     <button type="button" class="btn btn-secondary btn-sm" id="shop-lookup-force" title="Refresh from API even if cached">Force refresh visible</button>
     {% endif %}
-    <span class="muted compare-drag-hint">Table fills window · drag │ to resize columns · scroll on small screens</span>
+    <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize · drag │ to resize columns</span>
     <span class="muted shop-lookup-status" id="shop-lookup-status" hidden></span>
 </div>
 
@@ -113,6 +113,7 @@
     <table class="data-table shop-table" id="shop-table">
         <thead>
             <tr>
+                <th class="col-drag" data-col="drag" aria-label="Drag"></th>
                 <th class="col-check" data-col="check">Ordered</th>
                 <th class="col-qty" data-col="buy">Buy qty</th>
                 <th class="col-libref" data-col="libref">MPN</th>
@@ -122,13 +123,14 @@
                 <th class="col-qty" data-col="onhand">On hand</th>
                 <th class="col-bom" data-col="bom">BOM</th>
                 <th class="col-distributors" data-col="distributors">Distributors</th>
+                <th class="col-check" data-col="alternate" title="Substitute part to buy">Alternate</th>
                 <th class="col-notes" data-col="notes">Notes</th>
             </tr>
         </thead>
         <tbody>
             {% for group in grouped_lines %}
-            <tr class="category-header" data-category="{{ group.category_id }}">
-                <td colspan="10">
+            <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
+                <td colspan="12">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
@@ -139,6 +141,7 @@
             {% set dk = cache_entry.get('digikey') %}
             {% set mo = cache_entry.get('mouser') %}
             <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %}"
+                draggable="true"
                 data-line-id="{{ line.line_id }}"
                 data-storage-key="{{ line.storage_key }}"
                 data-mpn="{{ line.primary_mpn }}"
@@ -147,7 +150,9 @@
                 data-part-key="{{ line|shop_part_key }}"
                 data-auto-category="{{ line|shop_auto_category }}"
                 data-ordered="{{ '1' if line.ordered else '0' }}"
+                data-source-line-ids="{{ line.source_line_ids|join(',') }}"
                 data-search="{{ line.search_text }}">
+                <td class="col-drag"><span class="drag-handle" title="Drag to another category">⋮⋮</span></td>
                 <td class="col-check">
                     <input type="checkbox" class="ordered-check" {% if line.ordered %}checked{% endif %}
                            aria-label="Ordered {{ line.primary_mpn }}">
@@ -156,13 +161,17 @@
                     <input type="number" class="buy-qty-input cell-input" min="0" step="1"
                            value="{{ line.buy_qty }}" aria-label="Buy quantity">
                 </td>
-                <td class="col-libref">
-                    <code>{{ line.primary_mpn }}</code>
+                <td class="col-libref" title="{% if line.lib_ref != line.primary_mpn %}BOM LibRef: {{ line.lib_ref }}{% endif %}">
+                    <input type="text" class="mpn-input cell-input" value="{{ line.primary_mpn }}"
+                           aria-label="MPN for {{ line.name }}" autocomplete="off">
                     {% if line.alternates_extra %}
-                    <span class="muted shop-alternates" title="Alternate MPNs">+ {{ line.alternates_display }}</span>
+                    <span class="muted shop-alternates" title="Alternate MPNs from BOM">+ {{ line.alternates_display }}</span>
                     {% endif %}
                 </td>
-                <td class="col-name">{{ line.name }}</td>
+                <td class="col-name">
+                    <input type="text" class="name-input cell-input" value="{{ line.name }}"
+                           aria-label="Part name" autocomplete="off">
+                </td>
                 <td><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
                 <td class="col-qty">{{ line.qty_needed }}</td>
                 <td class="col-qty">{{ line.qty_on_hand }}</td>
@@ -199,9 +208,57 @@
                         {% endif %}
                     </div>
                 </td>
+                <td class="col-check">
+                    <input type="checkbox" class="alternate-check" {% if line.alternate.enabled %}checked{% endif %}
+                           aria-label="Use substitute part for {{ line.primary_mpn }}">
+                </td>
                 <td class="col-notes">
                     <input type="text" class="notes-input cell-input" value="{{ line.notes }}"
                            placeholder="PO, cart, alt part…">
+                </td>
+            </tr>
+            <tr class="shop-row shop-alt-row {% if line.alternate.ordered %}row-ordered{% endif %}"
+                data-parent-storage-key="{{ line.storage_key }}"
+                data-category-group="{{ group.category_id }}"
+                data-mpn="{{ line.alternate.mpn }}"
+                data-cache-key="{{ line.alternate.cache_key }}"
+                data-ordered="{{ '1' if line.alternate.ordered else '0' }}"
+                {% if not line.alternate.enabled %}hidden{% endif %}>
+                <td class="col-drag"><span class="shop-alt-marker muted" title="Substitute part">↳</span></td>
+                <td class="col-check">
+                    <input type="checkbox" class="alt-ordered-check" {% if line.alternate.ordered %}checked{% endif %}
+                           aria-label="Ordered alternate {{ line.alternate.mpn or line.primary_mpn }}">
+                </td>
+                <td class="col-qty">
+                    <input type="number" class="alt-buy-qty-input cell-input" min="0" step="1"
+                           value="{{ line.alternate.buy_qty or line.buy_qty }}" aria-label="Alternate buy quantity">
+                </td>
+                <td class="col-libref">
+                    <input type="text" class="alt-mpn-input cell-input" value="{{ line.alternate.mpn }}"
+                           placeholder="Substitute MPN" aria-label="Alternate MPN" autocomplete="off">
+                </td>
+                <td class="col-name">
+                    <input type="text" class="alt-name-input cell-input" value="{{ line.alternate.name }}"
+                           placeholder="Alternate description" aria-label="Alternate name" autocomplete="off">
+                </td>
+                <td><span class="status-badge status-alt">ALT</span></td>
+                <td class="col-qty muted shop-alt-ref">{{ line.qty_needed }}</td>
+                <td class="col-qty muted">—</td>
+                <td class="col-bom muted" title="Substitute for {{ line.primary_mpn }}">↳ {{ line.primary_mpn }}</td>
+                <td class="col-distributors">
+                    <div class="dist-actions">
+                        <a class="btn btn-secondary btn-sm dist-link alt-dist-link" href="{{ line.alternate.digikey_url or line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
+                        <a class="btn btn-secondary btn-sm dist-link alt-dist-link" href="{{ line.alternate.mouser_url or line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
+                        {% if any_api_configured %}
+                        <button type="button" class="btn btn-secondary btn-sm shop-lookup-alt">Lookup</button>
+                        {% endif %}
+                    </div>
+                    <div class="dist-cache" data-dist-cache></div>
+                </td>
+                <td class="col-check muted">—</td>
+                <td class="col-notes">
+                    <input type="text" class="alt-notes-input cell-input" value="{{ line.alternate.notes }}"
+                           placeholder="Vendor, link, why this substitute…">
                 </td>
             </tr>
             {% endfor %}
@@ -224,6 +281,7 @@
 <script>
     window.BOM_SHOP = {
         updateUrlTemplate: {{ url_for('shop_update_line', storage_key='__STORAGE_KEY__')|tojson }},
+        categoryOverrideUrl: {{ url_for('compare_category_override')|tojson }},
         lookupUrl: {{ url_for('shop_lookup')|tojson }},
         apiConfigured: {{ any_api_configured|tojson }}
     };

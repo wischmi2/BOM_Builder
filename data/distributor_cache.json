@@ -64,6 +64,19 @@
         "price_breaks": [],
         "fetched_at": "2026-06-03T19:59:04.527148+00:00"
       }
+    },
+    "mpn:CRG0402F100K": {
+      "mouser": {
+        "found": false,
+        "mpn": "CRG0402F100K",
+        "url": "https://www.mouser.com/c/?q=CRG0402F100K",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-04T15:42:25.302194+00:00"
+      }
     }
   }
 }

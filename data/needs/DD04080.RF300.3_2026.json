@@ -278,7 +278,7 @@
         "C375"
       ],
       "footprint": "CAPC1005X55X25LL05T10",
-      "lib_ref": "CMP-001-00103-1",
+      "lib_ref": "GCM155R71H102KA37D",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -318,7 +318,7 @@
     {
       "id": "row-19-0d4c9cb3cfc255b5",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "SMA",
+      "name": "SMA Connector Jack, Female Socket 50 Ohms Board Edge, End Launch; Through Hole, Right Angle Solder",
       "description": "SMA Connector Jack, Female Socket 50Ohm Board Edge, End Launch; Through Hole, Right Angle Solder",
       "designators": [
         "J3",
@@ -427,7 +427,7 @@
     {
       "id": "row-26-63c28b1c89d65a14",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "100kohm",
+      "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film",
       "description": "RES SMD 100K OHM 1% 1/16W 0402",
       "designators": [
         "R1"
@@ -473,7 +473,7 @@
     {
       "id": "row-28-67e8ffdd0587e101",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "1kohm",
+      "name": "RES 1K OHM 5% 1/8W 0402",
       "description": "Thick Film Resistors 0.125W 1Kohm 5% 200ppm Anti-Surge",
       "designators": [
         "R3",
@@ -511,7 +511,7 @@
     {
       "id": "row-30-64738a4d21279772",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "33kohm",
+      "name": "33 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "description": "Thick Film Resistors - 33kohm SMD Anti Sulfur 0.5 Tol. 0402 -55oC to 155oC",
       "designators": [
         "R5"
@@ -542,7 +542,7 @@
     {
       "id": "row-32-b1694c50cc926cab",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "DNI",
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "description": "RES 0 OHM JUMPER 0201",
       "designators": [
         "R14",
@@ -558,7 +558,7 @@
     {
       "id": "row-33-8d1c0f1e99243ca7",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "0R",
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "description": "RES 0 OHM JUMPER 0201",
       "designators": [
         "R17",
@@ -593,7 +593,7 @@
     {
       "id": "row-35-e1f09e679da3a4c0",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "3.74kohm",
+      "name": "3.74 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
       "description": "RES SMD 3.74KOHM 0.1% 1/16W 0402",
       "designators": [
         "R19",
@@ -609,7 +609,7 @@
     {
       "id": "row-36-55facad38541b8e7",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "2.1kohm",
+      "name": "2.1 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "description": "RES SMD 2.1K OHM 1% 1/20W 0201",
       "designators": [
         "R20",
@@ -625,7 +625,7 @@
     {
       "id": "row-37-52d4aa11193e1f16",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "2kohm",
+      "name": "2 kOhms \u00b10.1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Thin Film",
       "description": "RES 2K OHM 0.1% 1/10W 0402",
       "designators": [
         "R21",
@@ -657,13 +657,13 @@
     {
       "id": "row-39-04872fd1ea693805",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "CRCW0201274RFNED",
+      "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "description": "Res Thick Film 0201 274 Ohm 1% 0.05W(1/20W) \u00b1200ppm/C Pad SMD T/R",
       "designators": [
         "R26"
       ],
       "footprint": "RESC0603X28X15ML05T05",
-      "lib_ref": "CMP-009-00187-1",
+      "lib_ref": "CRCW0201274RFNED",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -672,7 +672,7 @@
     {
       "id": "row-40-89a583843ed2c5d9",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "CRCW020161R9FNED",
+      "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
       "description": "Res Thick Film 0201 61.9 Ohm 1% 0.05W(1/20W) \u00b1200ppm/C Pad SMD T/R",
       "designators": [
         "R27",
@@ -680,7 +680,7 @@
         "R99"
       ],
       "footprint": "RESC0603X28X15ML05T05",
-      "lib_ref": "CMP-009-00186-1",
+      "lib_ref": "CRCW020161R9FNED",
       "quantity": 3,
       "is_dni": false,
       "acquired": false,
@@ -704,7 +704,7 @@
     {
       "id": "row-42-61ebd7f9f256e9aa",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "49.9ohms",
+      "name": "49.9 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "description": "General Purpose Chip Resistor Thick Film 0402 49.9Ohm 1% Paper T/R",
       "designators": [
         "R46"
@@ -719,7 +719,7 @@
     {
       "id": "row-43-00cddb9e7e6ffc61",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "100ohm",
+      "name": "100 Ohms \u00b15% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
       "description": "Thick Film Resistors 0.125W 100ohm 5% 200ppm Anti-Surge",
       "designators": [
         "R60",
@@ -739,7 +739,7 @@
     {
       "id": "row-44-d9c0dcc35293d5da",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "18R",
+      "name": "18 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
       "description": "Res Thick Film 0201 18 Ohm 1% 0.05W(1/20W) \u00b1200ppm/C Pad SMD Automotive T/R",
       "designators": [
         "R100"
@@ -754,7 +754,7 @@
     {
       "id": "row-45-42d081302e3469a6",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "300R",
+      "name": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "description": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R101",
@@ -785,14 +785,14 @@
     {
       "id": "row-47-633aa800edc86f02",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "CRCW0201105RFNED",
+      "name": "105 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "description": "Res Thick Film 0201 105 Ohm 1% 1/20W \u00b1200ppm/\u00b0C Molded SMD SMD Paper T/R",
       "designators": [
         "R437",
         "R438"
       ],
       "footprint": "RESC0603X28X15ML05T05",
-      "lib_ref": "CMP-009-00188-1",
+      "lib_ref": "CRCW0201105RFNED",
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
@@ -816,7 +816,7 @@
     {
       "id": "row-49-b681946e931b4489",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "DNI",
+      "name": "VTGT-S2",
       "description": "",
       "designators": [
         "TC2 PWDN-S1",
@@ -852,7 +852,7 @@
     {
       "id": "row-51-bf27fae6196f3bef",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "HMC424ALP3E RF Attenuator",
+      "name": "RF ATTENUATOR 31.5DB 16VFQFN",
       "description": "HMC424ALP3E RF ATTENUATOR 31.5DB 16VFQFN",
       "designators": [
         "U4"
@@ -882,7 +882,7 @@
     {
       "id": "row-53-b8447be3a4a90fe1",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "HMC659LC5",
+      "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
       "description": "ANALOG DEVICES   HMC659LC5   RF AMP, 17DB, 15GHZ, 8V, HQFN-32",
       "designators": [
         "U9"

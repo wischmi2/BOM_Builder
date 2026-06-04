@@ -298,7 +298,7 @@
     {
       "id": "row-16-d141c57b1c090a2b",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "04025A300FAT2A",
+      "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "description": "",
       "designators": [
         "C73",
@@ -308,7 +308,7 @@
         "C79"
       ],
       "footprint": "CAPC1005X56X25LL10T15",
-      "lib_ref": "CMP-2008-02632-1",
+      "lib_ref": "04025A300FAT2A",
       "quantity": 5,
       "is_dni": false,
       "acquired": false,
@@ -317,7 +317,7 @@
     {
       "id": "row-17-e416bd28657d6695",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "MMSZ4689-HF",
+      "name": "DIODE ZENER 5.1V 500MW SOD123",
       "description": "Comchip, Zener Diode 5.1V 500mW \u00b15% Surface Mount SOD-123",
       "designators": [
         "D3",
@@ -403,14 +403,14 @@
     {
       "id": "row-22-69ff66d2774199c1",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "49.9k",
+      "name": "49.9 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "description": "ERJ-2RKF4992X   Chip Resistor, 49.9 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0402 (1005 Metric), RoHS, Tape and Reel, ERJ-2RKF4992X    Chip Resistor, 49.9 KOhm, +/- 1%, 100 mW, -55 to 155 degC, 0402 (1005 Metric), RoHS, Tape and Reel",
       "designators": [
         "R1",
         "R4"
       ],
       "footprint": "RESC1005X40X25LL05T05",
-      "lib_ref": "CMP-2002-00967-3",
+      "lib_ref": "ERJ-2RKF4992X",
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
@@ -500,7 +500,7 @@
     {
       "id": "row-26-487ccb27baf88c42",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "75k",
+      "name": "75 kOhms \u00b15% 0.25W, 1/4W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200 Thick Film",
       "description": "Thick Film Resistors - SMD 1/8watts 75Kohms 5%",
       "designators": [
         "R18"
@@ -535,7 +535,7 @@
     {
       "id": "row-28-a457e0fecf83ac04",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "1.5kohm",
+      "name": "1.5 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "description": "Resistor Thick Film 0402 1.5k Ohm 1% 1/16w \u00b1100ppm \u00b0C Surface Mount Punched Paper Tape and Reel",
       "designators": [
         "R35_RFIN_ADC1",
@@ -551,7 +551,7 @@
     {
       "id": "row-29-7f6c3ae638a370e2",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "0R",
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "description": "RES 0 OHM JUMPER 0201",
       "designators": [
         "R36_RFIN_ADC1",
@@ -567,7 +567,7 @@
     {
       "id": "row-30-d746aaea07c82635",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "1kohm",
+      "name": "RES 1K OHM 5% 1/8W 0402",
       "description": "Thick Film Resistors 0.125W 1Kohm 5% 200ppm Anti-Surge",
       "designators": [
         "R38",
@@ -590,7 +590,7 @@
     {
       "id": "row-31-f0c9eb3851044e0e",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "100kohm",
+      "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film",
       "description": "RES SMD 100K OHM 1% 1/16W 0402, Res Thick Film 0402 100K Ohm 1% 1/16W \u00b1100ppm/\u00b0C Molded SMD Punched Paper T/R",
       "designators": [
         "R41",
@@ -637,7 +637,7 @@
     {
       "id": "row-33-79956d28566e13f9",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "20k",
+      "name": "20 kOhms 0.125W, 1/8W J Lead Surface Mount Trimmer Potentiometer Cermet 11 Turn Top Adjustment",
       "description": "TRIMMER 20K OHM 0.125W SMD",
       "designators": [
         "T1"
@@ -652,7 +652,7 @@
     {
       "id": "row-34-c49e44b40d5dcc09",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "KF80BDT-TR +8V",
+      "name": "IC REG LINEAR 8V 500MA DPAK",
       "description": "IC REG LINEAR 8V 500MA DPAK",
       "designators": [
         "U1"
@@ -682,13 +682,13 @@
     {
       "id": "row-36-669872ec3477d5f9",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "OP184FSZ",
+      "name": "IC OPAMP GP 1 CIRCUIT 8SOIC",
       "description": "Single Channel Wide Bandwidth Operational Amplifier, 4.25 MHz BW, 4 V/us SR, Industrial, 8-pin SOIC (R-8), Tube",
       "designators": [
         "U3"
       ],
       "footprint": "ADI-R-8_L",
-      "lib_ref": "CMP-0384-01051-2",
+      "lib_ref": "OP184FSZ",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -697,7 +697,7 @@
     {
       "id": "row-37-2279b0cf303e2472",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "W25Q16JVSSIQ",
+      "name": "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC",
       "description": "IC FLASH 16M SPI 133MHZ 8SOIC",
       "designators": [
         "U4"
@@ -712,7 +712,7 @@
     {
       "id": "row-38-3924a209b52f62f0",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "ADP7102ACPZ-3.3 +3.3V LDO",
+      "name": "IC REG LIN 3.3V 300MA 8-LFCSP-WD",
       "description": "ANALOG DEVICES         ADP7102ACPZ-3.3-R7             Fixed LDO Voltage Regulator, 3.3V to 20V, 200mV Dropout, 3.3Vout, 300mAout, LFCSP-8",
       "designators": [
         "U5"
@@ -727,7 +727,7 @@
     {
       "id": "row-39-77277ab9f315c0bc",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "LT1236ACS8-10",
+      "name": "IC VREF PRECISION 0.05% 8SOIC",
       "description": "IC VREF SERIES/SHUNT 10V 8SOIC",
       "designators": [
         "U6"
@@ -742,7 +742,7 @@
     {
       "id": "row-40-8ce74dff8522ee4a",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "AD5760ACPZ",
+      "name": "16 Bit Digital to Analog Converter 1 24-LFCSP-VQ (4x5)",
       "description": "DAC, 16BIT, 2LSB, 24LFCSP",
       "designators": [
         "U7"
@@ -757,7 +757,7 @@
     {
       "id": "row-41-f4b0a3bcf935a1f3",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "LT6657AHMS8-5",
+      "name": "Series Voltage Reference IC Fixed 5V V \u00b10.1% 10 mA 8-MSOP",
       "description": "IC VREF SERIES 5V 8MSOP",
       "designators": [
         "U9_RFIN_ADC1",
@@ -789,7 +789,7 @@
     {
       "id": "row-43-4204f046240f1210",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "SN74HCS594",
+      "name": "Shift Shift Register 1 Element 8 Bit 16-WQFN (2.5x3.5)",
       "description": "8-Bit Shift Register With Schmitt-Trigger Inputs and 3-State Output Registers",
       "designators": [
         "U12"
@@ -819,7 +819,7 @@
     {
       "id": "row-45-3abc5bfd031505b2",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "SN74AHC123A",
+      "name": "IC MMV 2-CIR 7.5-NS 16-TSSOP",
       "description": "Dual retriggerable monostable multivibrator",
       "designators": [
         "U14"

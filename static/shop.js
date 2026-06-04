@@ -12,8 +12,36 @@
     const expandAllBtn = document.getElementById("shop-expand-all");
     const collapseAllBtn = document.getElementById("shop-collapse-all");
     const collapseKey = "bom-builder-shop-collapsed";
-    const rows = Array.from(table.querySelectorAll("tbody tr.shop-row"));
+    const rows = Array.from(table.querySelectorAll("tbody tr.shop-row:not(.shop-alt-row)"));
+    const altRowByParent = new Map();
+    table.querySelectorAll("tbody tr.shop-alt-row").forEach((altRow) => {
+        const key = altRow.dataset.parentStorageKey;
+        if (key) altRowByParent.set(key, altRow);
+    });
     const categoryHeaders = Array.from(table.querySelectorAll("tbody tr.category-header"));
+
+    function altRowFor(parentRow) {
+        return altRowByParent.get(parentRow.dataset.storageKey || "");
+    }
+
+    function setAlternateVisible(parentRow, visible) {
+        const altRow = altRowFor(parentRow);
+        if (!altRow) return;
+        altRow.hidden = !visible;
+        parentRow.classList.toggle("has-alternate", Boolean(visible));
+    }
+
+    function updateDistLinks(row, mpn) {
+        if (!mpn) return;
+        const encoded = encodeURIComponent(mpn);
+        row.querySelectorAll(".dist-actions a.dist-link").forEach((link, index) => {
+            if (index === 0) {
+                link.href = `https://www.digikey.com/en/products/result?keywords=${encoded}`;
+            } else if (index === 1) {
+                link.href = `https://www.mouser.com/c/?q=${encoded}`;
+            }
+        });
+    }
 
     function rowsForCategory(categoryId) {
         return rows.filter((row) => row.dataset.categoryGroup === categoryId);
@@ -61,6 +89,8 @@
         if (toggle) toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
         rowsForCategory(categoryId).forEach((row) => {
             row.classList.toggle("category-collapsed", collapsed);
+            const altRow = altRowFor(row);
+            if (altRow) altRow.classList.toggle("category-collapsed", collapsed);
         });
     }
 
@@ -91,6 +121,109 @@
     expandAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(false));
     collapseAllBtn?.addEventListener("click", () => setAllCategoriesCollapsed(true));
 
+    function insertRowIntoCategory(row, targetCategoryId) {
+        const header = headerForCategory(targetCategoryId);
+        if (!header) return;
+
+        const oldCategory = row.dataset.categoryGroup;
+        row.dataset.categoryGroup = targetCategoryId;
+
+        let insertAfter = header;
+        let next = header.nextElementSibling;
+        while (next && !next.classList.contains("category-header")) {
+            if (next !== row && next.classList.contains("shop-row") && next.dataset.categoryGroup === targetCategoryId) {
+                insertAfter = next;
+            }
+            next = next.nextElementSibling;
+        }
+        insertAfter.parentNode.insertBefore(row, insertAfter.nextElementSibling);
+        const altRow = altRowFor(row);
+        if (altRow) {
+            row.parentNode.insertBefore(altRow, row.nextElementSibling);
+        }
+
+        if (oldCategory && oldCategory !== targetCategoryId) {
+            updateCategoryCount(oldCategory);
+        }
+        updateCategoryCount(targetCategoryId);
+    }
+
+    async function saveCategoryOverride(row, targetCategoryId) {
+        const partKey = row.dataset.partKey;
+        const autoCategory = row.dataset.autoCategory;
+        const response = await fetch(config.categoryOverrideUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                part_key: partKey,
+                category_id: targetCategoryId,
+                auto_category: autoCategory,
+            }),
+        });
+        const payload = await response.json();
+        if (!response.ok || !payload.ok) {
+            throw new Error(payload.error || "Could not save category.");
+        }
+        return payload;
+    }
+
+    function setupDragAndDrop() {
+        let draggedRow = null;
+
+        rows.forEach((row) => {
+            row.addEventListener("dragstart", (event) => {
+                if (event.target.closest("input, button, a, select, textarea")) {
+                    event.preventDefault();
+                    return;
+                }
+                draggedRow = row;
+                row.classList.add("is-dragging");
+                event.dataTransfer.effectAllowed = "move";
+                event.dataTransfer.setData("text/plain", row.dataset.partKey || "");
+            });
+
+            row.addEventListener("dragend", () => {
+                row.classList.remove("is-dragging");
+                categoryHeaders.forEach((header) => header.classList.remove("drop-target-active"));
+                draggedRow = null;
+            });
+        });
+
+        categoryHeaders.forEach((header) => {
+            header.addEventListener("dragover", (event) => {
+                if (!draggedRow) return;
+                event.preventDefault();
+                event.dataTransfer.dropEffect = "move";
+                header.classList.add("drop-target-active");
+            });
+
+            header.addEventListener("dragleave", () => {
+                header.classList.remove("drop-target-active");
+            });
+
+            header.addEventListener("drop", async (event) => {
+                event.preventDefault();
+                header.classList.remove("drop-target-active");
+                if (!draggedRow) return;
+
+                const targetCategory = header.dataset.category;
+                if (!targetCategory || draggedRow.dataset.categoryGroup === targetCategory) {
+                    return;
+                }
+
+                const previousCategory = draggedRow.dataset.categoryGroup;
+                insertRowIntoCategory(draggedRow, targetCategory);
+
+                try {
+                    await saveCategoryOverride(draggedRow, targetCategory);
+                } catch (err) {
+                    insertRowIntoCategory(draggedRow, previousCategory);
+                    window.alert(err.message || "Could not save category.");
+                }
+            });
+        });
+    }
+
     function lineUrl(storageKey) {
         return config.updateUrlTemplate.replace("__STORAGE_KEY__", encodeURIComponent(storageKey));
     }
@@ -109,7 +242,24 @@
     }
 
     function visibleRows() {
-        return rows.filter((row) => !row.hidden);
+        const visible = rows.filter((row) => !row.hidden);
+        const withAlts = [];
+        visible.forEach((row) => {
+            withAlts.push(row);
+            const altRow = altRowFor(row);
+            if (altRow && !altRow.hidden) withAlts.push(altRow);
+        });
+        return withAlts;
+    }
+
+    function visibleMpns() {
+        const mpns = [];
+        rows.filter((row) => !row.hidden).forEach((row) => {
+            if (row.dataset.mpn) mpns.push(row.dataset.mpn);
+            const altRow = altRowFor(row);
+            if (altRow && !altRow.hidden && altRow.dataset.mpn) mpns.push(altRow.dataset.mpn);
+        });
+        return mpns;
     }
 
     function setLookupStatus(message, isError) {
@@ -225,6 +375,11 @@
             if (skipOrdered && ordered) show = false;
             if (query && !searchHay.includes(query)) show = false;
             row.hidden = !show;
+            const altRow = altRowFor(row);
+            if (altRow) {
+                const altVisible = show && row.querySelector(".alternate-check")?.checked;
+                altRow.hidden = !altVisible;
+            }
             if (show) visible += 1;
         });
 
@@ -243,18 +398,48 @@
         const mpn = row.dataset.mpn;
         const orderedCheck = row.querySelector(".ordered-check");
         const buyQtyInput = row.querySelector(".buy-qty-input");
+        const mpnInput = row.querySelector(".mpn-input");
+        const nameInput = row.querySelector(".name-input");
         const notesInput = row.querySelector(".notes-input");
         const lookupBtn = row.querySelector(".shop-lookup-row");
+        const alternateCheck = row.querySelector(".alternate-check");
+        const sourceLineIds = (row.dataset.sourceLineIds || "")
+            .split(",")
+            .map((id) => id.trim())
+            .filter(Boolean);
 
         let timer;
         function scheduleSave(body, immediate) {
             clearTimeout(timer);
             const save = async () => {
                 try {
-                    const result = await patchLine(storageKey, body);
+                    const payload = { ...body };
+                    if (sourceLineIds.length && ("mpn" in body || "name" in body)) {
+                        payload.source_line_ids = sourceLineIds;
+                    }
+                    const result = await patchLine(storageKey, payload);
                     if ("ordered" in body) {
                         row.dataset.ordered = result.ordered ? "1" : "0";
                         row.classList.toggle("row-ordered", result.ordered);
+                    }
+                    if ("mpn" in body && mpnInput) {
+                        const mpn = (result.mpn || mpnInput.value || "").trim();
+                        row.dataset.mpn = mpn;
+                        if (result.mpn !== undefined) mpnInput.value = mpn;
+                        if (mpn) {
+                            row.dataset.cacheKey = `mpn:${mpn.toUpperCase()}`;
+                            row.querySelectorAll(".dist-actions a.dist-link").forEach((link, index) => {
+                                const encoded = encodeURIComponent(mpn);
+                                if (index === 0) {
+                                    link.href = `https://www.digikey.com/en/products/result?keywords=${encoded}`;
+                                } else if (index === 1) {
+                                    link.href = `https://www.mouser.com/c/?q=${encoded}`;
+                                }
+                            });
+                        }
+                    }
+                    if ("name" in body && nameInput && result.name !== undefined) {
+                        nameInput.value = result.name;
                     }
                     applyFilters();
                 } catch (err) {
@@ -290,19 +475,105 @@
             scheduleSave({ notes: notesInput.value }, true);
         });
 
+        mpnInput?.addEventListener("input", () => {
+            scheduleSave({ mpn: mpnInput.value.trim() }, false);
+        });
+        mpnInput?.addEventListener("blur", () => {
+            scheduleSave({ mpn: mpnInput.value.trim() }, true);
+        });
+
+        nameInput?.addEventListener("input", () => {
+            scheduleSave({ name: nameInput.value }, false);
+        });
+        nameInput?.addEventListener("blur", () => {
+            scheduleSave({ name: nameInput.value }, true);
+        });
+
         lookupBtn?.addEventListener("click", () => {
             runLookup([mpn], false);
         });
+
+        alternateCheck?.addEventListener("change", () => {
+            setAlternateVisible(row, alternateCheck.checked);
+            scheduleSave({ alternate: { enabled: alternateCheck.checked } }, true);
+        });
+
+        const altRow = altRowFor(row);
+        if (altRow) bindAlternateRow(altRow, row, storageKey);
     });
 
+    function bindAlternateRow(altRow, parentRow, storageKey) {
+        const altOrdered = altRow.querySelector(".alt-ordered-check");
+        const altBuyQty = altRow.querySelector(".alt-buy-qty-input");
+        const altMpn = altRow.querySelector(".alt-mpn-input");
+        const altName = altRow.querySelector(".alt-name-input");
+        const altNotes = altRow.querySelector(".alt-notes-input");
+        const altLookup = altRow.querySelector(".shop-lookup-alt");
+
+        let altTimer;
+        function scheduleAltSave(altBody, immediate) {
+            clearTimeout(altTimer);
+            const save = async () => {
+                try {
+                    const result = await patchLine(storageKey, { alternate: altBody });
+                    const alt = result.alternate || {};
+                    if ("ordered" in altBody) {
+                        altRow.dataset.ordered = alt.ordered ? "1" : "0";
+                        altRow.classList.toggle("row-ordered", alt.ordered);
+                    }
+                    if ("mpn" in altBody && altMpn) {
+                        const val = (alt.mpn || altMpn.value || "").trim();
+                        altMpn.value = val;
+                        altRow.dataset.mpn = val;
+                        if (val) {
+                            altRow.dataset.cacheKey = `mpn:${val.toUpperCase()}`;
+                            updateDistLinks(altRow, val);
+                        }
+                    }
+                    if ("name" in altBody && altName && alt.name !== undefined) {
+                        altName.value = alt.name;
+                    }
+                    applyFilters();
+                } catch (err) {
+                    alert(err.message || "Could not save alternate part.");
+                }
+            };
+            if (immediate) {
+                save();
+            } else {
+                altTimer = setTimeout(save, 400);
+            }
+        }
+
+        altOrdered?.addEventListener("change", () => {
+            scheduleAltSave({ ordered: altOrdered.checked }, true);
+        });
+        altBuyQty?.addEventListener("input", () => {
+            const raw = parseInt(altBuyQty.value, 10);
+            scheduleAltSave({ buy_qty: Number.isFinite(raw) && raw >= 0 ? raw : 0 }, false);
+        });
+        altBuyQty?.addEventListener("blur", () => {
+            const raw = parseInt(altBuyQty.value, 10);
+            scheduleAltSave({ buy_qty: Number.isFinite(raw) && raw >= 0 ? raw : 0 }, true);
+        });
+        altMpn?.addEventListener("input", () => scheduleAltSave({ mpn: altMpn.value.trim() }, false));
+        altMpn?.addEventListener("blur", () => scheduleAltSave({ mpn: altMpn.value.trim() }, true));
+        altName?.addEventListener("input", () => scheduleAltSave({ name: altName.value }, false));
+        altName?.addEventListener("blur", () => scheduleAltSave({ name: altName.value }, true));
+        altNotes?.addEventListener("input", () => scheduleAltSave({ notes: altNotes.value }, false));
+        altNotes?.addEventListener("blur", () => scheduleAltSave({ notes: altNotes.value }, true));
+        altLookup?.addEventListener("click", () => {
+            const m = altRow.dataset.mpn || altMpn?.value;
+            if (m) runLookup([m], false);
+        });
+    }
+
     lookupVisibleBtn?.addEventListener("click", () => {
-        const mpns = visibleRows().map((row) => row.dataset.mpn).filter(Boolean);
-        runLookup(mpns, false);
+        runLookup(visibleMpns(), false);
     });
 
     lookupForceBtn?.addEventListener("click", () => {
-        const mpns = visibleRows().map((row) => row.dataset.mpn).filter(Boolean);
-        runLookup(mpns, true);
+        runLookup(visibleMpns(), true);
     });
 
     searchInput?.addEventListener("input", applyFilters);
@@ -314,5 +585,6 @@
     });
 
     initCollapseState();
+    setupDragAndDrop();
     applyFilters();
 })();
