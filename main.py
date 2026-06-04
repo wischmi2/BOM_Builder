@@ -75,6 +75,9 @@ from bom_builder.shopping import (
     sync_need_lines_mpn_name,
     lines_to_saved_dict,
     merge_shop_state,
+    receive_shop_parts,
+    receive_state_from_entry,
+    reset_received_qty,
     shop_stats,
     shop_to_csv,
 )
@@ -661,6 +664,7 @@ def shop_update_line(storage_key: str):
                 "mpn": entry.get("mpn", ""),
                 "name": entry.get("name", ""),
                 "alternate": alternate_from_entry(entry),
+                "receive": receive_state_from_entry(entry, alternate=False),
                 "bom_synced": bom_synced,
             }
         )
@@ -670,6 +674,64 @@ def shop_update_line(storage_key: str):
         query = urlencode(_shop_query_params(selected_ids, _compare_view_mode(selected_ids)))
         return redirect(f"{url_for('shop_page')}?{query}")
     return redirect(url_for("shop_page"))
+
+
+@app.route("/shop/line/<path:storage_key>/receive", methods=["POST"])
+def shop_receive_line(storage_key: str):
+    payload = request.get_json(silent=True) or request.form
+    try:
+        qty = max(0, int(payload.get("qty", 0)))
+    except (TypeError, ValueError):
+        return jsonify({"ok": False, "error": "Receive qty must be a number."}), 400
+
+    alternate = payload.get("alternate") in (True, "true", "on", "1", 1)
+    action = str(payload.get("action", "")).strip().lower()
+    mpn = str(payload.get("mpn", "")).strip()
+    name = str(payload.get("name", ""))
+    location = str(payload.get("location", ""))
+    notes = str(payload.get("notes", ""))
+
+    saved = storage.load_shopping_list()
+    if action == "reset":
+        result = reset_received_qty(saved, storage_key, alternate=alternate)
+        storage.save_shopping_list(saved)
+        entry = saved.get(storage_key, {})
+        return jsonify(
+            {
+                "ok": True,
+                "storage_key": storage_key,
+                "alternate": alternate,
+                "reset": True,
+                **result,
+                "alternate_state": alternate_from_entry(entry) if alternate else None,
+            }
+        )
+
+    try:
+        result = receive_shop_parts(
+            saved,
+            storage_key,
+            qty,
+            mpn=mpn,
+            name=name,
+            alternate=alternate,
+            location=location,
+            notes=notes,
+        )
+    except ValueError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 400
+
+    storage.save_shopping_list(saved)
+    entry = saved.get(storage_key, {})
+    return jsonify(
+        {
+            "ok": True,
+            "storage_key": storage_key,
+            "alternate": alternate,
+            **result,
+            "alternate_state": alternate_from_entry(entry) if alternate else None,
+        }
+    )
 
 
 @app.route("/shop/export.csv")

@@ -115,6 +115,7 @@
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
                 <th class="col-check" data-col="check">Ordered</th>
+                <th class="col-received" data-col="received" title="Receive into inventory">Received</th>
                 <th class="col-qty" data-col="buy">Buy qty</th>
                 <th class="col-libref" data-col="libref">MPN</th>
                 <th class="col-name" data-col="name">Name</th>
@@ -130,7 +131,7 @@
         <tbody>
             {% for group in grouped_lines %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="12">
+                <td colspan="13">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
@@ -140,10 +141,12 @@
             {% set cache_entry = distributor_cache.get(line.cache_key, {}) %}
             {% set dk = cache_entry.get('digikey') %}
             {% set mo = cache_entry.get('mouser') %}
-            <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %}"
+            <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %} {% if line.fully_received %}row-received{% endif %}"
                 draggable="true"
                 data-line-id="{{ line.line_id }}"
                 data-storage-key="{{ line.storage_key }}"
+                data-buy-qty="{{ line.buy_qty }}"
+                data-received-qty="{{ line.received_qty }}"
                 data-mpn="{{ line.primary_mpn }}"
                 data-cache-key="{{ line.cache_key }}"
                 data-category-group="{{ group.category_id }}"
@@ -157,9 +160,28 @@
                     <input type="checkbox" class="ordered-check" {% if line.ordered %}checked{% endif %}
                            aria-label="Ordered {{ line.primary_mpn }}">
                 </td>
+                <td class="col-received">
+                    <div class="received-cell">
+                        <input type="checkbox" class="received-check" {% if line.fully_received %}checked{% endif %}
+                               {% if line.fully_received %}disabled{% endif %}
+                               aria-label="Receive {{ line.primary_mpn }} into inventory">
+                        <input type="number" class="receive-qty-input cell-input" min="1" step="1"
+                               value="{{ line.remaining_buy_qty if line.remaining_buy_qty > 0 else 1 }}"
+                               {% if line.fully_received %}disabled{% endif %}
+                               aria-label="Quantity to receive now" title="Qty to add to inventory this receipt">
+                    </div>
+                    {% if line.received_qty > 0 %}
+                    <span class="muted received-progress">{{ line.received_qty }} / {{ line.buy_qty }} in inventory</span>
+                    <button type="button" class="btn btn-secondary btn-sm reset-received-btn"
+                            title="Clear receive count (does not remove inventory)">Reset</button>
+                    {% endif %}
+                </td>
                 <td class="col-qty">
                     <input type="number" class="buy-qty-input cell-input" min="0" step="1"
                            value="{{ line.buy_qty }}" aria-label="Buy quantity">
+                    {% if line.received_qty > 0 and not line.fully_received %}
+                    <span class="muted received-remaining">{{ line.remaining_buy_qty }} left to receive</span>
+                    {% endif %}
                 </td>
                 <td class="col-libref" title="{% if line.lib_ref != line.primary_mpn %}BOM LibRef: {{ line.lib_ref }}{% endif %}">
                     <input type="text" class="mpn-input cell-input" value="{{ line.primary_mpn }}"
@@ -217,9 +239,11 @@
                            placeholder="PO, cart, alt part…">
                 </td>
             </tr>
-            <tr class="shop-row shop-alt-row {% if line.alternate.ordered %}row-ordered{% endif %}"
+            <tr class="shop-row shop-alt-row {% if line.alternate.ordered %}row-ordered{% endif %} {% if line.alternate.fully_received %}row-received{% endif %}"
                 data-parent-storage-key="{{ line.storage_key }}"
                 data-category-group="{{ group.category_id }}"
+                data-buy-qty="{{ line.alternate.buy_qty or line.buy_qty }}"
+                data-received-qty="{{ line.alternate.received_qty }}"
                 data-mpn="{{ line.alternate.mpn }}"
                 data-cache-key="{{ line.alternate.cache_key }}"
                 data-ordered="{{ '1' if line.alternate.ordered else '0' }}"
@@ -228,6 +252,22 @@
                 <td class="col-check">
                     <input type="checkbox" class="alt-ordered-check" {% if line.alternate.ordered %}checked{% endif %}
                            aria-label="Ordered alternate {{ line.alternate.mpn or line.primary_mpn }}">
+                </td>
+                <td class="col-received">
+                    <div class="received-cell">
+                        <input type="checkbox" class="alt-received-check" {% if line.alternate.fully_received %}checked{% endif %}
+                               {% if line.alternate.fully_received %}disabled{% endif %}
+                               aria-label="Receive alternate into inventory">
+                        <input type="number" class="alt-receive-qty-input cell-input" min="1" step="1"
+                               value="{{ line.alternate.remaining_buy_qty if line.alternate.remaining_buy_qty > 0 else 1 }}"
+                               {% if line.alternate.fully_received %}disabled{% endif %}
+                               aria-label="Alternate quantity to receive now">
+                    </div>
+                    {% if line.alternate.received_qty > 0 %}
+                    <span class="muted received-progress">{{ line.alternate.received_qty }} / {{ line.alternate.buy_qty or line.buy_qty }} in inventory</span>
+                    <button type="button" class="btn btn-secondary btn-sm reset-received-btn"
+                            title="Clear receive count (does not remove inventory)">Reset</button>
+                    {% endif %}
                 </td>
                 <td class="col-qty">
                     <input type="number" class="alt-buy-qty-input cell-input" min="0" step="1"
@@ -281,6 +321,7 @@
 <script>
     window.BOM_SHOP = {
         updateUrlTemplate: {{ url_for('shop_update_line', storage_key='__STORAGE_KEY__')|tojson }},
+        receiveUrlTemplate: {{ url_for('shop_receive_line', storage_key='__STORAGE_KEY__')|tojson }},
         categoryOverrideUrl: {{ url_for('compare_category_override')|tojson }},
         lookupUrl: {{ url_for('shop_lookup')|tojson }},
         apiConfigured: {{ any_api_configured|tojson }}

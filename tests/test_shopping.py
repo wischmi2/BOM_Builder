@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 from bom_builder import storage
 from bom_builder.models import BomDocument, InventoryDocument, InventoryItem, NeedLine
+from bom_builder.inventory_io import add_qty_for_mpn
 from bom_builder.shopping import (
     alternates_display,
     attach_storage_key,
@@ -13,6 +14,7 @@ from bom_builder.shopping import (
     merge_shop_state,
     mouser_search_url,
     primary_mpn,
+    receive_shop_parts,
     shop_to_csv,
     shortfall_qty,
     sync_need_lines_mpn_name,
@@ -146,6 +148,14 @@ class TestShopping(unittest.TestCase):
         )
         merge_shop_state([line], {"test-shop:line-1": {"notes": "legacy key"}})
         self.assertEqual(line.notes, "legacy key")
+
+    def test_add_qty_for_mpn_merges_existing(self) -> None:
+        doc = InventoryDocument(
+            items=[InventoryItem(id="i1", lib_ref="ABC-1", name="Old", qty_on_hand=3)]
+        )
+        item = add_qty_for_mpn(doc, lib_ref="abc-1", qty=5, name="New name")
+        self.assertEqual(item.qty_on_hand, 8)
+        self.assertEqual(item.name, "Old")
 
     def test_shop_to_csv(self) -> None:
         from bom_builder.shopping import ShopLine
@@ -303,6 +313,58 @@ class TestShoppingRoutes(unittest.TestCase):
         data = response.get_json()
         self.assertTrue(data["alternate"]["enabled"])
         self.assertEqual(data["alternate"]["mpn"], "SUB-123")
+
+    def test_shop_receive_route_partial(self) -> None:
+        # Do not call save_inventory([]) — use isolated path from setUp; empty file loads as [].
+        self.assertNotEqual(
+            storage.INVENTORY_PATH.resolve(),
+            (Path(__file__).resolve().parent.parent / "data" / "inventory.json").resolve(),
+            "Tests must not use the real data/inventory.json",
+        )
+        self.client.post(
+            "/shop/line/lib:BUYME",
+            json={"buy_qty": 10},
+            headers={"Accept": "application/json"},
+        )
+        response = self.client.post(
+            "/shop/line/lib:BUYME/receive",
+            json={"qty": 3, "mpn": "BUYME", "name": "Test part"},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["received_qty"], 3)
+        self.assertEqual(data["remaining_qty"], 7)
+        self.assertFalse(data["fully_received"])
+        inv = storage.load_inventory()
+        self.assertEqual(inv.items[0].qty_on_hand, 3)
+
+        response2 = self.client.post(
+            "/shop/line/lib:BUYME/receive",
+            json={"qty": 7, "mpn": "BUYME", "name": "Test part"},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response2.status_code, 200)
+        data2 = response2.get_json()
+        self.assertTrue(data2["fully_received"])
+        self.assertEqual(storage.load_inventory().items[0].qty_on_hand, 10)
+
+    def test_shop_receive_reset(self) -> None:
+        storage.save_inventory(InventoryDocument(items=[]))
+        self.client.post(
+            "/shop/line/lib:BUYME",
+            json={"buy_qty": 10, "received_qty": 10},
+            headers={"Accept": "application/json"},
+        )
+        response = self.client.post(
+            "/shop/line/lib:BUYME/receive",
+            json={"action": "reset"},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["received_qty"], 0)
+        self.assertEqual(data["remaining_qty"], 10)
 
     def test_shop_notes_persist_across_views(self) -> None:
         self.client.post(

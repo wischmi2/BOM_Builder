@@ -228,6 +228,10 @@
         return config.updateUrlTemplate.replace("__STORAGE_KEY__", encodeURIComponent(storageKey));
     }
 
+    function receiveLineUrl(storageKey) {
+        return config.receiveUrlTemplate.replace("__STORAGE_KEY__", encodeURIComponent(storageKey));
+    }
+
     async function patchLine(storageKey, body) {
         const response = await fetch(lineUrl(storageKey), {
             method: "POST",
@@ -239,6 +243,161 @@
             throw new Error(data.error || "Could not save.");
         }
         return data;
+    }
+
+    async function receiveLine(storageKey, body) {
+        const response = await fetch(receiveLineUrl(storageKey), {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(body),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) {
+            throw new Error(data.error || "Could not receive into inventory.");
+        }
+        return data;
+    }
+
+    function updateReceiveUi(row, state, parentRow) {
+        row.dataset.receivedQty = String(state.received_qty);
+        row.dataset.buyQty = String(state.buy_qty);
+        row.classList.toggle("row-received", Boolean(state.fully_received));
+
+        const recvInput = row.querySelector(".receive-qty-input, .alt-receive-qty-input");
+        const recvCheck = row.querySelector(".received-check, .alt-received-check");
+        if (recvInput) {
+            const remaining = Math.max(0, state.remaining_qty);
+            recvInput.value = remaining > 0 ? String(remaining) : "1";
+            recvInput.disabled = state.fully_received;
+        }
+        if (recvCheck) {
+            recvCheck.checked = state.fully_received;
+            recvCheck.disabled = state.fully_received;
+        }
+
+        let progress = row.querySelector(".received-progress");
+        if (state.received_qty > 0) {
+            if (!progress) {
+                progress = document.createElement("span");
+                progress.className = "muted received-progress";
+                row.querySelector(".col-received")?.appendChild(progress);
+            }
+            progress.textContent = `${state.received_qty} / ${state.buy_qty} in inventory`;
+        } else if (progress) {
+            progress.remove();
+        }
+
+        const buyCell = parentRow?.querySelector(".col-qty");
+        if (buyCell) {
+            let remainingEl = buyCell.querySelector(".received-remaining");
+            if (state.received_qty > 0 && !state.fully_received) {
+                if (!remainingEl) {
+                    remainingEl = document.createElement("span");
+                    remainingEl.className = "muted received-remaining";
+                    buyCell.appendChild(remainingEl);
+                }
+                remainingEl.textContent = `${state.remaining_qty} left to receive`;
+            } else if (remainingEl) {
+                remainingEl.remove();
+            }
+        }
+    }
+
+    function remainingToReceive(row) {
+        const buy = parseInt(row.dataset.buyQty || "0", 10) || 0;
+        const received = parseInt(row.dataset.receivedQty || "0", 10) || 0;
+        return Math.max(0, buy - received);
+    }
+
+    async function resetReceiveTracking(row, storageKey, isAlternate, parentRow) {
+        const result = await receiveLine(storageKey, { action: "reset", alternate: isAlternate });
+        updateReceiveUi(row, result, isAlternate ? parentRow : row);
+        return result;
+    }
+
+    function bindReceive(row, storageKey, options) {
+        const isAlternate = Boolean(options?.alternate);
+        const parentRow = options?.parentRow || row;
+        const recvCheck = row.querySelector(isAlternate ? ".alt-received-check" : ".received-check");
+        const recvQty = row.querySelector(isAlternate ? ".alt-receive-qty-input" : ".receive-qty-input");
+        const mpnInput = row.querySelector(isAlternate ? ".alt-mpn-input" : ".mpn-input");
+        const nameInput = row.querySelector(isAlternate ? ".alt-name-input" : ".name-input");
+        const notesInput = row.querySelector(isAlternate ? ".alt-notes-input" : ".notes-input");
+        const resetBtn = row.querySelector(".reset-received-btn");
+        let receiving = false;
+
+        resetBtn?.addEventListener("click", async () => {
+            const msg =
+                "Clear the receive count for this line? This does not remove parts from Inventory — use Inventory → Delete for that.";
+            if (!window.confirm(msg)) return;
+            try {
+                await resetReceiveTracking(row, storageKey, isAlternate, parentRow);
+            } catch (err) {
+                alert(err.message || "Could not reset receive tracking.");
+            }
+        });
+
+        recvCheck?.addEventListener("change", async () => {
+            if (!recvCheck.checked) {
+                return;
+            }
+            if (receiving) {
+                recvCheck.checked = false;
+                return;
+            }
+            const remaining = remainingToReceive(row);
+            if (remaining <= 0) {
+                recvCheck.checked = false;
+                alert(
+                    "Nothing left to receive on this line. Click Reset if you removed stock from Inventory and want to receive again."
+                );
+                return;
+            }
+            const raw = parseInt(recvQty?.value, 10);
+            let qty = Number.isFinite(raw) && raw > 0 ? raw : 0;
+            if (qty > remaining) {
+                qty = remaining;
+                if (recvQty) recvQty.value = String(remaining);
+            }
+            if (!qty) {
+                recvCheck.checked = false;
+                alert("Enter how many to receive (at least 1).");
+                return;
+            }
+            const mpn = (mpnInput?.value || row.dataset.mpn || "").trim();
+            if (!mpn) {
+                recvCheck.checked = false;
+                alert("Enter an MPN before receiving into inventory.");
+                return;
+            }
+            if (!window.confirm(`Add ${qty} of ${mpn} to Inventory now?`)) {
+                recvCheck.checked = false;
+                return;
+            }
+            receiving = true;
+            recvCheck.disabled = true;
+            let fullyReceived = false;
+            try {
+                const result = await receiveLine(storageKey, {
+                    qty,
+                    mpn,
+                    name: nameInput?.value || "",
+                    notes: notesInput?.value || "",
+                    alternate: isAlternate,
+                });
+                fullyReceived = Boolean(result.fully_received);
+                updateReceiveUi(row, result, isAlternate ? parentRow : row);
+                if (!fullyReceived) {
+                    recvCheck.checked = false;
+                }
+            } catch (err) {
+                recvCheck.checked = false;
+                alert(err.message || "Could not receive into inventory.");
+            } finally {
+                receiving = false;
+                recvCheck.disabled = fullyReceived;
+            }
+        });
     }
 
     function visibleRows() {
@@ -498,8 +657,13 @@
             scheduleSave({ alternate: { enabled: alternateCheck.checked } }, true);
         });
 
+        bindReceive(row, storageKey, { alternate: false });
+
         const altRow = altRowFor(row);
-        if (altRow) bindAlternateRow(altRow, row, storageKey);
+        if (altRow) {
+            bindAlternateRow(altRow, row, storageKey);
+            bindReceive(altRow, storageKey, { alternate: true, parentRow: row });
+        }
     });
 
     function bindAlternateRow(altRow, parentRow, storageKey) {

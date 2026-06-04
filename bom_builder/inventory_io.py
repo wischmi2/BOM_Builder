@@ -51,6 +51,54 @@ def find_item(doc: InventoryDocument, item_id: str) -> InventoryItem | None:
     return None
 
 
+def add_qty_for_mpn(
+    doc: InventoryDocument,
+    *,
+    lib_ref: str,
+    qty: int,
+    name: str = "",
+    location: str = "",
+    notes: str = "",
+) -> InventoryItem:
+    """Add quantity to inventory, merging into an existing row with the same MPN when possible."""
+    from bom_builder.matcher import normalize_key
+
+    lib_ref = lib_ref.strip()
+    if not lib_ref:
+        raise ValueError("MPN (LibRef) is required.")
+    if qty <= 0:
+        raise ValueError("Quantity must be at least 1.")
+
+    lib_key = normalize_key(lib_ref)
+    loc_key = location.strip().upper()
+    matches = [item for item in doc.items if normalize_key(item.lib_ref) == lib_key]
+    if loc_key:
+        for item in matches:
+            if item.location.strip().upper() == loc_key:
+                item.qty_on_hand += qty
+                if name.strip() and not item.name.strip():
+                    item.name = name.strip()
+                if notes.strip():
+                    item.notes = notes.strip() if not item.notes.strip() else f"{item.notes}; {notes.strip()}"
+                return item
+    for item in matches:
+        item.qty_on_hand += qty
+        if name.strip() and not item.name.strip():
+            item.name = name.strip()
+        if notes.strip():
+            item.notes = notes.strip() if not item.notes.strip() else f"{item.notes}; {notes.strip()}"
+        return item
+
+    return add_item(
+        doc,
+        lib_ref=lib_ref,
+        name=name,
+        qty_on_hand=qty,
+        location=location,
+        notes=notes,
+    )
+
+
 def add_item(
     doc: InventoryDocument,
     *,

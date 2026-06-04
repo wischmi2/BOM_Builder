@@ -1244,8 +1244,37 @@ body.col-resize-active * {
     cursor: grabbing;
 }
 
+.received-cell {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.received-cell .receive-qty-input,
+.received-cell .alt-receive-qty-input {
+    width: 3.25rem;
+    min-width: 0;
+    padding: 0.2rem 0.35rem;
+}
+
+.received-progress,
+.received-remaining {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.shop-row.row-received {
+    background: #f0fdf4;
+}
+
 .shop-row.row-ordered {
     opacity: 0.65;
+}
+
+.shop-row.row-received.row-ordered {
+    opacity: 0.85;
 }
 
 .shop-row.row-ordered .col-name,

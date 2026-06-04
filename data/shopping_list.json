@@ -34,11 +34,18 @@
     },
     "lib:504L50R0FTNCFT": {
       "notes": "FC0402E50R0BTBST1",
-      "updated_at": "2026-06-04T19:06:51.438101+00:00",
+      "updated_at": "2026-06-04T21:06:52.912556+00:00",
       "alternate": {
         "enabled": true,
-        "buy_qty": 0
-      }
+        "buy_qty": 12,
+        "mpn": "FC0402E50R0BTBST1",
+        "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
+        "notes": "Digikey List.  50."
+      },
+      "ordered": false,
+      "buy_qty": 12,
+      "received_qty": 6,
+      "name": "50ohm"
     },
     "DD02040.RF300.3_2026:row-43-96aaa42138c3ac1f": {
       "notes": "FC0402E50R0BTBST1",
@@ -183,7 +190,7 @@
     },
     "lib:PE42553BZ": {
       "notes": "Digikey List.  50.",
-      "updated_at": "2026-06-04T15:21:40.510002+00:00"
+      "updated_at": "2026-06-04T21:06:22.064566+00:00"
     },
     "lib:ADP7102ACPZ33R7": {
       "notes": "Digikey List.  50.",

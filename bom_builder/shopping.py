@@ -18,6 +18,7 @@ from bom_builder.matcher import (
 from bom_builder.models import BomDocument, InventoryDocument
 from bom_builder.need_io import find_line
 from bom_builder import storage
+from bom_builder.inventory_io import add_qty_for_mpn
 
 
 @dataclass
@@ -28,6 +29,15 @@ class ShopAlternate:
     buy_qty: int = 0
     notes: str = ""
     ordered: bool = False
+    received_qty: int = 0
+
+    @property
+    def remaining_buy_qty(self) -> int:
+        return max(0, self.buy_qty - self.received_qty)
+
+    @property
+    def fully_received(self) -> bool:
+        return self.buy_qty > 0 and self.received_qty >= self.buy_qty
 
     @property
     def digikey_url(self) -> str:
@@ -59,6 +69,7 @@ class ShopLine:
     designators: str = ""
     notes: str = ""
     ordered: bool = False
+    received_qty: int = 0
     digikey_url: str = ""
     mouser_url: str = ""
     search_text: str = ""
@@ -70,6 +81,14 @@ class ShopLine:
     @property
     def alternates_extra(self) -> bool:
         return bool(self.alternates_display)
+
+    @property
+    def remaining_buy_qty(self) -> int:
+        return max(0, self.buy_qty - self.received_qty)
+
+    @property
+    def fully_received(self) -> bool:
+        return self.buy_qty > 0 and self.received_qty >= self.buy_qty
 
 
 def shortfall_qty(qty_needed: int, qty_on_hand: int) -> int:
@@ -324,6 +343,11 @@ def _apply_alternate_state(line: ShopLine, alt: dict[str, Any]) -> None:
             line.alternate.buy_qty = max(0, int(alt["buy_qty"]))
         except (TypeError, ValueError):
             pass
+    if "received_qty" in alt:
+        try:
+            line.alternate.received_qty = max(0, int(alt["received_qty"]))
+        except (TypeError, ValueError):
+            pass
     if line.alternate.enabled and not line.alternate.buy_qty:
         line.alternate.buy_qty = line.buy_qty or line.default_buy_qty
 
@@ -342,6 +366,11 @@ def merge_shop_state(lines: list[ShopLine], saved: dict[str, dict[str, Any]]) ->
             line.notes = str(state.get("notes", ""))
         if "ordered" in state:
             line.ordered = bool(state.get("ordered"))
+        if "received_qty" in state:
+            try:
+                line.received_qty = max(0, int(state["received_qty"]))
+            except (TypeError, ValueError):
+                pass
         _apply_display_overrides(line, state)
         alt = state.get("alternate")
         if isinstance(alt, dict):
@@ -369,6 +398,7 @@ def lines_to_saved_dict(lines: list[ShopLine]) -> dict[str, dict[str, Any]]:
             "buy_qty": line.buy_qty,
             "notes": line.notes,
             "ordered": line.ordered,
+            "received_qty": line.received_qty,
             "updated_at": now,
         }
         if line.primary_mpn != primary_mpn(line.lib_ref):
@@ -381,9 +411,92 @@ def lines_to_saved_dict(lines: list[ShopLine]) -> dict[str, dict[str, Any]]:
                 "buy_qty": line.alternate.buy_qty,
                 "notes": line.alternate.notes,
                 "ordered": line.alternate.ordered,
+                "received_qty": line.alternate.received_qty,
             }
         out[key] = entry
     return out
+
+
+def _receive_targets(entry: dict[str, Any], *, alternate: bool) -> tuple[int, int]:
+    if alternate:
+        alt = entry.get("alternate") or {}
+        buy_qty = int(alt.get("buy_qty") or entry.get("buy_qty") or 0)
+        received_qty = int(alt.get("received_qty") or 0)
+    else:
+        buy_qty = int(entry.get("buy_qty") or 0)
+        received_qty = int(entry.get("received_qty") or 0)
+    return buy_qty, received_qty
+
+
+def reset_received_qty(saved: dict[str, dict[str, Any]], storage_key: str, *, alternate: bool = False) -> dict[str, Any]:
+    """Clear receive tracking so the user can receive again (does not change inventory)."""
+    entry = dict(saved.get(storage_key, {}))
+    if alternate:
+        alt = dict(entry.get("alternate") or {})
+        alt["received_qty"] = 0
+        entry["alternate"] = alt
+    else:
+        entry["received_qty"] = 0
+    entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+    saved[storage_key] = entry
+    return receive_state_from_entry(entry, alternate=alternate)
+
+
+def receive_shop_parts(
+    saved: dict[str, dict[str, Any]],
+    storage_key: str,
+    qty: int,
+    *,
+    mpn: str,
+    name: str = "",
+    alternate: bool = False,
+    location: str = "",
+    notes: str = "",
+) -> dict[str, Any]:
+    """Move received quantity from shop line into inventory."""
+    entry = dict(saved.get(storage_key, {}))
+    buy_qty, received_qty = _receive_targets(entry, alternate=alternate)
+    remaining = max(0, buy_qty - received_qty)
+
+    if buy_qty <= 0:
+        raise ValueError("Set buy quantity before receiving into inventory.")
+    if qty <= 0:
+        raise ValueError("Receive quantity must be at least 1.")
+    if qty > remaining:
+        raise ValueError(f"Cannot receive {qty}; only {remaining} left on this purchase line.")
+    mpn = (mpn or "").strip()
+    if not mpn:
+        raise ValueError("MPN is required to add inventory.")
+
+    doc = storage.load_inventory()
+    item = add_qty_for_mpn(
+        doc,
+        lib_ref=mpn,
+        qty=qty,
+        name=name,
+        location=location,
+        notes=notes,
+    )
+    storage.save_inventory(doc)
+
+    new_received = received_qty + qty
+    if alternate:
+        alt = dict(entry.get("alternate") or {})
+        alt["received_qty"] = new_received
+        entry["alternate"] = alt
+    else:
+        entry["received_qty"] = new_received
+    entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+    saved[storage_key] = entry
+
+    return {
+        "received_qty": new_received,
+        "buy_qty": buy_qty,
+        "remaining_qty": max(0, buy_qty - new_received),
+        "fully_received": buy_qty > 0 and new_received >= buy_qty,
+        "inventory_qty": item.qty_on_hand,
+        "inventory_id": item.id,
+    }
 
 
 def _merge_alternate_update(entry: dict[str, Any], alt_updates: dict[str, Any]) -> None:
@@ -416,6 +529,14 @@ def apply_line_update(saved: dict[str, dict[str, Any]], storage_key: str, **upda
         entry["notes"] = str(updates["notes"])
     if "ordered" in updates:
         entry["ordered"] = bool(updates["ordered"])
+    if "received_qty" in updates:
+        entry["received_qty"] = max(0, int(updates["received_qty"]))
+    if "alternate" in updates and isinstance(updates["alternate"], dict):
+        alt_updates = updates["alternate"]
+        if "received_qty" in alt_updates:
+            alt = dict(entry.get("alternate") or {})
+            alt["received_qty"] = max(0, int(alt_updates["received_qty"]))
+            entry["alternate"] = alt
     if "mpn" in updates:
         entry["mpn"] = str(updates["mpn"]).strip()
     if "name" in updates:
@@ -431,13 +552,26 @@ def alternate_from_entry(entry: dict[str, Any]) -> dict[str, Any]:
     alt = entry.get("alternate")
     if not isinstance(alt, dict):
         return {}
+    state = receive_state_from_entry(entry, alternate=True)
     return {
         "enabled": bool(alt.get("enabled")),
         "mpn": str(alt.get("mpn", "")),
         "name": str(alt.get("name", "")),
-        "buy_qty": alt.get("buy_qty", 0),
+        "buy_qty": state["buy_qty"],
         "notes": str(alt.get("notes", "")),
         "ordered": bool(alt.get("ordered")),
+        **state,
+    }
+
+
+def receive_state_from_entry(entry: dict[str, Any], *, alternate: bool = False) -> dict[str, Any]:
+    buy_qty, received_qty = _receive_targets(entry, alternate=alternate)
+    remaining = max(0, buy_qty - received_qty)
+    return {
+        "received_qty": received_qty,
+        "buy_qty": buy_qty,
+        "remaining_qty": remaining,
+        "fully_received": buy_qty > 0 and received_qty >= buy_qty,
     }
 
 

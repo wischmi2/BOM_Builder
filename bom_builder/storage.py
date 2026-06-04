@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 
 from bom_builder.models import BomDocument, InventoryDocument
@@ -59,7 +61,21 @@ def load_inventory() -> InventoryDocument:
 
 
 def save_inventory(inventory: InventoryDocument) -> None:
+    """Persist inventory; auto-backup if a save would wipe most rows (safety net)."""
     ensure_data_dirs()
+    new_count = len(inventory.items)
+    if INVENTORY_PATH.exists() and new_count < 5:
+        try:
+            previous = json.loads(INVENTORY_PATH.read_text(encoding="utf-8"))
+            old_items = previous.get("items", [])
+            if isinstance(old_items, list) and len(old_items) >= 10:
+                stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+                backup = INVENTORY_PATH.with_name(f"inventory.json.bak-{stamp}")
+                shutil.copy2(INVENTORY_PATH, backup)
+                latest = INVENTORY_PATH.with_suffix(".json.bak")
+                shutil.copy2(INVENTORY_PATH, latest)
+        except (OSError, json.JSONDecodeError):
+            pass
     INVENTORY_PATH.write_text(
         json.dumps(inventory.to_dict(), indent=2),
         encoding="utf-8",
