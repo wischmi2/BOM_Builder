@@ -36,6 +36,8 @@
     "lib:RC0402FR07953RL": "resistor",
     "lib:PCIEX16": "mechanical",
     "lib:68797403HLF": "mechanical",
-    "lib:04025A300FAT2A": "capacitor"
+    "lib:04025A300FAT2A": "capacitor",
+    "lib:RP73PF1E2K0BTD": "resistor",
+    "lib:ERJ1GNF2101C": "resistor"
   }
 }

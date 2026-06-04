@@ -7,6 +7,8 @@
     --accent: #2563eb;
     --accent-hover: #1d4ed8;
     --layout-pad: clamp(1rem, 2vw, 2rem);
+    --header-sticky-height: 3.1rem;
+    --shop-toolbar-sticky-height: 3.25rem;
 }
 
 * {
@@ -25,6 +27,9 @@ body {
 }
 
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
 }
@@ -353,6 +358,11 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+/* overflow-x on a wrapper breaks position:sticky on thead; page scrolls horizontally instead */
+.compare-table-wrap.compare-table-sticky {
+    overflow: visible;
+}
+
 .table-scroll-hint {
     margin: 0;
     padding: 0.5rem 0.75rem 0;
@@ -383,8 +393,9 @@ body {
     background: var(--bg);
     font-weight: 600;
     position: sticky;
-    top: 0;
+    top: var(--header-sticky-height);
     z-index: 1;
+    box-shadow: 0 1px 0 var(--border);
 }
 
 .data-table th.th-resizable {
@@ -848,6 +859,22 @@ body.col-resize-active * {
     gap: 0.65rem;
     align-items: center;
     margin-top: 1rem;
+}
+
+.compare-toolbar.shop-toolbar {
+    position: sticky;
+    top: var(--header-sticky-height);
+    z-index: 20;
+    box-shadow: 0 1px 0 var(--border);
+}
+
+.shop-table thead th {
+    top: calc(var(--header-sticky-height) + var(--shop-toolbar-sticky-height));
+    z-index: 10;
+}
+
+.shop-table thead th.th-resizable {
+    z-index: 11;
 }
 
 .toolbar-divider {

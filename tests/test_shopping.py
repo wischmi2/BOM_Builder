@@ -261,6 +261,41 @@ class TestShoppingRoutes(unittest.TestCase):
         bom = storage.load_bom("test-shop")
         self.assertEqual(bom.lines[0].lib_ref, "NEWMPN")
 
+    def test_saved_state_keeps_alternate_when_notes_present(self) -> None:
+        from bom_builder.shopping import ShopLine, merge_shop_state
+
+        line = attach_storage_key(
+            ShopLine(
+                line_id="lib:CRCW0201274RFNED",
+                lib_ref="CRCW0201274RFNED",
+                primary_mpn="CRCW0201274RFNED",
+                alternates_display="",
+                name="274 Ohm",
+                status="missing",
+                qty_needed=500,
+                qty_on_hand=0,
+                default_buy_qty=500,
+                buy_qty=500,
+            )
+        )
+        merge_shop_state(
+            [line],
+            {
+                line.storage_key: {
+                    "notes": "No Stock",
+                    "updated_at": "2026-06-04T15:56:26+00:00",
+                    "alternate": {
+                        "enabled": True,
+                        "mpn": "RC0201FR-07274RL",
+                        "name": "Substitute 274",
+                        "buy_qty": 500,
+                    },
+                }
+            },
+        )
+        self.assertTrue(line.alternate.enabled)
+        self.assertEqual(line.alternate.mpn, "RC0201FR-07274RL")
+
     def test_merge_alternate_state(self) -> None:
         from bom_builder.shopping import ShopLine
 

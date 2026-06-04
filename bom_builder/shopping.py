@@ -161,6 +161,21 @@ def _pick_best_notes(states: list[dict[str, Any]]) -> str:
     return best
 
 
+def _pick_best_alternate(states: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """Newest saved alternate sub-record across storage_key and per-board keys."""
+    best: dict[str, Any] | None = None
+    best_ts = ""
+    for state in states:
+        alt = state.get("alternate")
+        if not isinstance(alt, dict):
+            continue
+        ts = str(state.get("updated_at") or "")
+        if best is None or ts >= best_ts:
+            best = alt
+            best_ts = ts
+    return best
+
+
 def saved_state_for_line(saved: dict[str, dict[str, Any]], line: ShopLine) -> dict[str, Any] | None:
     """Merge saved shopping state from storage_key, aggregate id, and per-board line ids."""
     states: list[dict[str, Any]] = []
@@ -178,7 +193,7 @@ def saved_state_for_line(saved: dict[str, dict[str, Any]], line: ShopLine) -> di
         state = saved.get(key)
         if not isinstance(state, dict):
             continue
-        for field in ("buy_qty", "ordered"):
+        for field in ("buy_qty", "ordered", "received_qty"):
             if field in state and field not in merged:
                 merged[field] = state[field]
 
@@ -196,6 +211,10 @@ def saved_state_for_line(saved: dict[str, dict[str, Any]], line: ShopLine) -> di
     name = _pick_best_field(states, "name")
     if name:
         merged["name"] = name
+
+    alt = _pick_best_alternate(states)
+    if alt is not None:
+        merged["alternate"] = alt
 
     if not merged:
         return states[0]
