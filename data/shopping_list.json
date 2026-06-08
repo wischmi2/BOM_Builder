@@ -71,12 +71,13 @@
     },
     "lib:F980J476MMA": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-04T21:50:11.283130+00:00",
+      "updated_at": "2026-06-08T18:39:45.372974+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 0,
-        "mpn": "TCSM0J476M8R-V1",
-        "name": "47 \u00b5F Molded Tantalum Capacitors 6.3 V 0603 (1608 Metric) 4Ohm @ 100kHz"
+        "mpn": "GRM188R60J476ME01D",
+        "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
+        "notes": "Digikey List. 100."
       },
       "mpn": "F980J476MMA"
     },
@@ -130,37 +131,47 @@
     },
     "lib:EEEFC1V2R2AR": {
       "notes": "Digikey List. 100.",
-      "updated_at": "2026-06-04T22:04:17.096837+00:00",
+      "updated_at": "2026-06-08T18:39:32.654569+00:00",
       "buy_qty": 100
     },
     "lib:GCM155R71H102KA37D": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:04:19.799136+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:26:59.941466+00:00",
+      "buy_qty": 500,
+      "mpn": "GCM155R71H102KA37D",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)"
     },
     "lib:GCM21BR71A106KE22K": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:04:21.502074+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:27:13.132642+00:00",
+      "buy_qty": 500,
+      "mpn": "GCM21BR71A106KE22K",
+      "name": "CAP CER 10UF 10V X7R 0805"
     },
     "lib:GJM0335C1ER20BB01D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-04T22:04:24.104467+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:27:24.193734+00:00",
+      "buy_qty": 500,
+      "mpn": "GJM0335C1ER20BB01D",
+      "name": "CAP CER 0.2PF 25V C0G/NP0 0201"
     },
     "lib:GJM1555C1H100FB01D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-04T22:04:32.795819+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:27:36.143311+00:00",
+      "buy_qty": 500,
+      "mpn": "GJM1555C1H100FB01D",
+      "name": "10 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)"
     },
     "lib:GRM155R60J106ME15D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-04T22:04:30.773324+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:27:48.131148+00:00",
+      "buy_qty": 500,
+      "mpn": "GRM155R60J106ME15D",
+      "name": "CAP CER 10UF 6.3V X5R 0402"
     },
     "lib:GRM155R61A225KE95D": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-04T22:04:37.703079+00:00",
+      "updated_at": "2026-06-08T18:28:02.966896+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 500,
@@ -169,32 +180,43 @@
         "notes": "Digikey List. 500."
       },
       "mpn": "GRM155R61A225KE95D",
-      "buy_qty": 72
+      "buy_qty": 72,
+      "name": "CAP CER 2.2UF 10V X5R 0402"
     },
     "lib:GRM155R61E105KA12D": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-04T22:04:41.686557+00:00",
-      "buy_qty": 1000
+      "updated_at": "2026-06-08T18:28:17.102039+00:00",
+      "buy_qty": 1000,
+      "mpn": "GRM155R61E105KA12D",
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)"
     },
     "lib:GRM155R71A474KE01D": {
       "notes": "Digikey List.  200.",
-      "updated_at": "2026-06-04T22:04:44.964106+00:00",
-      "buy_qty": 200
+      "updated_at": "2026-06-08T18:28:27.936753+00:00",
+      "buy_qty": 200,
+      "mpn": "GRM155R71A474KE01D",
+      "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)"
     },
     "lib:GRM188R61E106KA73D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-04T22:04:47.241441+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-08T18:28:43.308685+00:00",
+      "buy_qty": 500,
+      "mpn": "GRM188R61E106KA73D",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
     },
     "lib:TPSA475M016R2000": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-04T22:04:49.973727+00:00",
-      "buy_qty": 100
+      "updated_at": "2026-06-08T18:29:00.285761+00:00",
+      "buy_qty": 100,
+      "mpn": "TPSA475M016R2000",
+      "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm"
     },
     "lib:GRM219R6YA475KA73D": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-04T22:08:44.242435+00:00",
-      "buy_qty": 1000
+      "updated_at": "2026-06-08T18:29:18.684145+00:00",
+      "buy_qty": 1000,
+      "mpn": "GRM219R6YA475KA73D",
+      "name": "4.7 \u00b5F \u00b110% 35V Ceramic Capacitor X5R 0805 (2012 Metric)"
     },
     "lib:0402DC4N3XJRW": {
       "notes": "Digikey List.  100.",
@@ -313,8 +335,9 @@
     },
     "lib:DCO4008005": {
       "notes": "Synergy Microwave",
-      "updated_at": "2026-06-04T20:40:46.745880+00:00",
-      "ordered": true
+      "updated_at": "2026-06-08T17:33:32.527971+00:00",
+      "ordered": true,
+      "name": "DCO400800-5 VCO 4GHz - 8GHz"
     },
     "lib:HMC424ALP3E": {
       "notes": "Digikey List.  30. Expensive.",
@@ -378,13 +401,14 @@
     },
     "lib:W25Q16JVSSIQ": {
       "name": "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC",
-      "updated_at": "2026-06-04T22:10:27.074306+00:00",
+      "updated_at": "2026-06-08T16:24:04.937077+00:00",
       "notes": "End of Life - Digikey List, 100 but may not be able to be ordered.",
       "alternate": {
         "enabled": true,
         "buy_qty": 0
       },
-      "buy_qty": 24
+      "buy_qty": 24,
+      "mpn": "W25Q16JVSSIQ"
     },
     "lib:04025A300FAT2A": {
       "mpn": "04025A300FAT2A",
@@ -451,6 +475,23 @@
       "notes": "",
       "updated_at": "2026-06-04T15:48:49.395574+00:00",
       "name": "VTGT-S2"
+    },
+    "lib:68797403HLF": {
+      "mpn": "68797-403HLF",
+      "updated_at": "2026-06-08T16:25:10.403593+00:00"
+    },
+    "lib:TFM12502SDLCPTR": {
+      "name": "TFM-125-02-S-D-LC-P-TR",
+      "updated_at": "2026-06-08T18:16:09.859061+00:00",
+      "notes": "Powell Electronics, 50."
+    },
+    "lib:PCIEX16": {
+      "ordered": false,
+      "updated_at": "2026-06-08T18:16:13.528339+00:00"
+    },
+    "lib:MOUSEBITES": {
+      "ordered": true,
+      "updated_at": "2026-06-08T18:18:56.009608+00:00"
     }
   }
 }

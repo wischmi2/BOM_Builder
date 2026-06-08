@@ -77,6 +77,19 @@
         "price_breaks": [],
         "fetched_at": "2026-06-04T15:42:25.302194+00:00"
       }
+    },
+    "mpn:HMC424ALP3E": {
+      "mouser": {
+        "found": false,
+        "mpn": "HMC424ALP3E",
+        "url": "https://www.mouser.com/c/?q=HMC424ALP3E",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-05T12:56:03.660532+00:00"
+      }
     }
   }
 }

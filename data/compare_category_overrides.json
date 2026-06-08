@@ -38,6 +38,7 @@
     "lib:68797403HLF": "mechanical",
     "lib:04025A300FAT2A": "capacitor",
     "lib:RP73PF1E2K0BTD": "resistor",
-    "lib:ERJ1GNF2101C": "resistor"
+    "lib:ERJ1GNF2101C": "resistor",
+    "lib:F980J476MMA": "capacitor"
   }
 }

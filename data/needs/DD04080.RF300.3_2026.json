@@ -6,7 +6,7 @@
     {
       "id": "row-1-6752300d72f4e562",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "4.7uF 35V",
+      "name": "4.7 \u00b5F \u00b110% 35V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "description": "0805 4.7 uF 35 V \u00b110 % Tolerance X5R SMT Multilayer Ceramic Capacitor",
       "designators": [
         "C2",
@@ -25,7 +25,7 @@
     {
       "id": "row-2-c6dfeb7069841374",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "0.2pF",
+      "name": "CAP CER 0.2PF 25V C0G/NP0 0201",
       "description": "0201 0.2 pF 25 V \u00b10.1 pF Tolerance C0G SMT Multilayer Ceramic Capacitor",
       "designators": [
         "C7",
@@ -122,7 +122,7 @@
     {
       "id": "row-7-210cb5b95c519201",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "1nF",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "description": "Ceramic Capacitor, Multilayer, Ceramic, 50V, 10% +Tol, 10% -Tol, X7R, 15% TC, 0.001uF, Surface Mount, 0402",
       "designators": [
         "C18"
@@ -194,7 +194,7 @@
     {
       "id": "row-11-de838e9f07009a21",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "10uF",
+      "name": "CAP CER 10UF 6.3V X5R 0402",
       "description": "CAP CER 10UF 6.3V X5R 0402",
       "designators": [
         "C34",
@@ -210,7 +210,7 @@
     {
       "id": "row-12-99637a5b199d8b63",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "0.47uF",
+      "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "description": "0402 10 V 0.47 uF X7R \u00b110% Tolerance Multilayer Ceramic Capacitor",
       "designators": [
         "C75",
@@ -241,7 +241,7 @@
     {
       "id": "row-14-d0298cbbd04ca6b5",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "4.7uF Tant",
+      "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm",
       "description": "CAP TANT 4.7UF 16V 20% 1206",
       "designators": [
         "C83",
@@ -257,7 +257,7 @@
     {
       "id": "row-15-2de55068a68dd2fc",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "2.2uF",
+      "name": "CAP CER 2.2UF 10V X5R 0402",
       "description": "MURATA - GRM155R61A225KE95D - SMD Multilayer Ceramic Capacitor, 2.2 \u00b5F, 10 V, 0402 [1005 Metric], \u00b1 10%, X5R, GRM Series",
       "designators": [
         "C160"
@@ -272,7 +272,7 @@
     {
       "id": "row-16-adf04964fed56f5d",
       "bom_id": "DD04080.RF300.3_2026",
-      "name": "GCM155R71H102KA37D",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "description": "50V 1nF X7R \u00b110% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS",
       "designators": [
         "C375"
@@ -418,7 +418,7 @@
         "P1"
       ],
       "footprint": "SAMTEC-SFM-125-02-X-D-LC",
-      "lib_ref": "SAMTEC-SFM-125-02-X-D-LC",
+      "lib_ref": "SFM-125-02-X-D-LC",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,

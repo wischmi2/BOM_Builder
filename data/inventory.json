@@ -679,6 +679,142 @@
       "qty_on_hand": 400,
       "location": "",
       "notes": ""
+    },
+    {
+      "id": "b06d3293-490b-414b-9378-5c1fedd26765",
+      "lib_ref": "W25Q16JVSSIQ",
+      "name": "IC FLASH 16MBIT SPI/QUAD 8SOIC",
+      "qty_on_hand": 2180,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "780235f2-d433-448d-8938-a6bfb4b27b03",
+      "lib_ref": "SFM-125-02-X-D-LC",
+      "name": "CONN RCPT 50POS 0.05 GOLD SMD",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "SFM-125-02-X-D-LC"
+    },
+    {
+      "id": "1d20fb11-5106-4613-8f6b-fa11076f389c",
+      "lib_ref": "HDRA-EC68FDT+",
+      "name": "HONDA CONNECTOR",
+      "qty_on_hand": 14,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c0bfea53-d12e-4675-baa9-0b1ff1837bd9",
+      "lib_ref": "60312202114511",
+      "name": "Wurth Electronics SMA Female PCB Connector",
+      "qty_on_hand": 123,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "167ce8b2-fd98-4b22-9f24-23dcb2b23410",
+      "lib_ref": "LQG15HN5N1B02D",
+      "name": "5.1 nH Unshielded Multilayer Inductor 600 mA 160mOhm Max 0402 (1005 Metric)",
+      "qty_on_hand": 2297,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "587371d5-6cc7-4bf7-b9d3-9f79744d3736",
+      "lib_ref": "0022052101",
+      "name": "CONN HEADER R/A 10POS 2.54MM",
+      "qty_on_hand": 300,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1a1714d6-7212-475f-a9d7-d8929b590f40",
+      "lib_ref": "DCW-11-722+",
+      "name": "RF DIR CPLR 2.4GHZ-7.2GHZ 0603",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "5d0887ca-3d02-4086-87e5-483865f214d3",
+      "lib_ref": "DMP3099L-7",
+      "name": "MOSFET P-CH 30V 3.8A SOT23",
+      "qty_on_hand": 62,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "8490eb96-2e23-4bc1-af29-b55c628b2d7f",
+      "lib_ref": "PE42553B-Z",
+      "name": "IC RF SWITCH SPDT 8GHZ 16QFN",
+      "qty_on_hand": 70,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "853eb4f2-58f8-4af0-8306-3b3f2cbecde4",
+      "lib_ref": "LT6657AHMS8-5#PBF",
+      "name": "IC VREF SERIES 0.1% 8MSOP",
+      "qty_on_hand": 350,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "cedef2a6-4cb7-4cfa-adb8-5114a1835be5",
+      "lib_ref": "68797-403HLF",
+      "name": "CONN HEADER VERT 3POS 2.54MM",
+      "qty_on_hand": 30,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "eb4ef5c4-f667-46a2-8fed-ade2b3a60cc5",
+      "lib_ref": "DCO400800-5",
+      "name": "DCO400800-5 VCO 4GHz - 8GHz",
+      "qty_on_hand": 7,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c632ccba-babd-47ff-8986-6f517e8f783a",
+      "lib_ref": "LT3032EDE-5#TRPBF",
+      "name": "IC REG LIN +/-5V 150MA/150MA 14D",
+      "qty_on_hand": 29,
+      "location": "LB Comps - Analog Devices",
+      "notes": ""
+    },
+    {
+      "id": "02a1e85a-4f8b-4848-a24f-43f8275ce2f7",
+      "lib_ref": "HMC424ALP3E",
+      "name": "RF ATTENUATOR 31.5DB 16VFQFN",
+      "qty_on_hand": 24,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "23f23b0b-3394-4dbc-a8dc-f71504989a05",
+      "lib_ref": "DMN2005K-7",
+      "name": "N-Channel 20 V 300mA (Ta) 350mW (Ta) Surface Mount SOT-23-3",
+      "qty_on_hand": 35,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c03bb82f-f76d-4e20-96ec-4aefc5a84d1b",
+      "lib_ref": "PE42522C-X",
+      "name": "IC RF SWITCH SPDT 26.5GHZ 29LGA",
+      "qty_on_hand": 70,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1da8fd69-6886-44bf-b6e4-030322b8de1a",
+      "lib_ref": "LFCN-7200+",
+      "name": "LTCC LOW PASS FILTER DC-7200",
+      "qty_on_hand": 56,
+      "location": "",
+      "notes": ""
     }
   ]
 }
