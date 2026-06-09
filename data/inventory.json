@@ -685,7 +685,7 @@
       "lib_ref": "W25Q16JVSSIQ",
       "name": "IC FLASH 16MBIT SPI/QUAD 8SOIC",
       "qty_on_hand": 2180,
-      "location": "",
+      "location": "Brian S. Desk",
       "notes": ""
     },
     {
@@ -733,7 +733,7 @@
       "lib_ref": "DCW-11-722+",
       "name": "RF DIR CPLR 2.4GHZ-7.2GHZ 0603",
       "qty_on_hand": 50,
-      "location": "",
+      "location": "Brian S. Desk",
       "notes": ""
     },
     {
@@ -757,7 +757,7 @@
       "lib_ref": "LT6657AHMS8-5#PBF",
       "name": "IC VREF SERIES 0.1% 8MSOP",
       "qty_on_hand": 350,
-      "location": "",
+      "location": "Brian S. Desk",
       "notes": ""
     },
     {
@@ -765,7 +765,7 @@
       "lib_ref": "68797-403HLF",
       "name": "CONN HEADER VERT 3POS 2.54MM",
       "qty_on_hand": 30,
-      "location": "",
+      "location": "Brian S. Desk",
       "notes": ""
     },
     {
@@ -813,7 +813,7 @@
       "lib_ref": "LFCN-7200+",
       "name": "LTCC LOW PASS FILTER DC-7200",
       "qty_on_hand": 56,
-      "location": "",
+      "location": "Brian S. Desk",
       "notes": ""
     }
   ]
