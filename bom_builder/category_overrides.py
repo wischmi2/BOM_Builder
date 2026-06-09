@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 from typing import Callable
 
+from bom_builder import storage
 from bom_builder.part_categories import (
     CATEGORY_ORDER,
     CompareGroup,
@@ -19,8 +19,7 @@ from bom_builder.part_categories import (
     sort_shop_lines,
 )
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-OVERRIDES_PATH = PROJECT_ROOT / "data" / "compare_category_overrides.json"
+OVERRIDES_PATH = storage.DATA_DIR / "compare_category_overrides.json"
 
 
 def load_overrides() -> dict[str, str]:
@@ -34,10 +33,8 @@ def load_overrides() -> dict[str, str]:
 
 
 def save_overrides(overrides: dict[str, str]) -> None:
-    OVERRIDES_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OVERRIDES_PATH.write_text(
-        json.dumps({"overrides": overrides}, indent=2),
-        encoding="utf-8",
+    storage.atomic_write_text(
+        OVERRIDES_PATH, json.dumps({"overrides": overrides}, indent=2)
     )
 
 
