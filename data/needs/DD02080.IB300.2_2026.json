@@ -602,7 +602,7 @@
         "R71"
       ],
       "footprint": "R0402",
-      "lib_ref": "CRG0402F100K, RK73H1ETTP1003F",
+      "lib_ref": "CRG0402F100K",
       "quantity": 7,
       "is_dni": false,
       "acquired": false,

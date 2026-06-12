@@ -34,13 +34,14 @@
     },
     "lib:504L50R0FTNCFT": {
       "notes": "FC0402E50R0BTBST1",
-      "updated_at": "2026-06-04T21:40:27.957589+00:00",
+      "updated_at": "2026-06-12T17:21:31.900193+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 250,
         "mpn": "FC0402E50R0BTBST1",
         "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
-        "notes": "Digikey List.  250."
+        "notes": "Digikey List.  250.",
+        "ordered": true
       },
       "ordered": false,
       "buy_qty": 12,
@@ -65,119 +66,136 @@
     },
     "lib:ERJ1GNF2101C": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:04:04.202805+00:00",
+      "updated_at": "2026-06-12T17:09:46.620037+00:00",
       "name": "2.1 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:F980J476MMA": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-08T18:39:45.372974+00:00",
+      "updated_at": "2026-06-12T17:22:11.314836+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 0,
         "mpn": "GRM188R60J476ME01D",
         "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
-        "notes": "Digikey List. 100."
+        "notes": "Digikey List. 100.",
+        "ordered": true
       },
       "mpn": "F980J476MMA"
     },
     "lib:RK73B2ATTD753J": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:20.646443+00:00",
+      "updated_at": "2026-06-12T17:10:35.706511+00:00",
       "name": "75 kOhms \u00b15% 0.25W, 1/4W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200 Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:RK73H1ERTTP3302F": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:25.522406+00:00",
+      "updated_at": "2026-06-12T17:10:50.362875+00:00",
       "name": "33 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:RK73H1ETTP1501F": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:03:28.383372+00:00",
+      "updated_at": "2026-06-12T17:11:04.941321+00:00",
       "name": "1.5 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:RK73H1HTTC18R0F": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:31.051760+00:00",
+      "updated_at": "2026-06-12T17:11:07.459201+00:00",
       "name": "18 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:RK73Z1HRTTC": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:03:35.259676+00:00",
+      "updated_at": "2026-06-12T17:11:46.295148+00:00",
       "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:RP73PF1E2K0BTD": {
       "notes": "Digikey List.  250.",
-      "updated_at": "2026-06-04T22:03:38.277730+00:00",
+      "updated_at": "2026-06-12T17:12:08.313414+00:00",
       "name": "2 kOhms \u00b10.1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Thin Film",
-      "buy_qty": 250
+      "buy_qty": 250,
+      "ordered": true
     },
     "lib:SG73S1ETTP102J": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-04T22:03:41.245025+00:00",
+      "updated_at": "2026-06-12T17:12:14.422267+00:00",
       "name": "RES 1K OHM 5% 1/8W 0402",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:SG73S1ETTP101J": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:54.302269+00:00",
+      "updated_at": "2026-06-12T17:12:29.837449+00:00",
       "name": "100 Ohms \u00b15% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:EEEFC1V2R2AR": {
       "notes": "Digikey List. 100.",
-      "updated_at": "2026-06-08T18:39:32.654569+00:00",
-      "buy_qty": 100
+      "updated_at": "2026-06-12T17:12:49.034025+00:00",
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:GCM155R71H102KA37D": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-08T18:26:59.941466+00:00",
+      "updated_at": "2026-06-12T17:13:01.606130+00:00",
       "buy_qty": 500,
       "mpn": "GCM155R71H102KA37D",
-      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)"
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "ordered": true
     },
     "lib:GCM21BR71A106KE22K": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-08T18:27:13.132642+00:00",
+      "updated_at": "2026-06-12T17:13:06.843487+00:00",
       "buy_qty": 500,
       "mpn": "GCM21BR71A106KE22K",
-      "name": "CAP CER 10UF 10V X7R 0805"
+      "name": "CAP CER 10UF 10V X7R 0805",
+      "ordered": true
     },
     "lib:GJM0335C1ER20BB01D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-08T18:27:24.193734+00:00",
+      "updated_at": "2026-06-12T17:13:24.338325+00:00",
       "buy_qty": 500,
       "mpn": "GJM0335C1ER20BB01D",
-      "name": "CAP CER 0.2PF 25V C0G/NP0 0201"
+      "name": "CAP CER 0.2PF 25V C0G/NP0 0201",
+      "ordered": true
     },
     "lib:GJM1555C1H100FB01D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-08T18:27:36.143311+00:00",
+      "updated_at": "2026-06-12T17:13:48.575088+00:00",
       "buy_qty": 500,
       "mpn": "GJM1555C1H100FB01D",
-      "name": "10 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)"
+      "name": "10 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
+      "ordered": true
     },
     "lib:GRM155R60J106ME15D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-08T18:27:48.131148+00:00",
+      "updated_at": "2026-06-12T17:14:40.630080+00:00",
       "buy_qty": 500,
       "mpn": "GRM155R60J106ME15D",
-      "name": "CAP CER 10UF 6.3V X5R 0402"
+      "name": "CAP CER 10UF 6.3V X5R 0402",
+      "ordered": true
     },
     "lib:GRM155R61A225KE95D": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-08T18:28:02.966896+00:00",
+      "updated_at": "2026-06-12T17:22:06.073376+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 500,
         "mpn": "CL05A225KP5NNNC",
         "name": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X5R 0402 (1005 Metric)",
-        "notes": "Digikey List. 500."
+        "notes": "Digikey List. 500.",
+        "ordered": true
       },
       "mpn": "GRM155R61A225KE95D",
       "buy_qty": 72,
@@ -185,38 +203,43 @@
     },
     "lib:GRM155R61E105KA12D": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-08T18:28:17.102039+00:00",
+      "updated_at": "2026-06-12T17:14:54.707540+00:00",
       "buy_qty": 1000,
       "mpn": "GRM155R61E105KA12D",
-      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)"
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "ordered": true
     },
     "lib:GRM155R71A474KE01D": {
       "notes": "Digikey List.  200.",
-      "updated_at": "2026-06-08T18:28:27.936753+00:00",
+      "updated_at": "2026-06-12T17:15:06.280123+00:00",
       "buy_qty": 200,
       "mpn": "GRM155R71A474KE01D",
-      "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)"
+      "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "ordered": true
     },
     "lib:GRM188R61E106KA73D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-08T18:28:43.308685+00:00",
+      "updated_at": "2026-06-12T17:15:22.849878+00:00",
       "buy_qty": 500,
       "mpn": "GRM188R61E106KA73D",
-      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "ordered": true
     },
     "lib:TPSA475M016R2000": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-08T18:29:00.285761+00:00",
+      "updated_at": "2026-06-12T17:15:46.594722+00:00",
       "buy_qty": 100,
       "mpn": "TPSA475M016R2000",
-      "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm"
+      "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm",
+      "ordered": true
     },
     "lib:GRM219R6YA475KA73D": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-08T18:29:18.684145+00:00",
+      "updated_at": "2026-06-12T17:15:56.654354+00:00",
       "buy_qty": 1000,
       "mpn": "GRM219R6YA475KA73D",
-      "name": "4.7 \u00b5F \u00b110% 35V Ceramic Capacitor X5R 0805 (2012 Metric)"
+      "name": "4.7 \u00b5F \u00b110% 35V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "ordered": true
     },
     "lib:0402DC4N3XJRW": {
       "notes": "Digikey List.  100.",
@@ -225,8 +248,9 @@
     },
     "lib:LQP03HQ2N7B02D": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-04T22:08:54.487261+00:00",
-      "buy_qty": 100
+      "updated_at": "2026-06-12T17:16:07.126499+00:00",
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:DMN2005K7": {
       "notes": "Digikey List.  100.",
@@ -250,15 +274,17 @@
     },
     "lib:ADP7102ACPZ33R7": {
       "notes": "Digikey List.  50.",
-      "updated_at": "2026-06-04T22:09:07.293232+00:00",
+      "updated_at": "2026-06-12T17:16:54.262288+00:00",
       "name": "IC REG LIN 3.3V 300MA 8-LFCSP-WD",
-      "buy_qty": 50
+      "buy_qty": 50,
+      "ordered": true
     },
     "lib:RC0402FR7W49R9L": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:18.325251+00:00",
+      "updated_at": "2026-06-12T17:17:33.861468+00:00",
       "name": "49.9 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:CMP009001861": {
       "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
@@ -277,8 +303,9 @@
     },
     "lib:CRCW0201105RFNED": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:02:27.216583+00:00",
-      "buy_qty": 500
+      "updated_at": "2026-06-12T17:17:47.632031+00:00",
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:CRCW0201274RFNED": {
       "notes": "No Stock",
@@ -294,44 +321,52 @@
     },
     "lib:CRCW020161R9FNED": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:02:33.638785+00:00",
+      "updated_at": "2026-06-12T17:17:56.539247+00:00",
       "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:CRG0402F100K": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:02:42.828555+00:00",
+      "updated_at": "2026-06-12T17:09:14.134468+00:00",
       "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "mpn": "CRG0402F100K",
+      "ordered": true
     },
     "lib:ERJ1GNF3000C": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:02:59.405293+00:00",
+      "updated_at": "2026-06-12T17:18:14.612203+00:00",
       "name": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:RC0201FR0768RL": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:03:11.409973+00:00",
+      "updated_at": "2026-06-12T17:18:32.924757+00:00",
       "name": "68 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:SM3TW203": {
       "notes": "Digikey List. 50.",
-      "updated_at": "2026-06-04T22:03:52.045917+00:00",
+      "updated_at": "2026-06-12T17:18:40.232860+00:00",
       "name": "20 kOhms 0.125W, 1/8W J Lead Surface Mount Trimmer Potentiometer Cermet 11 Turn Top Adjustment",
-      "buy_qty": 50
+      "buy_qty": 50,
+      "ordered": true
     },
     "lib:AD5760ACPZ": {
       "notes": "Digikey List.  30.  Expensive, make sure we don't have any.",
-      "updated_at": "2026-06-04T22:09:14.309274+00:00",
+      "updated_at": "2026-06-12T17:18:54.416101+00:00",
       "name": "16 Bit Digital to Analog Converter 1 24-LFCSP-VQ (4x5)",
-      "buy_qty": 30
+      "buy_qty": 30,
+      "ordered": true
     },
     "lib:DCMO1904105": {
       "notes": "Synergy Microwave",
-      "updated_at": "2026-06-04T20:40:45.926071+00:00",
-      "ordered": true
+      "updated_at": "2026-06-12T16:03:49.019452+00:00",
+      "ordered": true,
+      "buy_qty": 12
     },
     "lib:DCO4008005": {
       "notes": "Synergy Microwave",
@@ -347,32 +382,37 @@
     },
     "lib:HMC659LC5": {
       "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25",
-      "updated_at": "2026-06-04T22:09:31.090670+00:00",
+      "updated_at": "2026-06-12T16:03:13.410477+00:00",
       "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
-      "buy_qty": 25
+      "buy_qty": 25,
+      "ordered": true
     },
     "lib:KF80BDTTR": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-04T22:09:34.763068+00:00",
+      "updated_at": "2026-06-12T17:19:23.625009+00:00",
       "name": "IC REG LINEAR 8V 500MA DPAK",
-      "buy_qty": 100
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:LFCG3000": {
       "notes": "Digikey List.  25.",
-      "updated_at": "2026-06-04T22:09:38.362169+00:00",
+      "updated_at": "2026-06-12T17:19:38.462602+00:00",
       "name": "CER FILTER 3.46GHZ LOW PASS",
-      "buy_qty": 25
+      "buy_qty": 25,
+      "ordered": true
     },
     "lib:LT1236ACS810TRPBF": {
       "notes": "Digikey List.  50.",
-      "updated_at": "2026-06-04T22:09:52.444814+00:00",
+      "updated_at": "2026-06-12T17:19:46.042508+00:00",
       "name": "IC VREF PRECISION 0.05% 8SOIC",
-      "buy_qty": 50
+      "buy_qty": 50,
+      "ordered": true
     },
     "lib:LT3097": {
       "notes": "Digikey List.  30.",
-      "updated_at": "2026-06-04T22:09:57.041710+00:00",
-      "buy_qty": 30
+      "updated_at": "2026-06-12T17:19:51.344847+00:00",
+      "buy_qty": 30,
+      "ordered": true
     },
     "lib:LT6657AHMS85PBF": {
       "notes": "Digikey List.  60.",
@@ -382,22 +422,25 @@
     },
     "lib:MMSZ4689HF": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-04T22:10:02.588585+00:00",
+      "updated_at": "2026-06-12T17:20:05.856292+00:00",
       "name": "DIODE ZENER 5.1V 500MW SOD123",
-      "buy_qty": 500
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:SN74AHC123A": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-04T22:10:09.840257+00:00",
+      "updated_at": "2026-06-12T17:20:27.930875+00:00",
       "name": "IC MMV 2-CIR 7.5-NS 16-TSSOP",
-      "buy_qty": 100
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:SN74HCS594": {
       "name": "Shift Shift Register 1 Element 8 Bit 16-WQFN (2.5x3.5)",
-      "updated_at": "2026-06-04T22:10:15.698891+00:00",
+      "updated_at": "2026-06-12T17:20:34.144833+00:00",
       "mpn": "SN74HCS594",
       "notes": "Digikey List.  100.",
-      "buy_qty": 100
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:W25Q16JVSSIQ": {
       "name": "FLASH - NOR Memory IC 16Mbit SPI - Quad I/O 133 MHz 8-SOIC",
@@ -412,20 +455,22 @@
     },
     "lib:04025A300FAT2A": {
       "mpn": "04025A300FAT2A",
-      "updated_at": "2026-06-04T22:04:14.529891+00:00",
+      "updated_at": "2026-06-12T16:04:00.563346+00:00",
       "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
-      "notes": "Digikey List. 1000.",
-      "buy_qty": 1000
+      "notes": "Digikey List. 500.",
+      "buy_qty": 500,
+      "ordered": true
     },
     "lib:ERJ2RKF4992X": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:03:08.349642+00:00",
+      "updated_at": "2026-06-12T17:20:45.103390+00:00",
       "name": "49.9 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:AT0402DRD07348RL": {
       "notes": "Non-Stocked",
-      "updated_at": "2026-06-04T21:40:31.180708+00:00",
+      "updated_at": "2026-06-12T17:21:57.815426+00:00",
       "name": "348R",
       "mpn": "AT0402DRD07348RL",
       "alternate": {
@@ -433,30 +478,35 @@
         "buy_qty": 500,
         "mpn": "RT0402BRD07348RL",
         "name": "RES SMD 348 OHM 0.1% 1/16W 0402",
-        "notes": "Digikey List.  500."
+        "notes": "Digikey List.  500.",
+        "ordered": true
       }
     },
     "lib:RC0402FR07953RL": {
       "notes": "Digikey List.  1000.",
-      "updated_at": "2026-06-04T22:03:16.060009+00:00",
+      "updated_at": "2026-06-12T17:20:59.504258+00:00",
       "name": "953 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "buy_qty": 1000
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:OP184FSZ": {
       "notes": "Digikey List.  50.",
-      "updated_at": "2026-06-04T22:10:05.193111+00:00",
+      "updated_at": "2026-06-12T17:21:10.485895+00:00",
       "name": "IC OPAMP GP 1 CIRCUIT 8SOIC",
-      "buy_qty": 50
+      "buy_qty": 50,
+      "ordered": true
     },
     "lib:ERA1AEB101C": {
       "name": "100 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thin Film",
-      "updated_at": "2026-06-04T22:02:47.313941+00:00",
-      "buy_qty": 100
+      "updated_at": "2026-06-12T17:09:29.354603+00:00",
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:ERA2AEB3741X": {
       "name": "3.74 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
-      "updated_at": "2026-06-04T22:02:52.062851+00:00",
-      "buy_qty": 100
+      "updated_at": "2026-06-12T17:09:38.900262+00:00",
+      "buy_qty": 100,
+      "ordered": true
     },
     "lib:SAMTECSFM12502XDLC": {
       "name": "SAMTEC-SFM-125-02-X-D-LC",
