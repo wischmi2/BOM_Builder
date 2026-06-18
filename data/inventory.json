@@ -876,9 +876,9 @@
       "id": "0944670a-5611-4043-8eba-8849205d833a",
       "lib_ref": "FC0402E50R0BTBST1",
       "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
-      "qty_on_hand": 250,
+      "qty_on_hand": 500,
       "location": "",
-      "notes": "Digikey List.  250."
+      "notes": "Digikey List.  250.; Digikey List.  250."
     },
     {
       "id": "5b461846-9fdf-47e9-9b23-24b4bbefe7ae",
@@ -1180,9 +1180,65 @@
       "id": "97ff5dde-2486-4bbd-8ea5-20d48cf39301",
       "lib_ref": "GRM188R60J476ME01D",
       "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
-      "qty_on_hand": 48,
+      "qty_on_hand": 148,
       "location": "",
-      "notes": "Digikey List. 100."
+      "notes": "Digikey List. 100.; Digikey List. 100."
+    },
+    {
+      "id": "85e3224b-8d71-4a88-864a-0d0c9867bc3f",
+      "lib_ref": "504L50R0FTNCFT",
+      "name": "50ohm",
+      "qty_on_hand": 274,
+      "location": "",
+      "notes": "FC0402E50R0BTBST1; FC0402E50R0BTBST1; FC0402E50R0BTBST1; FC0402E50R0BTBST1"
+    },
+    {
+      "id": "57b17dac-b1d1-4bf6-a0c4-696dc9051e0c",
+      "lib_ref": "AT0402DRD07348RL",
+      "name": "348R",
+      "qty_on_hand": 24,
+      "location": "",
+      "notes": "Non-Stocked"
+    },
+    {
+      "id": "0f77fcbf-9534-4cfc-96f3-cca879412780",
+      "lib_ref": "GRM155R61A225KE95D",
+      "name": "CAP CER 2.2UF 10V X5R 0402",
+      "qty_on_hand": 72,
+      "location": "",
+      "notes": "Obsolete"
+    },
+    {
+      "id": "e3e5325b-715d-4645-b5f7-648361e0e1a4",
+      "lib_ref": "CRCW0201274RFNED",
+      "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
+      "qty_on_hand": 12,
+      "location": "",
+      "notes": "No Stock"
+    },
+    {
+      "id": "b8f04ee6-29ab-462b-b3b4-fb5d1c37c145",
+      "lib_ref": "F980J476MMA",
+      "name": "47uF Tantalum; 6.3V; 10ohm ESR",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Obsolete; Obsolete; Obsolete"
+    },
+    {
+      "id": "0b714953-6920-4f84-889a-567d01cb509f",
+      "lib_ref": "04025A300FAT2A",
+      "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
+      "qty_on_hand": 500,
+      "location": "",
+      "notes": "Digikey List. 500."
+    },
+    {
+      "id": "05a1b1f0-28a4-4956-92ca-d021f7968157",
+      "lib_ref": "GRM188R61E106KA73D",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 500,
+      "location": "",
+      "notes": "Digikey List. 500."
     }
   ]
 }

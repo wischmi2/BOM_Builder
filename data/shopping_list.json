@@ -34,7 +34,7 @@
     },
     "lib:504L50R0FTNCFT": {
       "notes": "FC0402E50R0BTBST1",
-      "updated_at": "2026-06-18T17:32:07.882213+00:00",
+      "updated_at": "2026-06-18T18:03:58.249261+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 250,
@@ -45,8 +45,8 @@
         "received_qty": 250
       },
       "ordered": false,
-      "buy_qty": 12,
-      "received_qty": 6,
+      "buy_qty": 250,
+      "received_qty": 250,
       "name": "50ohm"
     },
     "DD02040.RF300.3_2026:row-43-96aaa42138c3ac1f": {
@@ -75,7 +75,7 @@
     },
     "lib:F980J476MMA": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-18T17:47:24.306179+00:00",
+      "updated_at": "2026-06-18T17:56:02.255115+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 100,
@@ -83,9 +83,11 @@
         "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
         "notes": "Digikey List. 100.",
         "ordered": true,
-        "received_qty": 48
+        "received_qty": 100
       },
-      "mpn": "F980J476MMA"
+      "mpn": "F980J476MMA",
+      "buy_qty": 100,
+      "received_qty": 100
     },
     "lib:RK73B2ATTD753J": {
       "notes": "Digikey List.  500.",
@@ -205,7 +207,7 @@
     },
     "lib:GRM155R61A225KE95D": {
       "notes": "Obsolete",
-      "updated_at": "2026-06-18T17:34:02.780896+00:00",
+      "updated_at": "2026-06-18T17:49:56.977073+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 500,
@@ -217,7 +219,8 @@
       },
       "mpn": "GRM155R61A225KE95D",
       "buy_qty": 72,
-      "name": "CAP CER 2.2UF 10V X5R 0402"
+      "name": "CAP CER 2.2UF 10V X5R 0402",
+      "received_qty": 72
     },
     "lib:GRM155R61E105KA12D": {
       "notes": "Digikey List. 1000.",
@@ -239,11 +242,12 @@
     },
     "lib:GRM188R61E106KA73D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-12T17:15:22.849878+00:00",
+      "updated_at": "2026-06-18T18:03:05.861905+00:00",
       "buy_qty": 500,
       "mpn": "GRM188R61E106KA73D",
       "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
-      "ordered": true
+      "ordered": true,
+      "received_qty": 500
     },
     "lib:TPSA475M016R2000": {
       "notes": "Digikey List.  100.",
@@ -337,7 +341,7 @@
     },
     "lib:CRCW0201274RFNED": {
       "notes": "No Stock",
-      "updated_at": "2026-06-18T17:12:21.020854+00:00",
+      "updated_at": "2026-06-18T17:54:51.024720+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 500,
@@ -347,7 +351,8 @@
         "ordered": true,
         "received_qty": 500
       },
-      "buy_qty": 12
+      "buy_qty": 12,
+      "received_qty": 12
     },
     "lib:CRCW020161R9FNED": {
       "notes": "Digikey List.  500.",
@@ -499,11 +504,12 @@
     },
     "lib:04025A300FAT2A": {
       "mpn": "04025A300FAT2A",
-      "updated_at": "2026-06-12T16:04:00.563346+00:00",
+      "updated_at": "2026-06-18T17:58:56.474154+00:00",
       "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "notes": "Digikey List. 500.",
       "buy_qty": 500,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 500
     },
     "lib:ERJ2RKF4992X": {
       "notes": "Digikey List.  1000.",
@@ -515,7 +521,7 @@
     },
     "lib:AT0402DRD07348RL": {
       "notes": "Non-Stocked",
-      "updated_at": "2026-06-18T17:16:27.664082+00:00",
+      "updated_at": "2026-06-18T17:49:50.889896+00:00",
       "name": "348R",
       "mpn": "AT0402DRD07348RL",
       "alternate": {
@@ -526,7 +532,9 @@
         "notes": "Digikey List.  500.",
         "ordered": true,
         "received_qty": 500
-      }
+      },
+      "buy_qty": 24,
+      "received_qty": 24
     },
     "lib:RC0402FR07953RL": {
       "notes": "Digikey List.  1000.",
