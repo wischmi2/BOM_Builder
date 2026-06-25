@@ -1239,6 +1239,14 @@
       "qty_on_hand": 500,
       "location": "",
       "notes": "Digikey List. 500."
+    },
+    {
+      "id": "c9517cf4-2a56-4699-87cf-ff79236a4009",
+      "lib_ref": "DCMO190410-5",
+      "name": "DCMO190410-5 <4GHz VCO",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "Synergy Microwave; Synergy Microwave"
     }
   ]
 }

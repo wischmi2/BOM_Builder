@@ -405,9 +405,10 @@
     },
     "lib:DCMO1904105": {
       "notes": "Synergy Microwave",
-      "updated_at": "2026-06-12T16:03:49.019452+00:00",
+      "updated_at": "2026-06-25T12:51:48.963749+00:00",
       "ordered": true,
-      "buy_qty": 12
+      "buy_qty": 15,
+      "received_qty": 15
     },
     "lib:DCO4008005": {
       "notes": "Synergy Microwave",
