@@ -1,14 +1,19 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
 from bom_builder.models import BomDocument, InventoryDocument
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
+# Data location defaults to <project>/data but can be redirected (e.g. to a NAS
+# share) by setting the BOM_DATA_DIR environment variable.
+_DATA_DIR_ENV = os.environ.get("BOM_DATA_DIR")
+DATA_DIR = Path(_DATA_DIR_ENV).expanduser() if _DATA_DIR_ENV else PROJECT_ROOT / "data"
 NEEDS_DIR = DATA_DIR / "needs"
 INVENTORY_PATH = DATA_DIR / "inventory.json"
 SHOPPING_LIST_PATH = DATA_DIR / "shopping_list.json"
@@ -17,6 +22,30 @@ SHOPPING_LIST_PATH = DATA_DIR / "shopping_list.json"
 def ensure_data_dirs() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     NEEDS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def atomic_write_text(path: Path, text: str) -> None:
+    """Write text by streaming to a temp file in the same dir, then os.replace.
+
+    os.replace is atomic on the same volume (incl. Windows), so a reader never
+    sees a half-written file and a crash mid-write cannot corrupt the target.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(
+        dir=str(path.parent), prefix=f".{path.name}.", suffix=".tmp"
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp_name, path)
+    except BaseException:
+        try:
+            os.unlink(tmp_name)
+        except OSError:
+            pass
+        raise
 
 
 def _need_path(bom_id: str) -> Path:
@@ -33,7 +62,7 @@ def list_bom_ids() -> list[str]:
 def save_bom(bom: BomDocument) -> None:
     ensure_data_dirs()
     path = _need_path(bom.bom_id)
-    path.write_text(json.dumps(bom.to_dict(), indent=2), encoding="utf-8")
+    atomic_write_text(path, json.dumps(bom.to_dict(), indent=2))
 
 
 def load_bom(bom_id: str) -> BomDocument | None:
@@ -76,10 +105,7 @@ def save_inventory(inventory: InventoryDocument) -> None:
                 shutil.copy2(INVENTORY_PATH, latest)
         except (OSError, json.JSONDecodeError):
             pass
-    INVENTORY_PATH.write_text(
-        json.dumps(inventory.to_dict(), indent=2),
-        encoding="utf-8",
-    )
+    atomic_write_text(INVENTORY_PATH, json.dumps(inventory.to_dict(), indent=2))
 
 
 def load_shopping_list() -> dict[str, dict]:
@@ -95,7 +121,4 @@ def load_shopping_list() -> dict[str, dict]:
 
 def save_shopping_list(lines: dict[str, dict]) -> None:
     ensure_data_dirs()
-    SHOPPING_LIST_PATH.write_text(
-        json.dumps({"lines": lines}, indent=2),
-        encoding="utf-8",
-    )
+    atomic_write_text(SHOPPING_LIST_PATH, json.dumps({"lines": lines}, indent=2))

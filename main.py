@@ -806,15 +806,54 @@ def main() -> None:
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=5000)
     parser.add_argument("--no-browser", action="store_true", help="Do not open browser on start")
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Enable Flask debug mode. NEVER use on a LAN-reachable host (remote code execution risk).",
+    )
+    parser.add_argument(
+        "--server",
+        choices=["auto", "flask", "waitress"],
+        default="auto",
+        help="WSGI server to use. 'auto' picks waitress for LAN hosts when installed, else Flask's dev server.",
+    )
     args = parser.parse_args()
 
     storage.ensure_data_dirs()
 
-    if not args.no_browser:
+    is_lan = args.host not in ("127.0.0.1", "localhost", "::1")
+
+    if args.debug and is_lan:
+        print(
+            "WARNING: --debug is enabled on a network-reachable host. The Flask debugger "
+            "allows remote code execution. Do NOT use --debug on the LAN."
+        )
+
+    # Don't auto-open a browser on a headless/LAN host unless localhost is in play.
+    if not args.no_browser and not is_lan:
         Timer(1.0, lambda: webbrowser.open(f"http://{args.host}:{args.port}/")).start()
 
+    # Resolve which server to run. waitress is preferred for an always-on/LAN host;
+    # Flask's dev server is kept for simple local use and when debug is requested.
+    use_waitress = False
+    if not args.debug:
+        if args.server == "waitress":
+            use_waitress = True
+        elif args.server == "auto" and is_lan:
+            try:
+                import waitress  # noqa: F401
+
+                use_waitress = True
+            except ImportError:
+                print("waitress not installed; falling back to Flask's dev server. (pip install waitress)")
+
     print(f"BOM Builder running at http://{args.host}:{args.port}/")
-    app.run(host=args.host, port=args.port, debug=True, use_reloader=False)
+    if use_waitress:
+        from waitress import serve
+
+        serve(app, host=args.host, port=args.port, threads=8)
+    else:
+        app.run(host=args.host, port=args.port, debug=args.debug, use_reloader=False)
 
 
 if __name__ == "__main__":
