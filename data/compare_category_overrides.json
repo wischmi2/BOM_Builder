@@ -40,6 +40,8 @@
     "lib:RP73PF1E2K0BTD": "resistor",
     "lib:ERJ1GNF2101C": "resistor",
     "lib:F980J476MMA": "capacitor",
-    "lib:TPSA475M016R2000": "capacitor"
+    "lib:TPSA475M016R2000": "capacitor",
+    "lib:LFCN7200": "filter_rf",
+    "lib:T491A106K020AT": "capacitor"
   }
 }
