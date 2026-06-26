@@ -7,6 +7,7 @@ from pathlib import Path
 from main import app
 from bom_builder import storage
 from bom_builder.inventory_io import add_item
+from bom_builder.models import BomDocument, NeedLine
 from bom_builder.parser import parse_bom_csv_file
 
 SAMPLE_CSV = Path(
@@ -36,6 +37,44 @@ class TestCompareRoutes(unittest.TestCase):
         response = self.client.get("/compare")
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Import a BOM", response.data)
+
+    def test_compare_renders_editable_inventory_fields(self) -> None:
+        bom = BomDocument(
+            "test-bom",
+            "t.csv",
+            [
+                NeedLine(
+                    id="line-1",
+                    bom_id="test-bom",
+                    name="10k",
+                    description="",
+                    designators=["R1"],
+                    footprint="0402",
+                    lib_ref="PART-XYZ",
+                    quantity=1,
+                )
+            ],
+        )
+        storage.save_bom(bom)
+        doc = storage.load_inventory()
+        add_item(
+            doc,
+            lib_ref="PART-XYZ",
+            qty_on_hand=5,
+            location="Bin A3",
+            notes="Reel bag",
+        )
+        storage.save_inventory(doc)
+
+        response = self.client.get("/compare?bom_id=test-bom")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'class="cell-input compare-inv-location"', response.data)
+        self.assertIn(b'class="cell-input compare-need-name"', response.data)
+        self.assertIn(b'value="10k"', response.data)
+        self.assertIn(b'value="Bin A3"', response.data)
+        self.assertIn(b'class="cell-input compare-inv-notes"', response.data)
+        self.assertIn(b'value="Reel bag"', response.data)
+        self.assertIn(b"BOM_COMPARE", response.data)
 
     @unittest.skipUnless(SAMPLE_CSV.exists(), "sample CSV not available")
     def test_compare_with_bom_and_inventory(self) -> None:

@@ -156,6 +156,7 @@ class TestMatcher(unittest.TestCase):
         self.assertEqual(ok_row.matched_notes_display, "Reel bag")
         csv_text = compare_to_csv(rows)
         self.assertIn("NeedQty", csv_text)
+        self.assertIn("BomLibRef", csv_text)
         self.assertIn("Location", csv_text)
         self.assertIn("Bin A3 (1)", csv_text)
         self.assertIn("P2", csv_text)

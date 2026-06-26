@@ -90,6 +90,45 @@
         "price_breaks": [],
         "fetched_at": "2026-06-05T12:56:03.660532+00:00"
       }
+    },
+    "mpn:MH_M2_BOLT": {
+      "mouser": {
+        "found": false,
+        "mpn": "MH_M2_Bolt",
+        "url": "https://www.mouser.com/c/?q=MH_M2_Bolt",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-26T14:02:24.852841+00:00"
+      }
+    },
+    "mpn:MOUSE_BITES": {
+      "mouser": {
+        "found": false,
+        "mpn": "Mouse_Bites",
+        "url": "https://www.mouser.com/c/?q=Mouse_Bites",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-26T14:02:26.824756+00:00"
+      }
+    },
+    "mpn:GP_SOCKET": {
+      "mouser": {
+        "found": false,
+        "mpn": "GP_Socket",
+        "url": "https://www.mouser.com/c/?q=GP_Socket",
+        "description": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-06-26T14:02:28.951351+00:00"
+      }
     }
   }
 }

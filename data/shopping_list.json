@@ -139,8 +139,8 @@
     },
     "lib:SG73S1ETTP102J": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-18T17:45:18.642810+00:00",
-      "name": "RES 1K OHM 5% 1/8W 0402",
+      "updated_at": "2026-06-26T14:36:19.443471+00:00",
+      "name": "1 kOhms \u00b15% 0.333W, 1/3W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
       "buy_qty": 1000,
       "ordered": true,
       "received_qty": 1000
@@ -601,6 +601,34 @@
     "lib:MOUSEBITES": {
       "ordered": true,
       "updated_at": "2026-06-08T18:18:56.009608+00:00"
+    },
+    "lib:GRM155R71H104KE14J": {
+      "name": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-06-26T14:37:14.270444+00:00"
+    },
+    "lib:GRM155R71H103KA88J": {
+      "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-06-26T14:37:28.018152+00:00"
+    },
+    "lib:CRCW02012K00FNED": {
+      "name": "2 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
+      "updated_at": "2026-06-26T14:37:48.852074+00:00"
+    },
+    "lib:ERA2AEB1431X": {
+      "name": "1.43 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
+      "updated_at": "2026-06-26T14:38:06.713985+00:00"
+    },
+    "lib:RK73H1ETTP1002F": {
+      "name": "10 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "updated_at": "2026-06-26T14:38:19.986137+00:00"
+    },
+    "lib:RK73H1HTTC60R4D": {
+      "name": "60.4 Ohms \u00b10.5% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
+      "updated_at": "2026-06-26T14:38:29.874625+00:00"
+    },
+    "lib:RK73Z1ETTP": {
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film",
+      "updated_at": "2026-06-26T14:38:42.211417+00:00"
     }
   }
 }

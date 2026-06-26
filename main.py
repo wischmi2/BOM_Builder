@@ -71,6 +71,7 @@ from bom_builder.distributor_lookup import any_api_configured, api_status, looku
 from bom_builder.shopping import (
     alternate_from_entry,
     apply_line_update,
+    apply_shop_overlays_to_compare,
     build_shop_lines,
     sync_need_lines_mpn_name,
     lines_to_saved_dict,
@@ -250,6 +251,8 @@ def need_update_line(bom_id: str, line_id: str):
         line.acquired = raw in (True, "true", "on", "1", 1)
     if "notes" in payload:
         line.notes = str(payload.get("notes", ""))
+    if "name" in payload:
+        line.name = str(payload.get("name", "")).strip()
     if "lib_ref" in payload:
         lib_ref = str(payload.get("lib_ref", "")).strip()
         if not lib_ref:
@@ -265,6 +268,7 @@ def need_update_line(bom_id: str, line_id: str):
                 "ok": True,
                 "line_id": line_id,
                 "acquired": line.acquired,
+                "name": line.name,
                 "notes": line.notes,
                 "lib_ref": line.lib_ref,
                 "stats": stats,
@@ -497,6 +501,7 @@ def compare_page():
 
         if view_mode == "combined":
             agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            apply_shop_overlays_to_compare(None, agg_rows, inventory)
             grouped_rows = group_aggregated_rows(agg_rows, category_overrides)
             summary = compare_summary_aggregated(agg_rows)
             if agg_rows:
@@ -508,6 +513,7 @@ def compare_page():
                 }
         else:
             rows, extra = compare_boms(boms, inventory)
+            apply_shop_overlays_to_compare(rows, None, inventory)
             grouped_rows = group_compare_rows(rows, category_overrides)
             summary = compare_summary(rows)
 
@@ -790,10 +796,12 @@ def compare_export():
 
     if view_mode == "combined":
         agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        apply_shop_overlays_to_compare(None, agg_rows, inventory)
         response = make_response(compare_aggregated_to_csv(agg_rows))
         filename = "compare_combined_gap_report.csv"
     else:
         rows, _ = compare_boms(boms, inventory)
+        apply_shop_overlays_to_compare(rows, None, inventory)
         response = make_response(compare_to_csv(rows))
         filename = "compare_gap_report.csv"
     response.headers["Content-Type"] = "text/csv; charset=utf-8"

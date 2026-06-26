@@ -6,8 +6,10 @@ from pathlib import Path
 from bom_builder import storage
 from bom_builder.models import BomDocument, InventoryDocument, InventoryItem, NeedLine
 from bom_builder.inventory_io import add_qty_for_mpn
+from bom_builder.matcher import compare_boms_aggregated
 from bom_builder.shopping import (
     alternates_display,
+    apply_shop_overlays_to_compare,
     attach_storage_key,
     build_shop_lines,
     digikey_search_url,
@@ -416,6 +418,32 @@ class TestShoppingRoutes(unittest.TestCase):
         combined = build_shop_lines([bom], inv, "combined")
         merge_shop_state(combined, saved)
         self.assertEqual(combined[0].notes, "same part")
+
+    def test_compare_uses_shop_substitute_mpn(self) -> None:
+        bom = BomDocument("test-shop", "t.csv", [_need("504L50R0FTNCFT", qty=2)])
+        storage.save_bom(bom)
+        inv = InventoryDocument(
+            items=[
+                InventoryItem(id="old", lib_ref="504L50R0FTNCFT", qty_on_hand=10),
+                InventoryItem(id="new", lib_ref="FC0402E50R0BTBST1", qty_on_hand=500),
+            ]
+        )
+        saved = {
+            "lib:504L50R0FTNCFT": {
+                "alternate": {
+                    "enabled": True,
+                    "mpn": "FC0402E50R0BTBST1",
+                    "name": "Replacement 50R",
+                }
+            }
+        }
+        agg_rows, _ = compare_boms_aggregated([bom], inv)
+        apply_shop_overlays_to_compare(None, agg_rows, inv, saved)
+        row = agg_rows[0]
+        self.assertEqual(row.display_lib_ref, "FC0402E50R0BTBST1")
+        self.assertTrue(row.shop_substitute)
+        self.assertEqual(row.qty_on_hand, 500)
+        self.assertEqual(row.status, "ok")
 
 
 if __name__ == "__main__":

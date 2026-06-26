@@ -622,6 +622,19 @@ body.col-resize-active * {
     color: var(--muted);
 }
 
+.badge-substitute {
+    display: inline-block;
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
 .empty-filter {
     padding: 1rem 1.25rem;
     margin: 0;
@@ -1090,10 +1103,66 @@ body.col-resize-active * {
     word-break: break-word;
 }
 
+.compare-table .col-name,
+.compare-table .col-libref {
+    user-select: text;
+}
+
+.compare-table .col-libref code {
+    user-select: text;
+}
+
+.compare-bom-ref {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+}
+
+.compare-need-name-cell .cell-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.compare-need-name-cell .cell-input.cell-saved {
+    border-color: #15803d;
+    box-shadow: 0 0 0 1px rgba(21, 128, 61, 0.25);
+}
+
 .compare-table .col-location,
 .compare-table .col-notes {
     font-size: 0.8rem;
     word-break: break-word;
+}
+
+.compare-inv-cell {
+    min-width: 6.5rem;
+}
+
+.compare-inv-field {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.compare-inv-field + .compare-inv-field {
+    margin-top: 0.35rem;
+}
+
+.compare-inv-field-multi .compare-inv-qty {
+    flex: 0 0 auto;
+    min-width: 1.75rem;
+    font-size: 0.72rem;
+    text-align: right;
+}
+
+.compare-inv-cell .cell-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.compare-inv-cell .cell-input.cell-saved {
+    border-color: #15803d;
+    box-shadow: 0 0 0 1px rgba(21, 128, 61, 0.25);
 }
 
 .match-type {
