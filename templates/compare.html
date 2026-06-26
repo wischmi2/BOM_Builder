@@ -99,18 +99,19 @@
     <input type="search" id="compare-search" class="search-input" placeholder="Search results…" autocomplete="off">
     <label class="filter-check"><input type="checkbox" id="filter-missing"> Missing only</label>
     <label class="filter-check"><input type="checkbox" id="filter-partial"> Partial only</label>
-    <label class="filter-check"><input type="checkbox" id="filter-hide-ok" checked> Hide OK</label>
-    <label class="filter-check"><input type="checkbox" id="filter-hide-dni"> Hide DNI</label>
+    <label class="filter-check"><input type="checkbox" id="filter-hide-ok"> Hide OK</label>
+    <label class="filter-check"><input type="checkbox" id="filter-hide-dni" checked> Hide DNI</label>
     <span class="toolbar-divider" aria-hidden="true"></span>
     <button type="button" class="btn btn-secondary btn-sm" id="compare-expand-all">Expand all</button>
     <button type="button" class="btn btn-secondary btn-sm" id="compare-collapse-all">Collapse all</button>
+    <div class="table-col-picker-slot" data-table-id="compare-table"></div>
     <span class="muted compare-drag-hint">Drag ⋮⋮ to recategorize a part</span>
 </div>
 
 <div class="table-wrap compare-table-wrap card">
     <p class="table-scroll-hint muted">Drag │ on column headers to resize</p>
     {% if view_mode == 'combined' and agg_rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="9">
+    <table class="data-table compare-table" id="compare-table" data-colspan="11">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
@@ -121,13 +122,15 @@
                 <th class="col-qty" data-col="onhand">On hand</th>
                 <th class="col-qty" data-col="leftover">Leftover</th>
                 <th class="col-by-board" data-col="board">By board</th>
+                <th data-col="location">Location</th>
+                <th class="col-notes" data-col="notes">Notes</th>
                 <th class="col-match" data-col="match">Match</th>
             </tr>
         </thead>
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="9">
+                <td colspan="11">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
@@ -160,6 +163,8 @@
                         {% endfor %}
                     </ul>
                 </td>
+                <td class="col-location" title="{{ row.matched_locations_display }}">{{ row.matched_locations_display }}</td>
+                <td class="col-notes" title="{{ row.matched_notes_display }}">{{ row.matched_notes_display }}</td>
                 <td class="col-match">
                     <span class="match-type">{{ row.match_type }}</span>
                     {% if row.matched_ids_display %}
@@ -172,7 +177,7 @@
         </tbody>
     </table>
     {% elif rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="10">
+    <table class="data-table compare-table" id="compare-table" data-colspan="12">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
@@ -184,13 +189,15 @@
                 <th class="col-qty" data-col="delta">Delta</th>
                 <th class="col-bom" data-col="bom">BOM</th>
                 <th class="col-designators" data-col="designators">Designators</th>
+                <th data-col="location">Location</th>
+                <th class="col-notes" data-col="notes">Notes</th>
                 <th class="col-match" data-col="match">Match</th>
             </tr>
         </thead>
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="10">
+                <td colspan="12">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
@@ -215,6 +222,8 @@
                 </td>
                 <td class="col-bom"><span class="bom-tag" title="{{ row.need_line.bom_id }}">{{ row.need_line.bom_id.split('.')[0] }}</span></td>
                 <td class="col-designators">{{ row.need_line.designator_display }}</td>
+                <td class="col-location" title="{{ row.matched_locations_display }}">{{ row.matched_locations_display }}</td>
+                <td class="col-notes" title="{{ row.matched_notes_display }}">{{ row.matched_notes_display }}</td>
                 <td class="col-match">
                     <span class="match-type">{{ row.match_type }}</span>
                     {% if row.matched_ids_display %}

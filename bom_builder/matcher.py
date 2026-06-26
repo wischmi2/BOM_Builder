@@ -31,6 +31,14 @@ class CompareRow:
         return "; ".join(parts)
 
     @property
+    def matched_locations_display(self) -> str:
+        return format_matched_locations(self.matched_inventory)
+
+    @property
+    def matched_notes_display(self) -> str:
+        return format_matched_notes(self.matched_inventory)
+
+    @property
     def part_key(self) -> str:
         return part_key_for_need_line(self.need_line)
 
@@ -71,6 +79,14 @@ class AggregatedCompareRow:
             parts.append(f"{item.lib_ref}@{label}({item.qty_on_hand})")
         return "; ".join(parts)
 
+    @property
+    def matched_locations_display(self) -> str:
+        return format_matched_locations(self.matched_inventory)
+
+    @property
+    def matched_notes_display(self) -> str:
+        return format_matched_notes(self.matched_inventory)
+
 
 def normalize_key(value: str) -> str:
     if not value:
@@ -80,6 +96,21 @@ def normalize_key(value: str) -> str:
 
 def split_lib_refs(lib_ref: str) -> list[str]:
     return [part.strip() for part in lib_ref.split(",") if part.strip()]
+
+
+def format_matched_locations(items: list[InventoryItem]) -> str:
+    if not items:
+        return ""
+    parts = []
+    for item in items:
+        label = item.location.strip() if item.location else "—"
+        parts.append(f"{label} ({item.qty_on_hand})")
+    return "; ".join(parts)
+
+
+def format_matched_notes(items: list[InventoryItem]) -> str:
+    notes = [item.notes.strip() for item in items if item.notes.strip()]
+    return "; ".join(notes)
 
 
 def _build_inventory_indexes(
@@ -311,7 +342,20 @@ def compare_to_csv(rows: list[CompareRow]) -> str:
     buffer = io.StringIO()
     writer = csv.writer(buffer, lineterminator="\n")
     writer.writerow(
-        ["LibRef", "Name", "NeedQty", "OnHand", "Delta", "Status", "BOM", "Designators", "MatchType", "MatchedInventory"]
+        [
+            "LibRef",
+            "Name",
+            "NeedQty",
+            "OnHand",
+            "Delta",
+            "Status",
+            "BOM",
+            "Designators",
+            "Location",
+            "Notes",
+            "MatchType",
+            "MatchedInventory",
+        ]
     )
     for row in rows:
         line = row.need_line
@@ -325,6 +369,8 @@ def compare_to_csv(rows: list[CompareRow]) -> str:
                 row.status,
                 line.bom_id,
                 line.designator_display,
+                row.matched_locations_display,
+                row.matched_notes_display,
                 row.match_type,
                 row.matched_ids_display,
             ]
@@ -345,6 +391,8 @@ def compare_aggregated_to_csv(rows: list[AggregatedCompareRow]) -> str:
             "Status",
             "BOMs",
             "NeedByBOM",
+            "Location",
+            "Notes",
             "MatchType",
             "MatchedInventory",
         ]
@@ -360,6 +408,8 @@ def compare_aggregated_to_csv(rows: list[AggregatedCompareRow]) -> str:
                 row.status,
                 row.bom_ids_display,
                 row.need_breakdown_display,
+                row.matched_locations_display,
+                row.matched_notes_display,
                 row.match_type,
                 row.matched_ids_display,
             ]

@@ -13,6 +13,9 @@
     const overrideUrl = "/compare/category-override";
     const collapseKey = "bom-builder-compare-collapsed";
 
+    if (filterHideOk) filterHideOk.checked = false;
+    if (filterHideDni) filterHideDni.checked = true;
+
     let dataRows = Array.from(table.querySelectorAll("tbody tr.compare-row"));
     let categoryHeaders = Array.from(table.querySelectorAll("tbody tr.category-header"));
 

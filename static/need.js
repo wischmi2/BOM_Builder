@@ -7,6 +7,8 @@
     const hideDni = document.getElementById("hide-dni");
     const onlyMissing = document.getElementById("only-missing");
     const emptyFilter = document.getElementById("empty-filter");
+
+    if (hideDni) hideDni.checked = true;
     const progressText = document.getElementById("progress-text");
     const progressFill = document.getElementById("progress-fill");
     const boardCountInput = document.getElementById("board-count");
