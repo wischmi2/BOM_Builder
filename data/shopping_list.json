@@ -594,8 +594,11 @@
     },
     "lib:TFM12502SDLCPTR": {
       "name": "TFM-125-02-S-D-LC-P-TR",
-      "updated_at": "2026-06-08T18:16:09.859061+00:00",
-      "notes": "Powell Electronics, 50."
+      "updated_at": "2026-07-06T12:06:17.847948+00:00",
+      "notes": "Powell Electronics, 50.",
+      "buy_qty": 50,
+      "ordered": true,
+      "received_qty": 50
     },
     "lib:PCIEX16": {
       "ordered": false,

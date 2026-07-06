@@ -1247,6 +1247,14 @@
       "qty_on_hand": 15,
       "location": "DD02040 Box",
       "notes": "Synergy Microwave; Synergy Microwave"
+    },
+    {
+      "id": "8a06bbe3-2a94-4556-be04-69c8b92f684b",
+      "lib_ref": "TFM-125-02-S-D-LC-P-TR",
+      "name": "TFM-125-02-S-D-LC-P-TR",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "Powell Electronics, 50.; Powell Electronics, 50."
     }
   ]
 }
