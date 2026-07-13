@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, fields
 from typing import Any
 
 
@@ -17,17 +17,31 @@ class NeedLine:
     is_dni: bool = False
     acquired: bool = False
     notes: str = ""
+    # Enrichment fields, populated from DigiKey/Mouser lookups (see Shop → Enrich).
+    manufacturer: str = ""
+    datasheet_url: str = ""
+    unit_price: float | None = None
+    stock: int | None = None
+    enriched_from: str = ""  # distributor the details came from, e.g. "digikey"
+    enriched_at: str = ""  # ISO timestamp of the last enrichment
 
     @property
     def designator_display(self) -> str:
         return ", ".join(self.designators)
+
+    @property
+    def is_enriched(self) -> bool:
+        return bool(self.enriched_at or self.manufacturer or self.datasheet_url)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> NeedLine:
-        return cls(**data)
+        # Tolerant load: ignore unknown keys (forward-compat) and accept missing
+        # optional keys (data saved before enrichment fields existed).
+        known = {f.name for f in fields(cls)}
+        return cls(**{k: v for k, v in data.items() if k in known})
 
 
 @dataclass

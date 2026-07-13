@@ -522,6 +522,228 @@
         }
     }
 
+    function escapeHtml(value) {
+        return String(value == null ? "" : value).replace(/[&<>"']/g, (c) => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+        }[c]));
+    }
+
+    function detailBodyFor(row) {
+        if (!row.__detailRow) {
+            const tr = document.createElement("tr");
+            tr.className = "shop-detail-row";
+            tr.dataset.categoryGroup = row.dataset.categoryGroup || "";
+            const td = document.createElement("td");
+            td.colSpan = 13;
+            const div = document.createElement("div");
+            div.className = "shop-detail";
+            td.appendChild(div);
+            tr.appendChild(td);
+            row.__detailRow = tr;
+            row.__detailBody = div;
+        }
+        const alt = altRowFor(row);
+        const anchor = alt && !alt.hidden ? alt : row;
+        anchor.parentNode.insertBefore(row.__detailRow, anchor.nextElementSibling);
+        row.__detailRow.hidden = false;
+        return row.__detailBody;
+    }
+
+    function closeDetail(row) {
+        if (row.__detailRow) row.__detailRow.hidden = true;
+    }
+
+    function currentMpn(row) {
+        return (row.querySelector(".mpn-input")?.value || row.dataset.mpn || "").trim();
+    }
+
+    async function enrichRow(row, storageKey, sourceLineIds) {
+        const mpn = currentMpn(row);
+        if (!mpn) { alert("Enter an MPN before enriching."); return; }
+        const body = detailBodyFor(row);
+        body.innerHTML = `<p class="muted">Looking up ${escapeHtml(mpn)}…</p>`;
+        try {
+            const resp = await fetch(config.enrichUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ mpn }),
+            });
+            const data = await resp.json().catch(() => ({}));
+            if (!resp.ok || !data.ok) throw new Error(data.error || "Enrich failed.");
+            renderEnrich(row, body, storageKey, sourceLineIds, mpn, data.proposal);
+        } catch (err) {
+            body.innerHTML = `<p class="shop-lookup-error">${escapeHtml(err.message || "Enrich failed.")}</p>`;
+        }
+    }
+
+    function renderEnrich(row, body, storageKey, sourceLineIds, mpn, proposal) {
+        if (!proposal || !proposal.found) {
+            body.innerHTML = `<div class="shop-detail-head"><strong>Enrich ${escapeHtml(mpn)}</strong></div>` +
+                `<p class="muted">No distributor match. Try the DigiKey/Mouser search links.</p>` +
+                `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button></div>`;
+            body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
+            return;
+        }
+        const fields = [
+            ["manufacturer", "Manufacturer", proposal.manufacturer],
+            ["description", "Description", proposal.description],
+            ["datasheet_url", "Datasheet", proposal.datasheet_url],
+            ["unit_price", "Unit price", proposal.unit_price != null ? formatPrice(proposal.unit_price) : ""],
+            ["stock", "Stock", proposal.stock != null ? String(proposal.stock) : ""],
+        ];
+        const rowsHtml = fields.map(([key, label, val]) => {
+            const has = val != null && String(val).trim() !== "";
+            return `<tr>
+                <td><label class="filter-check"><input type="checkbox" class="enrich-field" data-field="${key}" ${has ? "checked" : ""} ${has ? "" : "disabled"}> ${label}</label></td>
+                <td class="enrich-val">${has ? escapeHtml(val) : '<span class="muted">—</span>'}</td>
+            </tr>`;
+        }).join("");
+        body.innerHTML = `
+            <div class="shop-detail-head"><strong>Enrich ${escapeHtml(mpn)}</strong>
+                <span class="muted">source: ${escapeHtml(proposal.source || "—")}</span></div>
+            <table class="enrich-table"><thead><tr><th>Apply</th><th>Fetched value</th></tr></thead><tbody>${rowsHtml}</tbody></table>
+            <div class="shop-detail-actions">
+                <button type="button" class="btn btn-primary btn-sm enrich-apply">Apply selected</button>
+                <button type="button" class="btn btn-secondary btn-sm detail-close">Close</button>
+                <span class="muted enrich-status" hidden></span>
+            </div>`;
+        body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
+        body.querySelector(".enrich-apply").addEventListener("click", async () => {
+            const toApply = {};
+            body.querySelectorAll(".enrich-field:checked").forEach((cb) => {
+                toApply[cb.dataset.field] = proposal[cb.dataset.field];
+            });
+            if (!Object.keys(toApply).length) { alert("Select at least one field to apply."); return; }
+            const status = body.querySelector(".enrich-status");
+            status.hidden = false;
+            status.classList.remove("shop-lookup-error");
+            status.textContent = "Saving…";
+            try {
+                const resp = await fetch(config.enrichApplyUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    body: JSON.stringify({
+                        storage_key: storageKey,
+                        source_line_ids: sourceLineIds,
+                        source: proposal.source,
+                        fields: toApply,
+                    }),
+                });
+                const data = await resp.json().catch(() => ({}));
+                if (!resp.ok || !data.ok) throw new Error(data.error || "Apply failed.");
+                status.textContent = `Saved to ${data.updated} BOM line(s).`;
+            } catch (err) {
+                status.textContent = err.message || "Apply failed.";
+                status.classList.add("shop-lookup-error");
+            }
+        });
+    }
+
+    async function showAlternates(row, storageKey, sourceLineIds) {
+        const mpn = currentMpn(row);
+        if (!mpn) { alert("Enter an MPN before finding alternates."); return; }
+        const body = detailBodyFor(row);
+        body.innerHTML = `<p class="muted">Finding alternates for ${escapeHtml(mpn)}…</p>`;
+        try {
+            const resp = await fetch(config.alternatesUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ mpn }),
+            });
+            const data = await resp.json().catch(() => ({}));
+            if (!resp.ok || !data.ok) throw new Error(data.error || "Alternates lookup failed.");
+            renderAlternates(row, body, storageKey, sourceLineIds, mpn, data.alternates || []);
+        } catch (err) {
+            body.innerHTML = `<p class="shop-lookup-error">${escapeHtml(err.message || "Alternates lookup failed.")}</p>`;
+        }
+    }
+
+    function renderAlternates(row, body, storageKey, sourceLineIds, mpn, alts) {
+        const head = `<div class="shop-detail-head"><strong>Alternates for ${escapeHtml(mpn)}</strong></div>`;
+        if (!alts.length) {
+            body.innerHTML = head + `<p class="muted">No alternates found.</p>` +
+                `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button></div>`;
+            body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
+            return;
+        }
+        const rowsHtml = alts.map((a, i) => {
+            const price = a.price_1 != null ? formatPrice(a.price_1) : "—";
+            const stock = a.stock != null ? a.stock : "—";
+            const kind = a.kind === "substitute"
+                ? '<span class="badge badge-sub">sub</span>'
+                : '<span class="muted">similar</span>';
+            const ds = a.datasheet_url ? `<a href="${escapeHtml(a.datasheet_url)}" target="_blank" rel="noopener">datasheet</a>` : "";
+            const link = a.url ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.distributor || "link")}</a>` : "";
+            return `<tr data-alt-index="${i}">
+                <td><code>${escapeHtml(a.mpn)}</code> ${kind}</td>
+                <td>${escapeHtml(a.manufacturer || "")}</td>
+                <td class="alt-desc">${escapeHtml(a.description || "")}</td>
+                <td class="dist-price">${price}</td>
+                <td>${stock}</td>
+                <td class="alt-links">${link} ${ds}</td>
+                <td class="alt-actions">
+                    <button type="button" class="btn btn-secondary btn-sm alt-sub">Substitute</button>
+                    <button type="button" class="btn btn-primary btn-sm alt-replace">Replace</button>
+                </td></tr>`;
+        }).join("");
+        body.innerHTML = head +
+            `<table class="alt-table"><thead><tr><th>MPN</th><th>Mfr</th><th>Description</th><th>Price</th><th>Stock</th><th>Links</th><th></th></tr></thead><tbody>${rowsHtml}</tbody></table>` +
+            `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button><span class="muted alt-status" hidden></span></div>`;
+        body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
+        const status = body.querySelector(".alt-status");
+        function setStatus(msg, isError) {
+            status.hidden = false;
+            status.textContent = msg;
+            status.classList.toggle("shop-lookup-error", Boolean(isError));
+        }
+        body.querySelectorAll("tbody tr").forEach((tr) => {
+            const a = alts[parseInt(tr.dataset.altIndex, 10)];
+            tr.querySelector(".alt-sub").addEventListener("click", async () => {
+                setStatus(`Setting substitute to ${a.mpn}…`, false);
+                try {
+                    await patchLine(storageKey, {
+                        alternate: { enabled: true, mpn: a.mpn, name: a.description || a.manufacturer || "" },
+                    });
+                    setStatus(`Substitute set to ${a.mpn}. Reload the list to see the ALT row.`, false);
+                } catch (err) {
+                    setStatus(err.message || "Could not set substitute.", true);
+                }
+            });
+            tr.querySelector(".alt-replace").addEventListener("click", async () => {
+                if (!window.confirm(`Replace ${mpn} with ${a.mpn} in the BOM? This updates the part in your list.`)) return;
+                setStatus(`Replacing with ${a.mpn}…`, false);
+                const fields = { mpn: a.mpn };
+                if (a.description) fields.name = a.description;
+                if (a.manufacturer) fields.manufacturer = a.manufacturer;
+                if (a.datasheet_url) fields.datasheet_url = a.datasheet_url;
+                if (a.price_1 != null) fields.unit_price = a.price_1;
+                if (a.stock != null) fields.stock = a.stock;
+                try {
+                    const resp = await fetch(config.enrichApplyUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", Accept: "application/json" },
+                        body: JSON.stringify({
+                            storage_key: storageKey,
+                            source_line_ids: sourceLineIds,
+                            source: a.distributor,
+                            fields,
+                        }),
+                    });
+                    const data = await resp.json().catch(() => ({}));
+                    if (!resp.ok || !data.ok) throw new Error(data.error || "Replace failed.");
+                    const mpnInput = row.querySelector(".mpn-input");
+                    if (mpnInput) { mpnInput.value = a.mpn; row.dataset.mpn = a.mpn; }
+                    const nameInput = row.querySelector(".name-input");
+                    if (nameInput && a.description) nameInput.value = a.description;
+                    updateDistLinks(row, a.mpn);
+                    setStatus(`Replaced with ${a.mpn} (updated ${data.updated} BOM line(s)).`, false);
+                } catch (err) {
+                    setStatus(err.message || "Replace failed.", true);
+                }
+            });
+        });
+    }
+
     function applyFilters() {
         const query = (searchInput?.value || "").trim().toLowerCase();
         const skipOrdered = hideOrdered?.checked ?? false;
@@ -651,6 +873,11 @@
         lookupBtn?.addEventListener("click", () => {
             runLookup([mpn], false);
         });
+
+        const enrichBtn = row.querySelector(".shop-enrich-row");
+        const altsBtn = row.querySelector(".shop-alts-row");
+        enrichBtn?.addEventListener("click", () => enrichRow(row, storageKey, sourceLineIds));
+        altsBtn?.addEventListener("click", () => showAlternates(row, storageKey, sourceLineIds));
 
         alternateCheck?.addEventListener("change", () => {
             setAlternateVisible(row, alternateCheck.checked);

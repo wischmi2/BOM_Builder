@@ -1471,3 +1471,89 @@ body.col-resize-active * {
     color: var(--muted);
     font-size: 0.875rem;
 }
+
+/* Shop enrich / alternates detail panel */
+.shop-detail-row > td {
+    background: var(--bg);
+    border-bottom: 2px solid var(--border);
+    padding: 0;
+}
+
+.shop-detail {
+    padding: 0.9rem 1.1rem;
+}
+
+.shop-detail-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+}
+
+.shop-detail-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.enrich-table,
+.alt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.enrich-table th,
+.enrich-table td,
+.alt-table th,
+.alt-table td {
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+.enrich-table thead th,
+.alt-table thead th {
+    background: var(--bg);
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.alt-table .alt-desc {
+    max-width: 22rem;
+    color: var(--muted);
+}
+
+.alt-table .alt-actions {
+    white-space: nowrap;
+}
+
+.badge-sub {
+    display: inline-block;
+    padding: 0.05rem 0.4rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* Enriched part details surfaced on the Need list */
+.need-enriched {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+.need-enriched .need-price {
+    color: var(--text);
+    font-weight: 600;
+}

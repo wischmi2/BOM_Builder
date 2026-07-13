@@ -448,6 +448,70 @@ def sync_need_lines_mpn_name(source_line_ids: list[str], *, mpn: str, name: str 
     return updated
 
 
+def sync_need_lines_details(
+    source_line_ids: list[str],
+    *,
+    mpn: str | None = None,
+    name: str | None = None,
+    manufacturer: str | None = None,
+    datasheet_url: str | None = None,
+    description: str | None = None,
+    unit_price: float | None = None,
+    stock: int | None = None,
+    enriched_from: str = "",
+) -> int:
+    """Write enrichment fields (and optionally MPN/name) back to BOM need lines.
+
+    Only non-None arguments are applied, so callers can update a subset of fields.
+    Returns the number of need lines updated.
+    """
+    from datetime import datetime, timezone
+
+    updated = 0
+    seen: set[str] = set()
+    now = datetime.now(timezone.utc).isoformat()
+    for source_id in source_line_ids:
+        if not source_id or source_id in seen or ":" not in source_id:
+            continue
+        seen.add(source_id)
+        bom_id, line_id = source_id.split(":", 1)
+        bom = storage.load_bom(bom_id)
+        if bom is None:
+            continue
+        need_line = find_line(bom, line_id)
+        if need_line is None:
+            continue
+
+        touched = False
+        if mpn:
+            need_line.lib_ref = mpn
+            touched = True
+        if name is not None:
+            need_line.name = name
+            touched = True
+        if manufacturer is not None:
+            need_line.manufacturer = manufacturer
+            touched = True
+        if datasheet_url is not None:
+            need_line.datasheet_url = datasheet_url
+            touched = True
+        if description is not None:
+            need_line.description = description
+            touched = True
+        if unit_price is not None:
+            need_line.unit_price = unit_price
+            touched = True
+        if stock is not None:
+            need_line.stock = stock
+            touched = True
+        if touched:
+            need_line.enriched_from = enriched_from or need_line.enriched_from
+            need_line.enriched_at = now
+            storage.save_bom(bom)
+            updated += 1
+    return updated
+
+
 def _apply_alternate_state(line: ShopLine, alt: dict[str, Any]) -> None:
     line.alternate.enabled = bool(alt.get("enabled"))
     if "mpn" in alt:

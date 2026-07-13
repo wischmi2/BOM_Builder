@@ -1,0 +1,656 @@
+{
+  "bom_id": "nrf54l15_soil_moisture",
+  "source_filename": "nrf54l15_soil_moisture.csv",
+  "board_count": 1,
+  "lines": [
+    {
+      "id": "row-1-002bae5f2f1ec6c4",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2450AT18A100E",
+      "description": "Mini 2.45 GHz Antenna, Johanson Technology",
+      "designators": [
+        "AE1"
+      ],
+      "footprint": "easyeda2kicad:ANT-SMD_L3.2-W1.6",
+      "lib_ref": "2450AT18A100E",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-2-e4cdc7e7ff8cb026",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.2uF",
+      "description": "",
+      "designators": [
+        "C1",
+        "C10"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GRM033R61A225KE47D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-3-b88555b2a2362726",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "47uF",
+      "description": "",
+      "designators": [
+        "C2"
+      ],
+      "footprint": "easyeda2kicad:C1206",
+      "lib_ref": "CL31A476MPHNNNE",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-4-8d80cd5bef3e9a79",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.2uF",
+      "description": "",
+      "designators": [
+        "C3"
+      ],
+      "footprint": "easyeda2kicad:C0603",
+      "lib_ref": "CL10A225KB8NNNC",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-5-13793d3fec0b2c5a",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "1uF",
+      "description": "1uF (105) \u00b110% 16V",
+      "designators": [
+        "C4",
+        "C19"
+      ],
+      "footprint": "easyeda2kicad:C0402",
+      "lib_ref": "CL05A105KO5NNNC",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-6-05a4187957f60faa",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.0pF",
+      "description": "",
+      "designators": [
+        "C5"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GJM0335C1E2R0WB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-7-43c4e911513f96c3",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "100nF",
+      "description": "100nF (104) \u00b110% 50V",
+      "designators": [
+        "C6",
+        "C14",
+        "C15",
+        "C26",
+        "C28"
+      ],
+      "footprint": "easyeda2kicad:C0603",
+      "lib_ref": "CC0603KRX7R9BB104",
+      "quantity": 5,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-8-f6da57d94760f21a",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "10uF",
+      "description": "10uF (106) \u00b110% 25V",
+      "designators": [
+        "C7",
+        "C17",
+        "C18",
+        "C20",
+        "C22",
+        "C27"
+      ],
+      "footprint": "easyeda2kicad:C0805",
+      "lib_ref": "CL21A106KAYNNNE",
+      "quantity": 6,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-9-e0dc6b01b158415d",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "1.5pF",
+      "description": "",
+      "designators": [
+        "C8"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GJM0335C1E1R5WB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-10-a37bc96c5c6b3c40",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "10nF",
+      "description": "",
+      "designators": [
+        "C9"
+      ],
+      "footprint": "easyeda2kicad:C0402",
+      "lib_ref": "GCM155R71H103KA55D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-11-53f49e7f27233d36",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.2pF",
+      "description": "",
+      "designators": [
+        "C11"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GJM0335C1E2R2WB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-12-f8389d0955e4fd7d",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "1.0pF",
+      "description": "",
+      "designators": [
+        "C12"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GJM0335C1E1R0WB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-13-7858c33e16a533f2",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "0.3pF",
+      "description": "",
+      "designators": [
+        "C13"
+      ],
+      "footprint": "easyeda2kicad:C0201",
+      "lib_ref": "GJM0335C1ER30WB01D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-14-701e478b0d51065a",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "10uF",
+      "description": "",
+      "designators": [
+        "C16"
+      ],
+      "footprint": "easyeda2kicad:C0603",
+      "lib_ref": "CC0603MRX5R8BB106",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-15-f0220934b44ee628",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "SM04B-SRSS-TB",
+      "description": "",
+      "designators": [
+        "CN1"
+      ],
+      "footprint": "easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN",
+      "lib_ref": "SM04B-SRSS-TB(LF)(SN)",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-16-e657225e9738307e",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "SS14_C83852",
+      "description": "",
+      "designators": [
+        "D1",
+        "D2"
+      ],
+      "footprint": "easyeda2kicad:SMA_L4.3-W2.6-LS5.2-RD",
+      "lib_ref": "SS14",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-17-5e72fb7cf861b066",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "TYPE-C-31-M-12",
+      "description": "USB Connectors 24 Receptacle 1 8.94*7.3mm RoHS",
+      "designators": [
+        "J1"
+      ],
+      "footprint": "easyeda2kicad:USB-C_SMD-TYPE-C-31-M-12_1",
+      "lib_ref": "TYPE-C-31-M-12",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-18-cc9500c1620aa8ab",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "10uh",
+      "description": "10uH \u00b110%",
+      "designators": [
+        "L1"
+      ],
+      "footprint": "easyeda2kicad:L0805",
+      "lib_ref": "SDFL2012S100KTF",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-19-2f9e7980d412a82e",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.7nH",
+      "description": "",
+      "designators": [
+        "L2",
+        "L5"
+      ],
+      "footprint": "easyeda2kicad:L0201",
+      "lib_ref": "LQP03HQ2N7B02D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-20-402667ea36131ff7",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "3.9nH",
+      "description": "",
+      "designators": [
+        "L3"
+      ],
+      "footprint": "easyeda2kicad:L0201",
+      "lib_ref": "LQP03HQ3N9B02D",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-21-3255f78371607d1a",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "CBG100505U121T",
+      "description": "",
+      "designators": [
+        "L4"
+      ],
+      "footprint": "easyeda2kicad:L0402",
+      "lib_ref": "CBG100505U121T",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-22-5cd850e30033c526",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "3.5nH",
+      "description": "",
+      "designators": [
+        "L6",
+        "L8"
+      ],
+      "footprint": "easyeda2kicad:L0201",
+      "lib_ref": "LQP03HQ3N5B02D",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-23-d028d19162432697",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "4.7uH",
+      "description": "muRata LQM18PH4R7MFRL",
+      "designators": [
+        "L7"
+      ],
+      "footprint": "EasyEDA2Kicad:L0603",
+      "lib_ref": "LQM18PH4R7MFRL",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-24-c158a0de21b1a240",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "2.2uH",
+      "description": "",
+      "designators": [
+        "L9",
+        "L10"
+      ],
+      "footprint": "easyeda2kicad:L0603",
+      "lib_ref": "LSCNB1608HKT2R2MD",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-25-92505691f2d53882",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "SML-P12MTT86R",
+      "description": "",
+      "designators": [
+        "LED1"
+      ],
+      "footprint": "easyeda2kicad:LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR",
+      "lib_ref": "SML-P12MTT86R",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-26-47f02c7b3b5a87af",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "5.1k",
+      "description": "",
+      "designators": [
+        "R1",
+        "R2"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "RCA025K1FLF",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-27-bb2043d647ce5adc",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "100k",
+      "description": "100K\u03a9 (1003) \u00b11%",
+      "designators": [
+        "R3"
+      ],
+      "footprint": "easyeda2kicad:R1206",
+      "lib_ref": "1206W4F1003T5E",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-28-7dc400156d48b032",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "3.3M",
+      "description": "",
+      "designators": [
+        "R4"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "1RC0402J0335",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-29-0b1acf2fc3b1517b",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "1M",
+      "description": "",
+      "designators": [
+        "R5",
+        "R7"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "RC0402JR-071ML",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-30-7185c4b5181d4f27",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "3.01M",
+      "description": "",
+      "designators": [
+        "R6"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "FRC0402F3904TS",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-31-71706638c9f6fe67",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "10k",
+      "description": "",
+      "designators": [
+        "R8"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "RT0402BRD0710KL",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-32-7ab554541173f097",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "47k",
+      "description": "",
+      "designators": [
+        "R9"
+      ],
+      "footprint": "easyeda2kicad:R0603",
+      "lib_ref": "FRC0603F4702TS",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-33-34457a9a31c48a6c",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "150k",
+      "description": "",
+      "designators": [
+        "R10"
+      ],
+      "footprint": "easyeda2kicad:R0603",
+      "lib_ref": "FRC0603F1503TS",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-34-8b57cf5083906387",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "FM8625H",
+      "description": "",
+      "designators": [
+        "R11"
+      ],
+      "footprint": "easyeda2kicad:DFN-6_L1.1-W0.7-P0.40-BL",
+      "lib_ref": "FM8625H",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-35-88cbef8afb080b90",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "4.7k",
+      "description": "",
+      "designators": [
+        "R12",
+        "R13"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "RC0402FR-074K7L",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-36-3e50819e51d2c7f4",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "560",
+      "description": "",
+      "designators": [
+        "R14"
+      ],
+      "footprint": "easyeda2kicad:R0402",
+      "lib_ref": "FRC0402F5600TS",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-37-dbf8c3f5c1bd3878",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "ECT818000500",
+      "description": "",
+      "designators": [
+        "RF1"
+      ],
+      "footprint": "easyeda2kicad:ANT-SMD_ECT818000500",
+      "lib_ref": "ECT818000500",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-38-7cce4e323a8be229",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "nPM1300-QEXX",
+      "description": "PMIC, LED Driver, Battery Charger, QFN-32",
+      "designators": [
+        "U2"
+      ],
+      "footprint": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias",
+      "lib_ref": "nPM1300-QEXX",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-39-d7d2b08a3cafea01",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "SPV1040T",
+      "description": "",
+      "designators": [
+        "U3"
+      ],
+      "footprint": "easyeda2kicad:TSSOP-8_L4.4-W3.0-P0.65-LS6.4-BL",
+      "lib_ref": "SPV1040T",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-40-834535b95bcc08a2",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "S2B-PH-K-S-GW",
+      "description": "",
+      "designators": [
+        "U4",
+        "U5"
+      ],
+      "footprint": "easyeda2kicad:CONN-TH_S2B-PH-K-S-GW",
+      "lib_ref": "S2B-PH-K-S-GW",
+      "quantity": 2,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-41-1879a14f251420bc",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "nRF54L15-QFXX",
+      "description": "nRF54L Dual Core Multiprotocol BLE SoC",
+      "designators": [
+        "U6"
+      ],
+      "footprint": "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias",
+      "lib_ref": "nRF54L15-QFXX",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    },
+    {
+      "id": "row-42-174ba919dd79c9ce",
+      "bom_id": "nrf54l15_soil_moisture",
+      "name": "XL7EL89CKI-111YLC-32M",
+      "description": "",
+      "designators": [
+        "X1"
+      ],
+      "footprint": "easyeda2kicad:CRYSTAL-SMD_4P-L2.0-W1.6-BL",
+      "lib_ref": "XL7EL89CKI-111YLC-32M",
+      "quantity": 1,
+      "is_dni": false,
+      "acquired": false,
+      "notes": ""
+    }
+  ]
+}

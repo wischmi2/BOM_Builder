@@ -205,6 +205,8 @@
                         <a class="btn btn-secondary btn-sm dist-link" href="{{ mo.url if mo and mo.url else line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
                         {% if any_api_configured %}
                         <button type="button" class="btn btn-secondary btn-sm shop-lookup-row">Lookup</button>
+                        <button type="button" class="btn btn-secondary btn-sm shop-enrich-row" title="Fetch full part details from DigiKey/Mouser">Enrich</button>
+                        <button type="button" class="btn btn-secondary btn-sm shop-alts-row" title="Find alternate parts with prices">Alts</button>
                         {% endif %}
                     </div>
                     <div class="dist-cache" data-dist-cache>
@@ -325,6 +327,9 @@
         receiveUrlTemplate: {{ url_for('shop_receive_line', storage_key='__STORAGE_KEY__')|tojson }},
         categoryOverrideUrl: {{ url_for('compare_category_override')|tojson }},
         lookupUrl: {{ url_for('shop_lookup')|tojson }},
+        enrichUrl: {{ url_for('shop_enrich')|tojson }},
+        enrichApplyUrl: {{ url_for('shop_enrich_apply')|tojson }},
+        alternatesUrl: {{ url_for('shop_alternates')|tojson }},
         apiConfigured: {{ any_api_configured|tojson }}
     };
 </script>

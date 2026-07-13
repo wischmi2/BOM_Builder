@@ -65,14 +65,16 @@ from bom_builder.need_io import (
     merge_bom_state,
     suggest_mpn_from_description,
 )
-from bom_builder.parser import bom_id_from_filename, parse_bom_csv
+from bom_builder.parser import bom_id_from_filename, parse_bom_csv, parse_kicad_bom_csv
 from bom_builder.distributor_cache import load_distributor_cache
 from bom_builder.distributor_lookup import any_api_configured, api_status, lookup_batch
+from bom_builder.enrichment import fetch_alternates, fetch_enrichment
 from bom_builder.shopping import (
     alternate_from_entry,
     apply_line_update,
     apply_shop_overlays_to_compare,
     build_shop_lines,
+    sync_need_lines_details,
     sync_need_lines_mpn_name,
     lines_to_saved_dict,
     merge_shop_state,
@@ -190,9 +192,11 @@ def need_upload():
 
     filename = uploaded.filename
     bom_id = bom_id_from_filename(filename)
+    source_format = (request.form.get("source_format") or "altium").strip().lower()
+    parser = parse_kicad_bom_csv if source_format == "kicad" else parse_bom_csv
     try:
         content = uploaded.read()
-        incoming = parse_bom_csv(content, bom_id=bom_id, source_filename=filename)
+        incoming = parser(content, bom_id=bom_id, source_filename=filename)
     except ValueError as exc:
         flash(str(exc), "error")
         return redirect(url_for("need_page"))
@@ -615,6 +619,85 @@ def shop_lookup():
 
     result = lookup_batch(mpns, distributors=distributors, force=force)
     return jsonify(result)
+
+
+@app.route("/shop/enrich", methods=["POST"])
+def shop_enrich():
+    """Fetch a proposed enrichment record for one MPN. Does not write anything."""
+    payload = request.get_json(silent=True) or {}
+    mpn = str(payload.get("mpn") or "").strip()
+    if not mpn:
+        return jsonify({"ok": False, "error": "mpn is required."}), 400
+    if not any_api_configured():
+        return jsonify(
+            {"ok": False, "error": "No distributor APIs configured.", "api_status": api_status()}
+        ), 400
+    force = payload.get("force") in (True, "true", "1", 1)
+    proposal = fetch_enrichment(mpn, force=force)
+    return jsonify({"ok": True, "mpn": mpn, "proposal": proposal})
+
+
+@app.route("/shop/enrich/apply", methods=["POST"])
+def shop_enrich_apply():
+    """Write reviewed enrichment fields to the underlying BOM need lines."""
+    payload = request.get_json(silent=True) or {}
+    source_line_ids = payload.get("source_line_ids")
+    if not isinstance(source_line_ids, list) or not source_line_ids:
+        return jsonify({"ok": False, "error": "source_line_ids is required."}), 400
+
+    fields = payload.get("fields")
+    if not isinstance(fields, dict) or not fields:
+        return jsonify({"ok": False, "error": "No fields to apply."}), 400
+
+    kwargs: dict = {}
+    for key in ("mpn", "name", "manufacturer", "datasheet_url", "description"):
+        if key in fields and fields[key] is not None:
+            kwargs[key] = str(fields[key])
+    if "unit_price" in fields and fields["unit_price"] is not None:
+        try:
+            kwargs["unit_price"] = float(fields["unit_price"])
+        except (TypeError, ValueError):
+            return jsonify({"ok": False, "error": "unit_price must be a number."}), 400
+    if "stock" in fields and fields["stock"] is not None:
+        try:
+            kwargs["stock"] = int(fields["stock"])
+        except (TypeError, ValueError):
+            return jsonify({"ok": False, "error": "stock must be a number."}), 400
+
+    updated = sync_need_lines_details(
+        [str(sid) for sid in source_line_ids],
+        enriched_from=str(payload.get("source") or fields.get("source") or ""),
+        **kwargs,
+    )
+
+    # If MPN/name changed, mirror the display override into the shopping list.
+    if "mpn" in kwargs or "name" in kwargs:
+        storage_key = str(payload.get("storage_key") or "")
+        if storage_key:
+            saved = storage.load_shopping_list()
+            overrides = {k: kwargs[k] for k in ("mpn", "name") if k in kwargs}
+            saved = apply_line_update(saved, storage_key, **overrides)
+            storage.save_shopping_list(saved)
+
+    return jsonify({"ok": True, "updated": updated})
+
+
+@app.route("/shop/alternates", methods=["POST"])
+def shop_alternates():
+    """Fetch alternate parts (DigiKey substitutes + similar results) for one MPN."""
+    payload = request.get_json(silent=True) or {}
+    mpn = str(payload.get("mpn") or "").strip()
+    if not mpn:
+        return jsonify({"ok": False, "error": "mpn is required."}), 400
+    if not any_api_configured():
+        return jsonify(
+            {"ok": False, "error": "No distributor APIs configured.", "api_status": api_status()}
+        ), 400
+    try:
+        limit = max(1, min(25, int(payload.get("limit", 10))))
+    except (TypeError, ValueError):
+        limit = 10
+    return jsonify(fetch_alternates(mpn, limit=limit))
 
 
 @app.route("/shop/line/<path:storage_key>", methods=["POST"])

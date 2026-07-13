@@ -9,6 +9,7 @@ import requests
 from bom_builder.shopping import mouser_search_url
 
 _API_URL = "https://api.mouser.com/api/v1/search/partnumber"
+_KEYWORD_URL = "https://api.mouser.com/api/v1/search/keyword"
 
 
 def is_configured() -> bool:
@@ -56,6 +57,27 @@ def _first_price(breaks: list[dict[str, Any]] | None) -> float | None:
         return None
 
 
+def _normalize_part(part: dict[str, Any], keyword: str = "", *, kind: str = "similar") -> dict[str, Any]:
+    """Normalize a Mouser part record into the shared candidate shape."""
+    availability = part.get("Availability", "")
+    breaks = part.get("PriceBreaks") or []
+    return {
+        "distributor": "mouser",
+        "found": True,
+        "mpn": part.get("ManufacturerPartNumber") or keyword,
+        "mouser_part": part.get("MouserPartNumber", ""),
+        "manufacturer": str(part.get("Manufacturer") or "").strip(),
+        "url": part.get("ProductDetailUrl") or mouser_search_url(keyword),
+        "description": part.get("Description", ""),
+        "datasheet_url": str(part.get("DataSheetUrl") or "").strip(),
+        "stock": _parse_stock(availability),
+        "stock_text": availability,
+        "price_1": _first_price(breaks),
+        "price_breaks": breaks[:5],
+        "kind": kind,
+    }
+
+
 def lookup_part(mpn: str) -> dict[str, Any]:
     keyword = (mpn or "").strip()
     if not keyword:
@@ -79,25 +101,36 @@ def lookup_part(mpn: str) -> dict[str, Any]:
             "found": False,
             "mpn": keyword,
             "url": mouser_search_url(keyword),
+            "manufacturer": "",
             "description": "",
+            "datasheet_url": "",
             "stock": None,
             "stock_text": "",
             "price_1": None,
             "price_breaks": [],
         }
 
-    part = parts[0]
-    availability = part.get("Availability", "")
-    breaks = part.get("PriceBreaks") or []
+    return _normalize_part(parts[0], keyword, kind="exact")
 
-    return {
-        "found": True,
-        "mpn": part.get("ManufacturerPartNumber") or keyword,
-        "mouser_part": part.get("MouserPartNumber", ""),
-        "url": part.get("ProductDetailUrl") or mouser_search_url(keyword),
-        "description": part.get("Description", ""),
-        "stock": _parse_stock(availability),
-        "stock_text": availability,
-        "price_1": _first_price(breaks),
-        "price_breaks": breaks[:5],
-    }
+
+def search_candidates(mpn: str, *, limit: int = 5) -> list[dict[str, Any]]:
+    """Return up to `limit` keyword-search matches as similar-part candidates."""
+    keyword = (mpn or "").strip()
+    if not keyword:
+        return []
+
+    response = requests.post(
+        f"{_KEYWORD_URL}?apiKey={_api_key()}",
+        json={
+            "SearchByKeywordRequest": {
+                "keyword": keyword,
+                "records": max(1, limit),
+                "startingRecord": 0,
+            }
+        },
+        timeout=30,
+    )
+    response.raise_for_status()
+    data = response.json()
+    parts = (data.get("SearchResults") or {}).get("Parts") or []
+    return [_normalize_part(p, keyword, kind="similar") for p in parts[:limit]]

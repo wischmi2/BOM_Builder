@@ -26,6 +26,13 @@
                 <span>Import CSV</span>
                 <input type="file" name="bom_file" accept=".csv,text/csv" required>
             </label>
+            <label class="upload-label">
+                <span>Format</span>
+                <select name="source_format" class="cell-input">
+                    <option value="altium" selected>Altium</option>
+                    <option value="kicad">KiCad</option>
+                </select>
+            </label>
             <button type="submit" class="btn btn-primary">Upload</button>
         </form>
 
@@ -133,6 +140,13 @@
                                 <p class="desc-text">{{ line.description }}</p>
                             </details>
                             {% endif %}
+                            {% if line.manufacturer or line.datasheet_url or line.unit_price is not none %}
+                            <span class="need-enriched">
+                                {% if line.manufacturer %}{{ line.manufacturer }}{% endif %}
+                                {% if line.unit_price is not none %}<span class="need-price">${{ "%.4f"|format(line.unit_price) }}</span>{% if line.stock is not none %} · {{ line.stock }} in stock{% endif %}{% endif %}
+                                {% if line.datasheet_url %}· <a href="{{ line.datasheet_url }}" target="_blank" rel="noopener">datasheet</a>{% endif %}
+                            </span>
+                            {% endif %}
                         </td>
                         <td class="col-libref need-mpn-cell">
                             <input type="text" class="libref-input cell-input" value="{{ line.lib_ref }}"
@@ -164,8 +178,9 @@
         </div>
         {% else %}
         <div class="card empty-state">
-            <p>Upload an Altium-style BOM CSV to see parts here.</p>
-            <p class="muted">Expected columns: Name, Description, Designator, Footprint, LibRef, Quantity</p>
+            <p>Upload a BOM CSV to see parts here — choose <strong>Altium</strong> or <strong>KiCad</strong> format above.</p>
+            <p class="muted">Altium columns: Name, Description, Designator, Footprint, LibRef, Quantity</p>
+            <p class="muted">KiCad columns: Reference, Value, Footprint, Qty, MPN (match key falls back to LCSC part #, then Value)</p>
         </div>
         {% endif %}
     </section>
