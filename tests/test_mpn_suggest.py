@@ -85,6 +85,20 @@ class TestNeedLibRefUpdate(unittest.TestCase):
         assert bom is not None
         self.assertEqual(bom.lines[0].lib_ref, "RC0402FR-07953RL")
 
+    def test_need_update_name(self) -> None:
+        response = self.client.post(
+            "/need/test-need-mpn/line/line-1",
+            json={"name": "953R 0402"},
+            headers={"Accept": "application/json"},
+        )
+        self.assertEqual(response.status_code, 200)
+        payload = response.get_json()
+        self.assertTrue(payload["ok"])
+        self.assertEqual(payload["name"], "953R 0402")
+        bom = storage.load_bom("test-need-mpn")
+        assert bom is not None
+        self.assertEqual(bom.lines[0].name, "953R 0402")
+
 
 if __name__ == "__main__":
     unittest.main()

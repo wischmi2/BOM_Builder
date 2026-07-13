@@ -19,6 +19,27 @@ class CompareRow:
     delta: int = 0
     status: str = "missing"
     match_type: str = "none"
+    effective_lib_ref: str = ""
+    effective_name: str = ""
+    shop_substitute: bool = False
+    storage_key: str = ""
+    source_line_ids: list[str] = field(default_factory=list)
+
+    @property
+    def display_lib_ref(self) -> str:
+        return self.effective_lib_ref or self.need_line.lib_ref
+
+    @property
+    def display_name(self) -> str:
+        return self.effective_name or self.need_line.name
+
+    @property
+    def bom_lib_ref(self) -> str:
+        return self.need_line.lib_ref
+
+    @property
+    def bom_name(self) -> str:
+        return self.need_line.name
 
     @property
     def matched_ids_display(self) -> str:
@@ -29,6 +50,14 @@ class CompareRow:
             label = item.location or item.id[:8]
             parts.append(f"{item.lib_ref}@{label}({item.qty_on_hand})")
         return "; ".join(parts)
+
+    @property
+    def matched_locations_display(self) -> str:
+        return format_matched_locations(self.matched_inventory)
+
+    @property
+    def matched_notes_display(self) -> str:
+        return format_matched_notes(self.matched_inventory)
 
     @property
     def part_key(self) -> str:
@@ -52,6 +81,27 @@ class AggregatedCompareRow:
     need_by_bom: dict[str, int] = field(default_factory=dict)
     matched_inventory: list[InventoryItem] = field(default_factory=list)
     source_lines: list[NeedLine] = field(default_factory=list)
+    effective_lib_ref: str = ""
+    effective_name: str = ""
+    shop_substitute: bool = False
+    storage_key: str = ""
+    source_line_ids: list[str] = field(default_factory=list)
+
+    @property
+    def display_lib_ref(self) -> str:
+        return self.effective_lib_ref or self.lib_ref
+
+    @property
+    def display_name(self) -> str:
+        return self.effective_name or self.name
+
+    @property
+    def bom_lib_ref(self) -> str:
+        return self.lib_ref
+
+    @property
+    def bom_name(self) -> str:
+        return self.name
 
     @property
     def bom_ids_display(self) -> str:
@@ -71,6 +121,14 @@ class AggregatedCompareRow:
             parts.append(f"{item.lib_ref}@{label}({item.qty_on_hand})")
         return "; ".join(parts)
 
+    @property
+    def matched_locations_display(self) -> str:
+        return format_matched_locations(self.matched_inventory)
+
+    @property
+    def matched_notes_display(self) -> str:
+        return format_matched_notes(self.matched_inventory)
+
 
 def normalize_key(value: str) -> str:
     if not value:
@@ -80,6 +138,21 @@ def normalize_key(value: str) -> str:
 
 def split_lib_refs(lib_ref: str) -> list[str]:
     return [part.strip() for part in lib_ref.split(",") if part.strip()]
+
+
+def format_matched_locations(items: list[InventoryItem]) -> str:
+    if not items:
+        return ""
+    parts = []
+    for item in items:
+        label = item.location.strip() if item.location else "—"
+        parts.append(f"{label} ({item.qty_on_hand})")
+    return "; ".join(parts)
+
+
+def format_matched_notes(items: list[InventoryItem]) -> str:
+    notes = [item.notes.strip() for item in items if item.notes.strip()]
+    return "; ".join(notes)
 
 
 def _build_inventory_indexes(
@@ -128,6 +201,33 @@ def _match_inventory(
                 return matched, "name"
 
     return [], "none"
+
+
+def rematch_inventory_for_part(
+    lib_ref: str,
+    name: str,
+    *,
+    is_dni: bool,
+    qty_needed: int,
+    inventory: InventoryDocument,
+) -> tuple[list[InventoryItem], int, str, str]:
+    """Match inventory for an effective MPN/name (e.g. Shop substitute)."""
+    by_lib_ref, by_name = _build_inventory_indexes(inventory.items)
+    probe = NeedLine(
+        id="",
+        bom_id="",
+        name=name,
+        description="",
+        designators=[],
+        footprint="",
+        lib_ref=lib_ref,
+        quantity=1,
+        is_dni=is_dni,
+    )
+    matched, match_type = _match_inventory(probe, by_lib_ref, by_name)
+    qty_on_hand = sum(item.qty_on_hand for item in matched)
+    status = _status_for(qty_needed, qty_on_hand, is_dni)
+    return matched, qty_on_hand, status, match_type
 
 
 def _aggregate_key(line: NeedLine) -> str:
@@ -311,20 +411,39 @@ def compare_to_csv(rows: list[CompareRow]) -> str:
     buffer = io.StringIO()
     writer = csv.writer(buffer, lineterminator="\n")
     writer.writerow(
-        ["LibRef", "Name", "NeedQty", "OnHand", "Delta", "Status", "BOM", "Designators", "MatchType", "MatchedInventory"]
+        [
+            "LibRef",
+            "BomLibRef",
+            "Name",
+            "BomName",
+            "NeedQty",
+            "OnHand",
+            "Delta",
+            "Status",
+            "BOM",
+            "Designators",
+            "Location",
+            "Notes",
+            "MatchType",
+            "MatchedInventory",
+        ]
     )
     for row in rows:
         line = row.need_line
         writer.writerow(
             [
-                line.lib_ref,
-                line.name,
+                row.display_lib_ref,
+                row.bom_lib_ref,
+                row.display_name,
+                row.bom_name,
                 row.qty_needed,
                 row.qty_on_hand,
                 row.delta,
                 row.status,
                 line.bom_id,
                 line.designator_display,
+                row.matched_locations_display,
+                row.matched_notes_display,
                 row.match_type,
                 row.matched_ids_display,
             ]
@@ -338,13 +457,17 @@ def compare_aggregated_to_csv(rows: list[AggregatedCompareRow]) -> str:
     writer.writerow(
         [
             "LibRef",
+            "BomLibRef",
             "Name",
+            "BomName",
             "TotalNeedQty",
             "OnHand",
             "Leftover",
             "Status",
             "BOMs",
             "NeedByBOM",
+            "Location",
+            "Notes",
             "MatchType",
             "MatchedInventory",
         ]
@@ -352,14 +475,18 @@ def compare_aggregated_to_csv(rows: list[AggregatedCompareRow]) -> str:
     for row in rows:
         writer.writerow(
             [
-                row.lib_ref,
-                row.name,
+                row.display_lib_ref,
+                row.bom_lib_ref,
+                row.display_name,
+                row.bom_name,
                 row.qty_needed_total,
                 row.qty_on_hand,
                 row.leftover,
                 row.status,
                 row.bom_ids_display,
                 row.need_breakdown_display,
+                row.matched_locations_display,
+                row.matched_notes_display,
                 row.match_type,
                 row.matched_ids_display,
             ]

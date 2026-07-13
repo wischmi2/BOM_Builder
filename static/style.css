@@ -369,6 +369,72 @@ body {
     font-size: 0.8rem;
 }
 
+.data-table th.col-hidden,
+.data-table td.col-hidden {
+    display: none;
+}
+
+.table-col-picker-slot {
+    display: inline-flex;
+    align-items: center;
+}
+
+.table-col-picker {
+    position: relative;
+}
+
+.table-col-picker-menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    z-index: 40;
+    min-width: 12rem;
+    max-width: 16rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.table-col-picker-title {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.table-col-picker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    max-height: 16rem;
+    overflow-y: auto;
+}
+
+.table-col-picker-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-col-picker-item input {
+    margin: 0;
+}
+
+.table-col-picker-actions {
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 0.65rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--border);
+}
+
 .data-table.resizable-table,
 .compare-table-wrap .compare-table.resizable-table {
     width: 100%;
@@ -554,6 +620,19 @@ body.col-resize-active * {
 .badge-dni {
     background: #f3f4f6;
     color: var(--muted);
+}
+
+.badge-substitute {
+    display: inline-block;
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .empty-filter {
@@ -1022,6 +1101,68 @@ body.col-resize-active * {
     min-width: 5.5rem;
     max-width: 11rem;
     word-break: break-word;
+}
+
+.compare-table .col-name,
+.compare-table .col-libref {
+    user-select: text;
+}
+
+.compare-table .col-libref code {
+    user-select: text;
+}
+
+.compare-bom-ref {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+}
+
+.compare-need-name-cell .cell-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.compare-need-name-cell .cell-input.cell-saved {
+    border-color: #15803d;
+    box-shadow: 0 0 0 1px rgba(21, 128, 61, 0.25);
+}
+
+.compare-table .col-location,
+.compare-table .col-notes {
+    font-size: 0.8rem;
+    word-break: break-word;
+}
+
+.compare-inv-cell {
+    min-width: 6.5rem;
+}
+
+.compare-inv-field {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.compare-inv-field + .compare-inv-field {
+    margin-top: 0.35rem;
+}
+
+.compare-inv-field-multi .compare-inv-qty {
+    flex: 0 0 auto;
+    min-width: 1.75rem;
+    font-size: 0.72rem;
+    text-align: right;
+}
+
+.compare-inv-cell .cell-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.compare-inv-cell .cell-input.cell-saved {
+    border-color: #15803d;
+    box-shadow: 0 0 0 1px rgba(21, 128, 61, 0.25);
 }
 
 .match-type {

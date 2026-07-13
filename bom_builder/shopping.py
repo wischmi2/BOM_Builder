@@ -13,6 +13,7 @@ from bom_builder.matcher import (
     CompareRow,
     compare_boms,
     compare_boms_aggregated,
+    rematch_inventory_for_part,
     split_lib_refs,
 )
 from bom_builder.models import BomDocument, InventoryDocument
@@ -105,6 +106,106 @@ def alternates_display(lib_ref: str) -> str:
     if len(segments) <= 1:
         return ""
     return ", ".join(segments[1:])
+
+
+def effective_part_from_state(
+    lib_ref: str,
+    name: str,
+    state: dict[str, Any] | None,
+) -> tuple[str, str, bool]:
+    """Return effective MPN, name, and whether a Shop substitute is active."""
+    base_mpn = primary_mpn(lib_ref)
+    if not state:
+        return base_mpn, name, False
+
+    alt = state.get("alternate")
+    if isinstance(alt, dict) and alt.get("enabled"):
+        alt_mpn = str(alt.get("mpn", "")).strip()
+        if alt_mpn:
+            alt_name = str(alt.get("name", "")).strip()
+            return alt_mpn, alt_name or name, True
+
+    mpn = str(state.get("mpn", "")).strip() or base_mpn
+    eff_name = str(state.get("name", "")).strip() or name
+    return mpn, eff_name, mpn != base_mpn
+
+
+def apply_shop_overlay_to_compare_row(
+    row: CompareRow,
+    saved: dict[str, dict[str, Any]],
+    inventory: InventoryDocument,
+) -> None:
+    shop_line = _shop_line_from_compare(row)
+    row.storage_key = shop_line.storage_key
+    row.source_line_ids = list(shop_line.source_line_ids)
+    state = saved_state_for_line(saved, shop_line)
+    eff_mpn, eff_name, is_substitute = effective_part_from_state(
+        row.need_line.lib_ref,
+        row.need_line.name,
+        state,
+    )
+    row.effective_lib_ref = eff_mpn
+    row.effective_name = eff_name
+    row.shop_substitute = is_substitute
+
+    if eff_mpn != primary_mpn(row.need_line.lib_ref):
+        matched, qty_on_hand, status, match_type = rematch_inventory_for_part(
+            eff_mpn,
+            eff_name,
+            is_dni=row.need_line.is_dni,
+            qty_needed=row.qty_needed,
+            inventory=inventory,
+        )
+        row.matched_inventory = matched
+        row.qty_on_hand = qty_on_hand
+        row.delta = qty_on_hand - row.qty_needed
+        row.status = status
+        row.match_type = match_type
+
+
+def apply_shop_overlay_to_aggregated_row(
+    row: AggregatedCompareRow,
+    saved: dict[str, dict[str, Any]],
+    inventory: InventoryDocument,
+) -> None:
+    shop_line = _shop_line_from_aggregated(row)
+    row.storage_key = shop_line.storage_key
+    row.source_line_ids = list(shop_line.source_line_ids)
+    state = saved_state_for_line(saved, shop_line)
+    eff_mpn, eff_name, is_substitute = effective_part_from_state(row.lib_ref, row.name, state)
+    row.effective_lib_ref = eff_mpn
+    row.effective_name = eff_name
+    row.shop_substitute = is_substitute
+
+    if eff_mpn != primary_mpn(row.lib_ref):
+        matched, qty_on_hand, status, match_type = rematch_inventory_for_part(
+            eff_mpn,
+            eff_name,
+            is_dni=row.is_dni,
+            qty_needed=row.qty_needed_total,
+            inventory=inventory,
+        )
+        row.matched_inventory = matched
+        row.qty_on_hand = qty_on_hand
+        row.leftover = qty_on_hand - row.qty_needed_total
+        row.status = status
+        row.match_type = match_type
+
+
+def apply_shop_overlays_to_compare(
+    rows: list[CompareRow] | None,
+    agg_rows: list[AggregatedCompareRow] | None,
+    inventory: InventoryDocument,
+    saved: dict[str, dict[str, Any]] | None = None,
+) -> None:
+    if saved is None:
+        saved = storage.load_shopping_list()
+    if rows:
+        for row in rows:
+            apply_shop_overlay_to_compare_row(row, saved, inventory)
+    if agg_rows:
+        for row in agg_rows:
+            apply_shop_overlay_to_aggregated_row(row, saved, inventory)
 
 
 def digikey_search_url(mpn: str) -> str:

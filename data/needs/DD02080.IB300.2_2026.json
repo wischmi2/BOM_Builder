@@ -6,7 +6,7 @@
     {
       "id": "row-1-846ef413b991967a",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "0.1uF",
+      "name": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "description": "0402 0.1 uF 50 V \u00b110% Tolerance X7R SMT Multilayer Ceramic Capacitor",
       "designators": [
         "C1",
@@ -81,7 +81,7 @@
     {
       "id": "row-3-c078ba318c8a500d",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "",
+      "name": "4.7 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0805 (2012 Metric)",
       "description": "CAP CER 4.7UF 16V X7R 0805",
       "designators": [
         "C4",
@@ -187,7 +187,7 @@
     {
       "id": "row-9-16a53ae464fe9742",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "10uF 20V Tant",
+      "name": "10 \u00b5F Molded Tantalum Capacitors 20 V 1206 (3216 Metric) 5Ohm",
       "description": "Cap Tant Solid 10uF 20V A CASE 10% (3.2 X 1.6 X 1.6mm) Inward L SMD 3216-18 5 Ohm 125\u00b0C T/R",
       "designators": [
         "C52"
@@ -419,7 +419,7 @@
     {
       "id": "row-23-0fbbcdcbd6da4824",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "0R",
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film",
       "description": "Res Thick Film 0402 0 Ohm Molded SMD Punched Paper T/R",
       "designators": [
         "R2",
@@ -464,7 +464,7 @@
     {
       "id": "row-24-7c688aab617a9dad",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "10k",
+      "name": "10 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "description": "Resistor Thick Film 0402 10k Ohm 1% 1/16 Watt \u00b1100ppm \u00b0C Surface Mount Punched Paper Tape and Reel",
       "designators": [
         "R8",
@@ -485,7 +485,7 @@
     {
       "id": "row-25-67ac9d29742db9e4",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "4.7K",
+      "name": "4.7 kOhms \u00b15% 0.333W, 1/3W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
       "description": "Thick Film Resistors - SMD 0.125W 4.7Kohm 5% 200ppm Anti-Surge",
       "designators": [
         "R17"
@@ -515,7 +515,7 @@
     {
       "id": "row-27-9ef623ac9e0ccac7",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "50ohm",
+      "name": "50 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
       "description": "RES SMD 50 OHM 1% 1/8W 0402",
       "designators": [
         "R29",
@@ -567,7 +567,7 @@
     {
       "id": "row-30-d746aaea07c82635",
       "bom_id": "DD02080.IB300.2_2026",
-      "name": "RES 1K OHM 5% 1/8W 0402",
+      "name": "1 kOhms \u00b15% 0.333W, 1/3W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
       "description": "Thick Film Resistors 0.125W 1Kohm 5% 200ppm Anti-Surge",
       "designators": [
         "R38",

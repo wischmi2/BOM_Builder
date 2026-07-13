@@ -5,7 +5,7 @@
       "lib_ref": "RK73H1ETTP1002F",
       "name": "RES 10K OHM 1% 1/10W 0402",
       "qty_on_hand": 8980,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -13,7 +13,7 @@
       "lib_ref": "RK73Z1ETTP",
       "name": "RES 0 OHM JUMPER 0402",
       "qty_on_hand": 9900,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -29,7 +29,7 @@
       "lib_ref": "ERA-2AEB1431X",
       "name": "RES SMD 1.43 KOHM 0.1% 1/16W 0402",
       "qty_on_hand": 100,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -45,7 +45,7 @@
       "lib_ref": "CRCW02012K00FNED",
       "name": "RES SMD 2 KOHM 1% 1/20W 0201",
       "qty_on_hand": 470,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -53,7 +53,7 @@
       "lib_ref": "RK73H1HTTC60R4D",
       "name": "RES 60.4 OHM 0.5% 1/20W 0201",
       "qty_on_hand": 100,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -69,7 +69,7 @@
       "lib_ref": "SG73S1ETTP472J",
       "name": "RES 4.7K OHM 5% 1/8W 0402",
       "qty_on_hand": 2073,
-      "location": "RESISTOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -101,8 +101,8 @@
       "lib_ref": "SG73S1ETTP101J",
       "name": "RES 100 OHM 5% 1.8W 0402",
       "qty_on_hand": 600,
-      "location": "RESISTOR BIN 1",
-      "notes": "Digikey List.  500."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "bc43fd9a-722d-4b15-94e0-753f8f0d85c9",
@@ -133,7 +133,7 @@
       "lib_ref": "GRM21BR71C475KE51L",
       "name": "CAP CER 4.7 UF 16V X7R 0805",
       "qty_on_hand": 920,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -181,7 +181,7 @@
       "lib_ref": "GRM0335C1H5R0BA01D",
       "name": "CAP CER 5PF 50V C0G/NP0 0201",
       "qty_on_hand": 2096,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -189,7 +189,7 @@
       "lib_ref": "GRM155R71H104KE14J",
       "name": "CAP CER 0.1 UF 50V X7R 0402",
       "qty_on_hand": 2943,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -197,7 +197,7 @@
       "lib_ref": "GCM1555C1H101FA16D",
       "name": "CAP CER 100 PF 50V C0G/NP0 0402",
       "qty_on_hand": 543,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -229,7 +229,7 @@
       "lib_ref": "GRM155R71H103KA88J",
       "name": "CAP CER 10000 PF 50V X7R 0402",
       "qty_on_hand": 250,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -261,8 +261,8 @@
       "lib_ref": "GRM219R6YA475KA73D",
       "name": "CAP CER 4.7 UF 35V X5R 0805",
       "qty_on_hand": 1100,
-      "location": "CAPACITOR BIN 1",
-      "notes": "Digikey List. 1000."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "3d4d4ee1-115a-4d50-a6e4-2a3e303ab073",
@@ -277,7 +277,7 @@
       "lib_ref": "GRM0335C1H100JA01J",
       "name": "CAP CER 10 PF 50V C0G/NP0 0201",
       "qty_on_hand": 1150,
-      "location": "CAPACITOR BIN 1",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -325,7 +325,7 @@
       "lib_ref": "SN74HCT04ANSR",
       "name": "IC INVERTER 6CH 1-INP 14SO",
       "qty_on_hand": 500,
-      "location": "SEMICONDUCTOR BIN 1",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -357,7 +357,7 @@
       "lib_ref": "T491A106K020AT",
       "name": "CAP TANT 10 UF 10% 20V 1206",
       "qty_on_hand": 90,
-      "location": "",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -581,7 +581,7 @@
       "lib_ref": "DMP3099L-7",
       "name": "MOSFET P-CH 30V 3.8A SOT23",
       "qty_on_hand": 3000,
-      "location": "SEMICONDUCTOR BIN 1",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -653,7 +653,7 @@
       "lib_ref": "AD7091RBCPZ-RL7",
       "name": "IC ADC 12BIT SAR 10LFCSP",
       "qty_on_hand": 55,
-      "location": "",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -669,7 +669,7 @@
       "lib_ref": "ADL5902ACPZ-R7",
       "name": "IC RF DETECT 50MHZ-9GHZ 16LCSP",
       "qty_on_hand": 193,
-      "location": "",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -685,7 +685,7 @@
       "lib_ref": "W25Q16JVSSIQ",
       "name": "IC FLASH 16MBIT SPI/QUAD 8SOIC",
       "qty_on_hand": 2180,
-      "location": "Brian S. Desk",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -693,7 +693,7 @@
       "lib_ref": "SFM-125-02-X-D-LC",
       "name": "CONN RCPT 50POS 0.05 GOLD SMD",
       "qty_on_hand": 50,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": "SFM-125-02-X-D-LC"
     },
     {
@@ -709,7 +709,7 @@
       "lib_ref": "60312202114511",
       "name": "Wurth Electronics SMA Female PCB Connector",
       "qty_on_hand": 123,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -733,7 +733,7 @@
       "lib_ref": "DCW-11-722+",
       "name": "RF DIR CPLR 2.4GHZ-7.2GHZ 0603",
       "qty_on_hand": 50,
-      "location": "Brian S. Desk",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -749,7 +749,7 @@
       "lib_ref": "PE42553B-Z",
       "name": "IC RF SWITCH SPDT 8GHZ 16QFN",
       "qty_on_hand": 70,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -757,7 +757,7 @@
       "lib_ref": "LT6657AHMS8-5#PBF",
       "name": "IC VREF SERIES 0.1% 8MSOP",
       "qty_on_hand": 350,
-      "location": "Brian S. Desk",
+      "location": "DD02080 Box",
       "notes": ""
     },
     {
@@ -765,7 +765,7 @@
       "lib_ref": "68797-403HLF",
       "name": "CONN HEADER VERT 3POS 2.54MM",
       "qty_on_hand": 30,
-      "location": "Brian S. Desk",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -773,7 +773,7 @@
       "lib_ref": "DCO400800-5",
       "name": "DCO400800-5 VCO 4GHz - 8GHz",
       "qty_on_hand": 7,
-      "location": "",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -789,7 +789,7 @@
       "lib_ref": "HMC424ALP3E",
       "name": "RF ATTENUATOR 31.5DB 16VFQFN",
       "qty_on_hand": 24,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -797,7 +797,7 @@
       "lib_ref": "DMN2005K-7",
       "name": "N-Channel 20 V 300mA (Ta) 350mW (Ta) Surface Mount SOT-23-3",
       "qty_on_hand": 35,
-      "location": "Brian S. Desk",
+      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -813,7 +813,7 @@
       "lib_ref": "LFCN-7200+",
       "name": "LTCC LOW PASS FILTER DC-7200",
       "qty_on_hand": 56,
-      "location": "Brian S. Desk",
+      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -821,7 +821,7 @@
       "lib_ref": "RC0201FR-07274RL",
       "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 500,
-      "location": "",
+      "location": "DD04080 Box",
       "notes": "Digikey List.  500."
     },
     {
@@ -829,15 +829,15 @@
       "lib_ref": "0402DC-4N3XJRW",
       "name": "4.3nH Wirewound",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "a7a0e5b6-6aa4-4960-8dc7-d060fc359f1e",
       "lib_ref": "HMC659LC5",
       "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
       "qty_on_hand": 25,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25"
     },
     {
@@ -845,119 +845,119 @@
       "lib_ref": "OP184FSZ",
       "name": "IC OPAMP GP 1 CIRCUIT 8SOIC",
       "qty_on_hand": 50,
-      "location": "",
-      "notes": "Digikey List.  50."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "4687c977-3c8e-491a-b631-0e8a83941c3f",
       "lib_ref": "RT0402BRD07348RL",
       "name": "RES SMD 348 OHM 0.1% 1/16W 0402",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "61bf965f-cb74-493c-a507-9a20d16a3419",
       "lib_ref": "SN74HCS594",
       "name": "Shift Shift Register 1 Element 8 Bit 16-WQFN (2.5x3.5)",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "3b4f65d4-f4c5-4537-a637-24cc36d66714",
       "lib_ref": "RC0402FR-07953RL",
       "name": "953 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "0944670a-5611-4043-8eba-8849205d833a",
       "lib_ref": "FC0402E50R0BTBST1",
       "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  250.; Digikey List.  250."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "5b461846-9fdf-47e9-9b23-24b4bbefe7ae",
       "lib_ref": "MMSZ4689-HF",
       "name": "DIODE ZENER 5.1V 500MW SOD123",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "a96e42a0-78fb-4f19-85aa-5bf77e8cb3a8",
       "lib_ref": "SN74AHC123A",
       "name": "IC MMV 2-CIR 7.5-NS 16-TSSOP",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "c5cca51a-c5c7-4428-a1fc-f375580e4be0",
       "lib_ref": "CL05A225KP5NNNC",
       "name": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "1d432a0f-4f2e-4907-95d9-0f7400d0984d",
       "lib_ref": "ERJ-2RKF4992X",
       "name": "49.9 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "4ed946c4-242c-4520-b289-ba0ced7c3dba",
       "lib_ref": "LT3097",
       "name": "LT3097",
       "qty_on_hand": 30,
-      "location": "",
-      "notes": "Digikey List.  30."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "3216ce32-a0b2-4e60-9f4f-d29653f8fdc2",
       "lib_ref": "LT1236ACS8-10#TRPBF",
       "name": "IC VREF PRECISION 0.05% 8SOIC",
       "qty_on_hand": 50,
-      "location": "",
-      "notes": "Digikey List.  50."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "90644cf5-1159-430d-81e0-009f91a57b11",
       "lib_ref": "LFCG-3000+",
       "name": "CER FILTER 3.46GHZ LOW PASS",
       "qty_on_hand": 25,
-      "location": "",
-      "notes": "Digikey List.  25."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "6c65a110-f86a-4a17-b7ef-ddd38bee25db",
       "lib_ref": "KF80BDT-TR",
       "name": "IC REG LINEAR 8V 500MA DPAK",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "4579d116-5a7e-48c1-882c-61e0312bd0d3",
       "lib_ref": "SM-3TW203",
       "name": "20 kOhms 0.125W, 1/8W J Lead Surface Mount Trimmer Potentiometer Cermet 11 Turn Top Adjustment",
       "qty_on_hand": 50,
-      "location": "",
-      "notes": "Digikey List. 50."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "9dbde926-ad5f-466a-b9dc-7e760198b3f0",
       "lib_ref": "AD5760ACPZ",
       "name": "16 Bit Digital to Analog Converter 1 24-LFCSP-VQ (4x5)",
       "qty_on_hand": 30,
-      "location": "",
+      "location": "DD02080 Box",
       "notes": "Digikey List.  30.  Expensive, make sure we don't have any."
     },
     {
@@ -965,224 +965,224 @@
       "lib_ref": "RC0201FR-0768RL",
       "name": "68 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "281f1129-7aac-45f3-a191-5b0251700688",
       "lib_ref": "CRCW0201105RFNED",
       "name": "105 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "f855464d-83e5-4176-93ab-12f62c034045",
       "lib_ref": "ERJ1GNF3000C",
       "name": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "a2668669-9299-4386-8e2e-7a2e6c16a53a",
       "lib_ref": "CRCW020161R9FNED",
       "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "a3f1aac0-5b4b-4faa-b5c4-d7d4e119f22d",
       "lib_ref": "RC0402FR-7W49R9L",
       "name": "49.9 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "225634c2-8e00-4200-8cfb-4c7fda01b868",
       "lib_ref": "ADP7102ACPZ-3.3-R7",
       "name": "IC REG LIN 3.3V 300MA 8-LFCSP-WD",
       "qty_on_hand": 50,
-      "location": "",
-      "notes": "Digikey List.  50."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "c5761f74-7807-4600-9b27-1a946cfc1595",
       "lib_ref": "LQP03HQ2N7B02D",
       "name": "2.8nH",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "8b12a3be-a8b1-4bc5-aebb-1b1adc0ab87c",
       "lib_ref": "TPSA475M016R2000",
       "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "d3b514c9-2d06-424c-b34e-febc3978f56c",
       "lib_ref": "GJM1555C1H100FB01D",
       "name": "10 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "2a45b6be-67b6-4e49-b4e1-7fdbe287335e",
       "lib_ref": "GCM21BR71A106KE22K",
       "name": "CAP CER 10UF 10V X7R 0805",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "cee643d5-4ed4-4ec5-a252-1282081b2120",
       "lib_ref": "GCM155R71H102KA37D",
       "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "bb68813f-a885-42f8-bf5e-1cbafc5b3669",
       "lib_ref": "GRM155R61E105KA12D",
       "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List. 1000."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "6e3753ba-86f8-4153-9995-3518a1b20c1a",
       "lib_ref": "RP73PF1E2K0BTD",
       "name": "2 kOhms \u00b10.1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Thin Film",
       "qty_on_hand": 250,
-      "location": "",
-      "notes": "Digikey List.  250."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "7d3b13ab-28cf-4822-876e-ac746bdda886",
       "lib_ref": "GRM155R71A474KE01D",
       "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "qty_on_hand": 200,
-      "location": "",
-      "notes": "Digikey List.  200."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "f1f801fd-2294-4678-994e-b26cd356272c",
       "lib_ref": "GJM0335C1ER20BB01D",
       "name": "CAP CER 0.2PF 25V C0G/NP0 0201",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "8f96aef2-cf94-461c-b41e-7dd1dcd14979",
       "lib_ref": "RK73H1ERTTP3302F",
       "name": "33 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "a2868b95-0527-4162-94fa-adaa2e36965b",
       "lib_ref": "RK73H1HTTC18R0F",
       "name": "18 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "8ae78e0d-fcb4-48dd-b05b-7fe7ffc4bb3e",
       "lib_ref": "GRM155R60J106ME15D",
       "name": "CAP CER 10UF 6.3V X5R 0402",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "39949b43-7afa-46e2-a87f-4d021461f882",
       "lib_ref": "EEE-FC1V2R2AR",
       "name": "2.2uF Electrolytic EEE-FC1V2R2AR",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List. 100."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "fbadca56-2feb-4e83-bea0-283a066bf169",
       "lib_ref": "RK73Z1HRTTC",
       "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "adc4d8ed-708e-46cf-ae98-2e44866e832c",
       "lib_ref": "ERA-1AEB101C",
       "name": "100 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thin Film",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "a2822b92-ea26-4e65-96a0-7d48453d1003",
       "lib_ref": "SG73S1ETTP102J",
       "name": "RES 1K OHM 5% 1/8W 0402",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List. 1000."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "635493aa-fa1f-4bf7-8ef4-8d99e1544981",
       "lib_ref": "ERJ-1GNF2101C",
       "name": "2.1 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD04080 Box",
+      "notes": ""
     },
     {
       "id": "9b8f8153-dcae-41d1-9cd6-97693e676d8d",
       "lib_ref": "RK73B2ATTD753J",
       "name": "75 kOhms \u00b15% 0.25W, 1/4W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List.  500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "5b7afdd4-a4a0-4cd7-ad66-fae6a41e01c5",
       "lib_ref": "RK73H1ETTP1501F",
       "name": "1.5 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "94726916-322a-496e-bbf7-9f87600ba337",
       "lib_ref": "ERA-2AEB3741X",
       "name": "3.74 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
       "qty_on_hand": 100,
-      "location": "",
-      "notes": "Digikey List.  100."
+      "location": "DD02040 Box",
+      "notes": ""
     },
     {
       "id": "4f705248-d9ba-4b88-9fa6-da1f6de073f2",
       "lib_ref": "CRG0402F100K",
       "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film",
       "qty_on_hand": 1000,
-      "location": "",
-      "notes": "Digikey List.  1000."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "97ff5dde-2486-4bbd-8ea5-20d48cf39301",
       "lib_ref": "GRM188R60J476ME01D",
       "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 148,
-      "location": "",
-      "notes": "Digikey List. 100.; Digikey List. 100."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "85e3224b-8d71-4a88-864a-0d0c9867bc3f",
@@ -1190,7 +1190,7 @@
       "name": "50ohm",
       "qty_on_hand": 274,
       "location": "",
-      "notes": "FC0402E50R0BTBST1; FC0402E50R0BTBST1; FC0402E50R0BTBST1; FC0402E50R0BTBST1"
+      "notes": "OBSOLETE"
     },
     {
       "id": "57b17dac-b1d1-4bf6-a0c4-696dc9051e0c",
@@ -1229,24 +1229,32 @@
       "lib_ref": "04025A300FAT2A",
       "name": "30 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "05a1b1f0-28a4-4956-92ca-d021f7968157",
       "lib_ref": "GRM188R61E106KA73D",
       "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 500,
-      "location": "",
-      "notes": "Digikey List. 500."
+      "location": "DD02080 Box",
+      "notes": ""
     },
     {
       "id": "c9517cf4-2a56-4699-87cf-ff79236a4009",
       "lib_ref": "DCMO190410-5",
       "name": "DCMO190410-5 <4GHz VCO",
       "qty_on_hand": 15,
-      "location": "",
+      "location": "DD02040 Box",
       "notes": "Synergy Microwave; Synergy Microwave"
+    },
+    {
+      "id": "8a06bbe3-2a94-4556-be04-69c8b92f684b",
+      "lib_ref": "TFM-125-02-S-D-LC-P-TR",
+      "name": "TFM-125-02-S-D-LC-P-TR",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "Powell Electronics, 50.; Powell Electronics, 50."
     }
   ]
 }

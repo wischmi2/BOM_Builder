@@ -12,6 +12,10 @@
     const collapseAllBtn = document.getElementById("compare-collapse-all");
     const overrideUrl = "/compare/category-override";
     const collapseKey = "bom-builder-compare-collapsed";
+    const compareConfig = window.BOM_COMPARE || {};
+
+    if (filterHideOk) filterHideOk.checked = false;
+    if (filterHideDni) filterHideDni.checked = true;
 
     let dataRows = Array.from(table.querySelectorAll("tbody tr.compare-row"));
     let categoryHeaders = Array.from(table.querySelectorAll("tbody tr.category-header"));
@@ -171,16 +175,22 @@
     function setupDragAndDrop() {
         let draggedRow = null;
 
-        dataRows.forEach((row) => {
-            row.addEventListener("dragstart", (event) => {
+        table.querySelectorAll(".drag-handle").forEach((handle) => {
+            handle.addEventListener("dragstart", (event) => {
+                const row = handle.closest("tr.compare-row");
+                if (!row) return;
                 draggedRow = row;
                 row.classList.add("is-dragging");
                 event.dataTransfer.effectAllowed = "move";
                 event.dataTransfer.setData("text/plain", row.dataset.partKey || "");
+                if (event.dataTransfer.setDragImage) {
+                    event.dataTransfer.setDragImage(row, 24, 16);
+                }
             });
 
-            row.addEventListener("dragend", () => {
-                row.classList.remove("is-dragging");
+            handle.addEventListener("dragend", () => {
+                const row = handle.closest("tr.compare-row");
+                row?.classList.remove("is-dragging");
                 categoryHeaders.forEach((header) => header.classList.remove("drop-target-active"));
                 draggedRow = null;
             });
@@ -245,5 +255,106 @@
     initCollapseState();
     setupCollapseToggles();
     setupDragAndDrop();
+    setupInventoryEdits();
+    setupCompareNameEdits();
     applyFilters();
+
+    function shopLineUrl(storageKey) {
+        const template = compareConfig.shopUpdateUrlTemplate;
+        if (!template) return null;
+        return template.replace("__STORAGE_KEY__", encodeURIComponent(storageKey));
+    }
+
+    async function patchShopLine(storageKey, body) {
+        const url = shopLineUrl(storageKey);
+        if (!url) throw new Error("Shop line update is not configured.");
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(body),
+        });
+        if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.error || "Update failed");
+        }
+        return response.json();
+    }
+
+    function setupCompareNameEdits() {
+        table.querySelectorAll(".compare-need-name").forEach((input) => {
+            let timer;
+
+            input.addEventListener("mousedown", (event) => event.stopPropagation());
+            input.addEventListener("input", () => {
+                clearTimeout(timer);
+                timer = setTimeout(async () => {
+                    const row = input.closest("tr.compare-row");
+                    const storageKey = row?.dataset.storageKey;
+                    if (!storageKey) return;
+
+                    const isSubstitute = row.dataset.shopSubstitute === "1";
+                    const body = isSubstitute
+                        ? { alternate: { name: input.value } }
+                        : { name: input.value };
+
+                    try {
+                        await patchShopLine(storageKey, body);
+                        input.classList.add("cell-saved");
+                        window.setTimeout(() => input.classList.remove("cell-saved"), 800);
+                        if (row) {
+                            const libRef = row.querySelector(".col-libref code")?.textContent?.trim() || "";
+                            const bomRef = row.querySelector(".compare-bom-ref")?.textContent?.replace(/^BOM:\s*/i, "").trim() || "";
+                            row.dataset.search = `${input.value} ${libRef} ${bomRef}`.trim().toLowerCase();
+                        }
+                    } catch (err) {
+                        window.alert(err.message || "Could not save build list name.");
+                    }
+                }, 400);
+            });
+        });
+    }
+
+    function inventoryItemUrl(itemId) {
+        const template = compareConfig.inventoryUpdateUrlTemplate;
+        if (!template) return null;
+        return template.replace("__ITEM_ID__", encodeURIComponent(itemId));
+    }
+
+    async function patchInventoryItem(itemId, body) {
+        const url = inventoryItemUrl(itemId);
+        if (!url) throw new Error("Inventory update is not configured.");
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(body),
+        });
+        if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.error || "Update failed");
+        }
+        return response.json();
+    }
+
+    function setupInventoryEdits() {
+        table.querySelectorAll(".compare-inv-location, .compare-inv-notes").forEach((input) => {
+            const field = input.classList.contains("compare-inv-location") ? "location" : "notes";
+            let timer;
+
+            input.addEventListener("mousedown", (event) => event.stopPropagation());
+            input.addEventListener("input", () => {
+                clearTimeout(timer);
+                timer = setTimeout(async () => {
+                    const itemId = input.dataset.itemId;
+                    if (!itemId) return;
+                    try {
+                        await patchInventoryItem(itemId, { [field]: input.value });
+                        input.classList.add("cell-saved");
+                        window.setTimeout(() => input.classList.remove("cell-saved"), 800);
+                    } catch (err) {
+                        window.alert(err.message || "Could not save inventory.");
+                    }
+                }, 400);
+            });
+        });
+    }
 })();

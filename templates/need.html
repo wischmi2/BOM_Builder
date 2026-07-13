@@ -5,7 +5,7 @@
 {% block content %}
 <section class="page-header">
     <h1>Need (BOM)</h1>
-    <p class="lede">Import CSV bill-of-materials and track parts you still need to acquire.</p>
+    <p class="lede">Import CSV bill-of-materials and track parts you still need to acquire. This is the original BOM — Shop substitutes appear on <a href="{{ url_for('compare_page') }}">Compare</a> instead.</p>
 </section>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -69,7 +69,7 @@
                            value="{{ bom.board_count }}" aria-label="Number of boards to build">
                 </label>
                 <input type="search" id="search-input" class="search-input" placeholder="Search name, MPN, ref…" autocomplete="off">
-                <label class="filter-check"><input type="checkbox" id="hide-dni"> Hide DNI</label>
+                <label class="filter-check"><input type="checkbox" id="hide-dni" checked> Hide DNI</label>
                 <label class="filter-check"><input type="checkbox" id="only-missing"> Only not acquired</label>
                 <a class="btn btn-secondary" href="{{ url_for('need_export', bom_id=bom.bom_id) }}">Export CSV</a>
                 <span class="muted compare-drag-hint">Edit MPN below · use cross-ref when description has the real part number</span>
@@ -84,6 +84,7 @@
         <div class="shop-table-toolbar">
             <button type="button" class="btn btn-secondary btn-sm" id="need-expand-all">Expand all</button>
             <button type="button" class="btn btn-secondary btn-sm" id="need-collapse-all">Collapse all</button>
+            <div class="table-col-picker-slot" data-table-id="need-table"></div>
         </div>
 
         <div class="table-wrap card">

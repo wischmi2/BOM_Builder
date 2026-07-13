@@ -71,6 +71,7 @@ from bom_builder.distributor_lookup import any_api_configured, api_status, looku
 from bom_builder.shopping import (
     alternate_from_entry,
     apply_line_update,
+    apply_shop_overlays_to_compare,
     build_shop_lines,
     sync_need_lines_mpn_name,
     lines_to_saved_dict,
@@ -250,6 +251,8 @@ def need_update_line(bom_id: str, line_id: str):
         line.acquired = raw in (True, "true", "on", "1", 1)
     if "notes" in payload:
         line.notes = str(payload.get("notes", ""))
+    if "name" in payload:
+        line.name = str(payload.get("name", "")).strip()
     if "lib_ref" in payload:
         lib_ref = str(payload.get("lib_ref", "")).strip()
         if not lib_ref:
@@ -265,6 +268,7 @@ def need_update_line(bom_id: str, line_id: str):
                 "ok": True,
                 "line_id": line_id,
                 "acquired": line.acquired,
+                "name": line.name,
                 "notes": line.notes,
                 "lib_ref": line.lib_ref,
                 "stats": stats,
@@ -497,6 +501,7 @@ def compare_page():
 
         if view_mode == "combined":
             agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            apply_shop_overlays_to_compare(None, agg_rows, inventory)
             grouped_rows = group_aggregated_rows(agg_rows, category_overrides)
             summary = compare_summary_aggregated(agg_rows)
             if agg_rows:
@@ -508,6 +513,7 @@ def compare_page():
                 }
         else:
             rows, extra = compare_boms(boms, inventory)
+            apply_shop_overlays_to_compare(rows, None, inventory)
             grouped_rows = group_compare_rows(rows, category_overrides)
             summary = compare_summary(rows)
 
@@ -790,10 +796,12 @@ def compare_export():
 
     if view_mode == "combined":
         agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        apply_shop_overlays_to_compare(None, agg_rows, inventory)
         response = make_response(compare_aggregated_to_csv(agg_rows))
         filename = "compare_combined_gap_report.csv"
     else:
         rows, _ = compare_boms(boms, inventory)
+        apply_shop_overlays_to_compare(rows, None, inventory)
         response = make_response(compare_to_csv(rows))
         filename = "compare_gap_report.csv"
     response.headers["Content-Type"] = "text/csv; charset=utf-8"
@@ -806,15 +814,54 @@ def main() -> None:
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=5000)
     parser.add_argument("--no-browser", action="store_true", help="Do not open browser on start")
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Enable Flask debug mode. NEVER use on a LAN-reachable host (remote code execution risk).",
+    )
+    parser.add_argument(
+        "--server",
+        choices=["auto", "flask", "waitress"],
+        default="auto",
+        help="WSGI server to use. 'auto' picks waitress for LAN hosts when installed, else Flask's dev server.",
+    )
     args = parser.parse_args()
 
     storage.ensure_data_dirs()
 
-    if not args.no_browser:
+    is_lan = args.host not in ("127.0.0.1", "localhost", "::1")
+
+    if args.debug and is_lan:
+        print(
+            "WARNING: --debug is enabled on a network-reachable host. The Flask debugger "
+            "allows remote code execution. Do NOT use --debug on the LAN."
+        )
+
+    # Don't auto-open a browser on a headless/LAN host unless localhost is in play.
+    if not args.no_browser and not is_lan:
         Timer(1.0, lambda: webbrowser.open(f"http://{args.host}:{args.port}/")).start()
 
+    # Resolve which server to run. waitress is preferred for an always-on/LAN host;
+    # Flask's dev server is kept for simple local use and when debug is requested.
+    use_waitress = False
+    if not args.debug:
+        if args.server == "waitress":
+            use_waitress = True
+        elif args.server == "auto" and is_lan:
+            try:
+                import waitress  # noqa: F401
+
+                use_waitress = True
+            except ImportError:
+                print("waitress not installed; falling back to Flask's dev server. (pip install waitress)")
+
     print(f"BOM Builder running at http://{args.host}:{args.port}/")
-    app.run(host=args.host, port=args.port, debug=True, use_reloader=False)
+    if use_waitress:
+        from waitress import serve
+
+        serve(app, host=args.host, port=args.port, threads=8)
+    else:
+        app.run(host=args.host, port=args.port, debug=args.debug, use_reloader=False)
 
 
 if __name__ == "__main__":

@@ -108,7 +108,9 @@ Use this page to see what you still need to pull from inventory or buy.
 - Quantities sum across inventory rows (multiple bins)
 - **DNI** lines are labeled separately and excluded from “missing” counts by default
 
-**Gap export columns:** LibRef, Name, NeedQty, OnHand, Delta, Status, BOM, Designators, MatchType, MatchedInventory
+**Gap export columns:** LibRef, BomLibRef, Name, BomName, NeedQty, OnHand, Delta, Status, BOM, Designators, Location, Notes, MatchType, MatchedInventory
+
+Compare applies Shop substitutes (alternate parts) for the build list. **Need** keeps the original BOM; **Compare** export uses replacement MPNs when configured in Shop.
 
 ### 4. Shop (buy list)
 

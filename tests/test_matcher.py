@@ -137,14 +137,28 @@ class TestMatcher(unittest.TestCase):
     def test_summary_and_csv(self) -> None:
         bom = BomDocument("bom1", "t.csv", [_need("P1"), _need("P2")])
         inv = InventoryDocument(
-            items=[InventoryItem(id="i1", lib_ref="P1", qty_on_hand=1)]
+            items=[
+                InventoryItem(
+                    id="i1",
+                    lib_ref="P1",
+                    qty_on_hand=1,
+                    location="Bin A3",
+                    notes="Reel bag",
+                )
+            ]
         )
         rows, _ = compare_boms([bom], inv)
         summary = compare_summary(rows)
         self.assertEqual(summary.missing, 1)
         self.assertEqual(summary.ok, 1)
+        ok_row = next(r for r in rows if r.need_line.lib_ref == "P1")
+        self.assertEqual(ok_row.matched_locations_display, "Bin A3 (1)")
+        self.assertEqual(ok_row.matched_notes_display, "Reel bag")
         csv_text = compare_to_csv(rows)
         self.assertIn("NeedQty", csv_text)
+        self.assertIn("BomLibRef", csv_text)
+        self.assertIn("Location", csv_text)
+        self.assertIn("Bin A3 (1)", csv_text)
         self.assertIn("P2", csv_text)
 
 

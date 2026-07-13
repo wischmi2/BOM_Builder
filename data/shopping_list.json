@@ -139,8 +139,8 @@
     },
     "lib:SG73S1ETTP102J": {
       "notes": "Digikey List. 1000.",
-      "updated_at": "2026-06-18T17:45:18.642810+00:00",
-      "name": "RES 1K OHM 5% 1/8W 0402",
+      "updated_at": "2026-06-26T14:36:19.443471+00:00",
+      "name": "1 kOhms \u00b15% 0.333W, 1/3W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
       "buy_qty": 1000,
       "ordered": true,
       "received_qty": 1000
@@ -198,10 +198,10 @@
     },
     "lib:GRM155R60J106ME15D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-18T17:44:23.413153+00:00",
+      "updated_at": "2026-06-26T14:40:53.275926+00:00",
       "buy_qty": 500,
       "mpn": "GRM155R60J106ME15D",
-      "name": "CAP CER 10UF 6.3V X5R 0402",
+      "name": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "ordered": true,
       "received_qty": 500
     },
@@ -269,17 +269,19 @@
     },
     "lib:0402DC4N3XJRW": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-18T17:12:40.598980+00:00",
+      "updated_at": "2026-06-26T14:41:20.208922+00:00",
       "buy_qty": 100,
       "ordered": true,
-      "received_qty": 100
+      "received_qty": 100,
+      "name": "4.3 nH Unshielded Wirewound Inductor 1.85 A 48mOhm Max 0402 (1005 Metric)"
     },
     "lib:LQP03HQ2N7B02D": {
       "notes": "Digikey List.  100.",
-      "updated_at": "2026-06-18T17:39:35.150542+00:00",
+      "updated_at": "2026-06-26T14:46:40.936365+00:00",
       "buy_qty": 100,
       "ordered": true,
-      "received_qty": 100
+      "received_qty": 100,
+      "name": "2.7 nH Unshielded Thick Film Inductor 600 mA 120mOhm Max 0201 (0603 Metric)"
     },
     "lib:DMN2005K7": {
       "notes": "Digikey List.  100.",
@@ -456,10 +458,11 @@
     },
     "lib:LT3097": {
       "notes": "Digikey List.  30.",
-      "updated_at": "2026-06-18T17:34:43.914209+00:00",
+      "updated_at": "2026-06-26T16:00:28.061347+00:00",
       "buy_qty": 30,
       "ordered": true,
-      "received_qty": 30
+      "received_qty": 30,
+      "name": "Linear Voltage Regulator IC Positive and Negative Adjustable 2 Output 500mA, 500mA 22-DFN (6x3)"
     },
     "lib:LT6657AHMS85PBF": {
       "notes": "Digikey List.  60.",
@@ -591,8 +594,11 @@
     },
     "lib:TFM12502SDLCPTR": {
       "name": "TFM-125-02-S-D-LC-P-TR",
-      "updated_at": "2026-06-08T18:16:09.859061+00:00",
-      "notes": "Powell Electronics, 50."
+      "updated_at": "2026-07-06T12:06:17.847948+00:00",
+      "notes": "Powell Electronics, 50.",
+      "buy_qty": 50,
+      "ordered": true,
+      "received_qty": 50
     },
     "lib:PCIEX16": {
       "ordered": false,
@@ -601,6 +607,54 @@
     "lib:MOUSEBITES": {
       "ordered": true,
       "updated_at": "2026-06-08T18:18:56.009608+00:00"
+    },
+    "lib:GRM155R71H104KE14J": {
+      "name": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-06-26T14:37:14.270444+00:00"
+    },
+    "lib:GRM155R71H103KA88J": {
+      "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-06-26T14:37:28.018152+00:00"
+    },
+    "lib:CRCW02012K00FNED": {
+      "name": "2 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
+      "updated_at": "2026-06-26T14:37:48.852074+00:00"
+    },
+    "lib:ERA2AEB1431X": {
+      "name": "1.43 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
+      "updated_at": "2026-06-26T14:38:06.713985+00:00"
+    },
+    "lib:RK73H1ETTP1002F": {
+      "name": "10 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "updated_at": "2026-06-26T14:38:19.986137+00:00"
+    },
+    "lib:RK73H1HTTC60R4D": {
+      "name": "60.4 Ohms \u00b10.5% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thick Film",
+      "updated_at": "2026-06-26T14:38:29.874625+00:00"
+    },
+    "lib:RK73Z1ETTP": {
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film",
+      "updated_at": "2026-06-26T14:38:42.211417+00:00"
+    },
+    "lib:GCM1555C1H101FA16D": {
+      "name": "100 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
+      "updated_at": "2026-06-26T14:40:17.926003+00:00"
+    },
+    "lib:GRM0335C1H100JA01J": {
+      "name": "10 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
+      "updated_at": "2026-06-26T14:40:29.097471+00:00"
+    },
+    "lib:GRM0335C1H5R0BA01D": {
+      "name": "5 pF \u00b10.1pF 50V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
+      "updated_at": "2026-06-26T14:40:39.082029+00:00"
+    },
+    "lib:ADL5902ACPZR7": {
+      "name": "RF Detector IC CDMA, GSM, TD-SCDMA, W-CDMA, WiMAX 50MHz ~ 9GHz -62dBm ~ 3dBm \u00b10.3dB 16-VQFN Exposed Pad, CSP",
+      "updated_at": "2026-06-26T19:10:31.201378+00:00"
+    },
+    "lib:AD7091RBCPZRL7": {
+      "name": "12 Bit Analog to Digital Converter 1 Input 1 SAR 10-LFCSP-WD (3x2)",
+      "updated_at": "2026-06-26T19:10:49.469037+00:00"
     }
   }
 }
