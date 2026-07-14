@@ -166,6 +166,30 @@ def fetch_alternates(mpn: str, *, limit: int = 10) -> dict[str, Any]:
             errors["mouser"] = str(exc)
 
     alternates = build_alternates(substitutes, similar, original_mpn=keyword, limit=limit)
+
+    # DigiKey's substitutions endpoint often omits stock/pricing, so those rows
+    # show "—". Backfill quantity-available (and price/datasheet) for any alternate
+    # that's missing them via a cached lookup so every row shows a stock figure.
+    for alt in alternates:
+        if alt.get("stock") is not None and alt.get("price_1") is not None:
+            continue
+        alt_mpn = str(alt.get("mpn") or "").strip()
+        if not alt_mpn:
+            continue
+        try:
+            results, _ = lookup_mpn(alt_mpn)
+        except Exception:  # noqa: BLE001 — backfill is best-effort
+            continue
+        proposal = build_enrichment_proposal(results)
+        if alt.get("stock") is None and proposal.get("stock") is not None:
+            alt["stock"] = proposal["stock"]
+        if alt.get("price_1") is None and proposal.get("unit_price") is not None:
+            alt["price_1"] = proposal["unit_price"]
+        if not alt.get("datasheet_url") and proposal.get("datasheet_url"):
+            alt["datasheet_url"] = proposal["datasheet_url"]
+        if not alt.get("manufacturer") and proposal.get("manufacturer"):
+            alt["manufacturer"] = proposal["manufacturer"]
+
     return {
         "ok": True,
         "mpn": keyword,

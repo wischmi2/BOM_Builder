@@ -129,6 +129,61 @@
         "price_breaks": [],
         "fetched_at": "2026-06-26T14:02:28.951351+00:00"
       }
+    },
+    "mpn:CC0603KRX7R9BB104": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CC0603KRX7R9BB104",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "CAP CER 0.1UF 50V X7R 0603",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V",
+        "url": "https://www.digikey.com/en/products/detail/yageo/CC0603KRX7R9BB104/2103082",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T00:36:10.888634+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "CC0603KRX7R9BB104",
+        "url": "https://www.mouser.com/c/?q=CC0603KRX7R9BB104",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T00:36:12.061528+00:00"
+      }
+    },
+    "mpn:1206W4F1003T5E": {
+      "digikey": {
+        "found": false,
+        "mpn": "1206W4F1003T5E",
+        "url": "https://www.digikey.com/en/products/result?keywords=1206W4F1003T5E",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T01:17:27.580207+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "1206W4F1003T5E",
+        "url": "https://www.mouser.com/c/?q=1206W4F1003T5E",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T01:17:28.593920+00:00"
+      }
     }
   }
 }

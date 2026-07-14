@@ -96,21 +96,28 @@ def lookup_part(mpn: str) -> dict[str, Any]:
     response.raise_for_status()
     data = response.json()
     parts = (data.get("SearchResults") or {}).get("Parts") or []
-    if not parts:
-        return {
-            "found": False,
-            "mpn": keyword,
-            "url": mouser_search_url(keyword),
-            "manufacturer": "",
-            "description": "",
-            "datasheet_url": "",
-            "stock": None,
-            "stock_text": "",
-            "price_1": None,
-            "price_breaks": [],
-        }
+    if parts:
+        return _normalize_part(parts[0], keyword, kind="exact")
 
-    return _normalize_part(parts[0], keyword, kind="exact")
+    # The exact part-number endpoint misses many manufacturer part numbers that
+    # Mouser's site keyword search finds (e.g. Royalohm 1206W4F1003T5E, which
+    # Mouser carries as 303-1206W4F1003T5E). Fall back to keyword search.
+    candidates = search_candidates(keyword, limit=1)
+    if candidates:
+        return {**candidates[0], "kind": "exact"}
+
+    return {
+        "found": False,
+        "mpn": keyword,
+        "url": mouser_search_url(keyword),
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": None,
+        "stock_text": "",
+        "price_1": None,
+        "price_breaks": [],
+    }
 
 
 def search_candidates(mpn: str, *, limit: int = 5) -> list[dict[str, Any]]:

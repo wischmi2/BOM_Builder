@@ -16,7 +16,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-2-e4cdc7e7ff8cb026",
@@ -32,7 +38,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-3-b88555b2a2362726",
@@ -47,7 +59,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-4-8d80cd5bef3e9a79",
@@ -62,7 +80,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-5-13793d3fec0b2c5a",
@@ -78,7 +102,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-6-05a4187957f60faa",
@@ -93,13 +123,19 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-7-43c4e911513f96c3",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "100nF",
-      "description": "100nF (104) \u00b110% 50V",
+      "description": "CAP CER 0.1UF 50V X7R 0603",
       "designators": [
         "C6",
         "C14",
@@ -112,7 +148,13 @@
       "quantity": 5,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "YAGEO",
+      "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V",
+      "unit_price": null,
+      "stock": 0,
+      "enriched_from": "digikey",
+      "enriched_at": "2026-07-14T00:37:49.240922+00:00"
     },
     {
       "id": "row-8-f6da57d94760f21a",
@@ -132,7 +174,13 @@
       "quantity": 6,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-9-e0dc6b01b158415d",
@@ -147,7 +195,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-10-a37bc96c5c6b3c40",
@@ -162,7 +216,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-11-53f49e7f27233d36",
@@ -177,7 +237,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-12-f8389d0955e4fd7d",
@@ -192,7 +258,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-13-7858c33e16a533f2",
@@ -207,7 +279,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-14-701e478b0d51065a",
@@ -222,7 +300,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-15-f0220934b44ee628",
@@ -237,7 +321,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-16-e657225e9738307e",
@@ -253,7 +343,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-17-5e72fb7cf861b066",
@@ -268,7 +364,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-18-cc9500c1620aa8ab",
@@ -283,7 +385,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-19-2f9e7980d412a82e",
@@ -299,7 +407,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-20-402667ea36131ff7",
@@ -314,7 +428,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-21-3255f78371607d1a",
@@ -329,7 +449,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-22-5cd850e30033c526",
@@ -345,7 +471,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-23-d028d19162432697",
@@ -360,7 +492,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-24-c158a0de21b1a240",
@@ -376,7 +514,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-25-92505691f2d53882",
@@ -391,7 +535,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-26-47f02c7b3b5a87af",
@@ -407,7 +557,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-27-bb2043d647ce5adc",
@@ -422,7 +578,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-28-7dc400156d48b032",
@@ -437,7 +599,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-29-0b1acf2fc3b1517b",
@@ -453,7 +621,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-30-7185c4b5181d4f27",
@@ -468,7 +642,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-31-71706638c9f6fe67",
@@ -483,7 +663,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-32-7ab554541173f097",
@@ -498,7 +684,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-33-34457a9a31c48a6c",
@@ -513,7 +705,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-34-8b57cf5083906387",
@@ -528,7 +726,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-35-88cbef8afb080b90",
@@ -544,7 +748,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-36-3e50819e51d2c7f4",
@@ -559,7 +769,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-37-dbf8c3f5c1bd3878",
@@ -574,7 +790,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-38-7cce4e323a8be229",
@@ -589,7 +811,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-39-d7d2b08a3cafea01",
@@ -604,7 +832,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-40-834535b95bcc08a2",
@@ -620,7 +854,13 @@
       "quantity": 2,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-41-1879a14f251420bc",
@@ -635,7 +875,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     },
     {
       "id": "row-42-174ba919dd79c9ce",
@@ -650,7 +896,13 @@
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
-      "notes": ""
+      "notes": "",
+      "manufacturer": "",
+      "datasheet_url": "",
+      "unit_price": null,
+      "stock": null,
+      "enriched_from": "",
+      "enriched_at": ""
     }
   ]
 }

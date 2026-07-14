@@ -1009,6 +1009,44 @@ body.col-resize-active * {
     font-size: 0.9rem;
 }
 
+/* Nested enrich/alternates tables live inside a .data-table cell — keep their
+   headers from inheriting the sticky column-header behavior. Higher specificity
+   than ".data-table th" so it always wins. */
+.shop-detail .enrich-table th,
+.shop-detail .alt-table th {
+    position: static !important;
+    top: auto;
+    z-index: auto;
+    box-shadow: none;
+}
+
+.shop-detail .alt-table td,
+.shop-detail .enrich-table td {
+    vertical-align: middle;
+}
+
+.alt-table .alt-actions {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.alt-source {
+    display: inline-block;
+    margin-left: 0.3rem;
+    padding: 0.02rem 0.35rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: capitalize;
+}
+
+.alt-errors {
+    margin: 0.4rem 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
 .data-table tbody tr.category-header[hidden] {
     display: none;
 }

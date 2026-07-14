@@ -652,16 +652,21 @@
             });
             const data = await resp.json().catch(() => ({}));
             if (!resp.ok || !data.ok) throw new Error(data.error || "Alternates lookup failed.");
-            renderAlternates(row, body, storageKey, sourceLineIds, mpn, data.alternates || []);
+            renderAlternates(row, body, storageKey, sourceLineIds, mpn, data.alternates || [], data.errors || {});
         } catch (err) {
             body.innerHTML = `<p class="shop-lookup-error">${escapeHtml(err.message || "Alternates lookup failed.")}</p>`;
         }
     }
 
-    function renderAlternates(row, body, storageKey, sourceLineIds, mpn, alts) {
-        const head = `<div class="shop-detail-head"><strong>Alternates for ${escapeHtml(mpn)}</strong></div>`;
+    function renderAlternates(row, body, storageKey, sourceLineIds, mpn, alts, errors) {
+        const errorKeys = errors ? Object.keys(errors) : [];
+        const errorsHtml = errorKeys.length
+            ? `<p class="alt-errors">${errorKeys.map((k) => `${escapeHtml(k)}: ${escapeHtml(errors[k])}`).join(" · ")}</p>`
+            : "";
+        const head = `<div class="shop-detail-head"><strong>Alternates for ${escapeHtml(mpn)}</strong>` +
+            `<span class="muted">substitutes come from DigiKey; similar parts from DigiKey + Mouser</span></div>`;
         if (!alts.length) {
-            body.innerHTML = head + `<p class="muted">No alternates found.</p>` +
+            body.innerHTML = head + `<p class="muted">No alternates found.</p>` + errorsHtml +
                 `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button></div>`;
             body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
             return;
@@ -675,7 +680,7 @@
             const ds = a.datasheet_url ? `<a href="${escapeHtml(a.datasheet_url)}" target="_blank" rel="noopener">datasheet</a>` : "";
             const link = a.url ? `<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener">${escapeHtml(a.distributor || "link")}</a>` : "";
             return `<tr data-alt-index="${i}">
-                <td><code>${escapeHtml(a.mpn)}</code> ${kind}</td>
+                <td><code>${escapeHtml(a.mpn)}</code> ${kind}<span class="alt-source">${escapeHtml(a.distributor || "")}</span></td>
                 <td>${escapeHtml(a.manufacturer || "")}</td>
                 <td class="alt-desc">${escapeHtml(a.description || "")}</td>
                 <td class="dist-price">${price}</td>
@@ -688,6 +693,7 @@
         }).join("");
         body.innerHTML = head +
             `<table class="alt-table"><thead><tr><th>MPN</th><th>Mfr</th><th>Description</th><th>Price</th><th>Stock</th><th>Links</th><th></th></tr></thead><tbody>${rowsHtml}</tbody></table>` +
+            errorsHtml +
             `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button><span class="muted alt-status" hidden></span></div>`;
         body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
         const status = body.querySelector(".alt-status");
@@ -696,9 +702,10 @@
             status.textContent = msg;
             status.classList.toggle("shop-lookup-error", Boolean(isError));
         }
-        body.querySelectorAll("tbody tr").forEach((tr) => {
+        body.querySelectorAll(".alt-table tbody tr").forEach((tr) => {
             const a = alts[parseInt(tr.dataset.altIndex, 10)];
-            tr.querySelector(".alt-sub").addEventListener("click", async () => {
+            if (!a) return;
+            tr.querySelector(".alt-sub")?.addEventListener("click", async () => {
                 setStatus(`Setting substitute to ${a.mpn}…`, false);
                 try {
                     await patchLine(storageKey, {
@@ -709,7 +716,7 @@
                     setStatus(err.message || "Could not set substitute.", true);
                 }
             });
-            tr.querySelector(".alt-replace").addEventListener("click", async () => {
+            tr.querySelector(".alt-replace")?.addEventListener("click", async () => {
                 if (!window.confirm(`Replace ${mpn} with ${a.mpn} in the BOM? This updates the part in your list.`)) return;
                 setStatus(`Replacing with ${a.mpn}…`, false);
                 const fields = { mpn: a.mpn };
