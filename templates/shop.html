@@ -142,6 +142,7 @@
             {% set cache_entry = distributor_cache.get(line.cache_key, {}) %}
             {% set dk = cache_entry.get('digikey') %}
             {% set mo = cache_entry.get('mouser') %}
+            {% set lc = cache_entry.get('lcsc') %}
             <tr class="shop-row status-{{ line.status }} {% if line.ordered %}row-ordered{% endif %} {% if line.fully_received %}row-received{% endif %}"
                 draggable="true"
                 data-line-id="{{ line.line_id }}"
@@ -149,6 +150,7 @@
                 data-buy-qty="{{ line.buy_qty }}"
                 data-received-qty="{{ line.received_qty }}"
                 data-mpn="{{ line.primary_mpn }}"
+                data-lcsc="{{ line.lcsc_part }}"
                 data-cache-key="{{ line.cache_key }}"
                 data-category-group="{{ group.category_id }}"
                 data-part-key="{{ line|shop_part_key }}"
@@ -203,10 +205,12 @@
                     <div class="dist-actions">
                         <a class="btn btn-secondary btn-sm dist-link" href="{{ dk.url if dk and dk.url else line.digikey_url }}" target="_blank" rel="noopener">DigiKey</a>
                         <a class="btn btn-secondary btn-sm dist-link" href="{{ mo.url if mo and mo.url else line.mouser_url }}" target="_blank" rel="noopener">Mouser</a>
+                        <a class="btn btn-secondary btn-sm dist-link dist-link-lcsc" href="{{ lc.url if lc and lc.url else ('https://www.lcsc.com/search?q=' ~ (line.lcsc_part or line.primary_mpn)) }}" target="_blank" rel="noopener">LCSC</a>
                         {% if any_api_configured %}
                         <button type="button" class="btn btn-secondary btn-sm shop-lookup-row">Lookup</button>
-                        <button type="button" class="btn btn-secondary btn-sm shop-enrich-row" title="Fetch full part details from DigiKey/Mouser">Enrich</button>
+                        <button type="button" class="btn btn-secondary btn-sm shop-enrich-row" title="Fetch full part details from DigiKey/Mouser/LCSC">Enrich</button>
                         <button type="button" class="btn btn-secondary btn-sm shop-alts-row" title="Find alternate parts with prices">Alts</button>
+                        <button type="button" class="btn btn-primary btn-sm shop-auto-row" title="Enrich from LCSC, apply the details (incl. resolved MPN), then find DigiKey/Mouser alternates">Auto</button>
                         {% endif %}
                     </div>
                     <div class="dist-cache" data-dist-cache>
@@ -229,6 +233,16 @@
                             {% if mo.price_1 is not none %}<span class="dist-price">${{ "%.4f"|format(mo.price_1) }}</span>{% endif %}
                             {% elif mo.fetched_at %}<span class="dist-miss">no match</span>{% endif %}
                             {% if mo.fetched_at %}<span class="muted dist-fetched" title="{{ mo.fetched_at }}">· cached</span>{% endif %}
+                        </div>
+                        {% endif %}
+                        {% if lc %}
+                        <div class="dist-cache-line dist-lc">
+                            <span class="dist-cache-label">LC</span>
+                            {% if lc.get('found') %}
+                            {% if lc.stock is not none %}<span>{{ lc.stock }} in stock</span>{% endif %}
+                            {% if lc.price_1 is not none %}<span class="dist-price">${{ "%.4f"|format(lc.price_1) }}</span>{% endif %}
+                            {% elif lc.fetched_at %}<span class="dist-miss">no match</span>{% endif %}
+                            {% if lc.fetched_at %}<span class="muted dist-fetched" title="{{ lc.fetched_at }}">· cached</span>{% endif %}
                         </div>
                         {% endif %}
                     </div>

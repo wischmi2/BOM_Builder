@@ -34,11 +34,15 @@
     function updateDistLinks(row, mpn) {
         if (!mpn) return;
         const encoded = encodeURIComponent(mpn);
+        const lcsc = (row.dataset.lcsc || "").trim();
+        const lcscQuery = encodeURIComponent(lcsc || mpn);
         row.querySelectorAll(".dist-actions a.dist-link").forEach((link, index) => {
             if (index === 0) {
                 link.href = `https://www.digikey.com/en/products/result?keywords=${encoded}`;
             } else if (index === 1) {
                 link.href = `https://www.mouser.com/c/?q=${encoded}`;
+            } else if (index === 2) {
+                link.href = `https://www.lcsc.com/search?q=${lcscQuery}`;
             }
         });
     }
@@ -439,6 +443,7 @@
         const entry = results[cacheKey] || {};
         const dk = entry.digikey;
         const mo = entry.mouser;
+        const lc = entry.lcsc;
         const parts = [];
 
         const distLinks = row.querySelectorAll(".dist-actions a.dist-link");
@@ -469,6 +474,19 @@
             parts.push(moBits.join(" "));
             if (mo.url && distLinks[1]) distLinks[1].href = mo.url;
         }
+        if (lc) {
+            const lcBits = ["<div class=\"dist-cache-line dist-lc\"><span class=\"dist-cache-label\">LC</span>"];
+            if (lc.found) {
+                if (lc.stock != null) lcBits.push(`<span>${lc.stock} in stock</span>`);
+                if (lc.price_1 != null) lcBits.push(`<span class="dist-price">${formatPrice(lc.price_1)}</span>`);
+            } else if (lc.fetched_at) {
+                lcBits.push('<span class="dist-miss">no match</span>');
+            }
+            if (lc.fetched_at) lcBits.push(`<span class="muted dist-fetched" title="${lc.fetched_at}">· cached</span>`);
+            lcBits.push("</div>");
+            parts.push(lcBits.join(" "));
+            if (lc.url && distLinks[2]) distLinks[2].href = lc.url;
+        }
 
         container.innerHTML = parts.join("");
     }
@@ -492,10 +510,16 @@
         if (lookupForceBtn) lookupForceBtn.disabled = true;
 
         try {
+            const lcscMap = {};
+            rows.forEach((r) => {
+                const m = (r.dataset.mpn || "").trim();
+                const l = (r.dataset.lcsc || "").trim();
+                if (m && l) lcscMap[m] = l;
+            });
             const response = await fetch(config.lookupUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({ mpns: unique, force }),
+                body: JSON.stringify({ mpns: unique, force, lcsc_map: lcscMap }),
             });
             const data = await response.json().catch(() => ({}));
             if (!response.ok || !data.ok) {
@@ -566,7 +590,7 @@
             const resp = await fetch(config.enrichUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({ mpn }),
+                body: JSON.stringify({ mpn, lcsc_code: (row.dataset.lcsc || "").trim() }),
             });
             const data = await resp.json().catch(() => ({}));
             if (!resp.ok || !data.ok) throw new Error(data.error || "Enrich failed.");
@@ -585,17 +609,21 @@
             return;
         }
         const fields = [
+            ["mpn", "MPN", proposal.mpn, mpn],
             ["manufacturer", "Manufacturer", proposal.manufacturer],
             ["description", "Description", proposal.description],
             ["datasheet_url", "Datasheet", proposal.datasheet_url],
             ["unit_price", "Unit price", proposal.unit_price != null ? formatPrice(proposal.unit_price) : ""],
             ["stock", "Stock", proposal.stock != null ? String(proposal.stock) : ""],
         ];
-        const rowsHtml = fields.map(([key, label, val]) => {
+        const rowsHtml = fields.map(([key, label, val, current]) => {
             const has = val != null && String(val).trim() !== "";
+            const changed = has && current !== undefined
+                && String(val).trim().toUpperCase() !== String(current || "").trim().toUpperCase();
+            const note = key === "mpn" && changed ? ` <span class="muted">(was ${escapeHtml(current)})</span>` : "";
             return `<tr>
                 <td><label class="filter-check"><input type="checkbox" class="enrich-field" data-field="${key}" ${has ? "checked" : ""} ${has ? "" : "disabled"}> ${label}</label></td>
-                <td class="enrich-val">${has ? escapeHtml(val) : '<span class="muted">—</span>'}</td>
+                <td class="enrich-val">${has ? escapeHtml(val) + note : '<span class="muted">—</span>'}</td>
             </tr>`;
         }).join("");
         body.innerHTML = `
@@ -631,12 +659,92 @@
                 });
                 const data = await resp.json().catch(() => ({}));
                 if (!resp.ok || !data.ok) throw new Error(data.error || "Apply failed.");
-                status.textContent = `Saved to ${data.updated} BOM line(s).`;
+                // If the MPN was corrected (e.g. resolved from LCSC), update the row
+                // so a follow-up Alternates search queries DigiKey/Mouser on it.
+                if (toApply.mpn) {
+                    const mpnInput = row.querySelector(".mpn-input");
+                    if (mpnInput) mpnInput.value = toApply.mpn;
+                    row.dataset.mpn = String(toApply.mpn);
+                    row.dataset.cacheKey = `mpn:${String(toApply.mpn).toUpperCase()}`;
+                    updateDistLinks(row, String(toApply.mpn));
+                }
+                if (toApply.name) {
+                    const nameInput = row.querySelector(".name-input");
+                    if (nameInput) nameInput.value = toApply.name;
+                }
+                status.textContent = `Saved to ${data.updated} BOM line(s).`
+                    + (toApply.mpn ? " MPN updated — Alternates will now search DigiKey/Mouser on it." : "");
             } catch (err) {
                 status.textContent = err.message || "Apply failed.";
                 status.classList.add("shop-lookup-error");
             }
         });
+    }
+
+    async function autoChain(row, storageKey, sourceLineIds) {
+        const startMpn = currentMpn(row);
+        const lcsc = (row.dataset.lcsc || "").trim();
+        if (!startMpn && !lcsc) { alert("This part needs an MPN or an LCSC code first."); return; }
+        const body = detailBodyFor(row);
+        body.innerHTML = `<p class="muted">Enriching ${escapeHtml(startMpn || lcsc)}…</p>`;
+        try {
+            // 1. Enrich (LCSC resolves the C-number to a real MPN; DigiKey/Mouser add data).
+            const enrichResp = await fetch(config.enrichUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ mpn: startMpn, lcsc_code: lcsc }),
+            });
+            const enrichData = await enrichResp.json().catch(() => ({}));
+            if (!enrichResp.ok || !enrichData.ok) throw new Error(enrichData.error || "Enrich failed.");
+            const proposal = enrichData.proposal || {};
+
+            // 2. Auto-apply everything the lookup returned.
+            let appliedMsg = "no distributor match";
+            if (proposal.found) {
+                const fields = {};
+                ["mpn", "manufacturer", "description", "datasheet_url"].forEach((k) => {
+                    if (proposal[k]) fields[k] = proposal[k];
+                });
+                if (proposal.unit_price != null) fields.unit_price = proposal.unit_price;
+                if (proposal.stock != null) fields.stock = proposal.stock;
+                if (Object.keys(fields).length) {
+                    const applyResp = await fetch(config.enrichApplyUrl, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", Accept: "application/json" },
+                        body: JSON.stringify({
+                            storage_key: storageKey,
+                            source_line_ids: sourceLineIds,
+                            source: proposal.source,
+                            fields,
+                        }),
+                    });
+                    const applyData = await applyResp.json().catch(() => ({}));
+                    if (!applyResp.ok || !applyData.ok) throw new Error(applyData.error || "Apply failed.");
+                    if (fields.mpn) {
+                        const mpnInput = row.querySelector(".mpn-input");
+                        if (mpnInput) mpnInput.value = fields.mpn;
+                        row.dataset.mpn = String(fields.mpn);
+                        row.dataset.cacheKey = `mpn:${String(fields.mpn).toUpperCase()}`;
+                        updateDistLinks(row, String(fields.mpn));
+                    }
+                }
+                appliedMsg = `enriched from ${escapeHtml(proposal.source || "—")}`;
+            }
+
+            // 3. Find alternates on the (possibly corrected) MPN.
+            const effMpn = currentMpn(row);
+            body.innerHTML = `<p class="muted">${appliedMsg} · finding alternates for ${escapeHtml(effMpn)}…</p>`;
+            const altResp = await fetch(config.alternatesUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({ mpn: effMpn, lcsc_code: lcsc }),
+            });
+            const altData = await altResp.json().catch(() => ({}));
+            if (!altResp.ok || !altData.ok) throw new Error(altData.error || "Alternates lookup failed.");
+            renderAlternates(row, body, storageKey, sourceLineIds, effMpn, altData.alternates || [], altData.errors || {});
+        } catch (err) {
+            body.innerHTML = `<p class="shop-lookup-error">${escapeHtml(err.message || "Auto flow failed.")}</p>`;
+        }
     }
 
     async function showAlternates(row, storageKey, sourceLineIds) {
@@ -648,7 +756,7 @@
             const resp = await fetch(config.alternatesUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({ mpn }),
+                body: JSON.stringify({ mpn, lcsc_code: (row.dataset.lcsc || "").trim() }),
             });
             const data = await resp.json().catch(() => ({}));
             if (!resp.ok || !data.ok) throw new Error(data.error || "Alternates lookup failed.");
@@ -725,6 +833,7 @@
                 if (a.datasheet_url) fields.datasheet_url = a.datasheet_url;
                 if (a.price_1 != null) fields.unit_price = a.price_1;
                 if (a.stock != null) fields.stock = a.stock;
+                if (a.lcsc_part) fields.lcsc_part = a.lcsc_part;
                 try {
                     const resp = await fetch(config.enrichApplyUrl, {
                         method: "POST",
@@ -883,8 +992,10 @@
 
         const enrichBtn = row.querySelector(".shop-enrich-row");
         const altsBtn = row.querySelector(".shop-alts-row");
+        const autoBtn = row.querySelector(".shop-auto-row");
         enrichBtn?.addEventListener("click", () => enrichRow(row, storageKey, sourceLineIds));
         altsBtn?.addEventListener("click", () => showAlternates(row, storageKey, sourceLineIds));
+        autoBtn?.addEventListener("click", () => autoChain(row, storageKey, sourceLineIds));
 
         alternateCheck?.addEventListener("change", () => {
             setAlternateVisible(row, alternateCheck.checked);

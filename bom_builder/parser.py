@@ -283,6 +283,7 @@ def parse_kicad_bom_csv(
                 lib_ref=lib_ref,
                 quantity=quantity,
                 is_dni=is_dni or _is_dni(value, footprint, lib_ref),
+                lcsc_part=lcsc,
             )
         )
 

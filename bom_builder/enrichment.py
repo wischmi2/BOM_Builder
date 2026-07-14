@@ -9,12 +9,17 @@ from __future__ import annotations
 
 from typing import Any
 
-from bom_builder import digikey_api, mouser_api
+from bom_builder import digikey_api, lcsc_api, mouser_api
 from bom_builder.distributor_cache import utc_now_iso
-from bom_builder.distributor_lookup import DIGIKEY_MIN_INTERVAL_SEC, MOUSER_MIN_INTERVAL_SEC, lookup_mpn
+from bom_builder.distributor_lookup import (
+    DIGIKEY_MIN_INTERVAL_SEC,
+    LCSC_MIN_INTERVAL_SEC,
+    MOUSER_MIN_INTERVAL_SEC,
+    lookup_mpn,
+)
 
-# Prefer DigiKey first, then Mouser, when both have a value for a field.
-_SOURCE_PRIORITY = ("digikey", "mouser")
+# Prefer DigiKey, then Mouser, then LCSC when more than one has a value for a field.
+_SOURCE_PRIORITY = ("digikey", "mouser", "lcsc")
 
 
 def _first_nonempty(results: dict[str, dict[str, Any]], field: str) -> tuple[str, str]:
@@ -49,6 +54,9 @@ def _best_price(results: dict[str, dict[str, Any]]) -> tuple[float | None, str]:
 
 def build_enrichment_proposal(results: dict[str, dict[str, Any]]) -> dict[str, Any]:
     """Combine per-distributor lookup payloads into one proposed enrichment record."""
+    # Resolved manufacturer part number (e.g. LCSC turns a Cxxxx code into the real
+    # MPN, which is what makes DigiKey/Mouser alternate searches work afterward).
+    mpn, _ = _first_nonempty(results, "mpn")
     manufacturer, mfr_src = _first_nonempty(results, "manufacturer")
     description, _ = _first_nonempty(results, "description")
     datasheet_url, _ = _first_nonempty(results, "datasheet_url")
@@ -73,6 +81,7 @@ def build_enrichment_proposal(results: dict[str, dict[str, Any]]) -> dict[str, A
 
     return {
         "found": found,
+        "mpn": mpn,
         "manufacturer": manufacturer,
         "description": description,
         "datasheet_url": datasheet_url,
@@ -130,19 +139,20 @@ def build_alternates(
 # Network wrappers (call the distributor APIs).
 # --------------------------------------------------------------------------- #
 
-def fetch_enrichment(mpn: str, *, force: bool = False) -> dict[str, Any]:
+def fetch_enrichment(mpn: str, *, force: bool = False, lcsc_code: str = "") -> dict[str, Any]:
     """Look up an MPN across configured distributors and build a proposal.
 
     Reuses the distributor cache (via lookup_mpn) so repeated enrich calls are cheap.
+    LCSC is queried by its Cxxxx code when available.
     """
-    results, errors = lookup_mpn(mpn, force=force)
+    results, errors = lookup_mpn(mpn, force=force, lcsc_code=lcsc_code)
     proposal = build_enrichment_proposal(results)
     proposal["errors"] = errors
     return proposal
 
 
-def fetch_alternates(mpn: str, *, limit: int = 10) -> dict[str, Any]:
-    """Fetch DigiKey substitutes + DigiKey/Mouser similar results for an MPN."""
+def fetch_alternates(mpn: str, *, limit: int = 10, lcsc_code: str = "") -> dict[str, Any]:
+    """Fetch DigiKey substitutes + DigiKey/Mouser/LCSC similar results for an MPN."""
     import time
 
     keyword = (mpn or "").strip()
@@ -165,6 +175,13 @@ def fetch_alternates(mpn: str, *, limit: int = 10) -> dict[str, Any]:
         except Exception as exc:  # noqa: BLE001
             errors["mouser"] = str(exc)
 
+    if lcsc_api.is_configured():
+        try:
+            time.sleep(LCSC_MIN_INTERVAL_SEC)
+            similar.extend(lcsc_api.search_candidates(keyword, limit=limit))
+        except Exception as exc:  # noqa: BLE001
+            errors["lcsc"] = str(exc)
+
     alternates = build_alternates(substitutes, similar, original_mpn=keyword, limit=limit)
 
     # DigiKey's substitutions endpoint often omits stock/pricing, so those rows
@@ -177,7 +194,7 @@ def fetch_alternates(mpn: str, *, limit: int = 10) -> dict[str, Any]:
         if not alt_mpn:
             continue
         try:
-            results, _ = lookup_mpn(alt_mpn)
+            results, _ = lookup_mpn(alt_mpn, lcsc_code=str(alt.get("lcsc_part") or ""))
         except Exception:  # noqa: BLE001 — backfill is best-effort
             continue
         proposal = build_enrichment_proposal(results)

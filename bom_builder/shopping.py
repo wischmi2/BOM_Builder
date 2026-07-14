@@ -68,6 +68,7 @@ class ShopLine:
     bom_id: str = ""
     bom_ids_display: str = ""
     designators: str = ""
+    lcsc_part: str = ""
     notes: str = ""
     ordered: bool = False
     received_qty: int = 0
@@ -340,6 +341,7 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
         buy_qty=default_buy,
         bom_id=line.bom_id,
         designators=line.designator_display,
+        lcsc_part=line.lcsc_part,
         digikey_url=digikey_search_url(mpn),
         mouser_url=mouser_search_url(mpn),
         search_text=" ".join(search_parts).lower(),
@@ -366,6 +368,7 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         default_buy_qty=default_buy,
         buy_qty=default_buy,
         bom_ids_display=row.bom_ids_display,
+        lcsc_part=(row.source_lines[0].lcsc_part if row.source_lines else ""),
         digikey_url=digikey_search_url(mpn),
         mouser_url=mouser_search_url(mpn),
         search_text=" ".join(search_parts).lower(),
@@ -458,6 +461,7 @@ def sync_need_lines_details(
     description: str | None = None,
     unit_price: float | None = None,
     stock: int | None = None,
+    lcsc_part: str | None = None,
     enriched_from: str = "",
 ) -> int:
     """Write enrichment fields (and optionally MPN/name) back to BOM need lines.
@@ -503,6 +507,9 @@ def sync_need_lines_details(
             touched = True
         if stock is not None:
             need_line.stock = stock
+            touched = True
+        if lcsc_part is not None:
+            need_line.lcsc_part = lcsc_part
             touched = True
         if touched:
             need_line.enriched_from = enriched_from or need_line.enriched_from

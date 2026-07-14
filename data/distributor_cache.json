@@ -183,6 +183,146 @@
         "price_1": null,
         "price_breaks": [],
         "fetched_at": "2026-07-14T01:17:28.593920+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "1206W4F1003T5E",
+        "lcsc_part": "C17900",
+        "manufacturer": "UNI-ROYAL",
+        "description": "100K\u03a9 (1003) \u00b11%",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount-UniOhm_100KR-1003-1_C17900.html",
+        "stock": 480950,
+        "price_1": 0.0029,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T01:59:44.140387+00:00"
+      }
+    },
+    "mpn:1RC0402J0335": {
+      "digikey": {
+        "found": false,
+        "mpn": "1RC0402J0335",
+        "url": "https://www.digikey.com/en/products/result?keywords=1RC0402J0335",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T02:01:40.101693+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "1RC0402J0335",
+        "url": "https://www.mouser.com/c/?q=1RC0402J0335",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T02:01:42.454301+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "1RC0402J0335",
+        "lcsc_part": "C54531078",
+        "manufacturer": "SAE",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C54531078",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T02:01:43.638011+00:00"
+      }
+    },
+    "mpn:2450AT18A100E": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "2450AT18A0100001E",
+        "digikey_part": "",
+        "manufacturer": "Johanson Technology Inc.",
+        "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
+        "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
+        "url": "https://www.digikey.com/en/products/detail/johanson-technology-inc/2450AT18A0100001E/1560676",
+        "stock": 257993,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T02:02:45.925073+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "2450AT18A100E",
+        "url": "https://www.mouser.com/c/?q=2450AT18A100E",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T02:02:48.236548+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "2450AT18A100E",
+        "lcsc_part": "C89334",
+        "manufacturer": "JOHANSON",
+        "description": "Mini 2.45 GHz Antenna, Johanson Technology",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html",
+        "stock": 0,
+        "price_1": 0.4391,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T02:02:49.504627+00:00"
+      }
+    },
+    "mpn:CC0603MRX5R8BB106": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CC0603MRX5R8BB106",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "CAP CER 10UF 25V X5R 0603",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V",
+        "url": "https://www.digikey.com/en/products/detail/yageo/CC0603MRX5R8BB106/7164378",
+        "stock": 13171,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T02:09:31.689467+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "CC0603MRX5R8BB106",
+        "url": "https://www.mouser.com/c/?q=CC0603MRX5R8BB106",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T02:09:34.149022+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CC0603MRX5R8BB106",
+        "lcsc_part": "C596327",
+        "manufacturer": "YAGEO",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC0603MRX5R8BB106_C596327.html",
+        "stock": 0,
+        "price_1": 0.0466,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T02:09:35.453394+00:00"
       }
     }
   }

@@ -617,7 +617,13 @@ def shop_lookup():
             }
         ), 400
 
-    result = lookup_batch(mpns, distributors=distributors, force=force)
+    lcsc_map_raw = payload.get("lcsc_map")
+    lcsc_map = (
+        {str(k): str(v) for k, v in lcsc_map_raw.items()}
+        if isinstance(lcsc_map_raw, dict)
+        else {}
+    )
+    result = lookup_batch(mpns, distributors=distributors, force=force, lcsc_map=lcsc_map)
     return jsonify(result)
 
 
@@ -633,7 +639,8 @@ def shop_enrich():
             {"ok": False, "error": "No distributor APIs configured.", "api_status": api_status()}
         ), 400
     force = payload.get("force") in (True, "true", "1", 1)
-    proposal = fetch_enrichment(mpn, force=force)
+    lcsc_code = str(payload.get("lcsc_code") or "").strip()
+    proposal = fetch_enrichment(mpn, force=force, lcsc_code=lcsc_code)
     return jsonify({"ok": True, "mpn": mpn, "proposal": proposal})
 
 
@@ -650,7 +657,7 @@ def shop_enrich_apply():
         return jsonify({"ok": False, "error": "No fields to apply."}), 400
 
     kwargs: dict = {}
-    for key in ("mpn", "name", "manufacturer", "datasheet_url", "description"):
+    for key in ("mpn", "name", "manufacturer", "datasheet_url", "description", "lcsc_part"):
         if key in fields and fields[key] is not None:
             kwargs[key] = str(fields[key])
     if "unit_price" in fields and fields["unit_price"] is not None:
@@ -697,7 +704,8 @@ def shop_alternates():
         limit = max(1, min(25, int(payload.get("limit", 10))))
     except (TypeError, ValueError):
         limit = 10
-    return jsonify(fetch_alternates(mpn, limit=limit))
+    lcsc_code = str(payload.get("lcsc_code") or "").strip()
+    return jsonify(fetch_alternates(mpn, limit=limit, lcsc_code=lcsc_code))
 
 
 @app.route("/shop/line/<path:storage_key>", methods=["POST"])

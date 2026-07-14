@@ -17,7 +17,9 @@ class NeedLine:
     is_dni: bool = False
     acquired: bool = False
     notes: str = ""
-    # Enrichment fields, populated from DigiKey/Mouser lookups (see Shop → Enrich).
+    # LCSC part number (Cxxxx), captured from KiCad imports; LCSC's exact key.
+    lcsc_part: str = ""
+    # Enrichment fields, populated from DigiKey/Mouser/LCSC lookups (see Shop → Enrich).
     manufacturer: str = ""
     datasheet_url: str = ""
     unit_price: float | None = None

@@ -661,8 +661,10 @@
         "enabled": false,
         "buy_qty": 0
       },
-      "updated_at": "2026-07-14T00:52:50.237242+00:00",
-      "ordered": false
+      "updated_at": "2026-07-14T02:10:22.684700+00:00",
+      "ordered": false,
+      "mpn": "GRM188R72A104KA35D",
+      "name": "CAP CER 0.1UF 100V X7R 0603"
     }
   }
 }
