@@ -263,6 +263,16 @@
     }
 
     function defaultVisibilityMap(headers) {
+        // Columns marked data-col-default-hidden start hidden until the user
+        // enables them via the Columns picker (choice persists in localStorage).
+        const map = {};
+        headers.forEach((th, index) => {
+            map[colId(th, index)] = th.dataset.colDefaultHidden !== "true";
+        });
+        return map;
+    }
+
+    function allVisibleMap(headers) {
         const map = {};
         headers.forEach((th, index) => {
             map[colId(th, index)] = true;
@@ -466,7 +476,7 @@
         showAllBtn.className = "btn btn-secondary btn-sm";
         showAllBtn.textContent = "Show all";
         showAllBtn.addEventListener("click", () => {
-            const map = defaultVisibilityMap(headers);
+            const map = allVisibleMap(headers);
             saveVisibility(tableId, map);
             applyVisibility(table, map);
             refreshTableLayout(tableId);

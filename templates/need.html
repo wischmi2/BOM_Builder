@@ -131,26 +131,26 @@
                                    {% if line.acquired %}checked{% endif %}
                                    aria-label="Acquired {{ line.name }}">
                         </td>
-                        <td class="col-name" title="{{ line.name }}">
-                            <span class="cell-primary">{{ line.name }}</span>
+                        <td class="col-name" title="{{ line.original_name or line.name }}">
+                            <span class="cell-primary">{{ line.original_name or line.name }}</span>
                             {% if line.is_dni %}<span class="badge badge-dni">DNI</span>{% endif %}
-                            {% if line.description %}
+                            {% set orig_desc = line.original_description or line.description %}
+                            {% if orig_desc %}
                             <details class="desc-details">
                                 <summary>Description</summary>
-                                <p class="desc-text">{{ line.description }}</p>
+                                <p class="desc-text">{{ orig_desc }}</p>
                             </details>
-                            {% endif %}
-                            {% if line.manufacturer or line.datasheet_url or line.unit_price is not none %}
-                            <span class="need-enriched">
-                                {% if line.manufacturer %}{{ line.manufacturer }}{% endif %}
-                                {% if line.unit_price is not none %}<span class="need-price">${{ "%.4f"|format(line.unit_price) }}</span>{% if line.stock is not none %} · {{ line.stock }} in stock{% endif %}{% endif %}
-                                {% if line.datasheet_url %}· <a href="{{ line.datasheet_url }}" target="_blank" rel="noopener">datasheet</a>{% endif %}
-                            </span>
                             {% endif %}
                         </td>
                         <td class="col-libref need-mpn-cell">
+                            {% set orig_mpn = line.original_mpn or line.lib_ref %}
+                            {% if orig_mpn and orig_mpn != line.lib_ref %}
+                            <div class="need-mpn-original muted" title="Original MPN as imported">
+                                Original: <code>{{ orig_mpn }}</code> →
+                            </div>
+                            {% endif %}
                             <input type="text" class="libref-input cell-input" value="{{ line.lib_ref }}"
-                                   aria-label="MPN for {{ line.name }}" autocomplete="off">
+                                   aria-label="MPN for {{ line.original_name or line.name }}" autocomplete="off">
                             {% set suggested_mpn = line|need_suggested_mpn %}
                             {% if suggested_mpn and suggested_mpn != line.lib_ref %}
                             <div class="mpn-xref">

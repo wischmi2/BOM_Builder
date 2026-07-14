@@ -151,36 +151,81 @@ def fetch_enrichment(mpn: str, *, force: bool = False, lcsc_code: str = "") -> d
     return proposal
 
 
-def fetch_alternates(mpn: str, *, limit: int = 10, lcsc_code: str = "") -> dict[str, Any]:
-    """Fetch DigiKey substitutes + DigiKey/Mouser/LCSC similar results for an MPN."""
+def _matches_package(candidate: dict[str, Any], package: str) -> bool:
+    """Keep only candidates whose package matches the target (e.g. '0402').
+
+    Distributor keyword search is full-text, so a query like '560 0402' can pull
+    in wildly different form factors (e.g. 10W through-hole power resistors). The
+    package is an unambiguous discriminator that removes those.
+    """
+    if not package:
+        return True
+    pkg = package.lower()
+    haystack = " ".join(
+        str(candidate.get(k, "")) for k in ("description", "package", "mpn")
+    ).lower()
+    return pkg in haystack
+
+
+def fetch_alternates(
+    mpn: str, *, limit: int = 10, lcsc_code: str = "", query: str = "", package: str = ""
+) -> dict[str, Any]:
+    """Fetch DigiKey substitutes + DigiKey/Mouser/LCSC similar results for an MPN.
+
+    An exact-MPN search mostly returns the part itself, so `query` (typically the
+    part's value + package, e.g. "4.7uH 0603") is used to surface genuinely
+    interchangeable parts. Results are then filtered to the target `package` so
+    mismatched form factors (through-hole power parts, wrong sizes) are dropped.
+    """
     import time
 
     keyword = (mpn or "").strip()
+    broad = (query or "").strip()
     substitutes: list[dict[str, Any]] = []
     similar: list[dict[str, Any]] = []
     errors: dict[str, str] = {}
+
+    def _search(fn, term):
+        try:
+            similar.extend(fn(term, limit=limit))
+        except Exception as exc:  # noqa: BLE001 — surface to UI
+            raise exc
 
     if digikey_api.is_configured():
         try:
             substitutes.extend(digikey_api.get_substitutions(keyword, limit=limit))
             time.sleep(DIGIKEY_MIN_INTERVAL_SEC)
-            similar.extend(digikey_api.search_candidates(keyword, limit=limit))
-        except Exception as exc:  # noqa: BLE001 — surface to UI
+            _search(digikey_api.search_candidates, keyword)
+            if broad and broad.lower() != keyword.lower():
+                time.sleep(DIGIKEY_MIN_INTERVAL_SEC)
+                _search(digikey_api.search_candidates, broad)
+        except Exception as exc:  # noqa: BLE001
             errors["digikey"] = str(exc)
 
     if mouser_api.is_configured():
         try:
             time.sleep(MOUSER_MIN_INTERVAL_SEC)
-            similar.extend(mouser_api.search_candidates(keyword, limit=limit))
+            _search(mouser_api.search_candidates, keyword)
+            if broad and broad.lower() != keyword.lower():
+                time.sleep(MOUSER_MIN_INTERVAL_SEC)
+                _search(mouser_api.search_candidates, broad)
         except Exception as exc:  # noqa: BLE001
             errors["mouser"] = str(exc)
 
     if lcsc_api.is_configured():
         try:
             time.sleep(LCSC_MIN_INTERVAL_SEC)
-            similar.extend(lcsc_api.search_candidates(keyword, limit=limit))
+            _search(lcsc_api.search_candidates, keyword)
+            if broad and broad.lower() != keyword.lower():
+                time.sleep(LCSC_MIN_INTERVAL_SEC)
+                _search(lcsc_api.search_candidates, broad)
         except Exception as exc:  # noqa: BLE001
             errors["lcsc"] = str(exc)
+
+    # Drop candidates whose form factor doesn't match the target package. Curated
+    # DigiKey substitutes are trusted drop-ins, so they bypass the filter.
+    if package:
+        similar = [c for c in similar if _matches_package(c, package)]
 
     alternates = build_alternates(substitutes, similar, original_mpn=keyword, limit=limit)
 

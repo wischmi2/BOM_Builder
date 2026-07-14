@@ -674,6 +674,7 @@ def shop_enrich_apply():
     updated = sync_need_lines_details(
         [str(sid) for sid in source_line_ids],
         enriched_from=str(payload.get("source") or fields.get("source") or ""),
+        reset_enrichment=payload.get("reset_enrichment") in (True, "true", "1", 1),
         **kwargs,
     )
 
@@ -687,6 +688,33 @@ def shop_enrich_apply():
             storage.save_shopping_list(saved)
 
     return jsonify({"ok": True, "updated": updated})
+
+
+def _alternates_hints_from_lines(source_line_ids: list[str]) -> tuple[str, str]:
+    """Return (query, package) for the first resolvable BOM line.
+
+    query — a tight 'value package' search string (e.g. '560 0402'); generic
+    words like 'resistor' pull in irrelevant full-text matches, so we keep it terse.
+    package — the form factor (e.g. '0402'), used to filter out mismatched results
+    (through-hole power parts, wrong sizes) after the search."""
+    import re
+
+    for sid in source_line_ids:
+        if not sid or ":" not in sid:
+            continue
+        bom_id, line_id = sid.split(":", 1)
+        bom = storage.load_bom(bom_id)
+        if bom is None:
+            continue
+        need_line = find_line(bom, line_id)
+        if need_line is None:
+            continue
+        value = (need_line.original_name or need_line.name or "").strip()
+        footprint_tail = (need_line.footprint or "").split(":")[-1]
+        match = re.search(r"\d{4}", footprint_tail)
+        package = match.group(0) if match else ""
+        return f"{value} {package}".strip(), package
+    return "", ""
 
 
 @app.route("/shop/alternates", methods=["POST"])
@@ -705,7 +733,16 @@ def shop_alternates():
     except (TypeError, ValueError):
         limit = 10
     lcsc_code = str(payload.get("lcsc_code") or "").strip()
-    return jsonify(fetch_alternates(mpn, limit=limit, lcsc_code=lcsc_code))
+    query = str(payload.get("query") or "").strip()
+    package = ""
+    sids = payload.get("source_line_ids")
+    if isinstance(sids, list):
+        derived_query, package = _alternates_hints_from_lines([str(s) for s in sids])
+        if not query:
+            query = derived_query
+    return jsonify(
+        fetch_alternates(mpn, limit=limit, lcsc_code=lcsc_code, query=query, package=package)
+    )
 
 
 @app.route("/shop/line/<path:storage_key>", methods=["POST"])

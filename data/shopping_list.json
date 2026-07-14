@@ -661,10 +661,133 @@
         "enabled": false,
         "buy_qty": 0
       },
-      "updated_at": "2026-07-14T02:10:22.684700+00:00",
+      "updated_at": "2026-07-14T16:26:34.587643+00:00",
       "ordered": false,
       "mpn": "GRM188R72A104KA35D",
       "name": "CAP CER 0.1UF 100V X7R 0603"
+    },
+    "lib:LQM18PH4R7MFRL": {
+      "mpn": "LQM18PH4R7MFRL",
+      "updated_at": "2026-07-14T16:27:56.952877+00:00"
+    },
+    "lib:LQP03HQ3N5B02D": {
+      "mpn": "LQP03HQ3N5B02D",
+      "updated_at": "2026-07-14T16:28:02.057536+00:00"
+    },
+    "lib:CC0603MRX5R8BB106": {
+      "mpn": "CC0603MRX5R8BB106",
+      "updated_at": "2026-07-14T16:16:09.853261+00:00",
+      "alternate": {
+        "enabled": true,
+        "mpn": "GRT188R61E106ME13D",
+        "name": "CAP CER 10UF 25V X5R 0603",
+        "buy_qty": 0
+      }
+    },
+    "lib:FRC0402F5600TS": {
+      "mpn": "FRC0402F5600TS",
+      "updated_at": "2026-07-14T16:07:05.287605+00:00"
+    },
+    "lib:NRF54L15QFXX": {
+      "mpn": "nRF54L15-QFXX",
+      "updated_at": "2026-07-14T16:09:46.671131+00:00"
+    },
+    "lib:RC0402FR074K7L": {
+      "mpn": "RC0402FR-074K7L",
+      "updated_at": "2026-07-14T16:09:55.810453+00:00"
+    },
+    "lib:RC0402JR071ML": {
+      "mpn": "RC0402JR-071ML",
+      "updated_at": "2026-07-14T16:10:11.178828+00:00"
+    },
+    "lib:S2BPHKSGW": {
+      "mpn": "S2B-PH-K-S-GW(PP)",
+      "updated_at": "2026-07-14T16:11:19.982532+00:00"
+    },
+    "lib:CL05A105KO5NNNC": {
+      "mpn": "CL05A105KO5NNNC",
+      "updated_at": "2026-07-14T16:17:36.673946+00:00"
+    },
+    "lib:CL10A225KB8NNNC": {
+      "mpn": "CL10A225KB8NNNC",
+      "updated_at": "2026-07-14T16:19:53.458629+00:00",
+      "alternate": {
+        "enabled": true,
+        "mpn": "GRM188R61H225KE11D",
+        "name": "CAP CER 2.2UF 50V X5R 0603",
+        "buy_qty": 0
+      }
+    },
+    "lib:CL21A106KAYNNNE": {
+      "mpn": "CL21A106KAYNNNE",
+      "updated_at": "2026-07-14T16:23:30.010857+00:00",
+      "alternate": {
+        "enabled": true,
+        "mpn": "CL21A106KACLRNC",
+        "name": "CAP CER 10UF 25V X5R 0805",
+        "buy_qty": 0
+      }
+    },
+    "lib:CL31A476MPHNNNE": {
+      "mpn": "CL31A476MPHNNNE",
+      "updated_at": "2026-07-14T16:23:58.776864+00:00"
+    },
+    "lib:GCM155R71H103KA55D": {
+      "mpn": "GCM155R71H103KA55D",
+      "updated_at": "2026-07-14T16:24:21.089981+00:00"
+    },
+    "lib:GJM0335C1E1R0WB01D": {
+      "mpn": "GJM0335C1E1R0WB01D",
+      "updated_at": "2026-07-14T16:24:30.140950+00:00"
+    },
+    "lib:GJM0335C1E1R5WB01D": {
+      "mpn": "GJM0335C1E1R5WB01D",
+      "updated_at": "2026-07-14T16:24:40.027283+00:00"
+    },
+    "lib:GJM0335C1E2R0WB01D": {
+      "mpn": "GJM0335C1E2R0WB01D",
+      "updated_at": "2026-07-14T16:25:49.284740+00:00"
+    },
+    "lib:GJM0335C1E2R2WB01D": {
+      "mpn": "GJM0335C1E2R2WB01D",
+      "updated_at": "2026-07-14T16:26:20.751571+00:00"
+    },
+    "lib:GJM0335C1ER30WB01D": {
+      "mpn": "GJM0335C1ER30WB01D",
+      "updated_at": "2026-07-14T16:26:25.888121+00:00"
+    },
+    "lib:GRM033R61A225KE47D": {
+      "mpn": "GRM033R61A225KE47D",
+      "updated_at": "2026-07-14T16:26:30.080294+00:00"
+    },
+    "lib:LQP03HQ3N9B02D": {
+      "mpn": "LQP03TQ3N9B02D",
+      "updated_at": "2026-07-14T16:28:06.719914+00:00"
+    },
+    "lib:LSCNB1608HKT2R2MD": {
+      "alternate": {
+        "enabled": true,
+        "mpn": "LLCNB1608HKT2R2MD",
+        "name": "FIXED IND 2.2UH 1.2A 292 MOHM",
+        "buy_qty": 0
+      },
+      "updated_at": "2026-07-14T16:28:52.647201+00:00"
+    },
+    "lib:XL7EL89CKI111YLC32M": {
+      "mpn": "XL7EL89CKI-111YLC-32M",
+      "updated_at": "2026-07-14T16:31:46.701331+00:00"
+    },
+    "lib:TYPEC31M12": {
+      "mpn": "TYPE-C-31-M-12",
+      "updated_at": "2026-07-14T16:31:58.703239+00:00"
+    },
+    "lib:SPV1040T": {
+      "mpn": "SPV1040T",
+      "updated_at": "2026-07-14T16:33:09.149726+00:00"
+    },
+    "lib:SS14": {
+      "mpn": "DSS14U",
+      "updated_at": "2026-07-14T16:33:25.247167+00:00"
     }
   }
 }

@@ -536,7 +536,14 @@
             if (data.limited_to && unique.length >= data.limited_to) {
                 msg += ` (max ${data.limited_to} per batch)`;
             }
-            if (errCount) msg += ` ${errCount} had errors.`;
+            if (errCount) {
+                // Surface the actual distributor error messages, not just a count.
+                const errMsgs = new Set();
+                Object.values(data.errors).forEach((perDist) => {
+                    Object.entries(perDist).forEach(([dist, m]) => errMsgs.add(`${dist}: ${m}`));
+                });
+                msg += ` ${errCount} had errors — ${Array.from(errMsgs).join(" · ")}`;
+            }
             setLookupStatus(msg, errCount > 0);
         } catch (err) {
             setLookupStatus(err.message || "Lookup failed.", true);
@@ -737,7 +744,7 @@
             const altResp = await fetch(config.alternatesUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({ mpn: effMpn, lcsc_code: lcsc }),
+                body: JSON.stringify({ mpn: effMpn, lcsc_code: lcsc, source_line_ids: sourceLineIds }),
             });
             const altData = await altResp.json().catch(() => ({}));
             if (!altResp.ok || !altData.ok) throw new Error(altData.error || "Alternates lookup failed.");
@@ -756,7 +763,7 @@
             const resp = await fetch(config.alternatesUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({ mpn, lcsc_code: (row.dataset.lcsc || "").trim() }),
+                body: JSON.stringify({ mpn, lcsc_code: (row.dataset.lcsc || "").trim(), source_line_ids: sourceLineIds }),
             });
             const data = await resp.json().catch(() => ({}));
             if (!resp.ok || !data.ok) throw new Error(data.error || "Alternates lookup failed.");
@@ -843,6 +850,7 @@
                             source_line_ids: sourceLineIds,
                             source: a.distributor,
                             fields,
+                            reset_enrichment: true,
                         }),
                     });
                     const data = await resp.json().catch(() => ({}));

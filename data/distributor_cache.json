@@ -169,7 +169,7 @@
         "datasheet_url": "",
         "stock": null,
         "price_1": null,
-        "fetched_at": "2026-07-14T01:17:27.580207+00:00"
+        "fetched_at": "2026-07-14T14:27:37.141126+00:00"
       },
       "mouser": {
         "found": false,
@@ -209,7 +209,7 @@
         "datasheet_url": "",
         "stock": null,
         "price_1": null,
-        "fetched_at": "2026-07-14T02:01:40.101693+00:00"
+        "fetched_at": "2026-07-14T14:27:40.123060+00:00"
       },
       "mouser": {
         "found": false,
@@ -249,10 +249,10 @@
         "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
         "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
         "url": "https://www.digikey.com/en/products/detail/johanson-technology-inc/2450AT18A0100001E/1560676",
-        "stock": 257993,
+        "stock": 257973,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T02:02:45.925073+00:00"
+        "fetched_at": "2026-07-14T14:27:43.680798+00:00"
       },
       "mouser": {
         "found": false,
@@ -292,10 +292,10 @@
         "description": "CAP CER 10UF 25V X5R 0603",
         "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V",
         "url": "https://www.digikey.com/en/products/detail/yageo/CC0603MRX5R8BB106/7164378",
-        "stock": 13171,
+        "stock": 12171,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T02:09:31.689467+00:00"
+        "fetched_at": "2026-07-14T14:26:40.024367+00:00"
       },
       "mouser": {
         "found": false,
@@ -322,7 +322,936 @@
         "stock": 0,
         "price_1": 0.0466,
         "kind": "exact",
-        "fetched_at": "2026-07-14T02:09:35.453394+00:00"
+        "fetched_at": "2026-07-14T14:26:42.203362+00:00"
+      }
+    },
+    "mpn:CL05A105KO5NNNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL05A105KO5NNNC",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 1UF 16V X5R 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05A105KO5NNNC_Spec_5-2-19.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05A105KO5NNNC/3886725",
+        "stock": 6473697,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:43.842854+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "CL05A105KO5NNNC",
+        "url": "https://www.mouser.com/c/?q=CL05A105KO5NNNC",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T11:46:45.779391+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL05A105KO5NNNC",
+        "lcsc_part": "C29266",
+        "manufacturer": "SAMSUNG",
+        "description": "1uF (105) \u00b110% 16V",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05A105KO5NNNC_1uF-105-10-16V_C29266.html",
+        "stock": 1231600,
+        "price_1": 0.0352,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:45.546167+00:00"
+      }
+    },
+    "mpn:LQM18PH4R7MFRL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQM18PH4R7MFRL",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 4.7UH 620MA 550 MOHM",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-9126.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQM18PH4R7MFRL/11618519",
+        "stock": 3910,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:44:36.988563+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "LQM18PH4R7MFRL",
+        "url": "https://www.mouser.com/c/?q=LQM18PH4R7MFRL",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T14:08:52.672240+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LQM18PH4R7MFRL",
+        "lcsc_part": "C1858257",
+        "manufacturer": "muRata",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Inductors--SMD-_muRata-LQM18PH4R7MFRL_C1858257.html",
+        "stock": 125,
+        "price_1": 0.1701,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:44:39.005874+00:00"
+      }
+    },
+    "mpn:LQP03HQ3N5B02D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQP03HQ3N5B02D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 3.5NH 500MA 170 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0021_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03HQ3N5B02D/6098725",
+        "stock": 289166,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:24.775916+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "LQP03HQ3N5B02D",
+        "url": "https://www.mouser.com/c/?q=LQP03HQ3N5B02D",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T14:21:36.843264+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LQP03HQ3N5B02D",
+        "lcsc_part": "C3911055",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C3911055",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:26.522839+00:00"
+      }
+    },
+    "mpn:LQP03HQ3N9B02D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQP03TQ3N9B02D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 3.9NH 400MA 250 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0024_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03TQ3N9B02D/6798407",
+        "stock": 60275,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:27.753063+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "LQP03HQ3N9B02D",
+        "url": "https://www.mouser.com/c/?q=LQP03HQ3N9B02D",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-14T14:21:52.505220+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LQP03HQ3N9B02D",
+        "lcsc_part": "C337939",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C337939",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:21:53.311673+00:00"
+      }
+    },
+    "mpn:CL10A225KB8NNNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL10A225KB8NNNC",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 2.2UF 50V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/339/CL10A225KB8NNNC_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A225KB8NNNC/10479006",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:47.277045+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL10A225KB8NNNC",
+        "lcsc_part": "C913904",
+        "manufacturer": "SAMSUNG",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C913904",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:49.177594+00:00"
+      }
+    },
+    "mpn:CL21A106KAYNNNE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL21A106KAYNNNE",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 10UF 25V X5R 0805",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5545/CL21A106KAYNNNE%20Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A106KAYNNNE/3888549",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:50.828091+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL21A106KAYNNNE",
+        "lcsc_part": "C15850",
+        "manufacturer": "SAMSUNG",
+        "description": "10uF (106) \u00b110% 25V",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL21A106KAYNNNE_10uF-106-10-25V_C15850.html",
+        "stock": 201340,
+        "price_1": 0.067,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:52.367802+00:00"
+      }
+    },
+    "mpn:CL31A476MPHNNNE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL31A476MPHNNNE",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 47UF 10V X5R 1206",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL31A476MPHNNNE_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL31A476MPHNNNE/3888721",
+        "stock": 13745,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:53.742791+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL31A476MPHNNNE",
+        "lcsc_part": "C96123",
+        "manufacturer": "SAMSUNG",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL31A476MPHNNNE_47uF-476-20-10V_C96123.html",
+        "stock": 3445,
+        "price_1": 0.0819,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:55.217596+00:00"
+      }
+    },
+    "mpn:GCM155R71H103KA55D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GCM155R71H103KA55D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 10000PF 50V X7R 0402",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM155R71H103KA55-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GCM155R71H103KA55D/1641636",
+        "stock": 2527242,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:56.250634+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GCM155R71H103KA55D",
+        "lcsc_part": "C91601",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_muRata_GCM155R71H103KA55D_10nF-103-10-50V_C91601.html",
+        "stock": 42100,
+        "price_1": 0.0048,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:58.083659+00:00"
+      }
+    },
+    "mpn:GJM0335C1E1R0WB01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GJM0335C1E1R0WB01D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 1PF 25V C0G/NP0 0201",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R0WB01-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E1R0WB01D/2592505",
+        "stock": 908,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:26:59.527185+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GJM0335C1E1R0WB01D",
+        "lcsc_part": "C185624",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Others_Murata-Electronics_GJM0335C1E1R0WB01D_Murata-Electronics-GJM0335C1E1R0WB01D_C185624.html",
+        "stock": 1000,
+        "price_1": 0.0192,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:01.275778+00:00"
+      }
+    },
+    "mpn:GJM0335C1E1R5WB01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GJM0335C1E1R5WB01D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 1.5PF 25V C0G/NP0 0201",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R5WB01-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E1R5WB01D/2592528",
+        "stock": 150433,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:03.009441+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GJM0335C1E1R5WB01D",
+        "lcsc_part": "C435397",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Murata-Electronics-GJM0335C1E1R5WB01D_C435397.html",
+        "stock": 3120,
+        "price_1": 0.022873,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:04.903395+00:00"
+      }
+    },
+    "mpn:GJM0335C1E2R0WB01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GJM0335C1E2R0WB01D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2PF 25V C0G/NP0 0201",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E2R0WB01-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E2R0WB01D/2592548",
+        "stock": 147051,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:06.377032+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GJM0335C1E2R0WB01D",
+        "lcsc_part": "C668326",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C668326",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:08.277526+00:00"
+      }
+    },
+    "mpn:GJM0335C1E2R2WB01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GJM0335C1E2R2WB01D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2.2PF 25V C0G/NP0 0201",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E2R2WB01-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E2R2WB01D/2592556",
+        "stock": 44917,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:09.739301+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GJM0335C1E2R2WB01D",
+        "lcsc_part": "C710732",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C710732",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:11.263079+00:00"
+      }
+    },
+    "mpn:GJM0335C1ER30WB01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GJM0335C1ER30WB01D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 0.3PF 25V C0G/NP0 0201",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1ER30WB01-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1ER30WB01D/2592749",
+        "stock": 192,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:13.048533+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GJM0335C1ER30WB01D",
+        "lcsc_part": "C161289",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_MuRata_GJM0335C1ER30WB01D_0-3pF-R30-0-05pF-25V_C161289.html",
+        "stock": 12840,
+        "price_1": 0.021,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:14.758790+00:00"
+      }
+    },
+    "mpn:GRM033R61A225KE47D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM033R61A225KE47D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2.2UF 10V X5R 0201",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A225KE47D/5877390",
+        "stock": 1335891,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:16.324645+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GRM033R61A225KE47D",
+        "lcsc_part": "C335106",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Others_Murata-Electronics_GRM033R61A225KE47D_Murata-Electronics-GRM033R61A225KE47D_C335106.html",
+        "stock": 89580,
+        "price_1": 0.0913,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:17.573281+00:00"
+      }
+    },
+    "mpn:GRM188R72A104KA35D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R72A104KA35D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 0.1UF 100V X7R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R72A104KA35D/702549",
+        "stock": 2385157,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:18.359607+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CC0603KRX7R9BB104",
+        "lcsc_part": "C14663",
+        "manufacturer": "YAGEO",
+        "description": "100nF (104) \u00b110% 50V",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html",
+        "stock": 8673800,
+        "price_1": 0.004,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:20.321359+00:00"
+      }
+    },
+    "mpn:LSCNB1608HKT2R2MD": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LSCNB1608HKT2R2MD",
+        "digikey_part": "",
+        "manufacturer": "Taiyo Yuden",
+        "description": "FIXED IND 2.2UH 1.2A 292 MOHM",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4802/LSCNB1608HKT2R2MD_SS.pdf",
+        "url": "https://www.digikey.com/en/products/detail/taiyo-yuden/LSCNB1608HKT2R2MD/16668097",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T14:27:31.300921+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LSCNB1608HKT2R2MD",
+        "lcsc_part": "C6079477",
+        "manufacturer": "TAIYO YUDEN",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C6079477",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:28:17.507696+00:00"
+      }
+    },
+    "mpn:SDFL2012S100KTF": {
+      "digikey": {
+        "found": false,
+        "mpn": "SDFL2012S100KTF",
+        "url": "https://www.digikey.com/en/products/result?keywords=SDFL2012S100KTF",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T14:27:34.200974+00:00"
+      }
+    },
+    "mpn:CBG100505U121T": {
+      "digikey": {
+        "found": false,
+        "mpn": "CBG100505U121T",
+        "url": "https://www.digikey.com/en/products/result?keywords=CBG100505U121T",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T14:27:46.526637+00:00"
+      }
+    },
+    "mpn:ECT818000500": {
+      "digikey": {
+        "found": false,
+        "mpn": "ECT818000500",
+        "url": "https://www.digikey.com/en/products/result?keywords=ECT818000500",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T14:27:49.451983+00:00"
+      }
+    },
+    "mpn:FM8625H": {
+      "digikey": {
+        "found": false,
+        "mpn": "FM8625H",
+        "url": "https://www.digikey.com/en/products/result?keywords=FM8625H",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T14:27:52.630568+00:00"
+      }
+    },
+    "mpn:FRC0402F3904TS": {
+      "digikey": {
+        "found": false,
+        "mpn": "FRC0402F3904TS",
+        "url": "https://www.digikey.com/en/products/result?keywords=FRC0402F3904TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T14:27:55.694538+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "FRC0402F3904TS",
+        "lcsc_part": "C3013167",
+        "manufacturer": "FOJAN",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C3013167",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:02:01.242108+00:00"
+      }
+    },
+    "mpn:FRC0402F5600TS": {
+      "digikey": {
+        "found": false,
+        "mpn": "FRC0402F5600TS",
+        "url": "https://www.digikey.com/en/products/result?keywords=FRC0402F5600TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T16:07:11.675970+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "FRC0402F5600TS",
+        "lcsc_part": "C2909370",
+        "manufacturer": "FOJAN",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2909370",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:07:13.425144+00:00"
+      }
+    },
+    "mpn:RC0402FR-074K7L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-074K7L",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES 4.7K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-074K7L/2827563",
+        "stock": 4148195,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:09:47.785467+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RC0402FR-074K7L",
+        "lcsc_part": "C105871",
+        "manufacturer": "YAGEO",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_4-7KR-4701-1_C105871.html",
+        "stock": 2005900,
+        "price_1": 0.0017,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:09:49.477491+00:00"
+      }
+    },
+    "mpn:RC0402JR-071ML": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402JR-071ML",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES 1M OHM 5% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402JR-071ML/726409",
+        "stock": 347488,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:10:05.457829+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RC0402JR-071ML",
+        "lcsc_part": "C93949",
+        "manufacturer": "YAGEO",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_1MR-105-5_C93949.html",
+        "stock": 1163700,
+        "price_1": 0.0017,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:10:06.941615+00:00"
+      }
+    },
+    "mpn:RCA025K1FLF": {
+      "digikey": {
+        "found": false,
+        "mpn": "RCA025K1FLF",
+        "url": "https://www.digikey.com/en/products/result?keywords=RCA025K1FLF",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T16:10:39.342928+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RCA025K1FLF",
+        "lcsc_part": "C22369457",
+        "manufacturer": "HKR",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C22369457",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:10:40.659357+00:00"
+      }
+    },
+    "mpn:S2B-PH-K-S-GW": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "S2B-PH-K-S-GW(PP)",
+        "digikey_part": "",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "PH HEADER (SIDE)",
+        "datasheet_url": "",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S-GW-PP/26433937",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:11:12.179862+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "S2B-PH-K-S-GW",
+        "lcsc_part": "C157932",
+        "manufacturer": "JST",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html",
+        "stock": 6608,
+        "price_1": 0.1575,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:11:13.933764+00:00"
+      }
+    },
+    "mpn:GRT188R61E106ME13D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRT188R61E106ME13D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 10UF 25V X5R 0603",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRT188R61E106ME13-01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRT188R61E106ME13D/5416745",
+        "stock": 449279,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:18:38.789791+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GRT188R61E106ME13D",
+        "lcsc_part": "C697423",
+        "manufacturer": "muRata",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC---SMD-SMT_muRata-GRT188R61E106ME13D_C697423.html",
+        "stock": 0,
+        "price_1": 0.1642,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:18:40.698736+00:00"
+      }
+    },
+    "mpn:LLCNB1608HKT2R2MD": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LLCNB1608HKT2R2MD",
+        "digikey_part": "",
+        "manufacturer": "Taiyo Yuden",
+        "description": "FIXED IND 2.2UH 1.2A 292 MOHM",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6726/LLCN.pdf",
+        "url": "https://www.digikey.com/en/products/detail/taiyo-yuden/LLCNB1608HKT2R2MD/16658546",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:29:56.247639+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LLCNB1608HKT2R2MD",
+        "lcsc_part": "C6979484",
+        "manufacturer": "Taiyo Yuden",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Inductors--SMD-_Taiyo-Yuden-LLCNB1608HKT2R2MD_C6979484.html",
+        "stock": 0,
+        "price_1": 0.4405,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:29:58.270339+00:00"
+      }
+    },
+    "mpn:XL7EL89CKI-111YLC-32M": {
+      "digikey": {
+        "found": false,
+        "mpn": "XL7EL89CKI-111YLC-32M",
+        "url": "https://www.digikey.com/en/products/result?keywords=XL7EL89CKI-111YLC-32M",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T16:31:25.619966+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "XL7EL89CKI-111YLC-32M",
+        "lcsc_part": "C2965582",
+        "manufacturer": "YXC",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2965582",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:31:27.000080+00:00"
+      }
+    },
+    "mpn:TYPE-C-31-M-12": {
+      "digikey": {
+        "found": false,
+        "mpn": "TYPE-C-31-M-12",
+        "url": "https://www.digikey.com/en/products/result?keywords=TYPE-C-31-M-12",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T16:31:50.754299+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "TYPE-C-31-M-12",
+        "lcsc_part": "C165948",
+        "manufacturer": "Korean Hroparts Elec",
+        "description": "SMD",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/USB-Connectors_Korean-Hroparts-Elec-TYPE-C-31-M-12_C165948.html",
+        "stock": 115960,
+        "price_1": 0.1857,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:31:52.638606+00:00"
+      }
+    },
+    "mpn:SPV1040T": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SPV1040T",
+        "digikey_part": "",
+        "manufacturer": "STMicroelectronics",
+        "description": "IC BATT CHG SOLAR 8TSSOP",
+        "datasheet_url": "https://www.st.com/content/ccc/resource/technical/document/datasheet/0d/30/c2/1a/92/03/48/cb/CD00287506.pdf/files/CD00287506.pdf/jcr:content/translations/en.CD00287506.pdf",
+        "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/SPV1040T/2687073",
+        "stock": 983,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:32:24.437880+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SPV1040T",
+        "lcsc_part": "C2969792",
+        "manufacturer": "ST",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2969792",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:32:25.765876+00:00"
+      }
+    },
+    "mpn:SS14": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "DSS14U",
+        "digikey_part": "",
+        "manufacturer": "SMC Diode Solutions",
+        "description": "DIODE SCHOTTKY 40V 1A SOD123FL",
+        "datasheet_url": "https://www.smc-diodes.com/propdf/DSS12U%20THRU%20DSS125U%20N1873%20REV.A.pdf",
+        "url": "https://www.digikey.com/en/products/detail/smc-diode-solutions/DSS14U/8341859",
+        "stock": 375014,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:33:18.336901+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SS14_C83852",
+        "lcsc_part": "C83852",
+        "manufacturer": "onsemi",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html",
+        "stock": 90500,
+        "price_1": 0.1464,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:33:19.639920+00:00"
       }
     }
   }

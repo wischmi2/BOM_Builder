@@ -20,13 +20,29 @@
 </td>
 {% endmacro %}
 
-{% macro compare_need_name_cell(display_name) %}
+{% macro compare_need_name_cell(display_name, description="") %}
 <td class="col-name compare-need-name-cell">
     <input type="text"
            class="cell-input compare-need-name"
-           value="{{ display_name }}"
+           value="{{ description or display_name }}"
+           title="{{ description or display_name }}"
            aria-label="Build list part name">
 </td>
+{% endmacro %}
+
+{# Enriched part data (from Shop → Enrich), shown on Compare as toggleable columns. #}
+{% macro compare_enriched_cells(part) %}
+<td class="col-mfr" data-col="mfr">{{ part.manufacturer if part else "" }}</td>
+<td class="col-qty" data-col="price">{% if part and part.unit_price is not none %}${{ "%.4f"|format(part.unit_price) }}{% endif %}</td>
+<td class="col-qty" data-col="stock">{% if part and part.stock is not none %}{{ part.stock }}{% endif %}</td>
+<td class="col-datasheet" data-col="datasheet">{% if part and part.datasheet_url %}<a href="{{ part.datasheet_url }}" target="_blank" rel="noopener">datasheet</a>{% endif %}</td>
+{% endmacro %}
+
+{% macro compare_enriched_headers() %}
+<th class="col-mfr" data-col="mfr" data-col-default-hidden="true">Manufacturer</th>
+<th class="col-qty" data-col="price" data-col-default-hidden="true">Unit price</th>
+<th class="col-qty" data-col="stock" data-col-default-hidden="true">Stock</th>
+<th class="col-datasheet" data-col="datasheet" data-col-default-hidden="true">Datasheet</th>
 {% endmacro %}
 
 {% block title %}Compare — BOM Builder{% endblock %}
@@ -140,13 +156,14 @@
 <div class="table-wrap compare-table-wrap compare-table-sticky card">
     <p class="table-scroll-hint muted">Drag │ on column headers to resize</p>
     {% if view_mode == 'combined' and agg_rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="11">
+    <table class="data-table compare-table" id="compare-table" data-colspan="15">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
                 <th data-col="status">Status</th>
                 <th class="col-name" data-col="name">Name</th>
                 <th class="col-libref" data-col="libref">LibRef</th>
+                {{ compare_enriched_headers() }}
                 <th class="col-qty" data-col="need">Total need</th>
                 <th class="col-qty" data-col="onhand">On hand</th>
                 <th class="col-qty" data-col="leftover">Leftover</th>
@@ -159,13 +176,14 @@
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="11">
+                <td colspan="15">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
                 </td>
             </tr>
             {% for row in group.rows %}
+            {% set part = row.source_lines[0] if row.source_lines else None %}
             <tr class="compare-row status-{{ row.status }}"
                 data-status="{{ row.status }}"
                 data-part-key="{{ row.aggregate_key }}"
@@ -177,14 +195,18 @@
                 data-search="{{ (row.display_name ~ ' ' ~ row.display_lib_ref ~ ' ' ~ row.bom_lib_ref ~ ' ' ~ row.bom_ids_display)|lower }}">
                 <td class="col-drag"><span class="drag-handle" draggable="true" title="Drag to another category">⋮⋮</span></td>
                 <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
-                {{ compare_need_name_cell(row.display_name) }}
+                {{ compare_need_name_cell(row.display_name, part.description if part else "") }}
                 <td class="col-libref">
                     <code>{{ row.display_lib_ref }}</code>
+                    {% if part and part.original_mpn and part.original_mpn != row.display_lib_ref %}
+                    <span class="muted compare-bom-ref">was: {{ part.original_mpn }}</span>
+                    {% endif %}
                     {% if row.shop_substitute %}
                     <span class="muted compare-bom-ref">BOM: {{ row.bom_lib_ref }}</span>
                     <span class="badge badge-substitute">Substitute</span>
                     {% endif %}
                 </td>
+                {{ compare_enriched_cells(part) }}
                 <td class="col-qty">{{ row.qty_needed_total }}</td>
                 <td class="col-qty">{{ row.qty_on_hand }}</td>
                 <td class="col-qty {% if row.leftover < 0 %}delta-negative{% elif row.leftover > 0 %}delta-positive{% endif %}">
@@ -214,13 +236,14 @@
         </tbody>
     </table>
     {% elif rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="12">
+    <table class="data-table compare-table" id="compare-table" data-colspan="16">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
                 <th data-col="status">Status</th>
                 <th class="col-name" data-col="name">Name</th>
                 <th class="col-libref" data-col="libref">LibRef</th>
+                {{ compare_enriched_headers() }}
                 <th class="col-qty" data-col="need">Need</th>
                 <th class="col-qty" data-col="onhand">On hand</th>
                 <th class="col-qty" data-col="delta">Delta</th>
@@ -234,13 +257,14 @@
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="12">
+                <td colspan="16">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
                 </td>
             </tr>
             {% for row in group.rows %}
+            {% set part = row.need_line %}
             <tr class="compare-row status-{{ row.status }}"
                 data-status="{{ row.status }}"
                 data-part-key="{{ row.part_key }}"
@@ -252,14 +276,18 @@
                 data-search="{{ (row.display_name ~ ' ' ~ row.display_lib_ref ~ ' ' ~ row.bom_lib_ref ~ ' ' ~ row.need_line.designator_display)|lower }}">
                 <td class="col-drag"><span class="drag-handle" draggable="true" title="Drag to another category">⋮⋮</span></td>
                 <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
-                {{ compare_need_name_cell(row.display_name) }}
+                {{ compare_need_name_cell(row.display_name, part.description if part else "") }}
                 <td class="col-libref">
                     <code>{{ row.display_lib_ref }}</code>
+                    {% if part and part.original_mpn and part.original_mpn != row.display_lib_ref %}
+                    <span class="muted compare-bom-ref">was: {{ part.original_mpn }}</span>
+                    {% endif %}
                     {% if row.shop_substitute %}
                     <span class="muted compare-bom-ref">BOM: {{ row.bom_lib_ref }}</span>
                     <span class="badge badge-substitute">Substitute</span>
                     {% endif %}
                 </td>
+                {{ compare_enriched_cells(part) }}
                 <td class="col-qty">{{ row.qty_needed }}</td>
                 <td class="col-qty">{{ row.qty_on_hand }}</td>
                 <td class="col-qty {% if row.delta < 0 %}delta-negative{% elif row.delta > 0 %}delta-positive{% endif %}">

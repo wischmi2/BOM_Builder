@@ -17,6 +17,12 @@ class NeedLine:
     is_dni: bool = False
     acquired: bool = False
     notes: str = ""
+    # Immutable snapshot of the part as imported. Enrichment/replacement rewrites
+    # the effective fields (lib_ref/name/description), but the Need tab always
+    # shows these originals, and Compare can show original-vs-new side by side.
+    original_mpn: str = ""
+    original_name: str = ""
+    original_description: str = ""
     # LCSC part number (Cxxxx), captured from KiCad imports; LCSC's exact key.
     lcsc_part: str = ""
     # Enrichment fields, populated from DigiKey/Mouser/LCSC lookups (see Shop → Enrich).

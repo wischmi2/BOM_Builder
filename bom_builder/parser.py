@@ -133,6 +133,9 @@ def parse_bom_csv(
                 lib_ref=lib_ref,
                 quantity=quantity,
                 is_dni=_is_dni(name, footprint, lib_ref),
+                original_mpn=lib_ref,
+                original_name=name,
+                original_description=description,
             )
         )
 
@@ -168,6 +171,8 @@ _KICAD_COLUMN_ALIASES: dict[str, str] = {
     "lcsc_part_number": "lcsc",
     "dnp": "dnp",
     "exclude_from_bom": "exclude_from_bom",
+    "datasheet": "datasheet",
+    "manufacturer": "manufacturer",
 }
 
 # KiCad references are separated by commas or spaces (e.g. "C6,C14,C15" or "R1 R2").
@@ -192,6 +197,11 @@ def _kicad_flag_is_set(raw: str) -> bool:
     if not text:
         return False
     return text not in ("0", "false", "no", "n")
+
+
+def _clean_kicad_manufacturer(name: str) -> str:
+    """Strip localized aliases KiCad/LCSC append, e.g. 'FOJAN(富捷)' -> 'FOJAN'."""
+    return re.sub(r"\s*\([^)]*\)\s*$", "", (name or "").strip())
 
 
 def _kicad_lib_ref(mpn: str, lcsc: str, value: str) -> str:
@@ -225,13 +235,13 @@ def parse_kicad_bom_csv(
     if not reader.fieldnames:
         raise ValueError("CSV has no header row")
 
+    # Keep every header that maps to a field. Several columns can map to the same
+    # field (e.g. KiCad exports both an empty "MANUFACTURER" and a real
+    # "Manufacturer"); per-row extraction below takes the first non-empty value.
     field_map: dict[str, str] = {}
     for header in reader.fieldnames:
         canonical = _kicad_normalize_header(header)
-        # First header wins for a given canonical field (KiCad's nrf export has
-        # both "MANUFACTURER" and "Manufacturer"; neither maps, so this is safe,
-        # but guard against duplicate real columns just in case).
-        if canonical and canonical not in field_map.values():
+        if canonical:
             field_map[header] = canonical
 
     canonical_present = set(field_map.values())
@@ -248,7 +258,10 @@ def parse_kicad_bom_csv(
     for row_index, row in enumerate(reader, start=1):
         normalized: dict[str, str] = {}
         for header, canonical in field_map.items():
-            normalized[canonical] = (row.get(header) or "").strip()
+            value = (row.get(header) or "").strip()
+            # First non-empty value wins when several columns map to one field.
+            if canonical not in normalized or (not normalized[canonical] and value):
+                normalized[canonical] = value
 
         # Honor KiCad's "Exclude from BOM" flag — these parts are not purchased.
         if _kicad_flag_is_set(normalized.get("exclude_from_bom", "")):
@@ -262,6 +275,8 @@ def parse_kicad_bom_csv(
         lcsc = normalized.get("lcsc", "")
         lib_ref = _kicad_lib_ref(mpn, lcsc, value)
         is_dni = _kicad_flag_is_set(normalized.get("dnp", ""))
+        manufacturer = _clean_kicad_manufacturer(normalized.get("manufacturer", ""))
+        datasheet_url = normalized.get("datasheet", "")
 
         quantity = _parse_quantity(normalized.get("quantity", ""))
         # KiCad exports sometimes omit Qty; fall back to the designator count.
@@ -284,6 +299,11 @@ def parse_kicad_bom_csv(
                 quantity=quantity,
                 is_dni=is_dni or _is_dni(value, footprint, lib_ref),
                 lcsc_part=lcsc,
+                manufacturer=manufacturer,
+                datasheet_url=datasheet_url,
+                original_mpn=lib_ref,
+                original_name=value,
+                original_description=description,
             )
         )
 

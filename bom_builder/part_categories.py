@@ -79,7 +79,21 @@ def category_for_inventory_item(item: InventoryItem) -> str:
 
 
 def category_for_shop_line(line) -> str:
-    return classify_from_text(line.name, line.lib_ref, "")
+    # Use the reference designator (R14 -> resistor) like Need/Compare do; a bare
+    # value ("560") and MPN don't carry enough text to classify on their own.
+    designators = str(getattr(line, "designators", "") or "").strip()
+    first = re.split(r"[,\s]+", designators)[0] if designators else ""
+    fake = NeedLine(
+        id="x",
+        bom_id="x",
+        name=line.name,
+        description="",
+        designators=[first] if first else [],
+        footprint="",
+        lib_ref=line.lib_ref,
+        quantity=1,
+    )
+    return classify_need_line(fake)
 
 
 def category_for_need_line(line: NeedLine) -> str:

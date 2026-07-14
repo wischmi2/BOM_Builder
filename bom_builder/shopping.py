@@ -368,6 +368,7 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         default_buy_qty=default_buy,
         buy_qty=default_buy,
         bom_ids_display=row.bom_ids_display,
+        designators=(row.source_lines[0].designator_display if row.source_lines else ""),
         lcsc_part=(row.source_lines[0].lcsc_part if row.source_lines else ""),
         digikey_url=digikey_search_url(mpn),
         mouser_url=mouser_search_url(mpn),
@@ -463,10 +464,14 @@ def sync_need_lines_details(
     stock: int | None = None,
     lcsc_part: str | None = None,
     enriched_from: str = "",
+    reset_enrichment: bool = False,
 ) -> int:
     """Write enrichment fields (and optionally MPN/name) back to BOM need lines.
 
     Only non-None arguments are applied, so callers can update a subset of fields.
+    When `reset_enrichment` is set (a full part replacement), the previous part's
+    enriched fields are cleared first so nothing stale carries over to the new
+    part; the passed values are then applied on top.
     Returns the number of need lines updated.
     """
     from datetime import datetime, timezone
@@ -487,6 +492,13 @@ def sync_need_lines_details(
             continue
 
         touched = False
+        if reset_enrichment:
+            # New part — wipe the old part's enriched data so it can't linger.
+            need_line.manufacturer = ""
+            need_line.datasheet_url = ""
+            need_line.unit_price = None
+            need_line.stock = None
+            touched = True
         if mpn:
             need_line.lib_ref = mpn
             touched = True
