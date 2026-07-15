@@ -197,9 +197,9 @@
                     <input type="text" class="name-input cell-input" value="{{ line.name }}"
                            aria-label="Part name" autocomplete="off">
                 </td>
-                <td><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
-                <td class="col-qty">{{ line.qty_needed }}</td>
-                <td class="col-qty">{{ line.qty_on_hand }}</td>
+                <td class="col-status"><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
+                <td class="col-qty col-need">{{ line.qty_needed }}</td>
+                <td class="col-qty col-onhand">{{ line.qty_on_hand }}</td>
                 <td class="col-bom" title="{{ line.bom_id or line.bom_ids_display }}">{{ line.bom_id or line.bom_ids_display }}</td>
                 <td class="col-distributors">
                     <div class="dist-actions">

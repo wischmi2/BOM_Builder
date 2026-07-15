@@ -262,6 +262,24 @@
         return data;
     }
 
+    // After receiving into inventory, reflect the new on-hand + status on the row
+    // without waiting for a full page reload/re-match.
+    function updateOnHandStatus(row, inventoryQty) {
+        if (inventoryQty == null || !row) return;
+        const onhandCell = row.querySelector(".col-onhand");
+        if (onhandCell) onhandCell.textContent = String(inventoryQty);
+        const need = parseInt(row.querySelector(".col-need")?.textContent || "0", 10) || 0;
+        const status = inventoryQty <= 0 ? "missing" : (inventoryQty >= need ? "ok" : "partial");
+        const badge = row.querySelector(".col-status .status-badge");
+        if (badge) {
+            badge.className = `status-badge status-${status}`;
+            badge.textContent = status;
+        }
+        row.classList.remove("status-missing", "status-partial", "status-ok");
+        row.classList.add(`status-${status}`);
+        row.dataset.status = status;
+    }
+
     function updateReceiveUi(row, state, parentRow) {
         row.dataset.receivedQty = String(state.received_qty);
         row.dataset.buyQty = String(state.buy_qty);
@@ -391,6 +409,8 @@
                 });
                 fullyReceived = Boolean(result.fully_received);
                 updateReceiveUi(row, result, isAlternate ? parentRow : row);
+                // Reflect the new inventory on the part's On hand + Status live.
+                if (!isAlternate) updateOnHandStatus(parentRow, result.inventory_qty);
                 if (!fullyReceived) {
                     recvCheck.checked = false;
                 }
@@ -874,16 +894,20 @@
         let visible = 0;
 
         rows.forEach((row) => {
-            const ordered = row.dataset.ordered === "1";
             const searchHay = row.dataset.search || "";
-            let show = true;
-            if (skipOrdered && ordered) show = false;
-            if (query && !searchHay.includes(query)) show = false;
-            row.hidden = !show;
+            const searchMatch = !query || searchHay.includes(query);
+            const mainOrdered = row.dataset.ordered === "1";
             const altRow = altRowFor(row);
+            const altEnabled = altRow ? Boolean(row.querySelector(".alternate-check")?.checked) : false;
+            const altOrdered = altRow ? altRow.dataset.ordered === "1" : false;
+            // A part is "handled" once the original OR its chosen substitute is
+            // ordered — so ordering the substitute hides the whole part, not just
+            // the substitute row.
+            const handled = mainOrdered || (altEnabled && altOrdered);
+            const show = searchMatch && !(skipOrdered && handled);
+            row.hidden = !show;
             if (altRow) {
-                const altVisible = show && row.querySelector(".alternate-check")?.checked;
-                altRow.hidden = !altVisible;
+                altRow.hidden = !(show && altEnabled);
             }
             if (show) visible += 1;
         });

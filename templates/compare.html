@@ -30,8 +30,10 @@
 </td>
 {% endmacro %}
 
-{# Enriched part data (from Shop → Enrich), shown on Compare as toggleable columns. #}
+{# Enriched part data (from Shop → Enrich), shown on Compare as toggleable columns.
+   LCSC # is shown by default (it's part identity); the rest default to hidden. #}
 {% macro compare_enriched_cells(part) %}
+<td class="col-lcsc" data-col="lcsc">{% if part and part.lcsc_part %}<a href="https://www.lcsc.com/search?q={{ part.lcsc_part }}" target="_blank" rel="noopener">{{ part.lcsc_part }}</a>{% endif %}</td>
 <td class="col-mfr" data-col="mfr">{{ part.manufacturer if part else "" }}</td>
 <td class="col-qty" data-col="price">{% if part and part.unit_price is not none %}${{ "%.4f"|format(part.unit_price) }}{% endif %}</td>
 <td class="col-qty" data-col="stock">{% if part and part.stock is not none %}{{ part.stock }}{% endif %}</td>
@@ -39,6 +41,7 @@
 {% endmacro %}
 
 {% macro compare_enriched_headers() %}
+<th class="col-lcsc" data-col="lcsc">LCSC #</th>
 <th class="col-mfr" data-col="mfr" data-col-default-hidden="true">Manufacturer</th>
 <th class="col-qty" data-col="price" data-col-default-hidden="true">Unit price</th>
 <th class="col-qty" data-col="stock" data-col-default-hidden="true">Stock</th>
@@ -156,7 +159,7 @@
 <div class="table-wrap compare-table-wrap compare-table-sticky card">
     <p class="table-scroll-hint muted">Drag │ on column headers to resize</p>
     {% if view_mode == 'combined' and agg_rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="15">
+    <table class="data-table compare-table" id="compare-table" data-colspan="16">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
@@ -176,7 +179,7 @@
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="15">
+                <td colspan="16">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
@@ -236,7 +239,7 @@
         </tbody>
     </table>
     {% elif rows %}
-    <table class="data-table compare-table" id="compare-table" data-colspan="16">
+    <table class="data-table compare-table" id="compare-table" data-colspan="17">
         <thead>
             <tr>
                 <th class="col-drag" data-col="drag" aria-label="Drag"></th>
@@ -257,7 +260,7 @@
         <tbody>
             {% for group in grouped_rows %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="16">
+                <td colspan="17">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>

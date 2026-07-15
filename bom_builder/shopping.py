@@ -656,20 +656,23 @@ def receive_shop_parts(
     location: str = "",
     notes: str = "",
 ) -> dict[str, Any]:
-    """Move received quantity from shop line into inventory."""
+    """Move received quantity from a shop line into inventory.
+
+    Receiving records what physically arrived, so it is not blocked by the planned
+    buy quantity (which may be unset — e.g. after a part's MPN was replaced and the
+    storage key changed). The plan is bumped to cover what was received.
+    """
     entry = dict(saved.get(storage_key, {}))
     buy_qty, received_qty = _receive_targets(entry, alternate=alternate)
-    remaining = max(0, buy_qty - received_qty)
 
-    if buy_qty <= 0:
-        raise ValueError("Set buy quantity before receiving into inventory.")
     if qty <= 0:
         raise ValueError("Receive quantity must be at least 1.")
-    if qty > remaining:
-        raise ValueError(f"Cannot receive {qty}; only {remaining} left on this purchase line.")
     mpn = (mpn or "").strip()
     if not mpn:
         raise ValueError("MPN is required to add inventory.")
+
+    new_received = received_qty + qty
+    buy_qty = max(buy_qty, new_received)  # plan covers what actually came in
 
     doc = storage.load_inventory()
     item = add_qty_for_mpn(
@@ -682,13 +685,14 @@ def receive_shop_parts(
     )
     storage.save_inventory(doc)
 
-    new_received = received_qty + qty
     if alternate:
         alt = dict(entry.get("alternate") or {})
         alt["received_qty"] = new_received
+        alt["buy_qty"] = buy_qty
         entry["alternate"] = alt
     else:
         entry["received_qty"] = new_received
+        entry["buy_qty"] = buy_qty
     entry["updated_at"] = datetime.now(timezone.utc).isoformat()
     saved[storage_key] = entry
 
@@ -696,7 +700,7 @@ def receive_shop_parts(
         "received_qty": new_received,
         "buy_qty": buy_qty,
         "remaining_qty": max(0, buy_qty - new_received),
-        "fully_received": buy_qty > 0 and new_received >= buy_qty,
+        "fully_received": new_received >= buy_qty,
         "inventory_qty": item.qty_on_hand,
         "inventory_id": item.id,
     }

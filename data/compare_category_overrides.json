@@ -42,6 +42,10 @@
     "lib:F980J476MMA": "capacitor",
     "lib:TPSA475M016R2000": "capacitor",
     "lib:LFCN7200": "filter_rf",
-    "lib:T491A106K020AT": "capacitor"
+    "lib:T491A106K020AT": "capacitor",
+    "lib:FM8625H": "semiconductor",
+    "lib:DSS14U": "semiconductor",
+    "lib:SMLEN3EC8TT86": "semiconductor",
+    "lib:S2BPHKSGWPP": "connector"
   }
 }

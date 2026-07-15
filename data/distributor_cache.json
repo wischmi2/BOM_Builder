@@ -868,6 +868,20 @@
         "stock": null,
         "price_1": null,
         "fetched_at": "2026-07-14T14:27:34.200974+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SDFL2012S100KTF",
+        "lcsc_part": "C1046",
+        "manufacturer": "Sunlord",
+        "description": "10uH \u00b110%",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html",
+        "stock": 236600,
+        "price_1": 0.0152,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:40:58.633099+00:00"
       }
     },
     "mpn:CBG100505U121T": {
@@ -894,6 +908,20 @@
         "stock": null,
         "price_1": null,
         "fetched_at": "2026-07-14T14:27:49.451983+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "ECT818000500",
+        "lcsc_part": "C437254",
+        "manufacturer": "ECT",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html",
+        "stock": 1540,
+        "price_1": 0.0577,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:37:58.751596+00:00"
       }
     },
     "mpn:FM8625H": {
@@ -907,6 +935,20 @@
         "stock": null,
         "price_1": null,
         "fetched_at": "2026-07-14T14:27:52.630568+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "FM8625H",
+        "lcsc_part": "C2857391",
+        "manufacturer": "FM",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2857391",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:36:41.671384+00:00"
       }
     },
     "mpn:FRC0402F3904TS": {
@@ -1252,6 +1294,740 @@
         "price_1": 0.1464,
         "kind": "exact",
         "fetched_at": "2026-07-14T16:33:19.639920+00:00"
+      }
+    },
+    "mpn:FRC0603F4702TS": {
+      "digikey": {
+        "found": false,
+        "mpn": "FRC0603F4702TS",
+        "url": "https://www.digikey.com/en/products/result?keywords=FRC0603F4702TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T16:35:56.121779+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "FRC0603F4702TS",
+        "lcsc_part": "C2907042",
+        "manufacturer": "FOJAN",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2907042",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:35:57.895338+00:00"
+      }
+    },
+    "mpn:RT0402BRD0710KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RT0402BRD0710KL",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES SMD 10K OHM 0.1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RT0402BRD0710KL/1068998",
+        "stock": 219000,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:36:58.589450+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RT0402BRD0710KL",
+        "lcsc_part": "C190095",
+        "manufacturer": "YAGEO",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html",
+        "stock": 65240,
+        "price_1": 0.0331,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:37:00.441575+00:00"
+      }
+    },
+    "mpn:SML-P12MTT86R": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SMLEN3EC8TT86",
+        "digikey_part": "",
+        "manufacturer": "Rohm Semiconductor",
+        "description": "LED GREEN 1608 SMD",
+        "datasheet_url": "https://www.rohm.com/datasheet?p=SMLEN3EC8T&dist=Digi-key&media=referral&source=digi-key.com&campaign=Digi-key",
+        "url": "https://www.digikey.com/en/products/detail/rohm-semiconductor/SMLEN3EC8TT86/15762446",
+        "stock": 7794,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:39:29.582852+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SML-P12MTT86R",
+        "lcsc_part": "C510304",
+        "manufacturer": "ROHM",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C510304",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T16:39:31.553908+00:00"
+      }
+    },
+    "mpn:NRF54L15-QFXX": {
+      "digikey": {
+        "found": false,
+        "mpn": "nRF54L15-QFXX",
+        "url": "https://www.digikey.com/en/products/result?keywords=nRF54L15-QFXX",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T18:26:56.094431+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "nRF54L15-QFXX",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=nRF54L15-QFXX",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T18:26:58.571010+00:00"
+      }
+    },
+    "mpn:CRCW1206100KFKEBC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CRCW1206100KFKEB",
+        "digikey_part": "",
+        "manufacturer": "Vishay Dale",
+        "description": "RES SMD 100K OHM 1% 1/4W 1206",
+        "datasheet_url": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
+        "url": "https://www.digikey.com/en/products/detail/vishay-dale/CRCW1206100KFKEB/5076269",
+        "stock": 14990,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:03:03.158909+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CRCW1206100KFKEBC",
+        "lcsc_part": "C4107364",
+        "manufacturer": "VISHAY",
+        "description": "1206",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_VISHAY-CRCW1206100KFKEBC_C4107364.html",
+        "stock": 0,
+        "price_1": 0.009,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:03:05.509052+00:00"
+      }
+    },
+    "mpn:RC0402JR-073M3L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402JR-073M3L",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES 3.3M OHM 5% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402JR-073M3L/726457",
+        "stock": 2824,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:05:18.143815+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RC0402JR-073M3L",
+        "lcsc_part": "C477693",
+        "manufacturer": "YAGEO",
+        "description": "0402",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_YAGEO-RC0402JR-073M3L_C477693.html",
+        "stock": 0,
+        "price_1": 0.0011,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:05:21.847926+00:00"
+      }
+    },
+    "mpn:RC0402FR-073M9L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-073M9L",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES 3.9M OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-073M9L/5917668",
+        "stock": 89678,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:06:29.360428+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RC0402FR-073M9L",
+        "lcsc_part": "C327243",
+        "manufacturer": "YAGEO",
+        "description": "0402",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_YAGEO-RC0402FR-073M9L_C327243.html",
+        "stock": 0,
+        "price_1": 0.0014,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:06:31.500423+00:00"
+      }
+    },
+    "mpn:RC0402FR-7D560RL": {
+      "digikey": {
+        "found": false,
+        "mpn": "RC0402FR-7D560RL",
+        "url": "https://www.digikey.com/en/products/result?keywords=RC0402FR-7D560RL",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:07:39.290211+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "RC0402FR-7D560RL",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=RC0402FR-7D560RL",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:07:41.449103+00:00"
+      }
+    },
+    "mpn:CRCW060347K0FKECC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CRCW060347K0FKEC",
+        "digikey_part": "",
+        "manufacturer": "Vishay Dale",
+        "description": "RES SMD 47K OHM 1% 1/10W 0603",
+        "datasheet_url": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
+        "url": "https://www.digikey.com/en/products/detail/vishay-dale/CRCW060347K0FKEC/5072573",
+        "stock": 14187,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:10:47.200562+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CRCW060347K0FKECC",
+        "lcsc_part": "C4261299",
+        "manufacturer": "VISHAY",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_VISHAY-CRCW060347K0FKECC_C4261299.html",
+        "stock": 0,
+        "price_1": 0.0036,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:10:49.421723+00:00"
+      }
+    },
+    "mpn:CRCW04025K10JNTD": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CRCW04025K10JNTD",
+        "digikey_part": "",
+        "manufacturer": "Vishay Dale",
+        "description": "RES SMD 5.1K OHM 5% 1/16W 0402",
+        "datasheet_url": "https://www.vishay.com/docs/20008/dcrcw.pdf",
+        "url": "https://www.digikey.com/en/products/detail/vishay-dale/CRCW04025K10JNTD/1226681",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:14:53.890452+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CRCW04025K10JNTD",
+        "lcsc_part": "C4273625",
+        "manufacturer": "VISHAY",
+        "description": "0402",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_VISHAY-CRCW04025K10JNTD_C4273625.html",
+        "stock": 0,
+        "price_1": 0.0168,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:14:56.158063+00:00"
+      }
+    },
+    "mpn:CR0402-FX-5101GLF": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CR0402-FX-5101GLF",
+        "digikey_part": "",
+        "manufacturer": "Bourns Inc.",
+        "description": "RES SMD 5.1K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://bourns.com/docs/product-datasheets/cr.pdf?sfvrsn=574d41f6_14",
+        "url": "https://www.digikey.com/en/products/detail/bourns-inc/CR0402-FX-5101GLF/3783409",
+        "stock": 140347,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:15:47.403556+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CR0402-FX-5101GLF",
+        "lcsc_part": "C41417887",
+        "manufacturer": "BOURNS",
+        "description": "0402",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_BOURNS-CR0402-FX-5101GLF_C41417887.html",
+        "stock": 0,
+        "price_1": 0.0074,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:15:49.481182+00:00"
+      }
+    },
+    "mpn:LQP03TQ3N9B02D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQP03TQ3N9B02D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 3.9NH 400MA 250 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0024_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03TQ3N9B02D/6798407",
+        "stock": 60275,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:19:58.025611+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LQP03HQ3N9B02D",
+        "lcsc_part": "C337939",
+        "manufacturer": "muRata",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C337939",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:20:00.252889+00:00"
+      }
+    },
+    "mpn:LQM18PN2R2MGHD": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQM18PN2R2MGHD",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 2.2UH 1.05A 250 MOHM",
+        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-0047.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQM18PN2R2MGHD/6606107",
+        "stock": 61198,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:31:36.967965+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "LQM18PN2R2MGHD",
+        "lcsc_part": "C337911",
+        "manufacturer": "muRata",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Inductors--SMD-_muRata-LQM18PN2R2MGHD_C337911.html",
+        "stock": 7465,
+        "price_1": 0.2538,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:31:39.375452+00:00"
+      }
+    },
+    "mpn:MHQ1005075HA4N3BTD25": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "MHQ1005075HA4N3BTD25",
+        "digikey_part": "",
+        "manufacturer": "TDK",
+        "description": "FIXED IND 4.3NH 600MA 120 MOHM",
+        "datasheet_url": "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_automotive_high-frequency_mhq1005075ha_en.pdf",
+        "url": "https://www.digikey.com/en/products/detail/tdk/MHQ1005075HA4N3BTD25/21727240",
+        "stock": 5464,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:34:01.541907+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "MHQ1005075HA4N3BTD25",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=MHQ1005075HA4N3BTD25",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:34:04.050999+00:00"
+      }
+    },
+    "mpn:DSS14U": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "DSS14U",
+        "digikey_part": "",
+        "manufacturer": "SMC Diode Solutions",
+        "description": "DIODE SCHOTTKY 40V 1A SOD123FL",
+        "datasheet_url": "https://www.smc-diodes.com/propdf/DSS12U%20THRU%20DSS125U%20N1873%20REV.A.pdf",
+        "url": "https://www.digikey.com/en/products/detail/smc-diode-solutions/DSS14U/8341859",
+        "stock": 373109,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:34:54.112819+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SS14_C83852",
+        "lcsc_part": "C83852",
+        "manufacturer": "onsemi",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_ON-Semicon_SS14_ON-Semicon-ON-SS14_C83852.html",
+        "stock": 90500,
+        "price_1": 0.1464,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:34:56.285437+00:00"
+      }
+    },
+    "mpn:SMLEN3EC8TT86": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SMLEN3EC8TT86",
+        "digikey_part": "",
+        "manufacturer": "Rohm Semiconductor",
+        "description": "LED GREEN 1608 SMD",
+        "datasheet_url": "https://www.rohm.com/datasheet?p=SMLEN3EC8T&dist=Digi-key&media=referral&source=digi-key.com&campaign=Digi-key",
+        "url": "https://www.digikey.com/en/products/detail/rohm-semiconductor/SMLEN3EC8TT86/15762446",
+        "stock": 7794,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:39:28.632069+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "SML-P12MTT86R",
+        "lcsc_part": "C510304",
+        "manufacturer": "ROHM",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C510304",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:39:31.072230+00:00"
+      }
+    },
+    "mpn:S2B-PH-K-S-GW(PP)": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "S2B-PH-K-S-GW(PP)",
+        "digikey_part": "",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "PH HEADER (SIDE)",
+        "datasheet_url": "",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S-GW-PP/26433937",
+        "stock": 0,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:43:38.332415+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "S2B-PH-K-S-GW",
+        "lcsc_part": "C157932",
+        "manufacturer": "JST",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html",
+        "stock": 6608,
+        "price_1": 0.1575,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:43:39.917234+00:00"
+      }
+    },
+    "mpn:BGS12P2L6E6327XTSA1": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BGS12P2L6E6327XTSA1",
+        "digikey_part": "",
+        "manufacturer": "Infineon Technologies",
+        "description": "IC RF SWITCH SPDT 6GHZ TSLP6-4",
+        "datasheet_url": "https://www.infineon.com/dgdl/Infineon-BGS12P2L6-DataSheet-v02_00-EN.pdf?fileId=5546d4626cb27db2016d4487d53603ce",
+        "url": "https://www.digikey.com/en/products/detail/infineon-technologies/BGS12P2L6E6327XTSA1/11500367",
+        "stock": 223303,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:48:27.688680+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "BGS12P2L6E6327XTSA1",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=BGS12P2L6E6327XTSA1",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:48:30.419121+00:00"
+      }
+    },
+    "mpn:2450AT18A0100001E": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "2450AT18A0100001E",
+        "digikey_part": "",
+        "manufacturer": "Johanson Technology Inc.",
+        "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
+        "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
+        "url": "https://www.digikey.com/en/products/detail/johanson-technology-inc/2450AT18A0100001E/1560676",
+        "stock": 257973,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:51:16.471040+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "2450AT18A100E",
+        "lcsc_part": "C89334",
+        "manufacturer": "JOHANSON",
+        "description": "Mini 2.45 GHz Antenna, Johanson Technology",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html",
+        "stock": 0,
+        "price_1": 0.4391,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:51:18.499588+00:00"
+      }
+    },
+    "mpn:RECE.20449.001E.01": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RECE.20449.001E.01",
+        "digikey_part": "",
+        "manufacturer": "Taoglas Limited",
+        "description": "CONN UMC RCPT STR 50 OHM SMD",
+        "datasheet_url": "https://cdn.taoglas.com/datasheets/RECE.20449.001E.01.pdf",
+        "url": "https://www.digikey.com/en/products/detail/taoglas-limited/RECE-20449-001E-01/3083254",
+        "stock": 49474,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:54:51.737599+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "RECE.20449.001E.01",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=RECE.20449.001E.01",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:54:54.317250+00:00"
+      }
+    },
+    "mpn:CS06654-32M": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CS06654-32M",
+        "digikey_part": "",
+        "manufacturer": "NDK (NIHON DEMPA KOGYO CO., LTD)",
+        "description": "CRYSTAL 32.0000MHZ 8PF SMD",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8456/644_CS06654-32M.pdf",
+        "url": "https://www.digikey.com/en/products/detail/ndk-nihon-dempa-kogyo-co-ltd/CS06654-32M/9172029",
+        "stock": 55005,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T19:58:12.545162+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "CS06654-32M",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=CS06654-32M",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T19:58:14.527627+00:00"
+      }
+    },
+    "mpn:1528-4328-ND": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "4328",
+        "digikey_part": "",
+        "manufacturer": "Adafruit Industries LLC",
+        "description": "QWIIC COMPATIBLE JST SH 4PIN CON",
+        "datasheet_url": "https://cdn-shop.adafruit.com/product-files/4328/4328_C13916-001_CCSH-W10-04-BK-RC-A.pdf",
+        "url": "https://www.digikey.com/en/products/detail/adafruit-industries-llc/4328/10481838",
+        "stock": 156,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T20:04:17.506261+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": false,
+        "mpn": "1528-4328-ND",
+        "lcsc_part": "",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=1528-4328-ND",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-07-14T20:04:19.697076+00:00"
+      }
+    },
+    "mpn:AF0603FR-07150KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "AF0603FR-07150KL",
+        "digikey_part": "",
+        "manufacturer": "YAGEO",
+        "description": "RES SMD 150K OHM 1% 1/10W 0603",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-AF_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/AF0603FR-07150KL/5900892",
+        "stock": 25255,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:27:32.499704+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "AF0603FR-07150KL",
+        "lcsc_part": "C144085",
+        "manufacturer": "YAGEO",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_YAGEO-AF0603FR-07150KL_C144085.html",
+        "stock": 0,
+        "price_1": 0.0053,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:27:34.851864+00:00"
+      }
+    },
+    "mpn:GRM188R61H225KE11D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R61H225KE11D",
+        "digikey_part": "",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2.2UF 50V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61H225KE11D/4905363",
+        "stock": 152020,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:32:54.027603+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "GRM188R61H225KE11D",
+        "lcsc_part": "C162273",
+        "manufacturer": "muRata",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC---SMD-SMT_muRata-GRM188R61H225KE11D_C162273.html",
+        "stock": 156280,
+        "price_1": 0.0624,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:32:56.371697+00:00"
+      }
+    },
+    "mpn:CL21A106KACLRNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL21A106KACLRNC",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 10UF 25V X5R 0805",
+        "datasheet_url": "https://www.samsungsem.com/resources/file/global/support/product_catalog/MLCC_2512.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A106KACLRNC/3888055",
+        "stock": 70346,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:35:04.934494+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL21A106KACLRNC",
+        "lcsc_part": "C318687",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "0805",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC---SMD-SMT_Samsung-Electro-Mechanics-CL21A106KACLRNC_C318687.html",
+        "stock": 0,
+        "price_1": 0.0973,
+        "kind": "exact",
+        "fetched_at": "2026-07-14T23:35:07.302749+00:00"
       }
     }
   }

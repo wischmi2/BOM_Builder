@@ -1255,6 +1255,14 @@
       "qty_on_hand": 50,
       "location": "",
       "notes": "Powell Electronics, 50.; Powell Electronics, 50."
+    },
+    {
+      "id": "f04daede-92c5-4c9b-a667-5fe5845c7fb2",
+      "lib_ref": "nPM1300-QEAA-R7",
+      "name": "nPM1300-QEAA-R7",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
     }
   ]
 }

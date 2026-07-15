@@ -7,12 +7,12 @@
       "id": "row-1-002bae5f2f1ec6c4",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2450AT18A100E",
-      "description": "Mini 2.45 GHz Antenna, Johanson Technology",
+      "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
       "designators": [
         "AE1"
       ],
       "footprint": "easyeda2kicad:ANT-SMD_L3.2-W1.6",
-      "lib_ref": "2450AT18A100E",
+      "lib_ref": "2450AT18A0100001E",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -21,12 +21,12 @@
       "original_name": "2450AT18A100E",
       "original_description": "Mini 2.45 GHz Antenna, Johanson Technology",
       "lcsc_part": "C89334",
-      "manufacturer": "JOHANSON",
-      "datasheet_url": "https://lcsc.com/product-detail/RF-Antenna_JOHANSON_2450AT18A100E_2450AT18A100E_C89334.html",
-      "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "manufacturer": "Johanson Technology Inc.",
+      "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
+      "unit_price": 0.4391,
+      "stock": 0,
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:37:50.148326+00:00"
     },
     {
       "id": "row-2-e4cdc7e7ff8cb026",
@@ -368,12 +368,12 @@
       "id": "row-15-f0220934b44ee628",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SM04B-SRSS-TB",
-      "description": "",
+      "description": "CONN HEADER SMD R/A 4POS 1MM",
       "designators": [
         "CN1"
       ],
       "footprint": "easyeda2kicad:CONN-SMD_4P-P1.00_SM04B-SRSS-TB-LF-SN",
-      "lib_ref": "SM04B-SRSS-TB(LF)(SN)",
+      "lib_ref": "SM04B-SRSS-TB",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -382,12 +382,12 @@
       "original_name": "SM04B-SRSS-TB",
       "original_description": "",
       "lcsc_part": "C160404",
-      "manufacturer": "JST",
-      "datasheet_url": "https://lcsc.com/product-detail/Others_JST-Sales-America__JST-Sales-America-SM04B-SRSS-TB-LF-SN_C160404.html",
-      "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "manufacturer": "JST Sales America Inc.",
+      "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+      "unit_price": 0.2084,
+      "stock": 6462,
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:38:13.666093+00:00"
     },
     {
       "id": "row-16-e657225e9738307e",
@@ -460,10 +460,10 @@
       "lcsc_part": "C1046",
       "manufacturer": "Sunlord",
       "datasheet_url": "https://lcsc.com/product-detail/Inductors-SMD_10uH-10_C1046.html",
-      "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "unit_price": 0.0152,
+      "stock": 236600,
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:41:02.783564+00:00"
     },
     {
       "id": "row-19-2f9e7980d412a82e",
@@ -514,7 +514,7 @@
       "unit_price": null,
       "stock": 60275,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:28:06.661770+00:00"
+      "enriched_at": "2026-07-14T19:20:05.409687+00:00"
     },
     {
       "id": "row-21-3255f78371607d1a",
@@ -596,7 +596,7 @@
       "id": "row-24-c158a0de21b1a240",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.2uH",
-      "description": "",
+      "description": "FIXED IND 2.2UH 1.2A 292 MOHM",
       "designators": [
         "L9",
         "L10"
@@ -611,23 +611,23 @@
       "original_name": "2.2uH",
       "original_description": "",
       "lcsc_part": "C6079477",
-      "manufacturer": "TAIYO YUDEN",
-      "datasheet_url": "https://www.lcsc.com/datasheet/C6079477.pdf",
+      "manufacturer": "Taiyo Yuden",
+      "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4802/LSCNB1608HKT2R2MD_SS.pdf",
       "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "stock": 0,
+      "enriched_from": "digikey",
+      "enriched_at": "2026-07-14T19:20:20.465991+00:00"
     },
     {
       "id": "row-25-92505691f2d53882",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SML-P12MTT86R",
-      "description": "",
+      "description": "LED GREEN 1608 SMD",
       "designators": [
         "LED1"
       ],
       "footprint": "easyeda2kicad:LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR",
-      "lib_ref": "SML-P12MTT86R",
+      "lib_ref": "SMLEN3EC8TT86",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -636,12 +636,12 @@
       "original_name": "SML-P12MTT86R",
       "original_description": "",
       "lcsc_part": "C510304",
-      "manufacturer": "ROHM",
-      "datasheet_url": "https://www.lcsc.com/datasheet/C510304.pdf",
+      "manufacturer": "Rohm Semiconductor",
+      "datasheet_url": "https://www.rohm.com/datasheet?p=SMLEN3EC8T&dist=Digi-key&media=referral&source=digi-key.com&campaign=Digi-key",
       "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "stock": 7794,
+      "enriched_from": "digikey",
+      "enriched_at": "2026-07-14T16:39:36.979698+00:00"
     },
     {
       "id": "row-26-47f02c7b3b5a87af",
@@ -716,8 +716,8 @@
       "datasheet_url": "https://www.lcsc.com/datasheet/C54531078.pdf",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:36:29.687467+00:00"
     },
     {
       "id": "row-29-0b1acf2fc3b1517b",
@@ -743,7 +743,7 @@
       "unit_price": 0.0017,
       "stock": 1163700,
       "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:10:11.118842+00:00"
+      "enriched_at": "2026-07-14T16:35:07.424256+00:00"
     },
     {
       "id": "row-30-7185c4b5181d4f27",
@@ -774,7 +774,7 @@
       "id": "row-31-71706638c9f6fe67",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "10k",
-      "description": "",
+      "description": "RES SMD 10K OHM 0.1% 1/16W 0402",
       "designators": [
         "R8"
       ],
@@ -789,11 +789,11 @@
       "original_description": "",
       "lcsc_part": "C190095",
       "manufacturer": "YAGEO",
-      "datasheet_url": "https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_10KR-1002-0-1_C190095.html",
-      "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L",
+      "unit_price": 0.0331,
+      "stock": 65240,
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:36:51.917432+00:00"
     },
     {
       "id": "row-32-7ab554541173f097",
@@ -817,8 +817,8 @@
       "datasheet_url": "https://www.lcsc.com/datasheet/C2907042.pdf",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:36:06.277672+00:00"
     },
     {
       "id": "row-33-34457a9a31c48a6c",
@@ -894,7 +894,7 @@
       "unit_price": 0.0017,
       "stock": 2005900,
       "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:09:55.757342+00:00"
+      "enriched_at": "2026-07-14T16:35:46.804357+00:00"
     },
     {
       "id": "row-36-3e50819e51d2c7f4",
@@ -941,21 +941,21 @@
       "lcsc_part": "C437254",
       "manufacturer": "ECT",
       "datasheet_url": "https://lcsc.com/product-detail/RF-Connectors-Coaxial-Connectors_ECT-ECT818000500_C437254.html",
-      "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "unit_price": 0.0577,
+      "stock": 1540,
+      "enriched_from": "lcsc",
+      "enriched_at": "2026-07-14T16:38:05.235618+00:00"
     },
     {
       "id": "row-38-7cce4e323a8be229",
       "bom_id": "nrf54l15_soil_moisture",
-      "name": "nPM1300-QEXX",
+      "name": "nPM1300-QEAA-R7",
       "description": "PMIC, LED Driver, Battery Charger, QFN-32",
       "designators": [
         "U2"
       ],
       "footprint": "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias",
-      "lib_ref": "nPM1300-QEXX",
+      "lib_ref": "nPM1300-QEAA-R7",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -1025,13 +1025,13 @@
     {
       "id": "row-41-1879a14f251420bc",
       "bom_id": "nrf54l15_soil_moisture",
-      "name": "nRF54L15-QFXX",
-      "description": "nRF54L Dual Core Multiprotocol BLE SoC",
+      "name": "NRF54L15-QFAA-R7",
+      "description": "IC RF TXRX+MCU",
       "designators": [
         "U6"
       ],
       "footprint": "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.6x4.6mm_ThermalVias",
-      "lib_ref": "nRF54L15-QFXX",
+      "lib_ref": "NRF54L15-QFAA-R7",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -1040,12 +1040,12 @@
       "original_name": "nRF54L15-QFXX",
       "original_description": "nRF54L Dual Core Multiprotocol BLE SoC",
       "lcsc_part": "",
-      "manufacturer": "",
-      "datasheet_url": "https://docs.nordicsemi.com/bundle/ps_nrf54L15",
+      "manufacturer": "Nordic Semiconductor ASA",
+      "datasheet_url": "https://docs-be.nordicsemi.com/bundle/ps_nrf54L15/page/pdf/nRF54L15_nRF54L10_nRF54L05_Datasheet_v1.0.pdf",
       "unit_price": null,
-      "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "stock": 0,
+      "enriched_from": "digikey",
+      "enriched_at": "2026-07-14T18:27:13.767540+00:00"
     },
     {
       "id": "row-42-174ba919dd79c9ce",
@@ -1070,7 +1070,7 @@
       "unit_price": null,
       "stock": null,
       "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:31:46.687054+00:00"
+      "enriched_at": "2026-07-14T18:38:49.344034+00:00"
     }
   ]
 }
