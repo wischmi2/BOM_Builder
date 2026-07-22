@@ -172,17 +172,31 @@
         "fetched_at": "2026-07-14T14:27:37.141126+00:00"
       },
       "mouser": {
-        "found": false,
+        "distributor": "mouser",
+        "found": true,
         "mpn": "1206W4F1003T5E",
-        "url": "https://www.mouser.com/c/?q=1206W4F1003T5E",
-        "manufacturer": "",
-        "description": "",
+        "mouser_part": "303-1206W4F1003T5E",
+        "manufacturer": "Royalohm",
+        "url": "https://www.mouser.com/en/ProductDetail/Royalohm/1206W4F1003T5E?qs=e8oIoAS2J1Qmr5qtCrnipQ%3D%3D",
+        "description": "Thick Film Resistors - SMD RMC 1206 1/4W 1% T/R-5000",
         "datasheet_url": "",
         "stock": null,
         "stock_text": "",
-        "price_1": null,
-        "price_breaks": [],
-        "fetched_at": "2026-07-14T01:17:28.593920+00:00"
+        "price_1": 0.003,
+        "price_breaks": [
+          {
+            "Quantity": 5000,
+            "Price": "$0.003",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 25000,
+            "Price": "$0.002",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:31.510941+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -196,7 +210,7 @@
         "stock": 480950,
         "price_1": 0.0029,
         "kind": "exact",
-        "fetched_at": "2026-07-14T01:59:44.140387+00:00"
+        "fetched_at": "2026-07-22T12:07:31.886514+00:00"
       }
     },
     "mpn:1RC0402J0335": {
@@ -222,7 +236,7 @@
         "stock_text": "",
         "price_1": null,
         "price_breaks": [],
-        "fetched_at": "2026-07-14T02:01:42.454301+00:00"
+        "fetched_at": "2026-07-22T12:07:36.086977+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -236,7 +250,7 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T02:01:43.638011+00:00"
+        "fetched_at": "2026-07-22T12:07:36.291973+00:00"
       }
     },
     "mpn:2450AT18A100E": {
@@ -298,17 +312,46 @@
         "fetched_at": "2026-07-14T14:26:40.024367+00:00"
       },
       "mouser": {
-        "found": false,
+        "distributor": "mouser",
+        "found": true,
         "mpn": "CC0603MRX5R8BB106",
-        "url": "https://www.mouser.com/c/?q=CC0603MRX5R8BB106",
-        "manufacturer": "",
-        "description": "",
-        "datasheet_url": "",
-        "stock": null,
-        "stock_text": "",
-        "price_1": null,
-        "price_breaks": [],
-        "fetched_at": "2026-07-14T02:09:34.149022+00:00"
+        "mouser_part": "603-CC0603MRX58BB106",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/CC0603MRX5R8BB106?qs=tS%2FAHvPQ%2F55gSn%252B6nl2qbw%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 25V 10uF X5R 0603 20% HI CV",
+        "datasheet_url": "https://www.mouser.com/datasheet/3/508/1/upy-gphc_x5r_4v-to-50v.pdf",
+        "stock": 9104,
+        "stock_text": "9104 In Stock",
+        "price_1": 0.78,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.78",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.376",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.341",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.281",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.263",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:07.085045+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -322,7 +365,7 @@
         "stock": 0,
         "price_1": 0.0466,
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:42.203362+00:00"
+        "fetched_at": "2026-07-22T12:08:07.264373+00:00"
       }
     },
     "mpn:CL05A105KO5NNNC": {
@@ -341,17 +384,46 @@
         "fetched_at": "2026-07-14T14:26:43.842854+00:00"
       },
       "mouser": {
-        "found": false,
+        "distributor": "mouser",
+        "found": true,
         "mpn": "CL05A105KO5NNNC",
-        "url": "https://www.mouser.com/c/?q=CL05A105KO5NNNC",
-        "manufacturer": "",
-        "description": "",
+        "mouser_part": "187-CL05A105KO5NNNC",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "url": "https://www.mouser.com/en/ProductDetail/Samsung-Electro-Mechanics/CL05A105KO5NNNC?qs=349EhDEZ59pCm%252BzVtNxq%2FQ%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 1uF+/-10% 16V X5R 10 0402",
         "datasheet_url": "",
-        "stock": null,
-        "stock_text": "",
-        "price_1": null,
-        "price_breaks": [],
-        "fetched_at": "2026-07-14T11:46:45.779391+00:00"
+        "stock": 591860,
+        "stock_text": "591860 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.024",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.021",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.015",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.013",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:11.327919+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -365,7 +437,7 @@
         "stock": 1231600,
         "price_1": 0.0352,
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:45.546167+00:00"
+        "fetched_at": "2026-07-22T12:08:11.512495+00:00"
       }
     },
     "mpn:LQM18PH4R7MFRL": {
@@ -524,7 +596,49 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:49.177594+00:00"
+        "fetched_at": "2026-07-22T12:08:14.198156+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CL10A225KB8NNNC",
+        "mouser_part": "187-CL10A225KB8NNNC",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "url": "https://www.mouser.com/en/ProductDetail/Samsung-Electro-Mechanics/CL10A225KB8NNNC?qs=xZ%2FP%252Ba9zWqYJkP9V6lNdCQ%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 2.2uF+/-10% 50V X5R 0603",
+        "datasheet_url": "",
+        "stock": 4382,
+        "stock_text": "4382 In Stock",
+        "price_1": 0.26,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.26",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.107",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.095",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.073",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.07",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:13.797402+00:00"
       }
     },
     "mpn:CL21A106KAYNNNE": {
@@ -554,7 +668,49 @@
         "stock": 201340,
         "price_1": 0.067,
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:52.367802+00:00"
+        "fetched_at": "2026-07-22T12:08:17.744382+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CL21A106KAYNNNE",
+        "mouser_part": "187-CL21A106KAYNNNE",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "url": "https://www.mouser.com/en/ProductDetail/Samsung-Electro-Mechanics/CL21A106KAYNNNE?qs=yOVawPpwOwmTXAd4dJtNjA%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 25V X5R 2 0805",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": 0.18,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.18",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.072",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.063",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.048",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.043",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:17.554846+00:00"
       }
     },
     "mpn:CL31A476MPHNNNE": {
@@ -585,6 +741,48 @@
         "price_1": 0.0819,
         "kind": "exact",
         "fetched_at": "2026-07-14T14:26:55.217596+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CL31A476MPHNNNE",
+        "mouser_part": "187-CL31A476MPHNNNE",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "url": "https://www.mouser.com/en/ProductDetail/Samsung-Electro-Mechanics/CL31A476MPHNNNE?qs=X6jEic%2FHinAH4CKuYqWwYw%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 47uF+/-20% 10V X5R 3 1206",
+        "datasheet_url": "",
+        "stock": 4718,
+        "stock_text": "4718 In Stock",
+        "price_1": 0.46,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.46",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.224",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.199",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.161",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.149",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:21.772496+00:00"
       }
     },
     "mpn:GCM155R71H103KA55D": {
@@ -975,7 +1173,20 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:02:01.242108+00:00"
+        "fetched_at": "2026-07-22T12:07:40.344374+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "FRC0402F3904TS",
+        "url": "https://www.mouser.com/c/?q=FRC0402F3904TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-22T12:07:40.155295+00:00"
       }
     },
     "mpn:FRC0402F5600TS": {
@@ -1002,7 +1213,20 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:07:13.425144+00:00"
+        "fetched_at": "2026-07-22T12:07:44.688232+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "FRC0402F5600TS",
+        "url": "https://www.mouser.com/c/?q=FRC0402F5600TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-22T12:07:44.482574+00:00"
       }
     },
     "mpn:RC0402FR-074K7L": {
@@ -1032,7 +1256,49 @@
         "stock": 2005900,
         "price_1": 0.0017,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:09:49.477491+00:00"
+        "fetched_at": "2026-07-22T12:07:56.854813+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RC0402FR-074K7L",
+        "mouser_part": "603-RC0402FR-074K7L",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RC0402FR-074K7L?qs=V1yeUXFNrkn%2FmCXC8N8TTA%3D%3D",
+        "description": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 4.7kOhms, 1%, 1/16W",
+        "datasheet_url": "https://www.mouser.com/catalog/specsheets/YAGEO_PYu_RC_Group_51_RoHS_L_12.pdf",
+        "stock": 4919457,
+        "stock_text": "4919457 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.009",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.006",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.005",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 2500,
+            "Price": "$0.004",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:56.627659+00:00"
       }
     },
     "mpn:RC0402JR-071ML": {
@@ -1062,7 +1328,49 @@
         "stock": 1163700,
         "price_1": 0.0017,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:10:06.941615+00:00"
+        "fetched_at": "2026-07-22T12:07:58.800236+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RC0402JR-071ML",
+        "mouser_part": "603-RC0402JR-071ML",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RC0402JR-071ML?qs=uM1JSSdPjOCNcwoUm19Cag%3D%3D",
+        "description": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 1MOhms, 5%, 1/16W",
+        "datasheet_url": "https://www.mouser.com/catalog/specsheets/YAGEO_PYu_RC_Group_51_RoHS_L_12.pdf",
+        "stock": 1245301,
+        "stock_text": "1245301 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.01",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.006",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.005",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 2500,
+            "Price": "$0.004",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:58.616168+00:00"
       }
     },
     "mpn:RCA025K1FLF": {
@@ -1089,7 +1397,20 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:10:40.659357+00:00"
+        "fetched_at": "2026-07-22T12:08:01.678021+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "RCA025K1FLF",
+        "url": "https://www.mouser.com/c/?q=RCA025K1FLF",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-22T12:08:01.147104+00:00"
       }
     },
     "mpn:S2B-PH-K-S-GW": {
@@ -1149,7 +1470,49 @@
         "stock": 0,
         "price_1": 0.1642,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:18:40.698736+00:00"
+        "fetched_at": "2026-07-22T12:08:09.806833+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "GRT188R61E106ME13D",
+        "mouser_part": "81-GRT188R61E106ME3D",
+        "manufacturer": "Murata Electronics",
+        "url": "https://www.mouser.com/en/ProductDetail/Murata-Electronics/GRT188R61E106ME13D?qs=drgMNd%252BkGPNNTFaFP8SYQA%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 10 uF 25 VDC 20% 0603 X5R AEC-Q200",
+        "datasheet_url": "https://www.mouser.com/datasheet/3/76/2/GRT188R61E106ME13_01A.pdf",
+        "stock": 114599,
+        "stock_text": "114599 In Stock",
+        "price_1": 0.26,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.26",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.111",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.098",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.076",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.069",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:09.455731+00:00"
       }
     },
     "mpn:LLCNB1608HKT2R2MD": {
@@ -1320,7 +1683,20 @@
         "stock": null,
         "price_1": null,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:35:57.895338+00:00"
+        "fetched_at": "2026-07-22T12:07:53.089501+00:00"
+      },
+      "mouser": {
+        "found": false,
+        "mpn": "FRC0603F4702TS",
+        "url": "https://www.mouser.com/c/?q=FRC0603F4702TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-22T12:07:52.898132+00:00"
       }
     },
     "mpn:RT0402BRD0710KL": {
@@ -1350,7 +1726,49 @@
         "stock": 65240,
         "price_1": 0.0331,
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:37:00.441575+00:00"
+        "fetched_at": "2026-07-22T12:08:05.125494+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RT0402BRD0710KL",
+        "mouser_part": "603-RT0402BRD0710KL",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RT0402BRD0710KL?qs=BXCcY9r%252B08CHcR6Z4tEoVQ%3D%3D",
+        "description": "Thin Film Resistors - SMD 10K ohm 0.1% 1/16W",
+        "datasheet_url": "https://www.mouser.com/datasheet/3/72/1/PYU_RT_1_TO_0_01_ROHS_L.pdf",
+        "stock": null,
+        "stock_text": "",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.069",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.065",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 250,
+            "Price": "$0.06",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.057",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:04.940732+00:00"
       }
     },
     "mpn:SML-P12MTT86R": {
@@ -1436,7 +1854,49 @@
         "stock": 0,
         "price_1": 0.009,
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:03:05.509052+00:00"
+        "fetched_at": "2026-07-22T12:07:33.895418+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CRCW1206100KFKEBC",
+        "mouser_part": "71-CRCW1206100KFKEBC",
+        "manufacturer": "Vishay",
+        "url": "https://www.mouser.com/en/ProductDetail/Vishay/CRCW1206100KFKEBC?qs=wd5RIQLrsJgEmyXWWDkXkA%3D%3D",
+        "description": "Thick Film Resistors - SMD 1/4Watt 100Kohms 1% Commercial Use",
+        "datasheet_url": "",
+        "stock": 53025,
+        "stock_text": "53025 In Stock",
+        "price_1": 0.2,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.20",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.113",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.048",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 250,
+            "Price": "$0.039",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.036",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:33.537922+00:00"
       }
     },
     "mpn:RC0402JR-073M3L": {
@@ -1466,7 +1926,49 @@
         "stock": 0,
         "price_1": 0.0011,
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:05:21.847926+00:00"
+        "fetched_at": "2026-07-22T12:07:38.181984+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RC0402JR-073M3L",
+        "mouser_part": "603-RC0402JR-073M3L",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RC0402JR-073M3L?qs=uM1JSSdPjOAZtq3Huw3R2w%3D%3D",
+        "description": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.3MOhms, 5%, 1/16W",
+        "datasheet_url": "https://www.mouser.com/catalog/specsheets/YAGEO_PYu_RC_Group_51_RoHS_L_12.pdf",
+        "stock": 373,
+        "stock_text": "373 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.009",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.006",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.005",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 2500,
+            "Price": "$0.004",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:37.827825+00:00"
       }
     },
     "mpn:RC0402FR-073M9L": {
@@ -1496,7 +1998,49 @@
         "stock": 0,
         "price_1": 0.0014,
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:06:31.500423+00:00"
+        "fetched_at": "2026-07-22T12:07:42.205047+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RC0402FR-073M9L",
+        "mouser_part": "603-RC0402FR-073M9L",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RC0402FR-073M9L?qs=UOUeRUa%252B8Wlu6bwumbSnFg%3D%3D",
+        "description": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.9MOhms, 1%, 1/16W",
+        "datasheet_url": "https://www.mouser.com/catalog/specsheets/YAGEO_PYu_RC_Group_51_RoHS_L_12.pdf",
+        "stock": 234426,
+        "stock_text": "234426 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.009",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.006",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.005",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 2500,
+            "Price": "$0.004",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:41.887210+00:00"
       }
     },
     "mpn:RC0402FR-7D560RL": {
@@ -1552,7 +2096,49 @@
         "stock": 0,
         "price_1": 0.0036,
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:10:49.421723+00:00"
+        "fetched_at": "2026-07-22T12:07:54.825789+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CRCW060347K0FKECC",
+        "mouser_part": "71-CRCW060347K0FKECC",
+        "manufacturer": "Vishay",
+        "url": "https://www.mouser.com/en/ProductDetail/Vishay/CRCW060347K0FKECC?qs=wd5RIQLrsJhZ%252BAw%2FUwL2SA%3D%3D",
+        "description": "Thick Film Resistors - SMD 1/10Watt 47Kohms 1% Commercial Use",
+        "datasheet_url": "",
+        "stock": 36669,
+        "stock_text": "36669 In Stock",
+        "price_1": 0.4,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.40",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.049",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 250,
+            "Price": "$0.035",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.031",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:54.479206+00:00"
       }
     },
     "mpn:CRCW04025K10JNTD": {
@@ -1612,7 +2198,49 @@
         "stock": 0,
         "price_1": 0.0074,
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:15:49.481182+00:00"
+        "fetched_at": "2026-07-22T12:08:03.215143+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CR0402-FX-5101GLF",
+        "mouser_part": "652-CR0402FX-5101GLF",
+        "manufacturer": "Bourns",
+        "url": "https://www.mouser.com/en/ProductDetail/Bourns/CR0402-FX-5101GLF?qs=ePR1ZvdkOKImkuXR%2F%2FtvtA%3D%3D",
+        "description": "Thick Film Resistors - SMD 5.1K OHM 1%",
+        "datasheet_url": "https://www.mouser.com/datasheet/3/40/1/cr.pdf",
+        "stock": 66146,
+        "stock_text": "66146 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.009",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.005",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 250,
+            "Price": "$0.003",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 5000,
+            "Price": "$0.002",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:02.853557+00:00"
       }
     },
     "mpn:LQP03TQ3N9B02D": {
@@ -1967,7 +2595,49 @@
         "stock": 0,
         "price_1": 0.0053,
         "kind": "exact",
-        "fetched_at": "2026-07-14T23:27:34.851864+00:00"
+        "fetched_at": "2026-07-22T12:07:50.786879+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "AF0603FR-07150KL",
+        "mouser_part": "603-AF0603FR-07150KL",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/AF0603FR-07150KL?qs=NgbZBzc1CyFOvprMtfm2Pw%3D%3D",
+        "description": "Thick Film Resistors - SMD 150 kOhms 100mW 0603 1% AEC-Q200",
+        "datasheet_url": "https://www.mouser.com/datasheet/3/508/1/PYu-AF_51_RoHS_L_9.pdf",
+        "stock": 204,
+        "stock_text": "204 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.022",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.015",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.012",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 5000,
+            "Price": "$0.008",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:50.443012+00:00"
       }
     },
     "mpn:GRM188R61H225KE11D": {
@@ -1994,10 +2664,52 @@
         "description": "0603",
         "datasheet_url": "",
         "url": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC---SMD-SMT_muRata-GRM188R61H225KE11D_C162273.html",
-        "stock": 156280,
+        "stock": 118000,
         "price_1": 0.0624,
         "kind": "exact",
-        "fetched_at": "2026-07-14T23:32:56.371697+00:00"
+        "fetched_at": "2026-07-22T12:08:16.053894+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "GRM188R61H225KE11D",
+        "mouser_part": "81-GRM188R61H225KE1D",
+        "manufacturer": "Murata Electronics",
+        "url": "https://www.mouser.com/en/ProductDetail/Murata-Electronics/GRM188R61H225KE11D?qs=eeBpzGFlv%252B%2Fz%2FOAJ2DfLOw%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 2.2 uF 50 VDC 10% 0603 X5R",
+        "datasheet_url": "",
+        "stock": 106432,
+        "stock_text": "106432 In Stock",
+        "price_1": 0.22,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.22",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.093",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.082",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.063",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.057",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:15.529057+00:00"
       }
     },
     "mpn:CL21A106KACLRNC": {
@@ -2027,7 +2739,136 @@
         "stock": 0,
         "price_1": 0.0973,
         "kind": "exact",
-        "fetched_at": "2026-07-14T23:35:07.302749+00:00"
+        "fetched_at": "2026-07-22T12:08:20.213012+00:00"
+      },
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "CL21A106KACLRNC",
+        "mouser_part": "187-CL21A106KACLRNC",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "url": "https://www.mouser.com/en/ProductDetail/Samsung-Electro-Mechanics/CL21A106KACLRNC?qs=%252B6g0mu59x7LnR9u%252BhkOh4Q%3D%3D",
+        "description": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 10uF+/-10% 25V X5R 2 0805",
+        "datasheet_url": "",
+        "stock": 35424,
+        "stock_text": "35424 In Stock",
+        "price_1": 0.58,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.58",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.28",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.252",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 500,
+            "Price": "$0.205",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 1000,
+            "Price": "$0.19",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:08:19.880111+00:00"
+      }
+    },
+    "mpn:RC0402FR-07560RL": {
+      "mouser": {
+        "distributor": "mouser",
+        "found": true,
+        "mpn": "RC0402FR-07560RL",
+        "mouser_part": "603-RC0402FR-07560RL",
+        "manufacturer": "YAGEO",
+        "url": "https://www.mouser.com/en/ProductDetail/YAGEO/RC0402FR-07560RL?qs=Is6ZsIPfHkaar5c8drXNXg%3D%3D",
+        "description": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 560Ohms, 1%, 1/16W",
+        "datasheet_url": "https://www.mouser.com/catalog/specsheets/YAGEO_PYu_RC_Group_51_RoHS_L_12.pdf",
+        "stock": 1086706,
+        "stock_text": "1086706 In Stock",
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "Quantity": 1,
+            "Price": "$0.10",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10,
+            "Price": "$0.01",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 100,
+            "Price": "$0.006",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 2500,
+            "Price": "$0.004",
+            "Currency": "USD"
+          },
+          {
+            "Quantity": 10000,
+            "Price": "$0.002",
+            "Currency": "USD"
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:46.207721+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "RC0402FR-07560RL",
+        "lcsc_part": "C163460",
+        "manufacturer": "YAGEO",
+        "description": "0402",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Chip-Resistor---Surface-Mount_YAGEO-RC0402FR-07560RL_C163460.html",
+        "stock": 3800,
+        "price_1": 0.0054,
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:46.554680+00:00"
+      }
+    },
+    "mpn:FRC0603F1503TS": {
+      "mouser": {
+        "found": false,
+        "mpn": "FRC0603F1503TS",
+        "url": "https://www.mouser.com/c/?q=FRC0603F1503TS",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "stock_text": "",
+        "price_1": null,
+        "price_breaks": [],
+        "fetched_at": "2026-07-22T12:07:48.673204+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "FRC0603F1503TS",
+        "lcsc_part": "C2906993",
+        "manufacturer": "FOJAN",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/search?q=C2906993",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-07-22T12:07:48.922623+00:00"
       }
     }
   }

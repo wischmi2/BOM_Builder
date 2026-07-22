@@ -1263,6 +1263,214 @@
       "qty_on_hand": 5,
       "location": "",
       "notes": ""
+    },
+    {
+      "id": "c6bf9a9f-45bc-48ee-b266-79f53e47277c",
+      "lib_ref": "GRM188R61H225KE11D",
+      "name": "CAP CER 2.2UF 50V X5R 0603",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "ca3994c0-8d02-48bf-b4d3-453194befdb9",
+      "lib_ref": "LQP03HQ3N5B02D",
+      "name": "3.5nH",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b894c4de-da15-4b4a-9231-189749e2bcef",
+      "lib_ref": "GJM0335C1E1R5WB01D",
+      "name": "1.5pF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c7c62044-dbce-472c-a635-a0fb3f8c72c3",
+      "lib_ref": "GRM188R72A104KA35D",
+      "name": "100nF",
+      "qty_on_hand": 30,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "ab1cbf53-f2c2-473c-b518-12cf5f6f99cd",
+      "lib_ref": "GJM0335C1E2R2WB01D",
+      "name": "2.2pF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "42fa3ca2-414d-4c10-b2fa-8e310fd4f60a",
+      "lib_ref": "CR0402-FX-5101GLF",
+      "name": "Thick Film Resistors - SMD 5.1K OHM 1%",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c95cd7cb-0ced-4860-9f0a-a18f2a85da79",
+      "lib_ref": "GJM0335C1ER30WB01D",
+      "name": "0.3pF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "3640f140-5cb1-4d87-ad93-25cf48cbf1e4",
+      "lib_ref": "RC0402JR-071ML",
+      "name": "1M",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b8d28409-e9f5-41eb-b592-7d4173a2dd17",
+      "lib_ref": "LQM18PN2R2MGHD",
+      "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.05 A 250mOhm Max 0603 (1608 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "d0e5af5a-21ca-412d-a6d0-aa57a027dcaa",
+      "lib_ref": "GCM155R71H103KA55D",
+      "name": "10nF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "10000pF"
+    },
+    {
+      "id": "fde61ce7-24fa-4670-9b17-9b4d7f89744d",
+      "lib_ref": "RC0402FR-07560RL",
+      "name": "560 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "fde1f0c7-ba42-490a-ba78-bc0dd061ab14",
+      "lib_ref": "GJM0335C1E2R0WB01D",
+      "name": "2.0pF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "24a8357d-0e6b-44b1-91a6-5d5a0593490d",
+      "lib_ref": "RC0402FR-074K7L",
+      "name": "4.7k",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "300c6cdb-6dd6-4739-90b3-add879967688",
+      "lib_ref": "MHQ1005075HA4N3BTD25",
+      "name": "RF Inductors - SMD FIXED IND 4.3NH 0.6A 120 MOHM SMD",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7399f5cc-17e4-4d1d-bf28-0d0a68cbd37f",
+      "lib_ref": "GJM0335C1E1R0WB01D",
+      "name": "1.0pF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "86534bfb-dc71-4b60-a435-a95ea6b0b443",
+      "lib_ref": "GZ1005D121TF",
+      "name": "FERRITE BEAD 120 OHM 0402 1LN",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "92bd6f95-0cd0-4c00-9e9f-6a230426211e",
+      "lib_ref": "CL31A476MPHNNNE",
+      "name": "47uF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "3e946a64-de0e-420d-b0a0-bc0860d1a954",
+      "lib_ref": "LQP03TQ3N9B02D",
+      "name": "3.9nH",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6828aa6b-9834-4e1d-a215-e9ab0dc0259c",
+      "lib_ref": "CRCW060347K0FKEC",
+      "name": "Thick Film Resistors - SMD 1/10Watt 47Kohms 1% Commercial Use",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "3669adc1-3ee3-45ec-88f9-8615f14d39d5",
+      "lib_ref": "GRM033R61A225KE47D",
+      "name": "2.2uF",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "22894fbf-9df5-43db-9684-f338256eb726",
+      "lib_ref": "RC0402JR-073M3L",
+      "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.3MOhms, 5%, 1/16W",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1e5ae936-4556-438f-8688-555e21b891fd",
+      "lib_ref": "AF0603FR-07150KL",
+      "name": "Thick Film Resistors - SMD 150 kOhms 100mW 0603 1% AEC-Q200",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "9064f57d-54e8-4581-a00a-8b504e96f143",
+      "lib_ref": "CL05A105KO5NNNC",
+      "name": "1uF",
+      "qty_on_hand": 20,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "d700d5a4-db5f-49fd-ac2e-a79259fa682b",
+      "lib_ref": "LQM18PH4R7MFRL",
+      "name": "4.7uH",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "080122c4-28ce-447f-892a-1079693b2cb1",
+      "lib_ref": "RT0402BRD0710KL",
+      "name": "10k",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "834cfa44-8c38-47d2-9c6c-fd48be0ab8d3",
+      "lib_ref": "CRCW1206100KFKEBC",
+      "name": "Thick Film Resistors - SMD 1/4Watt 100Kohms 1%",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
     }
   ]
 }

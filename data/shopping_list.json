@@ -668,15 +668,17 @@
     },
     "lib:LQM18PH4R7MFRL": {
       "mpn": "LQM18PH4R7MFRL",
-      "updated_at": "2026-07-14T20:08:10.168151+00:00",
+      "updated_at": "2026-07-22T19:48:38.517845+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:LQP03HQ3N5B02D": {
       "mpn": "LQP03HQ3N5B02D",
-      "updated_at": "2026-07-14T20:07:54.885211+00:00",
+      "updated_at": "2026-07-22T19:27:43.055678+00:00",
       "buy_qty": 15,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 15
     },
     "lib:CC0603MRX5R8BB106": {
       "mpn": "CC0603MRX5R8BB106",
@@ -692,13 +694,14 @@
     },
     "lib:FRC0402F5600TS": {
       "mpn": "FRC0402F5600TS",
-      "updated_at": "2026-07-14T23:45:06.929963+00:00",
+      "updated_at": "2026-07-22T19:40:39.925387+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 25,
         "mpn": "RC0402FR-07560RL",
         "name": "560 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 25
       }
     },
     "lib:NRF54L15QFXX": {
@@ -708,15 +711,17 @@
     },
     "lib:RC0402FR074K7L": {
       "mpn": "RC0402FR-074K7L",
-      "updated_at": "2026-07-14T23:29:22.529627+00:00",
+      "updated_at": "2026-07-22T19:41:42.082924+00:00",
       "buy_qty": 50,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 50
     },
     "lib:RC0402JR071ML": {
       "mpn": "RC0402JR-071ML",
-      "updated_at": "2026-07-14T23:29:51.520426+00:00",
+      "updated_at": "2026-07-22T19:35:48.719679+00:00",
       "buy_qty": 50,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 50
     },
     "lib:S2BPHKSGW": {
       "mpn": "S2B-PH-K-S-GW(PP)",
@@ -724,19 +729,21 @@
     },
     "lib:CL05A105KO5NNNC": {
       "mpn": "CL05A105KO5NNNC",
-      "updated_at": "2026-07-14T23:32:46.520367+00:00",
+      "updated_at": "2026-07-22T19:48:13.935933+00:00",
       "buy_qty": 20,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 20
     },
     "lib:CL10A225KB8NNNC": {
       "mpn": "CL10A225KB8NNNC",
-      "updated_at": "2026-07-14T23:33:22.700565+00:00",
+      "updated_at": "2026-07-22T19:24:14.169405+00:00",
       "alternate": {
         "enabled": true,
         "mpn": "GRM188R61H225KE11D",
         "name": "CAP CER 2.2UF 50V X5R 0603",
         "buy_qty": 10,
-        "ordered": true
+        "ordered": true,
+        "received_qty": 10
       }
     },
     "lib:CL21A106KAYNNNE": {
@@ -752,51 +759,61 @@
     },
     "lib:CL31A476MPHNNNE": {
       "mpn": "CL31A476MPHNNNE",
-      "updated_at": "2026-07-14T23:36:31.007367+00:00",
+      "updated_at": "2026-07-22T19:44:31.149123+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:GCM155R71H103KA55D": {
       "mpn": "GCM155R71H103KA55D",
-      "updated_at": "2026-07-14T23:41:57.800663+00:00",
+      "updated_at": "2026-07-22T19:40:12.847807+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "notes": "10000pF",
+      "received_qty": 10
     },
     "lib:GJM0335C1E1R0WB01D": {
       "mpn": "GJM0335C1E1R0WB01D",
-      "updated_at": "2026-07-14T23:41:42.349822+00:00",
+      "updated_at": "2026-07-22T19:43:45.617404+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:GJM0335C1E1R5WB01D": {
       "mpn": "GJM0335C1E1R5WB01D",
-      "updated_at": "2026-07-14T23:41:28.918545+00:00",
+      "updated_at": "2026-07-22T19:43:09.788624+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10,
+      "notes": "buy more"
     },
     "lib:GJM0335C1E2R0WB01D": {
       "mpn": "GJM0335C1E2R0WB01D",
-      "updated_at": "2026-07-14T23:41:15.681871+00:00",
+      "updated_at": "2026-07-22T19:41:19.350583+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:GJM0335C1E2R2WB01D": {
       "mpn": "GJM0335C1E2R2WB01D",
-      "updated_at": "2026-07-14T23:40:58.980250+00:00",
+      "updated_at": "2026-07-22T19:33:03.286322+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:GJM0335C1ER30WB01D": {
       "mpn": "GJM0335C1ER30WB01D",
-      "updated_at": "2026-07-14T23:40:39.872463+00:00",
+      "updated_at": "2026-07-22T19:35:25.755933+00:00",
       "buy_qty": 10,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 10
     },
     "lib:GRM033R61A225KE47D": {
       "mpn": "GRM033R61A225KE47D",
-      "updated_at": "2026-07-14T23:40:14.891285+00:00",
+      "updated_at": "2026-07-22T19:47:08.309011+00:00",
       "buy_qty": 15,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 15
     },
     "lib:LQP03HQ3N9B02D": {
       "mpn": "LQP03TQ3N9B02D",
@@ -807,10 +824,11 @@
         "enabled": true,
         "mpn": "LQM18PN2R2MGHD",
         "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.05 A 250mOhm Max 0603 (1608 Metric)",
-        "buy_qty": 0,
-        "ordered": true
+        "buy_qty": 10,
+        "ordered": true,
+        "received_qty": 10
       },
-      "updated_at": "2026-07-14T20:06:50.267636+00:00",
+      "updated_at": "2026-07-22T19:36:21.524596+00:00",
       "mpn": "LSCNB1608HKT2R2MD"
     },
     "lib:XL7EL89CKI111YLC32M": {
@@ -840,32 +858,35 @@
     },
     "lib:FRC0603F4702TS": {
       "mpn": "FRC0603F4702TS",
-      "updated_at": "2026-07-14T23:28:47.212365+00:00",
+      "updated_at": "2026-07-22T19:46:31.911313+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
-        "mpn": "CRCW060347K0FKECC",
+        "mpn": "CRCW060347K0FKEC",
         "name": "Thick Film Resistors - SMD 1/10Watt 47Kohms 1% Commercial Use",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 50
       }
     },
     "lib:1RC0402J0335": {
       "mpn": "1RC0402J0335",
-      "updated_at": "2026-07-14T23:23:39.580706+00:00",
+      "updated_at": "2026-07-22T19:47:26.391380+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "RC0402JR-073M3L",
         "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.3MOhms, 5%, 1/16W",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 50
       },
       "name": "3.3M"
     },
     "lib:RT0402BRD0710KL": {
       "mpn": "RT0402BRD0710KL",
-      "updated_at": "2026-07-14T23:30:45.626487+00:00",
+      "updated_at": "2026-07-22T19:49:22.753976+00:00",
       "buy_qty": 50,
-      "ordered": true
+      "ordered": true,
+      "received_qty": 50
     },
     "lib:2450AT18A100E": {
       "mpn": "2450AT18A0100001E",
@@ -898,14 +919,15 @@
     },
     "lib:SDFL2012S100KTF": {
       "mpn": "SDFL2012S100KTF",
-      "updated_at": "2026-07-14T20:06:32.593770+00:00",
+      "updated_at": "2026-07-22T19:43:18.322223+00:00",
       "name": "10uh",
       "alternate": {
         "enabled": true,
         "buy_qty": 10,
         "mpn": "MHQ1005075HA4N3BTD25",
         "name": "RF Inductors - SMD FIXED IND 4.3NH 0.6A 120 MOHM SMD",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 10
       }
     },
     "lib:NPM1300QEXX": {
@@ -927,9 +949,10 @@
         "mpn": "CRCW1206100KFKEBC",
         "name": "Thick Film Resistors - SMD 1/4Watt 100Kohms 1%",
         "notes": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 50
       },
-      "updated_at": "2026-07-14T23:36:53.093717+00:00"
+      "updated_at": "2026-07-22T19:50:28.203912+00:00"
     },
     "lib:FRC0402F3904TS": {
       "alternate": {
@@ -947,9 +970,10 @@
         "buy_qty": 50,
         "mpn": "AF0603FR-07150KL",
         "name": "Thick Film Resistors - SMD 150 kOhms 100mW 0603 1% AEC-Q200",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 50
       },
-      "updated_at": "2026-07-14T23:28:03.664022+00:00"
+      "updated_at": "2026-07-22T19:47:46.730191+00:00"
     },
     "lib:RCA025K1FLF": {
       "alternate": {
@@ -957,9 +981,10 @@
         "buy_qty": 50,
         "mpn": "CR0402-FX-5101GLF",
         "name": "Thick Film Resistors - SMD 5.1K OHM 1%",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 50
       },
-      "updated_at": "2026-07-14T23:30:16.483729+00:00"
+      "updated_at": "2026-07-22T19:34:16.709125+00:00"
     },
     "lib:CBG100505U121T": {
       "alternate": {
@@ -967,15 +992,18 @@
         "buy_qty": 10,
         "mpn": "GZ1005D121TF",
         "name": "FERRITE BEAD 120 OHM 0402 1LN",
-        "ordered": true
+        "ordered": true,
+        "received_qty": 10
       },
-      "updated_at": "2026-07-14T20:09:43.763910+00:00",
+      "updated_at": "2026-07-22T19:44:08.205653+00:00",
       "buy_qty": 5
     },
     "lib:LQP03TQ3N9B02D": {
       "mpn": "LQP03TQ3N9B02D",
-      "updated_at": "2026-07-14T20:07:39.975612+00:00",
-      "ordered": true
+      "updated_at": "2026-07-22T19:45:28.870643+00:00",
+      "ordered": true,
+      "buy_qty": 10,
+      "received_qty": 10
     },
     "lib:SMLEN3EC8TT86": {
       "buy_qty": 6,
@@ -1030,8 +1058,9 @@
     },
     "lib:GRM188R72A104KA35D": {
       "buy_qty": 30,
-      "updated_at": "2026-07-14T23:38:50.014444+00:00",
-      "ordered": true
+      "updated_at": "2026-07-22T19:32:45.700277+00:00",
+      "ordered": true,
+      "received_qty": 30
     }
   }
 }
