@@ -5,6 +5,7 @@
 
     const searchInput = document.getElementById("shop-search");
     const hideOrdered = document.getElementById("shop-hide-ordered");
+    const hideReceived = document.getElementById("shop-hide-received");
     const emptyMsg = document.getElementById("shop-empty");
     const lookupStatus = document.getElementById("shop-lookup-status");
     const lookupVisibleBtn = document.getElementById("shop-lookup-visible");
@@ -60,7 +61,10 @@
         if (!header) return;
         const countEl = header.querySelector(".category-count");
         if (!countEl) return;
-        const visible = rowsForCategory(categoryId).filter((r) => !r.hidden).length;
+        const visible = rowsForCategory(categoryId).filter((r) => {
+            const altRow = altRowFor(r);
+            return !r.hidden || (altRow && !altRow.hidden);
+        }).length;
         const total = rowsForCategory(categoryId).length;
         countEl.textContent = `(${visible === total ? total : visible + "/" + total})`;
     }
@@ -334,6 +338,7 @@
     async function resetReceiveTracking(row, storageKey, isAlternate, parentRow) {
         const result = await receiveLine(storageKey, { action: "reset", alternate: isAlternate });
         updateReceiveUi(row, result, isAlternate ? parentRow : row);
+        applyFilters();
         return result;
     }
 
@@ -414,6 +419,9 @@
                 if (!fullyReceived) {
                     recvCheck.checked = false;
                 }
+                // A newly-received substitute supersedes its primary (and the
+                // Hide received filter may now apply) — re-run visibility.
+                applyFilters();
             } catch (err) {
                 recvCheck.checked = false;
                 alert(err.message || "Could not receive into inventory.");
@@ -888,33 +896,53 @@
         });
     }
 
+    function isFullyReceived(row) {
+        return Boolean(row) && row.classList.contains("row-received");
+    }
+
     function applyFilters() {
         const query = (searchInput?.value || "").trim().toLowerCase();
         const skipOrdered = hideOrdered?.checked ?? false;
+        const skipReceived = hideReceived?.checked ?? false;
         let visible = 0;
 
         rows.forEach((row) => {
             const searchHay = row.dataset.search || "";
             const searchMatch = !query || searchHay.includes(query);
             const mainOrdered = row.dataset.ordered === "1";
+            const mainReceived = isFullyReceived(row);
             const altRow = altRowFor(row);
             const altEnabled = altRow ? Boolean(row.querySelector(".alternate-check")?.checked) : false;
             const altOrdered = altRow ? altRow.dataset.ordered === "1" : false;
+            const altReceived = altEnabled && isFullyReceived(altRow);
+
             // A part is "handled" once the original OR its chosen substitute is
             // ordered — so ordering the substitute hides the whole part, not just
             // the substitute row.
             const handled = mainOrdered || (altEnabled && altOrdered);
-            const show = searchMatch && !(skipOrdered && handled);
-            row.hidden = !show;
-            if (altRow) {
-                altRow.hidden = !(show && altEnabled);
-            }
-            if (show) visible += 1;
+            // The line is satisfied once the original OR its chosen substitute is
+            // fully received into inventory.
+            const received = mainReceived || altReceived;
+
+            // Once the substitute has been received, the original is moot — never
+            // show the primary row as an outstanding (un-received) part. The ALT
+            // row stays to record that the substitute was received.
+            let showPrimary = searchMatch && !altReceived;
+            let showAlt = searchMatch && altEnabled;
+            if (skipOrdered && handled) { showPrimary = false; showAlt = false; }
+            if (skipReceived && received) { showPrimary = false; showAlt = false; }
+
+            row.hidden = !showPrimary;
+            if (altRow) altRow.hidden = !showAlt;
+            if (showPrimary || showAlt) visible += 1;
         });
 
         categoryHeaders.forEach((header) => {
             const categoryId = header.dataset.category;
-            const hasVisible = rowsForCategory(categoryId).some((row) => !row.hidden);
+            const hasVisible = rowsForCategory(categoryId).some((row) => {
+                const altRow = altRowFor(row);
+                return !row.hidden || (altRow && !altRow.hidden);
+            });
             header.hidden = !hasVisible;
             updateCategoryCount(categoryId);
         });
@@ -1119,6 +1147,7 @@
 
     searchInput?.addEventListener("input", applyFilters);
     hideOrdered?.addEventListener("change", applyFilters);
+    hideReceived?.addEventListener("change", applyFilters);
 
     const viewForm = document.querySelector(".compare-select-form");
     viewForm?.querySelectorAll('input[name="view"]').forEach((radio) => {
