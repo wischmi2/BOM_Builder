@@ -1471,6 +1471,94 @@
       "qty_on_hand": 50,
       "location": "",
       "notes": "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+    },
+    {
+      "id": "db5339eb-d14b-41a4-91e5-0b138a4d85e3",
+      "lib_ref": "RC0402FR-073M9L",
+      "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.9MOhms, 1%, 1/16W",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1a0a71f3-ae6f-42c0-b63a-2c7d8251adab",
+      "lib_ref": "CC0603MRX5R8BB106",
+      "name": "10uF",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b6a711e4-2cbb-46c0-844b-ddb463e3df55",
+      "lib_ref": "2450AT18A0100001E",
+      "name": "2450AT18A100E",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1cf609de-0fb6-4082-8783-5c300e4fe44c",
+      "lib_ref": "DSS14U",
+      "name": "SS14_C83852",
+      "qty_on_hand": 12,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6e32638c-2bc9-4ab1-b167-4e34eead52dd",
+      "lib_ref": "BGS12P2L6E6327XTSA1",
+      "name": "RF Switch IC GSM, LTE, W-CDMA SPDT 50Ohm PG-TSLP-6-4",
+      "qty_on_hand": 7,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "e76edc78-bd76-4e31-bdde-16e6c1b8c839",
+      "lib_ref": "S2B-PH-K-S",
+      "name": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
+      "qty_on_hand": 12,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7b9752bd-917d-4ff5-9bce-54f1170778ef",
+      "lib_ref": "NRF54L15-QFAA-R7",
+      "name": "NRF54L15-QFAA-R7",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b115d9c6-d11d-44f5-a712-3d69607111d4",
+      "lib_ref": "CS06654-32M",
+      "name": "CRYSTAL 32.0000MHZ 8PF SMD",
+      "qty_on_hand": 7,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "566c6b73-f338-43f2-8113-e738657d516a",
+      "lib_ref": "SPV1040T",
+      "name": "SPV1040T",
+      "qty_on_hand": 3,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "db3c503d-fa32-4dd3-846a-b72c3c7eb6b8",
+      "lib_ref": "SMLEN3EC8TT86",
+      "name": "SML-P12MTT86R",
+      "qty_on_hand": 6,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "843ce6d8-b146-4c16-8b9e-e9aa9c0c4e0b",
+      "lib_ref": "RECE.20449.001E.01",
+      "name": "I-PEX MHF4 Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
+      "qty_on_hand": 6,
+      "location": "",
+      "notes": ""
     }
   ]
 }
