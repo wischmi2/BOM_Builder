@@ -1,8 +1,8 @@
-# BOM Builder
+# PCB Assembly Asset Tracking
 
 Local web app for bill-of-materials workflows: import BOM CSVs, track parts you still need, maintain inventory, and compare need vs stock.
 
-**Repository:** https://github.com/wischmi2/BOM_Builder
+**Repository:** https://github.com/dangerdevices/PCB_Assembly_Asset_Tracking
 
 ## Requirements
 
@@ -12,8 +12,8 @@ Local web app for bill-of-materials workflows: import BOM CSVs, track parts you 
 ## Quick start
 
 ```bash
-git clone https://github.com/wischmi2/BOM_Builder.git
-cd BOM_Builder
+git clone https://github.com/dangerdevices/PCB_Assembly_Asset_Tracking.git
+cd PCB_Assembly_Asset_Tracking
 python -m venv .venv
 
 # Windows
@@ -123,7 +123,7 @@ See **[docs/SHOPPING.md](docs/SHOPPING.md)** for details. Optional API keys (`.e
 ## Project layout
 
 ```text
-BOM_Builder/
+PCB_Assembly_Asset_Tracking/
   main.py                 # Flask app entry point
   bom_builder/
     parser.py             # BOM CSV import

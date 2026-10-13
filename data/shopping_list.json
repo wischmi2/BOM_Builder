@@ -572,8 +572,8 @@
     },
     "lib:SAMTECSFM12502XDLC": {
       "name": "SAMTEC-SFM-125-02-X-D-LC",
-      "updated_at": "2026-06-04T22:10:33.963793+00:00",
-      "notes": "Mouser Cart.  30.",
+      "updated_at": "2026-10-13T14:25:17.046411+00:00",
+      "notes": "",
       "buy_qty": 30
     },
     "lib:60312202114511": {
@@ -585,8 +585,9 @@
     },
     "lib:GPSOCKET": {
       "notes": "",
-      "updated_at": "2026-06-04T15:48:49.395574+00:00",
-      "name": "VTGT-S2"
+      "updated_at": "2026-10-13T14:22:10.131732+00:00",
+      "name": "VTGT-S2",
+      "ordered": true
     },
     "lib:68797403HLF": {
       "mpn": "68797-403HLF",
@@ -606,7 +607,7 @@
     },
     "lib:MOUSEBITES": {
       "ordered": true,
-      "updated_at": "2026-06-08T18:18:56.009608+00:00"
+      "updated_at": "2026-10-13T14:22:14.938123+00:00"
     },
     "lib:GRM155R71H104KE14J": {
       "name": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
@@ -655,6 +656,40 @@
     "lib:AD7091RBCPZRL7": {
       "name": "12 Bit Analog to Digital Converter 1 Input 1 SAR 10-LFCSP-WD (3x2)",
       "updated_at": "2026-06-26T19:10:49.469037+00:00"
+    },
+    "lib:CMP001001031": {
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-10-13T14:24:08.600348+00:00",
+      "mpn": "GCM155R71H102KA37D"
+    },
+    "lib:MHM2BOLT": {
+      "ordered": true,
+      "updated_at": "2026-10-13T14:22:13.273756+00:00"
+    },
+    "lib:RK73H1ETTP8450F": {
+      "name": "RES 845 OHM 1% 1/10W 0402",
+      "updated_at": "2026-10-13T14:22:47.917539+00:00"
+    },
+    "lib:RK73H1ETTP3010F": {
+      "name": "RES 301 OHM 1% 1/10W 0402",
+      "updated_at": "2026-10-13T14:22:52.045981+00:00"
+    },
+    "lib:GRM033R71H102KA12D": {
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0201 (0603 Metric)",
+      "updated_at": "2026-10-13T14:24:06.265052+00:00"
+    },
+    "lib:LFCG1000": {
+      "name": "1.37GHz Frequency Low Pass RF Filter (Radio Frequency) Bandwidth 1.8dB 0805 (2012 Metric), 8 PC Pad",
+      "updated_at": "2026-10-13T14:24:30.343440+00:00"
+    },
+    "lib:CMP003000311": {
+      "name": "CVCO55CL-0800-1600",
+      "updated_at": "2026-10-13T14:46:17.610967+00:00",
+      "mpn": "CVCO55CL-0800-1600"
+    },
+    "lib:BDCN725": {
+      "name": "RF DIR CPLR 824MHZ-2.525GHZ 6SMD",
+      "updated_at": "2026-10-13T14:32:22.367189+00:00"
     }
   }
 }

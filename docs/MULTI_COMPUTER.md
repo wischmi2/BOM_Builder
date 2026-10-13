@@ -1,6 +1,6 @@
 # Multi-computer deployment
 
-How to use BOM Builder from several computers in a work area. The app is a
+How to use PCB Assembly Asset Tracking from several computers in a work area. The app is a
 **Flask web app** with no login. All state lives in JSON under `data/`:
 
 | File | Contents |
@@ -34,8 +34,8 @@ connection. It runs the app; everyone else points a browser at it.
 1. Install **Python 3.11+**.
 2. Clone the repo and create the virtual environment:
    ```powershell
-   git clone <repo-url> BOM_Builder
-   cd BOM_Builder
+   git clone <repo-url> PCB_Assembly_Asset_Tracking
+   cd PCB_Assembly_Asset_Tracking
    python -m venv .venv
    .\.venv\Scripts\pip install -r requirements.txt
    ```
@@ -81,7 +81,7 @@ it. Nothing to install on these machines.
 Allow inbound **TCP 5000**, Private network only:
 
 ```powershell
-New-NetFirewallRule -DisplayName "BOM Builder" -Direction Inbound -Protocol TCP `
+New-NetFirewallRule -DisplayName "PCB Assembly Asset Tracking" -Direction Inbound -Protocol TCP `
   -LocalPort 5000 -Action Allow -Profile Private
 ```
 
@@ -106,12 +106,12 @@ So the server comes back after a reboot without anyone launching it.
 Simplest reliable option. Starts the server when the host account logs in.
 
 1. Open **Task Scheduler** → **Create Task** (not "Basic").
-2. **General:** name it `BOM Builder`. Check **Run whether user is logged on or not**.
+2. **General:** name it `PCB Assembly Asset Tracking`. Check **Run whether user is logged on or not**.
 3. **Triggers:** New → **At log on** (or **At startup** if the account auto-logs-in).
 4. **Actions:** New → **Start a program**:
    - Program/script: `powershell.exe`
-   - Arguments: `-ExecutionPolicy Bypass -File "C:\Users\Brian\PycharmProjects\BOM_Builder\run_server.ps1"`
-   - Start in: `C:\Users\Brian\PycharmProjects\BOM_Builder`
+   - Arguments: `-ExecutionPolicy Bypass -File "C:\Users\Brian\PCB_Assembly_Asset_Tracking\run_server.ps1"`
+   - Start in: `C:\Users\Brian\PCB_Assembly_Asset_Tracking`
 5. **Settings:** uncheck "Stop the task if it runs longer than…" so it stays up.
 6. Save (enter the account password if prompted).
 
@@ -121,13 +121,13 @@ Most robust; runs even when no one is logged in. Requires
 [NSSM](https://nssm.cc/) (the Non-Sucking Service Manager).
 
 ```powershell
-nssm install BOMBuilder "C:\Users\Brian\PycharmProjects\BOM_Builder\.venv\Scripts\python.exe" `
-  "C:\Users\Brian\PycharmProjects\BOM_Builder\main.py --host 0.0.0.0 --port 5000 --no-browser"
-nssm set BOMBuilder AppDirectory "C:\Users\Brian\PycharmProjects\BOM_Builder"
-nssm start BOMBuilder
+nssm install PCBAssetTracking "C:\Users\Brian\PCB_Assembly_Asset_Tracking\.venv\Scripts\python.exe" `
+  "C:\Users\Brian\PCB_Assembly_Asset_Tracking\main.py --host 0.0.0.0 --port 5000 --no-browser"
+nssm set PCBAssetTracking AppDirectory "C:\Users\Brian\PCB_Assembly_Asset_Tracking"
+nssm start PCBAssetTracking
 ```
-Manage with `nssm restart BOMBuilder` / `nssm stop BOMBuilder` /
-`nssm remove BOMBuilder confirm`.
+Manage with `nssm restart PCBAssetTracking` / `nssm stop PCBAssetTracking` /
+`nssm remove PCBAssetTracking confirm`.
 
 ### Option C — manual
 
@@ -174,7 +174,7 @@ Set `BOM_DATA_DIR` to store `data/` somewhere other than the project folder (e.g
 backed-up location or a share):
 
 ```powershell
-$env:BOM_DATA_DIR = "D:\BOM_Builder_data"
+$env:BOM_DATA_DIR = "D:\PCB_Assembly_Asset_Tracking_data"
 .\run_server.ps1
 ```
 
@@ -200,7 +200,7 @@ pull/push. Use as backup, not primary, if several people touch stock daily.
 
 ### Shared network folder for `data/`
 
-Point `BOM_DATA_DIR` at `\\server\share\BOM_Builder\data\` and run the app on each PC.
+Point `BOM_DATA_DIR` at `\\server\share\PCB_Assembly_Asset_Tracking\data\` and run the app on each PC.
 **Risk:** two instances writing the same JSON can corrupt/clobber files; SMB latency on
 autosave. Prefer **one** instance (the LAN server model).
 

@@ -36,7 +36,7 @@ Search links work without keys. For live stock and pricing:
 ### 2. Configure environment
 
 ```powershell
-cd C:\Users\Brian\PycharmProjects\BOM_Builder
+cd C:\Users\Brian\PCB_Assembly_Asset_Tracking
 copy .env.example .env
 # Edit .env with your keys
 pip install -r requirements.txt
