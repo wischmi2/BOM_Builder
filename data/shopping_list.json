@@ -171,10 +171,10 @@
     },
     "lib:GCM21BR71A106KE22K": {
       "notes": "Digikey List.  500.",
-      "updated_at": "2026-06-18T17:40:55.935752+00:00",
+      "updated_at": "2026-10-15T17:32:07.828827+00:00",
       "buy_qty": 500,
       "mpn": "GCM21BR71A106KE22K",
-      "name": "CAP CER 10UF 10V X7R 0805",
+      "name": "10 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0805 (2012 Metric)",
       "ordered": true,
       "received_qty": 500
     },
@@ -420,17 +420,20 @@
     },
     "lib:HMC424ALP3E": {
       "notes": "Digikey List.  30. Expensive.",
-      "updated_at": "2026-06-04T22:09:22.059813+00:00",
+      "updated_at": "2026-10-15T17:34:36.998248+00:00",
       "name": "RF ATTENUATOR 31.5DB 16VFQFN",
-      "buy_qty": 30
+      "buy_qty": 10,
+      "mpn": "HMC424ALP3E",
+      "ordered": true
     },
     "lib:HMC659LC5": {
       "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25",
-      "updated_at": "2026-06-18T17:13:21.972015+00:00",
+      "updated_at": "2026-10-15T17:34:37.782232+00:00",
       "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
-      "buy_qty": 25,
+      "buy_qty": 12,
       "ordered": true,
-      "received_qty": 25
+      "received_qty": 0,
+      "mpn": "HMC659LC5"
     },
     "lib:KF80BDTTR": {
       "notes": "Digikey List.  100.",
@@ -572,9 +575,10 @@
     },
     "lib:SAMTECSFM12502XDLC": {
       "name": "SAMTEC-SFM-125-02-X-D-LC",
-      "updated_at": "2026-10-13T14:25:17.046411+00:00",
+      "updated_at": "2026-10-14T17:54:58.823678+00:00",
       "notes": "",
-      "buy_qty": 30
+      "buy_qty": 15,
+      "ordered": true
     },
     "lib:60312202114511": {
       "notes": "We should have some at DD",
@@ -668,19 +672,27 @@
     },
     "lib:RK73H1ETTP8450F": {
       "name": "RES 845 OHM 1% 1/10W 0402",
-      "updated_at": "2026-10-13T14:22:47.917539+00:00"
+      "updated_at": "2026-10-14T17:54:49.714231+00:00",
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:RK73H1ETTP3010F": {
       "name": "RES 301 OHM 1% 1/10W 0402",
-      "updated_at": "2026-10-13T14:22:52.045981+00:00"
+      "updated_at": "2026-10-14T17:54:48.864732+00:00",
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:GRM033R71H102KA12D": {
       "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0201 (0603 Metric)",
-      "updated_at": "2026-10-13T14:24:06.265052+00:00"
+      "updated_at": "2026-10-14T17:54:51.023911+00:00",
+      "buy_qty": 1000,
+      "ordered": true
     },
     "lib:LFCG1000": {
       "name": "1.37GHz Frequency Low Pass RF Filter (Radio Frequency) Bandwidth 1.8dB 0805 (2012 Metric), 8 PC Pad",
-      "updated_at": "2026-10-13T14:24:30.343440+00:00"
+      "updated_at": "2026-10-14T17:54:56.185301+00:00",
+      "buy_qty": 15,
+      "ordered": true
     },
     "lib:CMP003000311": {
       "name": "CVCO55CL-0800-1600",
@@ -689,7 +701,47 @@
     },
     "lib:BDCN725": {
       "name": "RF DIR CPLR 824MHZ-2.525GHZ 6SMD",
-      "updated_at": "2026-10-13T14:32:22.367189+00:00"
+      "updated_at": "2026-10-15T17:35:06.697591+00:00",
+      "ordered": true,
+      "buy_qty": 50
+    },
+    "lib:GRM153R61A105ME95D": {
+      "buy_qty": 500,
+      "updated_at": "2026-10-15T17:19:20.866610+00:00",
+      "name": "1 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "ordered": true
+    },
+    "lib:RK73H1ETTP1003F": {
+      "buy_qty": 1000,
+      "updated_at": "2026-10-15T17:19:19.696813+00:00",
+      "name": "100 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "ordered": true
+    },
+    "lib:DDAL0003023001": {
+      "ordered": true,
+      "updated_at": "2026-10-15T17:19:36.028526+00:00"
+    },
+    "lib:SOCKETPOGOPINS": {
+      "ordered": true,
+      "updated_at": "2026-10-15T17:19:43.340273+00:00"
+    },
+    "lib:RK73Z1HTTC": {
+      "buy_qty": 1000,
+      "updated_at": "2026-10-15T17:30:54.586826+00:00",
+      "ordered": true,
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film"
+    },
+    "lib:SG73S1ETTP472J": {
+      "name": "4.7 kOhms \u00b15% 0.333W, 1/3W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200, Moisture Resistant, Pulse Withstanding Thick Film",
+      "updated_at": "2026-10-15T17:31:49.414669+00:00"
+    },
+    "lib:GRM21BR71C475KE51L": {
+      "name": "4.7 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0805 (2012 Metric)",
+      "updated_at": "2026-10-15T17:32:21.865916+00:00"
+    },
+    "lib:PE42522CX": {
+      "name": "RF Switch IC SPDT 26.5 GHz 50Ohm 29-LGA (4x4)",
+      "updated_at": "2026-10-15T17:32:40.432636+00:00"
     }
   }
 }

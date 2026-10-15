@@ -331,7 +331,7 @@
       "lib_ref": "MH_M2_Bolt",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -750,7 +750,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -765,7 +765,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -780,7 +780,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -795,7 +795,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -810,7 +810,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
@@ -825,7 +825,7 @@
       "lib_ref": "GP_Socket",
       "quantity": 1,
       "is_dni": false,
-      "acquired": false,
+      "acquired": true,
       "notes": ""
     },
     {
