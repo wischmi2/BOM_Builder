@@ -788,9 +788,9 @@
       "id": "02a1e85a-4f8b-4848-a24f-43f8275ce2f7",
       "lib_ref": "HMC424ALP3E",
       "name": "RF ATTENUATOR 31.5DB 16VFQFN",
-      "qty_on_hand": 10,
+      "qty_on_hand": 20,
       "location": "DD01020 Box",
-      "notes": ""
+      "notes": "Digikey List.  30. Expensive."
     },
     {
       "id": "23f23b0b-3394-4dbc-a8dc-f71504989a05",
@@ -836,9 +836,9 @@
       "id": "a7a0e5b6-6aa4-4960-8dc7-d060fc359f1e",
       "lib_ref": "HMC659LC5",
       "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
-      "qty_on_hand": 2,
+      "qty_on_hand": 14,
       "location": "DD01020 Box",
-      "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25"
+      "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25; Mouser Cart.  25.  Very Expensive. $9000 for 25"
     },
     {
       "id": "c6732ae3-0f1e-4377-ac49-d928442554e0",
@@ -1271,6 +1271,158 @@
       "qty_on_hand": 900,
       "location": "DD02040 Box",
       "notes": ""
+    },
+    {
+      "id": "aaf0f3c6-b220-446f-b58f-6de1b5f86ffd",
+      "lib_ref": "GRM033R71H102KA12D",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0201 (0603 Metric)",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6555c66a-7e30-4351-b417-b1d7316484ed",
+      "lib_ref": "GRM153R61A105ME95D",
+      "name": "1 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "qty_on_hand": 500,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "11e79a16-7136-46e9-b588-9d7af8cd8a8e",
+      "lib_ref": "RK73H1ETTP1003F",
+      "name": "100 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "67b21ca8-cbdc-4584-9282-145dff92c53b",
+      "lib_ref": "RK73Z1HTTC",
+      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "06bb48dc-8f29-4b34-b103-f3dbb5065206",
+      "lib_ref": "BDCN-7-25+",
+      "name": "RF DIR CPLR 824MHZ-2.525GHZ 6SMD",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "a79250ef-5562-4576-8c1d-679820aeab4c",
+      "lib_ref": "FC0402E50R0BTBST1",
+      "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
+      "qty_on_hand": 50,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "72e0d006-f88b-4755-8bbf-905c73190eb0",
+      "lib_ref": "LFCG-1000+",
+      "name": "1.37GHz Frequency Low Pass RF Filter (Radio Frequency) Bandwidth 1.8dB 0805 (2012 Metric), 8 PC Pad",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "4258cada-b0fd-4592-97c2-7174b78321f0",
+      "lib_ref": "SAMTEC-SFM-125-02-X-D-LC",
+      "name": "SAMTEC-SFM-125-02-X-D-LC",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "c19a2415-1c05-4669-9473-600f6ce7f6e7",
+      "lib_ref": "CVCO55CL-0800-0980",
+      "name": "VCO 890MHz 0.5-5V 12.7x12.7MM",
+      "qty_on_hand": 15,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "162a2b11-a5a7-463a-86e4-0d582f617122",
+      "lib_ref": "RK73H1ETTP8450F",
+      "name": "RES 845 OHM 1% 1/10W 0402",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "29427dd2-6e66-44c3-a83a-fb0ab485ceb3",
+      "lib_ref": "RK73H1ETTP3010F",
+      "name": "RES 301 OHM 1% 1/10W 0402",
+      "qty_on_hand": 1000,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "2d92abd2-61d7-49d2-9988-5fc14a20d4a4",
+      "lib_ref": "RK73H1ETTP1002F",
+      "name": "RES 10K OHM 1% 1/10W 0402",
+      "qty_on_hand": 1000,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "3d93d61d-7779-47af-9887-30966875e93c",
+      "lib_ref": "RK73H1ETTP4021F",
+      "name": "RES 4.02K OHM 1% 1/10W 0402",
+      "qty_on_hand": 1000,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "a169e312-f954-4040-a4b9-7e1fbd5717a8",
+      "lib_ref": "GCM155R71H102KA37D",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "qty_on_hand": 1000,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "4f6a6b17-e0d8-47ee-b1c2-2334b1ffa541",
+      "lib_ref": "GRM033R71H102KA12D",
+      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0201 (0603 Metric)",
+      "qty_on_hand": 1000,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "4716c313-6d5a-4b15-968d-7b32e443e6b1",
+      "lib_ref": "DMN2056U-7",
+      "name": "MOSFET N-CHANNEL 20V 4A SOT23-3",
+      "qty_on_hand": 50,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "9cf9759c-fad4-41b4-8ca5-6ed83c04c8e1",
+      "lib_ref": "GRM155R60J106ME15D",
+      "name": "CAP CER 10UF 6.3V X5R 0402",
+      "qty_on_hand": 100,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "b556f025-4e93-4668-b674-ff701feb1af3",
+      "lib_ref": "GRM219R6YA475KA73D",
+      "name": "CAP CER 4.7 UF 35V X5R 0805",
+      "qty_on_hand": 100,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
+    },
+    {
+      "id": "cdc54322-3004-4356-b2b8-13b13fad0c57",
+      "lib_ref": "RK73H1ETTP4221F",
+      "name": "RES 4.22K OHM 1% 1/10W 0402",
+      "qty_on_hand": 1000,
+      "location": "DD01020 Box",
+      "notes": "Received 10/22/26"
     }
   ]
 }
