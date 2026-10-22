@@ -195,7 +195,15 @@
                     <input type="text" class="name-input cell-input" value="{{ line.name }}"
                            aria-label="Part name" autocomplete="off">
                 </td>
-                <td><span class="status-badge status-{{ line.status }}">{{ line.status }}</span></td>
+                <td>
+                    <span class="status-badge status-{{ line.status }}">{{ line.status }}</span>
+                    <button type="button" class="exclude-part-btn hide-part-btn"
+                            data-exclude-action="hide"
+                            data-part-key="{{ line.part_key }}"
+                            data-name="{{ line.name }}"
+                            data-lib-ref="{{ line.lib_ref }}"
+                            title="Not purchased (PCB feature) — hide every line with LibRef {{ line.lib_ref }} from Compare and Shop">Hide</button>
+                </td>
                 <td class="col-qty">{{ line.qty_needed }}</td>
                 <td class="col-qty">{{ line.qty_on_hand }}</td>
                 <td class="col-bom" title="{{ line.bom_id or line.bom_ids_display }}">{{ line.bom_id or line.bom_ids_display }}</td>
@@ -315,6 +323,8 @@
     <p class="muted"><a href="{{ url_for('compare_page') }}">Open Compare</a> to review full status.</p>
 </div>
 {% endif %}
+
+{% include "_hidden_parts.html" %}
 {% endblock %}
 
 {% block scripts %}
@@ -329,5 +339,8 @@
     };
 </script>
 <script src="{{ url_for('static', filename='shop.js') }}"></script>
+{% endif %}
+{% if shop_lines or hidden_parts %}
+<script src="{{ url_for('static', filename='exclude-parts.js') }}"></script>
 {% endif %}
 {% endblock %}

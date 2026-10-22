@@ -13,6 +13,7 @@ from bom_builder.matcher import (
     CompareRow,
     compare_boms,
     compare_boms_aggregated,
+    part_key_for_need_line,
     rematch_inventory_for_part,
     split_lib_refs,
 )
@@ -78,6 +79,7 @@ class ShopLine:
     storage_key: str = ""
     source_line_ids: list[str] = field(default_factory=list)
     alternate: ShopAlternate = field(default_factory=ShopAlternate)
+    part_key: str = ""
 
     @property
     def alternates_extra(self) -> bool:
@@ -347,6 +349,7 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
     )
     line = attach_storage_key(line)
     line.source_line_ids = [line.line_id]
+    line.part_key = part_key_for_need_line(row.need_line)
     return line
 
 
@@ -371,6 +374,7 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         search_text=" ".join(search_parts).lower(),
         cache_key=cache_key_for_mpn(mpn),
         source_line_ids=[f"{src.bom_id}:{src.id}" for src in row.source_lines],
+        part_key=row.aggregate_key,
     )
     return attach_storage_key(line)
 
@@ -381,23 +385,40 @@ def build_shop_lines(
     view_mode: str,
     *,
     include_statuses: set[str] | None = None,
+    excluded_keys: set[str] | None = None,
+    hidden_out: list[tuple[str, str, str]] | None = None,
 ) -> list[ShopLine]:
+    """Build buy-list lines for missing/partial parts.
+
+    Parts whose part key is in ``excluded_keys`` (PCB features that are never
+    purchased) are skipped; if ``hidden_out`` is given, a (part_key, name, lib_ref)
+    tuple is appended for each skipped line so the UI can offer a Restore.
+    """
     if include_statuses is None:
         include_statuses = {"missing", "partial"}
+    excluded_keys = excluded_keys or set()
 
-    lines: list[ShopLine] = []
+    candidates: list[ShopLine] = []
     if view_mode == "combined":
         agg_rows, _ = compare_boms_aggregated(boms, inventory)
         for row in agg_rows:
             if row.status not in include_statuses:
                 continue
-            lines.append(_shop_line_from_aggregated(row))
+            candidates.append(_shop_line_from_aggregated(row))
     else:
         compare_rows, _ = compare_boms(boms, inventory)
         for row in compare_rows:
             if row.status not in include_statuses:
                 continue
-            lines.append(_shop_line_from_compare(row))
+            candidates.append(_shop_line_from_compare(row))
+
+    lines: list[ShopLine] = []
+    for line in candidates:
+        if line.part_key and line.part_key in excluded_keys:
+            if hidden_out is not None:
+                hidden_out.append((line.part_key, line.name, line.lib_ref))
+            continue
+        lines.append(line)
 
     lines.sort(key=lambda item: (item.status, item.primary_mpn.upper(), item.name.upper()))
     return lines

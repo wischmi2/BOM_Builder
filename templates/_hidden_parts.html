@@ -1,0 +1,35 @@
+{# "Not purchased" parts hidden from Compare/Shop, with Restore buttons. Expects `hidden_parts`. #}
+{% if hidden_parts %}
+<section class="hidden-parts card">
+    <details>
+        <summary>
+            <strong>Not purchased — hidden ({{ hidden_parts|length }})</strong>
+            <span class="muted">PCB features (test points, mounting holes, mouse bites…) left off this list. Click to review or restore.</span>
+        </summary>
+        <table class="data-table hidden-parts-table">
+            <thead>
+                <tr>
+                    <th>LibRef</th>
+                    <th>Name(s)</th>
+                    <th class="col-qty">Lines</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for part in hidden_parts %}
+                <tr>
+                    <td><code>{{ part.lib_ref }}</code></td>
+                    <td>{{ part.names_display }}</td>
+                    <td class="col-qty">{{ part.count }}</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary btn-sm exclude-part-btn"
+                                data-exclude-action="restore"
+                                data-part-key="{{ part.part_key }}">Restore</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </details>
+</section>
+{% endif %}

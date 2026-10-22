@@ -118,6 +118,8 @@ Compare applies Shop substitutes (alternate parts) for the build list. **Need** 
 2. Review **Buy qty** (shortfall by default), open **DigiKey** / **Mouser** links, mark **Ordered** when purchased.
 3. **Export buy list CSV** for purchasing or sharing.
 
+**Not purchased parts:** BOM lines that are PCB features rather than orderable parts (test-point pads, mounting holes, mouse bites, fiducials) can be hidden with the **Hide** button that appears next to the status badge when you hover a row on Compare or Shop. Hiding applies to every line with the same LibRef across all BOMs, removes it from the tables, summary counts, and CSV exports, and is listed in a **Not purchased — hidden** section at the bottom of the page with a **Restore** button. The list is saved in `data/excluded_parts.json`. The Need page and stored BOMs are unchanged.
+
 See **[docs/SHOPPING.md](docs/SHOPPING.md)** for details. Optional API keys (`.env.example`) add live stock and pricing lookup.
 
 ## Project layout
@@ -141,6 +143,7 @@ PCB_Assembly_Asset_Tracking/
     needs/                # One JSON file per BOM
     inventory.json        # Stock list
     shopping_list.json    # Buy list notes / ordered flags
+    excluded_parts.json   # Parts hidden as "not purchased" (PCB features)
 ```
 
 ## Data in Git

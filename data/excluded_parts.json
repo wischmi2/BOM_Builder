@@ -1,0 +1,24 @@
+{
+  "excluded": {
+    "lib:DDAL0003023001": {
+      "name": "",
+      "lib_ref": "DDAL00#0302-300-1"
+    },
+    "lib:GPSOCKET": {
+      "name": "TC2 PWDN-S1",
+      "lib_ref": "GP_Socket"
+    },
+    "lib:MHM2BOLT": {
+      "name": "M2 Bolt MH",
+      "lib_ref": "MH_M2_Bolt"
+    },
+    "lib:MOUSEBITES": {
+      "name": "Mouse_Bites",
+      "lib_ref": "Mouse_Bites"
+    },
+    "lib:SOCKETPOGOPINS": {
+      "name": "Socket_Pogo-Pins",
+      "lib_ref": "Socket_Pogo-Pins"
+    }
+  }
+}
