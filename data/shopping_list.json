@@ -198,7 +198,7 @@
     },
     "lib:GRM155R60J106ME15D": {
       "notes": "Digikey List. 500.",
-      "updated_at": "2026-06-26T14:40:53.275926+00:00",
+      "updated_at": "2026-10-30T19:16:52.460853+00:00",
       "buy_qty": 500,
       "mpn": "GRM155R60J106ME15D",
       "name": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
@@ -659,9 +659,10 @@
     "lib:CC0603KRX7R9BB104": {
       "alternate": {
         "enabled": false,
-        "buy_qty": 0
+        "buy_qty": 0,
+        "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)"
       },
-      "updated_at": "2026-07-14T16:26:34.587643+00:00",
+      "updated_at": "2026-10-30T19:16:12.222635+00:00",
       "ordered": false,
       "mpn": "GRM188R72A104KA35D",
       "name": "CAP CER 0.1UF 100V X7R 0603"
@@ -1072,6 +1073,46 @@
       "updated_at": "2026-07-22T19:32:45.700277+00:00",
       "ordered": true,
       "received_qty": 30
+    },
+    "lib:BLM18PG221SN1D": {
+      "name": "FERRITE BEAD 220 OHM 0603 1LN",
+      "updated_at": "2026-10-30T19:13:43.301236+00:00"
+    },
+    "lib:5034801400": {
+      "name": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
+      "updated_at": "2026-10-30T19:14:17.968393+00:00"
+    },
+    "lib:GRM188R71A225KE15D": {
+      "name": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0603 (1608 Metric)",
+      "updated_at": "2026-10-30T19:15:02.895548+00:00"
+    },
+    "lib:GRM21BR61E106MA73L": {
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "updated_at": "2026-10-30T19:18:06.583993+00:00"
+    },
+    "lib:GRM188R61E475KE11D": {
+      "name": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "updated_at": "2026-10-30T19:15:36.085209+00:00"
+    },
+    "lib:GRM155R71H103KA88D": {
+      "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-10-30T19:15:45.657319+00:00"
+    },
+    "lib:GRM155R71C104KA88D": {
+      "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-10-30T19:15:56.807637+00:00"
+    },
+    "lib:GRM033R61A225ME47D": {
+      "name": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
+      "updated_at": "2026-10-30T19:16:40.548879+00:00"
+    },
+    "lib:GRM188R60J476ME15D": {
+      "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "updated_at": "2026-10-30T19:17:04.716215+00:00"
+    },
+    "lib:GRM188R61C106MA73D": {
+      "name": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "updated_at": "2026-10-30T19:17:42.215664+00:00"
     }
   }
 }
