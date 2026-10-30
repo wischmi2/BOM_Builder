@@ -25,36 +25,12 @@
       "notes": "INV 104130519"
     },
     {
-      "id": "1214e5ac-1bc8-463e-b1f9-7bd0344c3c6c",
-      "lib_ref": "ERA-2AEB1431X",
-      "name": "RES SMD 1.43 KOHM 0.1% 1/16W 0402",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
       "id": "a226040f-2f28-4608-be32-554180e39ec5",
       "lib_ref": "CRCW02012K00FNED",
       "name": "RES 301 OHM 1% 1/20W 0201 \u2018 \u2014",
       "qty_on_hand": 1000,
       "location": "RESISTOR BIN 1",
       "notes": "INV 104130519"
-    },
-    {
-      "id": "59645b49-93f5-4a14-b499-bca734ee46bd",
-      "lib_ref": "CRCW02012K00FNED",
-      "name": "RES SMD 2 KOHM 1% 1/20W 0201",
-      "qty_on_hand": 470,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "683c124f-dddf-4606-ba3e-2e31fb1ee705",
-      "lib_ref": "RK73H1HTTC60R4D",
-      "name": "RES 60.4 OHM 0.5% 1/20W 0201",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
-      "notes": ""
     },
     {
       "id": "573ecffb-9502-4447-91c3-06c093b0695d",
@@ -94,22 +70,6 @@
       "name": "RES 10K OHM 1% 1/10W 0402",
       "qty_on_hand": 1168,
       "location": "RESISTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "381b6abc-d6c6-4ec2-a3f9-68b67031aae7",
-      "lib_ref": "SG73S1ETTP101J",
-      "name": "RES 100 OHM 5% 1.8W 0402",
-      "qty_on_hand": 600,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "bc43fd9a-722d-4b15-94e0-753f8f0d85c9",
-      "lib_ref": "HDRA-EC68FDT+",
-      "name": "HONDA CONNECTOR",
-      "qty_on_hand": 104,
-      "location": "CONNECTOR BIN 1",
       "notes": ""
     },
     {
@@ -177,27 +137,11 @@
       "notes": ""
     },
     {
-      "id": "b1005ad6-b5c3-435c-b4d2-e5b88e9a9098",
-      "lib_ref": "GRM0335C1H5R0BA01D",
-      "name": "CAP CER 5PF 50V C0G/NP0 0201",
-      "qty_on_hand": 2096,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "d9d5a3e4-77df-440a-9001-e4bc5caae32c",
       "lib_ref": "GRM155R71H104KE14J",
       "name": "CAP CER 0.1 UF 50V X7R 0402",
       "qty_on_hand": 2943,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "95027850-57b4-4308-87f5-a3bc64800599",
-      "lib_ref": "GCM1555C1H101FA16D",
-      "name": "CAP CER 100 PF 50V C0G/NP0 0402",
-      "qty_on_hand": 543,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -225,14 +169,6 @@
       "notes": ""
     },
     {
-      "id": "d1f1d97b-ac7b-4e27-80d0-794a4c4c4135",
-      "lib_ref": "GRM155R71H103KA88J",
-      "name": "CAP CER 10000 PF 50V X7R 0402",
-      "qty_on_hand": 250,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "fcead192-5950-4642-a085-f8c65a379398",
       "lib_ref": "GCM1555C1H4R7BA16D",
       "name": "CAP CER 4.7 PF 50V C0G/NP0 0402",
@@ -257,44 +193,12 @@
       "notes": ""
     },
     {
-      "id": "e68dfc69-9b6a-4ac2-b48f-8c933c8b18af",
-      "lib_ref": "GRM219R6YA475KA73D",
-      "name": "CAP CER 4.7 UF 35V X5R 0805",
-      "qty_on_hand": 1100,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "3d4d4ee1-115a-4d50-a6e4-2a3e303ab073",
       "lib_ref": "GJM0335C1HR20WB01D",
       "name": "CAP CER 0.2 PF 50V C0G/NP0 0201",
       "qty_on_hand": 1220,
       "location": "CAPACITOR BIN 1",
       "notes": ""
-    },
-    {
-      "id": "c73d55d1-d772-4bbd-894b-0e052aa6740f",
-      "lib_ref": "GRM0335C1H100JA01J",
-      "name": "CAP CER 10 PF 50V C0G/NP0 0201",
-      "qty_on_hand": 1150,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "efb55294-777d-4a12-9984-147f92d05311",
-      "lib_ref": "SAM10627-ND",
-      "name": "CONN PCI EXP FMALE 164POS 0.039",
-      "qty_on_hand": 25,
-      "location": "CONNECTOR BIN 1",
-      "notes": "PCIE-164-02-F-D-RA"
-    },
-    {
-      "id": "94c244fd-a952-4b53-b567-f070470f8efb",
-      "lib_ref": "SAM9456-ND",
-      "name": "CONN HEADER SMD 20POS 1.27MM",
-      "qty_on_hand": 100,
-      "location": "CONNECTOR BIN 1",
-      "notes": "FTSH-110-01-L-DV-007-K"
     },
     {
       "id": "c92e8251-dc18-4615-b145-a07273135e95",
@@ -465,22 +369,6 @@
       "notes": ""
     },
     {
-      "id": "d1fed4c7-9218-4846-9bf8-5df89040fbd7",
-      "lib_ref": "USB4105-GF-A",
-      "name": "CONN RCP USB2.0 TYP C 24P SMD RA",
-      "qty_on_hand": 15,
-      "location": "CONNECTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "dbc9da64-ae1a-4b61-81c4-ff09e6402aed",
-      "lib_ref": "USB4105-GF-A",
-      "name": "CONN RCP USB2.0 TYP C 24P SMD RA",
-      "qty_on_hand": 35,
-      "location": "CONNECTOR BIN 1",
-      "notes": ""
-    },
-    {
       "id": "1532170a-cb63-417b-be08-103aea7d7a4d",
       "lib_ref": "CRCW0402120RFKED",
       "name": "RES SMD 120 OHM 1% 1/16W 0402",
@@ -577,14 +465,6 @@
       "notes": ""
     },
     {
-      "id": "94f1b518-e448-4517-82fe-7db20e72723b",
-      "lib_ref": "DMP3099L-7",
-      "name": "MOSFET P-CH 30V 3.8A SOT23",
-      "qty_on_hand": 3000,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "18dfe2e1-8c54-445e-a638-6029a99bce6c",
       "lib_ref": "SM4002",
       "name": "DIODE GP 100V 1A MELF D0-213AB",
@@ -641,14 +521,6 @@
       "notes": ""
     },
     {
-      "id": "1d3fd356-9881-4457-8b63-cd1105e65668",
-      "lib_ref": "B3F-4000",
-      "name": "SWITCH TACTILE SPST-NO 0.05A 24V",
-      "qty_on_hand": 50,
-      "location": "CONNECTOR BIN 1",
-      "notes": ""
-    },
-    {
       "id": "284dcda4-bf29-495c-b4a7-df73bc0c1125",
       "lib_ref": "AD7091RBCPZ-RL7",
       "name": "IC ADC 12BIT SAR 10LFCSP",
@@ -662,14 +534,6 @@
       "name": "RES 0 OHM JUMPER 1/16W 0402",
       "qty_on_hand": 10000,
       "location": "",
-      "notes": ""
-    },
-    {
-      "id": "befc3a4b-fe86-4f50-8577-cd6ccfcc9b76",
-      "lib_ref": "ADL5902ACPZ-R7",
-      "name": "IC RF DETECT 50MHZ-9GHZ 16LCSP",
-      "qty_on_hand": 193,
-      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -689,27 +553,11 @@
       "notes": ""
     },
     {
-      "id": "780235f2-d433-448d-8938-a6bfb4b27b03",
-      "lib_ref": "SFM-125-02-X-D-LC",
-      "name": "CONN RCPT 50POS 0.05 GOLD SMD",
-      "qty_on_hand": 50,
-      "location": "DD02040 Box",
-      "notes": "SFM-125-02-X-D-LC"
-    },
-    {
       "id": "1d20fb11-5106-4613-8f6b-fa11076f389c",
       "lib_ref": "HDRA-EC68FDT+",
       "name": "HONDA CONNECTOR",
       "qty_on_hand": 14,
       "location": "",
-      "notes": ""
-    },
-    {
-      "id": "c0bfea53-d12e-4675-baa9-0b1ff1837bd9",
-      "lib_ref": "60312202114511",
-      "name": "Wurth Electronics SMA Female PCB Connector",
-      "qty_on_hand": 123,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -729,27 +577,11 @@
       "notes": ""
     },
     {
-      "id": "1a1714d6-7212-475f-a9d7-d8929b590f40",
-      "lib_ref": "DCW-11-722+",
-      "name": "RF DIR CPLR 2.4GHZ-7.2GHZ 0603",
-      "qty_on_hand": 50,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "5d0887ca-3d02-4086-87e5-483865f214d3",
       "lib_ref": "DMP3099L-7",
       "name": "MOSFET P-CH 30V 3.8A SOT23",
       "qty_on_hand": 62,
       "location": "",
-      "notes": ""
-    },
-    {
-      "id": "8490eb96-2e23-4bc1-af29-b55c628b2d7f",
-      "lib_ref": "PE42553B-Z",
-      "name": "IC RF SWITCH SPDT 8GHZ 16QFN",
-      "qty_on_hand": 70,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -761,43 +593,11 @@
       "notes": ""
     },
     {
-      "id": "cedef2a6-4cb7-4cfa-adb8-5114a1835be5",
-      "lib_ref": "68797-403HLF",
-      "name": "CONN HEADER VERT 3POS 2.54MM",
-      "qty_on_hand": 30,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "eb4ef5c4-f667-46a2-8fed-ade2b3a60cc5",
-      "lib_ref": "DCO400800-5",
-      "name": "DCO400800-5 VCO 4GHz - 8GHz",
-      "qty_on_hand": 7,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "c632ccba-babd-47ff-8986-6f517e8f783a",
       "lib_ref": "LT3032EDE-5#TRPBF",
       "name": "IC REG LIN +/-5V 150MA/150MA 14D",
       "qty_on_hand": 29,
       "location": "LB Comps - Analog Devices",
-      "notes": ""
-    },
-    {
-      "id": "02a1e85a-4f8b-4848-a24f-43f8275ce2f7",
-      "lib_ref": "HMC424ALP3E",
-      "name": "RF ATTENUATOR 31.5DB 16VFQFN",
-      "qty_on_hand": 24,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "23f23b0b-3394-4dbc-a8dc-f71504989a05",
-      "lib_ref": "DMN2005K-7",
-      "name": "N-Channel 20 V 300mA (Ta) 350mW (Ta) Surface Mount SOT-23-3",
-      "qty_on_hand": 35,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -809,38 +609,6 @@
       "notes": ""
     },
     {
-      "id": "1da8fd69-6886-44bf-b6e4-030322b8de1a",
-      "lib_ref": "LFCN-7200+",
-      "name": "LTCC LOW PASS FILTER DC-7200",
-      "qty_on_hand": 56,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "f9634968-848f-45ec-8f57-eea02be7bcea",
-      "lib_ref": "RC0201FR-07274RL",
-      "name": "274 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": "Digikey List.  500."
-    },
-    {
-      "id": "49cecb02-8cc4-4303-883d-86ff43a95732",
-      "lib_ref": "0402DC-4N3XJRW",
-      "name": "4.3nH Wirewound",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "a7a0e5b6-6aa4-4960-8dc7-d060fc359f1e",
-      "lib_ref": "HMC659LC5",
-      "name": "RF Amplifier IC General Purpose 0Hz ~ 15GHz 32-CSMT (5x5)",
-      "qty_on_hand": 25,
-      "location": "DD02040 Box",
-      "notes": "Mouser Cart.  25.  Very Expensive. $9000 for 25"
-    },
-    {
       "id": "c6732ae3-0f1e-4377-ac49-d928442554e0",
       "lib_ref": "OP184FSZ",
       "name": "IC OPAMP GP 1 CIRCUIT 8SOIC",
@@ -849,35 +617,11 @@
       "notes": ""
     },
     {
-      "id": "4687c977-3c8e-491a-b631-0e8a83941c3f",
-      "lib_ref": "RT0402BRD07348RL",
-      "name": "RES SMD 348 OHM 0.1% 1/16W 0402",
-      "qty_on_hand": 500,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
       "id": "61bf965f-cb74-493c-a507-9a20d16a3419",
       "lib_ref": "SN74HCS594",
       "name": "Shift Shift Register 1 Element 8 Bit 16-WQFN (2.5x3.5)",
       "qty_on_hand": 100,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "3b4f65d4-f4c5-4537-a637-24cc36d66714",
-      "lib_ref": "RC0402FR-07953RL",
-      "name": "953 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "qty_on_hand": 1000,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "0944670a-5611-4043-8eba-8849205d833a",
-      "lib_ref": "FC0402E50R0BTBST1",
-      "name": "50 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0402 (1005 Metric) RF, High Frequency Thin Film",
-      "qty_on_hand": 500,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -929,14 +673,6 @@
       "notes": ""
     },
     {
-      "id": "90644cf5-1159-430d-81e0-009f91a57b11",
-      "lib_ref": "LFCG-3000+",
-      "name": "CER FILTER 3.46GHZ LOW PASS",
-      "qty_on_hand": 25,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
       "id": "6c65a110-f86a-4a17-b7ef-ddd38bee25db",
       "lib_ref": "KF80BDT-TR",
       "name": "IC REG LINEAR 8V 500MA DPAK",
@@ -961,67 +697,11 @@
       "notes": "Digikey List.  30.  Expensive, make sure we don't have any."
     },
     {
-      "id": "3fb0a57e-0926-44e7-b29d-4f0e36312767",
-      "lib_ref": "RC0201FR-0768RL",
-      "name": "68 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Moisture Resistant Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "281f1129-7aac-45f3-a191-5b0251700688",
-      "lib_ref": "CRCW0201105RFNED",
-      "name": "105 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "f855464d-83e5-4176-93ab-12f62c034045",
-      "lib_ref": "ERJ1GNF3000C",
-      "name": "300 Ohms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
-      "qty_on_hand": 1000,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "a2668669-9299-4386-8e2e-7a2e6c16a53a",
-      "lib_ref": "CRCW020161R9FNED",
-      "name": "RES SMD 61.9 OHM 1% 1/20W 0201",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "a3f1aac0-5b4b-4faa-b5c4-d7d4e119f22d",
-      "lib_ref": "RC0402FR-7W49R9L",
-      "name": "49.9 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
       "id": "225634c2-8e00-4200-8cfb-4c7fda01b868",
       "lib_ref": "ADP7102ACPZ-3.3-R7",
       "name": "IC REG LIN 3.3V 300MA 8-LFCSP-WD",
       "qty_on_hand": 50,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "c5761f74-7807-4600-9b27-1a946cfc1595",
-      "lib_ref": "LQP03HQ2N7B02D",
-      "name": "2.8nH",
-      "qty_on_hand": 100,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "8b12a3be-a8b1-4bc5-aebb-1b1adc0ab87c",
-      "lib_ref": "TPSA475M016R2000",
-      "name": "4.7 \u00b5F Molded Tantalum Capacitors 16 V 1206 (3216 Metric) 2Ohm",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -1041,51 +721,11 @@
       "notes": ""
     },
     {
-      "id": "cee643d5-4ed4-4ec5-a252-1282081b2120",
-      "lib_ref": "GCM155R71H102KA37D",
-      "name": "1000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "bb68813f-a885-42f8-bf5e-1cbafc5b3669",
       "lib_ref": "GRM155R61E105KA12D",
       "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 1000,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "6e3753ba-86f8-4153-9995-3518a1b20c1a",
-      "lib_ref": "RP73PF1E2K0BTD",
-      "name": "2 kOhms \u00b10.1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Thin Film",
-      "qty_on_hand": 250,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
-      "id": "7d3b13ab-28cf-4822-876e-ac746bdda886",
-      "lib_ref": "GRM155R71A474KE01D",
-      "name": "0.47 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "qty_on_hand": 200,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "f1f801fd-2294-4678-994e-b26cd356272c",
-      "lib_ref": "GJM0335C1ER20BB01D",
-      "name": "CAP CER 0.2PF 25V C0G/NP0 0201",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "8f96aef2-cf94-461c-b41e-7dd1dcd14979",
-      "lib_ref": "RK73H1ERTTP3302F",
-      "name": "33 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -1097,14 +737,6 @@
       "notes": ""
     },
     {
-      "id": "8ae78e0d-fcb4-48dd-b05b-7fe7ffc4bb3e",
-      "lib_ref": "GRM155R60J106ME15D",
-      "name": "CAP CER 10UF 6.3V X5R 0402",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
       "id": "39949b43-7afa-46e2-a87f-4d021461f882",
       "lib_ref": "EEE-FC1V2R2AR",
       "name": "2.2uF Electrolytic EEE-FC1V2R2AR",
@@ -1113,35 +745,11 @@
       "notes": ""
     },
     {
-      "id": "fbadca56-2feb-4e83-bea0-283a066bf169",
-      "lib_ref": "RK73Z1HRTTC",
-      "name": "0 Ohms Jumper Chip Resistor 0201 (0603 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thick Film",
-      "qty_on_hand": 1000,
-      "location": "DD04080 Box",
-      "notes": ""
-    },
-    {
-      "id": "adc4d8ed-708e-46cf-ae98-2e44866e832c",
-      "lib_ref": "ERA-1AEB101C",
-      "name": "100 Ohms \u00b10.1% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Automotive AEC-Q200 Thin Film",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
-      "notes": ""
-    },
-    {
       "id": "a2822b92-ea26-4e65-96a0-7d48453d1003",
       "lib_ref": "SG73S1ETTP102J",
       "name": "RES 1K OHM 5% 1/8W 0402",
       "qty_on_hand": 1000,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "635493aa-fa1f-4bf7-8ef4-8d99e1544981",
-      "lib_ref": "ERJ-1GNF2101C",
-      "name": "2.1 kOhms \u00b11% 0.05W, 1/20W Chip Resistor 0201 (0603 Metric) Thick Film",
-      "qty_on_hand": 500,
-      "location": "DD04080 Box",
       "notes": ""
     },
     {
@@ -1158,14 +766,6 @@
       "name": "1.5 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 1000,
       "location": "DD02080 Box",
-      "notes": ""
-    },
-    {
-      "id": "94726916-322a-496e-bbf7-9f87600ba337",
-      "lib_ref": "ERA-2AEB3741X",
-      "name": "3.74 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thin Film",
-      "qty_on_hand": 100,
-      "location": "DD02040 Box",
       "notes": ""
     },
     {
@@ -1239,14 +839,6 @@
       "qty_on_hand": 500,
       "location": "DD02080 Box",
       "notes": ""
-    },
-    {
-      "id": "c9517cf4-2a56-4699-87cf-ff79236a4009",
-      "lib_ref": "DCMO190410-5",
-      "name": "DCMO190410-5 <4GHz VCO",
-      "qty_on_hand": 15,
-      "location": "DD02040 Box",
-      "notes": "Synergy Microwave; Synergy Microwave"
     },
     {
       "id": "8a06bbe3-2a94-4556-be04-69c8b92f684b",
