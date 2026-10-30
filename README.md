@@ -25,7 +25,7 @@ python -m venv .venv
 .venv/bin/python main.py
 ```
 
-Opens http://127.0.0.1:5000/ in your browser.
+Opens http://127.0.0.1:5050/ in your browser.
 
 **Options:**
 
@@ -38,10 +38,10 @@ Opens http://127.0.0.1:5000/ in your browser.
 To share one inventory and BOM data across several PCs on the same network, run the app on **one host PC** and open it from other machines in the browser:
 
 ```bash
-.venv\Scripts\python main.py --host 0.0.0.0 --port 5000 --no-browser
+.venv\Scripts\python main.py --host 0.0.0.0 --port 5050 --no-browser
 ```
 
-Then browse to `http://<server-ip>:5000/` from other PCs (allow TCP port 5000 in Windows Firewall on the host).
+Then browse to `http://<server-ip>:5050/` from other PCs (allow TCP port 5050 in Windows Firewall on the host).
 
 Full setup, Git-sync, and NAS options: **[docs/MULTI_COMPUTER.md](docs/MULTI_COMPUTER.md)**.
 

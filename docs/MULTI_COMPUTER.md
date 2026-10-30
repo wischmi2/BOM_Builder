@@ -54,7 +54,7 @@ Use the bundled launcher (binds to all interfaces, uses **waitress**, debug **of
 Equivalent manual command:
 
 ```powershell
-.\.venv\Scripts\python main.py --host 0.0.0.0 --port 5000 --no-browser
+.\.venv\Scripts\python main.py --host 0.0.0.0 --port 5050 --no-browser
 ```
 
 Notes on the flags (see `main.py`):
@@ -73,16 +73,16 @@ Note the IPv4 address, e.g. `192.168.1.42`.
 
 ### 4. Open it from the other computers
 
-In any browser on the same network, go to `http://192.168.1.42:5000/` and bookmark
+In any browser on the same network, go to `http://192.168.1.42:5050/` and bookmark
 it. Nothing to install on these machines.
 
 ### 5. Allow the port through Windows Firewall (host)
 
-Allow inbound **TCP 5000**, Private network only:
+Allow inbound **TCP 5050**, Private network only:
 
 ```powershell
 New-NetFirewallRule -DisplayName "BOM Builder" -Direction Inbound -Protocol TCP `
-  -LocalPort 5000 -Action Allow -Profile Private
+  -LocalPort 5050 -Action Allow -Profile Private
 ```
 
 ### 6. Backups (from the host)
@@ -122,7 +122,7 @@ Most robust; runs even when no one is logged in. Requires
 
 ```powershell
 nssm install BOMBuilder "C:\Users\Brian\PycharmProjects\BOM_Builder\.venv\Scripts\python.exe" `
-  "C:\Users\Brian\PycharmProjects\BOM_Builder\main.py --host 0.0.0.0 --port 5000 --no-browser"
+  "C:\Users\Brian\PycharmProjects\BOM_Builder\main.py --host 0.0.0.0 --port 5050 --no-browser"
 nssm set BOMBuilder AppDirectory "C:\Users\Brian\PycharmProjects\BOM_Builder"
 nssm start BOMBuilder
 ```
@@ -135,7 +135,7 @@ Double-click `run_server.ps1` (or run it in PowerShell) whenever you need the se
 
 ### Non-Windows hosts
 
-- **Linux:** a `systemd` unit running `.venv/bin/python main.py --host 0.0.0.0 --port 5000 --no-browser` with `Restart=always`.
+- **Linux:** a `systemd` unit running `.venv/bin/python main.py --host 0.0.0.0 --port 5050 --no-browser` with `Restart=always`.
 - **macOS:** a `launchd` agent/daemon running the same command.
 
 ---
@@ -192,7 +192,7 @@ Best when **one person per machine** and updates are **infrequent**.
 
 1. Clone the repo on each PC.
 2. **Before** work: `git pull`
-3. Run locally: `python main.py` → `http://127.0.0.1:5000/`
+3. Run locally: `python main.py` → `http://127.0.0.1:5050/`
 4. **After** work: `git add data/`, commit, `git push`
 
 **Risks:** merge conflicts on `inventory.json`; stale data if someone forgets to
@@ -215,7 +215,7 @@ autosave. Prefer **one** instance (the LAN server model).
 | Tesseract (label scan) | Yes | No | Yes if scanning locally |
 | Clone from GitHub | Yes | No | Yes |
 | Run `main.py` | Yes (`--host 0.0.0.0`) | No | Yes (`127.0.0.1`) |
-| Browser URL | localhost or LAN IP | `http://SERVER_IP:5000` | localhost |
+| Browser URL | localhost or LAN IP | `http://SERVER_IP:5050` | localhost |
 
 ---
 

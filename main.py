@@ -992,7 +992,7 @@ def compare_export():
 def main() -> None:
     parser = argparse.ArgumentParser(description="BOM Builder local web app")
     parser.add_argument("--host", default="127.0.0.1")
-    parser.add_argument("--port", type=int, default=5000)
+    parser.add_argument("--port", type=int, default=5050)
     parser.add_argument("--no-browser", action="store_true", help="Do not open browser on start")
     parser.add_argument(
         "--debug",

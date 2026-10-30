@@ -1,14 +1,14 @@
 # Launch BOM Builder as a shared LAN server.
 #
 # Binds to all network interfaces (0.0.0.0) so other computers on the same
-# network can reach it at http://<this-PC-IP>:5000/. Uses waitress (see
+# network can reach it at http://<this-PC-IP>:5050/. Uses waitress (see
 # requirements.txt) and runs with debug OFF. Run this on the always-on host PC.
 #
 # Usage:  right-click -> "Run with PowerShell", or:  .\run_server.ps1
 # Override the port:  .\run_server.ps1 -Port 8080
 
 param(
-    [int]$Port = 5000
+    [int]$Port = 5050
 )
 
 $ErrorActionPreference = "Stop"
