@@ -1,190 +1,6 @@
 {
   "items": [
     {
-      "id": "30d3cbf0-f0b8-4bf6-9110-ec4af66686bc",
-      "lib_ref": "RC0201FR-07301RL",
-      "name": "RES 301 OHM 1% 1/20W 0201",
-      "qty_on_hand": 9287,
-      "location": "RESISTOR BIN 1",
-      "notes": "INV 104130519"
-    },
-    {
-      "id": "a226040f-2f28-4608-be32-554180e39ec5",
-      "lib_ref": "CRCW02012K00FNED",
-      "name": "RES 301 OHM 1% 1/20W 0201 \u2018 \u2014",
-      "qty_on_hand": 1000,
-      "location": "RESISTOR BIN 1",
-      "notes": "INV 104130519"
-    },
-    {
-      "id": "573ecffb-9502-4447-91c3-06c093b0695d",
-      "lib_ref": "CRCW020156R2FNED",
-      "name": "RES SMD 56.2 OHM 1% 1/20W 0201",
-      "qty_on_hand": 8382,
-      "location": "RESISTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "43fe3175-db2d-4f28-901c-813d2c794292",
-      "lib_ref": "RK73G1ETTP1003F",
-      "name": "RES 100K OHM 1% 1/10W 0402",
-      "qty_on_hand": 2434,
-      "location": "RESISTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "3fad0700-e660-45c5-b81f-0a5fcd090714",
-      "lib_ref": "RK73H1HTTC75R0F",
-      "name": "RES 75 OHM 1% 1/20W 0201",
-      "qty_on_hand": 1670,
-      "location": "RESISTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "0ab993ac-0c70-4d63-b8a1-10fe1d99114d",
-      "lib_ref": "RK73G1ETTP1002F",
-      "name": "RES 10K OHM 1% 1/10W 0402",
-      "qty_on_hand": 1168,
-      "location": "RESISTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "eec5b920-f5c4-4375-adf4-a3d675b57dff",
-      "lib_ref": "GCM1555C1H101FA16D",
-      "name": "CAP CER 100 PF 50V C0G/NP0 0402",
-      "qty_on_hand": 1546,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "4b6064b9-df56-40bf-83fb-0462cb2eafa7",
-      "lib_ref": "GCM1555C1H221J16D",
-      "name": "CAP 220 PF 50V 5% 0402",
-      "qty_on_hand": 2387,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "4a4bfd3e-9203-4dc2-b936-525bc7feaabe",
-      "lib_ref": "GCM1555C1H4R7BA16D",
-      "name": "CAP CER 4.7 PF 50V C0G/NNP0 0402",
-      "qty_on_hand": 1000,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "8849b705-93f0-4ca2-ab48-0d1677f6c1b3",
-      "lib_ref": "GCM155C71A105KE8D",
-      "name": "1.0 UF 10V 10% 0402",
-      "qty_on_hand": 2500,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "b1e19dad-fddd-4404-8632-e445d4d267c3",
-      "lib_ref": "GCM21BR70J106KE22K",
-      "name": "CAP CER 10 UF 6.3V X7R 0805",
-      "qty_on_hand": 1714,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "52e5d354-8467-4411-861e-264619a46e52",
-      "lib_ref": "GRM155R61A225M01D",
-      "name": "CAP 2.2 UF 0402",
-      "qty_on_hand": 2056,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "02230c08-c246-4242-91ce-f7f2e026154a",
-      "lib_ref": "GCM1555C1H4R7BA16D",
-      "name": "CAP CER 4.7 PF 50V C0G/NP0 0402",
-      "qty_on_hand": 2229,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "20311133-ee3e-4fee-b8ec-f30c1846931e",
-      "lib_ref": "F980G476MMA",
-      "name": "CAP TANT 4.7 UF 20% 4V 0603",
-      "qty_on_hand": 1210,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "f3e305c9-9918-4b05-9e29-ef381a4f67f3",
-      "lib_ref": "GJM0335C1HR20WB01D",
-      "name": "CAP CER 0.2 PF 50V C0G/NP0 0201",
-      "qty_on_hand": 1150,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "a1070292-96cd-43c8-a289-1a57cb747f26",
-      "lib_ref": "GCM21BR71C475KA73K",
-      "name": "CAP CER 4.7 UF 16V X7R 0805",
-      "qty_on_hand": 100,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "fcead192-5950-4642-a085-f8c65a379398",
-      "lib_ref": "GCM1555C1H4R7BA16D",
-      "name": "CAP CER 4.7 PF 50V C0G/NP0 0402",
-      "qty_on_hand": 163,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "34c3e15f-5369-4979-a86d-73008759efc4",
-      "lib_ref": "GRM21BR61E106KA73K",
-      "name": "CAP CER 10 UF 25V X5R 0805",
-      "qty_on_hand": 60,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "53ac7bfd-fee8-4686-9ac3-07103272cb8e",
-      "lib_ref": "GRM033R61A105ME15D",
-      "name": "CAP CER 1 UF 10V 20% 0201",
-      "qty_on_hand": 115,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "3d4d4ee1-115a-4d50-a6e4-2a3e303ab073",
-      "lib_ref": "GJM0335C1HR20WB01D",
-      "name": "CAP CER 0.2 PF 50V C0G/NP0 0201",
-      "qty_on_hand": 1220,
-      "location": "CAPACITOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "c92e8251-dc18-4615-b145-a07273135e95",
-      "lib_ref": "LTC3260EMSE#TRPBF",
-      "name": "IC REG CHARGE PUMP INV DL 16MSOP",
-      "qty_on_hand": 50,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "38161fb9-2572-4ed6-8328-cd2bdb93871a",
-      "lib_ref": "LTC3260EMSE#PBF",
-      "name": "IC REG CHARGE PUMP INV DL 16MSOP",
-      "qty_on_hand": 40,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "0544f1cd-7351-4ee1-b858-98e0330618d8",
-      "lib_ref": "74438313010",
-      "name": "FIXED IND 1 UH 1.4A 159 MOHM SMD",
-      "qty_on_hand": 80,
-      "location": "INDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
       "id": "b29723ea-e205-4f6f-b37c-9d087e614629",
       "lib_ref": "5796055-1",
       "name": "CONN RCPT 68POS R/A SOLDER",
@@ -249,27 +65,11 @@
       "notes": ""
     },
     {
-      "id": "2ee3151c-829a-4372-8f3b-9ae1de1b8516",
-      "lib_ref": "784383230068",
-      "name": "FIXED IND 680 NH 3.1A 60 MOHM SMD",
-      "qty_on_hand": 80,
-      "location": "INDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
       "id": "ff5125da-5135-424b-b25e-6fc471d29a07",
       "lib_ref": "ERJ-P06J105V",
       "name": "RES SMD 1M OHM 5% 1/2W 0805",
       "qty_on_hand": 970,
       "location": "",
-      "notes": ""
-    },
-    {
-      "id": "7aaf1ca9-3071-4821-bb1e-6fe5c16416ac",
-      "lib_ref": "LM1117SX-3.3/NOPB",
-      "name": "IC REG LIN 3.3V 800MA DDPAK",
-      "qty_on_hand": 50,
-      "location": "SEMICONDUCTOR BIN 1",
       "notes": ""
     },
     {
@@ -401,43 +201,11 @@
       "notes": ""
     },
     {
-      "id": "7c531e7d-81c7-4a3a-8afa-b6061d0f71da",
-      "lib_ref": "DNP3099-L",
-      "name": "MOSFET P-CH 30V 3.8A SOT23",
-      "qty_on_hand": 6000,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "18dfe2e1-8c54-445e-a638-6029a99bce6c",
-      "lib_ref": "SM4002",
-      "name": "DIODE GP 100V 1A MELF D0-213AB",
-      "qty_on_hand": 90,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
-      "id": "ce0b7153-d1a7-4fea-8ab8-8abf7d040b1d",
-      "lib_ref": "DRTR5VOU2SR-7",
-      "name": "TVS DIODE 5.5VWM SOT143",
-      "qty_on_hand": 90,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
-    },
-    {
       "id": "9dccc8fe-243d-4231-9f91-5cac2730ef7b",
       "lib_ref": "GRM21BZ71E106KE15L",
       "name": "CAP CER 10 UF 25V 10% 0805",
       "qty_on_hand": 2980,
       "location": "",
-      "notes": ""
-    },
-    {
-      "id": "611ae632-6d79-4166-a8cf-cb48ddeb759d",
-      "lib_ref": "R7FA6M1AD3CFP#AA0",
-      "name": "IC MCU 32BIT 512KB FLSH 100LFQFP",
-      "qty_on_hand": 18,
-      "location": "SEMICONDUCTOR BIN 1",
       "notes": ""
     },
     {
@@ -455,14 +223,6 @@
       "qty_on_hand": 15,
       "location": "",
       "notes": "Rosenberger"
-    },
-    {
-      "id": "20b062d6-483c-4402-8e2b-e9f856bf3692",
-      "lib_ref": "SN74HC148DR",
-      "name": "Multiplexer / Demultiplexer 8-Line to 3-Line",
-      "qty_on_hand": 100,
-      "location": "SEMICONDUCTOR BIN 1",
-      "notes": ""
     },
     {
       "id": "295d5cff-6b4d-422c-b300-fa0b78c8ef11",
