@@ -209,14 +209,6 @@
       "notes": ""
     },
     {
-      "id": "9f03df90-60b8-43ff-b5aa-d7187c6b031d",
-      "lib_ref": "734-264",
-      "name": "Orange Connector",
-      "qty_on_hand": 150,
-      "location": "",
-      "notes": "Master Electronics"
-    },
-    {
       "id": "09f7d9f6-83a7-4c5f-9461-5ff124c938f9",
       "lib_ref": "59S101-400L5",
       "name": "CONN SMB PLUG STR 50OHM PCB",
@@ -229,22 +221,6 @@
       "lib_ref": "RC0402JR-070RL",
       "name": "RES 0 OHM JUMPER 1/16W 0402",
       "qty_on_hand": 10000,
-      "location": "",
-      "notes": ""
-    },
-    {
-      "id": "357315a6-54a4-475e-8585-2d4ef89d26b3",
-      "lib_ref": "PE42522C-X",
-      "name": "IC RF SWITCH SPDT 26.5GHZ 29LGA",
-      "qty_on_hand": 400,
-      "location": "",
-      "notes": ""
-    },
-    {
-      "id": "1d20fb11-5106-4613-8f6b-fa11076f389c",
-      "lib_ref": "HDRA-EC68FDT+",
-      "name": "HONDA CONNECTOR",
-      "qty_on_hand": 14,
       "location": "",
       "notes": ""
     },
@@ -269,22 +245,6 @@
       "lib_ref": "DMP3099L-7",
       "name": "MOSFET P-CH 30V 3.8A SOT23",
       "qty_on_hand": 62,
-      "location": "",
-      "notes": ""
-    },
-    {
-      "id": "c632ccba-babd-47ff-8986-6f517e8f783a",
-      "lib_ref": "LT3032EDE-5#TRPBF",
-      "name": "IC REG LIN +/-5V 150MA/150MA 14D",
-      "qty_on_hand": 29,
-      "location": "LB Comps - Analog Devices",
-      "notes": ""
-    },
-    {
-      "id": "c03bb82f-f76d-4e20-96ec-4aefc5a84d1b",
-      "lib_ref": "PE42522C-X",
-      "name": "IC RF SWITCH SPDT 26.5GHZ 29LGA",
-      "qty_on_hand": 70,
       "location": "",
       "notes": ""
     },
@@ -327,14 +287,6 @@
       "qty_on_hand": 100,
       "location": "",
       "notes": "Obsolete; Obsolete; Obsolete"
-    },
-    {
-      "id": "8a06bbe3-2a94-4556-be04-69c8b92f684b",
-      "lib_ref": "TFM-125-02-S-D-LC-P-TR",
-      "name": "TFM-125-02-S-D-LC-P-TR",
-      "qty_on_hand": 50,
-      "location": "",
-      "notes": "Powell Electronics, 50.; Powell Electronics, 50."
     },
     {
       "id": "f04daede-92c5-4c9b-a667-5fe5845c7fb2",
@@ -412,8 +364,8 @@
       "id": "b8d28409-e9f5-41eb-b592-7d4173a2dd17",
       "lib_ref": "LQM18PN2R2MGHD",
       "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.05 A 250mOhm Max 0603 (1608 Metric)",
-      "qty_on_hand": 10,
-      "location": "",
+      "qty_on_hand": 5,
+      "location": "Brian Part Box 1",
       "notes": ""
     },
     {
@@ -531,9 +483,9 @@
     {
       "id": "d700d5a4-db5f-49fd-ac2e-a79259fa682b",
       "lib_ref": "LQM18PH4R7MFRL",
-      "name": "4.7uH",
-      "qty_on_hand": 10,
-      "location": "",
+      "name": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm 0603 (1608 Metric)",
+      "qty_on_hand": 8,
+      "location": "Brian Part Box 1",
       "notes": ""
     },
     {
@@ -638,6 +590,38 @@
       "name": "I-PEX MHF4 Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
       "qty_on_hand": 6,
       "location": "",
+      "notes": ""
+    },
+    {
+      "id": "0016a1a5-b18f-468c-bbd3-dec1e4556abc",
+      "lib_ref": "DMG2305UX-7",
+      "name": "P-Ch ENH FET -20V",
+      "qty_on_hand": 6,
+      "location": "Brian Part Box 1",
+      "notes": ""
+    },
+    {
+      "id": "c5ad5b5d-0120-427c-9a1e-76cb5b6d9ba0",
+      "lib_ref": "SuperBat X0036NHOHB",
+      "name": "SMA Female Jack Edge PCB Mount Connector Right Angle",
+      "qty_on_hand": 9,
+      "location": "Brian Part Box 1",
+      "notes": "Amazon Order"
+    },
+    {
+      "id": "7ebd7bdf-e419-4ba4-af2d-d82d2df279d0",
+      "lib_ref": "MLZ2012M100WT000",
+      "name": "10 \u00b5H Shielded Multilayer Inductor 350 mA 470mOhm 0805 (2012 Metric)",
+      "qty_on_hand": 23,
+      "location": "Brian Part Box 1",
+      "notes": ""
+    },
+    {
+      "id": "71feff39-313b-4e2e-a7a5-0f7ea8919e04",
+      "lib_ref": "LQP03TQ3N9B02D",
+      "name": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
+      "qty_on_hand": 8,
+      "location": "Brian Part Box 1",
       "notes": ""
     }
   ]
