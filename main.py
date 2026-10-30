@@ -57,6 +57,7 @@ from bom_builder.category_overrides import (
     set_override,
 )
 from bom_builder.part_categories import CATEGORY_ORDER
+from bom_builder.excluded_parts import hidden_summary, load_excluded, set_excluded
 from bom_builder.need_io import (
     bom_stats,
     bom_to_csv,
@@ -482,6 +483,19 @@ def _compare_view_mode(selected_ids: list[str]) -> str:
     return "combined" if len(selected_ids) > 1 else "per_board"
 
 
+def _split_excluded(rows: list, key_fn, excluded: dict) -> tuple[list, list[tuple[str, str, str]]]:
+    """Drop rows whose part key is marked 'not purchased'; return (kept, hidden entries)."""
+    kept = []
+    hidden: list[tuple[str, str, str]] = []
+    for row in rows:
+        key = key_fn(row)
+        if key in excluded:
+            hidden.append((key, row.bom_name, row.bom_lib_ref))
+        else:
+            kept.append(row)
+    return kept, hidden
+
+
 @app.route("/compare")
 def compare_page():
     bom_ids = storage.list_bom_ids()
@@ -498,6 +512,8 @@ def compare_page():
     pool_stats = None
 
     category_overrides = load_overrides()
+    excluded = load_excluded()
+    hidden_entries: list[tuple[str, str, str]] = []
 
     if selected_ids:
         boms = _load_selected_boms(selected_ids)
@@ -505,6 +521,7 @@ def compare_page():
 
         if view_mode == "combined":
             agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            agg_rows, hidden_entries = _split_excluded(agg_rows, lambda r: r.aggregate_key, excluded)
             apply_shop_overlays_to_compare(None, agg_rows, inventory)
             grouped_rows = group_aggregated_rows(agg_rows, category_overrides)
             summary = compare_summary_aggregated(agg_rows)
@@ -517,6 +534,7 @@ def compare_page():
                 }
         else:
             rows, extra = compare_boms(boms, inventory)
+            rows, hidden_entries = _split_excluded(rows, lambda r: r.part_key, excluded)
             apply_shop_overlays_to_compare(rows, None, inventory)
             grouped_rows = group_compare_rows(rows, category_overrides)
             summary = compare_summary(rows)
@@ -544,6 +562,7 @@ def compare_page():
         shop_url=shop_url,
         category_overrides=category_overrides,
         category_options=CATEGORY_ORDER,
+        hidden_parts=hidden_summary(hidden_entries, excluded),
     )
 
 
@@ -564,11 +583,19 @@ def shop_page():
     shop_lines = []
     stats = None
     export_url = None
+    excluded = load_excluded()
+    hidden_entries: list[tuple[str, str, str]] = []
 
     if selected_ids:
         boms = _load_selected_boms(selected_ids)
         inventory = storage.load_inventory()
-        shop_lines = build_shop_lines(boms, inventory, view_mode)
+        shop_lines = build_shop_lines(
+            boms,
+            inventory,
+            view_mode,
+            excluded_keys=set(excluded),
+            hidden_out=hidden_entries,
+        )
         saved = storage.load_shopping_list()
         merge_shop_state(shop_lines, saved)
         stats = shop_stats(shop_lines)
@@ -591,6 +618,7 @@ def shop_page():
         distributor_cache=distributor_cache,
         api_status=api_status(),
         any_api_configured=any_api_configured(),
+        hidden_parts=hidden_summary(hidden_entries, excluded),
     )
 
 
@@ -878,7 +906,7 @@ def shop_export():
     view_mode = _compare_view_mode(selected_ids)
     boms = _load_selected_boms(selected_ids)
     inventory = storage.load_inventory()
-    shop_lines = build_shop_lines(boms, inventory, view_mode)
+    shop_lines = build_shop_lines(boms, inventory, view_mode, excluded_keys=set(load_excluded()))
     merge_shop_state(shop_lines, storage.load_shopping_list())
 
     response = make_response(shop_to_csv(shop_lines))
@@ -911,6 +939,26 @@ def compare_category_override():
     return jsonify({"ok": True, "part_key": part_key, "overrides": overrides})
 
 
+@app.route("/parts/exclude", methods=["POST"])
+def parts_exclude():
+    """Mark a part as not purchased (PCB feature) or restore it."""
+    payload = request.get_json(silent=True) or {}
+    part_key = str(payload.get("part_key", "")).strip()
+    excluded_flag = bool(payload.get("excluded", True))
+    if not part_key:
+        return jsonify({"ok": False, "error": "Missing part key."}), 400
+    try:
+        current = set_excluded(
+            part_key,
+            excluded_flag,
+            name=str(payload.get("name", "") or ""),
+            lib_ref=str(payload.get("lib_ref", "") or ""),
+        )
+    except ValueError as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 400
+    return jsonify({"ok": True, "part_key": part_key, "excluded": excluded_flag, "count": len(current)})
+
+
 @app.route("/compare/export.csv")
 def compare_export():
     selected_ids = _selected_bom_ids()
@@ -922,13 +970,17 @@ def compare_export():
     boms = _load_selected_boms(selected_ids)
     inventory = storage.load_inventory()
 
+    excluded = load_excluded()
+
     if view_mode == "combined":
         agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        agg_rows, _ = _split_excluded(agg_rows, lambda r: r.aggregate_key, excluded)
         apply_shop_overlays_to_compare(None, agg_rows, inventory)
         response = make_response(compare_aggregated_to_csv(agg_rows))
         filename = "compare_combined_gap_report.csv"
     else:
         rows, _ = compare_boms(boms, inventory)
+        rows, _ = _split_excluded(rows, lambda r: r.part_key, excluded)
         apply_shop_overlays_to_compare(rows, None, inventory)
         response = make_response(compare_to_csv(rows))
         filename = "compare_gap_report.csv"

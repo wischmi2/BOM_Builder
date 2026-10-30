@@ -197,7 +197,14 @@
                 data-shop-substitute="{{ '1' if row.shop_substitute else '0' }}"
                 data-search="{{ (row.display_name ~ ' ' ~ row.display_lib_ref ~ ' ' ~ row.bom_lib_ref ~ ' ' ~ row.bom_ids_display)|lower }}">
                 <td class="col-drag"><span class="drag-handle" draggable="true" title="Drag to another category">⋮⋮</span></td>
-                <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
+                <td>
+                    <span class="status-badge status-{{ row.status }}">{{ row.status }}</span>
+                    <button type="button" class="exclude-part-btn hide-part-btn"
+                            data-exclude-action="hide"
+                            data-name="{{ row.bom_name }}"
+                            data-lib-ref="{{ row.bom_lib_ref }}"
+                            title="Not purchased (PCB feature) — hide every line with LibRef {{ row.bom_lib_ref }} from Compare and Shop">Hide</button>
+                </td>
                 {{ compare_need_name_cell(row.display_name, part.description if part else "") }}
                 <td class="col-libref">
                     <code>{{ row.display_lib_ref }}</code>
@@ -278,7 +285,14 @@
                 data-shop-substitute="{{ '1' if row.shop_substitute else '0' }}"
                 data-search="{{ (row.display_name ~ ' ' ~ row.display_lib_ref ~ ' ' ~ row.bom_lib_ref ~ ' ' ~ row.need_line.designator_display)|lower }}">
                 <td class="col-drag"><span class="drag-handle" draggable="true" title="Drag to another category">⋮⋮</span></td>
-                <td><span class="status-badge status-{{ row.status }}">{{ row.status }}</span></td>
+                <td>
+                    <span class="status-badge status-{{ row.status }}">{{ row.status }}</span>
+                    <button type="button" class="exclude-part-btn hide-part-btn"
+                            data-exclude-action="hide"
+                            data-name="{{ row.bom_name }}"
+                            data-lib-ref="{{ row.bom_lib_ref }}"
+                            title="Not purchased (PCB feature) — hide every line with LibRef {{ row.bom_lib_ref }} from Compare and Shop">Hide</button>
+                </td>
                 {{ compare_need_name_cell(row.display_name, part.description if part else "") }}
                 <td class="col-libref">
                     <code>{{ row.display_lib_ref }}</code>
@@ -347,6 +361,8 @@
     <p>No lines found in selected BOM(s).</p>
 </div>
 {% endif %}
+
+{% include "_hidden_parts.html" %}
 {% endblock %}
 
 {% block scripts %}
@@ -358,5 +374,8 @@
     };
 </script>
 <script src="{{ url_for('static', filename='compare.js') }}"></script>
+{% endif %}
+{% if rows or agg_rows or hidden_parts %}
+<script src="{{ url_for('static', filename='exclude-parts.js') }}"></script>
 {% endif %}
 {% endblock %}

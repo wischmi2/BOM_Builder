@@ -1595,3 +1595,45 @@ body.col-resize-active * {
     color: var(--text);
     font-weight: 600;
 }
+
+/* "Not purchased" (PCB feature) hide / restore */
+.hide-part-btn {
+    display: inline-block;
+    margin-left: 0.3rem;
+    padding: 0.05rem 0.4rem;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+tr:hover .hide-part-btn,
+.hide-part-btn:focus-visible {
+    opacity: 1;
+}
+
+.hide-part-btn:hover {
+    color: var(--text);
+    border-color: var(--muted);
+}
+
+.hidden-parts {
+    margin-top: 1.25rem;
+}
+
+.hidden-parts summary {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.hidden-parts-table {
+    margin-top: 0.75rem;
+}
