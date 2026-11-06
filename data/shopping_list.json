@@ -847,7 +847,13 @@
     },
     "lib:TYPEC31M12": {
       "mpn": "TYPE-C-31-M-12",
-      "updated_at": "2026-07-14T16:31:58.703239+00:00"
+      "updated_at": "2026-11-06T13:44:18.395696+00:00",
+      "alternate": {
+        "enabled": true,
+        "buy_qty": 0,
+        "mpn": "DX07S016JA3R1500",
+        "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole"
+      }
     },
     "lib:SPV1040T": {
       "mpn": "SPV1040T",
@@ -920,7 +926,7 @@
     },
     "lib:SMLP12MTT86R": {
       "mpn": "SMLEN3EC8TT86",
-      "updated_at": "2026-07-14T16:39:36.992699+00:00"
+      "updated_at": "2026-11-06T14:05:21.304739+00:00"
     },
     "lib:SDFL2012S100KTF": {
       "mpn": "SDFL2012S100KTF",
@@ -1113,6 +1119,155 @@
     "lib:GRM188R61C106MA73D": {
       "name": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "updated_at": "2026-10-30T19:17:42.215664+00:00"
+    },
+    "lib:ERJ2GE0R00X": {
+      "mpn": "ERJ-2GE0R00X",
+      "updated_at": "2026-11-06T13:22:07.583734+00:00",
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:ERJ2RKF2202X": {
+      "mpn": "ERJ-2RKF2202X",
+      "updated_at": "2026-11-06T13:24:17.900076+00:00",
+      "name": "22 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:RC0402FR07100KL": {
+      "mpn": "RC0402FR-07100KL",
+      "updated_at": "2026-11-06T13:23:55.828532+00:00",
+      "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:RC0402FR07100RL": {
+      "mpn": "RC0402FR-07100RL",
+      "updated_at": "2026-11-06T13:23:06.023303+00:00",
+      "name": "100 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:RC0402FR0710KL": {
+      "mpn": "RC0402FR-0710KL",
+      "updated_at": "2026-11-06T13:24:45.836345+00:00",
+      "name": "10 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:RC0402FR0733RL": {
+      "mpn": "RC0402FR-0733RL",
+      "updated_at": "2026-11-06T13:25:19.398124+00:00",
+      "name": "33 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:RC0402FR07470RL": {
+      "mpn": "RC0402FR-07470RL",
+      "updated_at": "2026-11-06T13:25:44.920398+00:00",
+      "name": "470 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:RC0402FR075K1L": {
+      "mpn": "RC0402FR-075K1L",
+      "updated_at": "2026-11-06T13:26:16.806830+00:00",
+      "name": "5.1 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:CL10A106MA8NRNC": {
+      "mpn": "CL10A106MA8NRNC",
+      "updated_at": "2026-11-06T13:28:14.400017+00:00",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
+    },
+    "lib:CL21A226MOQNNNE": {
+      "name": "22 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "updated_at": "2026-11-06T13:28:28.927652+00:00",
+      "mpn": "CL21A226MOQNNNE"
+    },
+    "lib:GCM155R71C104KA55D": {
+      "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-11-06T13:29:14.744417+00:00",
+      "mpn": "GCM155R71C104KA55D"
+    },
+    "lib:SWPA4020S2R2NT": {
+      "mpn": "SWPA4020S2R2NT",
+      "updated_at": "2026-11-06T13:31:30.089789+00:00",
+      "name": "2.2 \u00b5H Shielded Drum Core, Wirewound Inductor 1.85 A 52mOhm Max Nonstandard"
+    },
+    "lib:8240026": {
+      "mpn": "8240026",
+      "updated_at": "2026-11-06T13:33:31.171195+00:00",
+      "name": "9V Clamp 6A (8/20\u00b5s) Ipp Tvs Diode Surface Mount SOT-143-4"
+    },
+    "lib:LBES0ZZ2FR580": {
+      "mpn": "LBES0ZZ2FR-580",
+      "updated_at": "2026-11-06T13:34:13.078614+00:00",
+      "name": "802.15.4, Bluetooth, WiFi 802.11a/b/g/n/ac/ax, Bluetooth v5.4, Thread, Zigbee\u00ae Transceiver Module 2.4GHz, 5GHz Antenna Not Included Surface Mount"
+    },
+    "lib:LTSTC170KGKT": {
+      "name": "Green 571nm LED Indication - Discrete 2V 0805 (2012 Metric)",
+      "updated_at": "2026-11-06T13:34:26.936425+00:00",
+      "mpn": "LTST-C170KGKT"
+    },
+    "lib:LTSTC190TBKT": {
+      "name": "Blue 470nm LED Indication - Discrete 3.3V 0603 (1608 Metric)",
+      "updated_at": "2026-11-06T13:35:01.622712+00:00",
+      "mpn": "LTST-C190TBKT"
+    },
+    "lib:LTSTC191KRKT": {
+      "mpn": "LTST-C191KRKT",
+      "updated_at": "2026-11-06T13:35:15.524152+00:00",
+      "name": "Red 631nm LED Indication - Discrete 2V 0603 (1608 Metric)"
+    },
+    "lib:RB521S30AUR1000A1": {
+      "mpn": "RB521S30-AU_R1_000A1",
+      "updated_at": "2026-11-06T13:38:06.573332+00:00",
+      "name": "Diode 30 V 200mA Surface Mount SOD-523"
+    },
+    "lib:TLV62569DBVR": {
+      "mpn": "TLV62569DBVR",
+      "updated_at": "2026-11-06T13:38:40.027505+00:00",
+      "name": "Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A SC-74A, SOT-753"
+    },
+    "lib:S8BPHKSLFSN": {
+      "mpn": "S8B-PH-K-S(LF)(SN)",
+      "updated_at": "2026-11-06T13:39:07.792642+00:00",
+      "name": "Connector Header Through Hole, Right Angle 8 position 0.079\" (2.00mm)"
+    },
+    "lib:UFLRSMT110": {
+      "mpn": "U.FL-R-SMT-1(10)",
+      "updated_at": "2026-11-06T13:39:52.153675+00:00",
+      "name": "U.FL (UMCC) Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder"
+    },
+    "lib:BLM18KG221SN1D": {
+      "mpn": "BLM18KG221SN1D",
+      "updated_at": "2026-11-06T13:40:20.419778+00:00",
+      "name": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 2.2A 50mOhm"
+    },
+    "lib:KMR221GLFS": {
+      "mpn": "KMR221GLFS",
+      "updated_at": "2026-11-06T13:41:04.409540+00:00",
+      "name": "Tactile Switch SPST-NO Top Actuated Surface Mount"
+    },
+    "lib:XRCGB32M000F1S2AR0": {
+      "mpn": "XRCGB32M000F1S2AR0",
+      "updated_at": "2026-11-06T14:04:53.660440+00:00",
+      "name": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead"
+    },
+    "lib:ERJ3GEY0R00V": {
+      "mpn": "ERJ-3GEY0R00V",
+      "updated_at": "2026-11-06T14:07:40.092458+00:00",
+      "name": "0 Ohms Jumper Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"
+    },
+    "lib:NCU15XH103F60RC": {
+      "name": "NTC Thermistor 10k 0402 (1005 Metric)",
+      "updated_at": "2026-11-06T14:08:38.398484+00:00",
+      "mpn": "NCU15XH103F60RC"
+    },
+    "lib:RC0603FR07150KL": {
+      "mpn": "RC0603FR-07150KL",
+      "updated_at": "2026-11-06T14:08:50.169376+00:00",
+      "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film"
+    },
+    "lib:CL03A104KQ3NNNC": {
+      "mpn": "CL03A104KQ3NNNC",
+      "updated_at": "2026-11-06T14:09:26.408633+00:00",
+      "name": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)"
+    },
+    "lib:CL05A105KA5NQNC": {
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "updated_at": "2026-11-06T14:09:58.544063+00:00",
+      "mpn": "CL05A105KA5NQNC"
+    },
+    "lib:CL05C101JB5NNNC": {
+      "name": "100pF",
+      "updated_at": "2026-11-06T14:10:07.017913+00:00"
     }
   }
 }

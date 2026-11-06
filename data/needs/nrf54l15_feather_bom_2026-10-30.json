@@ -1,7 +1,7 @@
 {
   "bom_id": "nrf54l15_feather_bom_2026-10-30",
   "source_filename": "nrf54l15_feather_bom_2026-10-30.csv",
-  "board_count": 1,
+  "board_count": 5,
   "lines": [
     {
       "id": "row-1-f96ec6c381c6f01e",
@@ -540,7 +540,7 @@
     {
       "id": "row-22-858acb8bae764bf8",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "100nF",
+      "name": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "description": "U6 VDD decoupling, 100 nF 0201 per nRF54L15 PS circuit config 1. Place at U6 pin 22.,U6 VDD decoupling, 100 nF 0201 per nRF54L15 PS circuit config 1. Place at U6 pin 36.",
       "designators": [
         "C49",
@@ -566,7 +566,7 @@
     {
       "id": "row-23-94b4f02281051cdf",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "1uF",
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "description": "U2 VBUS decoupling, 1.0 uF (nPM1300 PS ref. circuit config 1 BOM C1/C5 1.0 uF X5R); 25 V part because VBUS abs max is 22 V. Place at U2 pin 21.",
       "designators": [
         "C51"
@@ -951,7 +951,7 @@
         "LED1"
       ],
       "footprint": "LED-SMD_L1.0-W0.6-RD_SML-P12YTT86RR",
-      "lib_ref": "SML-P12MTT86R",
+      "lib_ref": "SMLEN3EC8TT86",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,
@@ -970,7 +970,7 @@
     {
       "id": "row-39-cdf632dc6dde0246",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "10k NTC B3380",
+      "name": "NTC Thermistor 10k 0402 (1005 Metric)",
       "description": "Battery NTC on nPM1300 NTC pin: 10k, B25/50 3380 K +-1 %, 0402 (nPM1300 PS Monitor battery temperature, Table 2). No cap in parallel (max 100 pF). Stage 2: place next to U4 battery JST.",
       "designators": [
         "R8"
@@ -995,7 +995,7 @@
     {
       "id": "row-40-68c9ccc897931085",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "0R",
+      "name": "0 Ohms Jumper Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film",
       "description": "VSET1 grounded (<100 ohm) = BUCK1 off at power-up (nPM1300 PS BUCK Output voltage selection / On-Off control). Was 47k (1.8 V).",
       "designators": [
         "R9"
@@ -1020,7 +1020,7 @@
     {
       "id": "row-41-7d7c471fa87ba5af",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "150k",
+      "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film",
       "description": "",
       "designators": [
         "R10"
@@ -1301,7 +1301,7 @@
     {
       "id": "row-52-a7bf2050b699eade",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "XRCGB32M000F1S2AR0",
+      "name": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead",
       "description": "",
       "designators": [
         "X1"

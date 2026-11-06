@@ -2870,6 +2870,66 @@
         "kind": "exact",
         "fetched_at": "2026-07-22T12:07:48.922623+00:00"
       }
+    },
+    "mpn:S8B-PH-K-S(LF)(SN)": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "S8B-PH-K-S",
+        "digikey_part": "",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "CONN HEADER R/A 8POS 2MM",
+        "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S8B-PH-K-S/926632",
+        "stock": 15969,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T13:42:38.442327+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "S8B-PH-K-S-(LF)(SN)",
+        "lcsc_part": "C157915",
+        "manufacturer": "JST",
+        "description": "",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/PH-Connectors_JST_S8B-PH-K-S-LF-SN_PHsocket-1-8P-Curved-needle-pitch2mm_C157915.html",
+        "stock": 7410,
+        "price_1": 0.1246,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T13:42:40.116428+00:00"
+      }
+    },
+    "mpn:DX07S016JA3R1500": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "DX07S016JA3R1500",
+        "digikey_part": "",
+        "manufacturer": "JAE Electronics",
+        "description": "CONN RCP USB2.0 TYP C 24P SMD RA",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8937/MB_0335E_DX07.pdf",
+        "url": "https://www.digikey.com/en/products/detail/jae-electronics/DX07S016JA3R1500/12354006",
+        "stock": 8484,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T13:44:39.313437+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "DX07S016JA3R1500",
+        "lcsc_part": "C3197625",
+        "manufacturer": "JAE Electronics",
+        "description": "SMD",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/USB-Connectors_JAE-Electronics-DX07S016JA3R1500_C3197625.html",
+        "stock": 483,
+        "price_1": 1.2004,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T13:44:41.139044+00:00"
+      }
     }
   }
 }

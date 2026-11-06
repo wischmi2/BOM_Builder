@@ -77,6 +77,7 @@
     "lib:8266347": "connector",
     "lib:UJ20CHGMSMT4BP16TR": "connector",
     "lib:2042811100": "other",
-    "lib:MTSW10308GS229RA": "connector"
+    "lib:MTSW10308GS229RA": "connector",
+    "lib:XRCGB32M000F1S2AR0": "semiconductor"
   }
 }
