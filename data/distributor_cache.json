@@ -2930,6 +2930,66 @@
         "kind": "exact",
         "fetched_at": "2026-11-06T13:44:41.139044+00:00"
       }
+    },
+    "mpn:CL05C101JB5NNNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL05C101JB5NNNC",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 100PF 50V C0G/NP0 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05C101JB5NNNC_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05C101JB5NNNC/3886683",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T14:11:05.163925+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL05C101JB5NNNC",
+        "lcsc_part": "C26409",
+        "manufacturer": "SAMSUNG",
+        "description": "100pF (101) \u00b15% 50V",
+        "datasheet_url": "",
+        "url": "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_SAMSUNG_CL05C101JB5NNNC_100pF-101-5-50V_C26409.html",
+        "stock": 3449500,
+        "price_1": 0.003,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T14:11:06.732114+00:00"
+      }
+    },
+    "mpn:CL10A226MP8NUNE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL10A226MP8NUNE",
+        "digikey_part": "",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 22UF 10V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2901/CL10A226MP8NUNC_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A226MP8NUNE/3886932",
+        "stock": null,
+        "price_1": null,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T14:11:30.005956+00:00"
+      },
+      "lcsc": {
+        "distributor": "lcsc",
+        "found": true,
+        "mpn": "CL10A226MP8NUNE",
+        "lcsc_part": "C86295",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "0603",
+        "datasheet_url": "",
+        "url": "https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC---SMD-SMT_Samsung-Electro-Mechanics-CL10A226MP8NUNE_C86295.html",
+        "stock": 182660,
+        "price_1": 0.033,
+        "kind": "exact",
+        "fetched_at": "2026-11-06T14:11:31.292441+00:00"
+      }
     }
   }
 }
