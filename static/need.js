@@ -191,7 +191,7 @@
         async function saveLibRef(value) {
             const libRef = value.trim();
             if (!libRef) {
-                alert("MPN (LibRef) cannot be empty.");
+                alert("Part Number cannot be empty.");
                 return;
             }
             try {

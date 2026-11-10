@@ -122,7 +122,7 @@ def need_part_key_filter(line) -> str:
 @app.template_filter("need_suggested_mpn")
 def need_suggested_mpn_filter(line) -> str:
     suggested = suggest_mpn_from_description(
-        line.description,
+        line.original_description or line.description,
         name=line.name,
         lib_ref=line.lib_ref,
     )

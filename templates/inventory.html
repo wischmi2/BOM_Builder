@@ -46,11 +46,11 @@
         <h2>Add part</h2>
         <div class="form-grid">
             <label>
-                <span>LibRef / MPN <em>*</em></span>
+                <span>Part Number <em>*</em></span>
                 <input type="text" name="lib_ref" id="add-lib-ref" required placeholder="GRM155R71H104KE14J">
             </label>
             <label>
-                <span>Name</span>
+                <span>Part Description</span>
                 <input type="text" name="name" id="add-name" placeholder="0.1uF 0402">
             </label>
             <label>
@@ -106,8 +106,8 @@
             <thead>
                 <tr>
                     <th class="col-drag" data-col="drag" aria-label="Drag"></th>
-                    <th class="col-libref" data-col="libref">LibRef</th>
-                    <th class="col-name" data-col="name">Name</th>
+                    <th class="col-libref" data-col="libref">Part Number</th>
+                    <th class="col-name" data-col="name">Part Description</th>
                     <th class="col-qty" data-col="qty">Qty</th>
                     <th data-col="location">Location</th>
                     <th class="col-notes" data-col="notes">Notes</th>
@@ -134,11 +134,11 @@
                     <td class="col-drag"><span class="drag-handle" title="Drag to another category">⋮⋮</span></td>
                     <td>
                         <input type="text" class="cell-input lib-ref-input" value="{{ item.lib_ref }}"
-                               aria-label="LibRef">
+                               aria-label="Part number">
                     </td>
                     <td>
                         <input type="text" class="cell-input name-input" value="{{ item.name }}"
-                               aria-label="Name">
+                               aria-label="Part description">
                     </td>
                     <td class="col-qty">
                         <input type="number" class="cell-input qty-input"

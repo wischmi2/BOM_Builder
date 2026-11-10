@@ -119,8 +119,8 @@
                 <th class="col-check" data-col="check">Ordered</th>
                 <th class="col-received" data-col="received" title="Receive into inventory">Received</th>
                 <th class="col-qty" data-col="buy">Buy qty</th>
-                <th class="col-libref" data-col="libref">MPN</th>
-                <th class="col-name" data-col="name">Name</th>
+                <th class="col-libref" data-col="libref">Part Number</th>
+                <th class="col-name" data-col="name">Part Description</th>
                 <th data-col="status">Status</th>
                 <th class="col-qty" data-col="need">Need</th>
                 <th class="col-qty" data-col="onhand">On hand</th>
@@ -189,14 +189,14 @@
                 </td>
                 <td class="col-libref" title="{% if line.lib_ref != line.primary_mpn %}BOM LibRef: {{ line.lib_ref }}{% endif %}">
                     <input type="text" class="mpn-input cell-input" value="{{ line.primary_mpn }}"
-                           aria-label="MPN for {{ line.name }}" autocomplete="off">
+                           aria-label="Part number for {{ line.name }}" autocomplete="off">
                     {% if line.alternates_extra %}
                     <span class="muted shop-alternates" title="Alternate MPNs from BOM">+ {{ line.alternates_display }}</span>
                     {% endif %}
                 </td>
                 <td class="col-name">
                     <input type="text" class="name-input cell-input" value="{{ line.name }}"
-                           aria-label="Part name" autocomplete="off">
+                           aria-label="Part description" autocomplete="off">
                 </td>
                 <td class="col-status">
                     <span class="status-badge status-{{ line.status }}">{{ line.status }}</span>
@@ -305,7 +305,7 @@
                 </td>
                 <td class="col-name">
                     <input type="text" class="alt-name-input cell-input" value="{{ line.alternate.name }}"
-                           placeholder="Alternate description" aria-label="Alternate name" autocomplete="off">
+                           placeholder="Alternate description" aria-label="Alternate part description" autocomplete="off">
                 </td>
                 <td><span class="status-badge status-alt">ALT</span></td>
                 <td class="col-qty muted shop-alt-ref">{{ line.qty_needed }}</td>

@@ -644,9 +644,9 @@
             return;
         }
         const fields = [
-            ["mpn", "MPN", proposal.mpn, mpn],
+            ["mpn", "Part Number", proposal.mpn, mpn],
             ["manufacturer", "Manufacturer", proposal.manufacturer],
-            ["description", "Description", proposal.description],
+            ["description", "Part Description", proposal.description],
             ["datasheet_url", "Datasheet", proposal.datasheet_url],
             ["unit_price", "Unit price", proposal.unit_price != null ? formatPrice(proposal.unit_price) : ""],
             ["stock", "Stock", proposal.stock != null ? String(proposal.stock) : ""],
@@ -835,7 +835,7 @@
                 </td></tr>`;
         }).join("");
         body.innerHTML = head +
-            `<table class="alt-table"><thead><tr><th>MPN</th><th>Mfr</th><th>Description</th><th>Price</th><th>Stock</th><th>Links</th><th></th></tr></thead><tbody>${rowsHtml}</tbody></table>` +
+            `<table class="alt-table"><thead><tr><th>Part Number</th><th>Mfr</th><th>Part Description</th><th>Price</th><th>Stock</th><th>Links</th><th></th></tr></thead><tbody>${rowsHtml}</tbody></table>` +
             errorsHtml +
             `<div class="shop-detail-actions"><button type="button" class="btn btn-secondary btn-sm detail-close">Close</button><span class="muted alt-status" hidden></span></div>`;
         body.querySelector(".detail-close").addEventListener("click", () => closeDetail(row));
