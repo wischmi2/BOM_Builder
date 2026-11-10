@@ -1158,3 +1158,70 @@
     setupDragAndDrop();
     applyFilters();
 })();
+
+
+// Cost / Total columns: re-cost a line when its buy quantity is edited, then
+// refresh the section totals and the grand total. Uses the chosen distributor's
+// price breaks embedded in the Cost cell (reload the page to re-pick a distributor).
+(function () {
+    if (!document.getElementById("shop-grand-total")) return;
+
+    function money(value, digits) {
+        return "$" + value.toFixed(digits);
+    }
+
+    function unitAt(breaks, qty) {
+        if (!Array.isArray(breaks) || !breaks.length) return null;
+        let unit = breaks[0][1];
+        for (const [minQty, price] of breaks) {
+            if (qty >= minQty) unit = price;
+        }
+        return unit;
+    }
+
+    function recostRow(row, qty) {
+        const costCell = row.querySelector(".col-cost");
+        const totalCell = row.querySelector(".col-total");
+        if (!costCell || !totalCell) return;
+        let breaks = [];
+        try { breaks = JSON.parse(costCell.dataset.breaks || "[]"); } catch (e) { breaks = []; }
+        const unit = unitAt(breaks, Math.max(1, qty));
+        if (unit === null) return;
+        const total = qty > 0 ? unit * qty : 0;
+        costCell.dataset.unit = String(unit);
+        const source = costCell.querySelector(".cost-source");
+        costCell.firstChild && costCell.firstChild.nodeType === Node.TEXT_NODE
+            ? (costCell.firstChild.textContent = money(unit, 4))
+            : costCell.insertBefore(document.createTextNode(money(unit, 4)), source);
+        totalCell.dataset.total = String(total);
+        totalCell.textContent = money(total, 2);
+    }
+
+    function refreshTotals() {
+        const sums = {};
+        let grand = 0;
+        document.querySelectorAll("tr .col-total[data-total]").forEach((cell) => {
+            const row = cell.closest("tr");
+            if (row.hidden) return;
+            const value = parseFloat(cell.dataset.total) || 0;
+            const group = row.dataset.categoryGroup
+                || (row.previousElementSibling && row.previousElementSibling.dataset.categoryGroup)
+                || "";
+            sums[group] = (sums[group] || 0) + value;
+            grand += value;
+        });
+        document.querySelectorAll("[data-category-cost]").forEach((el) => {
+            el.textContent = money(sums[el.dataset.categoryCost] || 0, 2);
+        });
+        const grandEl = document.getElementById("shop-grand-total");
+        if (grandEl) grandEl.textContent = money(grand, 2);
+    }
+
+    document.addEventListener("input", (event) => {
+        const input = event.target;
+        if (!input.matches || !input.matches(".buy-qty-input, .alt-buy-qty-input")) return;
+        const qty = parseInt(input.value, 10) || 0;
+        recostRow(input.closest("tr"), qty);
+        refreshTotals();
+    });
+})();

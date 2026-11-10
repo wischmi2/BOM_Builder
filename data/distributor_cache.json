@@ -301,15 +301,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "CC0603MRX5R8BB106",
-        "digikey_part": "",
+        "digikey_part": "311-3494-1-ND",
         "manufacturer": "YAGEO",
         "description": "CAP CER 10UF 25V X5R 0603",
         "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V",
         "url": "https://www.digikey.com/en/products/detail/yageo/CC0603MRX5R8BB106/7164378",
-        "stock": 12171,
-        "price_1": null,
+        "stock": 19171,
+        "price_1": 1.43,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.43
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.917
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.7144
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.6521
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.54686
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:40.024367+00:00"
+        "fetched_at": "2026-11-10T02:44:02.783894+00:00"
       },
       "mouser": {
         "distributor": "mouser",
@@ -373,15 +395,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "CL05A105KO5NNNC",
-        "digikey_part": "",
+        "digikey_part": "1276-1067-1-ND",
         "manufacturer": "Samsung Electro-Mechanics",
         "description": "CAP CER 1UF 16V X5R 0402",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05A105KO5NNNC_Spec_5-2-19.pdf",
         "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05A105KO5NNNC/3886725",
-        "stock": 6473697,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.043
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.029
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0248
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01786
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:43.842854+00:00"
+        "fetched_at": "2026-11-10T02:44:05.064083+00:00"
       },
       "mouser": {
         "distributor": "mouser",
@@ -488,15 +532,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "LQP03HQ3N5B02D",
-        "digikey_part": "",
+        "digikey_part": "490-13925-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "FIXED IND 3.5NH 500MA 170 MOHM",
         "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0021_PDF_INDUCTOR",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03HQ3N5B02D/6098725",
-        "stock": 289166,
-        "price_1": null,
+        "stock": 372469,
+        "price_1": 0.12,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.12
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.102
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0837
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.06881
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.06002
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:24.775916+00:00"
+        "fetched_at": "2026-11-10T02:44:35.958440+00:00"
       },
       "mouser": {
         "found": false,
@@ -790,15 +856,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GCM155R71H103KA55D",
-        "digikey_part": "",
+        "digikey_part": "490-4762-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 10000PF 50V X7R 0402",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM155R71H103KA55-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM155R71H103KA55-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GCM155R71H103KA55D/1641636",
-        "stock": 2527242,
-        "price_1": null,
+        "stock": 1300985,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.027
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.018
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0153
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01076
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:56.250634+00:00"
+        "fetched_at": "2026-11-10T02:44:15.709002+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -820,15 +908,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GJM0335C1E1R0WB01D",
-        "digikey_part": "",
+        "digikey_part": "490-10677-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 1PF 25V C0G/NP0 0201",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R0WB01-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM0335C1E1R0WB01-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E1R0WB01D/2592505",
-        "stock": 908,
-        "price_1": null,
+        "stock": 204166,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.062
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0424
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0366
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.02676
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:26:59.527185+00:00"
+        "fetched_at": "2026-11-10T02:44:16.911671+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -850,15 +960,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GJM0335C1E1R5WB01D",
-        "digikey_part": "",
+        "digikey_part": "490-11176-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 1.5PF 25V C0G/NP0 0201",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R5WB01-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM0335C1E1R5WB01-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E1R5WB01D/2592528",
-        "stock": 150433,
-        "price_1": null,
+        "stock": 159720,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.06
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.041
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0354
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.02592
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:03.009441+00:00"
+        "fetched_at": "2026-11-10T02:44:17.949585+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -880,15 +1012,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GJM0335C1E2R0WB01D",
-        "digikey_part": "",
+        "digikey_part": "490-12592-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 2PF 25V C0G/NP0 0201",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E2R0WB01-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM0335C1E2R0WB01-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1E2R0WB01D/2592548",
-        "stock": 147051,
-        "price_1": null,
+        "stock": 273916,
+        "price_1": 0.12,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.12
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.068
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0472
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0408
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0301
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:06.377032+00:00"
+        "fetched_at": "2026-11-10T02:44:19.105100+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -940,15 +1094,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GJM0335C1ER30WB01D",
-        "digikey_part": "",
+        "digikey_part": "490-8073-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 0.3PF 25V C0G/NP0 0201",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1ER30WB01-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GJM0335C1ER30WB01-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GJM0335C1ER30WB01D/2592749",
-        "stock": 192,
-        "price_1": null,
+        "stock": 4349,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.058
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.04
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0345
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.02524
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:13.048533+00:00"
+        "fetched_at": "2026-11-10T02:44:19.689231+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1000,15 +1176,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GRM188R72A104KA35D",
-        "digikey_part": "",
+        "digikey_part": "490-3285-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 0.1UF 100V X7R 0603",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R72A104KA35D/702549",
-        "stock": 2385157,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.16,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.16
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.087
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0612
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0532
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0398
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:18.359607+00:00"
+        "fetched_at": "2026-11-10T02:44:27.035440+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1030,15 +1228,33 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "LSCNB1608HKT2R2MD",
-        "digikey_part": "",
+        "digikey_part": "587-LSCNB1608HKT2R2MDCT-ND",
         "manufacturer": "Taiyo Yuden",
         "description": "FIXED IND 2.2UH 1.2A 292 MOHM",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4802/LSCNB1608HKT2R2MD_SS.pdf",
         "url": "https://www.digikey.com/en/products/detail/taiyo-yuden/LSCNB1608HKT2R2MD/16668097",
         "stock": 0,
-        "price_1": null,
+        "price_1": 0.28,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.28
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.227
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1868
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.15362
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T14:27:31.300921+00:00"
+        "fetched_at": "2026-11-10T02:44:38.448405+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1105,7 +1321,7 @@
         "datasheet_url": "",
         "stock": null,
         "price_1": null,
-        "fetched_at": "2026-07-14T14:27:49.451983+00:00"
+        "fetched_at": "2026-11-10T02:44:10.627670+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1132,7 +1348,7 @@
         "datasheet_url": "",
         "stock": null,
         "price_1": null,
-        "fetched_at": "2026-07-14T14:27:52.630568+00:00"
+        "fetched_at": "2026-11-10T02:44:14.478665+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1234,15 +1450,49 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "RC0402FR-074K7L",
-        "digikey_part": "",
+        "digikey_part": "311-4.7KLRCT-ND",
         "manufacturer": "YAGEO",
         "description": "RES 4.7K OHM 1% 1/16W 0402",
         "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
         "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-074K7L/2827563",
-        "stock": 4148195,
-        "price_1": null,
+        "stock": 606665,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:09:47.785467+00:00"
+        "fetched_at": "2026-11-10T02:44:59.554097+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1448,15 +1698,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GRT188R61E106ME13D",
-        "digikey_part": "",
+        "digikey_part": "490-12323-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 10UF 25V X5R 0603",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRT188R61E106ME13-01.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRT188R61E106ME13-01A-EN_PDF_CERAMICCAPACITORSMD",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRT188R61E106ME13D/5416745",
-        "stock": 449279,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.28,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.28
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.161
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1158
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1022
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.07914
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:18:38.789791+00:00"
+        "fetched_at": "2026-11-10T02:44:28.206969+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1582,7 +1854,7 @@
         "datasheet_url": "",
         "stock": null,
         "price_1": null,
-        "fetched_at": "2026-07-14T16:31:50.754299+00:00"
+        "fetched_at": "2026-11-10T02:45:25.965803+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -1604,15 +1876,45 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "SPV1040T",
-        "digikey_part": "",
+        "digikey_part": "497-11417-ND",
         "manufacturer": "STMicroelectronics",
         "description": "IC BATT CHG SOLAR 8TSSOP",
         "datasheet_url": "https://www.st.com/content/ccc/resource/technical/document/datasheet/0d/30/c2/1a/92/03/48/cb/CD00287506.pdf/files/CD00287506.pdf/jcr:content/translations/en.CD00287506.pdf",
         "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/SPV1040T/2687073",
-        "stock": 983,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 8.08,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 8.08
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 6.25
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 5.7928
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 5.2909
+          },
+          {
+            "BreakQuantity": 300,
+            "UnitPrice": 5.01093
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 4.90738
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 4.78865
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T16:32:24.437880+00:00"
+        "fetched_at": "2026-11-10T02:45:17.642305+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2248,15 +2550,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "LQP03TQ3N9B02D",
-        "digikey_part": "",
+        "digikey_part": "490-14982-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "FIXED IND 3.9NH 400MA 250 MOHM",
         "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0024_PDF_INDUCTOR",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03TQ3N9B02D/6798407",
-        "stock": 60275,
-        "price_1": null,
+        "stock": 59145,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.034
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0283
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.02329
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.02031
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:19:58.025611+00:00"
+        "fetched_at": "2026-11-10T02:44:37.075533+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2278,15 +2602,33 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "LQM18PN2R2MGHD",
-        "digikey_part": "",
+        "digikey_part": "490-14478-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "FIXED IND 2.2UH 1.05A 250 MOHM",
-        "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-0047.pdf",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243B-0047_PDF_INDUCTOR",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQM18PN2R2MGHD/6606107",
-        "stock": 61198,
-        "price_1": null,
+        "stock": 167389,
+        "price_1": 0.3,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.3
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.248
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2041
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.16785
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:31:36.967965+00:00"
+        "fetched_at": "2026-11-10T02:44:32.493274+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2367,15 +2709,41 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "SMLEN3EC8TT86",
-        "digikey_part": "",
+        "digikey_part": "846-SMLEN3EC8TT86CT-ND",
         "manufacturer": "Rohm Semiconductor",
         "description": "LED GREEN 1608 SMD",
         "datasheet_url": "https://www.rohm.com/datasheet?p=SMLEN3EC8T&dist=Digi-key&media=referral&source=digi-key.com&campaign=Digi-key",
         "url": "https://www.digikey.com/en/products/detail/rohm-semiconductor/SMLEN3EC8TT86/15762446",
-        "stock": 7794,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.87,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.87
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.608
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.4458
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.37328
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.34951
+          },
+          {
+            "BreakQuantity": 2000,
+            "UnitPrice": 0.32934
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:39:28.632069+00:00"
+        "fetched_at": "2026-11-10T02:45:13.304265+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2397,15 +2765,21 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "S2B-PH-K-S-GW(PP)",
-        "digikey_part": "",
+        "digikey_part": "455-S2B-PH-K-S-GW(PP)-ND",
         "manufacturer": "JST Sales America Inc.",
         "description": "PH HEADER (SIDE)",
         "datasheet_url": "",
         "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S-GW-PP/26433937",
         "stock": 0,
-        "price_1": null,
+        "price_1": 0.12449,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.12449
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:43:38.332415+00:00"
+        "fetched_at": "2026-11-10T02:45:09.517400+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2427,15 +2801,49 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "BGS12P2L6E6327XTSA1",
-        "digikey_part": "",
+        "digikey_part": "448-BGS12P2L6E6327XTSA1CT-ND",
         "manufacturer": "Infineon Technologies",
         "description": "IC RF SWITCH SPDT 6GHZ TSLP6-4",
         "datasheet_url": "https://www.infineon.com/dgdl/Infineon-BGS12P2L6-DataSheet-v02_00-EN.pdf?fileId=5546d4626cb27db2016d4487d53603ce",
         "url": "https://www.digikey.com/en/products/detail/infineon-technologies/BGS12P2L6E6327XTSA1/11500367",
-        "stock": 223303,
-        "price_1": null,
+        "stock": 345135,
+        "price_1": 0.4,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.4
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.28
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.2488
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2152
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.19912
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.18944
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.18145
+          },
+          {
+            "BreakQuantity": 2500,
+            "UnitPrice": 0.17748
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:48:27.688680+00:00"
+        "fetched_at": "2026-11-10T02:43:57.539151+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2456,15 +2864,45 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "2450AT18A0100001E",
-        "digikey_part": "",
+        "digikey_part": "712-2450AT18A0100001ECT-ND",
         "manufacturer": "Johanson Technology Inc.",
         "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
-        "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
+        "datasheet_url": "https://www.johansontechnology.com/docs/3827/Antenna-2450AT18A0100001E-Rev4.0.pdf",
         "url": "https://www.digikey.com/en/products/detail/johanson-technology-inc/2450AT18A0100001E/1560676",
-        "stock": 257973,
-        "price_1": null,
+        "stock": 160691,
+        "price_1": 0.52,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.52
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.446
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.4196
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.384
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.36244
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.3472
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.3328
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:51:16.471040+00:00"
+        "fetched_at": "2026-11-10T02:43:48.861761+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2486,15 +2924,49 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "RECE.20449.001E.01",
-        "digikey_part": "",
+        "digikey_part": "931-1158-1-ND",
         "manufacturer": "Taoglas Limited",
         "description": "CONN UMC RCPT STR 50 OHM SMD",
         "datasheet_url": "https://cdn.taoglas.com/datasheets/RECE.20449.001E.01.pdf",
         "url": "https://www.digikey.com/en/products/detail/taoglas-limited/RECE-20449-001E-01/3083254",
-        "stock": 49474,
-        "price_1": null,
+        "stock": 60788,
+        "price_1": 1.01,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.01
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.859
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.8048
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.7662
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.7295
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.68376
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.65108
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.61999
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T19:54:51.737599+00:00"
+        "fetched_at": "2026-11-10T02:45:06.270416+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2544,15 +3016,21 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "4328",
-        "digikey_part": "",
+        "digikey_part": "1528-4328-ND",
         "manufacturer": "Adafruit Industries LLC",
         "description": "QWIIC COMPATIBLE JST SH 4PIN CON",
         "datasheet_url": "https://cdn-shop.adafruit.com/product-files/4328/4328_C13916-001_CCSH-W10-04-BK-RC-A.pdf",
         "url": "https://www.digikey.com/en/products/detail/adafruit-industries-llc/4328/10481838",
-        "stock": 156,
-        "price_1": null,
+        "stock": 153,
+        "price_1": 3.95,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 3.95
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T20:04:17.506261+00:00"
+        "fetched_at": "2026-11-10T02:43:48.202073+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2645,15 +3123,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "GRM188R61H225KE11D",
-        "digikey_part": "",
+        "digikey_part": "490-10733-1-ND",
         "manufacturer": "Murata Electronics",
         "description": "CAP CER 2.2UF 50V X5R 0603",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
         "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61H225KE11D/4905363",
-        "stock": 152020,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.23,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.23
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.135
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0968
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.085
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0652
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-07-14T23:32:54.027603+00:00"
+        "fetched_at": "2026-11-10T02:44:25.393463+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2876,15 +3376,45 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "S8B-PH-K-S",
-        "digikey_part": "",
+        "digikey_part": "455-1725-ND",
         "manufacturer": "JST Sales America Inc.",
         "description": "CONN HEADER R/A 8POS 2MM",
         "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
         "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S8B-PH-K-S/926632",
         "stock": 15969,
-        "price_1": null,
+        "price_1": 0.33,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.33
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.277
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.2208
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.21024
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.2002
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.17869
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.17016
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-11-06T13:42:38.442327+00:00"
+        "fetched_at": "2026-11-10T02:45:10.220109+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2906,15 +3436,45 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "DX07S016JA3R1500",
-        "digikey_part": "",
+        "digikey_part": "670-DX07S016JA3R1500CT-ND",
         "manufacturer": "JAE Electronics",
         "description": "CONN RCP USB2.0 TYP C 24P SMD RA",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8937/MB_0335E_DX07.pdf",
         "url": "https://www.digikey.com/en/products/detail/jae-electronics/DX07S016JA3R1500/12354006",
-        "stock": 8484,
-        "price_1": null,
+        "stock": 8481,
+        "price_1": 2.02,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 2.02
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.72
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 1.612
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 1.535
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.4616
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 1.37
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 1.30458
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-11-06T13:44:39.313437+00:00"
+        "fetched_at": "2026-11-10T02:44:09.908446+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2936,15 +3496,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "CL05C101JB5NNNC",
-        "digikey_part": "",
+        "digikey_part": "1276-1025-1-ND",
         "manufacturer": "Samsung Electro-Mechanics",
         "description": "CAP CER 100PF 50V C0G/NP0 0402",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05C101JB5NNNC_Spec.pdf",
         "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05C101JB5NNNC/3886683",
-        "stock": null,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.025
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0166
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0141
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00988
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-11-06T14:11:05.163925+00:00"
+        "fetched_at": "2026-11-10T02:44:05.710269+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2966,15 +3548,37 @@
         "distributor": "digikey",
         "found": true,
         "mpn": "CL10A226MP8NUNE",
-        "digikey_part": "",
+        "digikey_part": "1276-CL10A226MP8NUNECT-ND",
         "manufacturer": "Samsung Electro-Mechanics",
         "description": "CAP CER 22UF 10V X5R 0603",
         "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2901/CL10A226MP8NUNC_Spec.pdf",
         "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A226MP8NUNE/3886932",
-        "stock": null,
-        "price_1": null,
+        "stock": 0,
+        "price_1": 0.19,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.19
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.107
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0758
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0662
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.05022
+          }
+        ],
         "kind": "exact",
-        "fetched_at": "2026-11-06T14:11:30.005956+00:00"
+        "fetched_at": "2026-11-10T02:44:07.659873+00:00"
       },
       "lcsc": {
         "distributor": "lcsc",
@@ -2989,6 +3593,3954 @@
         "price_1": 0.033,
         "kind": "exact",
         "fetched_at": "2026-11-06T14:11:31.292441+00:00"
+      }
+    },
+    "mpn:3220-10-0100-00": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "3220-10-0100-00",
+        "digikey_part": "1175-1627-ND",
+        "manufacturer": "CNC Tech",
+        "description": "CONN HEADER VERT 10POS 1.27MM",
+        "datasheet_url": "http://www.cnctech.us/pdfs/3220-XX-0100-00_.pdf",
+        "url": "https://www.digikey.com/en/products/detail/cnc-tech/3220-10-0100-00/3883661",
+        "stock": 648829,
+        "price_1": 0.59,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.59
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.502
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.4268
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.38092
+          },
+          {
+            "BreakQuantity": 3200,
+            "UnitPrice": 0.33414
+          },
+          {
+            "BreakQuantity": 6400,
+            "UnitPrice": 0.32043
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:50.063009+00:00"
+      }
+    },
+    "mpn:503480-1400": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "5034801400",
+        "digikey_part": "WM1442CT-ND",
+        "manufacturer": "Molex",
+        "description": "CONN FFC FPC 14POS 0.5MM R/A",
+        "datasheet_url": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/productspecificationpdf/503/503480/PS-503480-001-001.pdf?inline",
+        "url": "https://www.digikey.com/en/products/detail/molex/5034801400/2356626",
+        "stock": 29362,
+        "price_1": 1.4,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.4
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.189
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 1.1144
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 1.0612
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.0106
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.94724
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.90198
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.85892
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:50.649332+00:00"
+      }
+    },
+    "mpn:760390015": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "760390015",
+        "digikey_part": "732-4459-1-ND",
+        "manufacturer": "W\u00fcrth Elektronik",
+        "description": "XFMR FWD P-P DC/DC CONV 475UH SM",
+        "datasheet_url": "https://www.we-online.com/components/products/datasheet/760390015.pdf",
+        "url": "https://www.digikey.com/en/products/detail/w\u00fcrth-elektronik/760390015/3831267",
+        "stock": 18992,
+        "price_1": 1.98,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.98
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.792
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 1.722
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 1.67
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.6192
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 1.55408
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 1.50624
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:51.707834+00:00"
+      }
+    },
+    "mpn:8240026": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "8240026",
+        "digikey_part": "732-4470-1-ND",
+        "manufacturer": "W\u00fcrth Elektronik",
+        "description": "TVS DIODE 5VWM 9VC SOT1434",
+        "datasheet_url": "https://www.we-online.com/components/products/datasheet/8240026.pdf",
+        "url": "https://www.digikey.com/en/products/detail/w\u00fcrth-elektronik/8240026/3900525",
+        "stock": 3176,
+        "price_1": 1.09,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.09
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.038
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.969
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.9
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.796
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:52.882499+00:00"
+      }
+    },
+    "mpn:ADUM1250ARZ-RL7": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "ADUM1250ARZ-RL7",
+        "digikey_part": "505-ADUM1250ARZ-RL7CT-ND",
+        "manufacturer": "Analog Devices Inc.",
+        "description": "DGTL ISOLTR 2.5KV 2CH I2C 8-SOIC",
+        "datasheet_url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADUM1250_1251.pdf",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc/ADUM1250ARZ-RL7/1240292",
+        "stock": 100,
+        "price_1": 8.22,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 8.22
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 6.368
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 5.9036
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 5.3935
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 5.2632
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:53.425233+00:00"
+      }
+    },
+    "mpn:AEM10330-QFN": {
+      "digikey": {
+        "found": false,
+        "mpn": "AEM10330-QFN",
+        "url": "https://www.digikey.com/en/products/result?keywords=AEM10330-QFN",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-11-10T02:43:53.958005+00:00"
+      }
+    },
+    "mpn:B3F-1000": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "B3F-1000",
+        "digikey_part": "SW400-ND",
+        "manufacturer": "Aratas (Formerly Omron Components)",
+        "description": "SWITCH TACTILE SPST-NO 0.05A 24V",
+        "datasheet_url": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf",
+        "url": "https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/B3F-1000/33150",
+        "stock": 20263,
+        "price_1": 0.35,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.35
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.299
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.28
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2506
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.23224
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.21916
+          },
+          {
+            "BreakQuantity": 1500,
+            "UnitPrice": 0.20025
+          },
+          {
+            "BreakQuantity": 3000,
+            "UnitPrice": 0.18959
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:55.160445+00:00"
+      }
+    },
+    "mpn:B3U-1000P": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "B3U-1000P",
+        "digikey_part": "SW1020CT-ND",
+        "manufacturer": "Aratas (Formerly Omron Components)",
+        "description": "SWITCH TACTILE SPST-NO 0.05A 12V",
+        "datasheet_url": "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf",
+        "url": "https://www.digikey.com/en/products/detail/aratas-formerly-omron-components/B3U-1000P/1534338",
+        "stock": 110007,
+        "price_1": 1.17,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.17
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.997
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.9268
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.8261
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.76544
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.72342
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.68504
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:55.765489+00:00"
+      }
+    },
+    "mpn:BAT54CLT1G": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BAT54CLT1G",
+        "digikey_part": "BAT54CLT1GOSCT-ND",
+        "manufacturer": "onsemi",
+        "description": "DIODE ARR SCHOTT 30V 200MA SOT23",
+        "datasheet_url": "https://www.onsemi.com/pub/Collateral/BAT54CLT1-D.PDF",
+        "url": "https://www.digikey.com/en/products/detail/onsemi/BAT54CLT1G/1748976",
+        "stock": 714000,
+        "price_1": 0.14,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.14
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.083
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0586
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0508
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.03662
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:56.425256+00:00"
+      }
+    },
+    "mpn:BLM15AG121SN1D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BLM15AG121SN1D",
+        "digikey_part": "490-1005-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FERRITE BEAD 120 OHM 0402 1LN",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ferriteBeadInductortypefilter/ENFA0018_PDF_FERRITEBEADINDUCTORTYPEFILTER?lastModifiedDatetime=20250707191428",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/BLM15AG121SN1D/584216",
+        "stock": 236136,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.064
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.056
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0502
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.045
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.03876
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.03448
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.03054
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:58.050000+00:00"
+      }
+    },
+    "mpn:BLM18KG221SN1D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BLM18KG221SN1D",
+        "digikey_part": "490-5255-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FERRITE BEAD 220 OHM 0603 1LN",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ferriteBeadInductortypefilter/ENFA0003_PDF_FERRITEBEADINDUCTORTYPEFILTER?lastModifiedDatetime=20250707190934",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/BLM18KG221SN1D/1982763",
+        "stock": 440867,
+        "price_1": 0.14,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.14
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.101
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0876
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0786
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0703
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.06036
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.05354
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.04722
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:58.671268+00:00"
+      }
+    },
+    "mpn:BLM18PG221SN1D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BLM18PG221SN1D",
+        "digikey_part": "490-5221-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FERRITE BEAD 220 OHM 0603 1LN",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ferriteBeadInductortypefilter/ENFA0003_PDF_FERRITEBEADINDUCTORTYPEFILTER?lastModifiedDatetime=20250707190934",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/BLM18PG221SN1D/1948326",
+        "stock": 190419,
+        "price_1": 0.14,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.14
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.097
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0844
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0758
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0678
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.05828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0517
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.04562
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:43:59.755970+00:00"
+      }
+    },
+    "mpn:BSS138LT1G": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "BSS138LT1G",
+        "digikey_part": "BSS138LT1GOSCT-ND",
+        "manufacturer": "onsemi",
+        "description": "MOSFET N-CH 50V 200MA SOT23-3",
+        "datasheet_url": "https://www.onsemi.com/pub/Collateral/BSS138LT1-D.PDF",
+        "url": "https://www.digikey.com/en/products/detail/onsemi/BSS138LT1G/918376",
+        "stock": 183902,
+        "price_1": 0.35,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.35
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.213
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1526
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.133
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0984
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:00.309847+00:00"
+      }
+    },
+    "mpn:BWSMA-KWE-Z001": {
+      "digikey": {
+        "found": false,
+        "mpn": "BWSMA-KWE-Z001",
+        "url": "https://www.digikey.com/en/products/result?keywords=BWSMA-KWE-Z001",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-11-10T02:44:01.120158+00:00"
+      }
+    },
+    "mpn:CC0402KRX7R7BB104": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CC0402KRX7R7BB104",
+        "digikey_part": "311-1338-1-ND",
+        "manufacturer": "YAGEO",
+        "description": "CAP CER 0.1UF 16V X7R 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V",
+        "url": "https://www.digikey.com/en/products/detail/yageo/CC0402KRX7R7BB104/2103076",
+        "stock": 815636,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.041
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0278
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0238
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0169
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:01.675878+00:00"
+      }
+    },
+    "mpn:CC0805KKX5R8BB106": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CC0805KKX5R8BB106",
+        "digikey_part": "311-1869-1-ND",
+        "manufacturer": "YAGEO",
+        "description": "CAP CER 10UF 25V X5R 0805",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V",
+        "url": "https://www.digikey.com/en/products/detail/yageo/CC0805KKX5R8BB106/5195275",
+        "stock": 0,
+        "price_1": 0.44,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.44
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.26
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1902
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1688
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.13288
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:03.370000+00:00"
+      }
+    },
+    "mpn:CL03A104KQ3NNNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL03A104KQ3NNNC",
+        "digikey_part": "1276-1013-1-ND",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 0.1UF 6.3V X5R 0201",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/41/CL03A104KQ3NNNC_SS.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL03A104KQ3NNNC/3886671",
+        "stock": 4213775,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.019
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0122
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0103
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00716
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:03.923180+00:00"
+      }
+    },
+    "mpn:CL05A105KA5NQNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL05A105KA5NQNC",
+        "digikey_part": "1276-1445-1-ND",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 1UF 25V X5R 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/41/CL05A105KA5NQNC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL05A105KA5NQNC/3887103",
+        "stock": 2010379,
+        "price_1": 0.19,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.19
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.109
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0772
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0675
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0512
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:04.487191+00:00"
+      }
+    },
+    "mpn:CL10A106MA8NRNC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL10A106MA8NRNC",
+        "digikey_part": "1276-1869-1-ND",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 10UF 25V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL10A106MA8NRNC_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A106MA8NRNC/3887527",
+        "stock": 22,
+        "price_1": 0.32,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.32
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.187
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.136
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1205
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.09424
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:07.005982+00:00"
+      }
+    },
+    "mpn:CL21A226MOQNNNE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL21A226MOQNNNE",
+        "digikey_part": "1276-2909-1-ND",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 22UF 16V X5R 0805",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/41/CL21A226MOQNNNE_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A226MOQNNNE/3888567",
+        "stock": 0,
+        "price_1": 0.32,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.32
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.19
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1384
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1225
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.09592
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:08.207091+00:00"
+      }
+    },
+    "mpn:CL21A475KAQNNNE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "CL21A475KAQNNNE",
+        "digikey_part": "1276-CL21A475KAQNNNECT-ND",
+        "manufacturer": "Samsung Electro-Mechanics",
+        "description": "CAP CER 4.7UF 25V X5R 0805",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/41/CL21A475KAQNNNE_Spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A475KAQNNNE/3886902",
+        "stock": 4,
+        "price_1": 0.13,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.13
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.072
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.05
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0432
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.03206
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:08.749363+00:00"
+      }
+    },
+    "mpn:DFE252010F-100M=P2": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "DFE252010F-100M=P2",
+        "digikey_part": "490-13039-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 10UH 900MA 600 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/J(E)TE243A-0012_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/DFE252010F-100M-P2/5812575",
+        "stock": 10404,
+        "price_1": 0.25,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.25
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.208
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1711
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.14069
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:09.286647+00:00"
+      }
+    },
+    "mpn:ERJ-2GE0R00X": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "ERJ-2GE0R00X",
+        "digikey_part": "P0.0JCT-ND",
+        "manufacturer": "Panasonic Industry",
+        "description": "RES SMD 0 OHM JUMPER 1/10W 0402",
+        "datasheet_url": "https://industrial.panasonic.com/ww/products/pt/general-purpose-chip-resistors/models/ERJ2GE0R00X",
+        "url": "https://www.digikey.com/en/products/detail/panasonic-industry/ERJ-2GE0R00X/146727",
+        "stock": 14119106,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.015
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0124
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.011
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0095
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00804
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00706
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00625
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:11.245789+00:00"
+      }
+    },
+    "mpn:ERJ-2RKF2202X": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "ERJ-2RKF2202X",
+        "digikey_part": "P22.0KLCT-ND",
+        "manufacturer": "Panasonic Industry",
+        "description": "RES SMD 22K OHM 1% 1/10W 0402",
+        "datasheet_url": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf",
+        "url": "https://www.digikey.com/en/products/detail/panasonic-industry/ERJ-2RKF2202X/1746152",
+        "stock": 593504,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.033
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0248
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.02
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0164
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.0128
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01078
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.0092
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:11.830990+00:00"
+      }
+    },
+    "mpn:ERJ-3GEY0R00V": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "ERJ-3GEY0R00V",
+        "digikey_part": "P0.0GCT-ND",
+        "manufacturer": "Panasonic Industry",
+        "description": "RES SMD 0 OHM JUMPER 1/10W 0603",
+        "datasheet_url": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C301.pdf",
+        "url": "https://www.digikey.com/en/products/detail/panasonic-industry/ERJ-3GEY0R00V/135656",
+        "stock": 4395894,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.022
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.018
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0158
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0138
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.0116
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01026
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.0091
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:12.377897+00:00"
+      }
+    },
+    "mpn:FFSD-05-D-06.00-01-N": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "FFSD-05-D-06.00-01-N",
+        "digikey_part": "SAM8218-ND",
+        "manufacturer": "Samtec Inc.",
+        "description": "CABLE ASSEM .05\" 10POS F-F 6\"",
+        "datasheet_url": "https://suddendocs.samtec.com/catalog_english/ffsd.pdf",
+        "url": "https://www.digikey.com/en/products/detail/samtec-inc/FFSD-05-D-06-00-01-N/1106577",
+        "stock": 1581,
+        "price_1": 11.39,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 11.39
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 10.32
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 9.46
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 8.63
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 7.64
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 6.78
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 5.40003
+          },
+          {
+            "BreakQuantity": 2000,
+            "UnitPrice": 4.48002
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:13.773356+00:00"
+      }
+    },
+    "mpn:GCM155R71C104KA55D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GCM155R71C104KA55D",
+        "digikey_part": "490-4759-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 0.1UF 16V X7R 0402",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM155R71C104KA55-01A-EN_PDF_CERAMICCAPACITORSMD",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GCM155R71C104KA55D/1641633",
+        "stock": 5182784,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.034
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0196
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0139
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:15.074899+00:00"
+      }
+    },
+    "mpn:GRM033R61A225ME47D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM033R61A225ME47D",
+        "digikey_part": "490-13228-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2.2UF 10V X5R 0201",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM033R61A225ME47D/5877391",
+        "stock": 0,
+        "price_1": 0.17,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.17
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.097
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0684
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0597
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.04494
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:20.294713+00:00"
+      }
+    },
+    "mpn:GRM155R60J106ME15D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM155R60J106ME15D",
+        "digikey_part": "490-13238-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 10UF 6.3V X5R 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R60J106ME15D/5877401",
+        "stock": 2118116,
+        "price_1": 0.17,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.17
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.095
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0666
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.058
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0435
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:21.330672+00:00"
+      }
+    },
+    "mpn:GRM155R71A104KA01D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM155R71A104KA01D",
+        "digikey_part": "490-6321-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 0.1UF 10V X7R 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71A104KA01D/2610881",
+        "stock": 1422531,
+        "price_1": 0.11,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.11
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.026
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0174
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0147
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01028
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:21.877483+00:00"
+      }
+    },
+    "mpn:GRM155R71C104KA88D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM155R71C104KA88D",
+        "digikey_part": "490-3261-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 0.1UF 16V X7R 0402",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM155R71C104KA88D/675947",
+        "stock": 0,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.025
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0164
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0139
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0097
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:22.523860+00:00"
+      }
+    },
+    "mpn:GRM188R60J476ME15D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R60J476ME15D",
+        "digikey_part": "490-13247-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 47UF 6.3V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J476ME15D/5877410",
+        "stock": 0,
+        "price_1": 0.43,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.43
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.26
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1924
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1717
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.13656
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:23.095258+00:00"
+      }
+    },
+    "mpn:GRM188R61C106MA73D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R61C106MA73D",
+        "digikey_part": "490-7201-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 10UF 16V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61C106MA73D/3900480",
+        "stock": 0,
+        "price_1": 0.26,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.26
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.15
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1076
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0946
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.073
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:23.698509+00:00"
+      }
+    },
+    "mpn:GRM188R61E475KE11D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R61E475KE11D",
+        "digikey_part": "490-7203-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 4.7UF 25V X5R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61E475KE11D/3900465",
+        "stock": 385054,
+        "price_1": 0.26,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.26
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.15
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1076
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0945
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.07268
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:24.310067+00:00"
+      }
+    },
+    "mpn:GRM188R71A225KE15D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM188R71A225KE15D",
+        "digikey_part": "490-4520-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 2.2UF 10V X7R 0603",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM188R71A225KE15D/1033256",
+        "stock": 87764,
+        "price_1": 0.16,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.16
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.087
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0612
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0532
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.0398
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:26.443184+00:00"
+      }
+    },
+    "mpn:GRM21BR61E106MA73L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "GRM21BR61E106MA73L",
+        "digikey_part": "490-10748-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "CAP CER 10UF 25V X5R 0805",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR61E106MA73L/4905533",
+        "stock": 0,
+        "price_1": 0.17,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.17
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.095
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0672
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0585
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.04398
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:27.633383+00:00"
+      }
+    },
+    "mpn:ISO1540DR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "ISO1540DR",
+        "digikey_part": "296-34871-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "DGTL ISOLTR 2.5KV 2CH I2C 8-SOIC",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fiso1540",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/ISO1540DR/3587222",
+        "stock": 504,
+        "price_1": 4.68,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 4.68
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 3.553
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 3.2716
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 2.962
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 2.8152
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:28.807828+00:00"
+      }
+    },
+    "mpn:KMR221GLFS": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "KMR221G LFS",
+        "digikey_part": "108-KMR221GLFSCT-ND",
+        "manufacturer": "C&K",
+        "description": "SWITCH TACTILE SPST-NO 0.05A 32V",
+        "datasheet_url": "https://www.littelfuse.com/assetdocs/littelfuse-c-k-tactile-kmr2-series-datasheet?assetguid=f782bfc7-b600-4ab5-8c8d-a2a094a642e3",
+        "url": "https://www.digikey.com/en/products/detail/c-k/KMR221G-LFS/550472",
+        "stock": 106572,
+        "price_1": 0.67,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.67
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.576
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.5368
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.4792
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.44384
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.41906
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.39622
+          },
+          {
+            "BreakQuantity": 2500,
+            "UnitPrice": 0.36914
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:29.352499+00:00"
+      }
+    },
+    "mpn:LBES0ZZ2FR-580": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LBES0ZZ2FR-580",
+        "digikey_part": "490-LBES0ZZ2FR-580CT-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "RF TXRX MOD BT5.4 WIFI 6 SMD",
+        "datasheet_url": "https://www.murata.com/products/productdata/8828190949406/TYPE2FR.pdf?1729567814000",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LBES0ZZ2FR-580/25928788",
+        "stock": 71,
+        "price_1": 23.41,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 23.41
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 20.412
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 19.3736
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 17.9498
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 17.09812
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 16.9172
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:29.983278+00:00"
+      }
+    },
+    "mpn:LP2985-33DBVR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LP2985-33DBVR",
+        "digikey_part": "296-18476-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC REG LINEAR 3.3V 150MA SOT23-5",
+        "datasheet_url": "https://www.ti.com/lit/ds/symlink/lp2985.pdf?ts=1775471349499&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FLP2985",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/LP2985-33DBVR/809759",
+        "stock": 49971,
+        "price_1": 0.65,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.65
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.459
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.4108
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.3583
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.33324
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.3181
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.30564
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:31.325523+00:00"
+      }
+    },
+    "mpn:LQM18PN4R7MFRL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQM18PN4R7MFRL",
+        "digikey_part": "490-12065-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 4.7UH 620MA 550 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243B-0033_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQM18PN4R7MFRL/4359186",
+        "stock": 47884,
+        "price_1": 0.25,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.25
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.208
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1711
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.14069
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:33.132060+00:00"
+      }
+    },
+    "mpn:LQP03HQ2N7B02D": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LQP03HQ2N7B02D",
+        "digikey_part": "490-13909-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "FIXED IND 2.7NH 600MA 120 MOHM",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0021_PDF_INDUCTOR",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/LQP03HQ2N7B02D/6098709",
+        "stock": 71595,
+        "price_1": 0.12,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.12
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.102
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0837
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.06881
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.06002
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:34.602044+00:00"
+      }
+    },
+    "mpn:LSCND1608HKT2R2MF": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LSCND1608HKT2R2MF",
+        "digikey_part": "587-LSCND1608HKT2R2MFCT-ND",
+        "manufacturer": "Taiyo Yuden",
+        "description": "FIXED IND 2.2UH 1.4A 250 MOHM",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/9016/LSCND1608HKT2R2MF.pdf",
+        "url": "https://www.digikey.com/en/products/detail/taiyo-yuden/LSCND1608HKT2R2MF/22576654",
+        "stock": 0,
+        "price_1": 0.25,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.25
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.203
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1671
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.13744
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:38.975014+00:00"
+      }
+    },
+    "mpn:LTST-C170KGKT": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LTST-C170KGKT",
+        "digikey_part": "160-1414-1-ND",
+        "manufacturer": "Lite-On Inc.",
+        "description": "LED GREEN CLEAR SMD",
+        "datasheet_url": "https://optoelectronics.liteon.com/upload/download/DS22-2000-073/LTST-C170KGKT.pdf",
+        "url": "https://www.digikey.com/en/products/detail/liteon/LTST-C170KGKT/386777",
+        "stock": 428148,
+        "price_1": 0.19,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.19
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.13
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0901
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.07184
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.06576
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:39.599971+00:00"
+      }
+    },
+    "mpn:LTST-C171GKT": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LTST-C171GKT",
+        "digikey_part": "160-1423-1-ND",
+        "manufacturer": "Lite-On Inc.",
+        "description": "LED GREEN CLEAR CHIP SMD",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/1134/LTST-C171GKT.pdf",
+        "url": "https://www.digikey.com/en/products/detail/liteon/LTST-C171GKT/386793",
+        "stock": 101541,
+        "price_1": 0.15,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.15
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.104
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0715
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.05666
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.05171
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:40.617373+00:00"
+      }
+    },
+    "mpn:LTST-C190TBKT": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LTST-C190TBKT",
+        "digikey_part": "160-1646-1-ND",
+        "manufacturer": "Lite-On Inc.",
+        "description": "LED BLUE CLEAR CHIP SMD",
+        "datasheet_url": "https://optoelectronics.liteon.com/upload/download/DS-22-99-0224/LTST-C190TBKT.PDF",
+        "url": "https://www.digikey.com/en/products/detail/liteon/LTST-C190TBKT/388529",
+        "stock": 383758,
+        "price_1": 0.26,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.26
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.176
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1234
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.09924
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.09124
+          },
+          {
+            "BreakQuantity": 2000,
+            "UnitPrice": 0.08442
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:41.269880+00:00"
+      }
+    },
+    "mpn:LTST-C191KRKT": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "LTST-C191KRKT",
+        "digikey_part": "160-1447-1-ND",
+        "manufacturer": "Lite-On Inc.",
+        "description": "LED RED CLEAR SMD",
+        "datasheet_url": "https://optoelectronics.liteon.com/upload/download/DS22-2000-223/LTST-C191KRKT.PDF",
+        "url": "https://www.digikey.com/en/products/detail/liteon/LTST-C191KRKT/386837",
+        "stock": 1334425,
+        "price_1": 0.15,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.15
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.104
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0715
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.05666
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.05171
+          },
+          {
+            "BreakQuantity": 2000,
+            "UnitPrice": 0.04747
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:41.897710+00:00"
+      }
+    },
+    "mpn:MF-FSMF020X-2": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "MF-FSMF020X-2",
+        "digikey_part": "MF-FSMF020X-2CT-ND",
+        "manufacturer": "Bourns Inc.",
+        "description": "PTC RESET FUSE 9V 200MA 0603",
+        "datasheet_url": "https://www.bourns.com/docs/product-datasheets/mf-fsmf.pdf",
+        "url": "https://www.digikey.com/en/products/detail/bourns-inc/MF-FSMF020X-2/2039254",
+        "stock": 117021,
+        "price_1": 0.54,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.54
+          },
+          {
+            "BreakQuantity": 5,
+            "UnitPrice": 0.448
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.414
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.3432
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.3168
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.28476
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.26268
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.24225
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:42.967139+00:00"
+      }
+    },
+    "mpn:MF-NSMF050-2": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "MF-NSMF050-2",
+        "digikey_part": "MF-NSMF050-2CT-ND",
+        "manufacturer": "Bourns Inc.",
+        "description": "PTC RESET FUSE 13.2V 500MA 1206",
+        "datasheet_url": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf?sfvrsn=39c76af6_20",
+        "url": "https://www.digikey.com/en/products/detail/bourns-inc/MF-NSMF050-2/662808",
+        "stock": 60712,
+        "price_1": 0.4,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.4
+          },
+          {
+            "BreakQuantity": 5,
+            "UnitPrice": 0.33
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.304
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.2522
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2328
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.20932
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.1931
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.17808
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:43.533725+00:00"
+      }
+    },
+    "mpn:MSASJ31LBB5227MTCA01": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "MSASJ31LBB5227MTCA01",
+        "digikey_part": "587-MSASJ31LBB5227MTCA01CT-ND",
+        "manufacturer": "Taiyo Yuden",
+        "description": "CAP CER 220UF 6.3V X5R 1206",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5731/MSR01_e.pdf",
+        "url": "https://www.digikey.com/en/products/detail/taiyo-yuden/MSASJ31LBB5227MTCA01/16664206",
+        "stock": 894,
+        "price_1": 5.74,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 5.74
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 4.148
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 3.5126
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 3.3161
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 2.98352
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:44.877206+00:00"
+      }
+    },
+    "mpn:NCP161ASN180T1G": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NCP161ASN180T1G",
+        "digikey_part": "NCP161ASN180T1GOSCT-ND",
+        "manufacturer": "onsemi",
+        "description": "IC REG LINEAR 1.8V 450MA SOT23-5",
+        "datasheet_url": "https://www.onsemi.com/pdf/datasheet/ncp161-d.pdf",
+        "url": "https://www.digikey.com/en/products/detail/onsemi/NCP161ASN180T1G/10064748",
+        "stock": 52255,
+        "price_1": 0.61,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.61
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.432
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.3868
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.3373
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.31372
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.29948
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.28775
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:46.090924+00:00"
+      }
+    },
+    "mpn:NCU15XH103F60RC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NCU15XH103F60RC",
+        "digikey_part": "490-18149-1-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "THERMISTOR NTC 10KOHM 3380K 0402",
+        "datasheet_url": "https://www.murata.com/-/media/webrenewal/products/thermistor/ntc/ncu/ncu15-s.ashx?la=en-us&cvid=20230317010443000000",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/NCU15XH103F60RC/9686714",
+        "stock": 39686,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 5,
+            "UnitPrice": 0.068
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.065
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0596
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0558
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0527
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.04624
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.04387
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:46.708345+00:00"
+      }
+    },
+    "mpn:NRF54L15-QFAA-R7": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NRF54L15-QFAA-R7",
+        "digikey_part": "4823-NRF54L15-QFAA-R7CT-ND",
+        "manufacturer": "Nordic Semiconductor ASA",
+        "description": "IC RF TXRX+MCU 802.15.4 48-VFQFN",
+        "datasheet_url": "https://docs-be.nordicsemi.com/bundle/ps_nrf54L15/page/pdf/nRF54L15_nRF54L10_nRF54L05_Datasheet_v1.0.pdf",
+        "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54L15-QFAA-R7/24773450",
+        "stock": 0,
+        "price_1": 4.85,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 4.85
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 4.197
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 3.9688
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 3.6556
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 3.46788
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 3.33526
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:47.881775+00:00"
+      }
+    },
+    "mpn:NXE1S0303MC-R13": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NXE1S0303MC-R13",
+        "digikey_part": "811-3902-1-ND",
+        "manufacturer": "Murata Power Solutions Inc.",
+        "description": "DC DC CONVERTER 3.3V 1W",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8949/NXE1%20Series.pdf",
+        "url": "https://www.digikey.com/en/products/detail/murata-power-solutions-inc/NXE1S0303MC-R13/5764678",
+        "stock": 8005,
+        "price_1": 3.49,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 3.49
+          },
+          {
+            "BreakQuantity": 5,
+            "UnitPrice": 3.366
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 3.311
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 3.2408
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 3.1882
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 3.1364
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 3.0692
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:48.527670+00:00"
+      }
+    },
+    "mpn:OEM-ORP": {
+      "digikey": {
+        "found": false,
+        "mpn": "OEM-ORP",
+        "url": "https://www.digikey.com/en/products/result?keywords=OEM-ORP",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-11-10T02:44:49.346690+00:00"
+      }
+    },
+    "mpn:OEM-PH": {
+      "digikey": {
+        "found": false,
+        "mpn": "OEM-pH",
+        "url": "https://www.digikey.com/en/products/result?keywords=OEM-pH",
+        "manufacturer": "",
+        "description": "",
+        "datasheet_url": "",
+        "stock": null,
+        "price_1": null,
+        "fetched_at": "2026-11-10T02:44:49.915224+00:00"
+      }
+    },
+    "mpn:PEC02SAAN": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "PEC02SAAN",
+        "digikey_part": "35-PEC02SAAN-ND",
+        "manufacturer": "Sullins Connector Solutions",
+        "description": "CONN HEADER VERT 2POS 2.54MM",
+        "datasheet_url": "https://s3.amazonaws.com/catalogspreads-pdf/PAGE112-113%20.100%20MALE%20HDR.pdf",
+        "url": "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PEC02SAAN/859155",
+        "stock": 112324,
+        "price_1": 0.16,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.16
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.136
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1159
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.10346
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.09851
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.08792
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.08372
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:51.108605+00:00"
+      }
+    },
+    "mpn:PEC03SAAN": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "PEC03SAAN",
+        "digikey_part": "35-PEC03SAAN-ND",
+        "manufacturer": "Sullins Connector Solutions",
+        "description": "CONN HEADER VERT 3POS 2.54MM",
+        "datasheet_url": "https://s3.amazonaws.com/catalogspreads-pdf/PAGE112-113%20.100%20MALE%20HDR.pdf",
+        "url": "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PEC03SAAN/859156",
+        "stock": 55121,
+        "price_1": 0.22,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.22
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.186
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1577
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.14072
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.13398
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.11959
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.11388
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:52.325985+00:00"
+      }
+    },
+    "mpn:PEC06SAAN": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "PEC06SAAN",
+        "digikey_part": "35-PEC06SAAN-ND",
+        "manufacturer": "Sullins Connector Solutions",
+        "description": "CONN HEADER VERT 6POS 2.54MM",
+        "datasheet_url": "https://drawings-pdf.s3.amazonaws.com/C10436.pdf",
+        "url": "https://www.digikey.com/en/products/detail/sullins-connector-solutions/PEC06SAAN/859159",
+        "stock": 24626,
+        "price_1": 0.41,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.41
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.35
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2971
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.26516
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.2525
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.22538
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.21463
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:54.078823+00:00"
+      }
+    },
+    "mpn:RB521S30-AU_R1_000A1": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RB521S30-AU_R1_000A1",
+        "digikey_part": "3757-RB521S30-AU_R1_000A1CT-ND",
+        "manufacturer": "Panjit International Inc.",
+        "description": "DIODE SCHOTTKY 30V 200MA SOD523",
+        "datasheet_url": "https://www.panjit.com.tw/upload/datasheet/RB521S30-AU.pdf",
+        "url": "https://www.digikey.com/en/products/detail/panjit-international-inc/RB521S30-AU-R1-000A1/14660450",
+        "stock": 49665,
+        "price_1": 0.14,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.14
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.088
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0626
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0542
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.03908
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:54.729750+00:00"
+      }
+    },
+    "mpn:RC0402FR-07100KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-07100KL",
+        "digikey_part": "311-100KLRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 100K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/726526",
+        "stock": 4534755,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:55.346419+00:00"
+      }
+    },
+    "mpn:RC0402FR-07100RL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-07100RL",
+        "digikey_part": "311-100LRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 100 OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100RL/726527",
+        "stock": 2503634,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:55.904421+00:00"
+      }
+    },
+    "mpn:RC0402FR-0710KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-0710KL",
+        "digikey_part": "311-10.0KLRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 10K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0710KL/726523",
+        "stock": 6623715,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:56.476958+00:00"
+      }
+    },
+    "mpn:RC0402FR-0722KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-0722KL",
+        "digikey_part": "311-22.0KLRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 22K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0722KL/726561",
+        "stock": 0,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:57.050405+00:00"
+      }
+    },
+    "mpn:RC0402FR-0733RL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-0733RL",
+        "digikey_part": "311-33.0LRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 33 OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-0733RL/726593",
+        "stock": 569580,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:57.694981+00:00"
+      }
+    },
+    "mpn:RC0402FR-07470RL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-07470RL",
+        "digikey_part": "311-470LRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 470 OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-07470RL/726619",
+        "stock": 54777,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:44:58.387385+00:00"
+      }
+    },
+    "mpn:RC0402FR-075K1L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0402FR-075K1L",
+        "digikey_part": "311-5.10KLRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 5.1K OHM 1% 1/16W 0402",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0402FR-075K1L/726624",
+        "stock": 417255,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.023
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0168
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0134
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0108
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.00828
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00688
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.00577
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:00.123778+00:00"
+      }
+    },
+    "mpn:RC0603FR-07150KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0603FR-07150KL",
+        "digikey_part": "311-150KHRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 150K OHM 1% 1/10W 0603",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0603FR-07150KL/726959",
+        "stock": 122271,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.028
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0208
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0166
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0136
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.01056
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.00884
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.0075
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:00.685688+00:00"
+      }
+    },
+    "mpn:RC0805FR-07100RL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0805FR-07100RL",
+        "digikey_part": "311-100CRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 100 OHM 1% 1/8W 0805",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543",
+        "stock": 8771,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.038
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0284
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0232
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0192
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.01516
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01288
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.01108
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:01.788783+00:00"
+      }
+    },
+    "mpn:RC0805FR-071KL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0805FR-071KL",
+        "digikey_part": "311-1.00KCRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 1K OHM 1% 1/8W 0805",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0805FR-071KL/727444",
+        "stock": 384632,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.038
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0284
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0232
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0192
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.01516
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01288
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.01108
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:02.974053+00:00"
+      }
+    },
+    "mpn:RC0805FR-07330RL": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0805FR-07330RL",
+        "digikey_part": "311-330CRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 330 OHM 1% 1/8W 0805",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07330RL/727866",
+        "stock": 327790,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.038
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0284
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0232
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0192
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.01516
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01288
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.01108
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:04.100541+00:00"
+      }
+    },
+    "mpn:RC0805FR-075K1L": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "RC0805FR-075K1L",
+        "digikey_part": "311-5.10KCRCT-ND",
+        "manufacturer": "YAGEO",
+        "description": "RES 5.1K OHM 1% 1/8W 0805",
+        "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
+        "url": "https://www.digikey.com/en/products/detail/yageo/RC0805FR-075K1L/727988",
+        "stock": 1090000,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.038
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0284
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.0232
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0192
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.01516
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.01288
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.01108
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:05.242678+00:00"
+      }
+    },
+    "mpn:S2B-PH-K-S": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "S2B-PH-K-S",
+        "digikey_part": "455-1719-ND",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "CONN HEADER R/A 2POS 2MM",
+        "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S/926626",
+        "stock": 599005,
+        "price_1": 0.12,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.12
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.099
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0837
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.07472
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.07115
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.0635
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.06047
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:07.763133+00:00"
+      }
+    },
+    "mpn:S2B-PH-K-S(LF)(SN)": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "S2B-PH-K-S",
+        "digikey_part": "455-1719-ND",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "CONN HEADER R/A 2POS 2MM",
+        "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S/926626",
+        "stock": 599005,
+        "price_1": 0.12,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.12
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.099
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0837
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.07472
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.07115
+          },
+          {
+            "BreakQuantity": 5000,
+            "UnitPrice": 0.0635
+          },
+          {
+            "BreakQuantity": 10000,
+            "UnitPrice": 0.06047
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:08.373913+00:00"
+      }
+    },
+    "mpn:SM04B-SRSS-TB": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SM04B-SRSS-TB",
+        "digikey_part": "455-SM04B-SRSS-TBCT-ND",
+        "manufacturer": "JST Sales America Inc.",
+        "description": "CONN HEADER SMD R/A 4POS 1MM",
+        "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+        "url": "https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM04B-SRSS-TB/926710",
+        "stock": 104537,
+        "price_1": 0.51,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.51
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.433
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.3675
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.32796
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.31229
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:11.675497+00:00"
+      }
+    },
+    "mpn:SMF12A": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SMF12A",
+        "digikey_part": "F5747CT-ND",
+        "manufacturer": "Littelfuse Inc.",
+        "description": "TVS DIODE 12VWM 19.9VC SOD123F",
+        "datasheet_url": "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=7EB8A5B6-BDD0-4561-8F19-0C3CC6F9B2AF&filename=TVS-SMF-1103",
+        "url": "https://www.digikey.com/en/products/detail/littelfuse-inc/SMF12A/3429604",
+        "stock": 51229,
+        "price_1": 0.52,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.52
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.318
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.2304
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2017
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.15114
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:12.657626+00:00"
+      }
+    },
+    "mpn:SN6505BDBVR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SN6505BDBVR",
+        "digikey_part": "296-47311-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC TRANSFORMER DRIVER 6SOT-23",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn6505a",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/SN6505BDBVR/5994596",
+        "stock": 0,
+        "price_1": 2.53,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 2.53
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.881
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 1.718
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.5393
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 1.454
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 1.41678
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:13.874492+00:00"
+      }
+    },
+    "mpn:SN74AUP1G34DCKR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SN74AUP1G34DCKR",
+        "digikey_part": "296-19081-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC BUFF 0.8V/3.6V SC-70-5",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74aup1g34",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/SN74AUP1G34DCKR/864085",
+        "stock": 17180,
+        "price_1": 0.44,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.44
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.304
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.2708
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2347
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.2174
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.207
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.1989
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:14.441745+00:00"
+      }
+    },
+    "mpn:SN74AXC1T45DBVR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SN74AXC1T45DBVR",
+        "digikey_part": "296-47598-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC XLTR VL BIDIR SOT-23-6",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74axc1t45",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/SN74AXC1T45DBVR/8021086",
+        "stock": 16634,
+        "price_1": 0.59,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.59
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.414
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.3708
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.3232
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.30052
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.28686
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.27999
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:15.555707+00:00"
+      }
+    },
+    "mpn:SPC02SYAN": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SPC02SYAN",
+        "digikey_part": "S9001-ND",
+        "manufacturer": "Sullins Connector Solutions",
+        "description": "CONN JUMPER SHORTING GOLD FLASH",
+        "datasheet_url": "https://drawings-pdf.s3.amazonaws.com/11134.pdf",
+        "url": "https://www.digikey.com/en/products/detail/sullins-connector-solutions/SPC02SYAN/76375",
+        "stock": 1433660,
+        "price_1": 0.1,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.1
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.029
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.0272
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.026
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.0247
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.02312
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.022
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.02095
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:16.134272+00:00"
+      }
+    },
+    "mpn:SSK05-BH-254-B3": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SSK05-BH-254-B3",
+        "digikey_part": "2223-SSK05-BH-254-B3-ND",
+        "manufacturer": "Same Sky (Formerly CUI Devices)",
+        "description": "2.54MM BOX HEADER, H:8.9 2X3PIN,",
+        "datasheet_url": "https://www.sameskydevices.com/product/resource/digikeypdf/ssk05-bh-254.pdf",
+        "url": "https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SSK05-BH-254-B3/28772207",
+        "stock": 1234,
+        "price_1": 0.24,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.24
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.202
+          },
+          {
+            "BreakQuantity": 180,
+            "UnitPrice": 0.16422
+          },
+          {
+            "BreakQuantity": 540,
+            "UnitPrice": 0.15196
+          },
+          {
+            "BreakQuantity": 1080,
+            "UnitPrice": 0.14469
+          },
+          {
+            "BreakQuantity": 5040,
+            "UnitPrice": 0.12978
+          },
+          {
+            "BreakQuantity": 10080,
+            "UnitPrice": 0.12359
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:18.724307+00:00"
+      }
+    },
+    "mpn:SWPA4020S2R2NT": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "SWPA4020S2R2NT",
+        "digikey_part": "3442-SWPA4020S2R2NTCT-ND",
+        "manufacturer": "Shenzhen Sunlord Electronics Co., Ltd.",
+        "description": "FIXED IND 2.2UH 1.85A 52 MOHM",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5341/SWPA_Series_DS.pdf",
+        "url": "https://www.digikey.com/en/products/detail/shenzhen-sunlord-electronics-co-ltd/SWPA4020S2R2NT/14119948",
+        "stock": 1295,
+        "price_1": 0.34,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.34
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.284
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2331
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.19171
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:19.925270+00:00"
+      }
+    },
+    "mpn:TC2030-IDC": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TC2030-IDC",
+        "digikey_part": "TC2030-IDC-ND",
+        "manufacturer": "Tag-Connect LLC",
+        "description": "PLUG-OF-NAILS 6-PIN W/ LEGS 8\"",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/2084/TC2030-IDC_RevB.pdf",
+        "url": "https://www.digikey.com/en/products/detail/tag-connect-llc/TC2030-IDC/4571121",
+        "stock": 237,
+        "price_1": 44.58,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 44.58
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:20.951867+00:00"
+      }
+    },
+    "mpn:TCA9406DCTR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TCA9406DCTR",
+        "digikey_part": "296-28108-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC XLTR VL BIDIR SM8",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftca9406",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TCA9406DCTR/2510727",
+        "stock": 17885,
+        "price_1": 1.49,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.49
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.089
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.988
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.8771
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.8242
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.80784
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:21.980689+00:00"
+      }
+    },
+    "mpn:TLV62569DBVR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TLV62569DBVR",
+        "digikey_part": "296-47360-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC REG BUCK ADJ 2A SOT23-5",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftlv62569",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TLV62569DBVR/6580119",
+        "stock": 235892,
+        "price_1": 0.28,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.28
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.19
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.168
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1439
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.1324
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.12548
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.11978
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:22.546302+00:00"
+      }
+    },
+    "mpn:TLV75530PDBVR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TLV75530PDBVR",
+        "digikey_part": "296-TLV75530PDBVRCT-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "IC REG LINEAR 3V 500MA SOT23-5",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftlv755p",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TLV75530PDBVR/9356540",
+        "stock": 3168,
+        "price_1": 0.32,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.32
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.222
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.1972
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1697
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.1566
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.14868
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.14216
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:23.695859+00:00"
+      }
+    },
+    "mpn:TPD1E10B06DPYR": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TPD1E10B06DPYR",
+        "digikey_part": "296-30406-1-ND",
+        "manufacturer": "Texas Instruments",
+        "description": "TVS DIODE 5.5VWM 14VC 2X1SON",
+        "datasheet_url": "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e10b06",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TPD1E10B06DPYR/3197744",
+        "stock": 85284,
+        "price_1": 0.41,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.41
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.251
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.1806
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.1576
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.11692
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:24.432770+00:00"
+      }
+    },
+    "mpn:TTL-232RG-VREG1V8-WE": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "TTL-232RG-VREG1V8-WE",
+        "digikey_part": "768-1070-ND",
+        "manufacturer": "FTDI, Future Technology Devices International Ltd",
+        "description": "CABLE USB SERIAL 1.8V WIRE 100MA",
+        "datasheet_url": "https://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232RG_CABLES.pdf",
+        "url": "https://www.digikey.com/en/products/detail/ftdi-future-technology-devices-international-ltd/TTL-232RG-VREG1V8-WE/2441359",
+        "stock": 4,
+        "price_1": 27.34,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 27.34
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 24.12
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 22.1802
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 21.7001
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 20.825
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:25.430295+00:00"
+      }
+    },
+    "mpn:U.FL-R-SMT-1(10)": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "U.FL-R-SMT-1(10)",
+        "digikey_part": "H11891CT-ND",
+        "manufacturer": "Hirose Electric Co Ltd",
+        "description": "CONN U.FL RCPT STR 50 OHM SMD",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/HIROS08829-1.pdf",
+        "url": "https://www.digikey.com/en/products/detail/hirose-electric-co-ltd/U-FL-R-SMT-1-10/2391570",
+        "stock": 332033,
+        "price_1": 1.67,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 1.67
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 1.417
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 1.3276
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 1.2642
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.2038
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 1.1284
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 1.07452
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 1.02323
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:26.603165+00:00"
+      }
+    },
+    "mpn:USB4105-GF-A": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "USB4105-GF-A",
+        "digikey_part": "2073-USB4105-GF-ACT-ND",
+        "manufacturer": "GCT",
+        "description": "CONN RCP USB2.0 TYP C 16P SMD RA",
+        "datasheet_url": "https://gct.co/files/specs/usb4105-spec.pdf",
+        "url": "https://www.digikey.com/en/products/detail/gct/USB4105-GF-A/11198441",
+        "stock": 226770,
+        "price_1": 0.8,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.8
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.676
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.6336
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.6034
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.5745
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.53848
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:27.796994+00:00"
+      }
+    },
+    "mpn:XM125": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "XM125",
+        "digikey_part": "1891-XM125-ND",
+        "manufacturer": "Acconeer AB",
+        "description": "A121 ENTRY+ RADAR SENSOR MODULE",
+        "datasheet_url": "https://developer.acconeer.com/download/xm125-datasheet/",
+        "url": "https://www.digikey.com/en/products/detail/acconeer-ab/XM125/17883267",
+        "stock": 0,
+        "price_1": 22.2,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 22.2
+          },
+          {
+            "BreakQuantity": 5,
+            "UnitPrice": 20.274
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 19.556
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 18.6988
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 18.1124
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 17.5743
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 16.48974
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:29.126253+00:00"
+      }
+    },
+    "mpn:XRCGB32M000F1S2AR0": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "XRCGB32M000F1S2AR0",
+        "digikey_part": "490-XRCGB32M000F1S2AR0CT-ND",
+        "manufacturer": "Murata Electronics",
+        "description": "2.0X1.6MM 32.0MHZ CRYSTAL UNIT +",
+        "datasheet_url": "https://pim.murata.com/asset/pim4/ceramicResonatorCrystalUnit/SPEC_XRCGB32M000F1S2AR0_PDF_CERAMICRESONATORCRYSTALUNIT?lastModifiedDatetime=20250707192056",
+        "url": "https://www.digikey.com/en/products/detail/murata-electronics/XRCGB32M000F1S2AR0/14542545",
+        "stock": 6980,
+        "price_1": 0.33,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 0.33
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 0.283
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 0.268
+          },
+          {
+            "BreakQuantity": 50,
+            "UnitPrice": 0.2568
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 0.2462
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 0.23284
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 0.22318
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 0.21395
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:32.048836+00:00"
+      }
+    },
+    "mpn:NPM1300-QEAA-R7": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NPM1300-QEAA-R7",
+        "digikey_part": "4823-NPM1300-QEAA-R7CT-ND",
+        "manufacturer": "Nordic Semiconductor ASA",
+        "description": "PMIC (POWER MANAGEMENT IC) WITH",
+        "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6443/NPM1300-QEAA-R7.pdf",
+        "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NPM1300-QEAA-R7/19722485",
+        "stock": 9754,
+        "price_1": 2.95,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 2.95
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 2.205
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 2.0184
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 1.8133
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 1.7154
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 1.683
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:33.100701+00:00"
+      }
+    },
+    "mpn:NRF54L15-QFAA-R": {
+      "digikey": {
+        "distributor": "digikey",
+        "found": true,
+        "mpn": "NRF54L15-QFAA-R",
+        "digikey_part": "4823-NRF54L15-QFAA-RCT-ND",
+        "manufacturer": "Nordic Semiconductor ASA",
+        "description": "IC RF TXRX+MCU 802.15.4 48-VFQFN",
+        "datasheet_url": "https://docs-be.nordicsemi.com/bundle/ps_nrf54L15/page/pdf/nRF54L15_nRF54L10_nRF54L05_Datasheet_v1.0.pdf",
+        "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54L15-QFAA-R/24773448",
+        "stock": 465,
+        "price_1": 4.85,
+        "price_breaks": [
+          {
+            "BreakQuantity": 1,
+            "UnitPrice": 4.85
+          },
+          {
+            "BreakQuantity": 10,
+            "UnitPrice": 4.197
+          },
+          {
+            "BreakQuantity": 25,
+            "UnitPrice": 3.9688
+          },
+          {
+            "BreakQuantity": 100,
+            "UnitPrice": 3.6556
+          },
+          {
+            "BreakQuantity": 250,
+            "UnitPrice": 3.46788
+          },
+          {
+            "BreakQuantity": 500,
+            "UnitPrice": 3.33526
+          },
+          {
+            "BreakQuantity": 1000,
+            "UnitPrice": 3.21033
+          }
+        ],
+        "kind": "exact",
+        "fetched_at": "2026-11-10T02:45:33.735967+00:00"
       }
     }
   }

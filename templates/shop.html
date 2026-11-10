@@ -91,6 +91,10 @@
         <span class="summary-value">{{ stats.ordered_count }}</span>
         <span class="summary-label">Marked ordered</span>
     </div>
+    <div class="summary-card">
+        <span class="summary-value" id="shop-grand-total">${{ "%.2f"|format(group_cost_total(shop_lines)) }}</span>
+        <span class="summary-label">Total cost{% if unpriced_count(shop_lines) %} ({{ unpriced_count(shop_lines) }} lines unpriced){% endif %}</span>
+    </div>
 </div>
 
 <div class="shop-table-toolbar">
@@ -119,6 +123,8 @@
                 <th class="col-check" data-col="check">Ordered</th>
                 <th class="col-received" data-col="received" title="Receive into inventory">Received</th>
                 <th class="col-qty" data-col="buy">Buy qty</th>
+                <th class="col-qty" data-col="cost" title="Cheaper of DigiKey / Mouser with enough stock, at the buy quantity">Cost</th>
+                <th class="col-qty" data-col="total" title="Buy qty × cost">Total</th>
                 <th class="col-libref" data-col="libref">Part Number</th>
                 <th class="col-name" data-col="name">Part Description</th>
                 <th data-col="status">Status</th>
@@ -133,10 +139,13 @@
         <tbody>
             {% for group in grouped_lines %}
             <tr class="category-header" data-category="{{ group.category_id }}" data-drop-target>
-                <td colspan="13">
+                <td colspan="15">
                     <button type="button" class="category-toggle" aria-expanded="true" aria-label="Toggle {{ group.label }}"></button>
                     <strong>{{ group.label }}</strong>
                     <span class="category-count muted">({{ group.rows|length }})</span>
+                    <span class="category-cost" data-category-cost="{{ group.category_id }}">${{ "%.2f"|format(group_cost_total(group.rows)) }}</span>
+                    {% set unpriced = unpriced_count(group.rows) %}
+                    {% if unpriced %}<span class="muted category-unpriced">({{ unpriced }} without price)</span>{% endif %}
                 </td>
             </tr>
             {% for line in group.rows %}
@@ -187,6 +196,12 @@
                     <span class="muted received-remaining">{{ line.remaining_buy_qty }} left to receive</span>
                     {% endif %}
                 </td>
+                <td class="col-qty col-cost" data-unit="{{ line.cost.unit if line.cost.known else '' }}"
+                    data-breaks="{{ line.cost.breaks|tojson|forceescape }}"
+                    title="{% if line.cost.known %}{{ line.cost.distributor }} unit price at {{ line.buy_qty }}{% if line.cost.note %} ({{ line.cost.note }}){% endif %}{% else %}{{ line.cost.note }}{% endif %}">
+                    {% if line.cost.known %}${{ "%.4f"|format(line.cost.unit) }}<span class="muted cost-source"> {{ line.cost.distributor }}{% if line.cost.note %} · {{ line.cost.note }}{% endif %}</span>{% elif line.buy_qty > 0 %}<span class="muted">—</span>{% endif %}
+                </td>
+                <td class="col-qty col-total" data-total="{{ line.cost.total }}">{% if line.cost.known %}${{ "%.2f"|format(line.cost.total) }}{% endif %}</td>
                 <td class="col-libref" title="{% if line.lib_ref != line.primary_mpn %}BOM LibRef: {{ line.lib_ref }}{% endif %}">
                     <input type="text" class="mpn-input cell-input" value="{{ line.primary_mpn }}"
                            aria-label="Part number for {{ line.name }}" autocomplete="off">
@@ -302,6 +317,12 @@
                     <input type="number" class="alt-buy-qty-input cell-input" min="0" step="1"
                            value="{{ line.alternate.buy_qty or line.buy_qty }}" aria-label="Alternate buy quantity">
                 </td>
+                <td class="col-qty col-cost" data-unit="{{ line.alternate_cost.unit if line.alternate_cost.known else '' }}"
+                    data-breaks="{{ line.alternate_cost.breaks|tojson|forceescape }}"
+                    title="{% if line.alternate_cost.known %}{{ line.alternate_cost.distributor }} unit price{% if line.alternate_cost.note %} ({{ line.alternate_cost.note }}){% endif %}{% else %}{{ line.alternate_cost.note }}{% endif %}">
+                    {% if line.alternate_cost.known %}${{ "%.4f"|format(line.alternate_cost.unit) }}<span class="muted cost-source"> {{ line.alternate_cost.distributor }}{% if line.alternate_cost.note %} · {{ line.alternate_cost.note }}{% endif %}</span>{% elif line.alternate.enabled and line.alternate.mpn %}<span class="muted">—</span>{% endif %}
+                </td>
+                <td class="col-qty col-total" data-total="{{ line.alternate_cost.total }}">{% if line.alternate_cost.known %}${{ "%.2f"|format(line.alternate_cost.total) }}{% endif %}</td>
                 <td class="col-libref">
                     <input type="text" class="alt-mpn-input cell-input" value="{{ line.alternate.mpn }}"
                            placeholder="Substitute MPN" aria-label="Alternate MPN" autocomplete="off">

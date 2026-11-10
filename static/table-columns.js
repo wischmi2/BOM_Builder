@@ -28,6 +28,7 @@
         onhand: 0.65,
         need: 0.6,
         total: 0.65,
+        cost: 0.85,
     };
 
     /** Floor % so columns never collapse (fixes vertical letter stacking). */

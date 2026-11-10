@@ -1558,15 +1558,17 @@
     },
     "lib:TC2030IDC": {
       "name": "Plug-Of-Nails\u2122 Cable Assembly",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-10T03:04:14.318235+00:00",
+      "buy_qty": 1
     },
     "lib:TTL232RGVREG1V8WE": {
       "name": "USB to TTL Serial 1.8V Cable 5.90' (1.80m) Unshielded",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-10T03:04:12.236731+00:00",
+      "buy_qty": 1
     },
     "lib:FFSD05D060001N": {
       "name": "10 Position Cable Assembly Rectangular Socket to Socket 0.500' (152.40mm, 6.00\")",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-10T03:05:49.101897+00:00"
     }
   }
 }

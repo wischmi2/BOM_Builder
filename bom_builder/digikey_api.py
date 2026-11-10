@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import time
 from typing import Any
 from urllib.parse import quote
@@ -81,20 +82,48 @@ def _description(product: dict[str, Any]) -> str:
     return str(desc_obj or "")
 
 
+def _buyable_variation(product: dict[str, Any]) -> dict[str, Any] | None:
+    """The packaging a small order gets: cut tape, else the lowest-MOQ variation.
+
+    API v4 keeps pricing and the DigiKey part number on ProductVariations; the
+    product-level StandardPricing used by v3 is gone.
+    """
+    variations = [v for v in product.get("ProductVariations") or [] if isinstance(v, dict)]
+    if not variations:
+        return None
+    for variation in variations:
+        package = (variation.get("PackageType") or {}).get("Name", "")
+        if "Cut Tape" in package:
+            return variation
+    return min(variations, key=lambda v: v.get("MinimumOrderQuantity") or 10**9)
+
+
 def _normalize_product(product: dict[str, Any], keyword: str = "", *, kind: str = "similar") -> dict[str, Any]:
     """Normalize a DigiKey product record into the shared candidate shape."""
     stock = product.get("QuantityAvailable")
+    variation = _buyable_variation(product)
+    pricing = (variation or {}).get("StandardPricing") or product.get("StandardPricing")
+    price_breaks = [
+        {"BreakQuantity": row.get("BreakQuantity"), "UnitPrice": row.get("UnitPrice")}
+        for row in pricing or []
+        if isinstance(row, dict)
+    ]
+    price_1 = _first_price(pricing)
+    if price_1 is None and product.get("UnitPrice") is not None:
+        price_1 = float(product["UnitPrice"])
     return {
         "distributor": "digikey",
         "found": True,
         "mpn": product.get("ManufacturerProductNumber") or keyword,
-        "digikey_part": product.get("DigiKeyPartNumber", ""),
+        "digikey_part": (variation or {}).get("DigiKeyProductNumber") or product.get("DigiKeyPartNumber", ""),
         "manufacturer": _manufacturer(product),
         "description": _description(product),
         "datasheet_url": str(product.get("DatasheetUrl") or "").strip(),
         "url": product.get("ProductUrl") or digikey_search_url(product.get("ManufacturerProductNumber") or keyword),
-        "stock": int(stock) if stock is not None else None,
-        "price_1": _first_price(product.get("StandardPricing")),
+        # v4 leaves QuantityAvailable empty for parts with no stock
+        "stock": int(stock) if stock is not None else 0,
+        "price_1": price_1,
+        "price_breaks": price_breaks[:8],
         "kind": kind,
     }
 
@@ -120,7 +149,15 @@ def lookup_part(mpn: str) -> dict[str, Any]:
     if not keyword:
         raise ValueError("MPN is required.")
 
-    products = _search_products(keyword, 1)
+    products = _search_products(keyword, 5)
+    # Prefer the product whose MPN matches exactly; keyword search can rank a
+    # different part first (e.g. a reel-suffix variant or a similar series).
+    wanted = re.sub(r"[^A-Z0-9]", "", keyword.upper())
+    exact = [
+        p for p in products
+        if re.sub(r"[^A-Z0-9]", "", str(p.get("ManufacturerProductNumber") or "").upper()) == wanted
+    ]
+    products = exact or products
     if not products:
         return {
             "found": False,

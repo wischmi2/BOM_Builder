@@ -68,6 +68,7 @@ from bom_builder.need_io import (
 )
 from bom_builder.parser import bom_id_from_filename, parse_bom_csv, parse_kicad_bom_csv
 from bom_builder.distributor_cache import load_distributor_cache
+from bom_builder.pricing import apply_costs, group_cost_total, unpriced_count
 from bom_builder.distributor_lookup import any_api_configured, api_status, lookup_batch
 from bom_builder.enrichment import fetch_alternates, fetch_enrichment
 from bom_builder.shopping import (
@@ -118,6 +119,9 @@ def need_part_key_filter(line) -> str:
     from bom_builder.matcher import part_key_for_need_line
 
     return part_key_for_need_line(line)
+
+
+app.jinja_env.globals.update(group_cost_total=group_cost_total, unpriced_count=unpriced_count)
 
 
 @app.template_filter("need_suggested_mpn")
@@ -605,6 +609,7 @@ def shop_page():
             export_url = f"{url_for('shop_export')}?{urlencode(_shop_query_params(selected_ids, view_mode))}"
 
     distributor_cache = load_distributor_cache() if shop_lines else {}
+    apply_costs(shop_lines, distributor_cache)
     category_overrides = load_overrides()
     grouped_lines = group_shop_lines(shop_lines, category_overrides) if shop_lines else []
 
