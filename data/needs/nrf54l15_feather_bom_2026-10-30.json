@@ -7,7 +7,7 @@
       "id": "row-1-f96ec6c381c6f01e",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2450AT18A0100001E",
-      "description": "Mini 2.45 GHz Antenna, Johanson Technology",
+      "description": "RF ANTENNA Chip Solder Surface Mount",
       "designators": [
         "AE1"
       ],
@@ -25,14 +25,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-2-8c95a6d88c8b53f0",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2.2uF",
-      "description": "",
+      "description": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "designators": [
         "C1",
         "C10"
@@ -51,14 +51,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-3-c22e98d6e07d3697",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2.2uF",
-      "description": "",
+      "description": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C3"
       ],
@@ -76,14 +76,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-4-afc432d49af88838",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2.0pF",
-      "description": "",
+      "description": "2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C5"
       ],
@@ -101,14 +101,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-5-24c8dc8b4847ddc3",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "100nF",
-      "description": "100nF (104) +/-10% 50V",
+      "description": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C6",
         "C14",
@@ -129,14 +129,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-6-0590afa21ad14d57",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10uF",
-      "description": "10uF (106) +/-10% 25V",
+      "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C7",
         "C17",
@@ -158,14 +158,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-7-8f72f304513cdbfe",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "1.5pF",
-      "description": "",
+      "description": "1.5 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C8"
       ],
@@ -183,14 +183,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-8-d59a1c33f849f296",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10nF",
-      "description": "",
+      "description": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C9"
       ],
@@ -208,14 +208,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-9-e7bcc071153c7bc3",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "1.0pF",
-      "description": "",
+      "description": "1 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C12"
       ],
@@ -233,14 +233,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-10-c3dada31d8e80f0a",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "0.3pF",
-      "description": "",
+      "description": "0.3 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C13"
       ],
@@ -258,14 +258,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-11-36693a96957e6c71",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10uF",
-      "description": "",
+      "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C16"
       ],
@@ -283,14 +283,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-12-30ac9fb5f58cfdbb",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "1uF",
-      "description": "1uF (105) +/-10% 16V",
+      "description": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C19"
       ],
@@ -308,14 +308,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-13-8a21cfaf3217add7",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "CAP CER 22UF 10V X5R 0603",
-      "description": "",
+      "description": "22 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C40"
       ],
@@ -333,14 +333,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-14-b48ba7d568c9b7ca",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10uF",
-      "description": "U2 LSIN1/LSIN2 (U2.28/U2.30, VSENS and VRF LDO/load-switch inputs) local decoupling, 10 uF X5R 0402 (nPM1300 PS config 1 shows 10 uF at each LDO input). Run 6 S2. Place at U2 pins 28/30.",
+      "description": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C41",
         "C54"
@@ -359,14 +359,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-15-180defedd79cd37f",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "47uF",
-      "description": "",
+      "description": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C42"
       ],
@@ -384,14 +384,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-16-394f51863348c2b4",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "220 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 1206 (3216 Metric)",
-      "description": "",
+      "description": "220 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 1206 (3216 Metric)",
       "designators": [
         "C43"
       ],
@@ -409,14 +409,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-17-fb1bd49435c56975",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
-      "description": "VBUS bulk, 4.7 uF 25 V X5R 0805 (was 10 uF). Keeps VBUS total under the USB 2.0 7.2.4.1 10 uF limit with C4, C51 and C14 (review N7).",
+      "description": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C44"
       ],
@@ -434,14 +434,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-18-f17a949104763ce3",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "100nF",
-      "description": "VSENS decoupling at the flex connector",
+      "description": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C45"
       ],
@@ -459,14 +459,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-19-54e4be6e6af2e79a",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10uF",
-      "description": "VRF (nPM1300 LDO2) output cap, 10uF X5R 0603 per nPM1300 PS ref. circuit config 1 BOM. Place at U2 pin 31.",
+      "description": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C46"
       ],
@@ -484,14 +484,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-20-7690e6a18d866595",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "100 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
-      "description": "FM8625H (R11) VDD cap, 100 pF per FM8625H datasheet v1.2 application circuit (Figure 3). Place at R11 pin 4.",
+      "description": "100 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "designators": [
         "C47"
       ],
@@ -509,14 +509,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-21-1f8f6aeeb22f333f",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "100nF",
-      "description": "U7 VCC decoupling, 0.1 uF per TI SCES603K section 11 Power Supply Recommendations. Place at U7 pin 5.",
+      "description": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C48"
       ],
@@ -534,14 +534,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-22-858acb8bae764bf8",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)",
-      "description": "U6 VDD decoupling, 100 nF 0201 per nRF54L15 PS circuit config 1. Place at U6 pin 22.,U6 VDD decoupling, 100 nF 0201 per nRF54L15 PS circuit config 1. Place at U6 pin 36.",
+      "description": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "designators": [
         "C49",
         "C50"
@@ -560,14 +560,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-23-94b4f02281051cdf",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
-      "description": "U2 VBUS decoupling, 1.0 uF (nPM1300 PS ref. circuit config 1 BOM C1/C5 1.0 uF X5R); 25 V part because VBUS abs max is 22 V. Place at U2 pin 21.",
+      "description": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C51"
       ],
@@ -585,14 +585,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-24-f339e4fec226ffdd",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
-      "description": "14-pin 0.5 mm FFC, Easy-On back-flip, dual contact, 1.0 mm height",
+      "description": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
       "designators": [
         "CN1"
       ],
@@ -610,14 +610,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-25-277582dadd7f36c5",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "14V Clamp 5A (8/20\u00b5s) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)",
-      "description": "ESD on CC1: TI TPD1E10B06 (SLLSEB1G) bidirectional, VRWM 5.5 V, ILEAK 100 nA max at 5 V, VBR 6 V min, Vclamp 10 V at 1 A / 14 V at 5 A (8/20 us), CIO 12 pF typ, IEC 61000-4-2 +-30 kV. Place at J1.,ESD on CC2: TI TPD1E10B06 (SLLSEB1G) bidirectional, VRWM 5.5 V, ILEAK 100 nA max at 5 V, VBR 6 V min, Vclamp 10 V at 1 A / 14 V at 5 A (8/20 us), CIO 12 pF typ, IEC 61000-4-2 +-30 kV. Place at J1.",
+      "description": "14V Clamp 5A (8/20\u00b5s) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)",
       "designators": [
         "D1",
         "D2"
@@ -636,14 +636,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-26-51a0a672c08fc612",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "19.9V Clamp 10.1A Ipp Tvs Diode Surface Mount SOD-123F",
-      "description": "VBUS TVS, unidirectional, cathode to VBUS. Littelfuse SMF series (rev 12/06/17): SMF12A VRWM 12 V, IR 2.5 uA max at 12 V, VBR 13.30-14.70 V at 1 mA, VC 19.9 V max at Ipp 10.1 A (10/1000 us), 200 W, 1.1 mm max height. Clamps below nPM1300 VBUS abs max 22 V; does not conduct at 5.5 V (VBUSOVP).",
+      "description": "19.9V Clamp 10.1A Ipp Tvs Diode Surface Mount SOD-123F",
       "designators": [
         "D3"
       ],
@@ -661,14 +661,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-27-0075317471ad00ed",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Polymeric PTC Resettable Fuse 9V 200 mA Ih Surface Mount 0603 (1608 Metric), Concave",
-      "description": "PTC on CN1.13 VBAT to the sensor board. Bourns MF-FSMF020X: Ihold 0.20 A, Itrip 0.50 A, Vmax 9 V, Rmin 0.55 ohm, R1max 3.5 ohm, Ihold 0.12 A at 60 C. Worst planned sensor VBAT load about 70 mA (isolated supply option (c), template isolated_supply_options.md). Itrip = CN1 contact rating 500 mA (LCSC C505360 listing).",
+      "description": "Polymeric PTC Resettable Fuse 9V 200 mA Ih Surface Mount 0603 (1608 Metric), Concave",
       "designators": [
         "F1"
       ],
@@ -686,8 +686,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-28-222f7e2460db5d0a",
@@ -743,7 +743,7 @@
       "id": "row-30-7d6f99a5d8991c9a",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Connector Header Surface Mount 10 position 0.050\" (1.27mm)",
-      "description": "Connector Header Surface Mount 10 position 0.050 (1.27mm)",
+      "description": "Connector Header Surface Mount 10 position 0.050\" (1.27mm)",
       "designators": [
         "J3"
       ],
@@ -761,14 +761,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-31-58b123d9fdc60052",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2.7nH",
-      "description": "",
+      "description": "2.7 nH Unshielded Thick Film Inductor 600 mA 120mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L2",
         "L5"
@@ -787,14 +787,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-32-172219b5a1c751fa",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
-      "description": "",
+      "description": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L3"
       ],
@@ -812,14 +812,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-33-0b587ca34c405add",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "120 Ohms 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm",
-      "description": "",
+      "description": "120 Ohms @ 100 MHz 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm",
       "designators": [
         "L4"
       ],
@@ -837,14 +837,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-34-1dabb5dc284941d0",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
-      "description": "",
+      "description": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L6",
         "L8"
@@ -863,14 +863,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-35-9954f57751dcdf10",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm Max 0603 (1608 Metric)",
-      "description": "muRata LQM18PH4R7MFRL",
+      "description": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm Max 0603 (1608 Metric)",
       "designators": [
         "L7"
       ],
@@ -888,14 +888,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-36-b0d97f13e3195edd",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.4 A 250mOhm Max 0603 (1608 Metric)",
-      "description": "",
+      "description": "2.2 \u00b5H Shielded Multilayer Inductor 1.4 A 250mOhm Max 0603 (1608 Metric)",
       "designators": [
         "L9",
         "L10"
@@ -914,14 +914,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-37-7754b20c84424d90",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10 \u00b5H Shielded Drum Core, Wirewound Inductor 900 mA 600mOhm Max 1008 (2520 Metric) Flat Wire",
-      "description": "Inductor 10uH +/-20%, metal alloy, 2.5x2.0x1.0mm, Isat 1.3A, Irms 0.9A, DCR 600mOhm max",
+      "description": "10 \u00b5H Shielded Drum Core, Wirewound Inductor 900 mA 600mOhm Max 1008 (2520 Metric) Flat Wire",
       "designators": [
         "L11"
       ],
@@ -939,14 +939,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-38-0bb5e9bca7e036b7",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Green 527nm LED Indication - Discrete 3V 0603 (1608 Metric)",
-      "description": "",
+      "description": "Green 527nm LED Indication - Discrete 3V 0603 (1608 Metric)",
       "designators": [
         "LED1"
       ],
@@ -964,14 +964,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-39-cdf632dc6dde0246",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "NTC Thermistor 10k 0402 (1005 Metric)",
-      "description": "Battery NTC on nPM1300 NTC pin: 10k, B25/50 3380 K +-1 %, 0402 (nPM1300 PS Monitor battery temperature, Table 2). No cap in parallel (max 100 pF). Stage 2: place next to U4 battery JST.",
+      "description": "NTC Thermistor 10k 0402 (1005 Metric)",
       "designators": [
         "R8"
       ],
@@ -989,14 +989,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-40-68c9ccc897931085",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "0 Ohms Jumper Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film",
-      "description": "VSET1 grounded (<100 ohm) = BUCK1 off at power-up (nPM1300 PS BUCK Output voltage selection / On-Off control). Was 47k (1.8 V).",
+      "description": "0 Ohms Jumper Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R9"
       ],
@@ -1014,14 +1014,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-41-7d7c471fa87ba5af",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R10"
       ],
@@ -1039,8 +1039,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-42-49ac23693d724f7e",
@@ -1071,7 +1071,7 @@
       "id": "row-43-e44649e6d0d62e2c",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "4.7k",
-      "description": "4.7k pull-up to VSENS",
+      "description": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R12",
         "R13",
@@ -1092,14 +1092,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-44-baa5c974073d5482",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "560",
-      "description": "",
+      "description": "560 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R14"
       ],
@@ -1117,14 +1117,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-45-7266f650177d8a22",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "10k",
-      "description": "10k pull-up to VSENS,SENS_ID pull-up, now from VSENS (was VDDIO) so it draws no current while the sensor rail is off (review S6, Brian 2026-10-27).",
+      "description": "10 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film",
       "designators": [
         "R17",
         "R18",
@@ -1144,8 +1144,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-46-689354c50e933b98",
@@ -1176,7 +1176,7 @@
       "id": "row-47-07e2197a713fef2d",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Tactile Switch SPST-NO Top Actuated Surface Mount",
-      "description": "Push button switch, generic, two pins",
+      "description": "Tactile Switch SPST-NO Top Actuated Surface Mount",
       "designators": [
         "SW1"
       ],
@@ -1194,14 +1194,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-48-8abc120054893d6f",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "nPM1300-QEXX",
-      "description": "PMIC, LED Driver, Battery Charger, QFN-32",
+      "description": "Battery Power Management IC Lithium Ion/Polymer 32-QFN (5x5)",
       "designators": [
         "U2"
       ],
@@ -1219,14 +1219,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-49-1ca8ef474668f8cc",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
-      "description": "",
+      "description": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
       "designators": [
         "U4",
         "U5"
@@ -1245,14 +1245,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-50-136afe733f4c5dd1",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
-      "description": "nRF54L Dual Core Multiprotocol BLE SoC",
+      "description": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
       "designators": [
         "U6"
       ],
@@ -1270,14 +1270,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-51-2c396c877ab52724",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "Buffer, Non-Inverting 1 Element 1 Bit per Element Push-Pull Output SC-70-5",
-      "description": "Level-shift buffer ANT_SEL (VDDIO 3.0 V) -> R11 VCTL (VRF 2.5 V). TI SCES603K: inputs overvoltage tolerant to 3.6 V at any valid VCC; VOH >= VCC-0.1 V at -20 uA.",
+      "description": "Buffer, Non-Inverting 1 Element 1 Bit per Element Push-Pull Output SC-70-5",
       "designators": [
         "U7"
       ],
@@ -1295,14 +1295,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-52-a7bf2050b699eade",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
       "name": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead",
-      "description": "",
+      "description": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead",
       "designators": [
         "X1"
       ],
@@ -1320,8 +1320,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     }
   ]
 }

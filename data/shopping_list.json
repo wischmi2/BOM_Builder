@@ -662,17 +662,18 @@
         "buy_qty": 0,
         "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)"
       },
-      "updated_at": "2026-10-30T19:16:12.222635+00:00",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00",
       "ordered": false,
       "mpn": "GRM188R72A104KA35D",
-      "name": "CAP CER 0.1UF 100V X7R 0603"
+      "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)"
     },
     "lib:LQM18PH4R7MFRL": {
       "mpn": "LQM18PH4R7MFRL",
-      "updated_at": "2026-07-22T19:48:38.517845+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 10,
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm 0603 (1608 Metric)"
     },
     "lib:LQP03HQ3N5B02D": {
       "mpn": "LQP03HQ3N5B02D",
@@ -684,16 +685,17 @@
     },
     "lib:CC0603MRX5R8BB106": {
       "mpn": "CC0603MRX5R8BB106",
-      "updated_at": "2026-07-22T20:18:12.795728+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "mpn": "GRT188R61E106ME13D",
-        "name": "CAP CER 10UF 25V X5R 0603",
+        "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
         "buy_qty": 0
       },
       "buy_qty": 10,
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)"
     },
     "lib:FRC0402F5600TS": {
       "mpn": "FRC0402F5600TS",
@@ -714,17 +716,19 @@
     },
     "lib:RC0402FR074K7L": {
       "mpn": "RC0402FR-074K7L",
-      "updated_at": "2026-07-22T19:41:42.082924+00:00",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00",
       "buy_qty": 50,
       "ordered": true,
-      "received_qty": 50
+      "received_qty": 50,
+      "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
     },
     "lib:RC0402JR071ML": {
       "mpn": "RC0402JR-071ML",
-      "updated_at": "2026-07-22T19:35:48.719679+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 50,
       "ordered": true,
-      "received_qty": 50
+      "received_qty": 50,
+      "name": "1 MOhms \u00b15% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
     },
     "lib:S2BPHKSGW": {
       "mpn": "S2B-PH-K-S-GW(PP)",
@@ -732,91 +736,102 @@
     },
     "lib:CL05A105KO5NNNC": {
       "mpn": "CL05A105KO5NNNC",
-      "updated_at": "2026-07-22T19:48:13.935933+00:00",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00",
       "buy_qty": 20,
       "ordered": true,
-      "received_qty": 20
+      "received_qty": 20,
+      "name": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)"
     },
     "lib:CL10A225KB8NNNC": {
       "mpn": "CL10A225KB8NNNC",
-      "updated_at": "2026-07-22T19:24:14.169405+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "mpn": "GRM188R61H225KE11D",
-        "name": "CAP CER 2.2UF 50V X5R 0603",
+        "name": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)",
         "buy_qty": 10,
         "ordered": true,
         "received_qty": 10
-      }
+      },
+      "name": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)"
     },
     "lib:CL21A106KAYNNNE": {
       "mpn": "CL21A106KAYNNNE",
-      "updated_at": "2026-07-14T23:35:40.723952+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "mpn": "CL21A106KACLRNC",
-        "name": "CAP CER 10UF 25V X5R 0805",
+        "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
         "buy_qty": 50,
         "ordered": true
-      }
+      },
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)"
     },
     "lib:CL31A476MPHNNNE": {
       "mpn": "CL31A476MPHNNNE",
-      "updated_at": "2026-07-22T19:44:31.149123+00:00",
-      "buy_qty": 10,
-      "ordered": true,
-      "received_qty": 10
-    },
-    "lib:GCM155R71H103KA55D": {
-      "mpn": "GCM155R71H103KA55D",
-      "updated_at": "2026-07-22T19:40:12.847807+00:00",
-      "buy_qty": 10,
-      "ordered": true,
-      "notes": "10000pF",
-      "received_qty": 10
-    },
-    "lib:GJM0335C1E1R0WB01D": {
-      "mpn": "GJM0335C1E1R0WB01D",
-      "updated_at": "2026-07-22T19:43:45.617404+00:00",
-      "buy_qty": 10,
-      "ordered": true,
-      "received_qty": 10
-    },
-    "lib:GJM0335C1E1R5WB01D": {
-      "mpn": "GJM0335C1E1R5WB01D",
-      "updated_at": "2026-07-22T19:43:09.788624+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 10,
       "ordered": true,
       "received_qty": 10,
-      "notes": "buy more"
+      "name": "47 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 1206 (3216 Metric)"
+    },
+    "lib:GCM155R71H103KA55D": {
+      "mpn": "GCM155R71H103KA55D",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
+      "buy_qty": 10,
+      "ordered": true,
+      "notes": "10000pF",
+      "received_qty": 10,
+      "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)"
+    },
+    "lib:GJM0335C1E1R0WB01D": {
+      "mpn": "GJM0335C1E1R0WB01D",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
+      "buy_qty": 10,
+      "ordered": true,
+      "received_qty": 10,
+      "name": "1 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)"
+    },
+    "lib:GJM0335C1E1R5WB01D": {
+      "mpn": "GJM0335C1E1R5WB01D",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
+      "buy_qty": 10,
+      "ordered": true,
+      "received_qty": 10,
+      "notes": "buy more",
+      "name": "1.5 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)"
     },
     "lib:GJM0335C1E2R0WB01D": {
       "mpn": "GJM0335C1E2R0WB01D",
-      "updated_at": "2026-07-22T19:41:19.350583+00:00",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
       "buy_qty": 10,
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)"
     },
     "lib:GJM0335C1E2R2WB01D": {
       "mpn": "GJM0335C1E2R2WB01D",
-      "updated_at": "2026-07-22T19:33:03.286322+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 10,
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "2.2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)"
     },
     "lib:GJM0335C1ER30WB01D": {
       "mpn": "GJM0335C1ER30WB01D",
-      "updated_at": "2026-07-22T19:35:25.755933+00:00",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
       "buy_qty": 10,
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "0.3 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)"
     },
     "lib:GRM033R61A225KE47D": {
       "mpn": "GRM033R61A225KE47D",
-      "updated_at": "2026-07-22T19:47:08.309011+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 15,
       "ordered": true,
-      "received_qty": 15
+      "received_qty": 15,
+      "name": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X5R 0201 (0603 Metric)"
     },
     "lib:LQP03HQ3N9B02D": {
       "mpn": "LQP03TQ3N9B02D",
@@ -832,17 +847,18 @@
         "ordered": true,
         "received_qty": 10
       },
-      "updated_at": "2026-07-22T19:36:21.524596+00:00",
-      "mpn": "LSCNB1608HKT2R2MD"
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
+      "mpn": "LSCNB1608HKT2R2MD",
+      "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.2 A 292mOhm Max 0603 (1608 Metric)"
     },
     "lib:XL7EL89CKI111YLC32M": {
       "mpn": "XL7EL89CKI-111YLC-32M",
-      "updated_at": "2026-07-22T20:20:27.776539+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 7,
         "mpn": "CS06654-32M",
-        "name": "CRYSTAL 32.0000MHZ 8PF SMD",
+        "name": "32 MHz Crystal 8pF 60 Ohms 4-SMD, No Lead",
         "ordered": true,
         "received_qty": 7
       }
@@ -859,10 +875,11 @@
     },
     "lib:SPV1040T": {
       "mpn": "SPV1040T",
-      "updated_at": "2026-07-22T20:20:45.971086+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "buy_qty": 3,
       "ordered": true,
-      "received_qty": 3
+      "received_qty": 3,
+      "name": "Charger IC 8-TSSOP"
     },
     "lib:SS14": {
       "mpn": "DSS14U",
@@ -870,24 +887,24 @@
     },
     "lib:FRC0603F4702TS": {
       "mpn": "FRC0603F4702TS",
-      "updated_at": "2026-07-22T19:46:31.911313+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "CRCW060347K0FKEC",
-        "name": "Thick Film Resistors - SMD 1/10Watt 47Kohms 1% Commercial Use",
+        "name": "47 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film",
         "ordered": true,
         "received_qty": 50
       }
     },
     "lib:1RC0402J0335": {
       "mpn": "1RC0402J0335",
-      "updated_at": "2026-07-22T19:47:26.391380+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "RC0402JR-073M3L",
-        "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.3MOhms, 5%, 1/16W",
+        "name": "3.3 MOhms \u00b15% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
         "ordered": true,
         "received_qty": 50
       },
@@ -895,10 +912,11 @@
     },
     "lib:RT0402BRD0710KL": {
       "mpn": "RT0402BRD0710KL",
-      "updated_at": "2026-07-22T19:49:22.753976+00:00",
+      "updated_at": "2026-11-10T00:50:37.390320+00:00",
       "buy_qty": 50,
       "ordered": true,
-      "received_qty": 50
+      "received_qty": 50,
+      "name": "10 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film"
     },
     "lib:2450AT18A100E": {
       "mpn": "2450AT18A0100001E",
@@ -932,13 +950,13 @@
     },
     "lib:SDFL2012S100KTF": {
       "mpn": "SDFL2012S100KTF",
-      "updated_at": "2026-07-22T19:43:18.322223+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "name": "10uh",
       "alternate": {
         "enabled": true,
         "buy_qty": 10,
         "mpn": "MHQ1005075HA4N3BTD25",
-        "name": "RF Inductors - SMD FIXED IND 4.3NH 0.6A 120 MOHM SMD",
+        "name": "4.3 nH Shielded Multilayer Inductor 600 mA 120mOhm Max 0402 (1005 Metric)",
         "ordered": true,
         "received_qty": 10
       }
@@ -951,73 +969,75 @@
     },
     "lib:NPM1300QEAAR7": {
       "ordered": false,
-      "updated_at": "2026-07-14T18:48:56.577237+00:00",
+      "updated_at": "2026-11-10T00:50:37.390320+00:00",
       "received_qty": 5,
-      "buy_qty": 5
+      "buy_qty": 5,
+      "name": "Battery Power Management IC Lithium Ion/Polymer 32-QFN (5x5)"
     },
     "lib:1206W4F1003T5E": {
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "CRCW1206100KFKEBC",
-        "name": "Thick Film Resistors - SMD 1/4Watt 100Kohms 1%",
+        "name": "100 kOhms \u00b11% 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Thick Film",
         "notes": "https://www.vishay.com/docs/20035/dcrcwe3.pdf",
         "ordered": true,
         "received_qty": 50
       },
-      "updated_at": "2026-07-22T19:50:28.203912+00:00"
+      "updated_at": "2026-11-10T00:50:37.372264+00:00"
     },
     "lib:FRC0402F3904TS": {
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "RC0402FR-073M9L",
-        "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.9MOhms, 1%, 1/16W",
+        "name": "3.9 MOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
         "ordered": true,
         "received_qty": 50
       },
-      "updated_at": "2026-07-22T20:17:25.685980+00:00"
+      "updated_at": "2026-11-10T00:50:37.372264+00:00"
     },
     "lib:FRC0603F1503TS": {
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "AF0603FR-07150KL",
-        "name": "Thick Film Resistors - SMD 150 kOhms 100mW 0603 1% AEC-Q200",
+        "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Anti-Sulfur, Automotive AEC-Q200 Thick Film",
         "ordered": true,
         "received_qty": 50
       },
-      "updated_at": "2026-07-22T19:47:46.730191+00:00"
+      "updated_at": "2026-11-10T00:50:37.372264+00:00"
     },
     "lib:RCA025K1FLF": {
       "alternate": {
         "enabled": true,
         "buy_qty": 50,
         "mpn": "CR0402-FX-5101GLF",
-        "name": "Thick Film Resistors - SMD 5.1K OHM 1%",
+        "name": "5.1 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thick Film",
         "ordered": true,
         "received_qty": 50
       },
-      "updated_at": "2026-07-22T19:34:16.709125+00:00"
+      "updated_at": "2026-11-10T00:50:37.372264+00:00"
     },
     "lib:CBG100505U121T": {
       "alternate": {
         "enabled": true,
         "buy_qty": 10,
         "mpn": "GZ1005D121TF",
-        "name": "FERRITE BEAD 120 OHM 0402 1LN",
+        "name": "120 Ohms @ 100 MHz 1 Signal Line Ferrite Bead 0402 (1005 Metric) 200mA 400mOhm",
         "ordered": true,
         "received_qty": 10
       },
-      "updated_at": "2026-07-22T19:44:08.205653+00:00",
+      "updated_at": "2026-11-10T00:50:37.372264+00:00",
       "buy_qty": 5
     },
     "lib:LQP03TQ3N9B02D": {
       "mpn": "LQP03TQ3N9B02D",
-      "updated_at": "2026-07-22T19:45:28.870643+00:00",
+      "updated_at": "2026-11-10T00:50:37.390320+00:00",
       "ordered": true,
       "buy_qty": 10,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)"
     },
     "lib:SMLEN3EC8TT86": {
       "buy_qty": 6,
@@ -1029,15 +1049,17 @@
     },
     "lib:DSS14U": {
       "buy_qty": 12,
-      "updated_at": "2026-07-22T20:19:15.058470+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "ordered": true,
-      "received_qty": 12
+      "received_qty": 12,
+      "name": "Diode 40 V 1A Surface Mount SOD-123FL"
     },
     "lib:NRF54L15QFAAR7": {
       "buy_qty": 5,
-      "updated_at": "2026-07-22T20:20:04.056814+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "ordered": true,
-      "received_qty": 5
+      "received_qty": 5,
+      "name": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad"
     },
     "lib:S2BPHKSGWPP": {
       "alternate": {
@@ -1048,7 +1070,8 @@
         "ordered": true,
         "received_qty": 12
       },
-      "updated_at": "2026-07-22T20:19:44.352444+00:00"
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
+      "name": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)"
     },
     "lib:FM8625H": {
       "alternate": {
@@ -1063,30 +1086,33 @@
     },
     "lib:2450AT18A0100001E": {
       "buy_qty": 10,
-      "updated_at": "2026-07-22T20:18:50.786631+00:00",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
       "ordered": true,
-      "received_qty": 10
+      "received_qty": 10,
+      "name": "RF ANTENNA Chip Solder Surface Mount"
     },
     "lib:SM04BSRSSTB": {
       "mpn": "SM04B-SRSS-TB",
-      "updated_at": "2026-07-22T20:21:19.657254+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 0,
         "mpn": "1528-4328-ND",
         "name": "Connector Header Surface Mount 4 position 0.039\" (1.00mm)",
         "ordered": true
-      }
+      },
+      "name": "Connector Header Surface Mount, Right Angle 4 position 0.039\" (1.00mm)"
     },
     "lib:GRM188R72A104KA35D": {
       "buy_qty": 30,
-      "updated_at": "2026-07-22T19:32:45.700277+00:00",
+      "updated_at": "2026-11-10T00:50:37.402713+00:00",
       "ordered": true,
-      "received_qty": 30
+      "received_qty": 30,
+      "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)"
     },
     "lib:BLM18PG221SN1D": {
-      "name": "FERRITE BEAD 220 OHM 0603 1LN",
-      "updated_at": "2026-10-30T19:13:43.301236+00:00"
+      "name": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 1.4A 100mOhm",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
     },
     "lib:5034801400": {
       "name": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
@@ -1281,8 +1307,8 @@
     },
     "lib:CL10A226MP8NUNE": {
       "mpn": "CL10A226MP8NUNE",
-      "updated_at": "2026-11-06T14:11:40.814243+00:00",
-      "name": "CAP CER 22UF 10V X5R 0603",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00",
+      "name": "22 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "alternate": {
         "enabled": true,
         "buy_qty": 0
@@ -1300,8 +1326,8 @@
     },
     "lib:BLM15AG121SN1D": {
       "mpn": "BLM15AG121SN1D",
-      "updated_at": "2026-11-06T14:13:27.304262+00:00",
-      "name": "120 Ohms 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm"
+      "updated_at": "2026-11-10T00:50:37.390320+00:00",
+      "name": "120 Ohms @ 100 MHz 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm"
     },
     "lib:DFE252010F100MP2": {
       "mpn": "DFE252010F-100M=P2",
@@ -1361,6 +1387,154 @@
       "mpn": "FTSH-105-01-L-DV-K",
       "updated_at": "2026-11-06T14:27:12.464223+00:00",
       "name": "Connector Header Surface Mount 10 position 0.050\" (1.27mm)"
+    },
+    "lib:BAT54CLT1G": {
+      "name": "Diode Array 1 Pair Common Cathode 30 V 200mA (DC) Surface Mount TO-236-3, SC-59, SOT-23-3",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:CRCW04024K70FKED": {
+      "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:760390015": {
+      "name": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:ISO1540DR": {
+      "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:SN6505BDBVR": {
+      "name": "Transformer Driver PMIC SOT-23-6",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:LP298533DBVR": {
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 150mA SOT-23-5",
+      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+    },
+    "lib:GRM155R71A104KA01D": {
+      "name": "0.1 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:BSS138LT1G": {
+      "name": "N-Channel 50 V 200mA (Ta) 225mW (Ta) Surface Mount SOT-23-3 (TO-236)",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:RC0402FR0722KL": {
+      "name": "22 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:XM125": {
+      "name": "Radar Sensor Output",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:NCP161ASN180T1G": {
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 450mA SOT-23-5",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:TCA9406DCTR": {
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 2 Channel 24Mbps SM8",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:SN74AXC1T45DBVR": {
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 1 Channel 500Mbps SOT-23-6",
+      "updated_at": "2026-11-10T00:50:37.384467+00:00"
+    },
+    "lib:GRM188R61H225KE11D": {
+      "name": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "updated_at": "2026-11-10T00:50:37.389304+00:00"
+    },
+    "lib:RC0402FR07560RL": {
+      "name": "560 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.390320+00:00"
+    },
+    "lib:CC0402KRX7R7BB104": {
+      "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "updated_at": "2026-11-10T00:50:37.397279+00:00"
+    },
+    "lib:ADUM1250ARZRL7": {
+      "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
+      "updated_at": "2026-11-10T00:50:37.397279+00:00"
+    },
+    "lib:NXE1S0303MCR13": {
+      "name": "Isolated Module DC DC Converter 1 Output 3.3V 303mA 2.97V - 3.63V Input",
+      "updated_at": "2026-11-10T00:50:37.397279+00:00"
+    },
+    "lib:SSK05BH254B3": {
+      "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:322010010000": {
+      "name": "Connector Header Through Hole 10 position 0.050\" (1.27mm)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:PEC06SAAN": {
+      "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:PEC03SAAN": {
+      "name": "Connector Header Through Hole 3 position 0.100\" (2.54mm)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:PEC02SAAN": {
+      "name": "Connector Header Through Hole 2 position 0.100\" (2.54mm)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:SPC02SYAN": {
+      "name": "2 (1 x 2) Position Shunt Connector Black Closed Top 0.100\" (2.54mm) Gold",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:USB4105GFA": {
+      "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:RC0805FR07330RL": {
+      "name": "330 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:RC0805FR071KL": {
+      "name": "1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:RC0805FR075K1L": {
+      "name": "5.1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:RC0805FR07100RL": {
+      "name": "100 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:CC0805KKX5R8BB106": {
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:LTSTC171GKT": {
+      "name": "Green 569nm LED Indication - Discrete 2.1V 0805 (2012 Metric)",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:MFNSMF0502": {
+      "name": "Polymeric PTC Resettable Fuse 13.2V 500 mA Ih Surface Mount 1206 (3216 Metric), Concave",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:TLV75530PDBVR": {
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 500mA SOT-23-5",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:B3F1000": {
+      "name": "Tactile Switch SPST-NO Top Actuated Through Hole",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:TC2030IDC": {
+      "name": "Plug-Of-Nails\u2122 Cable Assembly",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:TTL232RGVREG1V8WE": {
+      "name": "USB to TTL Serial 1.8V Cable 5.90' (1.80m) Unshielded",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+    },
+    "lib:FFSD05D060001N": {
+      "name": "10 Position Cable Assembly Rectangular Socket to Socket 0.500' (152.40mm, 6.00\")",
+      "updated_at": "2026-11-10T00:50:37.417288+00:00"
     }
   }
 }

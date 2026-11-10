@@ -3,7 +3,7 @@
     {
       "id": "b29723ea-e205-4f6f-b37c-9d087e614629",
       "lib_ref": "5796055-1",
-      "name": "CONN RCPT 68POS R/A SOLDER",
+      "name": "68 Position Receptacle Connector Panel Mount, Through Hole, Right Angle Solder",
       "qty_on_hand": 3,
       "location": "",
       "notes": ""
@@ -11,7 +11,7 @@
     {
       "id": "fabdb16f-7cea-48f6-bc6e-a2a63b9ea9aa",
       "lib_ref": "5796055-1",
-      "name": "CONN RCPT 68POS R/A SOLDER",
+      "name": "68 Position Receptacle Connector Panel Mount, Through Hole, Right Angle Solder",
       "qty_on_hand": 47,
       "location": "",
       "notes": ""
@@ -19,7 +19,7 @@
     {
       "id": "db209dbc-e70e-44e1-9cf8-6dd244f5fb30",
       "lib_ref": "MTSW-103-08-G-S-229-RA",
-      "name": "Headers & Wire Housings Variable Height PCB Header Strips",
+      "name": "Connector Header Through Hole, Right Angle 3 position 0.100\" (2.54mm)",
       "qty_on_hand": 100,
       "location": "",
       "notes": "SAMTEC"
@@ -27,7 +27,7 @@
     {
       "id": "8d8c292e-8659-456b-b4f2-60721ee2e869",
       "lib_ref": "GRM32ER61A107ME20L",
-      "name": "CAP CER 100 UF 10V X5R 1210",
+      "name": "100 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 1210 (3225 Metric)",
       "qty_on_hand": 60,
       "location": "",
       "notes": ""
@@ -35,7 +35,7 @@
     {
       "id": "1f8e8582-98b6-46b1-ba9b-43f7368b95c6",
       "lib_ref": "GCM188R71E224KA55D",
-      "name": "CAP CER 0.22 UF 25V X7R 0603",
+      "name": "0.22 \u00b5F \u00b110% 25V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "qty_on_hand": 518,
       "location": "",
       "notes": ""
@@ -43,7 +43,7 @@
     {
       "id": "9107b610-ef0a-4f41-9ac1-382c921c0f46",
       "lib_ref": "EEE-FN1E100R",
-      "name": "CAP ALUM 10 UF 20% 25V SMD",
+      "name": "10 \u00b5F 25 V Aluminum Electrolytic Capacitors Radial, Can - SMD 1.35Ohm @ 100kHz 2000 Hrs @ 105\u00b0C",
       "qty_on_hand": 168,
       "location": "",
       "notes": ""
@@ -51,7 +51,7 @@
     {
       "id": "67b9a0a1-9b65-47f9-a7cc-9d8e20603dc3",
       "lib_ref": "CRCW06031R00FKEAHP",
-      "name": "RES SMD 1 OHM 1% 1/3W 0603",
+      "name": "1 Ohms \u00b11% 0.333W, 1/3W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film",
       "qty_on_hand": 480,
       "location": "",
       "notes": ""
@@ -59,7 +59,7 @@
     {
       "id": "5ced1640-9dd2-48db-ac77-cfe2bff58592",
       "lib_ref": "GCM21BR71E105KA56L",
-      "name": "CAP CER 1 UF 25V X7R 0805",
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X7R 0805 (2012 Metric)",
       "qty_on_hand": 915,
       "location": "",
       "notes": ""
@@ -67,7 +67,7 @@
     {
       "id": "ff5125da-5135-424b-b25e-6fc471d29a07",
       "lib_ref": "ERJ-P06J105V",
-      "name": "RES SMD 1M OHM 5% 1/2W 0805",
+      "name": "1 MOhms \u00b15% 0.5W, 1/2W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film",
       "qty_on_hand": 970,
       "location": "",
       "notes": ""
@@ -75,7 +75,7 @@
     {
       "id": "5b9a86c4-8385-4443-b032-cfe585d0b0a3",
       "lib_ref": "GCM21BR71E105KA56L",
-      "name": "CAP CER 1 UF 25V X7R 0805",
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X7R 0805 (2012 Metric)",
       "qty_on_hand": 57,
       "location": "",
       "notes": ""
@@ -83,7 +83,7 @@
     {
       "id": "22983469-9f26-46a4-bed9-e8c66ea84e97",
       "lib_ref": "GRM21BR61E106KA73K",
-      "name": "CAP CER 10 UF 25V X5R 0805",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "qty_on_hand": 412,
       "location": "",
       "notes": ""
@@ -91,7 +91,7 @@
     {
       "id": "7d9801bd-84e6-435b-a875-2dfc563c42a5",
       "lib_ref": "GRM21BR61E106KA73K",
-      "name": "CAP CER 10 UF 25V X5R 0805",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "qty_on_hand": 588,
       "location": "",
       "notes": ""
@@ -99,7 +99,7 @@
     {
       "id": "b41627ee-7778-40ba-9aaf-f91644e4476f",
       "lib_ref": "GCM188R71E224KA55D",
-      "name": "CAP CER 0.22 UF 25V X7R 0603",
+      "name": "0.22 \u00b5F \u00b110% 25V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "qty_on_hand": 482,
       "location": "",
       "notes": ""
@@ -115,7 +115,7 @@
     {
       "id": "1532170a-cb63-417b-be08-103aea7d7a4d",
       "lib_ref": "CRCW0402120RFKED",
-      "name": "RES SMD 120 OHM 1% 1/16W 0402",
+      "name": "120 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 490,
       "location": "",
       "notes": ""
@@ -123,7 +123,7 @@
     {
       "id": "b910314e-9b2e-43fc-9a38-c71725de1790",
       "lib_ref": "ERJ-2GEJ512X",
-      "name": "RES SMD 5.1K OHM 5% 1/10W 0402",
+      "name": "5.1 kOhms \u00b15% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 480,
       "location": "",
       "notes": ""
@@ -131,7 +131,7 @@
     {
       "id": "a7bfd4a1-7ffd-4160-8911-877666c2128f",
       "lib_ref": "RC0402JR-0715KL",
-      "name": "RES 15K OHM 5% 1/16W 0402",
+      "name": "15 kOhms \u00b15% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 4990,
       "location": "",
       "notes": ""
@@ -139,7 +139,7 @@
     {
       "id": "6da04ac0-e4dd-42db-b2f4-452715c0d1f6",
       "lib_ref": "CRCW040227R0FKED",
-      "name": "RES SMD 27 OHM 1% 1/16W 0402",
+      "name": "27 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 470,
       "location": "",
       "notes": ""
@@ -147,7 +147,7 @@
     {
       "id": "cb1d0eef-b75d-41ed-8f7c-17237b243789",
       "lib_ref": "ERJ-2GEJ303X",
-      "name": "RES SMD 30K OHM 5% 1/10W 0402",
+      "name": "30 kOhms \u00b15% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 990,
       "location": "",
       "notes": ""
@@ -155,7 +155,7 @@
     {
       "id": "5b12f6d6-8fb0-4e3b-8387-f91ff62c7712",
       "lib_ref": "ERJ-2RKF1500X",
-      "name": "RES SMD 150 OHM 1% 1/10W 0402",
+      "name": "150 Ohms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "qty_on_hand": 450,
       "location": "",
       "notes": ""
@@ -163,7 +163,7 @@
     {
       "id": "792dd449-17e6-4bf6-9745-9af3b8fe7b97",
       "lib_ref": "GRM1555C1H562JE01D",
-      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "name": "5600 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 330,
       "location": "",
       "notes": ""
@@ -171,7 +171,7 @@
     {
       "id": "afb4da1e-c3b5-4423-a4cc-6834cdc7654f",
       "lib_ref": "GRM1555C1H562JE01D",
-      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "name": "5600 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 344,
       "location": "",
       "notes": ""
@@ -179,7 +179,7 @@
     {
       "id": "6e8c1281-445d-48c7-a973-dcd3c65c6097",
       "lib_ref": "GRM1555C1H562JE01D",
-      "name": "CAP CER 5600 PF 50V C0G/NP0 0402",
+      "name": "5600 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 300,
       "location": "",
       "notes": ""
@@ -187,7 +187,7 @@
     {
       "id": "3dd1d62d-2fbd-4052-a9c1-8efab515f89b",
       "lib_ref": "BLM18KG102BH1D",
-      "name": "FERRITE BEAD 1K OHM 0603 1LN",
+      "name": "1 kOhms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 800mA 200mOhm",
       "qty_on_hand": 100,
       "location": "",
       "notes": ""
@@ -195,7 +195,7 @@
     {
       "id": "52b0f212-2aea-4d7e-9b2a-6f9d587b8fca",
       "lib_ref": "GCM1555C1H270FA16D",
-      "name": "CAP CER 27PF 50V C0G/NP0 0402",
+      "name": "27 pF \u00b11% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 980,
       "location": "",
       "notes": ""
@@ -203,7 +203,7 @@
     {
       "id": "9dccc8fe-243d-4231-9f91-5cac2730ef7b",
       "lib_ref": "GRM21BZ71E106KE15L",
-      "name": "CAP CER 10 UF 25V 10% 0805",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X7R 0805 (2012 Metric)",
       "qty_on_hand": 2980,
       "location": "",
       "notes": ""
@@ -211,7 +211,7 @@
     {
       "id": "09f7d9f6-83a7-4c5f-9461-5ff124c938f9",
       "lib_ref": "59S101-400L5",
-      "name": "CONN SMB PLUG STR 50OHM PCB",
+      "name": "SMB Connector Plug, Male Pin 50 Ohms Through Hole Solder",
       "qty_on_hand": 15,
       "location": "",
       "notes": "Rosenberger"
@@ -219,7 +219,7 @@
     {
       "id": "295d5cff-6b4d-422c-b300-fa0b78c8ef11",
       "lib_ref": "RC0402JR-070RL",
-      "name": "RES 0 OHM JUMPER 1/16W 0402",
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 10000,
       "location": "",
       "notes": ""
@@ -235,7 +235,7 @@
     {
       "id": "587371d5-6cc7-4bf7-b9d3-9f79744d3736",
       "lib_ref": "0022052101",
-      "name": "CONN HEADER R/A 10POS 2.54MM",
+      "name": "Connector Header Through Hole, Right Angle 10 position 0.100\" (2.54mm)",
       "qty_on_hand": 300,
       "location": "",
       "notes": ""
@@ -243,7 +243,7 @@
     {
       "id": "5d0887ca-3d02-4086-87e5-483865f214d3",
       "lib_ref": "DMP3099L-7",
-      "name": "MOSFET P-CH 30V 3.8A SOT23",
+      "name": "P-Channel 30 V 3.8A (Ta) 1.08W (Ta) Surface Mount SOT-23-3",
       "qty_on_hand": 62,
       "location": "",
       "notes": ""
@@ -251,7 +251,7 @@
     {
       "id": "57b17dac-b1d1-4bf6-a0c4-696dc9051e0c",
       "lib_ref": "AT0402DRD07348RL",
-      "name": "348R",
+      "name": "348 Ohms \u00b10.5% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Anti-Sulfur, Automotive AEC-Q200, Moisture Resistant Thin Film",
       "qty_on_hand": 24,
       "location": "",
       "notes": "Non-Stocked"
@@ -299,7 +299,7 @@
     {
       "id": "c7c62044-dbce-472c-a635-a0fb3f8c72c3",
       "lib_ref": "GRM188R72A104KA35D",
-      "name": "CAP CER 0.1UF 100V X7R 0603",
+      "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "qty_on_hand": 21,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -347,7 +347,7 @@
     {
       "id": "d0e5af5a-21ca-412d-a6d0-aa57a027dcaa",
       "lib_ref": "GCM155R71H103KA55D",
-      "name": "CAP CER 10000PF 50V X7R 0402",
+      "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "qty_on_hand": 8,
       "location": "Brian Part Box 1",
       "notes": "10nF"
@@ -387,7 +387,7 @@
     {
       "id": "86534bfb-dc71-4b60-a435-a95ea6b0b443",
       "lib_ref": "GZ1005D121TF",
-      "name": "FERRITE BEAD 120 OHM 0402 1LN",
+      "name": "120 Ohms @ 100 MHz 1 Signal Line Ferrite Bead 0402 (1005 Metric) 200mA 400mOhm",
       "qty_on_hand": 10,
       "location": "",
       "notes": ""
@@ -451,7 +451,7 @@
     {
       "id": "080122c4-28ce-447f-892a-1079693b2cb1",
       "lib_ref": "RT0402BRD0710KL",
-      "name": "RES SMD 10K OHM 0.1% 1/16W 0402",
+      "name": "10 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film",
       "qty_on_hand": 47,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -459,7 +459,7 @@
     {
       "id": "834cfa44-8c38-47d2-9c6c-fd48be0ab8d3",
       "lib_ref": "CRCW1206100KFKEBC",
-      "name": "100 kOhms \u00b11% 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film",
+      "name": "100 kOhms \u00b11% 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Thick Film",
       "qty_on_hand": 49,
       "location": "Brian Part Box 1",
       "notes": "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
@@ -483,7 +483,7 @@
     {
       "id": "b6a711e4-2cbb-46c0-844b-ddb463e3df55",
       "lib_ref": "2450AT18A0100001E",
-      "name": "RF ANT 2.4GHZ CHIP SOLDER SMD",
+      "name": "RF ANTENNA Chip Solder Surface Mount",
       "qty_on_hand": 8,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -515,7 +515,7 @@
     {
       "id": "7b9752bd-917d-4ff5-9bce-54f1170778ef",
       "lib_ref": "NRF54L15-QFAA-R7",
-      "name": "IC RF TXRX+MCU 802.15.4 48-VFQFN",
+      "name": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
       "qty_on_hand": 3,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -523,7 +523,7 @@
     {
       "id": "b115d9c6-d11d-44f5-a712-3d69607111d4",
       "lib_ref": "CS06654-32M",
-      "name": "CRYSTAL 32.0000MHZ 8PF SMD",
+      "name": "32 MHz Crystal 8pF 60 Ohms 4-SMD, No Lead",
       "qty_on_hand": 5,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -555,7 +555,7 @@
     {
       "id": "0016a1a5-b18f-468c-bbd3-dec1e4556abc",
       "lib_ref": "DMG2305UX-7",
-      "name": "P-Ch ENH FET -20V",
+      "name": "P-Channel 20 V 4.2A (Ta) 1.4W (Ta) Surface Mount SOT-23-3",
       "qty_on_hand": 6,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -587,7 +587,7 @@
     {
       "id": "89b3b975-abbb-4b81-b77b-9de270e5a89f",
       "lib_ref": "GZ1005D121TF",
-      "name": "FERRITE BEAD 120 OHM 0402 1LN",
+      "name": "120 Ohms @ 100 MHz 1 Signal Line Ferrite Bead 0402 (1005 Metric) 200mA 400mOhm",
       "qty_on_hand": 8,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -595,7 +595,7 @@
     {
       "id": "91818ea4-b212-4bdc-bdd8-7f9d55291cc3",
       "lib_ref": "LQP03HQ3N5B02D",
-      "name": "FIXED IND 3.5NH 500MA 170 MOHM",
+      "name": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
       "qty_on_hand": 8,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -603,7 +603,7 @@
     {
       "id": "c2556ed3-56be-4cb4-b5a5-eb5ffaf89def",
       "lib_ref": "MHQ1005075HA4N3BTD25",
-      "name": "FIXED IND 4.3NH 600MA 120 MOHM",
+      "name": "4.3 nH Shielded Multilayer Inductor 600 mA 120mOhm Max 0402 (1005 Metric)",
       "qty_on_hand": 10,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -611,7 +611,7 @@
     {
       "id": "be91c40b-1e66-464b-97be-c2e2841fff79",
       "lib_ref": "GRM188R60J476ME01D",
-      "name": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 47 uF 6.3 VDC 20% 0603 X5R",
+      "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 9,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -619,7 +619,7 @@
     {
       "id": "965005ff-4d26-4421-b442-d2c0a2dbaa9d",
       "lib_ref": "C0603C226M9PACTU",
-      "name": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 6.3V 22uF X5R 20%",
+      "name": "22 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 4,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -627,7 +627,7 @@
     {
       "id": "f43dd6a8-8ad3-4296-a5f4-5d4ff87bde09",
       "lib_ref": "MSASJ32MAB5227MPNDT1",
-      "name": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 6.3V 220uF X5R 1210 20%",
+      "name": "220 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 1210 (3225 Metric)",
       "qty_on_hand": 2,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -635,7 +635,7 @@
     {
       "id": "b01e726f-04c8-4e11-a11d-119961e5deb3",
       "lib_ref": "GRM155R60J106ME15J",
-      "name": "Multilayer Ceramic Capacitors MLCC - SMD/SMT 10 uF 6.3 VDC 20% 0402 X5R",
+      "name": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 9,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -643,7 +643,7 @@
     {
       "id": "0f02b15c-bc85-4eb0-8ec0-d18c7de03f0d",
       "lib_ref": "RC0402FR-073M01L",
-      "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 3.01MOhms, 1%, 1/16W",
+      "name": "3.01 MOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 99,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -651,7 +651,7 @@
     {
       "id": "54c5dc3d-ed16-4fe5-87a0-ec02986b9172",
       "lib_ref": "RC0402FR-071M21L",
-      "name": "Thick Film Resistors - SMD General Purpose Chip Resistor 0402, 1.21MOhms, 1%, 1/16W",
+      "name": "1.21 MOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 100,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -667,7 +667,7 @@
     {
       "id": "fc793fde-74c4-45ba-abea-d17aa7ef33d1",
       "lib_ref": "114020164",
-      "name": "Seeed Studio Accessories SMD Grove Female Header-Beige;4P-2.0-90D-20Pcs",
+      "name": "Grove - Connector",
       "qty_on_hand": 48,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -675,7 +675,7 @@
     {
       "id": "f67b7ad7-742c-4a90-8ad6-7053129c6847",
       "lib_ref": "NXE1S0303MC-R7",
-      "name": "DC/DC Converters - SMD SM 1W 3.3-3.3V SINGLE 3KV",
+      "name": "Isolated Module DC DC Converter 1 Output 3.3V 303mA 2.97V - 3.63V Input",
       "qty_on_hand": 4,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -683,7 +683,7 @@
     {
       "id": "7f9a1b4f-03c5-4c97-bfae-88d848cbb781",
       "lib_ref": "ADUM1250ARZ-RL7",
-      "name": "Digital Isolators DUAL-Hot-Swappable 12C Isolators",
+      "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
       "qty_on_hand": 4,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -691,7 +691,7 @@
     {
       "id": "372c0fe7-923a-4929-9b57-05d8e6521317",
       "lib_ref": "PH1RA-10-UA",
-      "name": "Headers & Wire Housings CONN HEADER R/A 10POS 2.54MM",
+      "name": "Connector Header Through Hole, Right Angle 10 position 0.100\" (2.54mm)",
       "qty_on_hand": 6,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -699,7 +699,7 @@
     {
       "id": "37973178-e411-4ee2-ab72-6d0ca5d052a2",
       "lib_ref": "54102-0204",
-      "name": "Board to Board & Mezzanine Connectors 0.5mm Pit. SlimStack Recept., SMT, Dual Row, Vert., 2.5mm Stacking Ht., Gold Pltg w/ Nickel Barrier, 20 Pos.",
+      "name": "20 Position Connector Receptacle, Center Strip Contacts Surface Mount Gold",
       "qty_on_hand": 3,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -707,7 +707,7 @@
     {
       "id": "2144438c-4f57-4ca9-8e17-555ca1927cb8",
       "lib_ref": "53885-0208",
-      "name": "Board to Board & Mezzanine Connectors 0.5mm Pit. SlimStack Plug, SMT, Dual Row, Vert., 2.5mm Stack Ht., w/out Solder Tab, 20 Pos.",
+      "name": "20 Position Connector Plug, Outer Shroud Contacts Surface Mount Gold",
       "qty_on_hand": 6,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -715,7 +715,7 @@
     {
       "id": "844c0182-53de-42da-bf8a-3f3f13b48ad8",
       "lib_ref": "826634-7",
-      "name": "Headers & Wire Housings 2X07 POS R/A AU",
+      "name": "Connector Header Through Hole, Right Angle 14 position 0.100\" (2.54mm)",
       "qty_on_hand": 2,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -723,7 +723,7 @@
     {
       "id": "9725f8de-2a50-4120-834c-6f3a5ae87845",
       "lib_ref": "2MM-HB-S04-HT-02-H-TB",
-      "name": "Headers & Wire Housings 4P,2MM,BRK HDR,SRRT,2.8,0.76AU,TB",
+      "name": "Connector Header Through Hole, Right Angle 4 position 0.079\" (2.00mm)",
       "qty_on_hand": 7,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -731,7 +731,7 @@
     {
       "id": "9e306e0e-404d-49ed-bedb-c3a2f1d69ef9",
       "lib_ref": "0906-3-15-20-75-14-11-0",
-      "name": "Terminals Spring-Loaded Pin with a Standard Tail",
+      "name": "Contact Spring Through Hole",
       "qty_on_hand": 13,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -739,7 +739,7 @@
     {
       "id": "cb5ea871-4583-4dc1-a4cf-8a21d1875187",
       "lib_ref": "FTSH-103-01-F-D",
-      "name": "Headers & Wire Housings High Reliability Header Strips",
+      "name": "Connector Header Through Hole 6 position 0.050\" (1.27mm)",
       "qty_on_hand": 8,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -747,7 +747,7 @@
     {
       "id": "2b396ce6-2604-4993-a1d9-a442ba580fbc",
       "lib_ref": "FTSH-105-01-L-DV-K-A",
-      "name": "Headers & Wire Housings High Reliability Header Strips",
+      "name": "Connector Header Surface Mount 10 position 0.050\" (1.27mm)",
       "qty_on_hand": 6,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -755,7 +755,7 @@
     {
       "id": "9cc7d98c-3919-4977-835e-1275dc9de37b",
       "lib_ref": "S3B-PH-SM4-TB(LF)(SN)",
-      "name": "Headers & Wire Housings PH HEADER (SMT SIDE)",
+      "name": "Connector Header Surface Mount, Right Angle 3 position 0.079\" (2.00mm)",
       "qty_on_hand": 9,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -763,7 +763,7 @@
     {
       "id": "25189d56-f323-4ec9-ad2c-3a4ebeb45c63",
       "lib_ref": "S2B-PH-SM4-TB(LF)(SN)",
-      "name": "Headers & Wire Housings PH HEADER (SMT SIDE)",
+      "name": "Connector Header Surface Mount, Right Angle 2 position 0.079\" (2.00mm)",
       "qty_on_hand": 9,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -771,7 +771,7 @@
     {
       "id": "a4adf8cc-2e8a-4b40-81d4-cc49269c7ecb",
       "lib_ref": "UJ20-C-H-G-MSMT-4B-P16-TR",
-      "name": "USB Connectors USB Jack, Type C, 2.0, MSMT, Horizontal, Gold Flash, 16 Pin, TR",
+      "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Board Edge, Cutout; Surface Mount; Through Hole, Right Angle",
       "qty_on_hand": 4,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -779,7 +779,7 @@
     {
       "id": "3754e3eb-27fa-460f-83a0-73fc14bd2d36",
       "lib_ref": "PRT-14417",
-      "name": "SparkFun Accessories Qwiic JST Connector- SMD 4-pin",
+      "name": "Qwiic - Connector",
       "qty_on_hand": 5,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -787,7 +787,7 @@
     {
       "id": "f5ab59e9-ca33-4bf8-a124-5f53a84661c0",
       "lib_ref": "5-146130-6",
-      "name": "Headers & Wire Housings VT 2X07P .1\" 230/SMT 30AU",
+      "name": "Connector Header Surface Mount 14 position 0.100\" (2.54mm)",
       "qty_on_hand": 2,
       "location": "Brian Part Box 2",
       "notes": ""
@@ -795,7 +795,7 @@
     {
       "id": "b3eecca3-89c4-4895-a96f-b487dc2c9477",
       "lib_ref": "204281-1100",
-      "name": "Antennas Wi-Fi 6E Flex Cabled Side-Fed Balanced Antenna, 100mm Cable Lg., Compatible w/ I-PEX MHF4 Conn.s",
+      "name": "RF ANTENNA Wi-Fi PCB Trace I-PEX MHF4L Adhesive",
       "qty_on_hand": 2,
       "location": "House",
       "notes": ""
@@ -803,7 +803,7 @@
     {
       "id": "59727de0-07e5-4ef7-af8d-bb5f8afd11fa",
       "lib_ref": "DMG2305UX-7",
-      "name": "MOSFETs P-Ch ENH FET -20V 52mOh -5A",
+      "name": "P-Channel 20 V 4.2A (Ta) 1.4W (Ta) Surface Mount SOT-23-3",
       "qty_on_hand": 6,
       "location": "Brian Part Box 1",
       "notes": ""
@@ -811,7 +811,7 @@
     {
       "id": "f4d48236-1cbc-4995-bc64-d3ff92686777",
       "lib_ref": "RT0603DRE13100KL",
-      "name": "Thin Film Resistors - SMD 100K ohm 0.5% 50 ppm Thin Film",
+      "name": "100 kOhms \u00b10.5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thin Film",
       "qty_on_hand": 46,
       "location": "Brian Part Box 1",
       "notes": ""

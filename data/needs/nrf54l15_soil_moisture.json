@@ -7,7 +7,7 @@
       "id": "row-1-002bae5f2f1ec6c4",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2450AT18A100E",
-      "description": "RF ANT 2.4GHZ CHIP SOLDER SMD",
+      "description": "RF ANTENNA Chip Solder Surface Mount",
       "designators": [
         "AE1"
       ],
@@ -25,14 +25,14 @@
       "datasheet_url": "https://www.johansontechnology.com/datasheets/2450AT18A100/2450AT18A100.pdf",
       "unit_price": 0.4391,
       "stock": 0,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:37:50.148326+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-2-e4cdc7e7ff8cb026",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.2uF",
-      "description": "CAP CER 2.2UF 10V X5R 0201",
+      "description": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "designators": [
         "C1",
         "C10"
@@ -45,20 +45,20 @@
       "notes": "",
       "original_mpn": "GRM033R61A225KE47D",
       "original_name": "2.2uF",
-      "original_description": "",
+      "original_description": "CAP CER 2.2UF 10V X5R 0201",
       "lcsc_part": "C335106",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/490_Chip_Multilayer_CAT2021_MLCC.pdf",
       "unit_price": 0.0913,
       "stock": 89580,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:26:30.021663+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-3-b88555b2a2362726",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "47uF",
-      "description": "CAP CER 47UF 10V X5R 1206",
+      "description": "47 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 1206 (3216 Metric)",
       "designators": [
         "C2"
       ],
@@ -70,20 +70,20 @@
       "notes": "",
       "original_mpn": "CL31A476MPHNNNE",
       "original_name": "47uF",
-      "original_description": "",
+      "original_description": "CAP CER 47UF 10V X5R 1206",
       "lcsc_part": "C96123",
       "manufacturer": "Samsung Electro-Mechanics",
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/658/CL31A476MPHNNNE_Spec.pdf",
       "unit_price": 0.0819,
       "stock": 3445,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:23:58.763325+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-4-8d80cd5bef3e9a79",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.2uF",
-      "description": "CAP CER 2.2UF 50V X5R 0603",
+      "description": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C3"
       ],
@@ -95,20 +95,20 @@
       "notes": "",
       "original_mpn": "CL10A225KB8NNNC",
       "original_name": "2.2uF",
-      "original_description": "",
+      "original_description": "CAP CER 2.2UF 50V X5R 0603",
       "lcsc_part": "C913904",
       "manufacturer": "Samsung Electro-Mechanics",
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/339/CL10A225KB8NNNC_Spec.pdf",
       "unit_price": null,
       "stock": 0,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:19:10.589636+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-5-13793d3fec0b2c5a",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "1uF",
-      "description": "CAP CER 1UF 16V X5R 0402",
+      "description": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C4",
         "C19"
@@ -127,14 +127,14 @@
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/609/CL05A105KO5NNNC_Spec_5-2-19.pdf",
       "unit_price": 0.0352,
       "stock": 1231600,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:17:36.659884+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-6-05a4187957f60faa",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.0pF",
-      "description": "CAP CER 2PF 25V C0G/NP0 0201",
+      "description": "2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C5"
       ],
@@ -146,20 +146,20 @@
       "notes": "",
       "original_mpn": "GJM0335C1E2R0WB01D",
       "original_name": "2.0pF",
-      "original_description": "",
+      "original_description": "CAP CER 2PF 25V C0G/NP0 0201",
       "lcsc_part": "C668326",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E2R0WB01-01.pdf",
       "unit_price": null,
       "stock": 147051,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:25:49.269241+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-7-43c4e911513f96c3",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "100nF",
-      "description": "CAP CER 0.1UF 100V X7R 0603",
+      "description": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C6",
         "C14",
@@ -181,14 +181,14 @@
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/8942/Chip_Multilayer_CAT2021_MLCC.pdf",
       "unit_price": 0.004,
       "stock": 8673800,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:26:34.529268+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-8-f6da57d94760f21a",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "10uF",
-      "description": "CAP CER 10UF 25V X5R 0805",
+      "description": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C7",
         "C17",
@@ -211,14 +211,14 @@
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5545/CL21A106KAYNNNE%20Spec.pdf",
       "unit_price": 0.067,
       "stock": 201340,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:20:41.077253+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-9-e0dc6b01b158415d",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "1.5pF",
-      "description": "CAP CER 1.5PF 25V C0G/NP0 0201",
+      "description": "1.5 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C8"
       ],
@@ -230,20 +230,20 @@
       "notes": "",
       "original_mpn": "GJM0335C1E1R5WB01D",
       "original_name": "1.5pF",
-      "original_description": "",
+      "original_description": "CAP CER 1.5PF 25V C0G/NP0 0201",
       "lcsc_part": "C435397",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R5WB01-01.pdf",
       "unit_price": 0.022873,
       "stock": 3120,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:24:39.979484+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-10-a37bc96c5c6b3c40",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "10nF",
-      "description": "CAP CER 10000PF 50V X7R 0402",
+      "description": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C9"
       ],
@@ -255,20 +255,20 @@
       "notes": "",
       "original_mpn": "GCM155R71H103KA55D",
       "original_name": "10nF",
-      "original_description": "",
+      "original_description": "CAP CER 10000PF 50V X7R 0402",
       "lcsc_part": "C91601",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM155R71H103KA55-01.pdf",
       "unit_price": 0.0048,
       "stock": 42100,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:24:21.041101+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-11-53f49e7f27233d36",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.2pF",
-      "description": "CAP CER 2.2PF 25V C0G/NP0 0201",
+      "description": "2.2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C11"
       ],
@@ -280,20 +280,20 @@
       "notes": "",
       "original_mpn": "GJM0335C1E2R2WB01D",
       "original_name": "2.2pF",
-      "original_description": "",
+      "original_description": "CAP CER 2.2PF 25V C0G/NP0 0201",
       "lcsc_part": "C710732",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E2R2WB01-01.pdf",
       "unit_price": null,
       "stock": 44917,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:26:20.738068+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-12-f8389d0955e4fd7d",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "1.0pF",
-      "description": "CAP CER 1PF 25V C0G/NP0 0201",
+      "description": "1 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C12"
       ],
@@ -305,20 +305,20 @@
       "notes": "",
       "original_mpn": "GJM0335C1E1R0WB01D",
       "original_name": "1.0pF",
-      "original_description": "",
+      "original_description": "CAP CER 1PF 25V C0G/NP0 0201",
       "lcsc_part": "C185624",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1E1R0WB01-01.pdf",
       "unit_price": 0.0192,
       "stock": 1000,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:24:30.085261+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-13-7858c33e16a533f2",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "0.3pF",
-      "description": "CAP CER 0.3PF 25V C0G/NP0 0201",
+      "description": "0.3 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "designators": [
         "C13"
       ],
@@ -330,20 +330,20 @@
       "notes": "",
       "original_mpn": "GJM0335C1ER30WB01D",
       "original_name": "0.3pF",
-      "original_description": "",
+      "original_description": "CAP CER 0.3PF 25V C0G/NP0 0201",
       "lcsc_part": "C161289",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GJM0335C1ER30WB01-01.pdf",
       "unit_price": 0.021,
       "stock": 12840,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:26:25.832893+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-14-701e478b0d51065a",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "10uF",
-      "description": "CAP CER 10UF 25V X5R 0603",
+      "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C16"
       ],
@@ -355,20 +355,20 @@
       "notes": "",
       "original_mpn": "CC0603MRX5R8BB106",
       "original_name": "10uF",
-      "original_description": "",
+      "original_description": "CAP CER 10UF 25V X5R 0603",
       "lcsc_part": "C596327",
       "manufacturer": "YAGEO",
       "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V",
       "unit_price": 0.0466,
       "stock": 0,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:13:56.161008+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-15-f0220934b44ee628",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SM04B-SRSS-TB",
-      "description": "CONN HEADER SMD R/A 4POS 1MM",
+      "description": "Connector Header Surface Mount, Right Angle 4 position 0.039\" (1.00mm)",
       "designators": [
         "CN1"
       ],
@@ -380,20 +380,20 @@
       "notes": "",
       "original_mpn": "SM04B-SRSS-TB(LF)(SN)",
       "original_name": "SM04B-SRSS-TB",
-      "original_description": "",
+      "original_description": "CONN HEADER SMD R/A 4POS 1MM",
       "lcsc_part": "C160404",
       "manufacturer": "JST Sales America Inc.",
       "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
       "unit_price": 0.2084,
       "stock": 6462,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:38:13.666093+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-16-e657225e9738307e",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SS14_C83852",
-      "description": "DIODE SCHOTTKY 40V 1A SOD123FL",
+      "description": "Diode 40 V 1A Surface Mount SOD-123FL",
       "designators": [
         "D1",
         "D2"
@@ -406,14 +406,14 @@
       "notes": "",
       "original_mpn": "SS14",
       "original_name": "SS14_C83852",
-      "original_description": "",
+      "original_description": "DIODE SCHOTTKY 40V 1A SOD123FL",
       "lcsc_part": "C83852",
       "manufacturer": "SMC Diode Solutions",
       "datasheet_url": "https://www.smc-diodes.com/propdf/DSS12U%20THRU%20DSS125U%20N1873%20REV.A.pdf",
       "unit_price": 0.1464,
       "stock": 90500,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:33:25.192967+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-17-5e72fb7cf861b066",
@@ -469,7 +469,7 @@
       "id": "row-19-2f9e7980d412a82e",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.7nH",
-      "description": "",
+      "description": "2.7 nH Unshielded Thick Film Inductor 600 mA 120mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L2",
         "L5"
@@ -488,14 +488,14 @@
       "datasheet_url": "https://www.lcsc.com/datasheet/C7216765.pdf",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-20-402667ea36131ff7",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "3.9nH",
-      "description": "FIXED IND 3.9NH 400MA 250 MOHM",
+      "description": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L3"
       ],
@@ -507,14 +507,14 @@
       "notes": "",
       "original_mpn": "LQP03HQ3N9B02D",
       "original_name": "3.9nH",
-      "original_description": "",
+      "original_description": "FIXED IND 3.9NH 400MA 250 MOHM",
       "lcsc_part": "C337939",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0024_PDF_INDUCTOR",
       "unit_price": null,
       "stock": 60275,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T19:20:05.409687+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-21-3255f78371607d1a",
@@ -545,7 +545,7 @@
       "id": "row-22-5cd850e30033c526",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "3.5nH",
-      "description": "FIXED IND 3.5NH 500MA 170 MOHM",
+      "description": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
       "designators": [
         "L6",
         "L8"
@@ -558,20 +558,20 @@
       "notes": "",
       "original_mpn": "LQP03HQ3N5B02D",
       "original_name": "3.5nH",
-      "original_description": "",
+      "original_description": "FIXED IND 3.5NH 500MA 170 MOHM",
       "lcsc_part": "C3911055",
       "manufacturer": "Murata Electronics",
       "datasheet_url": "https://pim.murata.com/asset/pim4/inductor/JELF243C-0021_PDF_INDUCTOR",
       "unit_price": null,
       "stock": 289166,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:28:02.002478+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-23-d028d19162432697",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "4.7uH",
-      "description": "FIXED IND 4.7UH 620MA 550 MOHM",
+      "description": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm 0603 (1608 Metric)",
       "designators": [
         "L7"
       ],
@@ -589,14 +589,14 @@
       "datasheet_url": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-9126.pdf",
       "unit_price": 0.1701,
       "stock": 125,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:27:56.939706+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-24-c158a0de21b1a240",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "2.2uH",
-      "description": "FIXED IND 2.2UH 1.2A 292 MOHM",
+      "description": "2.2 \u00b5H Shielded Multilayer Inductor 1.2 A 292mOhm Max 0603 (1608 Metric)",
       "designators": [
         "L9",
         "L10"
@@ -609,20 +609,20 @@
       "notes": "",
       "original_mpn": "LSCNB1608HKT2R2MD",
       "original_name": "2.2uH",
-      "original_description": "",
+      "original_description": "FIXED IND 2.2UH 1.2A 292 MOHM",
       "lcsc_part": "C6079477",
       "manufacturer": "Taiyo Yuden",
       "datasheet_url": "//mm.digikey.com/Volume0/opasdata/d220001/medias/docus/4802/LSCNB1608HKT2R2MD_SS.pdf",
       "unit_price": null,
       "stock": 0,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T19:20:20.465991+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-25-92505691f2d53882",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SML-P12MTT86R",
-      "description": "LED GREEN 1608 SMD",
+      "description": "Green 527nm LED Indication - Discrete 3V 0603 (1608 Metric)",
       "designators": [
         "LED1"
       ],
@@ -634,14 +634,14 @@
       "notes": "",
       "original_mpn": "SML-P12MTT86R",
       "original_name": "SML-P12MTT86R",
-      "original_description": "",
+      "original_description": "LED GREEN 1608 SMD",
       "lcsc_part": "C510304",
       "manufacturer": "Rohm Semiconductor",
       "datasheet_url": "https://www.rohm.com/datasheet?p=SMLEN3EC8T&dist=Digi-key&media=referral&source=digi-key.com&campaign=Digi-key",
       "unit_price": null,
       "stock": 7794,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:39:36.979698+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-26-47f02c7b3b5a87af",
@@ -723,7 +723,7 @@
       "id": "row-29-0b1acf2fc3b1517b",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "1M",
-      "description": "RES 1M OHM 5% 1/16W 0402",
+      "description": "1 MOhms \u00b15% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R5",
         "R7"
@@ -736,14 +736,14 @@
       "notes": "",
       "original_mpn": "RC0402JR-071ML",
       "original_name": "1M",
-      "original_description": "",
+      "original_description": "RES 1M OHM 5% 1/16W 0402",
       "lcsc_part": "C93949",
       "manufacturer": "YAGEO",
       "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
       "unit_price": 0.0017,
       "stock": 1163700,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:35:07.424256+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-30-7185c4b5181d4f27",
@@ -774,7 +774,7 @@
       "id": "row-31-71706638c9f6fe67",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "10k",
-      "description": "RES SMD 10K OHM 0.1% 1/16W 0402",
+      "description": "10 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film",
       "designators": [
         "R8"
       ],
@@ -786,14 +786,14 @@
       "notes": "",
       "original_mpn": "RT0402BRD0710KL",
       "original_name": "10k",
-      "original_description": "",
+      "original_description": "RES SMD 10K OHM 0.1% 1/16W 0402",
       "lcsc_part": "C190095",
       "manufacturer": "YAGEO",
       "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RT_1-TO-0-01_ROHS_L",
       "unit_price": 0.0331,
       "stock": 65240,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:36:51.917432+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-32-7ab554541173f097",
@@ -874,7 +874,7 @@
       "id": "row-35-88cbef8afb080b90",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "4.7k",
-      "description": "RES 4.7K OHM 1% 1/16W 0402",
+      "description": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R12",
         "R13"
@@ -887,14 +887,14 @@
       "notes": "",
       "original_mpn": "RC0402FR-074K7L",
       "original_name": "4.7k",
-      "original_description": "",
+      "original_description": "RES 4.7K OHM 1% 1/16W 0402",
       "lcsc_part": "C105871",
       "manufacturer": "YAGEO",
       "datasheet_url": "https://yageogroup.com/content/datasheet/asset/file/PYU-RC_GROUP_51_ROHS_L",
       "unit_price": 0.0017,
       "stock": 2005900,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:35:46.804357+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-36-3e50819e51d2c7f4",
@@ -950,7 +950,7 @@
       "id": "row-38-7cce4e323a8be229",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "nPM1300-QEAA-R7",
-      "description": "PMIC, LED Driver, Battery Charger, QFN-32",
+      "description": "Battery Power Management IC Lithium Ion/Polymer 32-QFN (5x5)",
       "designators": [
         "U2"
       ],
@@ -968,14 +968,14 @@
       "datasheet_url": "https://docs.nordicsemi.com/bundle/ps_npm1300",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-39-d7d2b08a3cafea01",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "SPV1040T",
-      "description": "IC BATT CHG SOLAR 8TSSOP",
+      "description": "Charger IC 8-TSSOP",
       "designators": [
         "U3"
       ],
@@ -987,20 +987,20 @@
       "notes": "",
       "original_mpn": "SPV1040T",
       "original_name": "SPV1040T",
-      "original_description": "",
+      "original_description": "IC BATT CHG SOLAR 8TSSOP",
       "lcsc_part": "C2969792",
       "manufacturer": "STMicroelectronics",
       "datasheet_url": "https://www.st.com/content/ccc/resource/technical/document/datasheet/0d/30/c2/1a/92/03/48/cb/CD00287506.pdf/files/CD00287506.pdf/jcr:content/translations/en.CD00287506.pdf",
       "unit_price": null,
       "stock": 983,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T16:33:09.117382+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-40-834535b95bcc08a2",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "S2B-PH-K-S-GW",
-      "description": "PH HEADER (SIDE)",
+      "description": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
       "designators": [
         "U4",
         "U5"
@@ -1013,20 +1013,20 @@
       "notes": "",
       "original_mpn": "S2B-PH-K-S-GW",
       "original_name": "S2B-PH-K-S-GW",
-      "original_description": "",
+      "original_description": "PH HEADER (SIDE)",
       "lcsc_part": "C157932",
       "manufacturer": "JST Sales America Inc.",
       "datasheet_url": "https://lcsc.com/product-detail/PH-Connectors_JST_S2B-PH-K-S-GW_PHsocket-1-2P-Curved-needle-pitch2mm_C157932.html",
       "unit_price": 0.1575,
       "stock": 6608,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-07-14T16:11:19.974903+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-41-1879a14f251420bc",
       "bom_id": "nrf54l15_soil_moisture",
       "name": "NRF54L15-QFAA-R7",
-      "description": "IC RF TXRX+MCU",
+      "description": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
       "designators": [
         "U6"
       ],
@@ -1045,7 +1045,7 @@
       "unit_price": null,
       "stock": 0,
       "enriched_from": "digikey",
-      "enriched_at": "2026-07-14T18:27:13.767540+00:00"
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-42-174ba919dd79c9ce",

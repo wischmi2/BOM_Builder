@@ -1,13 +1,13 @@
 {
   "bom_id": "feather_orp_bom_2026-10-30",
   "source_filename": "feather_orp_bom_2026-10-30.csv",
-  "board_count": 1,
+  "board_count": 5,
   "lines": [
     {
       "id": "row-1-41eaeb7aac867eaa",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "1uF",
-      "description": "1uF (105) +/-10% 16V,1uF 10% 16V X5R 0402, U2 VCC decoupling",
+      "description": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C1",
         "C5"
@@ -26,14 +26,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-2-5ec21dfa56e0878d",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "100nF",
-      "description": "100nF (104) +/-10% 50V",
+      "description": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C2",
         "C4"
@@ -52,14 +52,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-3-1397149af3e6a054",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "2.2uF",
-      "description": "",
+      "description": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C3"
       ],
@@ -77,14 +77,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-4-f053ea246363f886",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "100nF",
-      "description": "Unpolarized capacitor, small symbol",
+      "description": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C6",
         "C9",
@@ -104,14 +104,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-5-28b2f90adc85ffcc",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "10uF 25V",
-      "description": "Unpolarized capacitor, small symbol",
+      "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C7",
         "C8"
@@ -130,14 +130,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-6-622e6937daf21294",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "10nF",
-      "description": "Unpolarized capacitor, small symbol",
+      "description": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C10"
       ],
@@ -155,14 +155,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-7-8179c34f0ffd62c4",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "4.7uF 25V",
-      "description": "Unpolarized capacitor, small symbol",
+      "description": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C11"
       ],
@@ -180,14 +180,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-8-d09eef475003f7b4",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "503480-1400",
-      "description": "14-pin 0.5 mm FFC, Easy-On back-flip, dual contact, 1.0 mm height",
+      "description": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
       "designators": [
         "CN1"
       ],
@@ -205,14 +205,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-9-3726d866a3c48611",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "BAT54CLT1G",
-      "description": "dual schottky barrier diode, common cathode",
+      "description": "Diode Array 1 Pair Common Cathode 30 V 200mA (DC) Surface Mount TO-236-3, SC-59, SOT-23-3",
       "designators": [
         "D1"
       ],
@@ -230,14 +230,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-10-2ca02b981e4229e6",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "220R@100MHz",
-      "description": "Ferrite bead, small symbol",
+      "description": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 1.4A 100mOhm",
       "designators": [
         "FB1"
       ],
@@ -255,8 +255,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-11-5de39e5f6cbd9254",
@@ -287,7 +287,7 @@
       "id": "row-12-75babbafb69ad965",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "4.7k",
-      "description": "",
+      "description": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R1"
       ],
@@ -305,14 +305,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-13-d342a6ba8d5e8ae1",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "4.7k",
-      "description": "",
+      "description": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R3",
         "R4"
@@ -331,14 +331,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-14-17a0d6048b3b6e28",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "760390015",
-      "description": "Wurth WE-PPTI push-pull transformer for SN6505, centre-tapped 1:2 (N1+N2:N3+N4), 475 uH, 11 V-us, 2500 Vac, 6.73 x 10.2 x 4.19 mm",
+      "description": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
       "designators": [
         "T1"
       ],
@@ -356,8 +356,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-15-f9327ce491e7c0c4",
@@ -388,7 +388,7 @@
       "id": "row-16-c95fac0200f9506f",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "ISO1540DR",
-      "description": "Bidirectional I2C isolator, 2 channels, 2.5 kVrms, VCC1 and VCC2 3.0-5.5 V, side 1 buffered VOL1 about 0.65 V, side 2 VOL2 0.4 V, SOIC-8 (TI ISO1540DR)",
+      "description": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
       "designators": [
         "U3"
       ],
@@ -406,14 +406,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-17-34546a08d3b60a48",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "SN6505BDBVR",
-      "description": "Low Noise, 1A, Transformer Drivers for Isolated Power Supplies, 420 kHz, SOT-23-6",
+      "description": "Transformer Driver PMIC SOT-23-6",
       "designators": [
         "U5"
       ],
@@ -431,14 +431,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-18-de96f2ea18d6a5f8",
       "bom_id": "feather_orp_bom_2026-10-30",
       "name": "LP2985-33DBVR",
-      "description": "150mA 16V Low-noise Low-dropout Regulator With Shutdown, 3.3V output voltage, SOT-23-5",
+      "description": "Linear Voltage Regulator IC Positive Fixed 1 Output 150mA SOT-23-5",
       "designators": [
         "U6"
       ],
@@ -456,8 +456,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     }
   ]
 }

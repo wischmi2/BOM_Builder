@@ -1,13 +1,13 @@
 {
   "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
   "source_filename": "nrf54l15_feather_sens1_bom_2026-10-30.csv",
-  "board_count": 1,
+  "board_count": 5,
   "lines": [
     {
       "id": "row-1-41eaeb7aac867eaa",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "1uF",
-      "description": "1uF (105) +/-10% 16V",
+      "description": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "designators": [
         "C1",
         "C5"
@@ -26,14 +26,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-2-5ec21dfa56e0878d",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "100nF",
-      "description": "100nF (104) +/-10% 50V",
+      "description": "0.1 \u00b5F \u00b110% 50V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C2",
         "C4"
@@ -52,14 +52,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-3-1397149af3e6a054",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "2.2uF",
-      "description": "",
+      "description": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0603 (1608 Metric)",
       "designators": [
         "C3"
       ],
@@ -77,14 +77,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-4-ac9387399106a170",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "100nF",
-      "description": "U3 host-side (side 2, VDD2) decoupling, within 2 mm of pin 8",
+      "description": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C6"
       ],
@@ -102,14 +102,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-5-febcdfc7f2e13f90",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "503480-1400",
-      "description": "14-pin 0.5 mm FFC, Easy-On back-flip, dual contact, 1.0 mm height",
+      "description": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
       "designators": [
         "CN1"
       ],
@@ -127,8 +127,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-6-4765aa3ec1c5563c",
@@ -159,7 +159,7 @@
       "id": "row-7-4cc27e043bb87be8",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "10k",
-      "description": "",
+      "description": "10 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R1"
       ],
@@ -177,14 +177,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-8-39f152e47560f3c5",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "4.7k",
-      "description": "",
+      "description": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R3",
         "R4"
@@ -203,8 +203,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-9-d71818e321dfebe0",
@@ -235,7 +235,7 @@
       "id": "row-10-f34714079f3ef632",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "ADuM1250",
-      "description": "Dual-channel I2C digital isolator, Bidirectional communication, 3V/5V level translation, SOIC-8",
+      "description": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
       "designators": [
         "U3"
       ],
@@ -253,14 +253,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-11-9fdb5ada3b77055e",
       "bom_id": "nrf54l15_feather_sens1_bom_2026-10-30",
       "name": "NXE1S0303MC",
-      "description": "Murata NXE1S0303MC isolated 1W DC-DC, 3.3V in / 3.3V out, ~1kVDC isolation",
+      "description": "Isolated Module DC DC Converter 1 Output 3.3V 303mA 2.97V - 3.63V Input",
       "designators": [
         "U4"
       ],
@@ -278,8 +278,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     }
   ]
 }

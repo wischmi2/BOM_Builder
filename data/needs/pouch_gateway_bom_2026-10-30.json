@@ -7,7 +7,7 @@
       "id": "row-1-2509c7fde2c9ca27",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
-      "description": "",
+      "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C1",
         "C4",
@@ -30,14 +30,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-2-2dab4a37dbe8df7d",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "description": "",
+      "description": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "designators": [
         "C2",
         "C8",
@@ -65,14 +65,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-3-836f574f4ef11f04",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "22 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0805 (2012 Metric)",
-      "description": "",
+      "description": "22 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C6"
       ],
@@ -90,14 +90,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-4-fe820b6bc5ab7444",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "9V Clamp 6A (8/20\u00b5s) Ipp Tvs Diode Surface Mount SOT-143-4",
-      "description": "",
+      "description": "9V Clamp 6A (8/20\u00b5s) Ipp Tvs Diode Surface Mount SOT-143-4",
       "designators": [
         "D1"
       ],
@@ -115,14 +115,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-5-c31fba4e7de65856",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Diode 30 V 200mA Surface Mount SOD-523",
-      "description": "",
+      "description": "Diode 30 V 200mA Surface Mount SOD-523",
       "designators": [
         "D2"
       ],
@@ -140,14 +140,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-6-74c0b24e1ae62b52",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Red 631nm LED Indication - Discrete 2V 0603 (1608 Metric)",
-      "description": "",
+      "description": "Red 631nm LED Indication - Discrete 2V 0603 (1608 Metric)",
       "designators": [
         "D3"
       ],
@@ -165,14 +165,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-7-f225c9dfe1cd593d",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Green 571nm LED Indication - Discrete 2V 0805 (2012 Metric)",
-      "description": "",
+      "description": "Green 571nm LED Indication - Discrete 2V 0805 (2012 Metric)",
       "designators": [
         "D4"
       ],
@@ -190,14 +190,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-8-bf1f7e2e55a7f3ce",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Blue 470nm LED Indication - Discrete 3.3V 0603 (1608 Metric)",
-      "description": "",
+      "description": "Blue 470nm LED Indication - Discrete 3.3V 0603 (1608 Metric)",
       "designators": [
         "D5"
       ],
@@ -215,14 +215,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-9-82768d9303414077",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 2.2A 50mOhm",
-      "description": "",
+      "description": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 2.2A 50mOhm",
       "designators": [
         "FB1"
       ],
@@ -240,8 +240,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-10-fdd90cf4433b78b0",
@@ -272,7 +272,7 @@
       "id": "row-11-06974740e3c8563d",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "U.FL (UMCC) Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
-      "description": "",
+      "description": "U.FL (UMCC) Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
       "designators": [
         "J3"
       ],
@@ -290,14 +290,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-12-abd70f42261014d5",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Connector Header Through Hole, Right Angle 8 position 0.079\" (2.00mm)",
-      "description": "",
+      "description": "Connector Header Through Hole, Right Angle 8 position 0.079\" (2.00mm)",
       "designators": [
         "J5"
       ],
@@ -315,14 +315,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-13-ddef6f0967b4ae40",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "2.2 \u00b5H Shielded Drum Core, Wirewound Inductor 1.85 A 52mOhm Max Nonstandard",
-      "description": "",
+      "description": "2.2 \u00b5H Shielded Drum Core, Wirewound Inductor 1.85 A 52mOhm Max Nonstandard",
       "designators": [
         "L1"
       ],
@@ -340,14 +340,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-14-1da293f34c1863e3",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "5.1 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "5.1 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R1",
         "R2",
@@ -368,14 +368,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-15-762186046ec2e86b",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R3"
       ],
@@ -393,14 +393,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-16-9a03e37cc3aaea17",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "22 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
-      "description": "",
+      "description": "22 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R4"
       ],
@@ -418,14 +418,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-17-04ce25060a1c352c",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
-      "description": "RES SMD 0 OHM JUMPER 1/10W 0402",
+      "description": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
       "designators": [
         "R5",
         "R6",
@@ -441,20 +441,20 @@
       "notes": "",
       "original_mpn": "ERJ-2GE0R00X",
       "original_name": "0R",
-      "original_description": "",
+      "original_description": "RES SMD 0 OHM JUMPER 1/10W 0402",
       "lcsc_part": "C17168",
       "manufacturer": "Panasonic Industry",
       "datasheet_url": "https://industrial.panasonic.com/ww/products/pt/general-purpose-chip-resistors/models/ERJ2GE0R00X",
       "unit_price": 0.0017,
       "stock": 2417900,
-      "enriched_from": "lcsc",
-      "enriched_at": "2026-11-06T13:21:11.222809+00:00"
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-18-6c5a4bc4c93164da",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "10 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "10 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R7",
         "R8",
@@ -474,14 +474,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-19-c2a591fac0e41cef",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "100 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "100 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R9",
         "R15",
@@ -502,14 +502,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-20-63427ab033f2d8bc",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "470 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "470 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R14"
       ],
@@ -527,14 +527,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-21-24c03a0e61b524ce",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "33 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "description": "",
+      "description": "33 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R20",
         "R21",
@@ -554,14 +554,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-22-d2131cb4cd91413e",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Tactile Switch SPST-NO Top Actuated Surface Mount",
-      "description": "",
+      "description": "Tactile Switch SPST-NO Top Actuated Surface Mount",
       "designators": [
         "SW1",
         "SW2",
@@ -581,14 +581,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-23-6ed47f4af0d56a68",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "802.15.4, Bluetooth, WiFi 802.11a/b/g/n/ac/ax, Bluetooth v5.4, Thread, Zigbee\u00ae Transceiver Module 2.4GHz, 5GHz Antenna Not Included Surface Mount",
-      "description": "",
+      "description": "802.15.4, Bluetooth, WiFi 802.11a/b/g/n/ac/ax, Bluetooth v5.4, Thread, Zigbee\u00ae Transceiver Module 2.4GHz, 5GHz Antenna Not Included Surface Mount",
       "designators": [
         "U1"
       ],
@@ -606,14 +606,14 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     },
     {
       "id": "row-24-97f2a2e6d0496bd7",
       "bom_id": "pouch_gateway_bom_2026-10-30",
       "name": "Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A SC-74A, SOT-753",
-      "description": "",
+      "description": "Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A SC-74A, SOT-753",
       "designators": [
         "U2"
       ],
@@ -631,8 +631,8 @@
       "datasheet_url": "",
       "unit_price": null,
       "stock": null,
-      "enriched_from": "",
-      "enriched_at": ""
+      "enriched_from": "digikey",
+      "enriched_at": "2026-11-10T00:50:37.372264+00:00"
     }
   ]
 }
