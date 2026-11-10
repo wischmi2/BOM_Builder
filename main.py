@@ -74,6 +74,7 @@ from bom_builder.shopping import (
     alternate_from_entry,
     apply_line_update,
     apply_shop_overlays_to_compare,
+    compare_boms_aggregated_with_shop,
     build_shop_lines,
     sync_need_lines_details,
     sync_need_lines_mpn_name,
@@ -520,9 +521,9 @@ def compare_page():
         inventory = storage.load_inventory()
 
         if view_mode == "combined":
-            agg_rows, extra = compare_boms_aggregated(boms, inventory)
+            agg_rows, extra, saved = compare_boms_aggregated_with_shop(boms, inventory)
             agg_rows, hidden_entries = _split_excluded(agg_rows, lambda r: r.aggregate_key, excluded)
-            apply_shop_overlays_to_compare(None, agg_rows, inventory)
+            apply_shop_overlays_to_compare(None, agg_rows, inventory, saved)
             grouped_rows = group_aggregated_rows(agg_rows, category_overrides)
             summary = compare_summary_aggregated(agg_rows)
             if agg_rows:
@@ -589,14 +590,15 @@ def shop_page():
     if selected_ids:
         boms = _load_selected_boms(selected_ids)
         inventory = storage.load_inventory()
+        saved = storage.load_shopping_list()
         shop_lines = build_shop_lines(
             boms,
             inventory,
             view_mode,
             excluded_keys=set(excluded),
             hidden_out=hidden_entries,
+            saved=saved,
         )
-        saved = storage.load_shopping_list()
         merge_shop_state(shop_lines, saved)
         stats = shop_stats(shop_lines)
         if shop_lines:
@@ -906,8 +908,11 @@ def shop_export():
     view_mode = _compare_view_mode(selected_ids)
     boms = _load_selected_boms(selected_ids)
     inventory = storage.load_inventory()
-    shop_lines = build_shop_lines(boms, inventory, view_mode, excluded_keys=set(load_excluded()))
-    merge_shop_state(shop_lines, storage.load_shopping_list())
+    saved = storage.load_shopping_list()
+    shop_lines = build_shop_lines(
+        boms, inventory, view_mode, excluded_keys=set(load_excluded()), saved=saved
+    )
+    merge_shop_state(shop_lines, saved)
 
     response = make_response(shop_to_csv(shop_lines))
     response.headers["Content-Type"] = "text/csv; charset=utf-8"
@@ -973,9 +978,9 @@ def compare_export():
     excluded = load_excluded()
 
     if view_mode == "combined":
-        agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        agg_rows, _, saved = compare_boms_aggregated_with_shop(boms, inventory)
         agg_rows, _ = _split_excluded(agg_rows, lambda r: r.aggregate_key, excluded)
-        apply_shop_overlays_to_compare(None, agg_rows, inventory)
+        apply_shop_overlays_to_compare(None, agg_rows, inventory, saved)
         response = make_response(compare_aggregated_to_csv(agg_rows))
         filename = "compare_combined_gap_report.csv"
     else:

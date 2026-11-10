@@ -193,6 +193,9 @@
                     {% if line.alternates_extra %}
                     <span class="muted shop-alternates" title="Alternate MPNs from BOM">+ {{ line.alternates_display }}</span>
                     {% endif %}
+                    {% if line.merged_from_display %}
+                    <span class="muted shop-alternates" title="BOM parts bought as this part (Shop substitute/alternate)">Standardized from: {{ line.merged_from_display }}</span>
+                    {% endif %}
                 </td>
                 <td class="col-name">
                     <input type="text" class="name-input cell-input" value="{{ line.name }}"

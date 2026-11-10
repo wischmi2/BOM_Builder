@@ -446,5 +446,68 @@ class TestShoppingRoutes(unittest.TestCase):
         self.assertEqual(row.status, "ok")
 
 
+
+def _line(bom_id: str, line_id: str, lib_ref: str, qty: int, refs: list[str]) -> NeedLine:
+    return NeedLine(
+        id=line_id, bom_id=bom_id, name="0.1uF", description="", designators=refs,
+        footprint="C0402", lib_ref=lib_ref, quantity=qty,
+    )
+
+
+class TestStandardizedParts(unittest.TestCase):
+    """A Shop alternate that points one BOM part at another part already on a
+    different BOM should be bought once, with inventory counted once."""
+
+    def setUp(self) -> None:
+        self.boms = [
+            BomDocument("main", "m.csv", [_line("main", "a", "TARGET", 4, ["C1", "C2", "C3", "C4"])], board_count=5),
+            BomDocument("sens", "s.csv", [_line("sens", "b", "OTHER", 2, ["C6", "C7"])], board_count=5),
+        ]
+        self.inv = InventoryDocument(items=[InventoryItem(id="i1", lib_ref="TARGET", qty_on_hand=25)])
+        self.saved = {"lib:OTHER": {"alternate": {"enabled": True, "mpn": "TARGET", "name": "std"}}}
+
+    def test_combined_compare_merges_alternate_into_target(self) -> None:
+        from bom_builder.shopping import compare_boms_aggregated_with_shop
+
+        rows, _, saved = compare_boms_aggregated_with_shop(self.boms, self.inv, self.saved)
+        apply_shop_overlays_to_compare(None, rows, self.inv, saved)
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row.display_lib_ref, "TARGET")
+        self.assertEqual(row.qty_needed_total, 30)
+        self.assertEqual(row.qty_on_hand, 25)  # counted once, not once per original part
+        self.assertEqual(row.status, "partial")
+        self.assertIn("OTHER", row.merged_from_display)
+
+    def test_combined_shop_buys_target_once(self) -> None:
+        lines = build_shop_lines(self.boms, self.inv, "combined", saved=self.saved)
+        merge_shop_state(lines, self.saved)
+        self.assertEqual(len(lines), 1)
+        self.assertEqual(lines[0].primary_mpn, "TARGET")
+        self.assertEqual(lines[0].buy_qty, 5)
+        self.assertFalse(lines[0].alternate.enabled)
+        csv_rows = [r for r in shop_to_csv(lines).splitlines()[1:] if r]
+        self.assertEqual(len(csv_rows), 1)
+
+    def test_enabled_alternate_replaces_original_buy(self) -> None:
+        boms = [self.boms[1]]  # only the board with the alternate selected
+        lines = build_shop_lines(boms, self.inv, "combined", saved=self.saved)
+        merge_shop_state(lines, self.saved)
+        self.assertEqual(len(lines), 0)  # 10 needed, 25 TARGET on hand: nothing to buy
+
+        lines = build_shop_lines(boms, InventoryDocument(), "combined", saved=self.saved)
+        merge_shop_state(lines, self.saved)
+        self.assertEqual(len(lines), 1)
+        self.assertEqual(lines[0].buy_qty, 0)
+        self.assertEqual(lines[0].alternate.buy_qty, 10)
+        from bom_builder.shopping import shop_stats
+
+        self.assertEqual(shop_stats(lines)["total_buy_qty"], 10)
+
+    def test_without_saved_state_behaviour_unchanged(self) -> None:
+        rows, _ = compare_boms_aggregated(self.boms, self.inv)
+        self.assertEqual(len(rows), 2)
+
+
 if __name__ == "__main__":
     unittest.main()

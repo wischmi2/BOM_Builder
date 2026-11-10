@@ -4,6 +4,7 @@ import csv
 import io
 import re
 from dataclasses import dataclass, field
+from typing import Callable
 
 from bom_builder.models import BomDocument, InventoryDocument, InventoryItem, NeedLine
 
@@ -86,6 +87,13 @@ class AggregatedCompareRow:
     shop_substitute: bool = False
     storage_key: str = ""
     source_line_ids: list[str] = field(default_factory=list)
+    # BOM MPNs folded into this row because a Shop substitute/alternate points them
+    # at this row's part (e.g. standardized passives), with their board designators.
+    merged_from: list[tuple[str, str]] = field(default_factory=list)
+
+    @property
+    def merged_from_display(self) -> str:
+        return "; ".join(f"{mpn} ({where})" if where else mpn for mpn, where in self.merged_from)
 
     @property
     def display_lib_ref(self) -> str:
@@ -138,6 +146,11 @@ def normalize_key(value: str) -> str:
 
 def split_lib_refs(lib_ref: str) -> list[str]:
     return [part.strip() for part in lib_ref.split(",") if part.strip()]
+
+
+def primary_lib_ref(lib_ref: str) -> str:
+    segments = split_lib_refs(lib_ref or "")
+    return segments[0] if segments else (lib_ref or "").strip()
 
 
 def format_matched_locations(items: list[InventoryItem]) -> str:
@@ -300,8 +313,16 @@ def compare_boms(
 def compare_boms_aggregated(
     boms: list[BomDocument],
     inventory: InventoryDocument,
+    *,
+    resolve_mpn: Callable[[NeedLine], str] | None = None,
 ) -> tuple[list[AggregatedCompareRow], list[InventoryItem]]:
-    """Sum need per unique part across BOMs, compare once against inventory."""
+    """Sum need per unique part across BOMs, compare once against inventory.
+
+    ``resolve_mpn`` maps a BOM line to the MPN actually being bought (a Shop
+    substitute or enabled alternate), or "" to keep the BOM MPN. Lines that resolve
+    to the same part share one row, so a standardized part is counted and checked
+    against inventory once instead of once per original MPN.
+    """
     by_lib_ref, by_name = _build_inventory_indexes(inventory.items)
 
     @dataclass
@@ -313,30 +334,45 @@ def compare_boms_aggregated(
         qty_needed_total: int = 0
         need_by_bom: dict[str, int] = field(default_factory=dict)
         all_dni: bool = True
+        has_native: bool = False  # a line whose own BOM MPN is this bucket's part
+        merged_from: dict[str, list[str]] = field(default_factory=dict)
 
     buckets: dict[str, _Bucket] = {}
 
     for bom in boms:
         board_count = max(1, bom.board_count)
         for line in bom.lines:
-            key = _aggregate_key(line)
+            effective = (resolve_mpn(line) or "").strip() if resolve_mpn else ""
+            own_key = _aggregate_key(line)
+            key = ("lib:" + normalize_key(effective)) if effective else own_key
+            native = key == own_key
             if key not in buckets:
                 buckets[key] = _Bucket(key=key, lib_ref=line.lib_ref, name=line.name)
             bucket = buckets[key]
             bucket.lines.append(line)
+            if not native:
+                where = f"{bom.bom_id}: {line.designator_display}" if line.designators else bom.bom_id
+                bucket.merged_from.setdefault(primary_lib_ref(line.lib_ref), []).append(where)
             if not line.is_dni:
                 bucket.all_dni = False
                 line_qty = line.quantity * board_count
                 bucket.qty_needed_total += line_qty
                 bucket.need_by_bom[bom.bom_id] = bucket.need_by_bom.get(bom.bom_id, 0) + line_qty
-                bucket.lib_ref = line.lib_ref
-                bucket.name = line.name
+                # Label the row with a line that natively uses the part, so its saved
+                # Shop state (notes, ordered, received) is the one shown.
+                if native or not bucket.has_native:
+                    bucket.lib_ref = line.lib_ref
+                    bucket.name = line.name
+                bucket.has_native = bucket.has_native or native
 
     rows: list[AggregatedCompareRow] = []
     matched_item_ids: set[str] = set()
 
     for bucket in buckets.values():
-        representative = next((line for line in bucket.lines if not line.is_dni), bucket.lines[0])
+        representative = next(
+            (line for line in bucket.lines if not line.is_dni and line.lib_ref == bucket.lib_ref),
+            next((line for line in bucket.lines if not line.is_dni), bucket.lines[0]),
+        )
         matched, match_type = _match_inventory(representative, by_lib_ref, by_name)
         for item in matched:
             matched_item_ids.add(item.id)
@@ -362,6 +398,11 @@ def compare_boms_aggregated(
                 need_by_bom=dict(bucket.need_by_bom),
                 matched_inventory=matched,
                 source_lines=bucket.lines,
+                merged_from=[
+                    (mpn, "; ".join(where))
+                    for mpn, where in bucket.merged_from.items()
+                    if normalize_key(mpn) != normalize_key(primary_lib_ref(bucket.lib_ref))
+                ],
             )
         )
 

@@ -215,6 +215,9 @@
                     <span class="muted compare-bom-ref">BOM: {{ row.bom_lib_ref }}</span>
                     <span class="badge badge-substitute">Substitute</span>
                     {% endif %}
+                    {% if row.merged_from_display %}
+                    <span class="muted compare-bom-ref" title="BOM parts bought as this part (Shop substitute/alternate)">Standardized from: {{ row.merged_from_display }}</span>
+                    {% endif %}
                 </td>
                 {{ compare_enriched_cells(part) }}
                 <td class="col-qty">{{ row.qty_needed_total }}</td>

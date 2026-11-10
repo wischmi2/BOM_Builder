@@ -13,6 +13,7 @@ from bom_builder.matcher import (
     CompareRow,
     compare_boms,
     compare_boms_aggregated,
+    normalize_key,
     part_key_for_need_line,
     rematch_inventory_for_part,
     split_lib_refs,
@@ -81,6 +82,7 @@ class ShopLine:
     source_line_ids: list[str] = field(default_factory=list)
     alternate: ShopAlternate = field(default_factory=ShopAlternate)
     part_key: str = ""
+    merged_from_display: str = ""
 
     @property
     def alternates_extra(self) -> bool:
@@ -193,6 +195,19 @@ def apply_shop_overlay_to_aggregated_row(
         row.leftover = qty_on_hand - row.qty_needed_total
         row.status = status
         row.match_type = match_type
+
+
+def compare_boms_aggregated_with_shop(
+    boms: list[BomDocument],
+    inventory: InventoryDocument,
+    saved: dict[str, dict[str, Any]] | None = None,
+):
+    """Combined compare where lines bought as the same part (Shop substitute or
+    alternate) share one row, then Shop overlays applied."""
+    if saved is None:
+        saved = storage.load_shopping_list()
+    agg_rows, extra = compare_boms_aggregated(boms, inventory, resolve_mpn=make_mpn_resolver(saved))
+    return agg_rows, extra, saved
 
 
 def apply_shop_overlays_to_compare(
@@ -358,7 +373,7 @@ def _shop_line_from_compare(row: CompareRow) -> ShopLine:
 def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
     mpn = primary_mpn(row.lib_ref)
     default_buy = shortfall_qty(row.qty_needed_total, row.qty_on_hand)
-    search_parts = [row.name, row.lib_ref, row.bom_ids_display]
+    search_parts = [row.name, row.lib_ref, row.bom_ids_display, row.merged_from_display]
     line = ShopLine(
         line_id=row.aggregate_key,
         lib_ref=row.lib_ref,
@@ -379,6 +394,7 @@ def _shop_line_from_aggregated(row: AggregatedCompareRow) -> ShopLine:
         cache_key=cache_key_for_mpn(mpn),
         source_line_ids=[f"{src.bom_id}:{src.id}" for src in row.source_lines],
         part_key=row.aggregate_key,
+        merged_from_display=row.merged_from_display,
     )
     return attach_storage_key(line)
 
@@ -391,12 +407,18 @@ def build_shop_lines(
     include_statuses: set[str] | None = None,
     excluded_keys: set[str] | None = None,
     hidden_out: list[tuple[str, str, str]] | None = None,
+    saved: dict[str, dict[str, Any]] | None = None,
 ) -> list[ShopLine]:
     """Build buy-list lines for missing/partial parts.
 
     Parts whose part key is in ``excluded_keys`` (PCB features that are never
     purchased) are skipped; if ``hidden_out`` is given, a (part_key, name, lib_ref)
     tuple is appended for each skipped line so the UI can offer a Restore.
+
+    When ``saved`` Shop state is given, substitutes/alternates are applied before
+    stock is checked: in combined view, lines bought as the same part share one
+    line (inventory counted once), and missing/partial is judged on the part
+    actually bought.
     """
     if include_statuses is None:
         include_statuses = {"missing", "partial"}
@@ -404,14 +426,19 @@ def build_shop_lines(
 
     candidates: list[ShopLine] = []
     if view_mode == "combined":
-        agg_rows, _ = compare_boms_aggregated(boms, inventory)
+        resolver = make_mpn_resolver(saved) if saved is not None else None
+        agg_rows, _ = compare_boms_aggregated(boms, inventory, resolve_mpn=resolver)
         for row in agg_rows:
+            if saved is not None:
+                apply_shop_overlay_to_aggregated_row(row, saved, inventory)
             if row.status not in include_statuses:
                 continue
             candidates.append(_shop_line_from_aggregated(row))
     else:
         compare_rows, _ = compare_boms(boms, inventory)
         for row in compare_rows:
+            if saved is not None:
+                apply_shop_overlay_to_compare_row(row, saved, inventory)
             if row.status not in include_statuses:
                 continue
             candidates.append(_shop_line_from_compare(row))
@@ -596,17 +623,47 @@ def merge_shop_state(lines: list[ShopLine], saved: dict[str, dict[str, Any]]) ->
             except (TypeError, ValueError):
                 pass
         _apply_display_overrides(line, state)
+        if not line.buy_qty and line.default_buy_qty:
+            line.buy_qty = line.default_buy_qty
         alt = state.get("alternate")
         if isinstance(alt, dict):
             _apply_alternate_state(line, alt)
-        if not line.buy_qty and line.default_buy_qty:
-            line.buy_qty = line.default_buy_qty
+        if line.alternate.enabled and line.alternate.mpn:
+            # An enabled alternate replaces the BOM part: buy the alternate only.
+            line.buy_qty = 0
+
+
+def alternate_replaces_line(line: ShopLine) -> bool:
+    return bool(line.alternate.enabled and line.alternate.mpn)
+
+
+def make_mpn_resolver(saved: dict[str, dict[str, Any]]):
+    """Return resolve(need_line) -> MPN actually bought ("" if it is the BOM MPN).
+
+    Uses the same saved Shop state as the Shop page: an enabled alternate wins,
+    then an MPN substitute.
+    """
+
+    def resolve(need_line) -> str:
+        probe = _shop_line_from_compare(CompareRow(need_line=need_line))
+        state = saved_state_for_line(saved, probe)
+        if not state:
+            return ""
+        eff_mpn, _, _ = effective_part_from_state(need_line.lib_ref, need_line.name, state)
+        if normalize_key(eff_mpn) == normalize_key(primary_mpn(need_line.lib_ref)):
+            return ""
+        return eff_mpn
+
+    return resolve
 
 
 def shop_stats(lines: list[ShopLine]) -> dict[str, int]:
     return {
         "line_count": len(lines),
-        "total_buy_qty": sum(line.buy_qty for line in lines),
+        "total_buy_qty": sum(
+            line.buy_qty + (line.alternate.buy_qty if alternate_replaces_line(line) else 0)
+            for line in lines
+        ),
         "ordered_count": sum(1 for line in lines if line.ordered),
         "missing_count": sum(1 for line in lines if line.status == "missing"),
         "partial_count": sum(1 for line in lines if line.status == "partial"),
@@ -841,7 +898,7 @@ def shop_to_csv(lines: list[ShopLine]) -> str:
                 line.mouser_url,
             ]
         )
-        if line.alternate.enabled:
+        if alternate_replaces_line(line):
             writer.writerow(
                 [
                     line.alternate.mpn,
