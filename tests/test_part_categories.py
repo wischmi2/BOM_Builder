@@ -34,6 +34,20 @@ class TestPartCategories(unittest.TestCase):
         self.assertEqual(classify_need_line(_line(designators=["C3"])), "capacitor")
         self.assertEqual(classify_need_line(_line(designators=["L1"])), "inductor")
 
+    def test_led_category(self) -> None:
+        self.assertEqual(classify_need_line(_line(designators=["LED1"])), "led")
+        # D-designated LEDs are found by description or LED part series
+        self.assertEqual(
+            classify_need_line(_line(designators=["D3"], name="Red 631nm LED Indication - Discrete 2V 0603")),
+            "led",
+        )
+        self.assertEqual(classify_need_line(_line(designators=["D1"], lib_ref="LTST-C171GKT")), "led")
+        # Diodes and LED driver ICs stay semiconductors; LED current resistors stay resistors
+        self.assertEqual(classify_need_line(_line(designators=["D2"], lib_ref="SS14")), "semiconductor")
+        self.assertEqual(classify_need_line(_line(designators=["U4"], name="LED DRIVER IC")), "semiconductor")
+        self.assertEqual(classify_need_line(_line(designators=["R9"], name="LED current limit")), "resistor")
+        self.assertIn("led", dict(CATEGORY_ORDER))
+
     def test_dni_category(self) -> None:
         self.assertEqual(classify_need_line(_line(is_dni=True)), "dni")
 

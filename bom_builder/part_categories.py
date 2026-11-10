@@ -10,6 +10,7 @@ CATEGORY_ORDER: list[tuple[str, str]] = [
     ("capacitor", "Capacitors"),
     ("inductor", "Inductors"),
     ("semiconductor", "Semiconductors"),
+    ("led", "LEDs"),
     ("connector", "Connectors"),
     ("filter_rf", "Filters / Couplers"),
     ("test_point", "Test Points"),
@@ -52,6 +53,8 @@ def classify_need_line(line: NeedLine) -> str:
         return "filter_rf"
     if _matches_test_point(text, designator):
         return "test_point"
+    if _matches_led(text, designator):
+        return "led"
     if _matches_semiconductor(text, designator):
         return "semiconductor"
     if _matches_mechanical(text):
@@ -165,6 +168,18 @@ def _matches_semiconductor(text: str, designator: str) -> bool:
         or re.search(r"\bADL\d", text)
         or re.search(r"\bHMC\d", text)
         or "MOSFET" in text
+    )
+
+
+def _matches_led(text: str, designator: str) -> bool:
+    if designator.startswith("LED"):
+        return True
+    if re.search(r"\bDRIVER\b", text):
+        return False  # LED driver ICs stay with semiconductors
+    return bool(
+        re.search(r"\bLEDS?\b", text)
+        or "LTST-" in text  # Lite-On chip LEDs
+        or re.search(r"\bSML[-A-Z0-9]", text)  # Rohm chip LEDs
     )
 
 
