@@ -924,7 +924,7 @@
     },
     "lib:ECT818000500": {
       "mpn": "ECT818000500",
-      "updated_at": "2026-07-22T20:21:10.115399+00:00",
+      "updated_at": "2026-11-10T02:17:07.137681+00:00",
       "alternate": {
         "enabled": true,
         "buy_qty": 6,
@@ -1133,11 +1133,27 @@
     },
     "lib:GRM155R71H103KA88D": {
       "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "updated_at": "2026-10-30T19:15:45.657319+00:00"
+      "updated_at": "2026-11-10T01:47:02.856588+00:00",
+      "notes": "STANDARDIZED 2026-11-09: buy GCM155R71H103KA55D instead (10nF 50V X7R 0402, same spec; shared part)",
+      "alternate": {
+        "enabled": true,
+        "mpn": "GCM155R71H103KA55D",
+        "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
+        "notes": "Standardized from GRM155R71H103KA88D (10nF 50V X7R 0402)",
+        "buy_qty": 0
+      }
     },
     "lib:GRM155R71C104KA88D": {
       "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "updated_at": "2026-10-30T19:15:56.807637+00:00"
+      "updated_at": "2026-11-10T01:47:02.856588+00:00",
+      "notes": "STANDARDIZED 2026-11-09: buy GCM155R71C104KA55D instead (0.1uF 16V X7R 0402, same spec; shared part)",
+      "alternate": {
+        "enabled": true,
+        "mpn": "GCM155R71C104KA55D",
+        "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+        "notes": "Standardized from GRM155R71C104KA88D (0.1uF 16V X7R 0402)",
+        "buy_qty": 0
+      }
     },
     "lib:GRM033R61A225ME47D": {
       "name": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
@@ -1380,7 +1396,7 @@
     },
     "lib:MFFSMF020X2": {
       "mpn": "MF-FSMF020X-2",
-      "updated_at": "2026-11-06T14:26:35.833787+00:00",
+      "updated_at": "2026-11-10T02:16:15.984960+00:00",
       "name": "Polymeric PTC Resettable Fuse 9V 200 mA Ih Surface Mount 0603 (1608 Metric), Concave"
     },
     "lib:FTSH10501LDVK": {
@@ -1394,7 +1410,15 @@
     },
     "lib:CRCW04024K70FKED": {
       "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
-      "updated_at": "2026-11-10T00:50:37.375276+00:00"
+      "updated_at": "2026-11-10T01:47:02.856588+00:00",
+      "notes": "STANDARDIZED 2026-11-09: buy RC0402FR-074K7L instead (4.7k 1% 0402, same spec; shared part)",
+      "alternate": {
+        "enabled": true,
+        "mpn": "RC0402FR-074K7L",
+        "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+        "notes": "Standardized from CRCW04024K70FKED (4.7k 1% 0402)",
+        "buy_qty": 0
+      }
     },
     "lib:760390015": {
       "name": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
@@ -1450,7 +1474,15 @@
     },
     "lib:CC0402KRX7R7BB104": {
       "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "updated_at": "2026-11-10T00:50:37.397279+00:00"
+      "updated_at": "2026-11-10T01:47:02.856588+00:00",
+      "notes": "STANDARDIZED 2026-11-09: buy GCM155R71C104KA55D instead (0.1uF 16V X7R 0402, same spec; shared part)",
+      "alternate": {
+        "enabled": true,
+        "mpn": "GCM155R71C104KA55D",
+        "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+        "notes": "Standardized from CC0402KRX7R7BB104 (0.1uF 16V X7R 0402)",
+        "buy_qty": 0
+      }
     },
     "lib:ADUM1250ARZRL7": {
       "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
