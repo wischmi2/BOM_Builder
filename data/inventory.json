@@ -815,6 +815,126 @@
       "qty_on_hand": 46,
       "location": "Brian Part Box 1",
       "notes": ""
+    },
+    {
+      "id": "171631a2-b3b3-4221-9c08-037e6aee0819",
+      "lib_ref": "B0DPQK6RJZ",
+      "name": "M2.5 brass heat-set insert, 4 mm L x 4 mm OD (3.6 mm hole)",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Amazon, pack of 100, delivered Nov 10. Tidemark: 8 per enclosure (sled posts + plinth)"
+    },
+    {
+      "id": "a59dbef6-456d-4acf-8d00-25714e13f4be",
+      "lib_ref": "B08T7NDPQC",
+      "name": "M2 brass heat-set insert, 4 mm L x 3.6 mm OD (in-saiL)",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Amazon, pack of 100, ordered Nov 11, arriving Nov 13. Ledger: 8 per enclosure (gateway bosses + rear cover); bought in place of ruthex B088QJG676"
+    },
+    {
+      "id": "bf82163f-884e-498e-8a58-fee1429cd213",
+      "lib_ref": "B0B5M1M822-8MM",
+      "name": "Nylon M2.5 M-F hex standoff, 8 mm, 6 mm male thread (MCMASKE kit)",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "From MCMASKE 435 pc kit B0B5M1M822, ordered Nov 8, arriving Nov 19. Tidemark: 4 per enclosure (bottom of stack)"
+    },
+    {
+      "id": "ea84994f-903a-421e-b0bc-aaa2b600209e",
+      "lib_ref": "B0B5M1M822-6MM",
+      "name": "Nylon M2.5 M-F hex standoff, 6 mm, 6 mm male thread (MCMASKE kit)",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "From MCMASKE kit B0B5M1M822, arriving Nov 19. Tidemark: 4 per enclosure (top of stack)"
+    },
+    {
+      "id": "99ab83ba-0cee-4951-81db-f208d330d4ce",
+      "lib_ref": "B0B5M1M822-SCREW-M2.5X6",
+      "name": "Nylon M2.5 x 6 pan head screw (MCMASKE kit)",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "From MCMASKE kit B0B5M1M822, arriving Nov 19. Tidemark: 4 per enclosure (main board). Kit also has 6/10/12/15/18/20/22/25 mm standoffs (15 each), 50 M2.5 x 10 screws, nuts, washers"
+    },
+    {
+      "id": "b01f49ff-c216-47f7-8161-87cc94353705",
+      "lib_ref": "B0DLKCR1CQ",
+      "name": "M2 x 5 button head hex socket screw, 304 stainless (iexcell)",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Amazon, pack of 100, delivered Nov 11. Ledger: 8 per enclosure (gateway board + rear cover)"
+    },
+    {
+      "id": "f89a6673-4ee7-49d7-894d-89acd866f213",
+      "lib_ref": "B07Q36GBKY",
+      "name": "M2 x 5 self-tapping Phillips pan head screw, 316 stainless (uxcell)",
+      "qty_on_hand": 50,
+      "location": "",
+      "notes": "Amazon, pack of 50, ordered Nov 8, arriving about Nov 17. Ledger: 4 per enclosure (LCD module)"
+    },
+    {
+      "id": "9ad56c38-1bd5-48e5-a9c3-eafd6604304f",
+      "lib_ref": "B00QVB0ZG6",
+      "name": "2 mm silicone o-ring cord, 70A, 10 ft (Mr O-Ring AZ-S70.079/10)",
+      "qty_on_hand": 1,
+      "location": "",
+      "notes": "Amazon, 1 x 10 ft length, ordered Nov 8, arriving Nov 18. Tidemark: ~154 mm loop per enclosure, CA-glued"
+    },
+    {
+      "id": "a9fe3bba-5fdb-4ced-a75f-615d63fc43c5",
+      "lib_ref": "B0F45VY7KK",
+      "name": "Adhesive ePTFE breathable vent membrane, 100 sheets (VOSAREA)",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Amazon, 100 sheets, delivered Nov 10. Tidemark: one 6-10 mm disc per enclosure over the 3.0 mm cap vent"
+    },
+    {
+      "id": "9f77eb72-f84c-4ff3-bd58-3ebdf5f8ff41",
+      "lib_ref": "B0DCZTKMDG",
+      "name": "Nylon M6 x 30 thumbscrew (spade head)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Amazon, pack of 10, delivered Nov 10. Perch probe mount: 1 per mount (wall clamp)"
+    },
+    {
+      "id": "224fb70d-cebe-4abd-9516-27510a32b4c4",
+      "lib_ref": "B097R2W2VS-NUT",
+      "name": "Nylon M6 hex nut, white (Piutouyar set)",
+      "qty_on_hand": 20,
+      "location": "",
+      "notes": "From Piutouyar 20 pair M6 x 25 bolt + nut set B097R2W2VS, delivered Nov 11. Perch: 1 nut per mount (captive in the leg)"
+    },
+    {
+      "id": "9888484e-a76b-4b03-8f6e-745b421b3588",
+      "lib_ref": "B097R2W2VS-BOLT",
+      "name": "Nylon M6 x 25 hex bolt, white (Piutouyar set)",
+      "qty_on_hand": 20,
+      "location": "",
+      "notes": "From Piutouyar set B097R2W2VS, delivered Nov 11. Spare: the Perch uses the M6 x 30 thumbscrew (M6 x 25 is too short as the clamp screw)"
+    },
+    {
+      "id": "f36b9ca2-99d1-4b6d-a087-f4c4be5beceb",
+      "lib_ref": "B098QDHCDP",
+      "name": "Nylon M4 Phillips pan head screw + nut + washer assortment kit, black (HVAZI)",
+      "qty_on_hand": 1,
+      "location": "",
+      "notes": "Amazon kit, delivered Nov 11. Perch: M4 x 25 (Collet clamp), 2 x M4 x 10 (stops), M4 nut per mount. Check the kit has a 25 mm length"
+    },
+    {
+      "id": "9223cdb0-a5b3-4a90-9a8f-c8443bfc3f4a",
+      "lib_ref": "B082GFTZQD",
+      "name": "Waveshare 2inch LCD module 240x320 IPS ST7789 SPI, with PH2.0 8-pin cable",
+      "qty_on_hand": 1,
+      "location": "",
+      "notes": "Amazon, delivered Nov 10. Gateway (Ledger) display, 1 per gateway; the included cable is replaced by W1"
+    },
+    {
+      "id": "fd913bb0-9c35-4f6d-bb68-3a4a46e0e986",
+      "lib_ref": "B0F2ZBN1K9",
+      "name": "ruthex 1/4-20 x 6.4 mm brass heat-set insert",
+      "qty_on_hand": 20,
+      "location": "",
+      "notes": "Amazon, pack of 20, ordered Nov 8, arriving Nov 13. Not used by any current enclosure design"
     }
   ]
 }
