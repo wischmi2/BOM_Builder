@@ -78,6 +78,15 @@
     "lib:UJ20CHGMSMT4BP16TR": "connector",
     "lib:2042811100": "other",
     "lib:MTSW10308GS229RA": "connector",
-    "lib:XRCGB32M000F1S2AR0": "semiconductor"
+    "lib:XRCGB32M000F1S2AR0": "semiconductor",
+    "lib:EEEFN1E100R": "capacitor",
+    "lib:RC0402JR0715KL": "resistor",
+    "lib:RT0603DRE13100KL": "resistor",
+    "lib:C0603C226M9PACTU": "capacitor",
+    "lib:ERJ2GEJ303X": "resistor",
+    "lib:ERJ2GEJ512X": "resistor",
+    "lib:ERJP06J105V": "resistor",
+    "lib:MSASJ32MAB5227MPNDT1": "capacitor",
+    "lib:RT0402BRD0710KL": "resistor"
   }
 }
