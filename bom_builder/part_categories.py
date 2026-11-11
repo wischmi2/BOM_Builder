@@ -209,8 +209,14 @@ def _matches_test_point(text: str, designator: str) -> bool:
 
 
 def _matches_mechanical(text: str) -> bool:
+    # Enclosure hardware too: inserts, nuts, washers, seals and vents (Amazon
+    # ASIN rows in inventory carry only a descriptive name).
     return bool(
-        re.search(r"\b(MOUSE_BITE|BOLT|SCREW|STANDOFF|HEATSINK)\b", text)
+        re.search(
+            r"\b(MOUSE_BITE|BOLTS?|SCREWS?|THUMBSCREWS?|STANDOFFS?|SPACERS?|HEATSINK"
+            r"|NUTS?|WASHERS?|INSERTS?|HEAT-SET|O-RINGS?|GASKETS?|VENT|MEMBRANE)\b",
+            text,
+        )
         or "MOUSE_BITES" in text
     )
 

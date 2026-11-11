@@ -75,6 +75,17 @@ class TestPartCategories(unittest.TestCase):
         self.assertEqual(labels[:3], ["Resistors", "Capacitors", "Inductors"])
         self.assertIn("Semiconductors", labels)
 
+    def test_enclosure_hardware_is_mechanical(self) -> None:
+        for name in [
+            "M2.5 brass heat-set insert, 4 mm L x 4 mm OD",
+            "2 mm silicone o-ring cord, 70A, 10 ft",
+            "Adhesive ePTFE breathable vent membrane, 100 sheets",
+            "Nylon M6 x 30 thumbscrew (spade head)",
+            "Nylon M6 hex nut, white",
+            "Nylon M2.5 M-F hex standoff, 8 mm",
+        ]:
+            self.assertEqual(classify_need_line(_line(name=name, lib_ref="B0XXXXXXXX")), "mechanical", name)
+
     def test_category_order_matches_display_list(self) -> None:
         passive_ids = [cat for cat, _ in CATEGORY_ORDER[:3]]
         self.assertEqual(passive_ids, ["resistor", "capacitor", "inductor"])
