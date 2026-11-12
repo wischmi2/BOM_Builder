@@ -1170,7 +1170,7 @@
     },
     "lib:GRM155R71C104KA88D": {
       "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "updated_at": "2026-11-10T01:47:02.856588+00:00",
+      "updated_at": "2026-11-11T23:41:31.701852+00:00",
       "notes": "STANDARDIZED 2026-11-09: buy GCM155R71C104KA55D instead (0.1uF 16V X7R 0402, same spec; shared part)",
       "alternate": {
         "enabled": true,
@@ -1705,27 +1705,35 @@
     },
     "lib:SSK05BH254B3": {
       "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:47:12.848100+00:00",
+      "ordered": true
     },
     "lib:322010010000": {
       "name": "Connector Header Through Hole 10 position 0.050\" (1.27mm)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:50:15.161640+00:00",
+      "ordered": true
     },
     "lib:PEC06SAAN": {
       "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:47:59.445106+00:00",
+      "ordered": true
     },
     "lib:PEC03SAAN": {
       "name": "Connector Header Through Hole 3 position 0.100\" (2.54mm)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:48:21.152909+00:00",
+      "buy_qty": 10,
+      "ordered": true
     },
     "lib:PEC02SAAN": {
       "name": "Connector Header Through Hole 2 position 0.100\" (2.54mm)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:48:37.169518+00:00",
+      "ordered": true
     },
     "lib:SPC02SYAN": {
       "name": "2 (1 x 2) Position Shunt Connector Black Closed Top 0.100\" (2.54mm) Gold",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:47:35.418193+00:00",
+      "buy_qty": 10,
+      "ordered": true
     },
     "lib:USB4105GFA": {
       "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole",
@@ -1753,29 +1761,36 @@
     },
     "lib:LTSTC171GKT": {
       "name": "Green 569nm LED Indication - Discrete 2.1V 0805 (2012 Metric)",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:50:36.297012+00:00",
+      "ordered": true
     },
     "lib:MFNSMF0502": {
       "name": "Polymeric PTC Resettable Fuse 13.2V 500 mA Ih Surface Mount 1206 (3216 Metric), Concave",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:49:39.887064+00:00",
+      "buy_qty": 5,
+      "ordered": true
     },
     "lib:TLV75530PDBVR": {
       "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 500mA SOT-23-5",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:50:55.851592+00:00",
+      "ordered": true
     },
     "lib:B3F1000": {
       "name": "Tactile Switch SPST-NO Top Actuated Through Hole",
-      "updated_at": "2026-11-10T00:50:37.417288+00:00"
+      "updated_at": "2026-11-11T23:49:51.472221+00:00",
+      "ordered": true
     },
     "lib:TC2030IDC": {
       "name": "Plug-Of-Nails\u2122 Cable Assembly",
-      "updated_at": "2026-11-10T03:04:14.318235+00:00",
-      "buy_qty": 1
+      "updated_at": "2026-11-11T23:45:21.916043+00:00",
+      "buy_qty": 1,
+      "ordered": true
     },
     "lib:TTL232RGVREG1V8WE": {
       "name": "USB to TTL Serial 1.8V Cable 5.90' (1.80m) Unshielded",
-      "updated_at": "2026-11-10T03:04:12.236731+00:00",
-      "buy_qty": 1
+      "updated_at": "2026-11-11T23:45:18.931325+00:00",
+      "buy_qty": 1,
+      "ordered": true
     },
     "lib:FFSD05D060001N": {
       "name": "10 Position Cable Assembly Rectangular Socket to Socket 0.500' (152.40mm, 6.00\")",
