@@ -31,7 +31,7 @@
     {
       "id": "row-2-8c95a6d88c8b53f0",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "2.2uF",
+      "name": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "description": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "designators": [
         "C1",
@@ -135,7 +135,7 @@
     {
       "id": "row-6-0590afa21ad14d57",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "10uF",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C7",
@@ -465,7 +465,7 @@
     {
       "id": "row-19-54e4be6e6af2e79a",
       "bom_id": "nrf54l15_feather_bom_2026-10-30",
-      "name": "10uF",
+      "name": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "description": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "designators": [
         "C46"

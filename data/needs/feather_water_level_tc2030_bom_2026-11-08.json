@@ -264,7 +264,7 @@
     {
       "id": "row-11-c9952c217cec592b",
       "bom_id": "feather_water_level_tc2030_bom_2026-11-08",
-      "name": "TCA9406DCTR I2C translator",
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 2 Channel 24Mbps SM8",
       "description": "Voltage Level Translator Bidirectional 1 Circuit 2 Channel 24Mbps SM8",
       "designators": [
         "U3"
@@ -289,7 +289,7 @@
     {
       "id": "row-12-0bd8f16d88c80d98",
       "bom_id": "feather_water_level_tc2030_bom_2026-11-08",
-      "name": "SN74AXC1T45DBVR 1-bit translator",
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 1 Channel 500Mbps SOT-23-6",
       "description": "Voltage Level Translator Bidirectional 1 Circuit 1 Channel 500Mbps SOT-23-6",
       "designators": [
         "U4",

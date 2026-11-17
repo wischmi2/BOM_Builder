@@ -89,7 +89,7 @@
         "C6"
       ],
       "footprint": "C_0402_1005Metric",
-      "lib_ref": "CC0402KRX7R7BB104",
+      "lib_ref": "GCM155R71C104KA55D",
       "quantity": 1,
       "is_dni": false,
       "acquired": false,

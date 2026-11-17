@@ -32,7 +32,7 @@
     {
       "id": "row-2-91c6a9ee17ca7da5",
       "bom_id": "prog_adapter_bom_2026-11-07",
-      "name": "2x5 1.27 mm box header",
+      "name": "Connector Header Through Hole 10 position 0.050\" (1.27mm)",
       "description": "Connector Header Through Hole 10 position 0.050\" (1.27mm)",
       "designators": [
         "J3"
@@ -234,7 +234,7 @@
     {
       "id": "row-10-e5b6547f94852cda",
       "bom_id": "prog_adapter_bom_2026-11-07",
-      "name": "5.1k 0805",
+      "name": "5.1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
       "description": "5.1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
       "designators": [
         "R4",
@@ -286,7 +286,7 @@
     {
       "id": "row-12-4c1b96ec0e631163",
       "bom_id": "prog_adapter_bom_2026-11-07",
-      "name": "10u 25V X5R 0805",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "description": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C1",

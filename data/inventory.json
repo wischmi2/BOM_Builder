@@ -348,9 +348,9 @@
       "id": "d0e5af5a-21ca-412d-a6d0-aa57a027dcaa",
       "lib_ref": "GCM155R71H103KA55D",
       "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
-      "qty_on_hand": 8,
+      "qty_on_hand": 10,
       "location": "Brian Part Box 1",
-      "notes": "10nF"
+      "notes": "10nF; 10000pF | Ordered DigiKey 102853405 (2026-11-11): GCM155R71H103KA55D x2"
     },
     {
       "id": "fde61ce7-24fa-4670-9b17-9b4d7f89744d",
@@ -372,9 +372,9 @@
       "id": "24a8357d-0e6b-44b1-91a6-5d5a0593490d",
       "lib_ref": "RC0402FR-074K7L",
       "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
-      "qty_on_hand": 39,
+      "qty_on_hand": 49,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-074K7L x10"
     },
     {
       "id": "7399f5cc-17e4-4d1d-bf28-0d0a68cbd37f",
@@ -436,9 +436,9 @@
       "id": "9064f57d-54e8-4581-a00a-8b504e96f143",
       "lib_ref": "CL05A105KO5NNNC",
       "name": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
-      "qty_on_hand": 13,
+      "qty_on_hand": 40,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered Mouser 41073583 (2026-11-11): CL05A105KO5NNNC x27"
     },
     {
       "id": "d700d5a4-db5f-49fd-ac2e-a79259fa682b",
@@ -548,9 +548,9 @@
       "id": "843ce6d8-b146-4c16-8b9e-e9aa9c0c4e0b",
       "lib_ref": "RECE.20449.001E.01",
       "name": "I-PEX MHF4 Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
-      "qty_on_hand": 4,
+      "qty_on_hand": 7,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RECE.20449.001E.01 x3"
     },
     {
       "id": "0016a1a5-b18f-468c-bbd3-dec1e4556abc",
@@ -596,9 +596,9 @@
       "id": "91818ea4-b212-4bdc-bdd8-7f9d55291cc3",
       "lib_ref": "LQP03HQ3N5B02D",
       "name": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
-      "qty_on_hand": 8,
+      "qty_on_hand": 10,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LQP03HQ3N5B02D x2"
     },
     {
       "id": "c2556ed3-56be-4cb4-b5a5-eb5ffaf89def",
@@ -660,9 +660,9 @@
       "id": "55d45c0e-5b4c-4fcd-a830-eec413bc8af6",
       "lib_ref": "AEM10330-QFN",
       "name": "Power Management Specialized - PMIC Highly Versatile, Regulated Single-Output, Buck-Boost Ambient Energy Manager For Up to 7-cell Solar Panels",
-      "qty_on_hand": 4,
+      "qty_on_hand": 5,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered Mouser 41073583 (2026-11-11): AEM10330-QFN x1"
     },
     {
       "id": "fc793fde-74c4-45ba-abea-d17aa7ef33d1",
@@ -935,6 +935,630 @@
       "qty_on_hand": 20,
       "location": "",
       "notes": "Amazon, pack of 20, ordered Nov 8, arriving Nov 13. Not used by any current enclosure design"
+    },
+    {
+      "id": "15d978c8-9271-478c-91f4-02e252873e28",
+      "lib_ref": "TC2030-IDC",
+      "name": "Plug-Of-Nails\u2122 Cable Assembly",
+      "qty_on_hand": 1,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7004869d-68e7-4794-9bea-86dc62f4da71",
+      "lib_ref": "LTST-C171GKT",
+      "name": "Green 569nm LED Indication - Discrete 2.1V 0805 (2012 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "312418a9-4fcd-45e5-9125-d595c17c373d",
+      "lib_ref": "TLV75530PDBVR",
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 500mA SOT-23-5",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "e5fb19d4-b8bb-40c2-899e-ab73157db2dd",
+      "lib_ref": "B3F-1000",
+      "name": "Tactile Switch SPST-NO Top Actuated Through Hole",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "477046f6-02ac-433f-9b03-0db879cdbe48",
+      "lib_ref": "MF-NSMF050-2",
+      "name": "Polymeric PTC Resettable Fuse 13.2V 500 mA Ih Surface Mount 1206 (3216 Metric), Concave",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b2e0c299-cd13-421a-ae3d-25d61553903d",
+      "lib_ref": "3220-10-0100-00",
+      "name": "Connector Header Through Hole 10 position 0.050\" (1.27mm)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "bfb242ea-a7b7-44a8-b320-e915304346f2",
+      "lib_ref": "PEC06SAAN",
+      "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "cf1a7bd2-e483-48cc-8a80-6d5eaf42cfca",
+      "lib_ref": "PEC02SAAN",
+      "name": "Connector Header Through Hole 2 position 0.100\" (2.54mm)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "6690fe90-9ca5-4bfc-af10-4cf27fc940bc",
+      "lib_ref": "PEC03SAAN",
+      "name": "Connector Header Through Hole 3 position 0.100\" (2.54mm)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "78ff25ac-d87b-4977-98f5-299c1bbb1443",
+      "lib_ref": "SSK05-BH-254-B3",
+      "name": "Connector Header Through Hole 6 position 0.100\" (2.54mm)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "ca227d35-bd59-4a79-a924-be7076802506",
+      "lib_ref": "RC0805FR-07100RL",
+      "name": "100 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "0fffa5d7-d1d1-4d5f-ad64-db1120120f9b",
+      "lib_ref": "RC0805FR-07330RL",
+      "name": "330 Ohms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "7bb0d302-5296-4710-a488-12bf1eb4e7e5",
+      "lib_ref": "RC0805FR-071KL",
+      "name": "1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "2f4eda21-0a34-4847-b63c-032d9a35837d",
+      "lib_ref": "503480-1400",
+      "name": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): 5034801400 x25"
+    },
+    {
+      "id": "67c50cd3-d4a4-4335-afb9-da2be3465af6",
+      "lib_ref": "SWPA4020S2R2NT",
+      "name": "2.2 \u00b5H Shielded Drum Core, Wirewound Inductor 1.85 A 52mOhm Max Nonstandard",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): SWPA4020S2R2NT x5"
+    },
+    {
+      "id": "b4eb11bd-1252-4598-8b8b-b737223769a7",
+      "lib_ref": "B3U-1000P",
+      "name": "Tactile Switch SPST-NO Top Actuated Surface Mount",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): B3U-1000P x5"
+    },
+    {
+      "id": "273c9ece-e421-4cfd-b2ce-f15a327f8489",
+      "lib_ref": "NXE1S0303MC-R13",
+      "name": "Isolated Module DC DC Converter 1 Output 3.3V 303mA 2.97V - 3.63V Input",
+      "qty_on_hand": 3,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): NXE1S0303MC-R13 x3"
+    },
+    {
+      "id": "396ddb56-597d-472f-a74b-687698d553cd",
+      "lib_ref": "8240026",
+      "name": "9V Clamp 6A (8/20\u00b5s) Ipp Tvs Diode Surface Mount SOT-143-4",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): 8240026 x5"
+    },
+    {
+      "id": "955c8603-4c05-4ef9-9fce-907384d83a8b",
+      "lib_ref": "MF-FSMF020X-2",
+      "name": "Polymeric PTC Resettable Fuse 9V 200 mA Ih Surface Mount 0603 (1608 Metric), Concave",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): MF-FSMF020X-2 x5"
+    },
+    {
+      "id": "cf27933e-5abe-4ab2-b440-374cdff014c4",
+      "lib_ref": "BAT54CLT1G",
+      "name": "Diode Array 1 Pair Common Cathode 30 V 200mA (DC) Surface Mount TO-236-3, SC-59, SOT-23-3",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): BAT54CLT1G x5"
+    },
+    {
+      "id": "e62dc718-2639-4f61-b7a0-75eab984b806",
+      "lib_ref": "ERJ-2GE0R00X",
+      "name": "0 Ohms Jumper Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): ERJ-2GE0R00X x25"
+    },
+    {
+      "id": "15d9cfe3-8833-4343-afa3-0d29afe07d13",
+      "lib_ref": "SN74AXC1T45DBVR",
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 1 Channel 500Mbps SOT-23-6",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): SN74AXC1T45DBVR x10"
+    },
+    {
+      "id": "21b04489-ea41-46e1-8152-7e2dc8c2e897",
+      "lib_ref": "TPD1E10B06DPYR",
+      "name": "14V Clamp 5A (8/20\u00b5s) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): TPD1E10B06DPYR x10"
+    },
+    {
+      "id": "ff255504-e496-4329-ad8b-0886ba29f11e",
+      "lib_ref": "DFE252010F-100M=P2",
+      "name": "10 \u00b5H Shielded Drum Core, Wirewound Inductor 900 mA 600mOhm Max 1008 (2520 Metric) Flat Wire",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): DFE252010F-100M=P2 x5"
+    },
+    {
+      "id": "6dab25d0-71fa-45eb-9926-a039258c5eb2",
+      "lib_ref": "LTST-C170KGKT",
+      "name": "Green 571nm LED Indication - Discrete 2V 0805 (2012 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LTST-C170KGKT x5"
+    },
+    {
+      "id": "91110168-0aba-490a-b2d5-aa90f165823c",
+      "lib_ref": "SMF12A",
+      "name": "19.9V Clamp 10.1A Ipp Tvs Diode Surface Mount SOD-123F",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): SMF12A x10"
+    },
+    {
+      "id": "9264c2b4-a340-4fbd-ac7f-3e17b9befd16",
+      "lib_ref": "SN74AUP1G34DCKR",
+      "name": "Buffer, Non-Inverting 1 Element 1 Bit per Element Push-Pull Output SC-70-5",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): SN74AUP1G34DCKR x5"
+    },
+    {
+      "id": "80ce5ce9-e6e8-423d-8fb8-27a7acf9d8fd",
+      "lib_ref": "XRCGB32M000F1S2AR0",
+      "name": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): XRCGB32M000F1S2AR0 x5"
+    },
+    {
+      "id": "e0a6146f-c002-4981-be68-933b5f45c4eb",
+      "lib_ref": "760390015",
+      "name": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): 760390015 x5"
+    },
+    {
+      "id": "b93259ad-6dfe-4c45-a905-775fdb778175",
+      "lib_ref": "nRF54L15-QFAA-R",
+      "name": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
+      "qty_on_hand": 2,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): NRF54L15-QFAA-R x2"
+    },
+    {
+      "id": "36eef065-b21e-46c7-be53-9d3d6333dbf3",
+      "lib_ref": "TCA9406DCTR",
+      "name": "Voltage Level Translator Bidirectional 1 Circuit 2 Channel 24Mbps SM8",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): TCA9406DCTR x5"
+    },
+    {
+      "id": "99c4ba62-196c-43a0-9175-19ee860f4456",
+      "lib_ref": "LTST-C191KRKT",
+      "name": "Red 631nm LED Indication - Discrete 2V 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LTST-C191KRKT x5"
+    },
+    {
+      "id": "01d43692-26c5-43e3-9558-016747a439c5",
+      "lib_ref": "LTST-C190TBKT",
+      "name": "Blue 470nm LED Indication - Discrete 3.3V 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LTST-C190TBKT x5"
+    },
+    {
+      "id": "75ddba9c-a4fa-44cf-b5f4-14555eb31a9f",
+      "lib_ref": "LP2985-33DBVR",
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 150mA SOT-23-5",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LP2985-33DBVR x5"
+    },
+    {
+      "id": "1cbe7343-bcea-4f7e-adb6-316a60b12ddc",
+      "lib_ref": "TLV62569DBVR",
+      "name": "Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A SC-74A, SOT-753",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): TLV62569DBVR x5"
+    },
+    {
+      "id": "a6dd9db7-a17a-4ce1-86fd-d56dcff87469",
+      "lib_ref": "RB521S30-AU_R1_000A1",
+      "name": "Diode 30 V 200mA Surface Mount SOD-523",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RB521S30-AU_R1_000A1 x5"
+    },
+    {
+      "id": "24fae139-8c28-462c-bc1e-9064bd564984",
+      "lib_ref": "NCP161ASN180T1G",
+      "name": "Linear Voltage Regulator IC Positive Fixed 1 Output 450mA SOT-23-5",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): NCP161ASN180T1G x5"
+    },
+    {
+      "id": "40abaaba-d101-41df-89a6-802adf099922",
+      "lib_ref": "LBES0ZZ2FR-580",
+      "name": "802.15.4, Bluetooth, WiFi 802.11a/b/g/n/ac/ax, Bluetooth v5.4, Thread, Zigbee\u00ae Transceiver Module 2.4GHz, 5GHz Antenna Not Included Surface Mount",
+      "qty_on_hand": 2,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LBES0ZZ2FR-580 x2"
+    },
+    {
+      "id": "277f5f0f-cacd-4d0d-8def-5bccf4283945",
+      "lib_ref": "KMR221GLFS",
+      "name": "Tactile Switch SPST-NO Top Actuated Surface Mount",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): KMR221G x10 (bought in place of KMR221GLFS)"
+    },
+    {
+      "id": "bb9a2e3e-3311-4c43-b536-8799b46a67d2",
+      "lib_ref": "RC0603FR-07150KL",
+      "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0603FR-07150KL x10"
+    },
+    {
+      "id": "b685ae2d-b174-48bc-850f-21998f1b33aa",
+      "lib_ref": "RC0402FR-07470RL",
+      "name": "470 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-07470RL x10"
+    },
+    {
+      "id": "41f0a990-d5d5-4ac6-95bc-db1e80121162",
+      "lib_ref": "ERJ-2RKF2202X",
+      "name": "22 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): ERJ-2RKF2202X x10"
+    },
+    {
+      "id": "975590c4-3b92-43d6-a336-ed4bd4d701f1",
+      "lib_ref": "ERJ-3GEY0R00V",
+      "name": "0 Ohms Jumper Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): ERJ-3GEY0R00V x25"
+    },
+    {
+      "id": "11406f0b-05fb-46fc-ac90-1c4940801a68",
+      "lib_ref": "RC0805FR-075K1L",
+      "name": "5.1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "b384aa5d-5f72-4864-8af8-653910b993b1",
+      "lib_ref": "RC0402FR-0733RL",
+      "name": "33 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-0733RL x15"
+    },
+    {
+      "id": "b5567adc-44cd-4115-9879-0ad645fe323b",
+      "lib_ref": "RC0402FR-0710KL",
+      "name": "10 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-0710KL x25"
+    },
+    {
+      "id": "2cce3e01-dbf1-4fcd-86fa-f9ac6a0b274f",
+      "lib_ref": "RC0402FR-07100RL",
+      "name": "100 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-07100RL x25"
+    },
+    {
+      "id": "3b4cf29a-b348-4ae2-a303-ad6e8d664e45",
+      "lib_ref": "RC0402FR-07100KL",
+      "name": "100 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-07100KL x25"
+    },
+    {
+      "id": "dd83a97b-12cb-4e9d-ae71-208af5674a6f",
+      "lib_ref": "BLM18KG221SN1D",
+      "name": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 2.2A 50mOhm",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): BLM18KG221SN1D x5"
+    },
+    {
+      "id": "a24c65ca-1c24-4339-9831-3e0aad24b44f",
+      "lib_ref": "BLM18PG221SN1D",
+      "name": "220 Ohms @ 100 MHz 1 Power Line Ferrite Bead 0603 (1608 Metric) 1.4A 100mOhm",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): BLM18PG221SN1D x5"
+    },
+    {
+      "id": "bace4316-c2f0-4b9e-ad11-b470ce9b28d3",
+      "lib_ref": "BLM15AG121SN1D",
+      "name": "120 Ohms @ 100 MHz 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): BLM15AG121SN1D x5"
+    },
+    {
+      "id": "517d5fd1-bcf2-4fb2-a9e1-f4d9cde0fd38",
+      "lib_ref": "NCU15XH103F60RC",
+      "name": "NTC Thermistor 10k 0402 (1005 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): NCU15XH103F60RC x5"
+    },
+    {
+      "id": "9d4f4972-ca21-428b-aed1-360e76733a03",
+      "lib_ref": "U.FL-R-SMT-1(10)",
+      "name": "U.FL (UMCC) Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
+      "qty_on_hand": 3,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): U.FL-R-SMT-1(10) x3"
+    },
+    {
+      "id": "58f64e0a-6f0e-4edb-a44d-16bb14a528c7",
+      "lib_ref": "GRM188R71A225KE15D",
+      "name": "2.2 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0603 (1608 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): GRM188R71A225KE15D x10"
+    },
+    {
+      "id": "601e9716-6ae7-4bd1-b604-7c831127e18b",
+      "lib_ref": "GRM155R71A104KA01D",
+      "name": "0.1 \u00b5F \u00b110% 10V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "qty_on_hand": 25,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): GRM155R71A104KA01D x25"
+    },
+    {
+      "id": "ee7c4ce9-da73-4991-9da1-47ed9bf694ee",
+      "lib_ref": "MSASJ31LBB5227MTCA01",
+      "name": "220 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 1206 (3216 Metric)",
+      "qty_on_hand": 2,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): MSASJ31LBB5227MTCA01 x2"
+    },
+    {
+      "id": "e4d27b59-853c-47bd-a248-e418d5624073",
+      "lib_ref": "CL03A104KQ3NNNC",
+      "name": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): CL03A104KQ3NNNC x10"
+    },
+    {
+      "id": "91f4f0c9-d00d-462e-80d8-0f5cb19dfadd",
+      "lib_ref": "GRM188R61E475KE11D",
+      "name": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): GRM188R61E475KE11D x5"
+    },
+    {
+      "id": "979c4e91-df57-4ddc-a9d3-3bedadf0c936",
+      "lib_ref": "GCM155R71C104KA55D",
+      "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
+      "qty_on_hand": 100,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): GCM155R71C104KA55D x100"
+    },
+    {
+      "id": "fdfb201d-5e08-415d-be04-647f48d35afe",
+      "lib_ref": "GRM155R60J106ME15D",
+      "name": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "qty_on_hand": 15,
+      "location": "",
+      "notes": "Digikey List. 500. | Ordered DigiKey 102853405 (2026-11-11): GRM155R60J106ME15D x15"
+    },
+    {
+      "id": "b0b2b8a2-d6fe-4f62-ab4d-8761052ee046",
+      "lib_ref": "CL05A105KA5NQNC",
+      "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): CL05A105KA5NQNC x5"
+    },
+    {
+      "id": "fbcc8ed2-8a00-4c87-8e78-adf9afc874c0",
+      "lib_ref": "LQM18PN4R7MFRL",
+      "name": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm Max 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): LQM18PN4R7MFRL x5"
+    },
+    {
+      "id": "30dd0e7f-e109-49fb-9bca-7ca82f732102",
+      "lib_ref": "LQP03HQ2N7B02D",
+      "name": "2.7 nH Unshielded Thick Film Inductor 600 mA 120mOhm Max 0201 (0603 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Digikey List.  100. | Ordered DigiKey 102853405 (2026-11-11): LQP03HQ2N7B02D x10"
+    },
+    {
+      "id": "985be076-4115-41cf-839f-71ec0b56d5dd",
+      "lib_ref": "DX07S016JA3R1500",
+      "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole",
+      "qty_on_hand": 2,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): DX07S016JA3R1500 x2"
+    },
+    {
+      "id": "d07ae03a-ef32-44ad-93ca-cfdee3fbe5cb",
+      "lib_ref": "CC0805KKX5R8BB106",
+      "name": "10 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "be8e49ab-8132-4a82-87ea-f184bbc5a038",
+      "lib_ref": "XM125",
+      "name": "Radar Sensor Output",
+      "qty_on_hand": 2,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): XM125 x2"
+    },
+    {
+      "id": "d7f742e0-db7a-4060-84db-c846816ea9d4",
+      "lib_ref": "BSS138LT1G",
+      "name": "N-Channel 50 V 200mA (Ta) 225mW (Ta) Surface Mount SOT-23-3 (TO-236)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): BSS138LT1G x5"
+    },
+    {
+      "id": "2645de56-bbcf-47d5-8642-150f5f38c22d",
+      "lib_ref": "GRM188R60J476ME15D",
+      "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): GRM188R60J476ME15D x5"
+    },
+    {
+      "id": "dd716caf-8136-4d6c-ab0f-69e128304291",
+      "lib_ref": "CL05C101JB5NNNC",
+      "name": "100 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): CL05C101JB5NNNC x5"
+    },
+    {
+      "id": "4e9a4c8f-c169-47ae-b6e0-83f477da9d53",
+      "lib_ref": "CL21A226MOQNNNE",
+      "name": "22 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): CL21A226MOQNNNE x5"
+    },
+    {
+      "id": "69ed969b-1b43-4d0c-b3f1-4ff3f3ed2584",
+      "lib_ref": "CL21A475KAQNNNE",
+      "name": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): CL21A475KAQNNNE x5"
+    },
+    {
+      "id": "82bf9a48-a46a-46ba-9072-dbd57a9a06cd",
+      "lib_ref": "GRM033R61A225ME47D",
+      "name": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): GRM033R61A225ME47D x10"
+    },
+    {
+      "id": "b3d66e51-2c82-43e8-8a81-41b20c52fd26",
+      "lib_ref": "GRM21BR61E106MA73L",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
+      "qty_on_hand": 35,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): GRM21BR61E106MA73L x35"
+    },
+    {
+      "id": "128fe47a-bda7-4ca4-b199-01fcc349855d",
+      "lib_ref": "CL10A106MA8NRNC",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 24,
+      "location": "",
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): TMK107BBJ106MA-T x5 (bought in place of CL10A106MA8NRNC); Mouser 41073583 (2026-11-11): CL10A106MA8NRNC x24"
+    },
+    {
+      "id": "a7184005-b3bc-45b8-a52a-6673a2bab59f",
+      "lib_ref": "GRM188R61C106MA73D",
+      "name": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): GRM188R61C106MA73D x5"
+    },
+    {
+      "id": "81358561-4a69-4d7f-a9ac-ab94f0cb6d6c",
+      "lib_ref": "RC0402FR-0722KL",
+      "name": "22 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): RC0402FR-0722KL x5"
+    },
+    {
+      "id": "f2ae212e-e61b-4e42-9754-093799726c50",
+      "lib_ref": "LSCND1608HKT2R2MF",
+      "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.4 A 250mOhm Max 0603 (1608 Metric)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): LSCND1608HKT2R2MF x10"
+    },
+    {
+      "id": "1c40ea3d-e2b9-4133-8028-fb7a1871bd62",
+      "lib_ref": "SN6505BDBVR",
+      "name": "Transformer Driver PMIC SOT-23-6",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": "Ordered Mouser 41073583 (2026-11-11): SN6505BDBVR x5"
     }
   ]
 }

@@ -91,7 +91,7 @@
         "C12"
       ],
       "footprint": "C_0402_1005Metric",
-      "lib_ref": "GRM155R71C104KA88D",
+      "lib_ref": "GCM155R71C104KA55D",
       "quantity": 3,
       "is_dni": false,
       "acquired": false,
@@ -110,7 +110,7 @@
     {
       "id": "row-5-28b2f90adc85ffcc",
       "bom_id": "feather_orp_bom_2026-10-30",
-      "name": "10uF 25V",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "description": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "designators": [
         "C7",
@@ -337,7 +337,7 @@
     {
       "id": "row-14-17a0d6048b3b6e28",
       "bom_id": "feather_orp_bom_2026-10-30",
-      "name": "760390015",
+      "name": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
       "description": "Forward, Push-Pull Converters For For DC/DC Converters SMPS Transformer 3125Vrms Isolation 10kHz Surface Mount",
       "designators": [
         "T1"
