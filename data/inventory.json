@@ -684,9 +684,9 @@
       "id": "7f9a1b4f-03c5-4c97-bfae-88d848cbb781",
       "lib_ref": "ADUM1250ARZ-RL7",
       "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
-      "qty_on_hand": 4,
+      "qty_on_hand": 6,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Ordered DigiKey 102853405 (2026-11-11): ADUM1250ARZ-RL7 x2 (2 on backorder)"
     },
     {
       "id": "372c0fe7-923a-4929-9b57-05d8e6521317",
