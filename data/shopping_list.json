@@ -1657,7 +1657,7 @@
     },
     "lib:ISO1540DR": {
       "name": "I2C Digital Isolator 2500Vrms 2 Channel 1Mbps 25kV/\u00b5s CMTI 8-SOIC (0.154\", 3.90mm Width)",
-      "updated_at": "2026-11-17T23:54:35.745130+00:00",
+      "updated_at": "2026-11-18T00:06:26.647895+00:00",
       "buy_qty": 2,
       "notes": "Ordered DigiKey 102853405 (2026-11-11): ISO1540DR x2 (2 on backorder)",
       "ordered": true,

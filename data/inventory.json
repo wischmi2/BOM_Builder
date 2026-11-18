@@ -300,9 +300,9 @@
       "id": "c7c62044-dbce-472c-a635-a0fb3f8c72c3",
       "lib_ref": "GRM188R72A104KA35D",
       "name": "0.1 \u00b5F \u00b110% 100V Ceramic Capacitor X7R 0603 (1608 Metric)",
-      "qty_on_hand": 21,
+      "qty_on_hand": 45,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Additional parts ordered, rx 11/17 in new box"
     },
     {
       "id": "ab1cbf53-f2c2-473c-b518-12cf5f6f99cd",
@@ -508,9 +508,9 @@
       "id": "e76edc78-bd76-4e31-bdde-16e6c1b8c839",
       "lib_ref": "S2B-PH-K-S",
       "name": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
-      "qty_on_hand": 4,
+      "qty_on_hand": 10,
       "location": "Brian Part Box 2",
-      "notes": ""
+      "notes": "Additional parts in Mouser order 11/17, new box."
     },
     {
       "id": "7b9752bd-917d-4ff5-9bce-54f1170778ef",
@@ -580,9 +580,9 @@
       "id": "71feff39-313b-4e2e-a7a5-0f7ea8919e04",
       "lib_ref": "LQP03TQ3N9B02D",
       "name": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
-      "qty_on_hand": 8,
+      "qty_on_hand": 13,
       "location": "Brian Part Box 1",
-      "notes": ""
+      "notes": "Five additional ordered from digikey, these are in the new parts received."
     },
     {
       "id": "89b3b975-abbb-4b81-b77b-9de270e5a89f",
@@ -1559,6 +1559,70 @@
       "qty_on_hand": 5,
       "location": "",
       "notes": "Ordered Mouser 41073583 (2026-11-11): SN6505BDBVR x5"
+    },
+    {
+      "id": "809c44a7-597e-448f-bb67-04f3912622eb",
+      "lib_ref": "RMCF0805FT5K10",
+      "name": "5.1 kOhms \u00b11% 0.125W, 1/8W Chip Resistor 0805 (2012 Metric) Automotive AEC-Q200 Thick Film",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "9298b63e-fe04-48d1-9eea-f02a283b22d5",
+      "lib_ref": "TMK107BBJ106MA-T",
+      "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "1d23fb2c-39d6-47dc-a8d0-08b47c3c316a",
+      "lib_ref": "SPC02SYAN",
+      "name": "2 (1 x 2) Position Shunt Connector Black Closed Top 0.100\" (2.54mm) Gold",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "aa226019-0097-4e87-b9d5-97f2b5b30d31",
+      "lib_ref": "S8B-PH-K-S",
+      "name": "Connector Header Through Hole, Right Angle 8 position 0.079\" (2.00mm)",
+      "qty_on_hand": 5,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "5feed70a-0d03-432f-8b65-f5e6ab8eef2b",
+      "lib_ref": "0150200140",
+      "name": "14 Position FFC, FPC Cable 0.020\" (0.50mm) 1.180\" (29.97mm)",
+      "qty_on_hand": 4,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "bfab2e2d-dab5-4952-90a3-05466cac9d07",
+      "lib_ref": "ASPHSPH24K102",
+      "name": "Black 24 AWG Jumper Lead Socket to Socket Tin 4.00\" (101.60mm)",
+      "qty_on_hand": 40,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "ba1ca063-9be4-4e6d-b78c-84028683d933",
+      "lib_ref": "PHR-8",
+      "name": "8 Position Rectangular Housing Connector Receptacle Natural 0.079\" (2.00mm)",
+      "qty_on_hand": 10,
+      "location": "",
+      "notes": ""
+    },
+    {
+      "id": "abc52125-68ba-4c13-b5b4-a785191e33fd",
+      "lib_ref": "1461530100",
+      "name": "RF ANTENNA WLAN, Zigbee\u2122 Flat Patch U.FL (UMCC), I-PEX MHF1 Adhesive",
+      "qty_on_hand": 1,
+      "location": "",
+      "notes": ""
     }
   ]
 }
