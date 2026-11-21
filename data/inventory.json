@@ -277,7 +277,7 @@
       "lib_ref": "nPM1300-QEAA-R7",
       "name": "Battery Power Management IC Lithium Ion/Polymer 32-QFN (5x5)",
       "qty_on_hand": 7,
-      "location": "",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -285,7 +285,7 @@
       "lib_ref": "GRM188R61H225KE11D",
       "name": "2.2 \u00b5F \u00b110% 50V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 7,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -293,7 +293,7 @@
       "lib_ref": "GJM0335C1E1R5WB01D",
       "name": "1.5 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "qty_on_hand": 8,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -325,7 +325,7 @@
       "lib_ref": "GJM0335C1ER30WB01D",
       "name": "0.3 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "qty_on_hand": 8,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -349,7 +349,7 @@
       "lib_ref": "GCM155R71H103KA55D",
       "name": "10000 pF \u00b110% 50V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "qty_on_hand": 10,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "10nF; 10000pF | Ordered DigiKey 102853405 (2026-11-11): GCM155R71H103KA55D x2"
     },
     {
@@ -357,7 +357,7 @@
       "lib_ref": "RC0402FR-07560RL",
       "name": "560 Ohms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 23,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -365,7 +365,7 @@
       "lib_ref": "GJM0335C1E2R0WB01D",
       "name": "2 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "qty_on_hand": 8,
-      "location": "",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -373,7 +373,7 @@
       "lib_ref": "RC0402FR-074K7L",
       "name": "4.7 kOhms \u00b11% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 49,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0402FR-074K7L x10"
     },
     {
@@ -381,7 +381,7 @@
       "lib_ref": "GJM0335C1E1R0WB01D",
       "name": "1 pF \u00b10.05pF 25V Ceramic Capacitor C0G, NP0 0201 (0603 Metric)",
       "qty_on_hand": 8,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -437,7 +437,7 @@
       "lib_ref": "CL05A105KO5NNNC",
       "name": "1 \u00b5F \u00b110% 16V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 40,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): CL05A105KO5NNNC x27"
     },
     {
@@ -453,7 +453,7 @@
       "lib_ref": "RT0402BRD0710KL",
       "name": "10 kOhms \u00b10.1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Thin Film",
       "qty_on_hand": 47,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -477,7 +477,7 @@
       "lib_ref": "CC0603MRX5R8BB106",
       "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 6,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -485,7 +485,7 @@
       "lib_ref": "2450AT18A0100001E",
       "name": "RF ANTENNA Chip Solder Surface Mount",
       "qty_on_hand": 8,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -501,7 +501,7 @@
       "lib_ref": "BGS12P2L6E6327XTSA1",
       "name": "RF Switch IC GSM, LTE, W-CDMA SPDT 50Ohm PG-TSLP-6-4",
       "qty_on_hand": 5,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -509,7 +509,7 @@
       "lib_ref": "S2B-PH-K-S",
       "name": "Connector Header Through Hole, Right Angle 2 position 0.079\" (2.00mm)",
       "qty_on_hand": 10,
-      "location": "Brian Part Box 2",
+      "location": "Feather Bag",
       "notes": "Additional parts in Mouser order 11/17, new box."
     },
     {
@@ -541,7 +541,7 @@
       "lib_ref": "SMLEN3EC8TT86",
       "name": "Green 527nm LED Indication - Discrete 3V 0603 (1608 Metric)",
       "qty_on_hand": 4,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -549,7 +549,7 @@
       "lib_ref": "RECE.20449.001E.01",
       "name": "I-PEX MHF4 Connector Receptacle, Male Pin 50 Ohms Surface Mount Solder",
       "qty_on_hand": 7,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): RECE.20449.001E.01 x3"
     },
     {
@@ -581,7 +581,7 @@
       "lib_ref": "LQP03TQ3N9B02D",
       "name": "3.9 nH Unshielded Thick Film Inductor 400 mA 250mOhm Max 0201 (0603 Metric)",
       "qty_on_hand": 13,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Five additional ordered from digikey, these are in the new parts received."
     },
     {
@@ -597,7 +597,7 @@
       "lib_ref": "LQP03HQ3N5B02D",
       "name": "3.5 nH Unshielded Thick Film Inductor 500 mA 170mOhm Max 0201 (0603 Metric)",
       "qty_on_hand": 10,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): LQP03HQ3N5B02D x2"
     },
     {
@@ -661,7 +661,7 @@
       "lib_ref": "AEM10330-QFN",
       "name": "Power Management Specialized - PMIC Highly Versatile, Regulated Single-Output, Buck-Boost Ambient Energy Manager For Up to 7-cell Solar Panels",
       "qty_on_hand": 5,
-      "location": "Brian Part Box 1",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): AEM10330-QFN x1"
     },
     {
@@ -749,7 +749,7 @@
       "lib_ref": "FTSH-105-01-L-DV-K-A",
       "name": "Connector Header Surface Mount 10 position 0.050\" (1.27mm)",
       "qty_on_hand": 6,
-      "location": "Brian Part Box 2",
+      "location": "Feather Bag",
       "notes": ""
     },
     {
@@ -1045,7 +1045,7 @@
       "lib_ref": "503480-1400",
       "name": "14 Position FFC, FPC Connector Contacts, Top and Bottom 0.020\" (0.50mm) Surface Mount, Right Angle",
       "qty_on_hand": 25,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): 5034801400 x25"
     },
     {
@@ -1061,7 +1061,7 @@
       "lib_ref": "B3U-1000P",
       "name": "Tactile Switch SPST-NO Top Actuated Surface Mount",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): B3U-1000P x5"
     },
     {
@@ -1085,7 +1085,7 @@
       "lib_ref": "MF-FSMF020X-2",
       "name": "Polymeric PTC Resettable Fuse 9V 200 mA Ih Surface Mount 0603 (1608 Metric), Concave",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): MF-FSMF020X-2 x5"
     },
     {
@@ -1117,7 +1117,7 @@
       "lib_ref": "TPD1E10B06DPYR",
       "name": "14V Clamp 5A (8/20\u00b5s) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): TPD1E10B06DPYR x10"
     },
     {
@@ -1125,7 +1125,7 @@
       "lib_ref": "DFE252010F-100M=P2",
       "name": "10 \u00b5H Shielded Drum Core, Wirewound Inductor 900 mA 600mOhm Max 1008 (2520 Metric) Flat Wire",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): DFE252010F-100M=P2 x5"
     },
     {
@@ -1141,7 +1141,7 @@
       "lib_ref": "SMF12A",
       "name": "19.9V Clamp 10.1A Ipp Tvs Diode Surface Mount SOD-123F",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): SMF12A x10"
     },
     {
@@ -1149,7 +1149,7 @@
       "lib_ref": "SN74AUP1G34DCKR",
       "name": "Buffer, Non-Inverting 1 Element 1 Bit per Element Push-Pull Output SC-70-5",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): SN74AUP1G34DCKR x5"
     },
     {
@@ -1157,7 +1157,7 @@
       "lib_ref": "XRCGB32M000F1S2AR0",
       "name": "32 MHz \u00b110ppm Crystal 8pF 50 Ohms 4-SMD, No Lead",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): XRCGB32M000F1S2AR0 x5"
     },
     {
@@ -1173,7 +1173,7 @@
       "lib_ref": "nRF54L15-QFAA-R",
       "name": "IC RF TxRx + MCU 802.15.4, Bluetooth Amazon Sidewalk, Bluetooth Channel Sounding, Bluetooth LE, Bluetooth Mesh, Matter, Proprietary 2.4 GHz, Thread, Zigbee 48-VFQFN Exposed Pad",
       "qty_on_hand": 2,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): NRF54L15-QFAA-R x2"
     },
     {
@@ -1253,7 +1253,7 @@
       "lib_ref": "RC0603FR-07150KL",
       "name": "150 kOhms \u00b11% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): RC0603FR-07150KL x10"
     },
     {
@@ -1341,7 +1341,7 @@
       "lib_ref": "BLM15AG121SN1D",
       "name": "120 Ohms @ 100 MHz 1 Ferrite Bead 0402 (1005 Metric) 550mA 190mOhm",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): BLM15AG121SN1D x5"
     },
     {
@@ -1349,7 +1349,7 @@
       "lib_ref": "NCU15XH103F60RC",
       "name": "NTC Thermistor 10k 0402 (1005 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): NCU15XH103F60RC x5"
     },
     {
@@ -1381,7 +1381,7 @@
       "lib_ref": "MSASJ31LBB5227MTCA01",
       "name": "220 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 1206 (3216 Metric)",
       "qty_on_hand": 2,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): MSASJ31LBB5227MTCA01 x2"
     },
     {
@@ -1389,7 +1389,7 @@
       "lib_ref": "CL03A104KQ3NNNC",
       "name": "0.1 \u00b5F \u00b110% 6.3V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): CL03A104KQ3NNNC x10"
     },
     {
@@ -1405,7 +1405,7 @@
       "lib_ref": "GCM155R71C104KA55D",
       "name": "0.1 \u00b5F \u00b110% 16V Ceramic Capacitor X7R 0402 (1005 Metric)",
       "qty_on_hand": 100,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): GCM155R71C104KA55D x100"
     },
     {
@@ -1413,7 +1413,7 @@
       "lib_ref": "GRM155R60J106ME15D",
       "name": "10 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 15,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Digikey List. 500. | Ordered DigiKey 102853405 (2026-11-11): GRM155R60J106ME15D x15"
     },
     {
@@ -1421,7 +1421,7 @@
       "lib_ref": "CL05A105KA5NQNC",
       "name": "1 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0402 (1005 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): CL05A105KA5NQNC x5"
     },
     {
@@ -1429,7 +1429,7 @@
       "lib_ref": "LQM18PN4R7MFRL",
       "name": "4.7 \u00b5H Shielded Multilayer Inductor 620 mA 550mOhm Max 0603 (1608 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): LQM18PN4R7MFRL x5"
     },
     {
@@ -1437,7 +1437,7 @@
       "lib_ref": "LQP03HQ2N7B02D",
       "name": "2.7 nH Unshielded Thick Film Inductor 600 mA 120mOhm Max 0201 (0603 Metric)",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Digikey List.  100. | Ordered DigiKey 102853405 (2026-11-11): LQP03HQ2N7B02D x10"
     },
     {
@@ -1445,7 +1445,7 @@
       "lib_ref": "DX07S016JA3R1500",
       "name": "USB-C (USB TYPE-C) USB 2.0 Receptacle Connector 24 (16+8 Dummy) Position Surface Mount, Right Angle; Through Hole",
       "qty_on_hand": 2,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): DX07S016JA3R1500 x2"
     },
     {
@@ -1477,7 +1477,7 @@
       "lib_ref": "GRM188R60J476ME15D",
       "name": "47 \u00b5F \u00b120% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): GRM188R60J476ME15D x5"
     },
     {
@@ -1485,7 +1485,7 @@
       "lib_ref": "CL05C101JB5NNNC",
       "name": "100 pF \u00b15% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): CL05C101JB5NNNC x5"
     },
     {
@@ -1501,7 +1501,7 @@
       "lib_ref": "CL21A475KAQNNNE",
       "name": "4.7 \u00b5F \u00b110% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): CL21A475KAQNNNE x5"
     },
     {
@@ -1509,7 +1509,7 @@
       "lib_ref": "GRM033R61A225ME47D",
       "name": "2.2 \u00b5F \u00b120% 10V Ceramic Capacitor X5R 0201 (0603 Metric)",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): GRM033R61A225ME47D x10"
     },
     {
@@ -1517,7 +1517,7 @@
       "lib_ref": "GRM21BR61E106MA73L",
       "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0805 (2012 Metric)",
       "qty_on_hand": 35,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): GRM21BR61E106MA73L x35"
     },
     {
@@ -1525,7 +1525,7 @@
       "lib_ref": "CL10A106MA8NRNC",
       "name": "10 \u00b5F \u00b120% 25V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 24,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered DigiKey 102853405 (2026-11-11): TMK107BBJ106MA-T x5 (bought in place of CL10A106MA8NRNC); Mouser 41073583 (2026-11-11): CL10A106MA8NRNC x24"
     },
     {
@@ -1533,7 +1533,7 @@
       "lib_ref": "GRM188R61C106MA73D",
       "name": "10 \u00b5F \u00b120% 16V Ceramic Capacitor X5R 0603 (1608 Metric)",
       "qty_on_hand": 5,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): GRM188R61C106MA73D x5"
     },
     {
@@ -1549,7 +1549,7 @@
       "lib_ref": "LSCND1608HKT2R2MF",
       "name": "2.2 \u00b5H Shielded Multilayer Inductor 1.4 A 250mOhm Max 0603 (1608 Metric)",
       "qty_on_hand": 10,
-      "location": "",
+      "location": "Feather Bag",
       "notes": "Ordered Mouser 41073583 (2026-11-11): LSCND1608HKT2R2MF x10"
     },
     {
